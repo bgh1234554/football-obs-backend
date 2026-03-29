@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: football-obs-backend
+
+api:
+  cdn-url: ${CDN_URL}
+  media-cdn-url: ${MEDIA_CDN_URL}
