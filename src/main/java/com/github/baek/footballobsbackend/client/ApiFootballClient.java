@@ -69,15 +69,72 @@ public class ApiFootballClient {
      */
     public JsonNode getInjuries(long fixtureId) {
         log.info("Fetching injuries fixtureId={}", fixtureId);
+        return fetchArray("/injuries?ids=" + fixtureId);
+    }
 
-        // 1. CDN에 GET /injuries?ids={fixtureId} 요청
+    // ──────────────────────────────────────────────
+    // CsvUpdater 전용 — CSV 초기화 시 사용
+    // ──────────────────────────────────────────────
+
+    /**
+     * 특정 리그+시즌의 팀 목록을 가져온다. (팀 정보 + 홈구장 정보 포함)
+     * CsvUpdater에서 teams.csv / venues.csv 초기화에 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getTeams(int leagueId, int season) {
+        log.info("Fetching teams leagueId={} season={}", leagueId, season);
+        return fetchArray("/teams?league=" + leagueId + "&season=" + season);
+    }
+
+    /**
+     * 특정 팀의 현재 스쿼드(선수 목록)를 가져온다.
+     * CsvUpdater에서 players.csv 초기화에 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getPlayerSquad(long teamId) {
+        log.info("Fetching squad teamId={}", teamId);
+        return fetchArray("/players/squads?team=" + teamId);
+    }
+
+    /**
+     * 특정 선수의 상세 프로필(풀네임, 국적 등)을 가져온다.
+     * CsvUpdater에서 /players/squads만으로는 얻을 수 없는 nationality 등을 보완하는 데 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getPlayerProfile(long playerId) {
+        log.info("Fetching player profile playerId={}", playerId);
+        return fetchArray("/players/profiles?player=" + playerId);
+    }
+
+    /**
+     * 특정 팀의 현재 감독 정보를 가져온다.
+     * CsvUpdater에서 coaches.csv 초기화에 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getCoach(long teamId) {
+        log.info("Fetching coach teamId={}", teamId);
+        return fetchArray("/coachs?team=" + teamId);
+    }
+
+    // ──────────────────────────────────────────────
+    // 공통 헬퍼
+    // ──────────────────────────────────────────────
+
+    /**
+     * CDN에 GET 요청을 보내고 "response" 배열을 반환하는 공통 헬퍼.
+     * 응답이 null이거나 "response"가 배열이 아니면 null 반환.
+     */
+    private JsonNode fetchArray(String path) {
         JsonNode root = restClient.get()
-                .uri("/injuries?ids=" + fixtureId)
+                .uri(path)
                 .retrieve()
                 .body(JsonNode.class);
-
-        // 2. 응답 null 체크 후 "response" 배열 그대로 반환 (여러 선수가 들어있음)
         if (root == null) return null;
-        return root.path("response");
+        JsonNode response = root.path("response");
+        return response.isArray() ? response : null;
     }
 }

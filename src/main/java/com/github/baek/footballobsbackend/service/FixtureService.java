@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
 
@@ -46,6 +47,7 @@ public class FixtureService {
 
     private final ApiFootballClient apiClient;
     private final CsvLoader csvLoader;
+    private final Set<String> loggedShortNameDiffs = ConcurrentHashMap.newKeySet();
 
     @Value("${api.media-cdn-url}")
     private String mediaCdnUrl;
@@ -139,7 +141,7 @@ public class FixtureService {
             // 5. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
             result.add(InjuryDto.builder()
                     .playerId(playerId)
-                    .playerName(nameKo != null ? nameKo : apiName)
+                    .playerName(resolvePlayerDisplayName(playerId, apiName))
                     .playerPhotoUrl(toMediaCdnUrl(player.path("photo").asText()))
                     .type(injuryType)     // ex. "Missing Fixture"
                     .reason(injuryReason) // ex. "Knee Injury"
@@ -306,9 +308,8 @@ public class FixtureService {
             String assistNameKoLong = null;
             if (assistId != null) {
                 String assistApiName = assistNode.path("name").asText(null);
-                String assistKo = csvLoader.getPlayerNameKo(assistId);
                 assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
-                assistName = assistKo != null ? assistKo : assistApiName;
+                assistName = resolvePlayerDisplayName(assistId, assistApiName);
             }
 
             // 3. 팀 ID를 홈 팀 ID와 비교해서 side("home"/"away") 결정
@@ -320,7 +321,7 @@ public class FixtureService {
                     .side(e.path("team").path("id").asLong() == homeTeamId ? "home" : "away")
                     .teamId(e.path("team").path("id").asLong())
                     .playerId(playerId)
-                    .playerName(playerNameKo != null ? playerNameKo : apiPlayerName)
+                    .playerName(resolvePlayerDisplayName(playerId, apiPlayerName))
                     .playerNameKoLong(playerNameKoLong)
                     .assistId(assistId)
                     .assistName(assistName)
@@ -422,7 +423,7 @@ public class FixtureService {
                     .substitutes(buildPlayerList(lu.path("substitutes")))
                     .coach(CoachDto.builder()
                             .coachId(coachId)
-                            .name(coachKo != null ? coachKo : coachApiName)
+                            .name(resolveCoachDisplayName(coachId, coachApiName))
                             .nameKoLong(coachKoLong)
                             .build())
                     .build();
@@ -459,7 +460,7 @@ public class FixtureService {
             JsonNode gridNode = p.path("grid");
             result.add(PlayerDto.builder()
                     .playerId(playerId)
-                    .name(nameKo != null ? nameKo : apiName)
+                    .name(resolvePlayerDisplayName(playerId, apiName))
                     .nameKoLong(nameKoLong)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText())            // "G" | "D" | "M" | "F"
@@ -518,7 +519,7 @@ public class FixtureService {
                 // 5. DTO 조립 — 대부분의 스탯은 null 가능이므로 nullableInt() 사용
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
-                        .playerName(nameKo != null ? nameKo : apiName)
+                        .playerName(resolvePlayerDisplayName(playerId, apiName))
                         .playerNameKoLong(nameKoLong)
                         .playerPhotoUrl(toMediaCdnUrl(p.path("photo").asText()))
                         .side(side)
@@ -600,6 +601,59 @@ public class FixtureService {
             log.info("[KO_VENUE_NAME_NEEDED] name={}, city={}", apiName, city);
         }
         return apiName;
+    }
+
+    /**
+     * 선수 표시 이름 우선순위.
+     * 1. players.csv name_ko_short
+     * 2. players.csv name_short
+     * 3. API Football name
+     */
+    private String resolvePlayerDisplayName(long playerId, String apiName) {
+        String nameKo = csvLoader.getPlayerNameKo(playerId);
+        if (nameKo != null) return nameKo;
+
+        String csvShort = csvLoader.getPlayerNameShort(playerId);
+        if (csvShort != null) {
+            logShortNameDiffOnce("player", playerId, apiName, csvShort);
+            return csvShort;
+        }
+        return apiName;
+    }
+
+    /**
+     * 감독 표시 이름 우선순위.
+     * 1. coaches.csv name_ko_short
+     * 2. coaches.csv name_short
+     * 3. API Football name
+     */
+    private String resolveCoachDisplayName(long coachId, String apiName) {
+        String nameKo = csvLoader.getCoachNameKo(coachId);
+        if (nameKo != null) return nameKo;
+
+        String csvShort = csvLoader.getCoachNameShort(coachId);
+        if (csvShort != null) {
+            logShortNameDiffOnce("coach", coachId, apiName, csvShort);
+            return csvShort;
+        }
+        return apiName;
+    }
+
+    /**
+     * API name과 CSV short가 다르면 CSV 값을 우선 사용하고 차이를 로그로 남긴다.
+     * 같은 차이는 앱 실행 중 1번만 출력한다.
+     */
+    private void logShortNameDiffOnce(String type, long id, String apiName, String csvShort) {
+        if (apiName == null || apiName.isBlank() || csvShort == null || csvShort.isBlank()) return;
+
+        String apiTrimmed = apiName.trim();
+        String csvTrimmed = csvShort.trim();
+        if (apiTrimmed.equals(csvTrimmed)) return;
+
+        String key = type + "|" + id + "|" + apiTrimmed + "|" + csvTrimmed;
+        if (loggedShortNameDiffs.add(key)) {
+            log.info("[CSV_SHORT_NAME_DIFF] type={}, id={}, api={}, csv={}", type, id, apiTrimmed, csvTrimmed);
+        }
     }
 
     /**

@@ -25,6 +25,7 @@ import java.util.Map;
  * logos.csv     : team_id, logo_url, flag_url
  * coaches.csv   : coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
  * referees.csv  : referee_name, referee_country, name_ko
+ * venues.csv    : venue_id, venue_name, venue_city, venue_name_ko, city_name_ko
  *
  * [한글 이름이 없을 경우]
  * 조회 메서드가 null을 반환하면 호출부(FixtureService)에서 API Football 영문 이름으로 fallback 처리.
@@ -265,6 +266,17 @@ public class CsvLoader {
     }
 
     /**
+     * 선수 영문/원문 short 이름(name_short) 조회.
+     * 한글 short가 없을 때 영어 fallback 우선순위로 사용.
+     */
+    public String getPlayerNameShort(long playerId) {
+        String[] row = players.get(playerId);
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();   // index 1 = name_short
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
      * 선수 한글 풀네임(name_ko_long) 조회.
      * players.csv에 없거나 name_ko_long 컬럼이 비어있으면 null 반환.
      */
@@ -295,6 +307,17 @@ public class CsvLoader {
         String[] row = coaches.get(coachId);
         if (row == null || row.length < 6) return null;
         String v = row[5].trim();   // index 5 = name_ko_short
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 감독 영문/원문 short 이름(name_short) 조회.
+     * 한글 short가 없을 때 영어 fallback 우선순위로 사용.
+     */
+    public String getCoachNameShort(long coachId) {
+        String[] row = coaches.get(coachId);
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();   // index 1 = name_short
         return v.isEmpty() ? null : v;
     }
 
