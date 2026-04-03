@@ -36,6 +36,7 @@ public class CsvUpdater {
 
     static final String DATA_DIR = "src/main/resources/data";
     private static final int REQUEST_DELAY_MS = 200; // Pro Plan 300 req/min 기준 (60000 / 300 = 200ms)
+    private static final int PLAYER_COLUMN_COUNT = 7;
 
     // ──────────────────────────────────────────────
     // 진입점
@@ -61,7 +62,11 @@ public class CsvUpdater {
 
         // 3. 전체 처리 후 컨텍스트 종료
         try {
-            processAll(apiClient, selection);
+            if (selection.mode() == CsvUpdaterUi.Mode.PLAYERS) {
+                processSelectedPlayers(apiClient, selection.playerIds());
+            } else {
+                processAll(apiClient, selection);
+            }
             long endTime = System.currentTimeMillis();
             long duration = endTime - startTime;
             System.out.println("작업 완료 까지 "+ duration + "ms가 소요되었습니다.");
@@ -105,6 +110,65 @@ public class CsvUpdater {
 
         System.out.printf("%n[CsvUpdater] 완료 — teams:%d  players:%d  coaches:%d  venues:%d%n",
                 newTeamRows.size(), newPlayerRows.size(), newCoachRows.size(), newVenueRows.size());
+    }
+
+    /**
+     * 특정 선수만 재조회해 players.csv 끝에 최신 행을 append 한다.
+     * 같은 player_id가 이미 있어도 기존 행은 유지하며, 한글 이름 컬럼은 마지막 기존 값을 이어받는다.
+     */
+    private static void processSelectedPlayers(ApiFootballClient apiClient, List<Long> playerIds)
+            throws Exception {
+
+        CsvUpdaterCsvHelper.CsvTable table =
+                CsvUpdaterCsvHelper.loadCsvTable(DATA_DIR + "/players.csv", PLAYER_COLUMN_COUNT);
+
+        List<String> newPlayerRows = new ArrayList<>();
+        int appendedCount = 0;
+        int insertedCount = 0;
+
+        for (long playerId : playerIds) {
+            Thread.sleep(REQUEST_DELAY_MS);
+
+            JsonNode profileResp = apiClient.getPlayerProfile(playerId);
+            if (profileResp == null || !profileResp.isArray() || profileResp.isEmpty()) {
+                System.out.printf("  [PLAYER!] %d profiles 응답 없음, 건너뜀%n", playerId);
+                continue;
+            }
+
+            JsonNode p           = profileResp.get(0).path("player");
+            String[] existingRow = findPlayerRow(table.rows(), playerId);
+
+            String nameShort     = firstNonBlank(p.path("name").asText(""), getColumn(existingRow, 1));
+            String position      = firstNonBlank(p.path("position").asText(""), getColumn(existingRow, 3));
+            String nationality   = firstNonBlank(p.path("nationality").asText(""), getColumn(existingRow, 4));
+            String nameLong      = buildPlayerLongName(
+                    p.path("firstname").asText(""),
+                    p.path("lastname").asText(""),
+                    nationality
+            );
+            nameLong = firstNonBlank(nameLong, nameShort, getColumn(existingRow, 2));
+
+            String nameKoLong    = getColumn(existingRow, 5);
+            String nameKoShort   = getColumn(existingRow, 6);
+            String row = playerId + "," + CsvUpdaterCsvHelper.esc(nameShort)
+                    + "," + CsvUpdaterCsvHelper.esc(nameLong)
+                    + "," + CsvUpdaterCsvHelper.esc(position)
+                    + "," + CsvUpdaterCsvHelper.esc(nationality)
+                    + "," + CsvUpdaterCsvHelper.esc(nameKoLong)
+                    + "," + CsvUpdaterCsvHelper.esc(nameKoShort);
+            newPlayerRows.add(row);
+
+            if (existingRow == null) {
+                insertedCount++;
+                System.out.printf("  [PLAYER+] %d %s / %s%n", playerId, nameShort, nationality);
+            } else {
+                appendedCount++;
+                System.out.printf("  [PLAYER~] %d %s / %s (append)%n", playerId, nameShort, nationality);
+            }
+        }
+
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/players.csv", newPlayerRows);
+        System.out.printf("%n[CsvUpdater] 특정 선수 갱신 완료 — appended:%d inserted:%d%n", appendedCount, insertedCount);
     }
 
     // ──────────────────────────────────────────────
@@ -300,5 +364,29 @@ public class CsvUpdater {
                 || normalized.equalsIgnoreCase("Macao")
                 || normalized.equalsIgnoreCase("Vietnam")
                 || normalized.equalsIgnoreCase("Viet Nam");
+    }
+
+    private static String[] findPlayerRow(List<String[]> rows, long playerId) {
+        String target = String.valueOf(playerId);
+        for (String[] row : rows) {
+            if (row.length > 0 && row[0].trim().equals(target)) {
+                return row;
+            }
+        }
+        return null;
+    }
+
+    private static String getColumn(String[] row, int index) {
+        if (row == null || row.length <= index || row[index] == null) return "";
+        return row[index].trim();
+    }
+
+    private static String firstNonBlank(String... values) {
+        for (String value : values) {
+            if (value != null && !value.trim().isEmpty()) {
+                return value.trim();
+            }
+        }
+        return "";
     }
 }

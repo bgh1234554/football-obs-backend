@@ -4,48 +4,49 @@ coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
 2913, I. Gattuso, Ivan Gennaro Gattuso, Italy, 젠나로 가투소, G. 가투소
 2006, A. Slot, Arne Slot, Netherlands, 아르네 슬롯, A. 슬롯
 27686, I. Tudor, Igor Tudor, Croatia, 이고르 투도르, I. 투도르
-1993,E. ten Hag,Erik ten Hag,Netherlands,,
-4720,Ruben Amorim,Ruben Filipe Marques Diogo Amorim,Portugal,,
-25762,Michael Carrick,Michael Carrick,England,,
-5,E. Howe,Edward John Frank Howe,England,,
-84,G. Jones,Graeme Anthony Jones,England,,
-85,J. Woodgate,Jonathan Woodgate,England,,
-2108,A. Iraola,Andoni Iraola Sagarna,Spain,,
-12777,J. Tindall,Jason Tindall,England,,
-10,M. Silva,Marco Alexandre Saraiva da Silva,Portugal,,
-55,V. Pereira,Vítor Manuel de Oliveira Lopes Pereira,Portugal,,
-9473,S. Davis,Steven Peter Davis,England,,
-18151,G. O'Neil,Gary Paul O'Neil,England,,
-25765,R. Edwards,Robert Owen Edwards,Wales,,
-1,J. Klopp,Jürgen Norbert Klopp,Germany,,
-10952,A. Bertoldi,Alejandro Gabriel Bertoldi Delor,Uruguay,,
-587,F. Ljungberg,Karl Fredrik Ljungberg,Sweden,,
-5594,A. Wenger,Arsène Wenger,France,,
-7248,M. Arteta,Mikel Arteta Amatriain,Spain,,
-87,S. Parker,Scott Matthew Parker,England,,
-12473,M. Jackson,Michael James Jackson,England,,
-5662,D. Moyes,David William Moyes,Scotland,,
-17953,L. Baines,Leighton Baines,England,,
-90,T. Frank,Thomas Frank,Denmark,,
-12,G. Potter,Graham Stephen Potter,England,,
-16,Nuno Espírito Santo,Nuno Herlander Simões Espírito Santo,Portugal,,
-12629,E. Maresca,Vincenzo Maresca,Italy,,
-13350,L. Rosenior,Liam James Rosenior,England,,
-4,P. Guardiola,Josep Guardiola i Sala,Spain,,
-19253,F. Hürzeler,Fabian Marc Hürzeler,Germany,,
-9,R. Hodgson,Roy Hodgson,England,,
-1534,O. Glasner,Oliver Glasner,Austria,,
-25364,K. Andrews,Keith Joseph Andrews,Republic of Ireland,,
-2,D. Farke,Daniel Farke,Germany,,
-11,J. Gracia,Javier Gracia Carlos,Spain,,
-5663,S. Allardyce,Samuel Allardyce,England,,
-7,S. Dyche,Sean Mark Dyche,England,,
-548,A. Postecoglou,Angelos Postecoglou,Australia,,
-2940,M. O'Neill,Martin Hugh Michael O'Neill,Northern Ireland,,
-2954,S. Ireland,Simon Ireland,England,,
-10324,G. Brazil,Gary Brazil,England,,
-15701,S. Reid,Steven Reid,Republic of Ireland,,
-27667,V. Pereira,Vítor Manuel de Oliveira Lopes Pereira,Portugal,,
-18,U. Emery,Unai Emery Etxegoien,Spain,,
-9537,R. Di Matteo,Roberto Di Matteo,Italy,,
-17753,M. Beale,Michael Beale,England,,
+1993,E. ten Hag,Erik ten Hag,Netherlands,에릭 텐하흐,E. 텐하흐
+4720,R. Amorim,Ruben Filipe Marques Diogo Amorim,Portugal,후벵 아모림,R. 아모림
+25762,M. Carrick,Michael Carrick,England,마이클 캐릭,M. 캐릭
+5,E. Howe,Edward John Frank Howe,England,에디 하우,E. 하우
+84,G. Jones,Graeme Anthony Jones,England,그레임 존스,G. 존스
+85,J. Woodgate,Jonathan Woodgate,England,조너선 우드게이트,J. 우드게이트
+2108,A. Iraola,Andoni Iraola Sagarna,Spain,안도니 이라올라,A. 이라올라
+12777,J. Tindall,Jason Tindall,England,제이슨 틴달,J. 틴달
+10,M. Silva,Marco Alexandre Saraiva da Silva,Portugal,마르쿠 실바,M. 실바
+55,V. Pereira,Vítor Manuel de Oliveira Lopes Pereira,Portugal,비토르 페레이라,V. 페레이라
+9473,S. Davis,Steven Peter Davis,England,스티븐 데이비스,S. 데이비스
+18151,G. O'Neil,Gary Paul O'Neil,England,개리 오닐,G. 오닐
+25765,R. Edwards,Robert Owen Edwards,Wales,롭 에드워즈,R. 에드워즈
+1,J. Klopp,Jürgen Norbert Klopp,Germany,위르겐 클롭,J. 클롭
+10952,A. Bertoldi,Alejandro Gabriel Bertoldi Delor,Uruguay,알레한드로 베르톨디,A. 베르톨디
+587,F. Ljungberg,Karl Fredrik Ljungberg,Sweden,프레드릭 융베리,F. 융베리
+5594,A. Wenger,Arsène Wenger,France,아르센 벵거,A. 벵거
+7248,M. Arteta,Mikel Arteta Amatriain,Spain,미켈 아르테타,M. 아르테타
+87,S. Parker,Scott Matthew Parker,England,스콧 파커,S. 파커
+12473,M. Jackson,Michael James Jackson,England,마이클 잭슨,"M. 잭슨
+"
+5662,D. Moyes,David William Moyes,Scotland,데이비드 모이스,D. 모이스
+17953,L. Baines,Leighton Baines,England,레이튼 베인스,L. 베인스
+90,T. Frank,Thomas Frank,Denmark,토마스 프랭크,T. 프랭크
+12,G. Potter,Graham Stephen Potter,England,그레이엄 포터,G. 포터
+16,Nuno Espírito Santo,Nuno Herlander Simões Espírito Santo,Portugal,누누 이스피리투 산투,누누 산투
+12629,E. Maresca,Vincenzo Maresca,Italy,엔초 마레스카,E. 마레스카
+13350,L. Rosenior,Liam James Rosenior,England,리엄 로시니어,L. 로시니어
+4,P. Guardiola,Josep Guardiola i Sala,Spain,펩 과르디올라,P. 과르디올라
+19253,F. Hürzeler,Fabian Marc Hürzeler,Germany,파비안 휘르첼러,F. 휘르첼러
+9,R. Hodgson,Roy Hodgson,England,로이 호지슨,R. 호지슨
+1534,O. Glasner,Oliver Glasner,Austria,올리버 글라스너,A. 글라스너
+25364,K. Andrews,Keith Joseph Andrews,Republic of Ireland,키스 앤드류스,K. 앤드류스
+2,D. Farke,Daniel Farke,Germany,다니엘 파르케,D. 파르케
+11,J. Gracia,Javier Gracia Carlos,Spain,하비 그라시아,J. 그라시아
+5663,S. Allardyce,Samuel Allardyce,England,샘 앨러다이스,S. 앨러다이스
+7,S. Dyche,Sean Mark Dyche,England,션 다이치,S. 다이치
+548,A. Postecoglou,Angelos Postecoglou,Australia,앤지 포스테코글루,A. 포스테코글루
+2940,M. O'Neill,Martin Hugh Michael O'Neill,Northern Ireland,마틴 오닐,M. 오닐
+2954,S. Ireland,Simon Ireland,England,사이먼 아일랜드,S. 아일랜드
+10324,G. Brazil,Gary Brazil,England,개리 브라질,G. 브라질
+15701,S. Reid,Steven Reid,Republic of Ireland,스티븐 리드,S. 리드
+27667,V. Pereira,Vítor Manuel de Oliveira Lopes Pereira,Portugal,비토르 페레이라,V. 페레이라
+18,U. Emery,Unai Emery Etxegoien,Spain,우나이 에메리,U. 에메리
+9537,R. Di Matteo,Roberto Di Matteo,Italy,로베르토 디 마테오,R. 디 마테오
+17753,M. Beale,Michael Beale,England,마이클 빌,M. 빌

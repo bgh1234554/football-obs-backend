@@ -18,6 +18,7 @@ class CsvUpdaterUi {
 
     /** 리그/대회 항목 하나. enabled=true 이면 '0 전체 실행'에 포함된다. */
     record LeagueEntry(int id, String name, boolean enabled) {}
+    enum Mode { LEAGUES, PLAYERS }
 
     // ── 클럽 리그 / 클럽 대회 ────────────────────────────────
     static final int SEASON = 2025;
@@ -80,8 +81,16 @@ class CsvUpdaterUi {
     );
     // ─────────────────────────────────────────────────────────
 
-    /** 처리할 리그 ID 목록 + 적용할 시즌 연도 */
-    record SelectionResult(List<Integer> leagueIds, int season) {}
+    /** 처리할 리그 ID 목록 + 적용할 시즌 연도 또는 특정 선수 ID 목록 */
+    record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds) {
+        static SelectionResult forLeagues(List<Integer> leagueIds, int season) {
+            return new SelectionResult(Mode.LEAGUES, leagueIds, season, List.of());
+        }
+
+        static SelectionResult forPlayers(List<Long> playerIds) {
+            return new SelectionResult(Mode.PLAYERS, List.of(), 0, playerIds);
+        }
+    }
 
     /**
      * 콘솔 텍스트 UI로 업데이트 대상을 선택받아 반환한다.
@@ -96,6 +105,7 @@ class CsvUpdaterUi {
         System.out.println("========================================");
         System.out.println("  1. 클럽 리그 / 클럽 대회  (season " + SEASON + ")");
         System.out.println("  2. 국제 대회               (season " + INT_SEASON + ")");
+        System.out.println("  3. 특정 선수(player_id) 갱신");
         System.out.println("  q. 취소");
         System.out.print("> ");
 
@@ -114,6 +124,8 @@ class CsvUpdaterUi {
             isInternational = true;
             entries = INT_COMPETITIONS;
             season  = INT_SEASON;
+        } else if (categoryInput.equals("3")) {
+            return promptPlayerSelection(sc);
         } else {
             System.out.println("[CsvUpdater] 잘못된 입력: " + categoryInput);
             return null;
@@ -140,7 +152,7 @@ class CsvUpdaterUi {
 
         if (!sc.nextLine().trim().equalsIgnoreCase("y")) return null;
 
-        return new SelectionResult(selectedIds, season);
+        return SelectionResult.forLeagues(selectedIds, season);
     }
 
     private static void printLeagueList(List<LeagueEntry> entries, boolean isInternational) {
@@ -198,5 +210,78 @@ class CsvUpdaterUi {
             return null;
         }
         return selectedIds;
+    }
+
+    private static SelectionResult promptPlayerSelection(Scanner sc) {
+        System.out.println();
+        System.out.println("--- 특정 선수(player_id) 갱신 ---");
+        System.out.println("  players.csv에 최신 행을 append 합니다. (기존 행 삭제/수정 없음)");
+        System.out.println("  같은 player_id가 이미 있으면 기존 한글 이름 컬럼을 보존한 채 새 행을 맨 아래에 추가합니다.");
+        System.out.println("  입력 방식:");
+        System.out.println("    - ID 직접 입력: 152953,63577");
+        System.out.println("    - 로그 붙여넣기: [KO_NAME_NEEDED] id=152953, name=L. Colwill");
+        System.out.println("  여러 줄 붙여넣기 가능, 빈 줄 입력 시 종료");
+        System.out.println("  q = 취소");
+        System.out.print("> ");
+
+        String rawInput = readMultilineInput(sc);
+        if (rawInput == null) return null;
+
+        List<Long> playerIds = parsePlayerIds(rawInput);
+        if (playerIds == null || playerIds.isEmpty()) {
+            System.out.println("[CsvUpdater] player_id를 찾지 못했습니다. 취소합니다.");
+            return null;
+        }
+
+        System.out.println();
+        System.out.println("--- 실행 확인 ---");
+        System.out.println("  모드     : 특정 선수 갱신");
+        System.out.printf("  playerIds: %s%n", playerIds);
+        System.out.println();
+        System.out.print("  실행하시겠습니까? (y/n) > ");
+
+        if (!sc.nextLine().trim().equalsIgnoreCase("y")) return null;
+        return SelectionResult.forPlayers(playerIds);
+    }
+
+    private static String readMultilineInput(Scanner sc) {
+        List<String> lines = new ArrayList<>();
+        while (true) {
+            String line = sc.nextLine();
+            String trimmed = line.trim();
+            if (lines.isEmpty() && (trimmed.equals("q") || trimmed.isEmpty())) {
+                return null;
+            }
+            if (trimmed.isEmpty()) {
+                break;
+            }
+            lines.add(line);
+        }
+        return String.join("\n", lines);
+    }
+
+    private static List<Long> parsePlayerIds(String rawInput) {
+        LinkedHashSet<Long> playerIds = new LinkedHashSet<>();
+
+        java.util.regex.Matcher logMatcher = java.util.regex.Pattern
+                .compile("id\\s*=\\s*(\\d+)")
+                .matcher(rawInput);
+        while (logMatcher.find()) {
+            playerIds.add(Long.parseLong(logMatcher.group(1)));
+        }
+        if (!playerIds.isEmpty()) {
+            return new ArrayList<>(playerIds);
+        }
+
+        for (String token : rawInput.split("[,\\s]+")) {
+            if (token.isBlank()) continue;
+            try {
+                playerIds.add(Long.parseLong(token.trim()));
+            } catch (NumberFormatException e) {
+                System.out.println("[CsvUpdater] 잘못된 player_id 형식: " + token);
+                return null;
+            }
+        }
+        return new ArrayList<>(playerIds);
     }
 }

@@ -10,6 +10,8 @@ import java.util.*;
  */
 class CsvUpdaterCsvHelper {
 
+    record CsvTable(String[] header, List<String[]> rows) {}
+
     private CsvUpdaterCsvHelper() {}
 
     /**
@@ -85,6 +87,48 @@ class CsvUpdaterCsvHelper {
     }
 
     /**
+     * CSV 전체를 읽어 헤더 + 행 목록으로 반환한다.
+     * players.csv처럼 콤마가 이름 컬럼에 없다는 전제 하에 split(limit)을 사용한다.
+     */
+    static CsvTable loadCsvTable(String filePath, int columnCount) throws IOException {
+        File file = new File(filePath);
+        if (!file.exists()) {
+            return new CsvTable(new String[columnCount], new ArrayList<>());
+        }
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8))) {
+            String headerLine = br.readLine();
+            String[] header = headerLine == null
+                    ? new String[columnCount]
+                    : padColumns(headerLine.split(",", columnCount), columnCount);
+
+            List<String[]> rows = new ArrayList<>();
+            String line;
+            while ((line = br.readLine()) != null) {
+                if (line.isBlank()) continue;
+                rows.add(padColumns(line.split(",", columnCount), columnCount));
+            }
+            return new CsvTable(header, rows);
+        }
+    }
+
+    /**
+     * CSV 전체를 덮어쓴다.
+     */
+    static void overwriteCsv(String filePath, String[] header, List<String[]> rows) throws IOException {
+        File file = new File(filePath);
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, StandardCharsets.UTF_8, false))) {
+            bw.write(joinRow(header));
+            bw.newLine();
+            for (String[] row : rows) {
+                bw.write(joinRow(row));
+                bw.newLine();
+            }
+        }
+        System.out.printf("[CsvUpdater] %s 전체 %d행 재작성됨%n", filePath, rows.size());
+    }
+
+    /**
      * CSV 값 이스케이프. 콤마, 쌍따옴표, 개행이 포함된 경우 RFC 4180 기준으로 감쌈.
      */
     static String esc(String value) {
@@ -93,5 +137,22 @@ class CsvUpdaterCsvHelper {
             return "\"" + value.replace("\"", "\"\"") + "\"";
         }
         return value;
+    }
+
+    private static String[] padColumns(String[] columns, int columnCount) {
+        String[] padded = new String[columnCount];
+        Arrays.fill(padded, "");
+        for (int i = 0; i < Math.min(columns.length, columnCount); i++) {
+            padded[i] = columns[i];
+        }
+        return padded;
+    }
+
+    private static String joinRow(String[] row) {
+        StringJoiner joiner = new StringJoiner(",");
+        for (String value : row) {
+            joiner.add(esc(value));
+        }
+        return joiner.toString();
     }
 }
