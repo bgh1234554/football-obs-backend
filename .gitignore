@@ -38,3 +38,6 @@ out/
 
 .env
 CLAUDE.md
+src/main/resources/jsonExample/
+src/main/resources/csvExample/
+.claude
