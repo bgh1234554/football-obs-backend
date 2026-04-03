@@ -46,8 +46,11 @@ public class CsvLoader {
     // index: 0=coach_id, 1=name_short, 2=name_long, 3=nationality, 4=name_ko_long, 5=name_ko_short
     private final Map<Long, String[]> coaches = new HashMap<>();
 
-    // key: "referee_name, referee_country" (fixture.referee 원본 문자열 형식 그대로), value: name_ko
+    // key: "referee_name, referee_country" 또는 "referee_name", value: name_ko
     private final Map<String, String> referees = new HashMap<>();
+
+    // key: "referee_name, referee_country" 또는 "referee_name", value: referee_country
+    private final Map<String, String> refereeCountries = new HashMap<>();
 
     // index: 0=venue_id(빈 문자열이면 미등록), 1=venue_name, 2=venue_city, 3=venue_name_ko, 4=city_name_ko
     // key: venue_name 소문자 (대소문자 무관 검색을 위해)
@@ -187,12 +190,22 @@ public class CsvLoader {
                 if (parts.length < 3) continue;
 
                 // 4. API Football 형식 "Anthony Taylor, England"로 key 재조합 (콤마+공백)
-                String key = parts[0].trim() + ", " + parts[1].trim();
+                String name = parts[0].trim();
+                String country = parts[1].trim();
                 String nameKo = parts[2].trim();
 
-                // 5. 한글 이름이 있는 경우에만 등록
+                // 5. 국가는 이름-only / 이름+국가 양쪽 키로 저장해 API 포맷 차이를 흡수
+                if (!country.isEmpty()) {
+                    refereeCountries.put(name, country);
+                    refereeCountries.put(name + ", " + country, country);
+                }
+
+                // 6. 한글 이름이 있는 경우에만 등록
                 if (!nameKo.isEmpty()) {
-                    referees.put(key, nameKo);
+                    referees.put(name, nameKo);
+                    if (!country.isEmpty()) {
+                        referees.put(name + ", " + country, nameKo);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -252,6 +265,17 @@ public class CsvLoader {
     }
 
     /**
+     * 선수 한글 풀네임(name_ko_long) 조회.
+     * players.csv에 없거나 name_ko_long 컬럼이 비어있으면 null 반환.
+     */
+    public String getPlayerNameKoLong(long playerId) {
+        String[] row = players.get(playerId);
+        if (row == null || row.length < 6) return null;
+        String v = row[5].trim();   // index 5 = name_ko_long
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
      * 팀 한글 이름(ko_name) 조회.
      * teams.csv에 없거나 ko_name 컬럼이 비어있으면 null 반환.
      * null이면 FixtureService에서 API Football 영문 팀 이름으로 fallback 처리.
@@ -271,6 +295,17 @@ public class CsvLoader {
         String[] row = coaches.get(coachId);
         if (row == null || row.length < 6) return null;
         String v = row[5].trim();   // index 5 = name_ko_short
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 감독 한글 풀네임(name_ko_long) 조회.
+     * coaches.csv에 없거나 컬럼이 비어있으면 null 반환.
+     */
+    public String getCoachNameKoLong(long coachId) {
+        String[] row = coaches.get(coachId);
+        if (row == null || row.length < 5) return null;
+        String v = row[4].trim();   // index 4 = name_ko_long
         return v.isEmpty() ? null : v;
     }
 
@@ -307,6 +342,16 @@ public class CsvLoader {
     public String getRefereeNameKo(String refereeString) {
         if (refereeString == null || refereeString.isBlank()) return null;
         return referees.get(refereeString.trim());
+    }
+
+    /**
+     * 심판 국가 조회.
+     * @param refereeString fixture.referee 원본 문자열 또는 이름-only 문자열
+     * @return 국가명. referees.csv에 없거나 country 컬럼이 비어있으면 null.
+     */
+    public String getRefereeCountry(String refereeString) {
+        if (refereeString == null || refereeString.isBlank()) return null;
+        return refereeCountries.get(refereeString.trim());
     }
 
     /**

@@ -15,9 +15,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
 
@@ -108,6 +110,7 @@ public class FixtureService {
         if (response == null || !response.isArray()) return List.of();
 
         List<InjuryDto> result = new ArrayList<>();
+        Set<String> seen = new HashSet<>();
         for (JsonNode item : response) {
             JsonNode player = item.path("player");
             JsonNode team = item.path("team");
@@ -124,14 +127,22 @@ public class FixtureService {
             long teamId = team.path("id").asLong();
             String teamApiName = team.path("name").asText();
             String teamNameKo = csvLoader.getTeamNameKo(teamId);
+            String injuryType = player.path("type").asText();
+            String injuryReason = player.path("reason").asText();
 
-            // 4. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
+            // 4. API가 동일 부상 항목을 중복 반환하는 경우가 있어 복합키로 한 번만 반영
+            String dedupeKey = teamId + "|" + playerId + "|" + injuryType + "|" + injuryReason;
+            if (!seen.add(dedupeKey)) {
+                continue;
+            }
+
+            // 5. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
             result.add(InjuryDto.builder()
                     .playerId(playerId)
                     .playerName(nameKo != null ? nameKo : apiName)
                     .playerPhotoUrl(toMediaCdnUrl(player.path("photo").asText()))
-                    .type(player.path("type").asText())     // ex. "Missing Fixture"
-                    .reason(player.path("reason").asText()) // ex. "Knee Injury"
+                    .type(injuryType)     // ex. "Missing Fixture"
+                    .reason(injuryReason) // ex. "Knee Injury"
                     .teamId(teamId)
                     .teamName(teamNameKo != null ? teamNameKo : teamApiName)
                     .teamLogo(toMediaCdnUrl(team.path("logo").asText()))
@@ -286,14 +297,17 @@ public class FixtureService {
             long playerId = e.path("player").path("id").asLong();
             String apiPlayerName = e.path("player").path("name").asText();
             String playerNameKo = csvLoader.getPlayerNameKo(playerId);
+            String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
 
             // 2. assist 선수 처리 (null 가능 — 카드 이벤트 등)
             JsonNode assistNode = e.path("assist");
             Long assistId = assistNode.path("id").isNull() ? null : assistNode.path("id").asLong();
             String assistName = null;
+            String assistNameKoLong = null;
             if (assistId != null) {
                 String assistApiName = assistNode.path("name").asText(null);
                 String assistKo = csvLoader.getPlayerNameKo(assistId);
+                assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
                 assistName = assistKo != null ? assistKo : assistApiName;
             }
 
@@ -307,8 +321,10 @@ public class FixtureService {
                     .teamId(e.path("team").path("id").asLong())
                     .playerId(playerId)
                     .playerName(playerNameKo != null ? playerNameKo : apiPlayerName)
+                    .playerNameKoLong(playerNameKoLong)
                     .assistId(assistId)
                     .assistName(assistName)
+                    .assistNameKoLong(assistNameKoLong)
                     .type(e.path("type").asText())
                     .detail(e.path("detail").asText())
                     .comments(commentsNode.isNull() ? null : commentsNode.asText())
@@ -390,8 +406,13 @@ public class FixtureService {
             long coachId = coachNode.path("id").asLong();
             String coachApiName = coachNode.path("name").asText();
             String coachKo = csvLoader.getCoachNameKo(coachId);
-            if (coachKo == null) {
+            String coachKoLong = csvLoader.getCoachNameKoLong(coachId);
+            if (coachKo == null && coachKoLong == null) {
                 log.info("[KO_COACH_NAME_NEEDED] id={}, name={}", coachId, coachApiName);
+            } else if (coachKo == null) {
+                log.info("[KO_COACH_NAME_SHORT_NEEDED] id={}, name={}", coachId, coachApiName);
+            } else if (coachKoLong == null) {
+                log.info("[KO_COACH_NAME_LONG_NEEDED] id={}, name={}", coachId, coachApiName);
             }
 
             // 3. 선발 + 벤치 선수 리스트 조립 후 DTO 반환
@@ -402,6 +423,7 @@ public class FixtureService {
                     .coach(CoachDto.builder()
                             .coachId(coachId)
                             .name(coachKo != null ? coachKo : coachApiName)
+                            .nameKoLong(coachKoLong)
                             .build())
                     .build();
         }
@@ -424,8 +446,13 @@ public class FixtureService {
             long playerId = p.path("id").asLong();
             String apiName = p.path("name").asText();
             String nameKo = csvLoader.getPlayerNameKo(playerId);
-            if (nameKo == null) {
+            String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+            if (nameKo == null && nameKoLong == null) {
                 log.info("[KO_NAME_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
+            } else if (nameKo == null) {
+                log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
+            } else if (nameKoLong == null) {
+                log.info("[KO_NAME_LONG_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
             }
 
             // 2. grid는 벤치 선수면 null → isNull() 체크 후 처리
@@ -433,6 +460,7 @@ public class FixtureService {
             result.add(PlayerDto.builder()
                     .playerId(playerId)
                     .name(nameKo != null ? nameKo : apiName)
+                    .nameKoLong(nameKoLong)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText())            // "G" | "D" | "M" | "F"
                     .grid(gridNode.isNull() ? null : gridNode.asText(null))
@@ -470,6 +498,7 @@ public class FixtureService {
                 long playerId = p.path("id").asLong();
                 String apiName = p.path("name").asText();
                 String nameKo = csvLoader.getPlayerNameKo(playerId);
+                String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
 
                 // 3. statistics는 배열이지만 항상 1개만 들어있음 → get(0) 사용
                 JsonNode stats = item.path("statistics").get(0);
@@ -490,6 +519,7 @@ public class FixtureService {
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
                         .playerName(nameKo != null ? nameKo : apiName)
+                        .playerNameKoLong(nameKoLong)
                         .playerPhotoUrl(toMediaCdnUrl(p.path("photo").asText()))
                         .side(side)
                         .minutes(nullableInt(games.path("minutes")))
@@ -574,7 +604,7 @@ public class FixtureService {
 
     /**
      * API Football의 심판 문자열("Anthony Taylor, England")을 프론트 표시용으로 변환.
-     * 한글 이름이 referees.csv에 있으면 "앤서니 테일러 (England)", 없으면 "Anthony Taylor (England)".
+     * 국가는 API 응답 우선, 없으면 referees.csv의 referee_country를 fallback으로 사용.
      * 심판 정보 자체가 없는 경기(null/blank)는 null 반환.
      */
     private String buildRefereeName(String refereeStr) {
@@ -583,17 +613,21 @@ public class FixtureService {
         // 1. ", " 기준으로 이름과 국적 분리 (API Football 형식: "Anthony Taylor, England")
         int sep = refereeStr.indexOf(", ");
         if (sep < 0) {
-            // 국적 없이 이름만 오는 경우 → 이름 그대로, 한글 조회는 원본 문자열로 시도
+            // 국적 없이 이름만 오는 경우 → CSV 국가 fallback 사용 가능
             String nameKo = csvLoader.getRefereeNameKo(refereeStr);
+            String country = csvLoader.getRefereeCountry(refereeStr);
             if (nameKo == null) {
                 log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
-                return refereeStr;
+                return country != null ? refereeStr + " (" + country + ")" : refereeStr;
             }
-            return nameKo;
+            return country != null ? nameKo + " (" + country + ")" : nameKo;
         }
 
         String name = refereeStr.substring(0, sep).trim();
         String country = refereeStr.substring(sep + 2).trim();
+        if (country.isEmpty()) {
+            country = csvLoader.getRefereeCountry(refereeStr);
+        }
 
         // 2. referees.csv에서 한글 이름 조회 (key는 원본 문자열 전체)
         String nameKo = csvLoader.getRefereeNameKo(refereeStr);
@@ -601,8 +635,9 @@ public class FixtureService {
             log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
         }
 
-        // 3. "이름 (국적)" 형식으로 조합
-        return (nameKo != null ? nameKo : name) + " (" + country + ")";
+        // 3. 국가가 있으면 "이름 (국가)", 없으면 이름만 반환
+        String displayName = nameKo != null ? nameKo : name;
+        return (country == null || country.isBlank()) ? displayName : displayName + " (" + country + ")";
     }
 
     /**

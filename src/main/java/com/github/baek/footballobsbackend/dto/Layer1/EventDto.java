@@ -18,9 +18,11 @@ public class EventDto {
 
     private long playerId;
     private String playerName;  // 한글 우선, 없으면 영문
+    private String playerNameKoLong; // 한글 풀네임. players.csv에 있을 때만 제공
 
     private Long assistId;      // null 가능 (subst이면 교체투입 선수)
     private String assistName;  // null 가능, 한글 우선
+    private String assistNameKoLong; // 한글 풀네임. players.csv에 있을 때만 제공
 
     private String type;        // "Goal" | "Card" | "subst" | "Var"
     private String detail;      // "Normal Goal" | "Penalty" | "Missed Penalty" | "Yellow Card" | "Substitution 1" | ...

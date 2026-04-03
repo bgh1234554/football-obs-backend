@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class PlayerStatsDto {
     private long playerId;
     private String playerName;      // 한글 우선, 없으면 영문
+    private String playerNameKoLong; // 한글 풀네임. players.csv에 있을 때만 제공
     private String playerPhotoUrl;  // media CDN URL
 
     private String side;            // "home" | "away"

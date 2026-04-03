@@ -33,7 +33,7 @@ public class MatchInfoDto {
     private String awayPrimaryColor;
     private String awayNumberColor;
 
-    private String refereeName;  // "앤서니 테일러 (England)" 형식. 한글 없으면 영문 이름으로 fallback
+    private String refereeName;  // 국가가 있으면 "이름 (국가)", 없으면 이름만 반환. 한글 없으면 영문 이름 fallback
 
     private String venueName;    // 경기장 한글 이름. venues.csv에 없으면 API 영문 이름 fallback
     private String venueCity;    // 경기 도시명 (API 원본 그대로)
