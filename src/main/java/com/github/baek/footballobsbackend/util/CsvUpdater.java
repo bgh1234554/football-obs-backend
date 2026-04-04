@@ -1,7 +1,10 @@
 package com.github.baek.footballobsbackend.util;
 
+import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.boot.WebApplicationType;
@@ -35,7 +38,7 @@ import com.github.baek.footballobsbackend.client.ApiFootballClient;
 public class CsvUpdater {
 
     static final String DATA_DIR = "src/main/resources/data";
-    private static final int REQUEST_DELAY_MS = 200; // Pro Plan 300 req/min 기준 (60000 / 300 = 200ms)
+    private static final int REQUEST_DELAY_MS = 300; // Pro Plan 300 req/min에서 백엔드 동시 사용 여유분 확보 (200 req/min)
     private static final int PLAYER_COLUMN_COUNT = 7;
 
     // ──────────────────────────────────────────────
@@ -64,12 +67,18 @@ public class CsvUpdater {
         try {
             if (selection.mode() == CsvUpdaterUi.Mode.PLAYERS) {
                 processSelectedPlayers(apiClient, selection.playerIds());
+            } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
+                processTeamOnly(apiClient, selection.teamId());
             } else {
                 processAll(apiClient, selection);
             }
             long endTime = System.currentTimeMillis();
-            long duration = endTime - startTime;
-            System.out.println("작업 완료 까지 "+ duration + "ms가 소요되었습니다.");
+            Duration duration = Duration.ofMillis(endTime - startTime);
+            long minutes = duration.toMinutesPart();
+            long seconds = duration.toSecondsPart();
+            long millis = duration.toMillisPart();
+            System.out.printf("작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n",
+                    minutes, seconds, millis);
         } finally {
             ctx.close();
         }
@@ -90,26 +99,42 @@ public class CsvUpdater {
         Set<Long>   existingPlayerIds    = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/players.csv");
         Set<Long>   existingCoachIds     = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/coaches.csv");
         Set<String> existingVenueNames   = CsvUpdaterCsvHelper.loadVenueNames(DATA_DIR + "/venues.csv");
+        Set<Long>   existingLeagueIds    = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/leagues.csv");
+
+        // 리그 이름 조회용 맵 (preset 목록 기반)
+        Map<Integer, String> leagueNameMap = new HashMap<>();
+        for (CsvUpdaterUi.LeagueEntry e : CsvUpdaterUi.FALL_LEAGUES) leagueNameMap.put(e.id(), e.name());
+        for (CsvUpdaterUi.LeagueEntry e : CsvUpdaterUi.SPRING_LEAGUES) leagueNameMap.put(e.id(), e.name());
 
         List<String> newTeamRows   = new ArrayList<>();
         List<String> newPlayerRows = new ArrayList<>();
         List<String> newCoachRows  = new ArrayList<>();
         List<String> newVenueRows  = new ArrayList<>();
+        List<String> newLeagueRows = new ArrayList<>();
 
         for (int leagueId : selection.leagueIds()) {
+            // leagues.csv에 없으면 신규 행 추가 (league_name_ko / logo_url 은 수동 입력)
+            if (!existingLeagueIds.contains((long) leagueId)) {
+                existingLeagueIds.add((long) leagueId);
+                String leagueName = leagueNameMap.getOrDefault(leagueId, "");
+                newLeagueRows.add(leagueId + "," + CsvUpdaterCsvHelper.esc(leagueName) + ",,");
+                System.out.printf("  [LEAGUE+] %d %s%n", leagueId, leagueName);
+            }
+
             processLeague(apiClient, leagueId, selection.season(),
                     existingTeamIds, existingPlayerIds, existingCoachIds, existingVenueNames,
                     newTeamRows, newPlayerRows, newCoachRows, newVenueRows);
         }
 
         // 각 CSV에 신규 행 append
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/leagues.csv", newLeagueRows);
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/teams.csv",   newTeamRows);
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/players.csv", newPlayerRows);
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/coaches.csv", newCoachRows);
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/venues.csv",  newVenueRows);
 
-        System.out.printf("%n[CsvUpdater] 완료 — teams:%d  players:%d  coaches:%d  venues:%d%n",
-                newTeamRows.size(), newPlayerRows.size(), newCoachRows.size(), newVenueRows.size());
+        System.out.printf("%n[CsvUpdater] 완료 — leagues:%d  teams:%d  players:%d  coaches:%d  venues:%d%n",
+                newLeagueRows.size(), newTeamRows.size(), newPlayerRows.size(), newCoachRows.size(), newVenueRows.size());
     }
 
     /**
@@ -169,6 +194,49 @@ public class CsvUpdater {
 
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/players.csv", newPlayerRows);
         System.out.printf("%n[CsvUpdater] 특정 선수 갱신 완료 — appended:%d inserted:%d%n", appendedCount, insertedCount);
+    }
+
+    /**
+     * 특정 팀 ID 하나만 지정해 팀 정보 + 선수 + 감독을 수집한다.
+     * 리그 전체를 순회하지 않고 단일 팀만 처리하고 싶을 때 사용.
+     * 이미 등록된 ID(팀/선수/감독) 또는 이름(경기장)은 건너뜀.
+     */
+    private static void processTeamOnly(ApiFootballClient apiClient, long teamId) throws Exception {
+        System.out.printf("%n[CsvUpdater] Team %d 처리 중...%n", teamId);
+
+        Set<Long>   existingTeamIds    = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/teams.csv");
+        Set<Long>   existingPlayerIds  = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/players.csv");
+        Set<Long>   existingCoachIds   = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/coaches.csv");
+        Set<String> existingVenueNames = CsvUpdaterCsvHelper.loadVenueNames(DATA_DIR + "/venues.csv");
+
+        List<String> newTeamRows   = new ArrayList<>();
+        List<String> newVenueRows  = new ArrayList<>();
+        List<String> newPlayerRows = new ArrayList<>();
+        List<String> newCoachRows  = new ArrayList<>();
+
+        // 1. 팀 정보 + 홈구장 수집 (/teams?id=X)
+        JsonNode teamResp = apiClient.getTeam(teamId);
+        if (teamResp != null && teamResp.isArray() && !teamResp.isEmpty()) {
+            collectTeamsAndVenues(teamResp, existingTeamIds, existingVenueNames, newTeamRows, newVenueRows);
+        } else {
+            System.out.printf("  [TEAM!] %d 팀 정보 응답 없음%n", teamId);
+        }
+
+        // 2. 선수 스쿼드 + 프로필 수집
+        Thread.sleep(REQUEST_DELAY_MS);
+        collectPlayersForTeam(apiClient, teamId, existingPlayerIds, newPlayerRows);
+
+        // 3. 감독 수집
+        Thread.sleep(REQUEST_DELAY_MS);
+        collectCoachForTeam(apiClient, teamId, existingCoachIds, newCoachRows);
+
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/teams.csv",   newTeamRows);
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/venues.csv",  newVenueRows);
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/players.csv", newPlayerRows);
+        CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/coaches.csv", newCoachRows);
+
+        System.out.printf("%n[CsvUpdater] Team %d 완료 — teams:%d  venues:%d  players:%d  coaches:%d%n",
+                teamId, newTeamRows.size(), newVenueRows.size(), newPlayerRows.size(), newCoachRows.size());
     }
 
     // ──────────────────────────────────────────────

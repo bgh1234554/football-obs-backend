@@ -88,6 +88,17 @@ public class ApiFootballClient {
     }
 
     /**
+     * 특정 팀 단건 정보를 가져온다. (팀 이름 + 홈구장 정보 포함)
+     * CsvUpdater Mode.TEAM 에서 teams.csv / venues.csv 업데이트에 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getTeam(long teamId) {
+        log.info("Fetching team teamId={}", teamId);
+        return fetchArray("/teams?id=" + teamId);
+    }
+
+    /**
      * 특정 팀의 현재 스쿼드(선수 목록)를 가져온다.
      * CsvUpdater에서 players.csv 초기화에 사용.
      *

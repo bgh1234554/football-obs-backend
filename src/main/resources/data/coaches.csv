@@ -23,8 +23,7 @@ coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
 5594,A. Wenger,Arsène Wenger,France,아르센 벵거,A. 벵거
 7248,M. Arteta,Mikel Arteta Amatriain,Spain,미켈 아르테타,M. 아르테타
 87,S. Parker,Scott Matthew Parker,England,스콧 파커,S. 파커
-12473,M. Jackson,Michael James Jackson,England,마이클 잭슨,"M. 잭슨
-"
+12473,M. Jackson,Michael James Jackson,England,마이클 잭슨,M. 잭슨
 5662,D. Moyes,David William Moyes,Scotland,데이비드 모이스,D. 모이스
 17953,L. Baines,Leighton Baines,England,레이튼 베인스,L. 베인스
 90,T. Frank,Thomas Frank,Denmark,토마스 프랭크,T. 프랭크
@@ -50,3 +49,55 @@ coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
 18,U. Emery,Unai Emery Etxegoien,Spain,우나이 에메리,U. 에메리
 9537,R. Di Matteo,Roberto Di Matteo,Italy,로베르토 디 마테오,R. 디 마테오
 17753,M. Beale,Michael Beale,England,마이클 빌,M. 빌
+1888,Xavi,Xavier Hernández Creus,Spain,차비,차비
+6472,H. Flick,Hans-Dieter Flick,Germany,한지 플릭,H. 플릭
+21131,R. Sanchez,Ronald Enrique Sanchez Cedeño,Ecuador,로날드 산체스,R. 산체스
+1595,D. Simeone,Diego Pablo Simeone González,Argentina,디에고 시메오네,D. 시메오네
+1582,E. Valverde,Ernesto Valverde Tejedor,Spain,에르네스토 발베르데,E. 발베르데
+1601,A. Celades,Albert Celades López,Spain,알베르트 셀라데스,A. 셀라데스
+3234,R. Baraja,Rubén Baraja Vegas,Spain,루벤 바라하,R. 바라하
+7687,C. Miranda,Carolina Miranda,Spain,카롤리나 미란다,C. 미란다
+10398,Voro,Salvador González Marco,Spain,보로,보로
+12474,C. Corberán,Carlos Corberán Vallet,Spain,카를로스 코르베란,C. 코르베란
+25638,C. Corberán,Carlos Corberán Vallet,Spain,카를로스 코르베란,C. 코르베란
+1585,Marcelino,Marcelino García Toral,Spain,마르셀리노,마르셀리노
+21,Q. Sánchez Flores,Enrique Sánchez Flores,Spain,엔리케 산체스 플로레스,Q. 산체스 플로레스
+1974,M. Almeyda,Matías Jesús Almeyda,Argentina,마티아스 알메이다,M. 알메이다
+2895,J. Caparrós,Joaquín de Jesús Caparrós Camino,Spain,호아킨 카파로스,J. 카파로스
+5391,García Pimienta,Francisco Javier García Pimienta,Spain,프란시스코 가르시아 피미엔타,F. G. 피미엔타
+18101,C. Giráldez,Claudio Giráldez González,Spain,클라우디오 히랄데스,C. 히랄데스
+25640,C. Giráldez,Claudio Giráldez González,Spain,클라우디오 히랄데스,C. 히랄데스
+6714,J. Calero,Julián Calero Fernández,Spain,훌리안 칼레로,J. 칼레로
+18639,Felipe,Felipe Miñambres Fernández,Spain,펠리페 미냠브레스,펠리페
+24600,Á. del Moral,Álvaro del Moral Galán,Spain,알바로 델 모랄,Á. 델 모랄
+25678,L. Castro,Luis Castro Sampedro,Spain,루이스 카스트로,L. 카스트로
+6757,Manolo González,José Manuel González Álvarez,Spain,마놀로 곤살레스,M. 곤살레스
+25639,Manolo González,José Manuel González Álvarez,Spain,마놀로 곤살레스,M. 곤살레스
+1584,Z. Zidane,Zinédine Zidane,France,지네딘 지단,Z. 지단
+6801,X. Alonso,Xabier Alonso Olano,Spain,사비에르 알론소,X. 알론소
+25679,Á. Arbeloa,Álvaro Arbeloa Coca,Spain,알바로 아르벨로아,Á. 아르벨로아
+45,Luis García,Luis García Plaza,Spain,루이스 가르시아,L. 가르시아
+2910,J. Muñiz,Juan Ramón López Muñiz,Spain,후안 라몬 무니스,J. 무니스
+8678,J. Cabello,Javier Antonio Cabello Rubio,Spain,하비에르 카베요,J. 카베요
+3,M. Pellegrini,Manuel Luis Pellegrini Ripamonti,Chile,마누엘 펠레그리니,M. 펠레그리니
+10400,A. Trujillo,Alexis Humberto Trujillo Oramas,Spain,알렉시스 트루히요,A. 트루히요
+1596,J. Bordalás,José Bordalás Jiménez,Spain,호세 보르달라스,J. 보르달라스
+19892,R. Reyes,Rubén Reyes Díaz,Spain,루벤 레예스,R. 레예스
+82,Míchel,Miguel Ángel Sánchez Muñoz,Spain,미첼,미첼
+2114,J. Unzué,Juan Carlos Unzué Labiano,Spain,후안 카를로스 운수에,J. 운수에
+3230,Eusebio Sacristán,Eusebio Sacristán Mena,Spain,에우세비오 사크리스탄,에우세비오 사크리스탄
+7629,Michel,Miguel Ángel Carrilero González,Spain,미겔 앙헬 카리레로,미겔
+6904,Sergio Francisco,Sergio Francisco Ramos,Spain,세르히오 프란시스코,S. 프란시스코
+25673,Pellegrino Matarazzo,Pellegrino Matarazzo,United States,펠레그리노 마타라초,P. 마타라초
+1973,V. Paunović,Veljko Paunović,Serbia,벨코 파우노비치,V. 파우노비치
+6803,R. Aguirre,Roberto Aguirre García,Spain,로베르토 아기레,R. 아기레
+21321,G. Vallori,Guillermo Juan Vallori Grimalt,Spain,기예르모 바요리,G. 바요리
+25677,G. Almada,Guillermo Almada Alves,Uruguay,기예르모 알마다,G. 알마다
+10399,P. Vasiljević,Petar Vasiljević,Serbia,페타르 바실리예비치,P. 바실리예비치
+13592,A. Lisci,Alessio Lisci,Italy,알레시오 리스키,A. 리스키
+21839,I. Pérez,Iñigo Pérez Soto,Spain,이니고 페레스,I. 페레스
+25641,I. Pérez,Iñigo Pérez Soto,Spain,이니고 페레스,I. 페레스
+13843,E. Sarabia,Eder Sarabia Armesto,Spain,에데르 사라비아,E. 사라비아
+16328,S. Mantecón,Sergio Martínez Mantecón,Spain,세르히오 만테콘,S. 만테콘
+1588,J. Arrasate,Jagoba Arrasate Elustondo,Spain,야고바 아라사테,J. 아라사테
+27832,M. Demichelis,Martín Demichelis,Argentina,마르틴 데미첼리스,M. 데미첼리스
