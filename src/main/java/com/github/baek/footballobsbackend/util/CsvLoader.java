@@ -57,6 +57,9 @@ public class CsvLoader {
     // key: venue_name 소문자 (대소문자 무관 검색을 위해)
     private final Map<String, String[]> venues = new HashMap<>();
 
+    // index: 0=league_id, 1=league_name, 2=league_name_ko, 3=logo_url
+    private final Map<Long, String[]> leagues = new HashMap<>();
+
     /**
      * Spring 빈 초기화 직후 CSV 4개를 순서대로 로딩.
      * 파일이 비어있거나 없어도 예외 없이 진행 (빈 Map 상태 유지).
@@ -69,8 +72,9 @@ public class CsvLoader {
         loadCoaches();
         loadReferees();
         loadVenues();
-        log.info("CSV loaded — players:{} teams:{} logos:{} coaches:{} referees:{} venues:{}",
-                players.size(), teams.size(), logos.size(), coaches.size(), referees.size(), venues.size());
+        loadLeagues();
+        log.info("CSV loaded — players:{} teams:{} logos:{} coaches:{} referees:{} venues:{} leagues:{}",
+                players.size(), teams.size(), logos.size(), coaches.size(), referees.size(), venues.size(), leagues.size());
     }
 
     /**
@@ -240,6 +244,30 @@ public class CsvLoader {
     }
 
     /**
+     * leagues.csv를 읽어 league_id → [league_id, league_name, league_name_ko, logo_url] 형태로 저장.
+     * logo_url은 커스텀 URL이 있으면 채워져 있고, 없으면 비어있음.
+     */
+    private void loadLeagues() {
+        try (BufferedReader reader = openCsv("data/leagues.csv")) {
+            String line;
+            boolean first = true;
+            while ((line = reader.readLine()) != null) {
+                // 1. 헤더 건너뜀
+                if (first) { first = false; continue; }
+                // 2. 빈 줄 스킵
+                if (line.isBlank()) continue;
+                // 3. 최대 4개 컬럼으로 분리 (league_id, league_name, league_name_ko, logo_url)
+                String[] parts = line.split(",", 4);
+                if (parts.length < 2) continue;
+                // 4. league_id를 키로 저장
+                leagues.put(Long.parseLong(parts[0].trim()), parts);
+            }
+        } catch (IOException e) {
+            log.warn("Could not load leagues.csv: {}", e.getMessage());
+        }
+    }
+
+    /**
      * classpath 기준으로 CSV 파일을 열어 UTF-8 인코딩으로 읽는 BufferedReader 반환.
      * 한글 이름이 포함된 CSV가 깨지지 않도록 UTF-8 명시.
      */
@@ -391,5 +419,29 @@ public class CsvLoader {
     public String[] getVenueRow(String venueName) {
         if (venueName == null || venueName.isBlank()) return null;
         return venues.get(venueName.trim().toLowerCase());
+    }
+
+    /**
+     * 리그 한글 이름(league_name_ko) 조회.
+     * leagues.csv에 없거나 컬럼이 비어있으면 null 반환.
+     * null이면 FixtureService에서 API Football 영문 리그 이름으로 fallback 처리.
+     */
+    public String getLeagueNameKo(long leagueId) {
+        String[] row = leagues.get(leagueId);
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();   // index 2 = league_name_ko
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 리그 커스텀 로고 URL 조회.
+     * leagues.csv에 등록된 커스텀 URL이 있으면 반환, 없으면 null.
+     * null이면 FixtureService에서 API Football URL을 Media CDN URL로 치환하여 사용.
+     */
+    public String getLeagueLogoUrl(long leagueId) {
+        String[] row = leagues.get(leagueId);
+        if (row == null || row.length < 4) return null;
+        String v = row[3].trim();   // index 3 = logo_url
+        return v.isEmpty() ? null : v;
     }
 }

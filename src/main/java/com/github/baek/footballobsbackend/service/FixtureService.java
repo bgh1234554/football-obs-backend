@@ -168,15 +168,33 @@ public class FixtureService {
         JsonNode goals = data.path("goals");
         JsonNode score = data.path("score");
         JsonNode status = fixture.path("status");
+        JsonNode league = data.path("league");
 
-        // 2. 경기 상태 파싱 (API short status → 내부 status 코드로 변환)
+        // 2. 리그 정보 파싱 — leagues.csv 한글 이름/커스텀 로고 우선 사용
+        long leagueId = league.path("id").asLong();
+        String leagueApiName = league.path("name").asText();
+        String leagueRound = league.path("round").asText();
+
+        String leagueNameKo = csvLoader.getLeagueNameKo(leagueId);
+        if (leagueNameKo == null) {
+            log.info("[KO_LEAGUE_NAME_NEEDED] id={}, name={}", leagueId, leagueApiName);
+        }
+        String leagueName = leagueNameKo != null ? leagueNameKo : leagueApiName;
+
+        String leagueCustomLogo = csvLoader.getLeagueLogoUrl(leagueId);
+        if (leagueCustomLogo == null) {
+            log.info("[LEAGUE_LOGO_NEEDED] id={}", leagueId);
+        }
+        String leagueLogoUrl = leagueCustomLogo != null ? leagueCustomLogo : toMediaCdnUrl(league.path("logo").asText());
+
+        // 3. 경기 상태 파싱 (API short status → 내부 status 코드로 변환)
         String shortStatus = status.path("short").asText();
         int elapsed = status.path("elapsed").asInt();
         // extra는 없을 수 있어서 null 허용
         JsonNode extraNode = status.path("extra");
         Integer extra = extraNode.isNull() ? null : extraNode.asInt();
 
-        // 3. 페널티 슛아웃 점수 추출 — score.penalty가 null인 경기(정규/연장 종료)는 null
+        // 4. 페널티 슛아웃 점수 추출 — score.penalty가 null인 경기(정규/연장 종료)는 null
         //    연장전 점수(score.extratime)는 goals.home/away에 이미 합산되어 있으므로 별도 추출 불필요
         //    API 응답: score.penalty = { home: 4, away: 1 } 또는 { home: null, away: null }
         JsonNode penaltyNode = score.path("penalty");
@@ -186,7 +204,7 @@ public class FixtureService {
         JsonNode homeTeam = teams.path("home");
         JsonNode awayTeam = teams.path("away");
 
-        // 4. 팀 이름 한글화 — teams.csv에 없으면 API 영문 이름 사용 + 로그
+        // 5. 팀 이름 한글화 — teams.csv에 없으면 API 영문 이름 사용 + 로그
         String homeApiName = homeTeam.path("name").asText();
         String homeNameKo = csvLoader.getTeamNameKo(homeTeamId);
         if (homeNameKo == null) {
@@ -199,17 +217,17 @@ public class FixtureService {
             log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", awayTeamId, awayApiName);
         }
 
-        // 5. 팀 색상 추출 — lineups[].team.colors.player 에서 홈/원정 각각 꺼냄
+        // 6. 팀 색상 추출 — lineups[].team.colors.player 에서 홈/원정 각각 꺼냄
         JsonNode[] colors = extractTeamColors(data.path("lineups"), homeTeamId, awayTeamId);
         JsonNode homeColors = colors[0];
         JsonNode awayColors = colors[1];
 
-        // 6. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
+        // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
         //    한글 이름이 있으면 "앤서니 테일러 (England)", 없으면 "Anthony Taylor (England)"
         String refereeStr = fixture.path("referee").asText(null);
         String refereeName = buildRefereeName(refereeStr);
 
-        // 7. 경기장 이름/도시 한글화
+        // 8. 경기장 이름/도시 한글화
         JsonNode venueNode = fixture.path("venue");
         String[] venueRow = csvLoader.getVenueRow(venueNode.path("name").asText(null));
         String venueName = resolveVenueName(venueNode);
@@ -217,7 +235,7 @@ public class FixtureService {
         String venueCityKo = (venueRow != null && venueRow.length > 4) ? venueRow[4].trim() : "";
         String venueCity = venueCityKo.isEmpty() ? venueNode.path("city").asText(null) : venueCityKo;
 
-        // 8. DTO 조립
+        // 9. DTO 조립
         return MatchInfoDto.builder()
                 .fixtureId(fixture.path("id").asLong())
                 .status(mapStatus(shortStatus, elapsed))
@@ -242,6 +260,9 @@ public class FixtureService {
                 .refereeName(refereeName)
                 .venueName(venueName)
                 .venueCity(venueCity)
+                .leagueName(leagueName)
+                .leagueRound(leagueRound)
+                .leagueLogoUrl(leagueLogoUrl)
                 .build();
     }
 

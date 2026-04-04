@@ -158,7 +158,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 328105,L. Miley,Lewis Miley,Midfielder,England,루이스 마일리,L. 마일리
 19163,J. Murphy,Jacob Kai Murphy,Midfielder,England,제이콥 머피,J. 머피
 394165,S. Neave,Sean Thoms Neave,Attacker,England,숀 니브,S. 니브
-423714,S. Park,Seung-Soo Park,Attacker,Korea Republic,박승수,박승수
+423714,S. Park,Park Seung-Soo,Attacker,Korea Republic,박승수,박승수
 19192,J. Ramsey,Jacob Matthew Ramsey,Midfielder,England,제이콥 램지,J. 램지
 1463,J. Willock,Joseph George Willock,Midfielder,England,조 윌록,J. 윌록
 18778,H. Barnes,Harvey Lewis Barnes,Midfielder,England,하비 반스,H. 반스
@@ -245,7 +245,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 19484,A. Armstrong,Adam James Armstrong,Attacker,England,아담 암스트롱,A. 암스트롱
 110153,T. Arokodare,Toluwalase Emmanuel Arokodare,Attacker,Nigeria,톨루 아로코다레,T. 아로코다레
 385726,E. González,Enso David González Medina,Attacker,Paraguay,엔소 곤살레스,E. 곤살레스
-24888,H. Hwang,Hee-Chan Hwang,Attacker,Korea Republic,황희찬,황희찬
+24888,H. Hwang,Hwang Hee-Chan,Attacker,Korea Republic,황희찬,황희찬
 456206,M. Mane,Mateus Bula Dami Mané,Attacker,England,마테우스 마네,M. 마네
 379678,E. Sutherland,Ethan Sutherland,Midfielder,Scotland,이선 서덜랜드,E. 서덜랜드
 296560,J. Tchatchoua,Jackson Tchatchoua,Midfielder,Cameroon,잭슨 차추아,J. 차추아
@@ -450,7 +450,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 448969,R. Heskey,Reigan Heskey,Attacker,England,레이건 헤스키,R. 헤스키
 81573,O. Marmoush,Omar Khaled Mohamed Abd Elsala Marmoush,Attacker,Egypt,오마르 마르무시,O. 마르무시
 266657,Sávio,Sávio Moreira de Oliveira,Attacker,Brazil,사비우,사비우
-19281,A. Semenyo,Antoine Serlom Semenyo,Midfielder,Ghana,앙투앙 세메뇨,A. 세메뇨
+19281,A. Semenyo,Antoine Serlom Semenyo,Midfielder,Ghana,앙투안 세메뇨,A. 세메뇨
 449076,N. Ramming,Nils Ramming,Goalkeeper,Sweden,닐스 라밍,N. 라밍
 18960,J. Steele,Jason Sean Steele,Goalkeeper,England,제이슨 스틸,J. 스틸
 129058,B. Verbruggen,Bart Verbruggen,Goalkeeper,Netherlands,바르트 페르브뤼헌,B. 페르브뤼헌
