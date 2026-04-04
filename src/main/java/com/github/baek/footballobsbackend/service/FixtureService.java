@@ -183,7 +183,7 @@ public class FixtureService {
 
         String leagueCustomLogo = csvLoader.getLeagueLogoUrl(leagueId);
         if (leagueCustomLogo == null) {
-            log.info("[LEAGUE_LOGO_NEEDED] id={}", leagueId);
+            log.info("[LEAGUE_LOGO_NEEDED] id={}, name={}", leagueId, leagueApiName);
         }
         String leagueLogoUrl = leagueCustomLogo != null ? leagueCustomLogo : toMediaCdnUrl(league.path("logo").asText());
 
@@ -243,7 +243,7 @@ public class FixtureService {
                 .extra(extra)
                 .homeTeamId(homeTeamId)
                 .homeTeamName(homeNameKo != null ? homeNameKo : homeApiName)
-                .homeTeamLogo(resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText()))
+                .homeTeamLogo(resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText(), homeApiName))
                 .homeTeamFlagUrl(csvLoader.getFlagUrl(homeTeamId))  // 클럽팀이면 null
                 .homeScore(goals.path("home").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .homePenaltyScore(homePenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
@@ -251,7 +251,7 @@ public class FixtureService {
                 .homeNumberColor(colorOf(homeColors, "number"))     // 등번호 색
                 .awayTeamId(awayTeamId)
                 .awayTeamName(awayNameKo != null ? awayNameKo : awayApiName)
-                .awayTeamLogo(resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText()))
+                .awayTeamLogo(resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText(), awayApiName))
                 .awayTeamFlagUrl(csvLoader.getFlagUrl(awayTeamId))
                 .awayScore(goals.path("away").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .awayPenaltyScore(awayPenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
@@ -315,12 +315,26 @@ public class FixtureService {
         List<EventDto> result = new ArrayList<>();
         if (!eventsNode.isArray()) return result;
 
+        // 같은 경기 내 동일 선수가 여러 이벤트에 등장해도 로그는 1회만 출력
+        Set<Long> loggedPlayerIds = new HashSet<>();
+
         for (JsonNode e : eventsNode) {
             // 1. 주 관여 선수 이름 → 한글 우선
             long playerId = e.path("player").path("id").asLong();
             String apiPlayerName = e.path("player").path("name").asText();
             String playerNameKo = csvLoader.getPlayerNameKo(playerId);
             String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+
+            // 1-1. 한글 이름 누락 로그 (선수 1인당 1회)
+            if (loggedPlayerIds.add(playerId)) {
+                if (playerNameKo == null && playerNameKoLong == null) {
+                    log.info("[KO_NAME_NEEDED] id={}, name={}", playerId, apiPlayerName);
+                } else if (playerNameKo == null) {
+                    log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}", playerId, apiPlayerName);
+                } else if (playerNameKoLong == null) {
+                    log.info("[KO_NAME_LONG_NEEDED] id={}, name={}", playerId, apiPlayerName);
+                }
+            }
 
             // 2. assist 선수 처리 (null 가능 — 카드 이벤트 등)
             JsonNode assistNode = e.path("assist");
@@ -329,8 +343,20 @@ public class FixtureService {
             String assistNameKoLong = null;
             if (assistId != null) {
                 String assistApiName = assistNode.path("name").asText(null);
+                String assistNameKo = csvLoader.getPlayerNameKo(assistId);
                 assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
                 assistName = resolvePlayerDisplayName(assistId, assistApiName);
+
+                // 2-1. 어시스트 선수 한글 이름 누락 로그 (선수 1인당 1회)
+                if (loggedPlayerIds.add(assistId)) {
+                    if (assistNameKo == null && assistNameKoLong == null) {
+                        log.info("[KO_NAME_NEEDED] id={}, name={}", assistId, assistApiName);
+                    } else if (assistNameKo == null) {
+                        log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}", assistId, assistApiName);
+                    } else if (assistNameKoLong == null) {
+                        log.info("[KO_NAME_LONG_NEEDED] id={}, name={}", assistId, assistApiName);
+                    }
+                }
             }
 
             // 3. 팀 ID를 홈 팀 ID와 비교해서 side("home"/"away") 결정
@@ -746,13 +772,13 @@ public class FixtureService {
      *
      * 로고가 아예 없으면 [LOGO_NEEDED] 로그 → logos.csv 수동 추가 필요.
      */
-    private String resolveLogoUrl(long teamId, String apiLogoUrl) {
+    private String resolveLogoUrl(long teamId, String apiLogoUrl, String teamApiName) {
         // 1. logos.csv 커스텀 로고 확인
         String custom = csvLoader.getLogoUrl(teamId);
         if (custom != null) return custom;
 
         // 2. logos.csv에 커스텀 URL 없음 → 로그 남기기
-        log.info("[LOGO_NEEDED] id={}", teamId);
+        log.info("[LOGO_NEEDED] id={}, name={}", teamId, teamApiName);
 
         // 3. API 로고가 아예 없는 경우 → null 반환
         if (apiLogoUrl == null || apiLogoUrl.isBlank()) {
