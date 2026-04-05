@@ -1,6 +1,5 @@
 package com.github.baek.footballobsbackend.util;
 
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
@@ -44,9 +43,9 @@ class CsvUpdaterUi {
             new LeagueEntry(203,  "Turkish Super Lig",                      true),
             new LeagueEntry(235,  "Russian Premier League",                 true),
             new LeagueEntry(237,  "Russian Football National League",       true),
-//            new LeagueEntry(2,    "UEFA Champions League",                  true),
-//            new LeagueEntry(3,    "UEFA Europa League",                     true),
-//            new LeagueEntry(848,  "UEFA Europa Conference League",          true),
+            new LeagueEntry(2,    "UEFA Champions League",                  true),
+            new LeagueEntry(3,    "UEFA Europa League",                     true),
+            new LeagueEntry(848,  "UEFA Europa Conference League",          true),
             new LeagueEntry(273,  "AFC Champions League Elite",             true)
 //            new LeagueEntry(18,   "AFC Champions League Two",               true),
 //            new LeagueEntry(1132, "AFC Challenge League",                   true),
@@ -69,6 +68,8 @@ class CsvUpdaterUi {
             new LeagueEntry(27,   "OFC Champions League",                           true),
             new LeagueEntry(9,    "Copa America",                                   true),
             new LeagueEntry(23,   "EAFF E-1 Football Championship",                 true),
+//            new LeagueEntry(1169, "EAFF E-1 FC - Qualification",                   true),
+//            new LeagueEntry(1188, "EAFF E-1 FC - Women",                           true),
 //            new LeagueEntry(25,   "Gulf Cup of Nations",                            true),
 //            new LeagueEntry(35,   "Asian Cup - Qualification",                      true),
 //            new LeagueEntry(36,   "AFCON - Qualification",                          true),
@@ -81,11 +82,11 @@ class CsvUpdaterUi {
             new LeagueEntry(33,   "World Cup - Qualification Oceania",              true),
             new LeagueEntry(34,   "World Cup - Qualification South America",        true),
             new LeagueEntry(37,   "World Cup - Qualification Intercontinental P/O", true),
-            new LeagueEntry(1168, "FIFA Intercontinental Cup",                      true)
-//            new LeagueEntry(1169, "EAFF E-1 FC - Qualification",                   true),
-//            new LeagueEntry(1188, "EAFF E-1 FC - Women",                           true),
+            new LeagueEntry(1168, "FIFA Intercontinental Cup",                      true),
 //            new LeagueEntry(860,  "FIFA Arab Cup",                                  true),
-//            new LeagueEntry(1,    "World Cup",                                      true)
+//            new LeagueEntry(1,    "World Cup",                                      true),
+            new LeagueEntry(11, "CONMEBOL Sudamericana", true),
+            new LeagueEntry(13, "CONMEBOL Libertadores", true)
     );
     // ─────────────────────────────────────────────────────────
 
@@ -106,71 +107,83 @@ class CsvUpdaterUi {
 
     /**
      * 콘솔 텍스트 UI로 업데이트 대상을 선택받아 반환한다.
-     * 'q' 입력 또는 빈 입력 시 null 반환 (취소).
+     * 메인 메뉴에서 'q' 입력 시에만 null 반환 (종료 신호).
+     * 서브메뉴에서 q/n/잘못된 입력 시에는 메인 메뉴로 복귀한다.
      *
+     * @param sc                CsvUpdater.main()에서 생성한 Scanner (System.in 공유 스트림)
      * @param leagueNameFetcher 미리스트에 없는 리그 ID 입력 시 API로 이름을 조회하는 함수.
      *                          null이면 이름 조회 없이 ID만 표시한다.
      */
-    static SelectionResult promptSelection(IntFunction<String> leagueNameFetcher) {
-        Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
+    static SelectionResult promptSelection(Scanner sc, IntFunction<String> leagueNameFetcher) {
+        while (true) {
+            // 1단계: 카테고리 선택
+            System.out.println();
+            System.out.println("========================================");
+            System.out.println("  CsvUpdater - 업데이트 대상 선택");
+            System.out.println("========================================");
+            System.out.println("  1. 추춘제 리그 / 대회  (season " + FALL_SEASON + ")");
+            System.out.println("  2. 춘추제 리그 / 대회  (season " + SPRING_SEASON + ")");
+            System.out.println("  3. 특정 선수(player_id) 갱신");
+            System.out.println("  4. 특정 팀(team_id) 선수/감독 갱신");
+            System.out.println("  q. 종료");
+            System.out.print("> ");
 
-        // 1단계: 카테고리 선택
-        System.out.println("========================================");
-        System.out.println("  CsvUpdater - 업데이트 대상 선택");
-        System.out.println("========================================");
-        System.out.println("  1. 추춘제 리그 / 대회  (season " + FALL_SEASON + ")");
-        System.out.println("  2. 춘추제 리그 / 대회  (season " + SPRING_SEASON + ")");
-        System.out.println("  3. 특정 선수(player_id) 갱신");
-        System.out.println("  4. 특정 팀(team_id) 선수/감독 갱신");
-        System.out.println("  q. 취소");
-        System.out.print("> ");
+            String categoryInput = sc.nextLine().trim();
+            if (categoryInput.equals("q")) return null;  // 메인 메뉴 q만 종료
+            if (categoryInput.isEmpty()) continue;
 
-        String categoryInput = sc.nextLine().trim();
-        if (categoryInput.equals("q") || categoryInput.isEmpty()) return null;
+            boolean isSpring;
+            List<LeagueEntry> entries;
+            int season;
 
-        boolean isSpring;
-        List<LeagueEntry> entries;
-        int season;
+            if (categoryInput.equals("1")) {
+                isSpring = false;
+                entries = FALL_LEAGUES;
+                season  = FALL_SEASON;
+            } else if (categoryInput.equals("2")) {
+                isSpring = true;
+                entries = SPRING_LEAGUES;
+                season  = SPRING_SEASON;
+            } else if (categoryInput.equals("3")) {
+                SelectionResult result = promptPlayerSelection(sc);
+                if (result == null) { printBackToMain(); continue; }
+                return result;
+            } else if (categoryInput.equals("4")) {
+                SelectionResult result = promptTeamSelection(sc);
+                if (result == null) { printBackToMain(); continue; }
+                return result;
+            } else {
+                System.out.println(ANSI_RED + "  잘못된 입력: " + categoryInput + ANSI_RESET);
+                continue;
+            }
 
-        if (categoryInput.equals("1")) {
-            isSpring = false;
-            entries = FALL_LEAGUES;
-            season  = FALL_SEASON;
-        } else if (categoryInput.equals("2")) {
-            isSpring = true;
-            entries = SPRING_LEAGUES;
-            season  = SPRING_SEASON;
-        } else if (categoryInput.equals("3")) {
-            return promptPlayerSelection(sc);
-        } else if (categoryInput.equals("4")) {
-            return promptTeamSelection(sc);
-        } else {
-            System.out.println("[CsvUpdater] 잘못된 입력: " + categoryInput);
-            return null;
+            // 2단계: 목록 표시 및 ID 선택
+            printLeagueList(entries, isSpring);
+            System.out.print("> ");
+
+            String idInput = sc.nextLine().trim();
+            if (idInput.equals("q") || idInput.isEmpty()) { printBackToMain(); continue; }
+
+            List<Integer> selectedIds = parseIdInput(idInput, entries, sc, leagueNameFetcher);
+            if (selectedIds == null) { printBackToMain(); continue; }
+
+            // 3단계: 실행 확인
+            System.out.println();
+            System.out.println("--- 실행 확인 ---");
+            System.out.printf("  카테고리 : %s%n", isSpring ? "춘추제 리그 / 대회" : "추춘제 리그 / 대회");
+            System.out.printf("  시즌     : %d%n", season);
+            System.out.printf("  대상 IDs : %s%n", selectedIds);
+            System.out.println();
+            System.out.print("  실행하시겠습니까? (y/n) > ");
+
+            if (!sc.nextLine().trim().equalsIgnoreCase("y")) { printBackToMain(); continue; }
+
+            return SelectionResult.forLeagues(selectedIds, season);
         }
+    }
 
-        // 2단계: 목록 표시 및 ID 선택
-        printLeagueList(entries, isSpring);
-        System.out.print("> ");
-
-        String idInput = sc.nextLine().trim();
-        if (idInput.equals("q") || idInput.isEmpty()) return null;
-
-        List<Integer> selectedIds = parseIdInput(idInput, entries, sc, leagueNameFetcher);
-        if (selectedIds == null) return null;
-
-        // 3단계: 실행 확인
-        System.out.println();
-        System.out.println("--- 실행 확인 ---");
-        System.out.printf("  카테고리 : %s%n", isSpring ? "춘추제 리그 / 대회" : "추춘제 리그 / 대회");
-        System.out.printf("  시즌     : %d%n", season);
-        System.out.printf("  대상 IDs : %s%n", selectedIds);
-        System.out.println();
-        System.out.print("  실행하시겠습니까? (y/n) > ");
-
-        if (!sc.nextLine().trim().equalsIgnoreCase("y")) return null;
-
-        return SelectionResult.forLeagues(selectedIds, season);
+    private static void printBackToMain() {
+        System.out.println(ANSI_CYAN + "  메인 화면으로 돌아갑니다." + ANSI_RESET);
     }
 
     private static void printLeagueList(List<LeagueEntry> entries, boolean isSpring) {

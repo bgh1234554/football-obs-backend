@@ -1,10 +1,12 @@
 package com.github.baek.footballobsbackend.util;
 
+import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 import org.springframework.boot.WebApplicationType;
@@ -46,10 +48,7 @@ public class CsvUpdater {
     // ──────────────────────────────────────────────
 
     public static void main(String[] args) throws Exception {
-        long startTime = System.currentTimeMillis();
-
         // 1. Spring 컨텍스트 시작 → ApiFootballClient 빈 획득
-        //    (미리스트 리그 ID 입력 시 이름 조회가 필요하므로 UI 표시 전에 먼저 시작)
         //    application.yaml + spring-dotenv(.env) 자동 로드, lazy-init으로 불필요한 빈 초기화 방지
         ConfigurableApplicationContext ctx = new SpringApplicationBuilder(FootballObsBackendApplication.class)
                 .web(WebApplicationType.NONE)
@@ -57,31 +56,32 @@ public class CsvUpdater {
                 .run(args);
         ApiFootballClient apiClient = ctx.getBean(ApiFootballClient.class);
 
-        // 2. 업데이트 대상 선택 (텍스트 UI)
-        //    미리스트에 없는 ID 입력 시 apiClient::getLeagueName 으로 이름을 조회해 경고 표시
-        CsvUpdaterUi.SelectionResult selection = CsvUpdaterUi.promptSelection(apiClient::getLeagueName);
-        if (selection == null) {
-            System.out.println("[CsvUpdater] 취소됨.");
-            ctx.close();
-            return;
-        }
+        // Scanner는 루프 전체에서 하나만 생성 (System.in은 공유 스트림이므로 재생성 금지)
+        Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
 
-        // 3. 전체 처리 후 컨텍스트 종료
         try {
-            if (selection.mode() == CsvUpdaterUi.Mode.PLAYERS) {
-                processSelectedPlayers(apiClient, selection.playerIds());
-            } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
-                processTeamOnly(apiClient, selection.teamId());
-            } else {
-                processAll(apiClient, selection);
+            // 2. 메인 루프 — q 입력 시에만 종료, 서브메뉴 취소는 메인으로 복귀
+            while (true) {
+                CsvUpdaterUi.SelectionResult selection = CsvUpdaterUi.promptSelection(sc, apiClient::getLeagueName);
+                if (selection == null) {
+                    System.out.println("[CsvUpdater] 종료합니다.");
+                    break;
+                }
+
+                // 3. 작업 실행 + 소요 시간 출력 후 메인으로 복귀
+                long startTime = System.currentTimeMillis();
+                if (selection.mode() == CsvUpdaterUi.Mode.PLAYERS) {
+                    processSelectedPlayers(apiClient, selection.playerIds());
+                } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
+                    processTeamOnly(apiClient, selection.teamId());
+                } else {
+                    processAll(apiClient, selection);
+                }
+                Duration duration = Duration.ofMillis(System.currentTimeMillis() - startTime);
+                System.out.printf("%n  작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n",
+                        duration.toMinutesPart(), duration.toSecondsPart(), duration.toMillisPart());
+                System.out.println("  메인 화면으로 돌아갑니다.");
             }
-            long endTime = System.currentTimeMillis();
-            Duration duration = Duration.ofMillis(endTime - startTime);
-            long minutes = duration.toMinutesPart();
-            long seconds = duration.toSecondsPart();
-            long millis = duration.toMillisPart();
-            System.out.printf("작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n",
-                    minutes, seconds, millis);
         } finally {
             ctx.close();
         }
