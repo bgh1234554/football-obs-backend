@@ -501,24 +501,17 @@ public class CsvUpdater {
         return first + " " + last;
     }
 
+    private static final Set<String> FAMILY_NAME_FIRST_NATIONALITIES = Set.of(
+            "japan",
+            "korea republic", "korea dpr", "south korea", "north korea",
+            "hungary",
+            "china", "china pr", "pr china", "taiwan", "chinese taipei", "hong kong", "macao",
+            "vietnam", "viet nam"
+    );
+
     private static boolean isFamilyNameFirstNationality(String nationality) {
         if (nationality == null) return false;
-        String normalized = nationality.trim();
-        return normalized.equalsIgnoreCase("Japan")
-                || normalized.equalsIgnoreCase("Korea Republic")
-                || normalized.equalsIgnoreCase("Korea DPR")
-                || normalized.equalsIgnoreCase("South Korea")
-                || normalized.equalsIgnoreCase("North Korea")
-                || normalized.equalsIgnoreCase("Hungary")
-                || normalized.equalsIgnoreCase("China")
-                || normalized.equalsIgnoreCase("China PR")
-                || normalized.equalsIgnoreCase("PR China")
-                || normalized.equalsIgnoreCase("Taiwan")
-                || normalized.equalsIgnoreCase("Chinese Taipei")
-                || normalized.equalsIgnoreCase("Hong Kong")
-                || normalized.equalsIgnoreCase("Macao")
-                || normalized.equalsIgnoreCase("Vietnam")
-                || normalized.equalsIgnoreCase("Viet Nam");
+        return FAMILY_NAME_FIRST_NATIONALITIES.contains(nationality.trim().toLowerCase());
     }
 
     private static String getColumn(String[] row, int index) {
