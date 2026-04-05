@@ -41,7 +41,7 @@ public class CsvLoader {
     // index: 0=team_id, 1=team_name, 2=ko_name
     private final Map<Long, String[]> teams = new HashMap<>();
 
-    // index: 0=team_id, 1=logo_url, 2=flag_url
+    // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=flag_url
     private final Map<Long, String[]> logos = new HashMap<>();
 
     // index: 0=coach_id, 1=name_short, 2=name_long, 3=nationality, 4=name_ko_long, 5=name_ko_short
@@ -126,7 +126,7 @@ public class CsvLoader {
     }
 
     /**
-     * logos.csv를 읽어 team_id → [team_id, logo_url, flag_url] 형태로 저장.
+     * logos.csv를 읽어 team_id → [team_id, team_name_ko, logo_url, flag_url] 형태로 저장.
      * flag_url은 국가대표팀만 있고 클럽팀은 비어있음 (getFlagUrl에서 null 처리).
      */
     private void loadLogos() {
@@ -138,8 +138,8 @@ public class CsvLoader {
                 if (first) { first = false; continue; }
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
-                // 3. 최대 3개 컬럼으로 분리 (URL에 콤마 없음)
-                String[] parts = line.split(",", 3);
+                // 3. 최대 4개 컬럼으로 분리 (team_id, team_name_ko, logo_url, flag_url)
+                String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
                 // 4. team_id를 키로 저장
                 logos.put(Long.parseLong(parts[0].trim()), parts);
@@ -367,8 +367,8 @@ public class CsvLoader {
      */
     public String getLogoUrl(long teamId) {
         String[] row = logos.get(teamId);
-        if (row == null || row.length < 2) return null;
-        String v = row[1].trim();   // index 1 = logo_url
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();   // index 2 = logo_url
         return v.isEmpty() ? null : v;
     }
 
@@ -379,8 +379,8 @@ public class CsvLoader {
      */
     public String getFlagUrl(long teamId) {
         String[] row = logos.get(teamId);
-        if (row == null || row.length < 3) return null;
-        String v = row[2].trim();   // index 2 = flag_url
+        if (row == null || row.length < 4) return null;
+        String v = row[3].trim();   // index 3 = flag_url
         return v.isEmpty() ? null : v;
     }
 

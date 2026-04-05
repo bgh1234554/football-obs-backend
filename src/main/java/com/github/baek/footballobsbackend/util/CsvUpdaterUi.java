@@ -25,7 +25,7 @@ class CsvUpdaterUi {
 
     /** 리그/대회 항목 하나. enabled=true 이면 '0 전체 실행'에 포함된다. */
     record LeagueEntry(int id, String name, boolean enabled) {}
-    enum Mode { LEAGUE, PLAYERS, TEAM }
+    enum Mode { LEAGUE, PLAYERS, TEAM, TEAM_NAMES }
 
     // ── 추춘제 대회 ────────────────────────────────
     static final int FALL_SEASON = 2025;
@@ -42,7 +42,9 @@ class CsvUpdaterUi {
             new LeagueEntry(144,  "Belgian Pro League (Jupiler Pro League)", true),
             new LeagueEntry(203,  "Turkish Super Lig",                      true),
             new LeagueEntry(235,  "Russian Premier League",                 true),
-            new LeagueEntry(237,  "Russian Football National League",       true),
+            new LeagueEntry(236,  "Russian First League",                   true),
+            new LeagueEntry(1025, "Russian Second League Division A Group Gold", true),
+            new LeagueEntry(1026, "Russian Second League Division A Group Silver", true),
             new LeagueEntry(2,    "UEFA Champions League",                  true),
             new LeagueEntry(3,    "UEFA Europa League",                     true),
             new LeagueEntry(848,  "UEFA Europa Conference League",          true),
@@ -91,17 +93,22 @@ class CsvUpdaterUi {
     // ─────────────────────────────────────────────────────────
 
     /** 처리할 리그 ID 목록 + 적용할 시즌 연도 또는 특정 선수/팀 ID */
-    record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds, long teamId) {
+    record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds, long teamId,
+                           Map<Integer, Integer> leagueSeasonMap) {
         static SelectionResult forLeagues(List<Integer> leagueIds, int season) {
-            return new SelectionResult(Mode.LEAGUE, leagueIds, season, List.of(), 0L);
+            return new SelectionResult(Mode.LEAGUE, leagueIds, season, List.of(), 0L, Map.of());
         }
 
         static SelectionResult forPlayers(List<Long> playerIds) {
-            return new SelectionResult(Mode.PLAYERS, List.of(), 0, playerIds, 0L);
+            return new SelectionResult(Mode.PLAYERS, List.of(), 0, playerIds, 0L, Map.of());
         }
 
         static SelectionResult forTeam(long teamId) {
-            return new SelectionResult(Mode.TEAM, List.of(), 0, List.of(), teamId);
+            return new SelectionResult(Mode.TEAM, List.of(), 0, List.of(), teamId, Map.of());
+        }
+
+        static SelectionResult forTeamNames(List<Integer> leagueIds, Map<Integer, Integer> leagueSeasonMap) {
+            return new SelectionResult(Mode.TEAM_NAMES, leagueIds, 0, List.of(), 0L, leagueSeasonMap);
         }
     }
 
@@ -123,8 +130,9 @@ class CsvUpdaterUi {
             System.out.println("========================================");
             System.out.println("  1. 추춘제 리그 / 대회  (season " + FALL_SEASON + ")");
             System.out.println("  2. 춘추제 리그 / 대회  (season " + SPRING_SEASON + ")");
-            System.out.println("  3. 특정 선수(player_id) 갱신");
-            System.out.println("  4. 특정 팀(team_id) 선수/감독 갱신");
+            System.out.println("  3. 대회 팀 이름 갱신   (teams.csv team_name upsert)");
+            System.out.println("  4. 특정 선수(player_id) 갱신");
+            System.out.println("  5. 특정 팀(team_id) 선수/감독 갱신");
             System.out.println("  q. 종료");
             System.out.print("> ");
 
@@ -145,10 +153,14 @@ class CsvUpdaterUi {
                 entries = SPRING_LEAGUES;
                 season  = SPRING_SEASON;
             } else if (categoryInput.equals("3")) {
-                SelectionResult result = promptPlayerSelection(sc);
+                SelectionResult result = promptTeamNamesSelection(sc, leagueNameFetcher);
                 if (result == null) { printBackToMain(); continue; }
                 return result;
             } else if (categoryInput.equals("4")) {
+                SelectionResult result = promptPlayerSelection(sc);
+                if (result == null) { printBackToMain(); continue; }
+                return result;
+            } else if (categoryInput.equals("5")) {
                 SelectionResult result = promptTeamSelection(sc);
                 if (result == null) { printBackToMain(); continue; }
                 return result;
@@ -184,6 +196,115 @@ class CsvUpdaterUi {
 
     private static void printBackToMain() {
         System.out.println(ANSI_CYAN + "  메인 화면으로 돌아갑니다." + ANSI_RESET);
+    }
+
+    /**
+     * 팀 이름 갱신 모드: 추춘제 + 춘추제 전체 목록에서 리그를 선택받는다.
+     * 리그별 시즌이 다르므로 leagueSeasonMap을 함께 반환한다.
+     */
+    private static SelectionResult promptTeamNamesSelection(Scanner sc, IntFunction<String> leagueNameFetcher) {
+        // 추춘제/춘추제 합친 목록과 ID → 시즌 맵 구성
+        List<LeagueEntry> combined = new ArrayList<>();
+        combined.addAll(FALL_LEAGUES);
+        combined.addAll(SPRING_LEAGUES);
+
+        Map<Integer, Integer> presetSeasonMap = new HashMap<>();
+        Map<Integer, String>  presetNameMap   = new HashMap<>();
+        for (LeagueEntry e : FALL_LEAGUES)   { presetSeasonMap.put(e.id(), FALL_SEASON);   presetNameMap.put(e.id(), e.name()); }
+        for (LeagueEntry e : SPRING_LEAGUES) { presetSeasonMap.put(e.id(), SPRING_SEASON); presetNameMap.put(e.id(), e.name()); }
+
+        // 목록 출력
+        System.out.println();
+        System.out.println("--- 대회 팀 이름 갱신 ---");
+        System.out.printf("  %-6s  %-46s  %s%n", "ID", "이름", "시즌");
+        System.out.println("  ------  ----------------------------------------------  ------");
+        for (LeagueEntry e : FALL_LEAGUES) {
+            System.out.printf(" %s%-6d  %-46s  %d%n", e.enabled() ? "*" : " ", e.id(), e.name(), FALL_SEASON);
+        }
+        System.out.println("  ------  ----------------------------------------------  ------");
+        for (LeagueEntry e : SPRING_LEAGUES) {
+            System.out.printf(" %s%-6d  %-46s  %d%n", e.enabled() ? "*" : " ", e.id(), e.name(), SPRING_SEASON);
+        }
+        System.out.println();
+        System.out.println("  * = 기본 목록 포함 (0 입력 시 자동 선택)");
+        System.out.println("  0 = 전체 실행 (추춘제 + 춘추제 기본 목록)");
+        System.out.println("  ID 직접 입력 (콤마 구분, 예: 39,292) — 목록 외 ID는 시즌 직접 입력");
+        System.out.println("  q = 취소");
+        System.out.print("> ");
+
+        String idInput = sc.nextLine().trim();
+        if (idInput.equals("q") || idInput.isEmpty()) return null;
+
+        // ID 파싱 + 미리스트 외 ID 처리 (시즌도 물어봄)
+        List<Integer> selectedIds = new ArrayList<>();
+        Map<Integer, Integer> leagueSeasonMap = new HashMap<>();
+        Map<Integer, String>  leagueNameMap   = new HashMap<>(presetNameMap); // 확인 화면용 이름 맵
+
+        if (idInput.equals("0")) {
+            for (LeagueEntry e : combined) {
+                if (e.enabled()) {
+                    selectedIds.add(e.id());
+                    leagueSeasonMap.put(e.id(), presetSeasonMap.get(e.id()));
+                }
+            }
+        } else {
+            Set<Integer> validIds = presetSeasonMap.keySet();
+            for (String token : idInput.split(",")) {
+                token = token.trim();
+                int id;
+                try { id = Integer.parseInt(token); }
+                catch (NumberFormatException e) {
+                    System.out.println(ANSI_RED + "  잘못된 ID 형식: " + token + ANSI_RESET);
+                    return null;
+                }
+
+                if (!validIds.contains(id)) {
+                    // 미리스트 외 ID — 이름 조회 후 경고
+                    String leagueName = null;
+                    if (leagueNameFetcher != null) {
+                        System.out.print(ANSI_CYAN + "  [API 조회 중] league id=" + id + "..." + ANSI_RESET + " ");
+                        try { leagueName = leagueNameFetcher.apply(id); } catch (Exception ex) { /* 무시 */ }
+                        System.out.println();
+                    }
+                    System.out.println();
+                    System.out.println(ANSI_YELLOW + ANSI_BOLD + "  ⚠  ID " + id + " 는 목록에 없는 리그입니다." + ANSI_RESET);
+                    if (leagueName != null) System.out.println(ANSI_YELLOW + "     리그 이름 : " + leagueName + ANSI_RESET);
+                    else System.out.println(ANSI_RED + "     리그 이름을 조회하지 못했습니다." + ANSI_RESET);
+                    System.out.print(ANSI_YELLOW + "     이 리그를 업데이트하시겠습니까? (y/n) > " + ANSI_RESET);
+                    if (!sc.nextLine().trim().equalsIgnoreCase("y")) { System.out.println("  ID " + id + " 를 건너뜁니다."); continue; }
+
+                    // 시즌 입력
+                    System.out.print("  시즌 연도를 입력하세요 (예: 2025) > ");
+                    String seasonInput = sc.nextLine().trim();
+                    try { leagueSeasonMap.put(id, Integer.parseInt(seasonInput)); }
+                    catch (NumberFormatException e) {
+                        System.out.println(ANSI_RED + "  잘못된 시즌 형식, 건너뜁니다." + ANSI_RESET);
+                        continue;
+                    }
+                    if (leagueName != null) leagueNameMap.put(id, leagueName); // API 조회 이름 저장
+                } else {
+                    leagueSeasonMap.put(id, presetSeasonMap.get(id));
+                }
+                selectedIds.add(id);
+            }
+        }
+
+        if (selectedIds.isEmpty()) { System.out.println("  선택된 ID가 없습니다."); return null; }
+
+        // 실행 확인
+        System.out.println();
+        System.out.println("--- 실행 확인 ---");
+        System.out.println("  모드     : 대회 팀 이름 갱신 (teams.csv)");
+        System.out.println("  대상     :");
+        for (int id : selectedIds) {
+            String name = leagueNameMap.getOrDefault(id, "");
+            System.out.printf("    ID %-6d - %s season %d%n", id, name, leagueSeasonMap.get(id));
+        }
+        System.out.println();
+        System.out.print("  실행하시겠습니까? (y/n) > ");
+        if (!sc.nextLine().trim().equalsIgnoreCase("y")) return null;
+
+        return SelectionResult.forTeamNames(selectedIds, leagueSeasonMap);
     }
 
     private static void printLeagueList(List<LeagueEntry> entries, boolean isSpring) {

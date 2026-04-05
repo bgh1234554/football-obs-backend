@@ -81,6 +81,8 @@ public class CsvUpdater {
                     processSelectedPlayers(apiClient, selection.playerIds());
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
                     processTeamOnly(apiClient, selection.teamId());
+                } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM_NAMES) {
+                    processTeamNamesOnly(apiClient, selection);
                 } else {
                     processAll(apiClient, selection);
                 }
@@ -289,6 +291,71 @@ public class CsvUpdater {
 
         System.out.printf("%n[CsvUpdater] Team %d 완료 — teams:%d  venues:%d  players:%d  coaches:%d%n",
                 teamId, newTeamRows.size(), newVenueRows.size(), newPlayerRows.size(), newCoachRows.size());
+    }
+
+    /**
+     * 선택된 리그의 팀 이름(team_name)만 teams.csv에 upsert한다.
+     * - 이미 있는 team_id: team_name을 API 값으로 교체, ko_name 보존, 변경 시 [TEAM_DIFF] 로그
+     * - 없는 team_id: 신규 행 추가 (ko_name 빈 값)
+     * - teams.csv만 건드리며 players/coaches/venues는 변경하지 않음
+     */
+    private static void processTeamNamesOnly(ApiFootballClient apiClient, CsvUpdaterUi.SelectionResult selection)
+            throws Exception {
+
+        // teams.csv를 통째로 로딩해 upsert 준비
+        final int TEAM_COLUMN_COUNT = 3; // team_id, team_name, ko_name
+        CsvUpdaterCsvHelper.CsvTable table =
+                CsvUpdaterCsvHelper.loadCsvTable(DATA_DIR + "/teams.csv", TEAM_COLUMN_COUNT);
+
+        // team_id → 행 인덱스 맵
+        Map<Long, Integer> idToIndex = new HashMap<>();
+        List<String[]> rows = new ArrayList<>(table.rows());
+        for (int i = 0; i < rows.size(); i++) {
+            try { idToIndex.put(Long.parseLong(rows.get(i)[0].trim()), i); }
+            catch (NumberFormatException ignored) {}
+        }
+
+        int updatedCount = 0;
+        int insertedCount = 0;
+
+        for (int leagueId : selection.leagueIds()) {
+            int season = selection.leagueSeasonMap().getOrDefault(leagueId, CsvUpdaterUi.FALL_SEASON);
+            System.out.printf("%n[CsvUpdater] League %d (season %d) 팀 이름 조회 중...%n", leagueId, season);
+
+            JsonNode teamsResp = apiClient.getTeams(leagueId, season);
+            if (teamsResp == null || !teamsResp.isArray() || teamsResp.isEmpty()) {
+                System.out.printf("  응답 없음 또는 빈 배열, 건너뜀%n");
+                continue;
+            }
+
+            for (JsonNode entry : teamsResp) {
+                JsonNode team   = entry.path("team");
+                long teamId     = team.path("id").asLong();
+                String apiName  = team.path("name").asText("");
+                Integer existingIdx = idToIndex.get(teamId);
+
+                if (existingIdx != null) {
+                    String csvName = rows.get(existingIdx)[1].trim();
+                    if (!csvName.equals(apiName) && !apiName.isBlank()) {
+                        System.out.printf(ANSI_MAGENTA + ANSI_BOLD
+                                + "  [TEAM_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET, teamId, csvName, apiName);
+                        // team_name 갱신, ko_name 보존
+                        String koName = rows.get(existingIdx)[2];
+                        rows.set(existingIdx, new String[]{String.valueOf(teamId), apiName, koName});
+                        updatedCount++;
+                    }
+                } else {
+                    // 신규 팀
+                    rows.add(new String[]{String.valueOf(teamId), apiName, ""});
+                    idToIndex.put(teamId, rows.size() - 1);
+                    insertedCount++;
+                    System.out.printf("  [TEAM+] %d %s%n", teamId, apiName);
+                }
+            }
+        }
+
+        CsvUpdaterCsvHelper.overwriteCsv(DATA_DIR + "/teams.csv", table.header(), rows);
+        System.out.printf("%n[CsvUpdater] 팀 이름 갱신 완료 — updated:%d inserted:%d%n", updatedCount, insertedCount);
     }
 
     // ──────────────────────────────────────────────
