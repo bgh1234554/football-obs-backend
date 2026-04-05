@@ -121,6 +121,19 @@ public class ApiFootballClient {
     }
 
     /**
+     * 특정 리그의 이름을 가져온다.
+     * CsvUpdater에서 미리스트 리그 ID 입력 시 이름 확인에 사용.
+     *
+     * @return 리그 이름 문자열. 응답 없으면 null.
+     */
+    public String getLeagueName(int leagueId) {
+        log.info("Fetching league name leagueId={}", leagueId);
+        JsonNode arr = fetchArray("/leagues?id=" + leagueId);
+        if (arr == null || arr.isEmpty()) return null;
+        return arr.get(0).path("league").path("name").asText(null);
+    }
+
+    /**
      * 특정 팀의 현재 감독 정보를 가져온다.
      * CsvUpdater에서 coaches.csv 초기화에 사용.
      *

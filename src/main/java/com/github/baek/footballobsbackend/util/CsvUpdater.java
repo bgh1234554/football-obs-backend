@@ -46,22 +46,25 @@ public class CsvUpdater {
     // ──────────────────────────────────────────────
 
     public static void main(String[] args) throws Exception {
-        // 1. 업데이트 대상 선택 (텍스트 UI)
-        CsvUpdaterUi.SelectionResult selection = CsvUpdaterUi.promptSelection();
-        if (selection == null) {
-            System.out.println("[CsvUpdater] 취소됨.");
-            return;
-        }
-
         long startTime = System.currentTimeMillis();
 
-        // 2. Spring 컨텍스트 시작 → ApiFootballClient 빈 획득
+        // 1. Spring 컨텍스트 시작 → ApiFootballClient 빈 획득
+        //    (미리스트 리그 ID 입력 시 이름 조회가 필요하므로 UI 표시 전에 먼저 시작)
         //    application.yaml + spring-dotenv(.env) 자동 로드, lazy-init으로 불필요한 빈 초기화 방지
         ConfigurableApplicationContext ctx = new SpringApplicationBuilder(FootballObsBackendApplication.class)
                 .web(WebApplicationType.NONE)
                 .properties("spring.main.lazy-initialization=true")
                 .run(args);
         ApiFootballClient apiClient = ctx.getBean(ApiFootballClient.class);
+
+        // 2. 업데이트 대상 선택 (텍스트 UI)
+        //    미리스트에 없는 ID 입력 시 apiClient::getLeagueName 으로 이름을 조회해 경고 표시
+        CsvUpdaterUi.SelectionResult selection = CsvUpdaterUi.promptSelection(apiClient::getLeagueName);
+        if (selection == null) {
+            System.out.println("[CsvUpdater] 취소됨.");
+            ctx.close();
+            return;
+        }
 
         // 3. 전체 처리 후 컨텍스트 종료
         try {

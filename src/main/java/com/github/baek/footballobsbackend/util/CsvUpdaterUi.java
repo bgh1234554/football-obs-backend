@@ -2,6 +2,7 @@ package com.github.baek.footballobsbackend.util;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 
 /**
@@ -15,6 +16,13 @@ import java.util.stream.Collectors;
  *   false = 목록에는 보이지만 0 입력 시 제외 (커스텀 선택 전용)
  */
 class CsvUpdaterUi {
+
+    // ANSI 색상 코드
+    private static final String ANSI_RESET  = "\u001B[0m";
+    private static final String ANSI_BOLD   = "\u001B[1m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
+    private static final String ANSI_RED    = "\u001B[31m";
+    private static final String ANSI_CYAN   = "\u001B[36m";
 
     /** 리그/대회 항목 하나. enabled=true 이면 '0 전체 실행'에 포함된다. */
     record LeagueEntry(int id, String name, boolean enabled) {}
@@ -99,8 +107,11 @@ class CsvUpdaterUi {
     /**
      * 콘솔 텍스트 UI로 업데이트 대상을 선택받아 반환한다.
      * 'q' 입력 또는 빈 입력 시 null 반환 (취소).
+     *
+     * @param leagueNameFetcher 미리스트에 없는 리그 ID 입력 시 API로 이름을 조회하는 함수.
+     *                          null이면 이름 조회 없이 ID만 표시한다.
      */
-    static SelectionResult promptSelection() {
+    static SelectionResult promptSelection(IntFunction<String> leagueNameFetcher) {
         Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
 
         // 1단계: 카테고리 선택
@@ -108,7 +119,7 @@ class CsvUpdaterUi {
         System.out.println("  CsvUpdater - 업데이트 대상 선택");
         System.out.println("========================================");
         System.out.println("  1. 추춘제 리그 / 대회  (season " + FALL_SEASON + ")");
-        System.out.println("  2. 춘추제 리그 / 대회               (season " + SPRING_SEASON + ")");
+        System.out.println("  2. 춘추제 리그 / 대회  (season " + SPRING_SEASON + ")");
         System.out.println("  3. 특정 선수(player_id) 갱신");
         System.out.println("  4. 특정 팀(team_id) 선수/감독 갱신");
         System.out.println("  q. 취소");
@@ -145,7 +156,7 @@ class CsvUpdaterUi {
         String idInput = sc.nextLine().trim();
         if (idInput.equals("q") || idInput.isEmpty()) return null;
 
-        List<Integer> selectedIds = parseIdInput(idInput, entries);
+        List<Integer> selectedIds = parseIdInput(idInput, entries, sc, leagueNameFetcher);
         if (selectedIds == null) return null;
 
         // 3단계: 실행 확인
@@ -174,16 +185,35 @@ class CsvUpdaterUi {
         System.out.println();
         System.out.println("  * = 기본 목록 포함 (0 입력 시 자동 선택)");
         System.out.println("  0 = 기본 목록 전체 실행");
-        System.out.println("  ID 직접 입력 (콤마 구분, 예: 39,78,140) — 목록에 없는 ID는 거부됨");
+        System.out.println("  ID 직접 입력 (콤마 구분, 예: 39,78,140) — 목록에 없는 ID는 확인 후 허용");
         System.out.println("  q = 취소");
     }
 
     /**
      * ID 입력 문자열을 파싱한다.
      * "0"이면 enabled=true 항목 전체를 반환하고, 그 외엔 콤마 구분 ID를 파싱한다.
-     * 목록에 없는 ID가 하나라도 있으면 null 반환 (취소).
+     * 목록에 없는 ID는 API로 이름을 조회한 뒤 경고를 표시하고 y/n 개별 확인한다.
+     *
+     * @param idInput           사용자가 입력한 문자열 (예: "39,78" 또는 "0")
+     * @param entries           현재 카테고리의 리그 목록 (preset에 있는 ID 집합 판별에 사용)
+     * @param sc                사용자 입력을 읽는 Scanner.
+     *                          미리스트 외 ID 발견 시 "계속할까요?" 확인 입력을 받아야 해서 추가됨.
+     *                          기존에는 이 메서드 안에서 I/O가 없었으므로 Scanner가 필요 없었음.
+     * @param leagueNameFetcher int(leagueId) -> String(리그 이름) 함수.
+     *                          미리스트에 없는 ID가 들어왔을 때 API Football에서 리그 이름을 조회하는 데 쓰임.
+     *                          구체적으로는 CsvUpdater.main()에서 apiClient::getLeagueName 을 넘겨준다.
+     *                          IntFunction<String>은 Java 표준 함수형 인터페이스로,
+     *                          "int 하나를 받아서 String을 돌려주는 함수"를 뜻한다.
+     *                          이렇게 함수를 파라미터로 넘기면 UI 클래스(CsvUpdaterUi)가
+     *                          ApiFootballClient를 직접 import하지 않아도 되고,
+     *                          테스트할 때도 가짜 함수로 쉽게 대체할 수 있다.
      */
-    private static List<Integer> parseIdInput(String idInput, List<LeagueEntry> entries) {
+    private static List<Integer> parseIdInput(
+            String idInput,
+            List<LeagueEntry> entries,
+            Scanner sc,
+            IntFunction<String> leagueNameFetcher) {
+
         if (idInput.equals("0")) {
             return entries.stream()
                     .filter(LeagueEntry::enabled)
@@ -202,13 +232,45 @@ class CsvUpdaterUi {
             try {
                 id = Integer.parseInt(token);
             } catch (NumberFormatException e) {
-                System.out.println("[CsvUpdater] 잘못된 ID 형식: " + token);
+                System.out.println(ANSI_RED + "[CsvUpdater] 잘못된 ID 형식: " + token + ANSI_RESET);
                 return null;
             }
+
             if (!validIds.contains(id)) {
-                System.out.printf("[CsvUpdater] ID %d 는 목록에 없습니다. 취소합니다.%n", id);
-                return null;
+                // 미리스트에 없는 ID — API로 이름 조회 후 경고
+                // leagueNameFetcher.apply(id) 가 실제로 ApiFootballClient.getLeagueName(id)를 호출한다
+                String leagueName = null;
+                if (leagueNameFetcher != null) {
+                    System.out.print(ANSI_CYAN + "  [API 조회 중] league id=" + id + "..." + ANSI_RESET + " ");
+                    try {
+                        leagueName = leagueNameFetcher.apply(id);
+                    } catch (Exception ex) {
+                        // 네트워크 오류 등 조회 실패 시 이름 없이 경고만 표시하고 계속 진행
+                    }
+                    System.out.println();
+                }
+
+                System.out.println();
+                System.out.println(ANSI_YELLOW + ANSI_BOLD
+                        + "  ⚠  ID " + id + " 는 목록에 없는 리그입니다." + ANSI_RESET);
+                if (leagueName != null) {
+                    System.out.println(ANSI_YELLOW
+                            + "     리그 이름 : " + leagueName + ANSI_RESET);
+                } else {
+                    System.out.println(ANSI_RED
+                            + "     리그 이름을 조회하지 못했습니다. (ID가 유효하지 않을 수 있습니다)" + ANSI_RESET);
+                }
+                System.out.print(ANSI_YELLOW + "     이 리그를 업데이트하시겠습니까? (y/n) > " + ANSI_RESET);
+
+                String answer = sc.nextLine().trim();
+                System.out.println();
+                if (!answer.equalsIgnoreCase("y")) {
+                    // n 입력 시 이 ID만 건너뜀 — 나머지 ID는 계속 처리
+                    System.out.println("  ID " + id + " 를 건너뜁니다.");
+                    continue;
+                }
             }
+
             selectedIds.add(id);
         }
 
