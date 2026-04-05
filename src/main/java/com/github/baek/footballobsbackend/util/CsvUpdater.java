@@ -17,8 +17,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.FootballObsBackendApplication;
 import com.github.baek.footballobsbackend.client.ApiFootballClient;
 
-import static com.github.baek.footballobsbackend.util.CsvUpdaterUi.*;
-
 /**
  * players.csv, coaches.csv, teams.csv, venues.csv를 자동으로 업데이트하는 독립 실행 유틸.
  * Spring 빈이 아님 — 로컬에서 main()으로 직접 실행.
@@ -44,6 +42,13 @@ public class CsvUpdater {
     static final String DATA_DIR = "src/main/resources/data";
     private static final int REQUEST_DELAY_MS = 300; // Pro Plan 300 req/min에서 백엔드 동시 사용 여유분 확보 (200 req/min)
     private static final int PLAYER_COLUMN_COUNT = 7;
+
+    // ANSI 색상 — IntelliJ 터미널에서 색상 표시됨
+    private static final String ANSI_RESET   = "\u001B[0m";
+    private static final String ANSI_BOLD    = "\u001B[1m";
+    private static final String ANSI_YELLOW  = "\u001B[33m";
+    private static final String ANSI_CYAN    = "\u001B[36m";
+    private static final String ANSI_MAGENTA = "\u001B[35m"; // DIFF 로그 통일 색상
 
     // ──────────────────────────────────────────────
     // 진입점
@@ -106,6 +111,14 @@ public class CsvUpdater {
         Set<String> existingVenueNames   = CsvUpdaterCsvHelper.loadVenueNames(DATA_DIR + "/venues.csv");
         Set<Long>   existingLeagueIds    = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/leagues.csv");
 
+        // diff 비교용 맵 (기존 CSV 이름 vs API 이름)
+        // teams.csv: col 1 = team_name (splitLimit 3)
+        // coaches.csv: col 1 = name_short (splitLimit 6)
+        // venues.csv: key=col 1(venue_name), value=col 2(venue_city) (splitLimit 5)
+        Map<Long, String>   existingTeamNameMap   = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 3);
+        Map<Long, String>   existingCoachNameMap  = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/coaches.csv", 1, 6);
+        Map<String, String> existingVenueCityMap  = CsvUpdaterCsvHelper.loadKeyToColumn(DATA_DIR + "/venues.csv", 1, 2, 5);
+
         // 리그 이름 조회용 맵 (preset 목록 기반)
         Map<Integer, String> leagueNameMap = new HashMap<>();
         for (CsvUpdaterUi.LeagueEntry e : CsvUpdaterUi.FALL_LEAGUES) leagueNameMap.put(e.id(), e.name());
@@ -128,6 +141,7 @@ public class CsvUpdater {
 
             processLeague(apiClient, leagueId, selection.season(),
                     existingTeamIds, existingPlayerIds, existingCoachIds, existingVenueNames,
+                    existingTeamNameMap, existingCoachNameMap, existingVenueCityMap,
                     newTeamRows, newPlayerRows, newCoachRows, newVenueRows);
         }
 
@@ -185,7 +199,7 @@ public class CsvUpdater {
                 // 기존 값이 있으면 유지 — 수동 수정값(한국 선수 표기 등) 보존
                 // API 값과 다를 때만 참고용 로그 출력
                 if (!csvNameShort.equals(apiNameShort) && !apiNameShort.isBlank()) {
-                    System.out.printf(ANSI_RED+ANSI_BOLD+"  [NAME_DIFF] %d  csv=%s  api=%s%n"+ANSI_RESET, playerId, csvNameShort, apiNameShort);
+                    System.out.printf(ANSI_MAGENTA+ANSI_BOLD+"  [NAME_DIFF] %d  csv=%s  api=%s%n"+ANSI_RESET, playerId, csvNameShort, apiNameShort);
                 }
                 nameShort = csvNameShort;
             } else {
@@ -242,6 +256,10 @@ public class CsvUpdater {
         Set<Long>   existingCoachIds   = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/coaches.csv");
         Set<String> existingVenueNames = CsvUpdaterCsvHelper.loadVenueNames(DATA_DIR + "/venues.csv");
 
+        Map<Long, String>   existingTeamNameMap  = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 3);
+        Map<Long, String>   existingCoachNameMap = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/coaches.csv", 1, 6);
+        Map<String, String> existingVenueCityMap = CsvUpdaterCsvHelper.loadKeyToColumn(DATA_DIR + "/venues.csv", 1, 2, 5);
+
         List<String> newTeamRows   = new ArrayList<>();
         List<String> newVenueRows  = new ArrayList<>();
         List<String> newPlayerRows = new ArrayList<>();
@@ -250,7 +268,8 @@ public class CsvUpdater {
         // 1. 팀 정보 + 홈구장 수집 (/teams?id=X)
         JsonNode teamResp = apiClient.getTeam(teamId);
         if (teamResp != null && teamResp.isArray() && !teamResp.isEmpty()) {
-            collectTeamsAndVenues(teamResp, existingTeamIds, existingVenueNames, newTeamRows, newVenueRows);
+            collectTeamsAndVenues(teamResp, existingTeamIds, existingVenueNames,
+                    existingTeamNameMap, existingVenueCityMap, newTeamRows, newVenueRows);
         } else {
             System.out.printf("  [TEAM!] %d 팀 정보 응답 없음%n", teamId);
         }
@@ -261,7 +280,7 @@ public class CsvUpdater {
 
         // 3. 감독 수집
         Thread.sleep(REQUEST_DELAY_MS);
-        collectCoachForTeam(apiClient, teamId, existingCoachIds, newCoachRows);
+        collectCoachForTeam(apiClient, teamId, existingCoachIds, existingCoachNameMap, newCoachRows);
 
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/teams.csv",   newTeamRows);
         CsvUpdaterCsvHelper.appendRows(DATA_DIR + "/venues.csv",  newVenueRows);
@@ -285,6 +304,8 @@ public class CsvUpdater {
             ApiFootballClient apiClient, int leagueId, int season,
             Set<Long> existingTeamIds, Set<Long> existingPlayerIds, Set<Long> existingCoachIds,
             Set<String> existingVenueNames,
+            Map<Long, String> existingTeamNameMap, Map<Long, String> existingCoachNameMap,
+            Map<String, String> existingVenueCityMap,
             List<String> newTeamRows, List<String> newPlayerRows,
             List<String> newCoachRows, List<String> newVenueRows) throws InterruptedException {
 
@@ -302,14 +323,15 @@ public class CsvUpdater {
         }
 
         List<Long> teamIds = collectTeamsAndVenues(
-                teamsResp, existingTeamIds, existingVenueNames, newTeamRows, newVenueRows);
+                teamsResp, existingTeamIds, existingVenueNames,
+                existingTeamNameMap, existingVenueCityMap, newTeamRows, newVenueRows);
 
         // 2. 팀별 선수 + 감독 조회
         for (long teamId : teamIds) {
             Thread.sleep(REQUEST_DELAY_MS);
             collectPlayersForTeam(apiClient, teamId, existingPlayerIds, newPlayerRows);
             Thread.sleep(REQUEST_DELAY_MS);
-            collectCoachForTeam(apiClient, teamId, existingCoachIds, newCoachRows);
+            collectCoachForTeam(apiClient, teamId, existingCoachIds, existingCoachNameMap, newCoachRows);
         }
     }
 
@@ -320,37 +342,58 @@ public class CsvUpdater {
     private static List<Long> collectTeamsAndVenues(
             JsonNode teamsResp,
             Set<Long> existingTeamIds, Set<String> existingVenueNames,
+            Map<Long, String> existingTeamNameMap, Map<String, String> existingVenueCityMap,
             List<String> newTeamRows, List<String> newVenueRows) {
 
         List<Long> teamIds = new ArrayList<>();
 
         for (JsonNode entry : teamsResp) {
             // 팀
-            JsonNode team     = entry.path("team");
-            long teamId       = team.path("id").asLong();
-            String teamName   = team.path("name").asText("");
+            JsonNode team   = entry.path("team");
+            long teamId     = team.path("id").asLong();
+            String teamName = team.path("name").asText("");
 
             if (!existingTeamIds.contains(teamId)) {
                 existingTeamIds.add(teamId);
                 // columns: team_id, team_name, ko_name(수동)
                 newTeamRows.add(teamId + "," + CsvUpdaterCsvHelper.esc(teamName) + ",");
                 System.out.printf("  [TEAM+] %d %s%n", teamId, teamName);
+            } else {
+                // 이미 있는 팀 — 이름이 다르면 diff 로그
+                String csvName = existingTeamNameMap.get(teamId);
+                if (csvName != null && !csvName.equals(teamName) && !teamName.isBlank()) {
+                    System.out.printf(ANSI_MAGENTA + ANSI_BOLD
+                            + "  [TEAM_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET,
+                            teamId, csvName, teamName);
+                }
             }
             teamIds.add(teamId);
 
             // 홈구장 — 이름 기준 중복 체크
-            JsonNode venue    = entry.path("venue");
-            String venueName  = venue.path("name").asText(null);
-            if (venueName != null && !existingVenueNames.contains(venueName.toLowerCase())) {
-                existingVenueNames.add(venueName.toLowerCase());
+            JsonNode venue   = entry.path("venue");
+            String venueName = venue.path("name").asText(null);
+            if (venueName == null) continue;
+
+            String venueKey = venueName.toLowerCase();
+            if (!existingVenueNames.contains(venueKey)) {
+                existingVenueNames.add(venueKey);
                 JsonNode venueIdNode = venue.path("id");
                 String venueIdStr    = (venueIdNode.isNull() || venueIdNode.isMissingNode())
                         ? "" : String.valueOf(venueIdNode.asLong());
-                String venueCity     = venue.path("city").asText("");
+                String venueCity = venue.path("city").asText("");
                 // columns: venue_id, venue_name, venue_city, venue_name_ko(수동), city_name_ko(수동)
                 newVenueRows.add(venueIdStr + "," + CsvUpdaterCsvHelper.esc(venueName)
                         + "," + CsvUpdaterCsvHelper.esc(venueCity) + ",,");
                 System.out.printf("  [VENUE+] %s (%s)%n", venueName, venueCity);
+            } else {
+                // 이미 있는 구장 — 도시가 다르면 diff 로그
+                String csvCity  = existingVenueCityMap.get(venueKey);
+                String apiCity  = venue.path("city").asText("");
+                if (csvCity != null && !csvCity.equals(apiCity) && !apiCity.isBlank()) {
+                    System.out.printf(ANSI_MAGENTA + ANSI_BOLD
+                            + "  [VENUE_DIFF] %s  csv_city=%s  api_city=%s%n" + ANSI_RESET,
+                            venueName, csvCity, apiCity);
+                }
             }
         }
 
@@ -409,18 +452,29 @@ public class CsvUpdater {
      */
     private static void collectCoachForTeam(
             ApiFootballClient apiClient, long teamId,
-            Set<Long> existingCoachIds, List<String> newCoachRows) {
+            Set<Long> existingCoachIds, Map<Long, String> existingCoachNameMap,
+            List<String> newCoachRows) {
 
         JsonNode coachResp = apiClient.getCoach(teamId);
         if (coachResp == null || !coachResp.isArray()) return;
 
         for (JsonNode coach : coachResp) {
-            long coachId = coach.path("id").asLong();
-            if (existingCoachIds.contains(coachId)) continue;
+            long coachId     = coach.path("id").asLong();
+            String nameShort = coach.path("name").asText("");
+            String nameLong  = (coach.path("firstname").asText("") + " " + coach.path("lastname").asText("")).trim();
+
+            if (existingCoachIds.contains(coachId)) {
+                // 이미 있는 감독 — name_short가 다르면 diff 로그
+                String csvName = existingCoachNameMap.get(coachId);
+                if (csvName != null && !csvName.equals(nameShort) && !nameShort.isBlank()) {
+                    System.out.printf(ANSI_MAGENTA + ANSI_BOLD
+                            + "  [COACH_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET,
+                            coachId, csvName, nameShort);
+                }
+                continue;
+            }
             existingCoachIds.add(coachId);
 
-            String nameShort   = coach.path("name").asText("");
-            String nameLong    = (coach.path("firstname").asText("") + " " + coach.path("lastname").asText("")).trim();
             String nationality = coach.path("nationality").asText("");
             // columns: coach_id, name_short, name_long, nationality, name_ko_long(수동), name_ko_short(수동)
             newCoachRows.add(coachId + "," + CsvUpdaterCsvHelper.esc(nameShort)

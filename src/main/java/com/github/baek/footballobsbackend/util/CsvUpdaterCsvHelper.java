@@ -129,6 +129,54 @@ class CsvUpdaterCsvHelper {
     }
 
     /**
+     * CSV 첫 번째 컬럼(Long id) → 지정 컬럼 값 Map 로드. 헤더 건너뜀.
+     * teams.csv(team_name), coaches.csv(name_short) 등에서 diff 비교용으로 사용.
+     */
+    static Map<Long, String> loadIdToColumn(String filePath, int valueColumnIdx, int splitLimit) throws IOException {
+        Map<Long, String> map = new HashMap<>();
+        File file = new File(filePath);
+        if (!file.exists()) return map;
+        try (BufferedReader br = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8))) {
+            String line;
+            boolean first = true;
+            while ((line = br.readLine()) != null) {
+                if (first) { first = false; continue; }
+                if (line.isBlank()) continue;
+                String[] parts = line.split(",", splitLimit);
+                if (parts.length > valueColumnIdx) {
+                    try { map.put(Long.parseLong(parts[0].trim()), parts[valueColumnIdx].trim()); }
+                    catch (NumberFormatException ignored) {}
+                }
+            }
+        }
+        return map;
+    }
+
+    /**
+     * CSV 지정 컬럼(소문자 key) → 다른 컬럼 값 Map 로드. 헤더 건너뜀.
+     * venues.csv에서 venue_name(소문자) → venue_city 비교용으로 사용.
+     */
+    static Map<String, String> loadKeyToColumn(
+            String filePath, int keyColumnIdx, int valueColumnIdx, int splitLimit) throws IOException {
+        Map<String, String> map = new HashMap<>();
+        File file = new File(filePath);
+        if (!file.exists()) return map;
+        try (BufferedReader br = new BufferedReader(new FileReader(file, StandardCharsets.UTF_8))) {
+            String line;
+            boolean first = true;
+            while ((line = br.readLine()) != null) {
+                if (first) { first = false; continue; }
+                if (line.isBlank()) continue;
+                String[] parts = line.split(",", splitLimit);
+                if (parts.length > Math.max(keyColumnIdx, valueColumnIdx)) {
+                    map.put(parts[keyColumnIdx].trim().toLowerCase(), parts[valueColumnIdx].trim());
+                }
+            }
+        }
+        return map;
+    }
+
+    /**
      * CSV 값 이스케이프. 콤마, 쌍따옴표, 개행이 포함된 경우 RFC 4180 기준으로 감쌈.
      */
     static String esc(String value) {
