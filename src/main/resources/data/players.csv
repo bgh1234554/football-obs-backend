@@ -90,7 +90,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 31354,G. Vicario,Guglielmo Vicario,Goalkeeper,Italy,굴리엘모 비카리오,G. 비카리오
 47519,P. Porro,Pedro Porro,Defender,Spain,페드로 포로,P. 포로
 25287,K. Danso,Kevin Danso,Defender,Austria,케빈 단소,K. 단소
-162498,R. Dragusin,Radu Drăgușin,Defender,Romania,라두 드러구신,R. 드러구신
+162498,R. Drăgușin,Radu Drăgușin,Defender,Romania,라두 드러구신,R. 드러구신
 19235,D. Spence,Djed Spence,Defender,England,제드 스펜스,D. 스펜스
 414455,Souza,Souza,Midfielder,Brazil,소자,소자
 328089,A. Gray,Archie Gray,Midfielder,England,아치 그레이,A. 그레이
@@ -312,8 +312,8 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 36927,Z. Flemming,Zian Flemming,Attacker,Netherlands,지안 플레밍,Z. 플레밍
 575,Florentino,Florentino Ibrain Morris Luís,Midfielder,Portugal,플로렌티누 루이스,플로렌티누
 20303,J. Laurent,Joshua Ishaele Jacob-Heron Hunt-Laurent,Midfielder,England,조시 로런트,J. 로런트
-557387,K. M. Brown,Kian McMahon-Brown,Attacker,Ireland,키언 맥마흔브라운,K. M. 맥마흔브라운
-180560,H. Mejbri,Hannibal Mejbri,Midfielder,Tunisia,한니발,H. 한니발
+557387,K. M. Brown,Kian McMahon-Brown,Attacker,Ireland,키언 맥마흔브라운,K. 맥마흔브라운
+180560,H. Mejbri,Hannibal Mejbri,Midfielder,Tunisia,한니발,한니발 M.
 456637,O. Pimlott,Oliver Pimlott,Midfielder,England,올리버 핌럿,O. 핌럿
 270508,L. Ugochukwu,Lesley Chimuanya Ugochukwu,Midfielder,France,레슬리 우고추쿠,L. 우고추쿠
 2938,J. Ward-Prowse,James Michael Edward Ward-Prowse,Midfielder,England,제임스 워드프라우스,J. 워드프라우스
@@ -745,7 +745,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 491250,J. Torrents,Jofre Torrents Salvat,Defender,Spain,조프레 토렌츠,J. 토렌츠
 433396,M. Bernal,Marc Bernal Casas,Midfielder,Spain,마르크 베르날,M. 베르날
 329728,M. Casadó,Marc Casadó Torras,Midfielder,Spain,마르크 카사도,M. 카사도
-340626,Fermín,Fermín López Martín,Midfielder,Spain,페르민 로페스,페르민 로페스
+340626,Fermín,Fermín López Martín,Midfielder,Spain,페르민 로페스,페르민
 296667,Gavi,Pablo Martín Páez Gavira,Midfielder,Spain,가비,가비
 491086,T. Marqués,Tomás Noël Marqués Morera,Midfielder,Spain,토마스 마르케스,T. 마르케스
 1323,D. Olmo,Daniel Olmo Carvajal,Midfielder,Spain,다니 올모,D. 올모
@@ -807,7 +807,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 47299,Gorosabel,Andoni Gorosabel Espinosa,Defender,Spain,안도니 고로사벨,A. 고로사벨
 561097,A. Izagirre,Ander Izagirre Cestona,Defender,Spain,안데르 이사기레,A. 이사기레
 622,A. Laporte,Aymeric Jean Louis Gérard Alph Laporte,Defender,Spain,아이메릭 라포르트,A. 라포르트
-47276,Í. Lekue,Íñigo Lekue Martínez,Defender,Spain,이니고 레쿠에,이니고 레쿠에
+47276,Í. Lekue,Íñigo Lekue Martínez,Defender,Spain,이니고 레쿠에,Í. 레쿠에
 407677,I. Monreal,Iker Monreal Agundez,Defender,Spain,이케르 몬레알,I. 몬레알
 183849,A. Paredes,Aitor Paredes Casamichana,Defender,Spain,아이토르 파레데스,A. 파레데스
 332309,A. Rego,Alejandro Rego Mora,Midfielder,Spain,알레한드로 레고,A. 레고
@@ -1350,7 +1350,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 162058,V. Chust,Víctor Chust García,Defender,Spain,빅토르 추스트,V. 추스트
 580677,D. Delgado,David Delgado,Defender,Spain,다비드 델가도,D. 델가도
 189866,J. Nwankwo,John Chetauya Nwankwo Donald Okeh,Defender,Spain,존 도날드,J. 도날드
-585068,P. Felipe,,Defender,Spain,P. 펠리페,P. 펠리페
+585068,P. Felipe,Pablo Felipe Belda,Defender,Spain,파블로 펠리페,P. 펠리페
 386859,H. Fort,Héctor Fort García,Midfielder,Spain,엑토르 포르트,H. 포르트
 47329,A. Pedrosa,Adrià Giner Pedrosa,Defender,Spain,아드리아 페드로사,A. 페드로사
 157146,L. Pétrot,Léo Pétrot,Defender,France,레오 페트로트,L. 페트로트
@@ -1385,7 +1385,7 @@ player_id,name_short,name_long,position,nationality,name_ko_long,name_ko_short
 920,T. Lato,Antonio Latorre Grueso,Defender,Spain,토니 라토,T. 라토
 335697,D. López,David López Guijarro,Defender,Spain,다비드 로페스,D. 로페스
 26302,P. Maffeo,Pablo Carmine Maffeo Becerra,Defender,Spain,파블로 마페오,P. 마페오
-64268,J. Mojica,Johan Andrés Mojica Palacio,Defender,Colombia,요한 모히카,J. 모히카
+64268,J. Mojica,Johan Andrés Mojica Palacio,Defender,Colombia,호안 모히카,J. 모히카
 108519,M. Morey,Mateu Jaume Morey Bauzà,Defender,Spain,마테우 모레이,M. 모레이
 551463,J. Olaizola,Jon Olaizola,Defender,Spain,혼 올라이솔라,J. 올라이솔라
 626497,L. Orejuela,Luis Manuel Orejuela García,Defender,Colombia,루이스 오레후엘라,L. 오레후엘라

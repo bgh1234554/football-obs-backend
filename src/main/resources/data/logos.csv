@@ -1,5 +1,29 @@
-team_id, logo_url, flag_url
-1113, https://upload.wikimedia.org/wikipedia/en/thumb/d/da/Football_Association_of_Bosnia_and_Herzegovina_logo.svg/3840px-Football_Association_of_Bosnia_and_Herzegovina_logo.svg.png,https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/3840px-Flag_of_Bosnia_and_Herzegovina.svg.png
-768, https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/1280px-Logo_Italy_National_Football_Team_-_2023.svg.png,https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/3840px-Flag_of_Italy.svg.png
-40, https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1920px-Liverpool_FC.svg.png
-47, https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1280px-Tottenham_Hotspur.svg.png
+team_id, team_name_ko, logo_url, flag_url
+1113, 보스니아 헤르체고비나, https://upload.wikimedia.org/wikipedia/en/thumb/d/da/Football_Association_of_Bosnia_and_Herzegovina_logo.svg/3840px-Football_Association_of_Bosnia_and_Herzegovina_logo.svg.png,https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/3840px-Flag_of_Bosnia_and_Herzegovina.svg.png
+768, 이탈리아, https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/1280px-Logo_Italy_National_Football_Team_-_2023.svg.png,https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/3840px-Flag_of_Italy.svg.png
+40, 리버풀, https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1920px-Liverpool_FC.svg.png
+47, 토트넘 홋스퍼, https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1280px-Tottenham_Hotspur.svg.png
+6786, 아크론 톨리야티, https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/FC_Akron_Logo_2023.svg/3840px-FC_Akron_Logo_2023.svg.png
+2011, 파리 니즈니 노브고로드, https://upload.wikimedia.org/wikipedia/ru/thumb/a/ad/FC_Pari_NN_Logo_2023.svg/1920px-FC_Pari_NN_Logo_2023.svg.png
+2012, 소치, https://upload.wikimedia.org/wikipedia/en/thumb/7/70/PFC_Sochi_logo.svg/1920px-PFC_Sochi_logo.svg.png
+19449, 스파르타크 코스트로마, https://s3.fnl.pro:9000/fnl/team/team-100-267?date=2026-3-5/22-31
+6834, 볼가 울리야놉스크, https://s3.fnl.pro:9000/fnl/team/team-100-263?date=2026-3-5/22-31
+6790, 첼랴빈스크, https://s3.fnl.pro:9000/fnl/team/team-100-159?date=2026-3-5/22-33
+1998, 신니크 야로슬라블, https://s3.fnl.pro:9000/fnl/team/team-100-27?date=2026-3-5/22-34
+3985, 토르페도 모스크바, https://s3.fnl.pro:9000/fnl/team/team-100-22?date=2026-3-5/22-34
+3984, 텍스틸시크 이바노보, https://s3.fnl.pro:9000/fnl/team/team-200-278?date=2026-3-5/22-44
+6814, 마슈크-KMV 퍄티고르스크, https://s3.fnl.pro:9000/fnl/team/team-200-286?date=2026-3-5/22-44
+6819, 시비리 노보시비르스크, https://s3.fnl.pro:9000/fnl/team/team-200-294?date=2026-3-5/22-44
+6811, 레닌그라데츠, https://s3.fnl.pro:9000/fnl/team/team-200-291?date=2026-3-5/22-44
+6795, 디나모 브랸스크, https://s3.fnl.pro:9000/fnl/team/team-200-271?date=2026-3-5/22-45
+6831, 쿠반 크라스노다르, https://s3.fnl.pro:9000/fnl/team/team-200-293?date=2026-3-5/22-45
+21538, 디나모 키로프, https://s3.fnl.pro:9000/fnl/team/team-200-295?date=2026-3-5/22-45
+2748, 안양, https://i.namu.wiki/i/8LWJrwWxEftmHiAK5HveFzhEhp47OyuLOwwpzQmyvV8tRLLY-9xF8Ys_7oBIamu66zzKVf5ymv89OfkeIkzjeGKTVncZi4OzVEHaFauBBI5OS0y6WBdW4s-aW8l-xDGYxUfiWHCaNscbgItKMN65_g.svg
+2761, 제주, https://i.namu.wiki/i/CuNQs6Wx3t7ddvEwWXhDpOQHQksAuI3UOv1V7eYllYAA6t3X9obcI4sVfLzhNniCnnenLiG_P4sxn9iqw9Upf2NZjZl4mUk6vzG8DMsdrrAJ_KRhLXohpbMAjrOFVQvUYkuOAiSZbRVDLAzjBZ2-qg.svg
+7098, 파주 프런티어, https://i.namu.wiki/i/BBvIOx0k93MzG5ukssQJgKNxABtpAkz6Im8XjhELtROWnxCK-NsKQw9m_dsT-mU5Ju1zGFcUjiIPeAmspWSAIDDIi9ZL0cF2yim4bZMAUmSy0oZ-W_quZpISQSiS_toOcW9Q2aSbs7iTgQrRiFhs2A.svg
+7078, 김포, https://i.namu.wiki/i/Bse1M767Maem5b_UgAjqX7lSZKcoHBT-Xqi68INXKF4jmVtPWQVStoHNkrQ0NueWLOBog1jaTT8lGqn9WVNMsPehWaCCYHUMdASoLW7S2Qw6Qfprs7gCl5sd457vUNStXn-DFbBpcjiv0A2ECYSbFw.svg
+7060, 천안, https://i.namu.wiki/i/5Geu5S6EeZqOrgGJq9MeKYHUH8OG2QgvSOg41UCB9xsPc6aAdkTbFiMxxO4vlfuoGPh3vH-VNdO9nOevZW8W1kHTyJ0gEmMYPpsGdwkdmXlWI8cMpV9B534lL9WIrowRK6mJ8ZhX4WhpirNgM4qmog.svg
+7087, 화성, https://i.namu.wiki/i/CT_S2OU4jvvYSXoYS0-Y7xVS2cDOB8rOYw2UAu30oste0nZojVrzBiHOd6CTlMe7ttpvu0q_mzk_gbj19ffs0M8rkFrvd0-jriw10paTZFrPxegSDuq3WHUqWK02AwBbTa8YuoHtI7Dr8YtlsMc1uA.svg
+2760, 전남 드래곤즈, https://i.namu.wiki/i/GcW21Mtb8i6DOSSPmvh-aOtvegBBQcK6luxeyR4FqhyS3ZY3FYfe1cjuCOUQIj5RFYu-Bgk7Eau3yoUeSuuykCedF_l_J2AuPmsXwiKrh9TAOdQyy-kGVHL8N0QtU35jHtbtCSCrBRfCZucGd2s-mw.svg
+9171, 용인, https://i.namu.wiki/i/IRPgxvaEXI11jdljizri8vA38O0VW4mFar8b2vRaax_ByXlvMms3L_84nGbIcB6Libx_nhSs1zNHaG5roQpAzCrslQVLEjVNdMMc15jF1vgvv6pVybBbdC0CUNBCtMGxKfiPCiwYKv2pbadixITz3Q.svg
+7076, 김해, https://i.namu.wiki/i/Ja5xEI3-jZWtE6dkEcVMaLh16OOG9E6uJQafPIEd_gJ8aQoczO4iKqOxNWHds2Vr5lLXjbsw6ONOsCnOughNcQ.svg

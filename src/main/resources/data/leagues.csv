@@ -3,11 +3,11 @@ league_id, league_name, league_name_ko, logo_url
 40, EFL Championship, EFL 챔피언십,
 41, EFL League One, EFL 리그 원,
 42, EFL League Two, EFL 리그 투,
-43, National League, 내셔널 리그,
-50, National League North, 내셔널 리그 노스,
-51, National League South, 내셔널 리그 사우스
-984, National League North Playoffs, 내셔널 리그 노스 승격 플레이오프,
-985, National League South Playoffs, 내셔널 리그 사우스 승격 플레이오프,
+43, National League, 내셔널 리그, https://upload.wikimedia.org/wikipedia/commons/a/a0/Enterprise-National-League-Colour-Badged.png
+50, National League North, 내셔널 리그 노스, https://upload.wikimedia.org/wikipedia/commons/e/e0/Enterprise-National-League-North-Colour-Badged.png
+51, National League South, 내셔널 리그 사우스, https://upload.wikimedia.org/wikipedia/commons/c/cc/Enterprise-National-League-South-Colour-Badged.png
+984, National League North Playoffs, 내셔널 리그 노스 승격 플레이오프, https://upload.wikimedia.org/wikipedia/commons/e/e0/Enterprise-National-League-North-Colour-Badged.png
+985, National League South Playoffs, 내셔널 리그 사우스 승격 플레이오프, https://upload.wikimedia.org/wikipedia/commons/c/cc/Enterprise-National-League-South-Colour-Badged.png
 45, FA Cup, FA 컵
 48, EFL Cup, EFL 컵
 47, FA Trophy, FA 트로피
@@ -200,4 +200,10 @@ league_id, league_name, league_name_ko, logo_url
 272, NB II, 넴제티 버이녹샤그 II
 798, League Cup, 웨일스 리그 컵
 110, Premier League, 컴리 프리미어
+111, FAW Championship, 웨일스 2부리그
 112, Welsh Cup, 웨일스 컵
+333, Premier League, 우크라이나 프리미어 리그
+334, Persha Liga, 우크라이나 퍼스트 리그
+335, Cup, 우크라이나 컵
+336, Druha Liga, 우크라이나 세컨드 리그
+678, Super Cup, 우크라이나 슈퍼 컵
