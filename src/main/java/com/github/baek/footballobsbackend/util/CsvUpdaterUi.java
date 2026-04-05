@@ -17,11 +17,11 @@ import java.util.stream.Collectors;
 class CsvUpdaterUi {
 
     // ANSI 색상 코드
-    private static final String ANSI_RESET  = "\u001B[0m";
-    private static final String ANSI_BOLD   = "\u001B[1m";
-    private static final String ANSI_YELLOW = "\u001B[33m";
-    private static final String ANSI_RED    = "\u001B[31m";
-    private static final String ANSI_CYAN   = "\u001B[36m";
+    protected static final String ANSI_RESET  = "\u001B[0m";
+    protected static final String ANSI_BOLD   = "\u001B[1m";
+    protected static final String ANSI_YELLOW = "\u001B[33m";
+    protected static final String ANSI_RED    = "\u001B[31m";
+    protected static final String ANSI_CYAN   = "\u001B[36m";
 
     /** 리그/대회 항목 하나. enabled=true 이면 '0 전체 실행'에 포함된다. */
     record LeagueEntry(int id, String name, boolean enabled) {}

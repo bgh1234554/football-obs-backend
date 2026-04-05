@@ -17,6 +17,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.FootballObsBackendApplication;
 import com.github.baek.footballobsbackend.client.ApiFootballClient;
 
+import static com.github.baek.footballobsbackend.util.CsvUpdaterUi.*;
+
 /**
  * players.csv, coaches.csv, teams.csv, venues.csv를 자동으로 업데이트하는 독립 실행 유틸.
  * Spring 빈이 아님 — 로컬에서 main()으로 직접 실행.
@@ -78,9 +80,9 @@ public class CsvUpdater {
                     processAll(apiClient, selection);
                 }
                 Duration duration = Duration.ofMillis(System.currentTimeMillis() - startTime);
-                System.out.printf("%n  작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n",
+                System.out.printf(ANSI_YELLOW + ANSI_BOLD + "%n  작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n" + ANSI_RESET,
                         duration.toMinutesPart(), duration.toSecondsPart(), duration.toMillisPart());
-                System.out.println("  메인 화면으로 돌아갑니다.");
+                System.out.println(ANSI_CYAN + "  메인 화면으로 돌아갑니다." + ANSI_RESET);
             }
         } finally {
             ctx.close();
