@@ -114,10 +114,10 @@ public class CsvUpdater {
         Set<Long>   existingLeagueIds    = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/leagues.csv");
 
         // diff 비교용 맵 (기존 CSV 이름 vs API 이름)
-        // teams.csv: col 1 = team_name (splitLimit 3)
+        // teams.csv: col 1 = team_name (splitLimit 4)
         // coaches.csv: col 1 = name_short (splitLimit 6)
         // venues.csv: key=col 1(venue_name), value=col 2(venue_city) (splitLimit 5)
-        Map<Long, String>   existingTeamNameMap   = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 3);
+        Map<Long, String>   existingTeamNameMap   = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 4);
         Map<Long, String>   existingCoachNameMap  = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/coaches.csv", 1, 6);
         Map<String, String> existingVenueCityMap  = CsvUpdaterCsvHelper.loadKeyToColumn(DATA_DIR + "/venues.csv", 1, 2, 5);
 
@@ -258,7 +258,7 @@ public class CsvUpdater {
         Set<Long>   existingCoachIds   = CsvUpdaterCsvHelper.loadLongIds(DATA_DIR + "/coaches.csv");
         Set<String> existingVenueNames = CsvUpdaterCsvHelper.loadVenueNames(DATA_DIR + "/venues.csv");
 
-        Map<Long, String>   existingTeamNameMap  = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 3);
+        Map<Long, String>   existingTeamNameMap  = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/teams.csv",   1, 4);
         Map<Long, String>   existingCoachNameMap = CsvUpdaterCsvHelper.loadIdToColumn(DATA_DIR + "/coaches.csv", 1, 6);
         Map<String, String> existingVenueCityMap = CsvUpdaterCsvHelper.loadKeyToColumn(DATA_DIR + "/venues.csv", 1, 2, 5);
 
@@ -303,7 +303,7 @@ public class CsvUpdater {
             throws Exception {
 
         // teams.csv를 통째로 로딩해 upsert 준비
-        final int TEAM_COLUMN_COUNT = 3; // team_id, team_name, ko_name
+        final int TEAM_COLUMN_COUNT = 4; // team_id, team_name, ko_name, ko_name_short
         CsvUpdaterCsvHelper.CsvTable table =
                 CsvUpdaterCsvHelper.loadCsvTable(DATA_DIR + "/teams.csv", TEAM_COLUMN_COUNT);
 
@@ -339,14 +339,16 @@ public class CsvUpdater {
                     if (!csvName.equals(apiName) && !apiName.isBlank()) {
                         System.out.printf(ANSI_MAGENTA + ANSI_BOLD
                                 + "  [TEAM_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET, teamId, csvName, apiName);
-                        // team_name 갱신, ko_name 보존
-                        String koName = rows.get(existingIdx)[2];
-                        rows.set(existingIdx, new String[]{String.valueOf(teamId), apiName, koName});
+                        // team_name 갱신, ko_name / ko_name_short 보존
+                        String[] old = rows.get(existingIdx);
+                        String koName      = old.length > 2 ? old[2] : "";
+                        String koNameShort = old.length > 3 ? old[3] : "";
+                        rows.set(existingIdx, new String[]{String.valueOf(teamId), apiName, koName, koNameShort});
                         updatedCount++;
                     }
                 } else {
                     // 신규 팀
-                    rows.add(new String[]{String.valueOf(teamId), apiName, ""});
+                    rows.add(new String[]{String.valueOf(teamId), apiName, "", ""});
                     idToIndex.put(teamId, rows.size() - 1);
                     insertedCount++;
                     System.out.printf("  [TEAM+] %d %s%n", teamId, apiName);
@@ -422,8 +424,8 @@ public class CsvUpdater {
 
             if (!existingTeamIds.contains(teamId)) {
                 existingTeamIds.add(teamId);
-                // columns: team_id, team_name, ko_name(수동)
-                newTeamRows.add(teamId + "," + CsvUpdaterCsvHelper.esc(teamName) + ",");
+                // columns: team_id, team_name, ko_name(수동), ko_name_short(수동)
+                newTeamRows.add(teamId + "," + CsvUpdaterCsvHelper.esc(teamName) + ",,");
                 System.out.printf("  [TEAM+] %d %s%n", teamId, teamName);
             } else {
                 // 이미 있는 팀 — 이름이 다르면 diff 로그

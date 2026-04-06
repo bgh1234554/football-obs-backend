@@ -23,7 +23,8 @@ public class MatchInfoDto {
     private Integer extra;      // null 가능
 
     private long homeTeamId;
-    private String homeTeamName;
+    private String homeTeamName;       // 한글 풀네임 (예: 맨체스터 유나이티드)
+    private String homeTeamNameShort;  // 한글 단축명 (예: 맨 유나이티드). 없으면 homeTeamName과 동일
     private String homeTeamLogo;
     private String homeTeamFlagUrl;
     private int homeScore;
@@ -32,7 +33,8 @@ public class MatchInfoDto {
     private String homeNumberColor;
 
     private long awayTeamId;
-    private String awayTeamName;
+    private String awayTeamName;       // 한글 풀네임
+    private String awayTeamNameShort;  // 한글 단축명. 없으면 awayTeamName과 동일
     private String awayTeamLogo;
     private String awayTeamFlagUrl;
     private int awayScore;

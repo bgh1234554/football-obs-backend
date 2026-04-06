@@ -38,7 +38,7 @@ public class CsvLoader {
     // index: 0=player_id, 1=name_short, 2=name_long, 3=position, 4=nationality, 5=name_ko_long, 6=name_ko_short
     private final Map<Long, String[]> players = new HashMap<>();
 
-    // index: 0=team_id, 1=team_name, 2=ko_name
+    // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
 
     // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=flag_url
@@ -114,8 +114,8 @@ public class CsvLoader {
                 if (first) { first = false; continue; }
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
-                // 3. 최대 3개 컬럼으로 분리 (team_id, team_name, ko_name)
-                String[] parts = line.split(",", 3);
+                // 3. 최대 4개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short)
+                String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
                 // 4. team_id를 키로 저장
                 teams.put(Long.parseLong(parts[0].trim()), parts);
@@ -324,6 +324,18 @@ public class CsvLoader {
         String[] row = teams.get(teamId);
         if (row == null || row.length < 3) return null;
         String v = row[2].trim();   // index 2 = ko_name
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 팀 한글 단축 이름(ko_name_short) 조회.
+     * teams.csv에 없거나 ko_name_short 컬럼이 비어있으면 null 반환.
+     * null이면 FixtureService에서 ko_name 또는 API Football 영문 이름으로 fallback 처리.
+     */
+    public String getTeamNameKoShort(long teamId) {
+        String[] row = teams.get(teamId);
+        if (row == null || row.length < 4) return null;
+        String v = row[3].trim();   // index 3 = ko_name_short
         return v.isEmpty() ? null : v;
     }
 

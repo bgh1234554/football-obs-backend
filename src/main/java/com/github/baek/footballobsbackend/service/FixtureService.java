@@ -210,12 +210,20 @@ public class FixtureService {
         if (homeNameKo == null) {
             log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", homeTeamId, homeApiName);
         }
+        // 단축명: ko_name_short → ko_name → API 영문 이름 순으로 fallback
+        String homeNameKoShort = csvLoader.getTeamNameKoShort(homeTeamId);
+        String homeDisplayShort = homeNameKoShort != null ? homeNameKoShort
+                : (homeNameKo != null ? homeNameKo : homeApiName);
 
         String awayApiName = awayTeam.path("name").asText();
         String awayNameKo = csvLoader.getTeamNameKo(awayTeamId);
         if (awayNameKo == null) {
             log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", awayTeamId, awayApiName);
         }
+        // 단축명: ko_name_short → ko_name → API 영문 이름 순으로 fallback
+        String awayNameKoShort = csvLoader.getTeamNameKoShort(awayTeamId);
+        String awayDisplayShort = awayNameKoShort != null ? awayNameKoShort
+                : (awayNameKo != null ? awayNameKo : awayApiName);
 
         // 6. 팀 색상 추출 — lineups[].team.colors.player 에서 홈/원정 각각 꺼냄
         JsonNode[] colors = extractTeamColors(data.path("lineups"), homeTeamId, awayTeamId);
@@ -243,6 +251,7 @@ public class FixtureService {
                 .extra(extra)
                 .homeTeamId(homeTeamId)
                 .homeTeamName(homeNameKo != null ? homeNameKo : homeApiName)
+                .homeTeamNameShort(homeDisplayShort)
                 .homeTeamLogo(resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText(), homeApiName))
                 .homeTeamFlagUrl(csvLoader.getFlagUrl(homeTeamId))  // 클럽팀이면 null
                 .homeScore(goals.path("home").asInt())              // 정규+연장 득점 합계 (goals 필드)
@@ -251,6 +260,7 @@ public class FixtureService {
                 .homeNumberColor(colorOf(homeColors, "number"))     // 등번호 색
                 .awayTeamId(awayTeamId)
                 .awayTeamName(awayNameKo != null ? awayNameKo : awayApiName)
+                .awayTeamNameShort(awayDisplayShort)
                 .awayTeamLogo(resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText(), awayApiName))
                 .awayTeamFlagUrl(csvLoader.getFlagUrl(awayTeamId))
                 .awayScore(goals.path("away").asInt())              // 정규+연장 득점 합계 (goals 필드)
