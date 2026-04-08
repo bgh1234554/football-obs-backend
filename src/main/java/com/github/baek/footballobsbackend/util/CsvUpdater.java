@@ -315,7 +315,6 @@ public class CsvUpdater {
             catch (NumberFormatException ignored) {}
         }
 
-        int updatedCount = 0;
         int insertedCount = 0;
 
         for (int leagueId : selection.leagueIds()) {
@@ -339,12 +338,6 @@ public class CsvUpdater {
                     if (!csvName.equals(apiName) && !apiName.isBlank()) {
                         System.out.printf(ANSI_MAGENTA + ANSI_BOLD
                                 + "  [TEAM_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET, teamId, csvName, apiName);
-                        // team_name 갱신, ko_name / ko_name_short 보존
-                        String[] old = rows.get(existingIdx);
-                        String koName      = old.length > 2 ? old[2] : "";
-                        String koNameShort = old.length > 3 ? old[3] : "";
-                        rows.set(existingIdx, new String[]{String.valueOf(teamId), apiName, koName, koNameShort});
-                        updatedCount++;
                     }
                 } else {
                     // 신규 팀
@@ -357,7 +350,7 @@ public class CsvUpdater {
         }
 
         CsvUpdaterCsvHelper.overwriteCsv(DATA_DIR + "/teams.csv", table.header(), rows);
-        System.out.printf("%n[CsvUpdater] 팀 이름 갱신 완료 — updated:%d inserted:%d%n", updatedCount, insertedCount);
+        System.out.printf("%n[CsvUpdater] 팀 이름 조회 완료 — inserted:%d%n", insertedCount);
     }
 
     // ──────────────────────────────────────────────

@@ -1,6 +1,12 @@
 package com.github.baek.footballobsbackend.util;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 
@@ -48,11 +54,11 @@ class CsvUpdaterUi {
             new LeagueEntry(2,    "UEFA Champions League",                  true),
             new LeagueEntry(3,    "UEFA Europa League",                     true),
             new LeagueEntry(848,  "UEFA Europa Conference League",          true),
-            new LeagueEntry(273,  "AFC Champions League Elite",             true)
-//            new LeagueEntry(18,   "AFC Champions League Two",               true),
-//            new LeagueEntry(1132, "AFC Challenge League",                   true),
-//            new LeagueEntry(12,   "CAF Champions League",                   true),
-//            new LeagueEntry(20,   "CAF Confederations Cup",                 true),
+            new LeagueEntry(17,  "AFC Champions League Elite",              true),
+            new LeagueEntry(18,   "AFC Champions League Two",               true),
+            new LeagueEntry(1132, "AFC Challenge League",                   true),
+            new LeagueEntry(12,   "CAF Champions League",                   true),
+            new LeagueEntry(20,   "CAF Confederations Cup",                 true)
     );
 
     // ── 춘추제 대회 ─────────────────────────────────────────────
@@ -63,6 +69,7 @@ class CsvUpdaterUi {
             new LeagueEntry(293,  "K League 2",                            true),
             new LeagueEntry(71,   "Brasileirao (Serie A)",                  true),
             new LeagueEntry(15,   "FIFA Club World Cup",                    true),
+            new LeagueEntry(1,    "World Cup",                                      true),
             new LeagueEntry(4,    "Euro Championship",                              true),
             new LeagueEntry(6,    "Africa Cup of Nations",                          true),
             new LeagueEntry(7,    "Asian Cup",                                      true),
@@ -86,7 +93,6 @@ class CsvUpdaterUi {
             new LeagueEntry(37,   "World Cup - Qualification Intercontinental P/O", true),
             new LeagueEntry(1168, "FIFA Intercontinental Cup",                      true),
 //            new LeagueEntry(860,  "FIFA Arab Cup",                                  true),
-//            new LeagueEntry(1,    "World Cup",                                      true),
             new LeagueEntry(11, "CONMEBOL Sudamericana", true),
             new LeagueEntry(13, "CONMEBOL Libertadores", true)
     );
@@ -94,7 +100,7 @@ class CsvUpdaterUi {
 
     /** 처리할 리그 ID 목록 + 적용할 시즌 연도 또는 특정 선수/팀 ID */
     record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds, long teamId,
-                           Map<Integer, Integer> leagueSeasonMap) {
+                            Map<Integer, Integer> leagueSeasonMap) {
         static SelectionResult forLeagues(List<Integer> leagueIds, int season) {
             return new SelectionResult(Mode.LEAGUE, leagueIds, season, List.of(), 0L, Map.of());
         }

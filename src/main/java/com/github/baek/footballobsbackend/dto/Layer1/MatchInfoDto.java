@@ -26,7 +26,7 @@ public class MatchInfoDto {
     private String homeTeamName;       // 한글 풀네임 (예: 맨체스터 유나이티드)
     private String homeTeamNameShort;  // 한글 단축명 (예: 맨 유나이티드). 없으면 homeTeamName과 동일
     private String homeTeamLogo;
-    private String homeTeamFlagUrl;
+    private String homeTeamFaUrl;
     private int homeScore;
     private Integer homePenaltyScore;   // 페널티 슛아웃 점수. 정규/연장으로 끝난 경기는 null
     private String homePrimaryColor;
@@ -36,7 +36,7 @@ public class MatchInfoDto {
     private String awayTeamName;       // 한글 풀네임
     private String awayTeamNameShort;  // 한글 단축명. 없으면 awayTeamName과 동일
     private String awayTeamLogo;
-    private String awayTeamFlagUrl;
+    private String awayTeamFaUrl;
     private int awayScore;
     private Integer awayPenaltyScore;   // 페널티 슛아웃 점수. 정규/연장으로 끝난 경기는 null
     private String awayPrimaryColor;

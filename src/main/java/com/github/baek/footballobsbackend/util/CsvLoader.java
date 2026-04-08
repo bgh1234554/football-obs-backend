@@ -22,7 +22,7 @@ import java.util.Map;
  *
  * [CSV 구조]
  * players.csv   : player_id, name_short, name_long, position, nationality, name_ko_long, name_ko_short
- * logos.csv     : team_id, logo_url, flag_url
+ * logos.csv     : team_id, team_name_ko, logo_url, fa_url
  * coaches.csv   : coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
  * referees.csv  : referee_name, referee_country, name_ko
  * venues.csv    : venue_id, venue_name, venue_city, venue_name_ko, city_name_ko
@@ -41,7 +41,7 @@ public class CsvLoader {
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
 
-    // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=flag_url
+    // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=fa_url
     private final Map<Long, String[]> logos = new HashMap<>();
 
     // index: 0=coach_id, 1=name_short, 2=name_long, 3=nationality, 4=name_ko_long, 5=name_ko_short
@@ -126,8 +126,8 @@ public class CsvLoader {
     }
 
     /**
-     * logos.csv를 읽어 team_id → [team_id, team_name_ko, logo_url, flag_url] 형태로 저장.
-     * flag_url은 국가대표팀만 있고 클럽팀은 비어있음 (getFlagUrl에서 null 처리).
+     * logos.csv를 읽어 team_id → [team_id, team_name_ko, logo_url, fa_url] 형태로 저장.
+     * fa_url은 국가대표팀만 있고 클럽팀은 비어있음 (getFaUrl에서 null 처리).
      */
     private void loadLogos() {
         try (BufferedReader reader = openCsv("data/logos.csv")) {
@@ -138,7 +138,7 @@ public class CsvLoader {
                 if (first) { first = false; continue; }
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
-                // 3. 최대 4개 컬럼으로 분리 (team_id, team_name_ko, logo_url, flag_url)
+                // 3. 최대 4개 컬럼으로 분리 (team_id, team_name_ko, logo_url, fa_url)
                 String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
                 // 4. team_id를 키로 저장
@@ -385,14 +385,14 @@ public class CsvLoader {
     }
 
     /**
-     * 팀 국기 URL 조회.
-     * 국가대표팀만 logos.csv에 flag_url이 채워져 있고, 클럽팀은 비어있어 null 반환.
-     * 프론트에서 flagUrl != null 이면 국기 선택 UI를 표시하도록 설계됨.
+     * 팀 협회 로고 URL 조회.
+     * 국가대표팀만 logos.csv에 fa_url이 채워져 있고, 클럽팀은 비어있어 null 반환.
+     * 프론트에서 faUrl != null 이면 기본 국기 대신 협회 로고로 바꿀 수 있는 옵션을 표시하도록 설계됨.
      */
-    public String getFlagUrl(long teamId) {
+    public String getFaUrl(long teamId) {
         String[] row = logos.get(teamId);
         if (row == null || row.length < 4) return null;
-        String v = row[3].trim();   // index 3 = flag_url
+        String v = row[3].trim();   // index 3 = fa_url
         return v.isEmpty() ? null : v;
     }
 

@@ -253,7 +253,7 @@ public class FixtureService {
                 .homeTeamName(homeNameKo != null ? homeNameKo : homeApiName)
                 .homeTeamNameShort(homeDisplayShort)
                 .homeTeamLogo(resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText(), homeApiName))
-                .homeTeamFlagUrl(csvLoader.getFlagUrl(homeTeamId))  // 클럽팀이면 null
+                .homeTeamFaUrl(csvLoader.getFaUrl(homeTeamId))  // 클럽팀이면 null
                 .homeScore(goals.path("home").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .homePenaltyScore(homePenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
                 .homePrimaryColor(colorOf(homeColors, "primary"))   // 유니폼 바탕색
@@ -262,7 +262,7 @@ public class FixtureService {
                 .awayTeamName(awayNameKo != null ? awayNameKo : awayApiName)
                 .awayTeamNameShort(awayDisplayShort)
                 .awayTeamLogo(resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText(), awayApiName))
-                .awayTeamFlagUrl(csvLoader.getFlagUrl(awayTeamId))
+                .awayTeamFaUrl(csvLoader.getFaUrl(awayTeamId))
                 .awayScore(goals.path("away").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .awayPenaltyScore(awayPenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
                 .awayPrimaryColor(colorOf(awayColors, "primary"))
