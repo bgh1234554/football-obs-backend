@@ -1,29 +1,79 @@
-team_id, team_name_ko, logo_url, flag_url
+team_id, team_name_ko, logo_url, fa_url
 1113, 보스니아 헤르체고비나, https://upload.wikimedia.org/wikipedia/en/thumb/d/da/Football_Association_of_Bosnia_and_Herzegovina_logo.svg/3840px-Football_Association_of_Bosnia_and_Herzegovina_logo.svg.png,https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Flag_of_Bosnia_and_Herzegovina.svg/3840px-Flag_of_Bosnia_and_Herzegovina.svg.png
 768, 이탈리아, https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_Italy_National_Football_Team_-_2023.svg/1280px-Logo_Italy_National_Football_Team_-_2023.svg.png,https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/3840px-Flag_of_Italy.svg.png
-40, 리버풀, https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1920px-Liverpool_FC.svg.png
-47, 토트넘 홋스퍼, https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1280px-Tottenham_Hotspur.svg.png
-6786, 아크론 톨리야티, https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/FC_Akron_Logo_2023.svg/3840px-FC_Akron_Logo_2023.svg.png
-2011, 파리 니즈니 노브고로드, https://upload.wikimedia.org/wikipedia/ru/thumb/a/ad/FC_Pari_NN_Logo_2023.svg/1920px-FC_Pari_NN_Logo_2023.svg.png
-2012, 소치, https://upload.wikimedia.org/wikipedia/en/thumb/7/70/PFC_Sochi_logo.svg/1920px-PFC_Sochi_logo.svg.png
-19449, 스파르타크 코스트로마, https://s3.fnl.pro:9000/fnl/team/team-100-267?date=2026-3-5/22-31
-6834, 볼가 울리야놉스크, https://s3.fnl.pro:9000/fnl/team/team-100-263?date=2026-3-5/22-31
-6790, 첼랴빈스크, https://s3.fnl.pro:9000/fnl/team/team-100-159?date=2026-3-5/22-33
-1998, 신니크 야로슬라블, https://s3.fnl.pro:9000/fnl/team/team-100-27?date=2026-3-5/22-34
-3985, 토르페도 모스크바, https://s3.fnl.pro:9000/fnl/team/team-100-22?date=2026-3-5/22-34
-3984, 텍스틸시크 이바노보, https://s3.fnl.pro:9000/fnl/team/team-200-278?date=2026-3-5/22-44
-6814, 마슈크-KMV 퍄티고르스크, https://s3.fnl.pro:9000/fnl/team/team-200-286?date=2026-3-5/22-44
-6819, 시비리 노보시비르스크, https://s3.fnl.pro:9000/fnl/team/team-200-294?date=2026-3-5/22-44
-6811, 레닌그라데츠, https://s3.fnl.pro:9000/fnl/team/team-200-291?date=2026-3-5/22-44
-6795, 디나모 브랸스크, https://s3.fnl.pro:9000/fnl/team/team-200-271?date=2026-3-5/22-45
-6831, 쿠반 크라스노다르, https://s3.fnl.pro:9000/fnl/team/team-200-293?date=2026-3-5/22-45
-21538, 디나모 키로프, https://s3.fnl.pro:9000/fnl/team/team-200-295?date=2026-3-5/22-45
-2748, 안양, https://i.namu.wiki/i/8LWJrwWxEftmHiAK5HveFzhEhp47OyuLOwwpzQmyvV8tRLLY-9xF8Ys_7oBIamu66zzKVf5ymv89OfkeIkzjeGKTVncZi4OzVEHaFauBBI5OS0y6WBdW4s-aW8l-xDGYxUfiWHCaNscbgItKMN65_g.svg
-2761, 제주, https://i.namu.wiki/i/CuNQs6Wx3t7ddvEwWXhDpOQHQksAuI3UOv1V7eYllYAA6t3X9obcI4sVfLzhNniCnnenLiG_P4sxn9iqw9Upf2NZjZl4mUk6vzG8DMsdrrAJ_KRhLXohpbMAjrOFVQvUYkuOAiSZbRVDLAzjBZ2-qg.svg
-7098, 파주 프런티어, https://i.namu.wiki/i/BBvIOx0k93MzG5ukssQJgKNxABtpAkz6Im8XjhELtROWnxCK-NsKQw9m_dsT-mU5Ju1zGFcUjiIPeAmspWSAIDDIi9ZL0cF2yim4bZMAUmSy0oZ-W_quZpISQSiS_toOcW9Q2aSbs7iTgQrRiFhs2A.svg
-7078, 김포, https://i.namu.wiki/i/Bse1M767Maem5b_UgAjqX7lSZKcoHBT-Xqi68INXKF4jmVtPWQVStoHNkrQ0NueWLOBog1jaTT8lGqn9WVNMsPehWaCCYHUMdASoLW7S2Qw6Qfprs7gCl5sd457vUNStXn-DFbBpcjiv0A2ECYSbFw.svg
-7060, 천안, https://i.namu.wiki/i/5Geu5S6EeZqOrgGJq9MeKYHUH8OG2QgvSOg41UCB9xsPc6aAdkTbFiMxxO4vlfuoGPh3vH-VNdO9nOevZW8W1kHTyJ0gEmMYPpsGdwkdmXlWI8cMpV9B534lL9WIrowRK6mJ8ZhX4WhpirNgM4qmog.svg
-7087, 화성, https://i.namu.wiki/i/CT_S2OU4jvvYSXoYS0-Y7xVS2cDOB8rOYw2UAu30oste0nZojVrzBiHOd6CTlMe7ttpvu0q_mzk_gbj19ffs0M8rkFrvd0-jriw10paTZFrPxegSDuq3WHUqWK02AwBbTa8YuoHtI7Dr8YtlsMc1uA.svg
-2760, 전남 드래곤즈, https://i.namu.wiki/i/GcW21Mtb8i6DOSSPmvh-aOtvegBBQcK6luxeyR4FqhyS3ZY3FYfe1cjuCOUQIj5RFYu-Bgk7Eau3yoUeSuuykCedF_l_J2AuPmsXwiKrh9TAOdQyy-kGVHL8N0QtU35jHtbtCSCrBRfCZucGd2s-mw.svg
-9171, 용인, https://i.namu.wiki/i/IRPgxvaEXI11jdljizri8vA38O0VW4mFar8b2vRaax_ByXlvMms3L_84nGbIcB6Libx_nhSs1zNHaG5roQpAzCrslQVLEjVNdMMc15jF1vgvv6pVybBbdC0CUNBCtMGxKfiPCiwYKv2pbadixITz3Q.svg
-7076, 김해, https://i.namu.wiki/i/Ja5xEI3-jZWtE6dkEcVMaLh16OOG9E6uJQafPIEd_gJ8aQoczO4iKqOxNWHds2Vr5lLXjbsw6ONOsCnOughNcQ.svg
+40, 리버풀, https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/1920px-Liverpool_FC.svg.png,
+47, 토트넘 홋스퍼, https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/1280px-Tottenham_Hotspur.svg.png,
+6786, 아크론 톨리야티, https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/FC_Akron_Logo_2023.svg/3840px-FC_Akron_Logo_2023.svg.png,
+2011, 파리 니즈니 노브고로드, https://upload.wikimedia.org/wikipedia/ru/thumb/a/ad/FC_Pari_NN_Logo_2023.svg/1920px-FC_Pari_NN_Logo_2023.svg.png,
+2012, 소치, https://upload.wikimedia.org/wikipedia/en/thumb/7/70/PFC_Sochi_logo.svg/1920px-PFC_Sochi_logo.svg.png,
+19449, 스파르타크 코스트로마, https://s3.fnl.pro:9000/fnl/team/team-100-267?date=2026-3-5/22-31,
+6834, 볼가 울리야놉스크, https://s3.fnl.pro:9000/fnl/team/team-100-263?date=2026-3-5/22-31,
+6790, 첼랴빈스크, https://s3.fnl.pro:9000/fnl/team/team-100-159?date=2026-3-5/22-33,
+1998, 신니크 야로슬라블, https://s3.fnl.pro:9000/fnl/team/team-100-27?date=2026-3-5/22-34,
+3985, 토르페도 모스크바, https://s3.fnl.pro:9000/fnl/team/team-100-22?date=2026-3-5/22-34,
+3984, 텍스틸시크 이바노보, https://s3.fnl.pro:9000/fnl/team/team-200-278?date=2026-3-5/22-44,
+6814, 마슈크-KMV 퍄티고르스크, https://s3.fnl.pro:9000/fnl/team/team-200-286?date=2026-3-5/22-44,
+6819, 시비리 노보시비르스크, https://s3.fnl.pro:9000/fnl/team/team-200-294?date=2026-3-5/22-44,
+6811, 레닌그라데츠, https://s3.fnl.pro:9000/fnl/team/team-200-291?date=2026-3-5/22-44,
+6795, 디나모 브랸스크, https://s3.fnl.pro:9000/fnl/team/team-200-271?date=2026-3-5/22-45,
+6831, 쿠반 크라스노다르, https://s3.fnl.pro:9000/fnl/team/team-200-293?date=2026-3-5/22-45,
+21538, 디나모 키로프, https://s3.fnl.pro:9000/fnl/team/team-200-295?date=2026-3-5/22-45,
+2748, 안양, https://i.namu.wiki/i/8LWJrwWxEftmHiAK5HveFzhEhp47OyuLOwwpzQmyvV8tRLLY-9xF8Ys_7oBIamu66zzKVf5ymv89OfkeIkzjeGKTVncZi4OzVEHaFauBBI5OS0y6WBdW4s-aW8l-xDGYxUfiWHCaNscbgItKMN65_g.svg,
+2761, 제주, https://i.namu.wiki/i/CuNQs6Wx3t7ddvEwWXhDpOQHQksAuI3UOv1V7eYllYAA6t3X9obcI4sVfLzhNniCnnenLiG_P4sxn9iqw9Upf2NZjZl4mUk6vzG8DMsdrrAJ_KRhLXohpbMAjrOFVQvUYkuOAiSZbRVDLAzjBZ2-qg.svg,
+7098, 파주 프런티어, https://i.namu.wiki/i/BBvIOx0k93MzG5ukssQJgKNxABtpAkz6Im8XjhELtROWnxCK-NsKQw9m_dsT-mU5Ju1zGFcUjiIPeAmspWSAIDDIi9ZL0cF2yim4bZMAUmSy0oZ-W_quZpISQSiS_toOcW9Q2aSbs7iTgQrRiFhs2A.svg,
+7078, 김포, https://i.namu.wiki/i/Bse1M767Maem5b_UgAjqX7lSZKcoHBT-Xqi68INXKF4jmVtPWQVStoHNkrQ0NueWLOBog1jaTT8lGqn9WVNMsPehWaCCYHUMdASoLW7S2Qw6Qfprs7gCl5sd457vUNStXn-DFbBpcjiv0A2ECYSbFw.svg,
+7060, 천안, https://i.namu.wiki/i/5Geu5S6EeZqOrgGJq9MeKYHUH8OG2QgvSOg41UCB9xsPc6aAdkTbFiMxxO4vlfuoGPh3vH-VNdO9nOevZW8W1kHTyJ0gEmMYPpsGdwkdmXlWI8cMpV9B534lL9WIrowRK6mJ8ZhX4WhpirNgM4qmog.svg,
+7087, 화성, https://i.namu.wiki/i/CT_S2OU4jvvYSXoYS0-Y7xVS2cDOB8rOYw2UAu30oste0nZojVrzBiHOd6CTlMe7ttpvu0q_mzk_gbj19ffs0M8rkFrvd0-jriw10paTZFrPxegSDuq3WHUqWK02AwBbTa8YuoHtI7Dr8YtlsMc1uA.svg,
+2760, 전남 드래곤즈, https://i.namu.wiki/i/GcW21Mtb8i6DOSSPmvh-aOtvegBBQcK6luxeyR4FqhyS3ZY3FYfe1cjuCOUQIj5RFYu-Bgk7Eau3yoUeSuuykCedF_l_J2AuPmsXwiKrh9TAOdQyy-kGVHL8N0QtU35jHtbtCSCrBRfCZucGd2s-mw.svg,
+9171, 용인,https://i.namu.wiki/i/IRPgxvaEXI11jdljizri8vA38O0VW4mFar8b2vRaax_ByXlvMms3L_84nGbIcB6Libx_nhSs1zNHaG5roQpAzCrslQVLEjVNdMMc15jF1vgvv6pVybBbdC0CUNBCtMGxKfiPCiwYKv2pbadixITz3Q.svg,
+7076, 김해, https://i.namu.wiki/i/Ja5xEI3-jZWtE6dkEcVMaLh16OOG9E6uJQafPIEd_gJ8aQoczO4iKqOxNWHds2Vr5lLXjbsw6ONOsCnOughNcQ.svg,
+1,Belgium,https://i.namu.wiki/i/rUgom_6SzOkaZ1fpENkbTbavcWOwMFPnLkWVdfLObPzJVHEqafNGt7lUX4av7_mA-Fxo8XHZgmXHWOujzRMaYxlBNVsXHtcWrH2-2nQgXhY8PEgqeYDYLlzgc5k23VMxyq_EmjEdWbId8TxeV_OeTA.svg,https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Royal_Belgian_FA_logo_2019.svg/1280px-Royal_Belgian_FA_logo_2019.svg.png
+2,France,https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg,https://upload.wikimedia.org/wikipedia/en/thumb/1/12/France_national_football_team_seal.svg/1280px-France_national_football_team_seal.svg.png
+3,Croatia,https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg,https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Croatian_Football_Federation_logo.svg/1920px-Croatian_Football_Federation_logo.svg.png
+5,Sweden,https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Sweden_national_football_team_badge.svg/1280px-Sweden_national_football_team_badge.svg.png
+6,Brazil,https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Brazilian_Football_Confederation_logo.svg/1920px-Brazilian_Football_Confederation_logo.svg.png
+7,Uruguay,https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg,https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Uruguay_national_football_team_seal.svg/1280px-Uruguay_national_football_team_seal.svg.png
+8,Colombia,https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/FCF-Logo-2023.svg/3840px-FCF-Logo-2023.svg.png
+9,Spain,https://upload.wikimedia.org/wikipedia/commons/8/89/Bandera_de_Espa%C3%B1a.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Spain_national_football_team_crest.svg/1280px-Spain_national_football_team_crest.svg.png
+10,England,https://upload.wikimedia.org/wikipedia/en/b/be/Flag_of_England.svg,https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/England_national_football_team_crest.svg/1920px-England_national_football_team_crest.svg.png
+11,Panama,https://upload.wikimedia.org/wikipedia/commons/a/ab/Flag_of_Panama.svg,https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Panamanian_Football_Federation_logo_2024.svg/1920px-Panamanian_Football_Federation_logo_2024.svg.png
+12,Japan,https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg,https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Japan_national_football_team_crest.svg/1920px-Japan_national_football_team_crest.svg.png
+13,Senegal,https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg,https://upload.wikimedia.org/wikipedia/en/thumb/1/16/Senegalese_Football_Federation_logo.svg/3840px-Senegalese_Football_Federation_logo.svg.png
+15,Switzerland,https://upload.wikimedia.org/wikipedia/commons/0/08/Flag_of_Switzerland_%28Pantone%29.svg,https://upload.wikimedia.org/wikipedia/en/thumb/a/a0/Swiss_Football_Association_logo.svg/3840px-Swiss_Football_Association_logo.svg.png
+16,Mexico,https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Mexico_national_football_team_crest.svg/1920px-Mexico_national_football_team_crest.svg.png
+20,Australia,https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Australia_national_football_team_badge.svg/3840px-Australia_national_football_team_badge.svg.png
+22,Iran,https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_Iran_%28official%29.svg,https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Iranian_football_badge.svg/1920px-Iranian_football_badge.svg.png
+23,Saudi Arabia,https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg,https://upload.wikimedia.org/wikipedia/en/thumb/e/ee/Saudi_Arabia_national_football_team_logo.svg/1920px-Saudi_Arabia_national_football_team_logo.svg.png
+25,Germany,https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg,https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFBEagle.svg/1920px-DFBEagle.svg.png
+26,Argentina,https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DFBEagle.svg/1920px-DFBEagle.svg.png,https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Asociaci%C3%B3n_del_F%C3%BAtbol_Argentino_%28crest%29.svg/1920px-Asociaci%C3%B3n_del_F%C3%BAtbol_Argentino_%28crest%29.svg.png
+27,Portugal,https://upload.wikimedia.org/wikipedia/commons/a/a8/Flag_of_Portugal_%28official%29.svg,https://upload.wikimedia.org/wikipedia/commons/d/d9/Portugal_National_Team_logo.png
+28,Tunisia,https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Tunisia.svg,https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Tunisian_Football_Federation_logo.svg/3840px-Tunisian_Football_Federation_logo.svg.png
+31,Morocco,https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg,https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Royal_Moroccan_Football_Federation_logo.svg/1920px-Royal_Moroccan_Football_Federation_logo.svg.png
+32,Egypt,https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg,https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Egyptian_Football_Association_logo.svg/3840px-Egyptian_Football_Association_logo.svg.png
+770,Czech Republic,https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_Czech_Republic.svg,https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Czech_Republic_national_football_team_logo.svg/1920px-Czech_Republic_national_football_team_logo.svg.png
+775,Austria,https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg,https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Austria_national_football_team_crest.svg/1920px-Austria_national_football_team_crest.svg.png
+777,Türkiye,https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg,https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Turkish_Football_Federation_crest.svg/1920px-Turkish_Football_Federation_crest.svg.png
+1090,Norway,https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Norway.svg,https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Norway_national_football_team_logo.svg/1920px-Norway_national_football_team_logo.svg.png
+1108,Scotland,https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg,https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Scotland_national_football_team_logo_2014.svg/3840px-Scotland_national_football_team_logo_2014.svg.png
+1118,Netherlands,https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg,https://upload.wikimedia.org/wikipedia/en/thumb/7/78/Netherlands_national_football_team_logo.svg/1920px-Netherlands_national_football_team_logo.svg.png
+1501,Ivory Coast,https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg,https://upload.wikimedia.org/wikipedia/fr/thumb/7/78/Logo_%C3%89quipe_de_C%C3%B4te_d%27Ivoire_de_Football_%282014%29.svg/3840px-Logo_%C3%89quipe_de_C%C3%B4te_d%27Ivoire_de_Football_%282014%29.svg.png
+1504,Ghana,https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ghana_Football_Association_logo.svg/1920px-Ghana_Football_Association_logo.svg.png
+1508,Congo DR,https://upload.wikimedia.org/wikipedia/commons/6/6f/Flag_of_the_Democratic_Republic_of_the_Congo.svg,https://upload.wikimedia.org/wikipedia/fr/9/99/Logo_FECOFA_2023.png
+1531,South Africa,https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg,https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/South_Africa_national_soccer_team_logo.svg/1920px-South_Africa_national_soccer_team_logo.svg.png
+1532,Algeria,https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg,https://upload.wikimedia.org/wikipedia/en/2/2d/Algerian_NT_%28logo%29.png
+1533,Cape Verde,https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Cape_Verde.svg,https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Cape_Verdean_Football_Federation_logo.svg/1920px-Cape_Verdean_Football_Federation_logo.svg.png
+1548,Jordan,https://upload.wikimedia.org/wikipedia/commons/c/c0/Flag_of_Jordan.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Jordan_national_football_team_logo_2024.svg/1920px-Jordan_national_football_team_logo_2024.svg.png
+1567,Iraq,https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Iraq_National_Team_Badge_2021_v1.svg/1920px-Iraq_National_Team_Badge_2021_v1.svg.png
+1568,Uzbekistan,https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Uzbekistan.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3d/Uzbekistan_Football_Association.svg/1920px-Uzbekistan_Football_Association.svg.png
+1569,Qatar,https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Qatar.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/Qatar_Football_Association_logo.svg/3840px-Qatar_Football_Association_logo.svg.png
+2380,Paraguay,https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Asociaci%C3%B3n_Paraguaya_de_F%C3%BAtbol_logo.svg/3840px-Asociaci%C3%B3n_Paraguaya_de_F%C3%BAtbol_logo.svg.png
+2382,Ecuador,https://upload.wikimedia.org/wikipedia/commons/e/e8/Flag_of_Ecuador.svg,https://i.namu.wiki/i/MEJcfyhYXwo5n-aYCI5hUBiKd-8PzdHMgDtmW0HA5eZ0C_r1DbqaB-dlJbmg4CLJgOU8RZr_rzqpdmeE8kOTE1VpVyjoqRwzaBSrJYrUNZFTIxM0QJ-Sfn2K3suyKAf3tL8zpfFN1QEkVdCIPaxR-Q.svg
+2384,USA,https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/United_States_national_ice_hockey_team_logo_white_background.svg/3840px-United_States_national_ice_hockey_team_logo_white_background.svg.png
+2386,Haiti,https://upload.wikimedia.org/wikipedia/commons/5/56/Flag_of_Haiti.svg,https://upload.wikimedia.org/wikipedia/fr/thumb/f/ff/Logo_F%C3%A9d%C3%A9ration_Ha%C3%AFtienne_de_Football_2012.svg/3840px-Logo_F%C3%A9d%C3%A9ration_Ha%C3%AFtienne_de_Football_2012.svg.png
+4673,New Zealand,https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3a/New_Zealand_Football_Crest_2022.svg/3840px-New_Zealand_Football_Crest_2022.svg.png
+5529,Canada,https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Canadian_Soccer_Association_logo.svg/3840px-Canadian_Soccer_Association_logo.svg.png
+5530,Curaçao,https://upload.wikimedia.org/wikipedia/commons/b/b1/Flag_of_Cura%C3%A7ao.svg,https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Curacao_Football_Federation.svg/3840px-Curacao_Football_Federation.svg.png
+17,South Korea,https://i.namu.wiki/i/LuHOzaYa0bRc4of2xYnz_2bfK5-IJTOMyWMlIVUn0NSN1KOXs23k9QwuxdngFBFE0-_TdYjnszduRSowJOUjGQG5WgwvxYwT363_fPtJMXKYCw8UfyO6t7HGyeUj3fMg-7vn8pEsdUD_Y4-xbHANUw.svg,https://i.namu.wiki/i/SVOMyrB-_stGBiwuBJpkLhpGL8fp0zLKFs4gvG4sQEQGpV0No_dAha6_LV5wEKsA8IxgpE9TAR3KG1jcYZn7XHw-u2qNvJIsa4Zs4pbEAJHkyIShcDBJUoSN_VANaipd3IR2oDiyDwEcQ6vfxVgXLQ.svg
+1728,South Korea W,https://i.namu.wiki/i/LuHOzaYa0bRc4of2xYnz_2bfK5-IJTOMyWMlIVUn0NSN1KOXs23k9QwuxdngFBFE0-_TdYjnszduRSowJOUjGQG5WgwvxYwT363_fPtJMXKYCw8UfyO6t7HGyeUj3fMg-7vn8pEsdUD_Y4-xbHANUw.svg,https://i.namu.wiki/i/SVOMyrB-_stGBiwuBJpkLhpGL8fp0zLKFs4gvG4sQEQGpV0No_dAha6_LV5wEKsA8IxgpE9TAR3KG1jcYZn7XHw-u2qNvJIsa4Zs4pbEAJHkyIShcDBJUoSN_VANaipd3IR2oDiyDwEcQ6vfxVgXLQ.svg
+500,볼로냐,https://i.namu.wiki/i/h5GaXy3ND87Z-pfzhRuP3JgN5PqfGBd0Bl3uCCNhsdSISGROJXgePM2nRJokjsdvOSlsaUGqYMOW4lbFhjXcIJ4NkzNNijycRG2F82ajH7xYN_KEQpv_tIYdAt9zY6a8Eb5omcl6leNeGyXiu17gJw.svg
+492,나폴리,https://upload.wikimedia.org/wikipedia/commons/4/4d/SSC_Napoli_2025_%28white_and_azure%29.svg
