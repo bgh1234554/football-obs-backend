@@ -88,7 +88,7 @@ team_id, team_name, ko_name, ko_name_short
 2012,PFC Sochi,소치,
 6786,Akron Tolyatti,아크론 톨리야티, 아크론
 6813,Dinamo Makhachkala,디나모 마하치칼라, 디나모 Mkh.
-665,Irtysh Omsk,이르티시 옴스크, 이르티시
+665,Irtysh Omsk,이르티시 옴스크, 이르티시 O.
 1076,Amkar Prem,암카르 페름, 암카르
 1077,Arsenal Tula,아르세날 툴라, 아르세날 Tl.
 1078,Ufa,우파,
@@ -374,7 +374,7 @@ team_id, team_name, ko_name, ko_name_short
 745,1. FC Kaiserslautern,카이저슬라우테른,카이저슬라우테른
 785,Karlsruher SC,카를스루어,카를스루어
 1313,Preußen Münster,프로이센 뮌스터,뮌스터
-1660,SV Elversberg,엘페르스베르크,엘페르스베르크
+1660,Elversberg,엘페르스베르크,엘페르스베르크
 77,Angers,앙제,앙제
 79,Lille,릴,릴
 80,Lyon,올랭피크 리옹,리옹
@@ -960,3 +960,49 @@ team_id, team_name, ko_name, ko_name_short
 17902,Dewa United,데와 유나이티드,데와
 21167,Muras United,무라스 유나이티드,무라스
 26358,Abu Muslim,아부 무슬림,
+380,FC Minsk,FC 민스크,
+382,FC Vitebsk,비텝스크,
+384,FC Dnepr Mogilev,드네프르 모길료프,드네프르
+388,Bate Borisov,바테 보리소프,BATE
+389,FC Gomel,고멜,
+391,FC Isloch Minsk R.,이슬로치 민스크 라이온,이슬로치
+750,Naftan,나프탄 노보폴로츠크,나프탄
+751,Slavia Mozyr,슬라비야 모지리,슬라비야 Mz.
+3383,Baranovichi,바라노비치,
+3384,Belshina,벨시나 보브루이스크,벨시나
+7808,ML Vitebsk,ML 비텝스크,
+9419,Arsenal,아르세날 제르진스크,아르세날 Dz.
+281,Kashiwa Reysol,가시와 레이솔,가시와
+283,Shimizu S-pulse,시미즈 S-펄즈,시미즈
+285,V-varen Nagasaki,V-파렌 나가사키,나가사키
+287,Urawa,우라와 레드 다이아몬즈,우라와
+288,Nagoya Grampus,나고야 그램퍼스,나고야
+290,Kashima,가시마 앤틀러스,가시마
+291,Cerezo Osaka,세레소 오사카,C. 오사카
+292,FC Tokyo,FC 도쿄,
+294,Kawasaki Frontale,가와사키 프론탈레,가와사키
+296,Yokohama F. Marinos,요코하마 F. 마리노스,요코하마 F
+301,JEF United Chiba,JEF 유나이티드 치바,JEF
+302,Kyoto Sanga,교토 상가,
+305,Mito Hollyhock,미토 홀리호크,
+306,Tokyo Verdy,도쿄 베르디,도쿄 V.
+310,Fagiano Okayama,파지아노 오카야마,오카야마
+316,Avispa Fukuoka,아비스파 후쿠오카,후쿠오카
+582,Alashkert,알라슈케르트,
+688,Gandzasar,간자사르,
+3682,Ararat,아라라트 예레반,아라라트
+3686,Shirak,시라크 귬리,시라크
+6279,BKMA,BKMA 예레반,BKMA
+6286,Van,반,
+2259,FK Tobol Kostanay,토볼 코스타나이,토볼
+4544,Altay,알타이 오스케멘,알타이
+4552,Kaspiy,카스피 악타우,카스피
+4554,Kyzyl-Zhar,키질자르 페트로파블,키질자르
+4558,Okzhetpes,오크젯페스,
+4560,Zhetysu,제티수,
+4562,Kaisar,카이사르,
+4564,Atyrau,아티라우,
+4565,Irtysh,이르티시 파블로다르,이르티시 P.
+16611,Zhenys,제니스,
+21010,Ulytau,울리타우,
+21011,Yelimay Semey,옐리마이,
