@@ -1,4 +1,4 @@
-coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
+﻿coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
 6279, R. Le Bris, Regis Le Bris, France, 레지스 르 브리스, R. 르 브리스
 22538, S. Barbarez, Sergej Barbarez, Bosnia and Herzegovina, 세르게이 바르바레즈, S. 바르바레즈
 2913, I. Gattuso, Ivan Gennaro Gattuso, Italy, 젠나로 가투소, G. 가투소
@@ -327,3 +327,51 @@ coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
 3814,G. Barrow,Graham Barrow,England,그레이엄 배로,G. 배로
 10781,C. Darlington,Craig Darlington,England,크레이그 달링턴,C. 달링턴
 25379,T. Eckert,Tonda Eckert,Germany,톤다 에케르트,T. 에케르트
+1312,V. Fedotov,Vladimir Fedotov,Russia,블라디미르 페도토프,V. 페도토프
+2020,F. Celestini,Fabio Celestini,Switzerland,파비오 첼레스티니,F. 첼레스티니
+14981,A. Berezutski,Aleksey Berezutskiy,Russia,알렉세이 베레주츠키,A. 베레주츠키
+3406,R. Riancho,Raúl Ruiz González-Riancho,Spain,라울 리안초,R. 리안초
+5649,N. Sakić,Nenad Sakić,Serbia,네나드 사키치,N. 사키치
+7766,D. Stanković,Dejan Stanković,Serbia,데얀 스탄코비치,D. 스탄코비치
+25989,J. Carcedo,Juan Carlos Carcedo,Spain,후안 카르세도,J. 카르세도
+1307,S. Semak,Sergey Semak,Russia,세르게이 세마크,S. 세마크
+4556,A. Fyodorov,Andrey Fyodorov,Uzbekistan,안드레이 표도로프,A. 표도로프
+10515,M. Galaktionov,Mikhail Galaktionov,Russia,미하일 갈락티오노프,M. 갈락티오노프
+17092,Z. Khapov,Zaur Khapov,Russia,자우르 하포프,Z. 하포프
+1316,M. Musaev,Murad Musaev,Russia,무라트 무사예프,M. 무사예프
+1325,S. Matveev,Sergey Matveev,Russia,세르게이 마트베예프,S. 마트베예프
+1313,Y. Semin,Yuri Semin,Russia,유리 쇼민,Y. 쇼민
+8740,I. Daniliants,Ivan Daniliants,Austria,이반 다닐리얀츠,I. 다닐리얀츠
+16058,V. Kafanov,Vitali Kafanov,Russia,비탈리 카파노프,V. 카파노프
+24584,J. Alba,Jonatan Alba Cabello,Spain,조나탄 알바,J. 알바
+1086,I. Osinkin,Igor Osinkin,Russia,이고리 오신킨,I. 오신킨
+12157,I. Aytkulov,Ilshat Aytkulov,Russia,일샤트 아잇쿨로프,I. 아잇쿨로프
+20616,D. Deogracia,David Deogracia Márquez,Spain,다비드 데오그라시아,D. 데오그라시아
+22330,V. Slišković,Vladimir Slišković,Bosnia and Herzegovina,블라디미르 슬리슈코비치,V. 슬리슈코비치
+25814,I. Akhmetzyanov,Ildar Akhmetzyanov,Russia,일다르 아흐메트쟈노프,I. 아흐메트쟈노프
+1081,Y. Utkulbaev,Yuri Utkulbaev,Russia,유리 웃쿨바예프,Y. 웃쿨바예프
+1315,R. Rakhimov,Rashid Rakhimov,Tajikistan,라시트 라히모프,R. 라히모프
+25837,F. Artiga,Franc Artiga,Spain,프랑크 아르티가,F. 아르티가
+79,S. Cherchesov,Stanislav Cherchesov,Russia,스타니슬라프 체르체소프,S. 체르체소프
+2492,S. Tashuev,Sergey Tashuev,Russia,세르게이 타슈예프,S. 타슈예프
+20544,M. Romashchenko,Miroslav Romashchenko,Belarus,미로슬라프 로마셴코,M. 로마셴코
+1311,V. Karpin,Valeri Karpin,Russia,발레리 카르핀,V. 카르핀
+25078,R. Gusev,Rolan Gusev,Russia,롤란 구세프,R. 구세프
+27828,R. Gusev,Rolan Gusev,Russia,롤란 구세프,R. 구세프
+1072,A. Talalaev,Andrey Talalaev,Russia,안드레이 탈랄라예프,A. 탈랄라예프
+3405,I. Ledyakhov,Igor Ledyakhov,Russia,이고리 레댜호프,I. 레댜호프
+3862,V. Nepomnyashchiy,Valeri Nepomnyashchiy,Russia,벨레리 네폼냐시,V. 네폼냐시
+10255,S. Ignashevich,Sergey Ignashevich,Russia,세르게이 이그나셰비치,S. 이그나셰비치
+15442,A. Grishchenko,Aleksandr Grishchenko,Russia,알렉산드르 그리셴코,A. 그리셴코
+1320,V. Goncharenko,Viktor Goncharenko,Belarus,빅토르 곤차렌코,V. 곤차렌코
+15230,S. Ilić,Saša Ilić,Serbia,사샤 일리치,S. 일리치
+208,R. Moreno,Robert Moreno González,Spain,로베르토 모레노,R. 모레노
+1310,A. Tochilin,Aleksandr Tochilin,Russia,알렉산드르 토칠린,A. 토칠린
+1318,D. Khokhlov,Dmitri Khokhlov,Russia,드미트리 호흘로프,D. 호흘로프
+8067,R. Berezovskiy,Roman Berezovskiy,Armenia,로만 베레좁스키,R. 베레좁스키
+12260,V. Jăpălău,Vladimir Jăpălău,Moldova,블라디미르 저펄러우,V. 저펄러우
+15712,Z. Tedeev,Zaurbek Tedeev,Russia,자우르 테데예프,Z. 테데예프
+3859,G. Aleksic,Goran Aleksić,Serbia,고란 알렉시치,G. 알렉시치
+7893,R. Agalarov,Ruslan Agalarov,Uzbekistan,루슬란 아갈라로프,R. 아갈라로프
+10798,Kh. Bidzhiyev,Khasanbi Bidzhiev,Russia,하산비 비지예프,Kh. 비지예프
+15989,A. Akaev,Arsen Akaev,Russia,아르센 아카예프,A. 아카예프
