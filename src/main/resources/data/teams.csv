@@ -111,8 +111,8 @@ team_id, team_name, ko_name, ko_name_short
 6787,Alania Vladikavkaz,알라니야 블라디캅카스, 알라니야
 6790,Chelyabinsk,첼랴빈스크,
 6791,Chernomorets Novorossiysk,체르노모레츠 노보로시스크, 체르노모레츠
-6794,Dinamo Barnaul,디나모 바르나울, 디나모 Br.
-6795,Dinamo Bryansk,디나모 브랸스크, 디나모 By.
+6794,Dinamo Barnaul,디나모 바르나울, 디나모 Bn.
+6795,Dinamo Bryansk,디나모 브랸스크, 디나모 Br.
 6796,Dinamo Stavropol,디나모 스타브로폴, 디나모 St.
 6798,Druzhba Maykop,드루즈바 마이코프, 드루즈바
 6801,KAMAZ Naberezhnye-Chelny,KAMAZ 나베레즈니예첼니, KAMAZ
@@ -387,9 +387,9 @@ team_id, team_name, ko_name, ko_name_short
 95,Strasbourg,스트라스부르,스트라스부르
 96,Toulouse,툴루즈,툴루즈
 97,Lorient,로리앙,로리앙
-106,Stade Brestois 29,스타드 브레스트,브레스트
+106,Stade Brestois 29,스타드 브레스트,SB29
 108,Auxerre,AJ 오세르,오세르
-111,Le Havre,르 아브르,르아브르
+111,Le Havre,르 아브르,르 아브르
 112,Metz,메스,메스
 114,Paris FC,파리 FC,파리FC
 116,Lens,랑스,랑스
@@ -404,7 +404,7 @@ team_id, team_name, ko_name, ko_name_short
 110,Estac Troyes,트루아,트루아
 433,Laval,스타드 라발,라발
 1063,Saint Etienne,생테티엔,생테티엔
-1297,PAU,포,포
+1297,Pau,포,포
 1298,Le Mans,르망,르망
 1299,Boulogne,불로뉴,불로뉴
 1301,Rodez,로데스,로데스
@@ -450,14 +450,14 @@ team_id, team_name, ko_name, ko_name_short
 261,KVC Westerlo,베스테를로,베스테를로
 266,KV Mechelen,메헬런,메헬런
 554,Anderlecht,안데를레흐트,안데를레흐트
-569,Club Brugge KV,클뤼프 브뤼허,
-600,Zulte Waregem,쥘테 바레험,쥘테
+569,Club Brugge KV,클뤼프 브뤼허,Cl. 브뤼허
+600,Zulte Waregem,쥘테 바레험,
 631,Gent,헨트,헨트
 733,Standard Liege,스탕다르 리에주,리에주
 735,St. Truiden,신트트라위던,
 736,Charleroi,로얄 샤를루아,샤를루아
 740,Antwerp,로열 앤트워프,앤트워프
-741,Cercle Brugge,세르클러 브뤼허,
+741,Cercle Brugge,세르클러 브뤼허,Cr. 브뤼허
 742,Genk,헹크,헹크
 1393,Union St. Gilloise,위니옹 생질루아,위니옹
 5902,RAAL La Louvière,라 루비에르,라 루비에르
@@ -1006,3 +1006,66 @@ team_id, team_name, ko_name, ko_name_short
 16611,Zhenys,제니스,
 21010,Ulytau,울리타우,
 21011,Yelimay Semey,옐리마이,
+19,Nigeria,나이지리아,
+1489,Tanzania,탄자니아,
+1500,Mali,말리,
+1502,Burkina Faso,부르키나파소,
+1503,Gabon,가봉,
+1507,Zambia,잠비아,
+1510,Sudan,수단,
+1512,Mozambique,모잠비크,
+1516,Benin,베냉,
+1519,Uganda,우간다,
+1520,Botswana,보츠와나,
+1521,Equatorial Guinea,적도 기니,
+1522,Zimbabwe,짐바브웨,
+1524,Comoros,코모로,
+1529,Angola,앙골라,
+1530,Cameroon,카메룬,
+14,Serbia,세르비아,
+21,Denmark,덴마크,
+24,Poland,폴란드,
+769,Hungary,헝가리,
+772,Ukraine,우크라이나,
+773,Slovakia,슬로바키아,
+774,Romania,루마니아,
+778,Albania,알바니아,
+1091,Slovenia,슬로베니아,
+1104,Georgia,조지아,
+1536,Tajikistan,타지키스탄,
+1537,India,인도,
+1538,Malaysia,말레이시아,
+1542,Vietnam,베트남,
+1547,Bahrain,바레인,
+1551,Lebanon,레바논,
+1552,Oman,오만,
+1554,Kyrgyzstan,키르기스스탄,
+1562,Palestine,팔레스타인,
+1563,United Arab Emirates,아랍에미리트,UAE
+1564,Thailand,태국,
+1565,Syria,시리아,
+1566,China,중국,
+1571,Indonesia,인도네시아,
+4460,Hong Kong,홍콩,
+29,Costa Rica,코스타리카,
+2385,Jamaica,자메이카,
+4672,Honduras,온두라스,
+5159,El Salvador,엘살바도르,
+5161,Guatemala,과테말라,
+5168,Trinidad and Tobago,트리니다드토바고,트리니다드
+5532,Dominican Republic,도미니카 공화국,도미니카R
+8171,Suriname,수리남,
+10983,Guadeloupe,과들루프,
+30,Peru,페루,
+2379,Venezuela,베네수엘라,
+2381,Bolivia,볼리비아,
+2383,Chile,칠레,
+5160,Fiji,피지,
+5163,New Caledonia,누벨칼레도니,
+5165,Solomon Islands,솔로몬 제도,
+5167,Tahiti,타히티,
+5170,Vanuatu,바누아투,
+5542,Tonga,통가,
+8174,Cook Islands,쿡 제도,
+8175,Papua New Guinea,파푸아뉴기니,
+8176,Samoa,사모아,
