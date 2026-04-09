@@ -34,7 +34,7 @@ public class FixtureController {
      * @return 200 OK + FixtureResponseDto | 404 Not Found (경기 없음)
      */
     @GetMapping("/fixtures/{fixtureId}")
-    public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable long fixtureId) {
+    public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable("fixtureId") long fixtureId) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         FixtureResponseDto dto = fixtureService.getFixture(fixtureId);
         return ResponseEntity.ok(dto);
