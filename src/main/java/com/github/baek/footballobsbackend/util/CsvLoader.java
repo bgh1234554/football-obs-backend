@@ -56,6 +56,8 @@ public class CsvLoader {
     // index: 0=venue_id(빈 문자열이면 미등록), 1=venue_name, 2=venue_city, 3=venue_name_ko, 4=city_name_ko
     // key: venue_name 소문자 (대소문자 무관 검색을 위해)
     private final Map<String, String[]> venues = new HashMap<>();
+    // key: venue_id (venue_id가 비어있는 행은 등록 안 됨)
+    private final Map<Long, String[]> venuesById = new HashMap<>();
 
     // index: 0=league_id, 1=league_name, 2=league_name_ko, 3=logo_url
     private final Map<Long, String[]> leagues = new HashMap<>();
@@ -237,6 +239,12 @@ public class CsvLoader {
                 if (parts.length < 2) continue;
                 // 4. venue_name 소문자를 키로 저장 (대소문자 무관 검색)
                 venues.put(parts[1].trim().toLowerCase(), parts);
+                // 5. venue_id가 있으면 ID 맵에도 등록 (id 1순위 검색용)
+                String idStr = parts[0].trim();
+                if (!idStr.isEmpty()) {
+                    try { venuesById.put(Long.parseLong(idStr), parts); }
+                    catch (NumberFormatException ignored) {}
+                }
             }
         } catch (IOException e) {
             log.warn("Could not load venues.csv: {}", e.getMessage());
@@ -431,6 +439,14 @@ public class CsvLoader {
     public String[] getVenueRow(String venueName) {
         if (venueName == null || venueName.isBlank()) return null;
         return venues.get(venueName.trim().toLowerCase());
+    }
+
+    /**
+     * 경기장 ID로 venues.csv 행 전체를 조회.
+     * venue_id가 비어있는 행은 등록되지 않으므로 null 반환될 수 있음.
+     */
+    public String[] getVenueRowById(long venueId) {
+        return venuesById.get(venueId);
     }
 
     /**

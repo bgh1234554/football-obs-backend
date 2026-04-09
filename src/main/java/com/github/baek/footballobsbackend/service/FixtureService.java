@@ -637,16 +637,18 @@ public class FixtureService {
         JsonNode idNode = venueNode.path("id");
         boolean hasApiId = !idNode.isNull() && !idNode.isMissingNode();
 
-        // 1. 이름으로 CSV 검색 (id 유무 무관)
-        String[] row = csvLoader.getVenueRow(apiName);
-
-        if (row != null) {
-            // 2. CSV에 해당 경기장이 있음
-            String csvId = row[0].trim();
-            if (hasApiId && csvId.isEmpty()) {
-                // API에는 id가 있는데 CSV에는 id가 없음 → id 등록 필요 로그
-                log.info("[VENUE_ID_NEEDED] name={}, apiId={}", apiName, idNode.asLong());
+        // 1. ID로 CSV 검색 (1순위 — API 이름이 바뀌어도 매칭 가능)
+        if (hasApiId) {
+            String[] row = csvLoader.getVenueRowById(idNode.asLong());
+            if (row != null) {
+                String nameKo = row.length > 3 ? row[3].trim() : "";
+                return nameKo.isEmpty() ? apiName : nameKo;
             }
+        }
+
+        // 2. 이름으로 CSV 검색 (2순위 — venue_id가 없는 경기장 대응)
+        String[] row = csvLoader.getVenueRow(apiName);
+        if (row != null) {
             String nameKo = row.length > 3 ? row[3].trim() : "";
             return nameKo.isEmpty() ? apiName : nameKo;
         }
