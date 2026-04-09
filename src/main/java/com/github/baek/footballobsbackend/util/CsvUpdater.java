@@ -79,6 +79,8 @@ public class CsvUpdater {
                 long startTime = System.currentTimeMillis();
                 if (selection.mode() == CsvUpdaterUi.Mode.PLAYERS) {
                     processSelectedPlayers(apiClient, selection.playerIds());
+                } else if (selection.mode() == CsvUpdaterUi.Mode.COACHES) {
+                    processSelectedCoaches(apiClient, selection.coachIds());
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
                     processTeamOnly(apiClient, selection.teamId());
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM_NAMES) {
@@ -248,6 +250,88 @@ public class CsvUpdater {
         CsvUpdaterCsvHelper.overwriteCsv(DATA_DIR + "/players.csv", table.header(), rows);
         System.out.printf("%n[CsvUpdater] 특정 선수 갱신 완료 — updated:%d inserted:%d%n", updatedCount, insertedCount);
     }
+
+    /**
+     * 특정 감독만 재조회해 coaches.csv를 upsert한다.
+     * - 이미 있는 coach_id: 해당 행을 그 자리에서 교체 (한글 이름 컬럼 보존)
+     * - 없는 coach_id: 새 행으로 추가
+     */
+    private static void processSelectedCoaches(ApiFootballClient apiClient, List<Long> coachIds)
+            throws Exception {
+
+        final int COACH_COLUMN_COUNT = 6; // coach_id, name_short, name_long, nationality, name_ko_long, name_ko_short
+        CsvUpdaterCsvHelper.CsvTable table =
+                CsvUpdaterCsvHelper.loadCsvTable(DATA_DIR + "/coaches.csv", COACH_COLUMN_COUNT);
+
+        // coach_id → 행 인덱스 맵
+        Map<Long, Integer> idToIndex = new HashMap<>();
+        List<String[]> rows = new ArrayList<>(table.rows());
+        for (int i = 0; i < rows.size(); i++) {
+            try { idToIndex.put(Long.parseLong(rows.get(i)[0].trim()), i); }
+            catch (NumberFormatException ignored) {}
+        }
+
+        int updatedCount = 0;
+        int insertedCount = 0;
+
+        for (long coachId : coachIds) {
+            Thread.sleep(REQUEST_DELAY_MS);
+
+            JsonNode coachResp = apiClient.getCoachById(coachId);
+            if (coachResp == null || !coachResp.isArray() || coachResp.isEmpty()) {
+                System.out.printf("  [COACH!] %d 응답 없음, 건너뜀%n", coachId);
+                continue;
+            }
+
+            JsonNode c = coachResp.get(0);
+            Integer existingIdx = idToIndex.get(coachId);
+            String[] existingRow = existingIdx != null ? rows.get(existingIdx) : null;
+
+            String apiNameShort = c.path("name").asText("");
+            String csvNameShort = getColumn(existingRow, 1);
+            String nameShort;
+            if (existingRow != null && !csvNameShort.isBlank()) {
+                // 기존 값 유지 — API 값과 다르면 참고용 로그
+                if (!csvNameShort.equals(apiNameShort) && !apiNameShort.isBlank()) {
+                    System.out.printf(ANSI_MAGENTA + ANSI_BOLD
+                            + "  [COACH_NAME_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET,
+                            coachId, csvNameShort, apiNameShort);
+                }
+                nameShort = csvNameShort;
+            } else {
+                nameShort = apiNameShort;
+            }
+
+            // nationality, nameLong은 항상 API 값으로 upsert
+            String nationality = firstNonBlank(c.path("nationality").asText(""), getColumn(existingRow, 3));
+            String nameLong = firstNonBlank(
+                    (c.path("firstname").asText("") + " " + c.path("lastname").asText("")).trim(),
+                    getColumn(existingRow, 2)
+            );
+
+            // 한글 이름 컬럼은 기존 값을 그대로 보존
+            String nameKoLong  = getColumn(existingRow, 4);
+            String nameKoShort = getColumn(existingRow, 5);
+            String[] newRow = {
+                    String.valueOf(coachId),
+                    nameShort, nameLong, nationality, nameKoLong, nameKoShort
+            };
+
+            if (existingIdx != null) {
+                rows.set(existingIdx, newRow);
+                updatedCount++;
+                System.out.printf("  [COACH~] %d %s / %s (updated)%n", coachId, nameShort, nationality);
+            } else {
+                rows.add(newRow);
+                insertedCount++;
+                System.out.printf("  [COACH+] %d %s / %s%n", coachId, nameShort, nationality);
+            }
+        }
+
+        CsvUpdaterCsvHelper.overwriteCsv(DATA_DIR + "/coaches.csv", table.header(), rows);
+        System.out.printf("%n[CsvUpdater] 특정 감독 갱신 완료 — updated:%d inserted:%d%n", updatedCount, insertedCount);
+    }
+
 
     /**
      * 특정 팀 ID 하나만 지정해 팀 정보 + 선수 + 감독을 수집한다.

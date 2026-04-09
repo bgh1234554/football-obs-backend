@@ -31,7 +31,7 @@ class CsvUpdaterUi {
 
     /** 리그/대회 항목 하나. enabled=true 이면 '0 전체 실행'에 포함된다. */
     record LeagueEntry(int id, String name, boolean enabled) {}
-    enum Mode { LEAGUE, PLAYERS, TEAM, TEAM_NAMES }
+    enum Mode { LEAGUE, PLAYERS, COACHES, TEAM, TEAM_NAMES }
 
     // ── 추춘제 대회 ────────────────────────────────
     static final int FALL_SEASON = 2025;
@@ -99,23 +99,27 @@ class CsvUpdaterUi {
     );
     // ─────────────────────────────────────────────────────────
 
-    /** 처리할 리그 ID 목록 + 적용할 시즌 연도 또는 특정 선수/팀 ID */
-    record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds, long teamId,
-                            Map<Integer, Integer> leagueSeasonMap) {
+    /** 처리할 리그 ID 목록 + 적용할 시즌 연도 또는 특정 선수/감독/팀 ID */
+    record SelectionResult(Mode mode, List<Integer> leagueIds, int season, List<Long> playerIds, List<Long> coachIds,
+                            long teamId, Map<Integer, Integer> leagueSeasonMap) {
         static SelectionResult forLeagues(List<Integer> leagueIds, int season) {
-            return new SelectionResult(Mode.LEAGUE, leagueIds, season, List.of(), 0L, Map.of());
+            return new SelectionResult(Mode.LEAGUE, leagueIds, season, List.of(), List.of(), 0L, Map.of());
         }
 
         static SelectionResult forPlayers(List<Long> playerIds) {
-            return new SelectionResult(Mode.PLAYERS, List.of(), 0, playerIds, 0L, Map.of());
+            return new SelectionResult(Mode.PLAYERS, List.of(), 0, playerIds, List.of(), 0L, Map.of());
+        }
+
+        static SelectionResult forCoaches(List<Long> coachIds) {
+            return new SelectionResult(Mode.COACHES, List.of(), 0, List.of(), coachIds, 0L, Map.of());
         }
 
         static SelectionResult forTeam(long teamId) {
-            return new SelectionResult(Mode.TEAM, List.of(), 0, List.of(), teamId, Map.of());
+            return new SelectionResult(Mode.TEAM, List.of(), 0, List.of(), List.of(), teamId, Map.of());
         }
 
         static SelectionResult forTeamNames(List<Integer> leagueIds, Map<Integer, Integer> leagueSeasonMap) {
-            return new SelectionResult(Mode.TEAM_NAMES, leagueIds, 0, List.of(), 0L, leagueSeasonMap);
+            return new SelectionResult(Mode.TEAM_NAMES, leagueIds, 0, List.of(), List.of(), 0L, leagueSeasonMap);
         }
     }
 
@@ -139,7 +143,8 @@ class CsvUpdaterUi {
             System.out.println("  2. 춘추제 리그 / 대회  (season " + SPRING_SEASON + ")");
             System.out.println("  3. 대회 팀 이름 갱신   (teams.csv team_name upsert)");
             System.out.println("  4. 특정 선수(player_id) 갱신");
-            System.out.println("  5. 특정 팀(team_id) 선수/감독 갱신");
+            System.out.println("  5. 특정 감독(coach_id) 갱신");
+            System.out.println("  6. 특정 팀(team_id) 선수/감독 갱신");
             System.out.println("  q. 종료");
             System.out.print("> ");
 
@@ -168,6 +173,10 @@ class CsvUpdaterUi {
                 if (result == null) { printBackToMain(); continue; }
                 return result;
             } else if (categoryInput.equals("5")) {
+                SelectionResult result = promptCoachSelection(sc);
+                if (result == null) { printBackToMain(); continue; }
+                return result;
+            } else if (categoryInput.equals("6")) {
                 SelectionResult result = promptTeamSelection(sc);
                 if (result == null) { printBackToMain(); continue; }
                 return result;
@@ -453,6 +462,36 @@ class CsvUpdaterUi {
         return SelectionResult.forPlayers(playerIds);
     }
 
+    private static SelectionResult promptCoachSelection(Scanner sc) {
+        System.out.println();
+        System.out.println("--- 특정 감독(coach_id) 갱신 ---");
+        System.out.println("  coaches.csv를 upsert합니다. (기존 한글 이름 컬럼 보존)");
+        System.out.println("  입력 방식:");
+        System.out.println("    - ID 직접 입력: 1234,5678");
+        System.out.println("    - 로그 붙여넣기: [KO_COACH_NAME_NEEDED] id=1234, name=J. Smith");
+        System.out.println("  q = 취소");
+        System.out.print("> ");
+
+        String rawInput = sc.nextLine().trim();
+        if (rawInput.equals("q") || rawInput.isEmpty()) return null;
+
+        List<Long> coachIds = parseCoachIds(rawInput);
+        if (coachIds == null || coachIds.isEmpty()) {
+            System.out.println("[CsvUpdater] coach_id를 찾지 못했습니다. 취소합니다.");
+            return null;
+        }
+
+        System.out.println();
+        System.out.println("--- 실행 확인 ---");
+        System.out.println("  모드     : 특정 감독 갱신");
+        System.out.printf("  coachIds : %s%n", coachIds);
+        System.out.println();
+        System.out.print("  실행하시겠습니까? (y/n) > ");
+
+        if (!sc.nextLine().trim().equalsIgnoreCase("y")) return null;
+        return SelectionResult.forCoaches(coachIds);
+    }
+
     private static SelectionResult promptTeamSelection(Scanner sc) {
         System.out.println();
         System.out.println("--- 특정 팀(team_id) 선수/감독 갱신 ---");
@@ -485,27 +524,39 @@ class CsvUpdaterUi {
     }
 
     private static List<Long> parsePlayerIds(String rawInput) {
-        LinkedHashSet<Long> playerIds = new LinkedHashSet<>();
+        return parseLongIds(rawInput, "player_id");
+    }
+
+    private static List<Long> parseCoachIds(String rawInput) {
+        return parseLongIds(rawInput, "coach_id");
+    }
+
+    /**
+     * "id=123" 형식의 로그 붙여넣기 또는 콤마/공백 구분 숫자 목록을 Long ID 리스트로 파싱한다.
+     * 중복 제거 후 입력 순서를 유지한다.
+     */
+    private static List<Long> parseLongIds(String rawInput, String label) {
+        LinkedHashSet<Long> ids = new LinkedHashSet<>();
 
         java.util.regex.Matcher logMatcher = java.util.regex.Pattern
                 .compile("id\\s*=\\s*(\\d+)")
                 .matcher(rawInput);
         while (logMatcher.find()) {
-            playerIds.add(Long.parseLong(logMatcher.group(1)));
+            ids.add(Long.parseLong(logMatcher.group(1)));
         }
-        if (!playerIds.isEmpty()) {
-            return new ArrayList<>(playerIds);
+        if (!ids.isEmpty()) {
+            return new ArrayList<>(ids);
         }
 
         for (String token : rawInput.split("[,\\s]+")) {
             if (token.isBlank()) continue;
             try {
-                playerIds.add(Long.parseLong(token.trim()));
+                ids.add(Long.parseLong(token.trim()));
             } catch (NumberFormatException e) {
-                System.out.println("[CsvUpdater] 잘못된 player_id 형식: " + token);
+                System.out.println("[CsvUpdater] 잘못된 " + label + " 형식: " + token);
                 return null;
             }
         }
-        return new ArrayList<>(playerIds);
+        return new ArrayList<>(ids);
     }
 }

@@ -144,6 +144,17 @@ public class ApiFootballClient {
         return fetchArray("/coachs?team=" + teamId);
     }
 
+    /**
+     * 특정 감독 ID의 상세 정보를 가져온다.
+     * CsvUpdater 개별 감독 갱신(Mode.COACHES)에서 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getCoachById(long coachId) {
+        log.info("Fetching coach coachId={}", coachId);
+        return fetchArray("/coachs?id=" + coachId);
+    }
+
     // ──────────────────────────────────────────────
     // 공통 헬퍼
     // ──────────────────────────────────────────────
