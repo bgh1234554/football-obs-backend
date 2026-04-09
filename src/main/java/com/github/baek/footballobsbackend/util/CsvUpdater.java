@@ -82,9 +82,9 @@ public class CsvUpdater {
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
                     processTeamOnly(apiClient, selection.teamId());
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM_NAMES) {
-                    processTeamNamesOnly(apiClient, selection);
+                    processTeamNamesOnly(apiClient, selection, sc);
                 } else {
-                    processAll(apiClient, selection);
+                    processAll(apiClient, selection, sc);
                 }
                 Duration duration = Duration.ofMillis(System.currentTimeMillis() - startTime);
                 System.out.printf(ANSI_YELLOW + ANSI_BOLD + "%n  작업 완료까지 %d분 %d초 %d밀리초가 소요되었습니다.%n" + ANSI_RESET,
@@ -103,7 +103,7 @@ public class CsvUpdater {
     /**
      * 선택된 리그 목록을 순회하며 CSV를 업데이트한다.
      */
-    private static void processAll(ApiFootballClient apiClient, CsvUpdaterUi.SelectionResult selection)
+    private static void processAll(ApiFootballClient apiClient, CsvUpdaterUi.SelectionResult selection, Scanner sc)
             throws Exception {
 
         // 기존 CSV에서 이미 등록된 항목 로드 (중복 추가 방지)
@@ -141,10 +141,14 @@ public class CsvUpdater {
                 System.out.printf("  [LEAGUE+] %d %s%n", leagueId, leagueName);
             }
 
-            processLeague(apiClient, leagueId, selection.season(),
+            boolean cont = processLeague(apiClient, leagueId, selection.season(), sc,
                     existingTeamIds, existingPlayerIds, existingCoachIds, existingVenueNames,
                     existingTeamNameMap, existingCoachNameMap, existingVenueCityMap,
                     newTeamRows, newPlayerRows, newCoachRows, newVenueRows);
+            if (!cont) {
+                System.out.println(ANSI_CYAN + "  메인 화면으로 돌아갑니다." + ANSI_RESET);
+                return; // 저장하지 않고 메인 메뉴로 복귀
+            }
         }
 
         // 각 CSV에 신규 행 append
@@ -299,7 +303,7 @@ public class CsvUpdater {
      * - 없는 team_id: 신규 행 추가 (ko_name 빈 값)
      * - teams.csv만 건드리며 players/coaches/venues는 변경하지 않음
      */
-    private static void processTeamNamesOnly(ApiFootballClient apiClient, CsvUpdaterUi.SelectionResult selection)
+    private static void processTeamNamesOnly(ApiFootballClient apiClient, CsvUpdaterUi.SelectionResult selection, Scanner sc)
             throws Exception {
 
         // teams.csv를 통째로 로딩해 upsert 준비
@@ -322,9 +326,47 @@ public class CsvUpdater {
             System.out.printf("%n[CsvUpdater] League %d (season %d) 팀 이름 조회 중...%n", leagueId, season);
 
             JsonNode teamsResp = apiClient.getTeams(leagueId, season);
-            if (teamsResp == null || !teamsResp.isArray() || teamsResp.isEmpty()) {
-                System.out.printf("  응답 없음 또는 빈 배열, 건너뜀%n");
+            if (teamsResp == null || !teamsResp.isArray()) {
+                System.out.printf("  응답 없음, 건너뜀%n");
                 continue;
+            }
+
+            // 팀이 없으면 연도를 1씩 줄여가며 팀이 있는 시즌 탐색 (국제대회 대응)
+            if (teamsResp.isEmpty()) {
+                System.out.printf("  season %d 에 등록된 팀 없음, 이전 시즌 탐색 중...%n", season);
+
+                final int MAX_FALLBACK_YEARS = 10;
+                JsonNode foundResp = null;
+                int foundSeason = -1;
+
+                for (int i = 1; i <= MAX_FALLBACK_YEARS; i++) {
+                    int trySeason = season - i;
+                    Thread.sleep(REQUEST_DELAY_MS);
+                    JsonNode resp = apiClient.getTeams(leagueId, trySeason);
+                    if (resp != null && resp.isArray() && !resp.isEmpty()) {
+                        foundResp = resp;
+                        foundSeason = trySeason;
+                        break;
+                    }
+                }
+
+                if (foundResp == null) {
+                    System.out.printf("  최근 %d년 내에 팀 데이터 없음, 건너뜀%n", MAX_FALLBACK_YEARS);
+                    continue;
+                }
+
+                System.out.println();
+                System.out.printf(ANSI_YELLOW + ANSI_BOLD + "  ⚠  season %d 에서 팀 %d개를 찾았습니다.%n" + ANSI_RESET, foundSeason, foundResp.size());
+                System.out.print(ANSI_YELLOW + "     이 시즌의 팀을 사용하시겠습니까? (y/n) > " + ANSI_RESET);
+
+                String answer = sc.nextLine().trim();
+                System.out.println();
+                if (!answer.equalsIgnoreCase("y")) {
+                    System.out.println(ANSI_CYAN + "  메인 화면으로 돌아갑니다." + ANSI_RESET);
+                    return; // 저장하지 않고 메인 메뉴로 복귀
+                }
+
+                teamsResp = foundResp;
             }
 
             for (JsonNode entry : teamsResp) {
@@ -362,8 +404,11 @@ public class CsvUpdater {
      * 1) 리그 소속 팀 + 홈구장 수집
      * 2) 팀별 선수 스쿼드 + 감독 수집
      */
-    private static void processLeague(
-            ApiFootballClient apiClient, int leagueId, int season,
+    /**
+     * @return false 이면 사용자가 n을 눌러 전체 작업을 중단한다는 뜻 — processAll()이 즉시 반환한다.
+     */
+    private static boolean processLeague(
+            ApiFootballClient apiClient, int leagueId, int season, Scanner sc,
             Set<Long> existingTeamIds, Set<Long> existingPlayerIds, Set<Long> existingCoachIds,
             Set<String> existingVenueNames,
             Map<Long, String> existingTeamNameMap, Map<Long, String> existingCoachNameMap,
@@ -377,11 +422,44 @@ public class CsvUpdater {
         JsonNode teamsResp = apiClient.getTeams(leagueId, season);
         if (teamsResp == null || !teamsResp.isArray()) {
             System.out.printf("[CsvUpdater] League %d 응답 없음, 건너뜀%n", leagueId);
-            return;
+            return true; // 이 리그만 건너뜀, 다음 리그 계속
         }
+
+        // 팀이 없으면 연도를 1씩 줄여가며 팀이 있는 시즌 탐색 (국제대회 대응)
         if (teamsResp.isEmpty()) {
-            System.out.printf("[CsvUpdater] League %d season %d 에 등록된 팀 없음 (해당 시즌 미개최), 건너뜀%n", leagueId, season);
-            return;
+            System.out.printf("[CsvUpdater] League %d season %d 에 등록된 팀 없음, 이전 시즌 탐색 중...%n", leagueId, season);
+
+            final int MAX_FALLBACK_YEARS = 10;
+            JsonNode foundResp = null;
+            int foundSeason = -1;
+
+            for (int i = 1; i <= MAX_FALLBACK_YEARS; i++) {
+                int trySeason = season - i;
+                Thread.sleep(REQUEST_DELAY_MS);
+                JsonNode resp = apiClient.getTeams(leagueId, trySeason);
+                if (resp != null && resp.isArray() && !resp.isEmpty()) {
+                    foundResp = resp;
+                    foundSeason = trySeason;
+                    break;
+                }
+            }
+
+            if (foundResp == null) {
+                System.out.printf("[CsvUpdater] League %d 최근 %d년 내에 팀 데이터 없음, 건너뜀%n", leagueId, MAX_FALLBACK_YEARS);
+                return true; // 이 리그만 건너뜀, 다음 리그 계속
+            }
+
+            System.out.println();
+            System.out.printf(ANSI_YELLOW + ANSI_BOLD + "  ⚠  season %d 에서 팀 %d개를 찾았습니다.%n" + ANSI_RESET, foundSeason, foundResp.size());
+            System.out.print(ANSI_YELLOW + "     이 시즌의 팀을 사용하시겠습니까? (y/n) > " + ANSI_RESET);
+
+            String answer = sc.nextLine().trim();
+            System.out.println();
+            if (!answer.equalsIgnoreCase("y")) {
+                return false; // 전체 작업 중단 → processAll이 메인 메뉴로 복귀
+            }
+
+            teamsResp = foundResp;
         }
 
         List<Long> teamIds = collectTeamsAndVenues(
@@ -395,6 +473,7 @@ public class CsvUpdater {
             Thread.sleep(REQUEST_DELAY_MS);
             collectCoachForTeam(apiClient, teamId, existingCoachIds, existingCoachNameMap, newCoachRows);
         }
+        return true;
     }
 
     /**

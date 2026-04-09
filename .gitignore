@@ -42,3 +42,4 @@ src/main/resources/jsonExample/
 src/main/resources/csvExample/
 .claude
 .gradle-user-home
+.codex-tmp

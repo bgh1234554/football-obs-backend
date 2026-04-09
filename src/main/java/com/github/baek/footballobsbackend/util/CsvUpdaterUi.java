@@ -74,7 +74,7 @@ class CsvUpdaterUi {
             new LeagueEntry(6,    "Africa Cup of Nations",                          true),
             new LeagueEntry(7,    "Asian Cup",                                      true),
             new LeagueEntry(22,   "CONCACAF Gold Cup",                              true),
-            new LeagueEntry(27,   "OFC Champions League",                           true),
+            new LeagueEntry(806, "OFC Nations Cup", true),
             new LeagueEntry(9,    "Copa America",                                   true),
             new LeagueEntry(23,   "EAFF E-1 Football Championship",                 true),
 //            new LeagueEntry(1169, "EAFF E-1 FC - Qualification",                   true),
@@ -93,6 +93,7 @@ class CsvUpdaterUi {
             new LeagueEntry(37,   "World Cup - Qualification Intercontinental P/O", true),
             new LeagueEntry(1168, "FIFA Intercontinental Cup",                      true),
 //            new LeagueEntry(860,  "FIFA Arab Cup",                                  true),
+            new LeagueEntry(27,   "OFC Champions League",                           true),
             new LeagueEntry(11, "CONMEBOL Sudamericana", true),
             new LeagueEntry(13, "CONMEBOL Libertadores", true)
     );
