@@ -30,6 +30,7 @@ team_id, team_name_ko, logo_url, fa_url
 1,Belgium,https://i.namu.wiki/i/rUgom_6SzOkaZ1fpENkbTbavcWOwMFPnLkWVdfLObPzJVHEqafNGt7lUX4av7_mA-Fxo8XHZgmXHWOujzRMaYxlBNVsXHtcWrH2-2nQgXhY8PEgqeYDYLlzgc5k23VMxyq_EmjEdWbId8TxeV_OeTA.svg,https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Royal_Belgian_FA_logo_2019.svg/1280px-Royal_Belgian_FA_logo_2019.svg.png
 2,France,https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg,https://upload.wikimedia.org/wikipedia/en/thumb/1/12/France_national_football_team_seal.svg/1280px-France_national_football_team_seal.svg.png
 3,Croatia,https://upload.wikimedia.org/wikipedia/commons/1/1b/Flag_of_Croatia.svg,https://upload.wikimedia.org/wikipedia/en/thumb/8/84/Croatian_Football_Federation_logo.svg/1920px-Croatian_Football_Federation_logo.svg.png
+4,Russia,https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg,https://upload.wikimedia.org/wikipedia/commons/2/29/Coat_of_Arms_of_the_Russian_Federation_2.svg
 5,Sweden,https://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg,https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/Sweden_national_football_team_badge.svg/1280px-Sweden_national_football_team_badge.svg.png
 6,Brazil,https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg,https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Brazilian_Football_Confederation_logo.svg/1920px-Brazilian_Football_Confederation_logo.svg.png
 7,Uruguay,https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Uruguay.svg,https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Uruguay_national_football_team_seal.svg/1280px-Uruguay_national_football_team_seal.svg.png
@@ -160,3 +161,6 @@ team_id, team_name_ko, logo_url, fa_url
 8174,Cook Islands,,https://upload.wikimedia.org/wikipedia/en/4/48/Cook_Islands_FA.svg
 8175,Papua New Guinea,,https://upload.wikimedia.org/wikipedia/en/b/bb/PNGFA_Logo.svg
 8176,Samoa,,https://upload.wikimedia.org/wikipedia/en/9/97/Football_Federation_Samoa_logo_%282025%29.png
+227,산타 클라라,https://upload.wikimedia.org/wikipedia/en/3/37/C.D._Santa_Clara_logo.svg
+15130,이스트렐라 아마도라,https://upload.wikimedia.org/wikipedia/commons/0/08/S%C3%ADmbolo_Estrela_da_Amadora.svg
+218,톤델라,https://i.namu.wiki/i/G6DzpQkGM3uYcRDN7PoPlSF5Ie3fx2mthjXT5B_f1e2PgNbSZ0v3hBSe8cwmU-ANyPcqDc2YOWup7MuNve_Dp2GN3tOlZc5xFYAqra4eUnDfnqgCKhA9z4gi1sslRQT8z3tQH_rQj9viitmcfUMZHQ.svg
