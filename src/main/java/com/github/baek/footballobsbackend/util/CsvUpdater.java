@@ -49,6 +49,7 @@ public class CsvUpdater {
     private static final String ANSI_YELLOW  = "\u001B[33m";
     private static final String ANSI_CYAN    = "\u001B[36m";
     private static final String ANSI_MAGENTA = "\u001B[35m"; // DIFF 로그 통일 색상
+    private static final String ANSI_PINK    = "\u001B[95m"; // nationality diff 전용
 
     // ──────────────────────────────────────────────
     // 진입점
@@ -203,7 +204,15 @@ public class CsvUpdater {
             String apiNameShort = p.path("name").asText("");
             String firstName    = p.path("firstname").asText("");
             String lastName     = p.path("lastname").asText("");
-            String nationality  = firstNonBlank(p.path("nationality").asText(""), getColumn(existingRow, 4));
+            String apiNationality = p.path("nationality").asText("");
+            String csvNationality = getColumn(existingRow, 4);
+            if (existingRow != null && !csvNationality.isBlank() && !apiNationality.isBlank()
+                    && !csvNationality.equals(apiNationality)) {
+                System.out.printf(ANSI_PINK + ANSI_BOLD
+                        + "  [NAT_DIFF] %d  csv=%s  api=%s%n" + ANSI_RESET,
+                        playerId, csvNationality, apiNationality);
+            }
+            String nationality  = firstNonBlank(apiNationality, csvNationality);
             String csvNameShort = getColumn(existingRow, 1);
             String nameShort;
             if (existingRow != null && !csvNameShort.isBlank()) {
