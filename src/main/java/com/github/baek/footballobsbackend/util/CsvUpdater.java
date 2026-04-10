@@ -201,6 +201,9 @@ public class CsvUpdater {
             String[] existingRow = existingIdx != null ? rows.get(existingIdx) : null;
 
             String apiNameShort = p.path("name").asText("");
+            String firstName    = p.path("firstname").asText("");
+            String lastName     = p.path("lastname").asText("");
+            String nationality  = firstNonBlank(p.path("nationality").asText(""), getColumn(existingRow, 4));
             String csvNameShort = getColumn(existingRow, 1);
             String nameShort;
             if (existingRow != null && !csvNameShort.isBlank()) {
@@ -211,21 +214,16 @@ public class CsvUpdater {
                 }
                 nameShort = csvNameShort;
             } else {
-                // 기존 값이 없으면 API 값으로 채움
-                nameShort = apiNameShort;
+                // 기존 값이 없으면 국적 기반 약식으로 변환해서 채움
+                nameShort = buildNameShortAbbrev(apiNameShort, firstName, lastName, nationality);
                 if (!nameShort.isBlank()) {
                     System.out.printf(ANSI_YELLOW+ANSI_BOLD+"  [NAME_FILL] %d name_short 채움: %s%n"+ANSI_RESET, playerId, nameShort);
                 }
             }
 
-            // nationality, nameLong은 항상 API 값으로 upsert
-            String position    = firstNonBlank(p.path("position").asText(""), getColumn(existingRow, 3));
-            String nationality = firstNonBlank(p.path("nationality").asText(""), getColumn(existingRow, 4));
-            String nameLong    = buildPlayerLongName(
-                    p.path("firstname").asText(""),
-                    p.path("lastname").asText(""),
-                    nationality
-            );
+            // position, nameLong은 항상 API 값으로 upsert
+            String position = firstNonBlank(p.path("position").asText(""), getColumn(existingRow, 3));
+            String nameLong = buildPlayerLongName(firstName, lastName, nationality);
             nameLong = firstNonBlank(nameLong, nameShort, getColumn(existingRow, 2));
 
             // 한글 이름 컬럼은 기존 값을 그대로 보존
@@ -646,14 +644,12 @@ public class CsvUpdater {
 
             if (profileResp != null && profileResp.isArray() && !profileResp.isEmpty()) {
                 JsonNode p         = profileResp.get(0).path("player");
-                String nameShort   = p.path("name").asText("");
-                String position    = p.path("position").asText("");
+                String firstName   = p.path("firstname").asText("");
+                String lastName    = p.path("lastname").asText("");
                 String nationality = p.path("nationality").asText("");
-                String nameLong    = buildPlayerLongName(
-                        p.path("firstname").asText(""),
-                        p.path("lastname").asText(""),
-                        nationality
-                );
+                String nameShort   = buildNameShortAbbrev(p.path("name").asText(""), firstName, lastName, nationality);
+                String position    = p.path("position").asText("");
+                String nameLong    = buildPlayerLongName(firstName, lastName, nationality);
                 // columns: player_id, name_short, name_long, position, nationality, name_ko_long(수동), name_ko_short(수동)
                 newPlayerRows.add(playerId + "," + CsvUpdaterCsvHelper.esc(nameShort)
                         + "," + CsvUpdaterCsvHelper.esc(nameLong)
@@ -707,6 +703,77 @@ public class CsvUpdater {
                     + "," + CsvUpdaterCsvHelper.esc(nationality) + ",,");
             System.out.printf("  [COACH+] %d %s%n", coachId, nameLong);
         }
+    }
+
+    /**
+     * API Football name 필드를 name_short 규칙에 맞게 약식으로 변환한다.
+     * - 이미 "." 포함: 그대로 반환 (이미 약식)
+     * - 단일 단어(닉네임): 그대로 반환
+     * - 한국: Lastname H.M. (하이픈 분리 이니셜)
+     * - 중국/대만/홍콩/마카오: Lastname L.
+     * - 베트남: Ng. Quang Hai (성 앞 2글자 이니셜 + 이름 전체)
+     * - 기타(서양, 일본, 헝가리 포함): F. Lastname
+     */
+    private static String buildNameShortAbbrev(String apiName, String firstName, String lastName, String nationality) {
+        if (apiName == null || apiName.isBlank()) return apiName == null ? "" : apiName;
+        if (apiName.contains(".")) return apiName;   // already abbreviated
+        if (!apiName.contains(" ")) return apiName;  // single word (nickname)
+
+        String fn  = firstName  != null ? firstName.trim()  : "";
+        String ln  = lastName   != null ? lastName.trim()   : "";
+        String nat = nationality != null ? nationality.trim().toLowerCase() : "";
+
+        // firstname/lastname 없으면 apiName에서 split
+        if (fn.isEmpty() || ln.isEmpty()) {
+            String[] parts = apiName.split("\\s+", 2);
+            if (fn.isEmpty()) fn = parts[0];
+            if (ln.isEmpty() && parts.length > 1) ln = parts[1];
+        }
+        if (ln.isEmpty()) return apiName;
+
+        // 한국: Son H.M.
+        if (nat.equals("south korea") || nat.equals("korea republic") || nat.equals("korea dpr") || nat.equals("north korea")) {
+            String initials = buildHyphenatedInitials(fn);
+            return ln + (initials.isEmpty() ? "" : " " + initials);
+        }
+
+        // 중국권: Wu L.
+        if (nat.equals("china") || nat.equals("china pr") || nat.equals("pr china")
+                || nat.equals("taiwan") || nat.equals("chinese taipei")
+                || nat.equals("hong kong") || nat.equals("macao")) {
+            if (fn.isEmpty()) return apiName;
+            return ln + " " + Character.toUpperCase(fn.charAt(0)) + ".";
+        }
+
+        // 베트남: Ng. Quang Hai
+        if (nat.equals("vietnam") || nat.equals("viet nam")) {
+            if (fn.isEmpty()) return apiName;
+            // 성 앞 2글자가 자음이면 2글자 이니셜 (Ng., Tr., Ph. 등)
+            String surnameInitial;
+            if (ln.length() >= 2 && Character.isLetter(ln.charAt(1)) && "aeiouAEIOU".indexOf(ln.charAt(1)) < 0) {
+                surnameInitial = ln.substring(0, 2) + ".";
+            } else {
+                surnameInitial = ln.charAt(0) + ".";
+            }
+            return surnameInitial + " " + fn;
+        }
+
+        // 기타(서양, 일본, 헝가리 등): F. Lastname
+        return Character.toUpperCase(fn.charAt(0)) + ". " + ln;
+    }
+
+    /**
+     * 하이픈 또는 공백으로 구분된 이름에서 각 파트의 첫 글자를 이니셜로 조합한다.
+     * 예: "Heung-Min" → "H.M.", "Ji-Sung" → "J.S.", "Jeong" → "J."
+     */
+    private static String buildHyphenatedInitials(String name) {
+        if (name == null || name.isBlank()) return "";
+        String[] parts = name.split("[-\\s]+");
+        StringBuilder sb = new StringBuilder();
+        for (String part : parts) {
+            if (!part.isEmpty()) sb.append(Character.toUpperCase(part.charAt(0))).append('.');
+        }
+        return sb.toString();
     }
 
     /**
