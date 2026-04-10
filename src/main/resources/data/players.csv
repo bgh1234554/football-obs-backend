@@ -51,7 +51,7 @@
 862,L. Spinazzola,Leonardo Spinazzola,Defender,Italy,레오나르도 스피나촐라,L. 스피나촐라
 310187,S. Bajcetic,Stefan Bajcetic,Midfielder,Spain,스테판 바이체티치,S. 바이체티치
 180317,C. Bradley,Conor Bradley,Defender,Northern Ireland,코너 브래들리,C. 브래들리
-8500,W. Endo,Wataru Endo,Midfielder,Japan,엔도 와타루,W. 와타루
+8500,W. Endo,Wataru Endo,Midfielder,Japan,엔도 와타루,W. 엔도
 2864,A. Isak,Alexander Isak,Attacker,Sweden,알렉산데르 이삭,A. 이삭
 409047,G. Leoni,Giovanni Leoni,Defender,Italy,조반니 레오니,G. 레오니
 863,R. Bentancur,Rodrigo Bentancur,Midfielder,Uruguay,로드리고 벤탕쿠르,R. 벤탕쿠르
@@ -497,7 +497,7 @@
 286458,J. Devenny,Justin Devenny,Midfielder,Scotland,저스틴 디베니,J. 디베니
 557413,J. Drakes-Thomas,Joél Drakes-Thomas,Attacker,England,조엘 드레이크스토머스,J. 드레이크스토머스
 18806,W. Hughes,William James Hughes,Midfielder,England,윌 휴즈,W. 휴즈
-2601,D. Kamada,Daichi Kamada,Midfielder,Japan,카마다 다이치,D. 다이치
+2601,D. Kamada,Daichi Kamada,Midfielder,Japan,카마다 다이치,D. 카마다
 2490,J. Lerma,Jefferson Andrés Lerma Solís,Midfielder,Colombia,제페르손 레르마,J. 레르마
 301295,K. Rodney,Kaden Kai Rodney,Midfielder,England,케이든 로드니,K. 로드니
 403554,C. Uche,Christantus Ugonna Uche,Midfielder,Nigeria,크리산투스 우체,C. 우체
@@ -557,7 +557,7 @@
 19329,D. James,Daniel Owen James,Midfielder,Wales,다니엘 제임스,D. 제임스
 18901,S. Longstaff,Sean David Longstaff,Midfielder,England,숀 롱스태프,S. 롱스태프
 177665,A. Stach,Anton Levi Stach,Midfielder,Germany,안톤 슈타흐,A. 슈타흐
-32966,A. Tanaka,Ao Tanaka,Midfielder,Japan,타나카 아오,A. 아오
+32966,A. Tanaka,Ao Tanaka,Midfielder,Japan,타나카 아오,A. 타나카
 18766,D. Calvert-Lewin,Dominic Nathaniel Calvert-Lewin,Attacker,England,도미닉 칼버트르윈,D. 칼버트르윈
 162128,W. Gnonto,Degnand Wilfried Gnonto,Attacker,Italy,윌프리드 뇬토,W. 뇬토
 19461,L. Nmecha,Lukas Okechukwu Nmecha,Attacker,Germany,루카스 은메차,L. 은메차
@@ -1400,7 +1400,7 @@
 190485,S. Costa,Samuel de Almeida Costa,Midfielder,Portugal,사무 코스타,S. 코스타
 107194,A. Sánchez,Antonio Sánchez Navarro,Defender,Spain,안토니오 산체스,A. 산체스
 285909,P. Torre,Pablo Torre Carral,Midfielder,Spain,파블로 토레,P. 토레
-25375,T. Asano,Asano Takuma,Midfielder,Japan,아사노 타쿠마,T. 타쿠마
+25375,T. Asano,Asano Takuma,Midfielder,Japan,아사노 타쿠마,T. 아사노
 313059,M. Joseph,Mateo Joseph Fernández-Regatillo,Midfielder,England,마테오 조세프,M. 조세프
 405074,J. Kalumba,Justin-Noël Kalumba Mwana Ngongo,Attacker,France,주스틴노엘 칼룸바,J. 칼룸바
 293604,J. Llabrés,Javier Llabrés Exposito,Attacker,Spain,하비 야브레스,J. 야브레스
@@ -2162,7 +2162,7 @@
 24839,M. Friedrich,Marvin Friedrich,Defender,Germany,마르핀 프리드리히,M. 프리드리히
 50852,J. Scally,Joseph Michael Scally,Midfielder,USA,조 스캘리,J. 스캘리
 327664,V. Stange,Veit Stange,Midfielder,Germany,파이트 슈탕게,V. 슈탕게
-337593,K. Takai,Takai Kota,Defender,Japan,코타 타카이,K. 코타
+337593,K. Takai,Takai Kota,Defender,Japan,타카이 코타,K. 타카이
 327646,L. Ullrich,Lukas Ullrich,Defender,Germany,루키스 울리히,L. 울리히
 651914,S. Walde,Simon Walde,Defender,Germany,지몬 발데,S. 발데
 335095,H. Bolin,Axel Hugo Bolin,Midfielder,Sweden,후고 볼린,H. 볼린
@@ -4802,3 +4802,4 @@
 427632,D. Aleksandrov,Dmitri Aleksandrov,Midfielder,Russia,드미트리 알렉산드로프,D. 알렉산드로프
 527110,K. Danilov,Kirill Danilov,Defender,Russia,키릴 다닐로프,K. 다닐로프
 275550,K. Danilov,Kirill Danilov,Defender,Russia,키릴 다닐로프,K. 다닐로프
+364980,C. McManus,Conor McManus,Midfielder,Republic of Ireland,코너 맥매너스,C. 맥매너스
