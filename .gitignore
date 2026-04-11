@@ -43,3 +43,4 @@ src/main/resources/csvExample/
 .claude
 .gradle-user-home
 .codex-tmp
+__pycache__
