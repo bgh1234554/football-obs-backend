@@ -1,7 +1,9 @@
 package com.github.baek.footballobsbackend.web;
 
 import com.github.baek.footballobsbackend.dto.fixtures.FixtureResponseDto;
+import com.github.baek.footballobsbackend.dto.hth.HthResponseDto;
 import com.github.baek.footballobsbackend.service.FixtureService;
+import com.github.baek.footballobsbackend.service.HeadtoheadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FixtureController {
 
     private final FixtureService fixtureService;
+    private final HeadtoheadService headtoheadService;
 
     /**
      * 경기 ID 하나로 프론트에 필요한 모든 데이터를 조회.
@@ -37,6 +40,13 @@ public class FixtureController {
     public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable("fixtureId") long fixtureId) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         FixtureResponseDto dto = fixtureService.getFixture(fixtureId);
+        return ResponseEntity.ok(dto);
+    }
+
+    @GetMapping("/hth/{teamA}/{teamB}")
+    public ResponseEntity<HthResponseDto> getHth(@PathVariable("teamA") long teamA, @PathVariable("teamB") long teamB) {
+        // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
+        HthResponseDto dto = headtoheadService.getHeadtoHead(teamA,teamB);
         return ResponseEntity.ok(dto);
     }
 }

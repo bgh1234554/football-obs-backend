@@ -83,6 +83,16 @@ public class ApiFootballClient {
         return fetchArray("/players/profiles?player=" + playerId);
     }
 
+    /**
+     * 특정 두 팀 간 최근 상대 전적을 가져온다.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getHeadtoHeadRecord(long homeTeamId, long awayTeamId) {
+        log.info("Fetching head-to-head record homeTeamId={}, awayTeamId={}", homeTeamId, awayTeamId);
+        return fetchArray("/fixtures/headtohead?h2h=" + homeTeamId + "-" + awayTeamId);
+    }
+
     // ──────────────────────────────────────────────
     // CsvUpdater 전용 — CSV 초기화 시 사용
     // ──────────────────────────────────────────────
