@@ -80,7 +80,7 @@ team_id, team_name, ko_name, ko_name_short
 779,Rostov, 로스토프,
 1079,Krylia Sovetov Samara,크릴리야 소베토프 사마라, 크릴리야 소베토프
 1080,Orenburg,오렌부르크,
-1083,Rubin Kazan,루빈 카잔, 루빈
+1083,Rubin Kazan,루빈 카잔, 루빈 Kz.
 1085,Akhmat Grozny,아흐마트 그로즈니, 아흐마트
 1088,Dynamo Moscow,디나모 모스크바, 디나모 Mc.
 2006,Baltika Kaliningrad,발티카 칼리닌그라드, 발티카
@@ -1071,7 +1071,59 @@ team_id, team_name, ko_name, ko_name_short
 8175,Papua New Guinea,파푸아뉴기니,
 8176,Samoa,사모아,
 1546,Singpore,싱가포르,
-1561,North Korea,북한
-1740,North Korea (W),북한 (W)
+1561,North Korea,북한,
+1740,North Korea (W),북한 (W),
 1570,Kuwait,쿠웨이트,
-,,,
+13240,Sevastopol,세바스토폴,
+17680,Kyzyltash,키질타시 바흐치사라이,키질타시
+17682,Rubin Yalta,루빈 얄타,루빈 Y.
+21540,Astrakhan,아스트라한,
+21853,Dynamo Makhachkala II,디나모-2 마하치칼라,디나모-2 Mkh.
+22171,Pobeda,포베다 하사뷰르트,포베다 Kh.
+23314,Angust Nazran,안구시트 나즈란,안구시트
+23315,Nart Cherkessk,나르트 체르케스크,나르트 Ch.
+23316,Rostov II,로스토프-2,
+26146,PSK Dinskaya,PSK 딘스카야,PSK
+27644,FK Chayka 2,차이카-2 페스차노콥스코예,차이카-2
+27646,Izberbash,네프탸니크 이즈베르바시,네프탸니크 Iz.
+27647,Lugansk,자랴 루간스크,자랴
+27648,Shahter Taganrog,샤흐툐르 도네츠크,샤흐툐르 Dn.
+27649,Pervorechenskij,PSK 딘스카야,PSK
+2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2 Mc.
+6812,Luki-Energiya,루키 에네르기야 벨리키예 루키,루키-에네르기야
+6830,Torpedo Vladimir,토르페도 블라디미르,토르페도 Vl.
+6840,Zvezda St. Petersburg,즈베즈다 상트페테르부르크,즈베즈다 SPB
+14120,Tver,트베리,
+17724,Yenisey II,예니세이-2 크라스노야르스크,예니세이-2
+17725,Dinamo St. Petersburg,디나모 상트페테르부르크,디나모 SPB
+19447,Dinamo Vologda,디나모 볼로그다,디나모 Vo.
+19452,Kosmos Dolgoprudny,코스모스 돌고프루드니,코스모스 Do.
+21539,Irkutsk,이르쿠츠크,
+24450,Cherepovets,체레포베츠,
+25868,Baltika II,발티카-2 칼리닌그라드,발티카-2
+27645,Iskra Smolensk,이스크라 스몰렌스크,이스크라
+6818,Nosta,노스타 노보트로이츠크,노스타
+12887,Ural II,우랄-2 예카테린부르크,우랄-2
+14140,Krylya Sovetov II,크릴리야 소베토프-2 사마라,크릴리야 소베토프-2
+14141,Orenburg II,오렌부르크-2,
+16858,Khimik Dzerzhinsk,히미크 제르진스크,히미크 Dz.
+21032,Rubin Kazan 2,루빈-2 카잔,루빈-2 Kz.
+21535,Akron II,아크론-2 톨리야티,아크론-2
+25866,Chelyabinsk II,첼랴빈스크-2,
+25867,KDV,KDV 톰스크,KDV
+27650,Izhevsk,이젭스크,
+27651,Pobeda Nizhniy Novgorod,포베다 니즈니 노브고로드,포베다 NN
+6815,Metallurg Lipetsk,메탈루르크 리페츠크,메탈루르크 Lp.
+6823,Ryazan,랴잔,
+6826,Salyut-Belgorod,살류트 벨고로드,살류트 B.
+6827,Saturn Ramenskoye,사투른 라멘스코예,사투른
+6829,Strogino,스트로기노 모스크바,스트로기노
+12840,Rotor-2,로토르-2 볼고그라드,로토르-2
+14124,Volna Nizhegorodskaya,볼나 니즈니 노브고로드,볼나
+16866,Zenit Penza,제니트 펜자,제니트 Pn.
+17720,Arsenal Tula II,아르세날-2 툴라,아르세날-2 Tl.
+17721,SKA Khabarovsk II,SKA 하바롭스크-2,SKA-2
+19448,Rodina Moskva III,로디나-3 모스크바,로디나-3
+19451,FK Spartak Tambov,스파르타크 탐보프,스파르타크 Tm.
+23318,Orel,오룔,
+26148,Shumbrat,슘브라트 사란스크,슘브라트
