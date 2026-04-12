@@ -2,7 +2,9 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 550, Anfield, Liverpool, 안필드, 리버풀
 , Bilino Polje, Zenica, 빌리노 폴레, 제니차
 556,Old Trafford,Manchester,올드 트래포드,맨체스터
+,Old Trafford (Manchester),,올드 트래포드,맨체스터
 562,St. James' Park,Newcastle upon Tyne,세인트 제임스 파크,뉴캐슬 어폰 타인
+,St. James' Park (Newcastle-upon-Tyne),,세인트 제임스 파크, 뉴캐슬
 504,Vitality Stadium,"Bournemouth, Dorset",바이탈리티 스타디움,본머스
 535,Craven Cottage,London,크레이븐 코티지,런던
 600,Molineux Stadium,"Wolverhampton, West Midlands",몰리뉴 스타디움,울버햄튼
@@ -253,6 +255,4 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 5175,Paju Public Stadium,Paju,파주스타디움,파주
 6349,Yongin Football Center,Jungneung-ri,용인미르스타디움,용인
 ,Busan Gudeok Stadium,Busan,구덕운동장,부산
-,Old Trafford (Manchester),,올드 트래포드,맨체스터
-,St. James' Park (Newcastle-upon-Tyne),,세인트 제임스 파크, 뉴캐슬
 489, Wembley Stadium, London, 웸블리 스타디움
