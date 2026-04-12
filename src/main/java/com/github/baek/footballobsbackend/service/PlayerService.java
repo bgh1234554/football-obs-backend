@@ -112,6 +112,10 @@ public class PlayerService {
         String nationality      = nationalityKo != null ? nationalityKo : canonicalEnglish;
 
         JsonNode birthNode = playerNode.path("birth");
+        // birth.country: nationality와 동일하게 teams.csv 한글명 조회 후 fallback
+        String birthCountryApi = nullableStr(birthNode.path("country"));
+        String birthCountryKo  = birthCountryApi != null ? csvLoader.getTeamNameKoByName(birthCountryApi) : null;
+        String birthCountry    = birthCountryKo != null ? birthCountryKo : birthCountryApi;
 
         return PlayerInfoDto.builder()
                 .id(playerNode.path("id").asLong())
@@ -121,7 +125,7 @@ public class PlayerService {
                 .birth(PlayerBirthDto.builder()
                         .date(nullableStr(birthNode.path("date")))
                         .place(nullableStr(birthNode.path("place")))
-                        .country(nullableStr(birthNode.path("country")))
+                        .country(birthCountry)
                         .build())
                 .nationality(nationality)
                 .height(nullableStr(playerNode.path("height")))
