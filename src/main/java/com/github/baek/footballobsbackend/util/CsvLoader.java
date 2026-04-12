@@ -40,6 +40,8 @@ public class CsvLoader {
 
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
+    // key: team_name 소문자 → teams 배열과 동일한 String[] 공유 (역방향 이름 조회용)
+    private final Map<String, String[]> teamsByName = new HashMap<>();
 
     // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=fa_url
     private final Map<Long, String[]> logos = new HashMap<>();
@@ -95,8 +97,9 @@ public class CsvLoader {
                 // 3. 최대 7개 컬럼으로 분리 (name_ko_short가 마지막 컬럼)
                 String[] parts = line.split(",", 7);
                 if (parts.length < 2) continue;
-                // 4. player_id(index 0)를 키로 전체 배열 저장
-                players.put(Long.parseLong(parts[0].trim()), parts);
+                // 4. player_id(index 0)를 키로 전체 배열 저장 (id 컬럼이 비어있으면 0으로 저장)
+                String idStr = parts[0].trim();
+                players.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
             }
         } catch (IOException e) {
             log.warn("Could not load players.csv: {}", e.getMessage());
@@ -119,8 +122,12 @@ public class CsvLoader {
                 // 3. 최대 4개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short)
                 String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
-                // 4. team_id를 키로 저장
-                teams.put(Long.parseLong(parts[0].trim()), parts);
+                // 4. team_id를 키로 저장, team_name 소문자를 역방향 키로도 저장 (id 비어있으면 0으로 저장)
+                String idStr = parts[0].trim();
+                teams.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
+                if (parts.length > 1 && !parts[1].trim().isEmpty()) {
+                    teamsByName.put(parts[1].trim().toLowerCase(), parts);
+                }
             }
         } catch (IOException e) {
             log.warn("Could not load teams.csv: {}", e.getMessage());
@@ -143,8 +150,9 @@ public class CsvLoader {
                 // 3. 최대 4개 컬럼으로 분리 (team_id, team_name_ko, logo_url, fa_url)
                 String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
-                // 4. team_id를 키로 저장
-                logos.put(Long.parseLong(parts[0].trim()), parts);
+                // 4. team_id를 키로 저장 (id 비어있으면 0으로 저장)
+                String idStr = parts[0].trim();
+                logos.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
             }
         } catch (IOException e) {
             log.warn("Could not load logos.csv: {}", e.getMessage());
@@ -166,8 +174,9 @@ public class CsvLoader {
                 // 3. 최대 6개 컬럼으로 분리
                 String[] parts = line.split(",", 6);
                 if (parts.length < 2) continue;
-                // 4. coach_id를 키로 저장
-                coaches.put(Long.parseLong(parts[0].trim()), parts);
+                // 4. coach_id를 키로 저장 (id 비어있으면 0으로 저장)
+                String idStr = parts[0].trim();
+                coaches.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
             }
         } catch (IOException e) {
             log.warn("Could not load coaches.csv: {}", e.getMessage());
@@ -267,8 +276,9 @@ public class CsvLoader {
                 // 3. 최대 4개 컬럼으로 분리 (league_id, league_name, league_name_ko, logo_url)
                 String[] parts = line.split(",", 4);
                 if (parts.length < 2) continue;
-                // 4. league_id를 키로 저장
-                leagues.put(Long.parseLong(parts[0].trim()), parts);
+                // 4. league_id를 키로 저장 (id 비어있으면 0으로 저장)
+                String idStr = parts[0].trim();
+                leagues.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
             }
         } catch (IOException e) {
             log.warn("Could not load leagues.csv: {}", e.getMessage());
@@ -324,6 +334,28 @@ public class CsvLoader {
     }
 
     /**
+     * 선수 영문 풀네임(name_long) 조회.
+     * name_ko_long이 없을 때 fullName 표시용 English fallback으로 사용.
+     */
+    public String getPlayerNameLong(long playerId) {
+        String[] row = players.get(playerId);
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();   // index 2 = name_long
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 선수 국적(nationality) 조회.
+     * API Football nationality가 오래된 경우를 대비해 CSV 값을 우선 사용하는 용도.
+     */
+    public String getPlayerNationality(long playerId) {
+        String[] row = players.get(playerId);
+        if (row == null || row.length < 5) return null;
+        String v = row[4].trim();   // index 4 = nationality
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
      * 팀 한글 이름(ko_name) 조회.
      * teams.csv에 없거나 ko_name 컬럼이 비어있으면 null 반환.
      * null이면 FixtureService에서 API Football 영문 팀 이름으로 fallback 처리.
@@ -332,6 +364,43 @@ public class CsvLoader {
         String[] row = teams.get(teamId);
         if (row == null || row.length < 3) return null;
         String v = row[2].trim();   // index 2 = ko_name
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 팀 영문 이름(team_name)으로 한글 이름(ko_name) 역방향 조회.
+     * API Football이 오래된 이름을 반환할 때 CSV의 최신 영문명을 searchKey로 사용하는 용도.
+     * 대소문자 무관 검색. teams.csv에 없거나 ko_name이 비어있으면 null 반환.
+     */
+    public String getTeamNameKoByName(String englishName) {
+        if (englishName == null || englishName.isBlank()) return null;
+        String[] row = teamsByName.get(englishName.trim().toLowerCase());
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 팀 영문 이름(team_name)으로 CSV에 저장된 영문 팀명 조회.
+     * API Football이 오래된 이름을 반환할 때 CSV의 최신 영문명을 우선 사용하기 위한 용도.
+     * 대소문자 무관 검색. teams.csv에 없으면 null 반환.
+     */
+    public String getTeamNameFromCsv(String englishName) {
+        if (englishName == null || englishName.isBlank()) return null;
+        String[] row = teamsByName.get(englishName.trim().toLowerCase());
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 팀 ID로 teams.csv의 영문 팀명(team_name) 조회.
+     * ko_name이 없을 때 API가 오래된 이름을 반환하는 경우 CSV 영문명을 우선 fallback으로 사용하는 용도.
+     */
+    public String getTeamEnglishName(long teamId) {
+        String[] row = teams.get(teamId);
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();   // index 1 = team_name
         return v.isEmpty() ? null : v;
     }
 
@@ -458,6 +527,17 @@ public class CsvLoader {
         String[] row = leagues.get(leagueId);
         if (row == null || row.length < 3) return null;
         String v = row[2].trim();   // index 2 = league_name_ko
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 리그 영문 이름(league_name) 조회.
+     * league_name_ko가 없을 때 CSV 영문명을 우선 fallback으로 사용하는 용도.
+     */
+    public String getLeagueName(long leagueId) {
+        String[] row = leagues.get(leagueId);
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();   // index 1 = league_name
         return v.isEmpty() ? null : v;
     }
 

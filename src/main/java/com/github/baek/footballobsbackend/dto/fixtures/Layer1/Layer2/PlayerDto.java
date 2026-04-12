@@ -1,4 +1,4 @@
-package com.github.baek.footballobsbackend.dto.Layer1.Layer2;
+package com.github.baek.footballobsbackend.dto.fixtures.Layer1.Layer2;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

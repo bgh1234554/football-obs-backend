@@ -216,3 +216,6 @@ league_id, league_name, league_name_ko, logo_url
 170, Leauge One, 중국 갑급리그
 972, Super Cup, 중국 슈퍼컵
 169, Super League, 중국 슈퍼리그
+10, Friendlies, 남자 국가대표 친선경기
+667, Club Friendlies, 클럽 친선경기
+666, Friendlies Women, 여자 국가대표 친선경기

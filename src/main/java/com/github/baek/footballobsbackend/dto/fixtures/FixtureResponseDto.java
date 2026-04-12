@@ -1,6 +1,6 @@
-package com.github.baek.footballobsbackend.dto;
+package com.github.baek.footballobsbackend.dto.fixtures;
 
-import com.github.baek.footballobsbackend.dto.Layer1.*;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -121,6 +121,17 @@ public class ApiFootballClient {
     }
 
     /**
+     * 특정 선수의 상세 스탯을 가져온다.
+     * CsvUpdater에서 /players/squads만으로는 얻을 수 없는 nationality 등을 보완하는 데 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getPlayerStats(long playerId, int season) {
+        log.info("Fetching player stats playerId={}, season={}", playerId, season);
+        return fetchArray("/players?id=" + playerId + "&season=" + season);
+    }
+
+    /**
      * 특정 리그의 이름을 가져온다.
      * CsvUpdater에서 미리스트 리그 ID 입력 시 이름 확인에 사용.
      *

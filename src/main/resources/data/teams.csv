@@ -276,6 +276,7 @@ team_id, team_name, ko_name, ko_name_short
 5529,Canada,캐나다,
 5530,Curaçao,퀴라소,
 17,South Korea,대한민국,
+,Korea Republic,대한민국,
 1728,South Korea W,대한민국 (W),
 534,Las Palmas,라스 팔마스,라스 팔마스
 535,Malaga,말라가,말라가
@@ -1073,3 +1074,4 @@ team_id, team_name, ko_name, ko_name_short
 1561,North Korea,북한
 1740,North Korea (W),북한 (W)
 1570,Kuwait,쿠웨이트,
+,,,

@@ -1,6 +1,6 @@
 package com.github.baek.footballobsbackend.web;
 
-import com.github.baek.footballobsbackend.dto.FixtureResponseDto;
+import com.github.baek.footballobsbackend.dto.fixtures.FixtureResponseDto;
 import com.github.baek.footballobsbackend.service.FixtureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -13,15 +13,15 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.client.ApiFootballClient;
-import com.github.baek.footballobsbackend.dto.FixtureResponseDto;
-import com.github.baek.footballobsbackend.dto.Layer1.EventDto;
-import com.github.baek.footballobsbackend.dto.Layer1.InjuryDto;
-import com.github.baek.footballobsbackend.dto.Layer1.Layer2.CoachDto;
-import com.github.baek.footballobsbackend.dto.Layer1.Layer2.PlayerDto;
-import com.github.baek.footballobsbackend.dto.Layer1.LineupDto;
-import com.github.baek.footballobsbackend.dto.Layer1.MatchInfoDto;
-import com.github.baek.footballobsbackend.dto.Layer1.PlayerStatsDto;
-import com.github.baek.footballobsbackend.dto.Layer1.TeamStatsDto;
+import com.github.baek.footballobsbackend.dto.fixtures.FixtureResponseDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.EventDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.InjuryDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.Layer2.CoachDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.Layer2.PlayerDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.LineupDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.MatchInfoDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.PlayerStatsDto;
+import com.github.baek.footballobsbackend.dto.fixtures.Layer1.TeamStatsDto;
 import com.github.baek.footballobsbackend.error.ApiException;
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
 import com.github.baek.footballobsbackend.util.CsvLoader;
@@ -673,7 +673,7 @@ public class FixtureService {
      * 2. players.csv name_short
      * 3. API Football name
      */
-    private String resolvePlayerDisplayName(long playerId, String apiName) {
+    String resolvePlayerDisplayName(long playerId, String apiName) {
         String nameKo = csvLoader.getPlayerNameKo(playerId);
         if (nameKo != null) return nameKo;
 
@@ -707,7 +707,7 @@ public class FixtureService {
      * API name과 CSV short가 다르면 CSV 값을 우선 사용하고 차이를 로그로 남긴다.
      * 같은 차이는 앱 실행 중 1번만 출력한다.
      */
-    private void logShortNameDiffOnce(String type, long id, String apiName, String csvShort) {
+    void logShortNameDiffOnce(String type, long id, String apiName, String csvShort) {
         if (apiName == null || apiName.isBlank() || csvShort == null || csvShort.isBlank()) return;
 
         String apiTrimmed = apiName.trim();
@@ -813,7 +813,7 @@ public class FixtureService {
      *
      * Media CDN에서 CORS 허용 + 캐시 처리를 해주므로 프론트에서 Canvas 픽셀 읽기 가능.
      */
-    private String toMediaCdnUrl(String apiUrl) {
+    public String toMediaCdnUrl(String apiUrl) {
         if (apiUrl == null || apiUrl.isBlank()) return null;
         return apiUrl.replace("https://media.api-sports.io", mediaCdnUrl);
     }
