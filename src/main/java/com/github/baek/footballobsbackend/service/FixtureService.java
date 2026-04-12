@@ -1,28 +1,33 @@
 package com.github.baek.footballobsbackend.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.github.baek.footballobsbackend.client.ApiFootballClient;
-import com.github.baek.footballobsbackend.dto.*;
-import com.github.baek.footballobsbackend.dto.Layer1.*;
-import com.github.baek.footballobsbackend.dto.Layer1.Layer2.CoachDto;
-import com.github.baek.footballobsbackend.dto.Layer1.Layer2.PlayerDto;
-import com.github.baek.footballobsbackend.error.ApiException;
-import com.github.baek.footballobsbackend.error.ErrorCode;
-import com.github.baek.footballobsbackend.util.CsvLoader;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.github.baek.footballobsbackend.client.ApiFootballClient;
+import com.github.baek.footballobsbackend.dto.FixtureResponseDto;
+import com.github.baek.footballobsbackend.dto.Layer1.EventDto;
+import com.github.baek.footballobsbackend.dto.Layer1.InjuryDto;
+import com.github.baek.footballobsbackend.dto.Layer1.Layer2.CoachDto;
+import com.github.baek.footballobsbackend.dto.Layer1.Layer2.PlayerDto;
+import com.github.baek.footballobsbackend.dto.Layer1.LineupDto;
+import com.github.baek.footballobsbackend.dto.Layer1.MatchInfoDto;
+import com.github.baek.footballobsbackend.dto.Layer1.PlayerStatsDto;
+import com.github.baek.footballobsbackend.dto.Layer1.TeamStatsDto;
+import com.github.baek.footballobsbackend.error.ApiException;
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
+import com.github.baek.footballobsbackend.util.CsvLoader;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * API Football에서 받아온 JsonNode를 프론트가 쓰기 좋은 DTO로 조립하는 서비스.
@@ -657,7 +662,7 @@ public class FixtureService {
         if (hasApiId) {
             log.info("[KO_VENUE_NAME_NEEDED] id={}, name={}, city={}", idNode.asLong(), apiName, city);
         } else {
-            log.info("[KO_VENUE_NAME_NEEDED] name={}, city={}", apiName, city);
+            log.info("[KO_VENUE_NAME_NEEDED] id not available, name={}, city={}", apiName, city);
         }
         return apiName;
     }
