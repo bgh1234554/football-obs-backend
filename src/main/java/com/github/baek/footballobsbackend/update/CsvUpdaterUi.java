@@ -1,4 +1,4 @@
-package com.github.baek.footballobsbackend.util;
+package com.github.baek.footballobsbackend.update;
 
 import java.util.ArrayList;
 import java.util.HashMap;

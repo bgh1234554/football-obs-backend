@@ -6,9 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -25,6 +23,7 @@ import com.github.baek.footballobsbackend.dto.fixtures.Layer1.TeamStatsDto;
 import com.github.baek.footballobsbackend.error.ApiException;
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
 import com.github.baek.footballobsbackend.util.CsvLoader;
+import com.github.baek.footballobsbackend.util.KoResolver;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -52,10 +51,7 @@ public class FixtureService {
 
     private final ApiFootballClient apiClient;
     private final CsvLoader csvLoader;
-    private final Set<String> loggedShortNameDiffs = ConcurrentHashMap.newKeySet();
-
-    @Value("${api.media-cdn-url}")
-    private String mediaCdnUrl;
+    private final KoResolver koResolver;
 
     // ──────────────────────────────────────────────
     // Public API
@@ -146,13 +142,13 @@ public class FixtureService {
             // 5. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
             result.add(InjuryDto.builder()
                     .playerId(playerId)
-                    .playerName(resolvePlayerDisplayName(playerId, apiName))
-                    .playerPhotoUrl(toMediaCdnUrl(player.path("photo").asText()))
+                    .playerName(koResolver.resolvePlayerDisplayName(playerId, apiName))
+                    .playerPhotoUrl(koResolver.toMediaCdnUrl(player.path("photo").asText()))
                     .type(injuryType)     // ex. "Missing Fixture"
                     .reason(injuryReason) // ex. "Knee Injury"
                     .teamId(teamId)
                     .teamName(teamNameKo != null ? teamNameKo : teamApiName)
-                    .teamLogo(toMediaCdnUrl(team.path("logo").asText()))
+                    .teamLogo(koResolver.toMediaCdnUrl(team.path("logo").asText()))
                     .build());
         }
         return result;
@@ -180,17 +176,8 @@ public class FixtureService {
         String leagueApiName = league.path("name").asText();
         String leagueRound = league.path("round").asText();
 
-        String leagueNameKo = csvLoader.getLeagueNameKo(leagueId);
-        if (leagueNameKo == null) {
-            log.info("[KO_LEAGUE_NAME_NEEDED] id={}, name={}", leagueId, leagueApiName);
-        }
-        String leagueName = leagueNameKo != null ? leagueNameKo : leagueApiName;
-
-        String leagueCustomLogo = csvLoader.getLeagueLogoUrl(leagueId);
-        if (leagueCustomLogo == null) {
-            log.info("[LEAGUE_LOGO_NEEDED] id={}, name={}", leagueId, leagueApiName);
-        }
-        String leagueLogoUrl = leagueCustomLogo != null ? leagueCustomLogo : toMediaCdnUrl(league.path("logo").asText());
+        String leagueName    = koResolver.resolveLeagueName(leagueId, leagueApiName);
+        String leagueLogoUrl = koResolver.resolveLeagueLogoUrl((int) leagueId, league.path("logo").asText());
 
         // 3. 경기 상태 파싱 (API short status → 내부 status 코드로 변환)
         String shortStatus = status.path("short").asText();
@@ -211,24 +198,10 @@ public class FixtureService {
 
         // 5. 팀 이름 한글화 — teams.csv에 없으면 API 영문 이름 사용 + 로그
         String homeApiName = homeTeam.path("name").asText();
-        String homeNameKo = csvLoader.getTeamNameKo(homeTeamId);
-        if (homeNameKo == null) {
-            log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", homeTeamId, homeApiName);
-        }
-        // 단축명: ko_name_short → ko_name → API 영문 이름 순으로 fallback
-        String homeNameKoShort = csvLoader.getTeamNameKoShort(homeTeamId);
-        String homeDisplayShort = homeNameKoShort != null ? homeNameKoShort
-                : (homeNameKo != null ? homeNameKo : homeApiName);
-
         String awayApiName = awayTeam.path("name").asText();
-        String awayNameKo = csvLoader.getTeamNameKo(awayTeamId);
-        if (awayNameKo == null) {
-            log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", awayTeamId, awayApiName);
-        }
         // 단축명: ko_name_short → ko_name → API 영문 이름 순으로 fallback
-        String awayNameKoShort = csvLoader.getTeamNameKoShort(awayTeamId);
-        String awayDisplayShort = awayNameKoShort != null ? awayNameKoShort
-                : (awayNameKo != null ? awayNameKo : awayApiName);
+        String homeDisplayShort = koResolver.resolveTeamNameShort(homeTeamId, homeApiName);
+        String awayDisplayShort = koResolver.resolveTeamNameShort(awayTeamId, awayApiName);
 
         // 6. 팀 색상 추출 — lineups[].team.colors.player 에서 홈/원정 각각 꺼냄
         JsonNode[] colors = extractTeamColors(data.path("lineups"), homeTeamId, awayTeamId);
@@ -238,15 +211,12 @@ public class FixtureService {
         // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
         //    한글 이름이 있으면 "앤서니 테일러 (England)", 없으면 "Anthony Taylor (England)"
         String refereeStr = fixture.path("referee").asText(null);
-        String refereeName = buildRefereeName(refereeStr);
+        String refereeName = koResolver.buildRefereeName(refereeStr);
 
         // 8. 경기장 이름/도시 한글화
         JsonNode venueNode = fixture.path("venue");
-        String[] venueRow = csvLoader.getVenueRow(venueNode.path("name").asText(null));
-        String venueName = resolveVenueName(venueNode);
-        // city_name_ko(index 4)가 있으면 사용, 없으면 API 영문 도시명 fallback
-        String venueCityKo = (venueRow != null && venueRow.length > 4) ? venueRow[4].trim() : "";
-        String venueCity = venueCityKo.isEmpty() ? venueNode.path("city").asText(null) : venueCityKo;
+        String venueName = koResolver.resolveVenueName(venueNode);
+        String venueCity = koResolver.resolveVenueCity(venueNode);
 
         // 9. DTO 조립
         return MatchInfoDto.builder()
@@ -255,18 +225,18 @@ public class FixtureService {
                 .elapsed(elapsed)
                 .extra(extra)
                 .homeTeamId(homeTeamId)
-                .homeTeamName(homeNameKo != null ? homeNameKo : homeApiName)
+                .homeTeamName(koResolver.resolveTeamName(homeTeamId, homeApiName))
                 .homeTeamNameShort(homeDisplayShort)
-                .homeTeamLogo(resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText(), homeApiName))
+                .homeTeamLogo(koResolver.resolveLogoUrl(homeTeamId, homeTeam.path("logo").asText(), homeApiName))
                 .homeTeamFaUrl(csvLoader.getFaUrl(homeTeamId))  // 클럽팀이면 null
                 .homeScore(goals.path("home").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .homePenaltyScore(homePenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
                 .homePrimaryColor(colorOf(homeColors, "primary"))   // 유니폼 바탕색
                 .homeNumberColor(colorOf(homeColors, "number"))     // 등번호 색
                 .awayTeamId(awayTeamId)
-                .awayTeamName(awayNameKo != null ? awayNameKo : awayApiName)
+                .awayTeamName(koResolver.resolveTeamName(awayTeamId, awayApiName))
                 .awayTeamNameShort(awayDisplayShort)
-                .awayTeamLogo(resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText(), awayApiName))
+                .awayTeamLogo(koResolver.resolveLogoUrl(awayTeamId, awayTeam.path("logo").asText(), awayApiName))
                 .awayTeamFaUrl(csvLoader.getFaUrl(awayTeamId))
                 .awayScore(goals.path("away").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .awayPenaltyScore(awayPenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
@@ -341,15 +311,7 @@ public class FixtureService {
             String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
 
             // 1-1. 한글 이름 누락 로그 (선수 1인당 1회)
-            if (loggedPlayerIds.add(playerId)) {
-                if (playerNameKo == null && playerNameKoLong == null) {
-                    log.info("[KO_NAME_NEEDED] id={}, name={}", playerId, apiPlayerName);
-                } else if (playerNameKo == null) {
-                    log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}", playerId, apiPlayerName);
-                } else if (playerNameKoLong == null) {
-                    log.info("[KO_NAME_LONG_NEEDED] id={}, name={}", playerId, apiPlayerName);
-                }
-            }
+            printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiPlayerName, playerNameKo);
 
             // 2. assist 선수 처리 (null 가능 — 카드 이벤트 등)
             JsonNode assistNode = e.path("assist");
@@ -360,18 +322,10 @@ public class FixtureService {
                 String assistApiName = assistNode.path("name").asText(null);
                 String assistNameKo = csvLoader.getPlayerNameKo(assistId);
                 assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
-                assistName = resolvePlayerDisplayName(assistId, assistApiName);
+                assistName = koResolver.resolvePlayerDisplayName(assistId, assistApiName);
 
                 // 2-1. 어시스트 선수 한글 이름 누락 로그 (선수 1인당 1회)
-                if (loggedPlayerIds.add(assistId)) {
-                    if (assistNameKo == null && assistNameKoLong == null) {
-                        log.info("[KO_NAME_NEEDED] id={}, name={}", assistId, assistApiName);
-                    } else if (assistNameKo == null) {
-                        log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}", assistId, assistApiName);
-                    } else if (assistNameKoLong == null) {
-                        log.info("[KO_NAME_LONG_NEEDED] id={}, name={}", assistId, assistApiName);
-                    }
-                }
+                printMissedPlayerLog(loggedPlayerIds, assistId, assistNameKoLong, assistApiName, assistNameKo);
             }
 
             // 3. 팀 ID를 홈 팀 ID와 비교해서 side("home"/"away") 결정
@@ -383,7 +337,7 @@ public class FixtureService {
                     .side(e.path("team").path("id").asLong() == homeTeamId ? "home" : "away")
                     .teamId(e.path("team").path("id").asLong())
                     .playerId(playerId)
-                    .playerName(resolvePlayerDisplayName(playerId, apiPlayerName))
+                    .playerName(koResolver.resolvePlayerDisplayName(playerId, apiPlayerName))
                     .playerNameKoLong(playerNameKoLong)
                     .assistId(assistId)
                     .assistName(assistName)
@@ -394,6 +348,18 @@ public class FixtureService {
                     .build());
         }
         return result;
+    }
+
+    private void printMissedPlayerLog(Set<Long> PlayerIds, Long playerId, String playerNameKoLong, String playerApiName, String playerNameKo) {
+        if (PlayerIds.add(playerId)) {
+            if (playerNameKo == null && playerNameKoLong == null) {
+                log.info("[KO_NAME_NEEDED] id={}, name={}", playerId, playerApiName);
+            } else if (playerNameKo == null) {
+                log.info("[KO_NAME_SHORT_NEEDED] id={}, name={}", playerId, playerApiName);
+            } else if (playerNameKoLong == null) {
+                log.info("[KO_NAME_LONG_NEEDED] id={}, name={}", playerId, playerApiName);
+            }
+        }
     }
 
     // ──────────────────────────────────────────────
@@ -485,7 +451,7 @@ public class FixtureService {
                     .substitutes(buildPlayerList(lu.path("substitutes")))
                     .coach(CoachDto.builder()
                             .coachId(coachId)
-                            .name(resolveCoachDisplayName(coachId, coachApiName))
+                            .name(koResolver.resolveCoachDisplayName(coachId, coachApiName))
                             .nameKoLong(coachKoLong)
                             .build())
                     .build();
@@ -522,7 +488,7 @@ public class FixtureService {
             JsonNode gridNode = p.path("grid");
             result.add(PlayerDto.builder()
                     .playerId(playerId)
-                    .name(resolvePlayerDisplayName(playerId, apiName))
+                    .name(koResolver.resolvePlayerDisplayName(playerId, apiName))
                     .nameKoLong(nameKoLong)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText())            // "G" | "D" | "M" | "F"
@@ -581,9 +547,9 @@ public class FixtureService {
                 // 5. DTO 조립 — 대부분의 스탯은 null 가능이므로 nullableInt() 사용
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
-                        .playerName(resolvePlayerDisplayName(playerId, apiName))
+                        .playerName(koResolver.resolvePlayerDisplayName(playerId, apiName))
                         .playerNameKoLong(nameKoLong)
-                        .playerPhotoUrl(toMediaCdnUrl(p.path("photo").asText()))
+                        .playerPhotoUrl(koResolver.toMediaCdnUrl(p.path("photo").asText()))
                         .side(side)
                         .minutes(nullableInt(games.path("minutes")))
                         .number(games.path("number").asInt())
@@ -617,147 +583,6 @@ public class FixtureService {
         return result;
     }
 
-    // ──────────────────────────────────────────────
-    // 공통 유틸 메서드
-    // ──────────────────────────────────────────────
-
-    /**
-     * 경기장 이름을 한글화.
-     *
-     * [검색 전략]
-     * id 유무 무관하게 항상 이름으로 먼저 검색.
-     * 이유: CSV에 이름은 있지만 venue_id가 아직 미등록인 행이 존재할 수 있기 때문.
-     *
-     * [케이스별 동작]
-     * 1. CSV에 이름이 있고, API에 id가 있는데 CSV의 id가 비어있음
-     *    → [VENUE_ID_NEEDED] 로그 + 한글 이름 반환
-     * 2. CSV에 이름이 있음 (id 일치 또는 API id 없음)
-     *    → 한글 이름 반환 (한글 이름이 비어있으면 API 영문 이름 fallback)
-     * 3. CSV에 이름이 없음
-     *    → [KO_VENUE_NAME_NEEDED] 로그 + API 영문 이름 반환
-     */
-    private String resolveVenueName(JsonNode venueNode) {
-        String apiName = venueNode.path("name").asText(null);
-        String city = venueNode.path("city").asText(null);
-        JsonNode idNode = venueNode.path("id");
-        boolean hasApiId = !idNode.isNull() && !idNode.isMissingNode();
-
-        // 1. ID로 CSV 검색 (1순위 — API 이름이 바뀌어도 매칭 가능)
-        if (hasApiId) {
-            String[] row = csvLoader.getVenueRowById(idNode.asLong());
-            if (row != null) {
-                String nameKo = row.length > 3 ? row[3].trim() : "";
-                return nameKo.isEmpty() ? apiName : nameKo;
-            }
-        }
-
-        // 2. 이름으로 CSV 검색 (2순위 — venue_id가 없는 경기장 대응)
-        String[] row = csvLoader.getVenueRow(apiName);
-        if (row != null) {
-            String nameKo = row.length > 3 ? row[3].trim() : "";
-            return nameKo.isEmpty() ? apiName : nameKo;
-        }
-
-        // 3. CSV에 없음 → 로그 + API 이름 그대로 반환
-        if (hasApiId) {
-            log.info("[KO_VENUE_NAME_NEEDED] id={}, name={}, city={}", idNode.asLong(), apiName, city);
-        } else {
-            log.info("[KO_VENUE_NAME_NEEDED] id not available, name={}, city={}", apiName, city);
-        }
-        return apiName;
-    }
-
-    /**
-     * 선수 표시 이름 우선순위.
-     * 1. players.csv name_ko_short
-     * 2. players.csv name_short
-     * 3. API Football name
-     */
-    String resolvePlayerDisplayName(long playerId, String apiName) {
-        String nameKo = csvLoader.getPlayerNameKo(playerId);
-        if (nameKo != null) return nameKo;
-
-        String csvShort = csvLoader.getPlayerNameShort(playerId);
-        if (csvShort != null) {
-            logShortNameDiffOnce("player", playerId, apiName, csvShort);
-            return csvShort;
-        }
-        return apiName;
-    }
-
-    /**
-     * 감독 표시 이름 우선순위.
-     * 1. coaches.csv name_ko_short
-     * 2. coaches.csv name_short
-     * 3. API Football name
-     */
-    private String resolveCoachDisplayName(long coachId, String apiName) {
-        String nameKo = csvLoader.getCoachNameKo(coachId);
-        if (nameKo != null) return nameKo;
-
-        String csvShort = csvLoader.getCoachNameShort(coachId);
-        if (csvShort != null) {
-            logShortNameDiffOnce("coach", coachId, apiName, csvShort);
-            return csvShort;
-        }
-        return apiName;
-    }
-
-    /**
-     * API name과 CSV short가 다르면 CSV 값을 우선 사용하고 차이를 로그로 남긴다.
-     * 같은 차이는 앱 실행 중 1번만 출력한다.
-     */
-    void logShortNameDiffOnce(String type, long id, String apiName, String csvShort) {
-        if (apiName == null || apiName.isBlank() || csvShort == null || csvShort.isBlank()) return;
-
-        String apiTrimmed = apiName.trim();
-        String csvTrimmed = csvShort.trim();
-        if (apiTrimmed.equals(csvTrimmed)) return;
-
-        String key = type + "|" + id + "|" + apiTrimmed + "|" + csvTrimmed;
-        if (loggedShortNameDiffs.add(key)) {
-            log.info("[CSV_SHORT_NAME_DIFF] type={}, id={}, api={}, csv={}", type, id, apiTrimmed, csvTrimmed);
-        }
-    }
-
-    /**
-     * API Football의 심판 문자열("Anthony Taylor, England")을 프론트 표시용으로 변환.
-     * 국가는 API 응답 우선, 없으면 referees.csv의 referee_country를 fallback으로 사용.
-     * 심판 정보 자체가 없는 경기(null/blank)는 null 반환.
-     */
-    private String buildRefereeName(String refereeStr) {
-        if (refereeStr == null || refereeStr.isBlank()) return null;
-
-        // 1. ", " 기준으로 이름과 국적 분리 (API Football 형식: "Anthony Taylor, England")
-        int sep = refereeStr.indexOf(", ");
-        if (sep < 0) {
-            // 국적 없이 이름만 오는 경우 → CSV 국가 fallback 사용 가능
-            String nameKo = csvLoader.getRefereeNameKo(refereeStr);
-            String country = csvLoader.getRefereeCountry(refereeStr);
-            if (nameKo == null) {
-                log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
-                return country != null ? refereeStr + " (" + country + ")" : refereeStr;
-            }
-            return country != null ? nameKo + " (" + country + ")" : nameKo;
-        }
-
-        String name = refereeStr.substring(0, sep).trim();
-        String country = refereeStr.substring(sep + 2).trim();
-        if (country.isEmpty()) {
-            country = csvLoader.getRefereeCountry(refereeStr);
-        }
-
-        // 2. referees.csv에서 한글 이름 조회 (key는 원본 문자열 전체)
-        String nameKo = csvLoader.getRefereeNameKo(refereeStr);
-        if (nameKo == null) {
-            log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
-        }
-
-        // 3. 국가가 있으면 "이름 (국가)", 없으면 이름만 반환
-        String displayName = nameKo != null ? nameKo : name;
-        return (country == null || country.isBlank()) ? displayName : displayName + " (" + country + ")";
-    }
-
     /**
      * API Football의 short status 값을 프론트가 사용하는 내부 코드로 변환.
      *
@@ -778,44 +603,6 @@ public class FixtureService {
             case "NS"              -> "NS";
             default                -> shortStatus;      // BT(휴식), SUSP 등 예외 상황 그대로 전달
         };
-    }
-
-    /**
-     * 팀 로고 URL을 우선순위에 따라 결정.
-     *
-     * [우선순위]
-     * 1순위: logos.csv에 등록된 커스텀 URL (직접 관리하는 고화질 로고)
-     * 2순위: API Football URL을 Media CDN URL로 치환 (CORS + 캐시 확보)
-     *
-     * 로고가 아예 없으면 [LOGO_NEEDED] 로그 → logos.csv 수동 추가 필요.
-     */
-    private String resolveLogoUrl(long teamId, String apiLogoUrl, String teamApiName) {
-        // 1. logos.csv 커스텀 로고 확인
-        String custom = csvLoader.getLogoUrl(teamId);
-        if (custom != null) return custom;
-
-        // 2. logos.csv에 커스텀 URL 없음 → 로그 남기기
-        log.info("[LOGO_NEEDED] id={}, name={}", teamId, teamApiName);
-
-        // 3. API 로고가 아예 없는 경우 → null 반환
-        if (apiLogoUrl == null || apiLogoUrl.isBlank()) {
-            return null;
-        }
-
-        // 4. API Football URL을 Media CDN URL로 도메인 치환
-        return toMediaCdnUrl(apiLogoUrl);
-    }
-
-    /**
-     * API Football 미디어 URL의 도메인을 자체 Media CDN으로 치환.
-     * ex) https://media.api-sports.io/football/teams/85.png
-     *  → https://media-handle-obsoverlay.b-cdn.net/football/teams/85.png
-     *
-     * Media CDN에서 CORS 허용 + 캐시 처리를 해주므로 프론트에서 Canvas 픽셀 읽기 가능.
-     */
-    public String toMediaCdnUrl(String apiUrl) {
-        if (apiUrl == null || apiUrl.isBlank()) return null;
-        return apiUrl.replace("https://media.api-sports.io", mediaCdnUrl);
     }
 
     /**

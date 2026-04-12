@@ -1,4 +1,4 @@
-package com.github.baek.footballobsbackend.util;
+package com.github.baek.footballobsbackend.update;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;

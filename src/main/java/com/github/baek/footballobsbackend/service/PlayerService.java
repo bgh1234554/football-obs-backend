@@ -9,13 +9,13 @@ import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.*;
 import com.github.baek.footballobsbackend.error.ApiException;
 import com.github.baek.footballobsbackend.error.ErrorCode;
 import com.github.baek.footballobsbackend.util.CsvLoader;
+import com.github.baek.footballobsbackend.util.KoResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 선수 스탯 조회 서비스.
@@ -39,8 +39,7 @@ public class PlayerService {
 
     private final ApiFootballClient apiClient;
     private final CsvLoader csvLoader;
-    private final FixtureService fixtureService;
-    private final Set<String> loggedShortNameDiffs = ConcurrentHashMap.newKeySet();
+    private final KoResolver koResolver;
 
     // ──────────────────────────────────────────────
     // Public API
@@ -96,7 +95,7 @@ public class PlayerService {
         String apiNationality = playerNode.path("nationality").asText(null);
 
         // name: name_ko_short → name_short(CSV) → API name
-        String name = fixtureService.resolvePlayerDisplayName(playerId, apiName);
+        String name = koResolver.resolvePlayerDisplayName(playerId, apiName);
 
         // fullName: name_ko_long → name_long(CSV) → API firstname + " " + lastname
         String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
@@ -127,7 +126,7 @@ public class PlayerService {
                 .nationality(nationality)
                 .height(nullableStr(playerNode.path("height")))
                 .weight(nullableStr(playerNode.path("weight")))
-                .photoUrl(fixtureService.toMediaCdnUrl(playerNode.path("photo").asText(null)))
+                .photoUrl(koResolver.toMediaCdnUrl(playerNode.path("photo").asText(null)))
                 .build();
     }
 
@@ -192,13 +191,13 @@ public class PlayerService {
         return PlayerSeasonStatDto.builder()
                 .team(StatTeamDto.builder()
                         .id(teamId)
-                        .name(resolveTeamName(teamId, apiTeamName))
-                        .logo(resolveTeamLogoUrl(teamId, teamNode.path("logo").asText(null), apiTeamName))
+                        .name(koResolver.resolveTeamName(teamId, apiTeamName))
+                        .logo(koResolver.resolveLogoUrl(teamId, teamNode.path("logo").asText(null), apiTeamName))
                         .build())
                 .league(StatLeagueDto.builder()
                         .id(leagueId)
-                        .name(resolveLeagueName(leagueId, apiLeagueName))
-                        .logo(resolveLeagueLogo(leagueId, leagueNode.path("logo").asText(null)))
+                        .name(leagueId != null ? koResolver.resolveLeagueName(leagueId, apiLeagueName) : apiLeagueName)
+                        .logo(koResolver.resolveLeagueLogoUrl(leagueId, leagueNode.path("logo").asText(null)))
                         .season(leagueNode.path("season").asInt())
                         .build())
                 .games(StatGamesDto.builder()
@@ -261,60 +260,6 @@ public class PlayerService {
                         .saved(nullableInt(penalty.path("saved")))
                         .build())
                 .build();
-    }
-
-    // ──────────────────────────────────────────────
-    // 이름/로고 우선순위 해결 헬퍼
-    // ──────────────────────────────────────────────
-
-    /** 팀 표시 이름: ko_name(by id) → team_name(CSV English) → API name */
-    private String resolveTeamName(long teamId, String apiName) {
-        String ko = csvLoader.getTeamNameKo(teamId);
-        if (ko != null) return ko;
-        String csvEnglish = csvLoader.getTeamEnglishName(teamId);
-        if (csvEnglish != null) {
-            fixtureService.logShortNameDiffOnce("team", teamId, apiName, csvEnglish);
-            return csvEnglish;
-        }
-        log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", teamId, apiName);
-        return apiName;
-    }
-
-    /** 팀 로고 URL: logos.csv 커스텀 → API URL CDN 치환 */
-    private String resolveTeamLogoUrl(long teamId, String apiLogoUrl, String teamApiName) {
-        String custom = csvLoader.getLogoUrl(teamId);
-        if (custom != null) return custom;
-        log.info("[LOGO_NEEDED] id={}, name={}", teamId, teamApiName);
-        if (apiLogoUrl == null || apiLogoUrl.isBlank()) return null;
-        return fixtureService.toMediaCdnUrl(apiLogoUrl);
-    }
-
-    /** 리그 표시 이름: league_name_ko → league_name(CSV English) → API name */
-    private String resolveLeagueName(Integer leagueId, String apiName) {
-        if (leagueId == null) return apiName;
-        String ko = csvLoader.getLeagueNameKo(leagueId);
-        if (ko != null) return ko;
-        String csvEnglish = csvLoader.getLeagueName(leagueId);
-        if (csvEnglish != null) {
-            fixtureService.logShortNameDiffOnce("league", leagueId, apiName, csvEnglish);
-            return csvEnglish;
-        }
-        log.info("[KO_LEAGUE_NAME_NEEDED] id={}, name={}", leagueId, apiName);
-        return apiName;
-    }
-
-    /**
-     * 리그 로고 URL: leagues.csv 커스텀 → API URL CDN 치환.
-     * id가 null인 비공식 대회는 커스텀 조회 없이 CDN 치환만 적용.
-     */
-    private String resolveLeagueLogo(Integer leagueId, String apiLogoUrl) {
-        if (leagueId != null) {
-            String custom = csvLoader.getLeagueLogoUrl(leagueId);
-            if (custom != null) return custom;
-            log.info("[LEAGUE_LOGO_NEEDED] id={}", leagueId);
-        }
-        return (apiLogoUrl != null && !apiLogoUrl.isBlank())
-                ? fixtureService.toMediaCdnUrl(apiLogoUrl) : null;
     }
 
     private final List<Integer> FRIENDLIES_LEAGUES = List.of(10,666,667);
