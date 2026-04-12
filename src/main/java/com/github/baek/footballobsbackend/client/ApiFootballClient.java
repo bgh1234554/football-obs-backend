@@ -72,6 +72,17 @@ public class ApiFootballClient {
         return fetchArray("/injuries?ids=" + fixtureId);
     }
 
+    /**
+     * 특정 선수의 상세 프로필(풀네임, 국적 등)을 가져온다.
+     * CsvUpdater에서 /players/squads만으로는 얻을 수 없는 nationality 등을 보완하는 데 사용.
+     *
+     * @return response 배열 JsonNode. 응답 없으면 null.
+     */
+    public JsonNode getPlayerProfile(long playerId) {
+        log.info("Fetching player profile playerId={}", playerId);
+        return fetchArray("/players/profiles?player=" + playerId);
+    }
+
     // ──────────────────────────────────────────────
     // CsvUpdater 전용 — CSV 초기화 시 사용
     // ──────────────────────────────────────────────
@@ -107,17 +118,6 @@ public class ApiFootballClient {
     public JsonNode getPlayerSquad(long teamId) {
         log.info("Fetching squad teamId={}", teamId);
         return fetchArray("/players/squads?team=" + teamId);
-    }
-
-    /**
-     * 특정 선수의 상세 프로필(풀네임, 국적 등)을 가져온다.
-     * CsvUpdater에서 /players/squads만으로는 얻을 수 없는 nationality 등을 보완하는 데 사용.
-     *
-     * @return response 배열 JsonNode. 응답 없으면 null.
-     */
-    public JsonNode getPlayerProfile(long playerId) {
-        log.info("Fetching player profile playerId={}", playerId);
-        return fetchArray("/players/profiles?player=" + playerId);
     }
 
     /**

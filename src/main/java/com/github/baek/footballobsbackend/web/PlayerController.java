@@ -27,7 +27,7 @@ public class PlayerController {
      * 경기 포메이션에서 선수 이름 클릭시 나오는 메뉴 중 "선수 스탯" 조회 시,
      * 해당 경기 이전까지의 선수의 대회별 스탯을 시즌별로 반환. (친선경기는 제일 나중에)
      *
-     * 7월 1일 이전이면 전 시즌 + 현 시즌 두 key, 이후면 현 시즌 한 key만 포함.
+     * 9월 1일 이전이면 전 시즌 + 현 시즌 두 key, 이후면 현 시즌 한 key만 포함.
      * player는 최상위에 한 번만 내려주고,
      * statistics는 { "2025": [PlayerSeasonStatDto...], "2026": [PlayerSeasonStatDto...] } 형태로 반환.
      *
