@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.client.ApiFootballClient;
 import com.github.baek.footballobsbackend.dto.hth.HthMatchDto;
 import com.github.baek.footballobsbackend.dto.hth.HthResponseDto;
+import com.github.baek.footballobsbackend.error.ApiException;
+import com.github.baek.footballobsbackend.error.ErrorCode;
 import com.github.baek.footballobsbackend.util.KoResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +51,12 @@ public class HeadtoheadService {
         }
         matches.sort(Comparator.comparing(HthMatchDto::getDate).reversed());
 
-        return HthResponseDto.builder().matches(matches).build();
+        HthResponseDto result = HthResponseDto.builder().matches(matches).build();
+        if(result.getMatches().isEmpty()){
+            throw new ApiException(ErrorCode.H2H_NOT_AVAILABLE);
+        }
+
+        return result;
     }
 
     // ──────────────────────────────────────────────

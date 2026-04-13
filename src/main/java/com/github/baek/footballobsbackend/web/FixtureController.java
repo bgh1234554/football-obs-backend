@@ -43,6 +43,14 @@ public class FixtureController {
         return ResponseEntity.ok(dto);
     }
 
+    /**
+     * teamId 2개를 받아, 해당 두 팀에 대한 역대 상대 전적을 날짜, 대회, 심판 정보와 함께 조회.
+     *
+     * @param teamA 홈팀
+     * @param teamB 원정팀
+     * (다만, 순서가 바뀌어도 리턴 값은 동일함)
+     * @return 200 OK + HthResponseDto | 404 Not Found (데이터 없음)
+     */
     @GetMapping("/hth/{teamA}/{teamB}")
     public ResponseEntity<HthResponseDto> getHth(@PathVariable("teamA") long teamA, @PathVariable("teamB") long teamB) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것

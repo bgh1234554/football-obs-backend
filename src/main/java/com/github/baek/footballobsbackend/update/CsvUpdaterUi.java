@@ -1,5 +1,6 @@
 package com.github.baek.footballobsbackend.update;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -34,7 +35,14 @@ class CsvUpdaterUi {
     enum Mode { LEAGUE, PLAYERS, COACHES, TEAM, TEAM_NAMES }
 
     // ── 추춘제 대회 ────────────────────────────────
-    static final int FALL_SEASON = 2025;
+    // 7월 1일 이전이면 전년도, 이후면 현재 년도
+    static final int FALL_SEASON = computeFallSeason();
+
+    private static int computeFallSeason() {
+        LocalDate today = LocalDate.now();
+        int year = today.getYear();
+        return today.isBefore(LocalDate.of(year, 7, 1)) ? year - 1 : year;
+    }
 
     static final List<LeagueEntry> FALL_LEAGUES = List.of(
             new LeagueEntry(39,   "Premier League",                         true),
@@ -62,7 +70,8 @@ class CsvUpdaterUi {
     );
 
     // ── 춘추제 대회 ─────────────────────────────────────────────
-    static final int SPRING_SEASON = 2026;
+    // 실행 시즌 = 현재 년도
+    static final int SPRING_SEASON = LocalDate.now().getYear();
 
     static final List<LeagueEntry> SPRING_LEAGUES = List.of(
             new LeagueEntry(292,  "K League 1",                            true),
