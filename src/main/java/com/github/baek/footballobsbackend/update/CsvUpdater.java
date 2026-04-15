@@ -83,7 +83,9 @@ public class CsvUpdater {
                 } else if (selection.mode() == CsvUpdaterUi.Mode.COACHES) {
                     processSelectedCoaches(apiClient, selection.coachIds());
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM) {
-                    processTeamOnly(apiClient, selection.teamId());
+                    for (long teamId : selection.teamIds()) {
+                        processTeamOnly(apiClient, teamId);
+                    }
                 } else if (selection.mode() == CsvUpdaterUi.Mode.TEAM_NAMES) {
                     processTeamNamesOnly(apiClient, selection, sc);
                 } else {
