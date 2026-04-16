@@ -31,6 +31,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation "me.paulschwarz:spring-dotenv:4.0.0"
+    //health check 관련
+    //Spring Acutator - Spring Boot 앱의 운영 정보를 HTTP 엔드포인트로 노출해주는 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
 
 tasks.named('test') {
