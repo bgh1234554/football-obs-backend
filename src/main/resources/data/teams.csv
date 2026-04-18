@@ -168,7 +168,7 @@ team_id, team_name, ko_name, ko_name_short
 1333,AFC Wimbledon,AFC 윔블던,윔블던
 1337,Northampton Town,노스햄튼 타운,노스햄튼
 1343,Bradford City,브래드포드 시티,브래드포드C
-1350,Peterborough United,피터버러 유나이티드,피터버러
+1350,Peterborough United,피터버러 유나이티드,피터버러U
 1351,Port Vale,포트 베일,포트 베일
 1354,Doncaster Rovers,돈캐스터 로버스,돈캐스터
 1356,Blackpool,블랙풀,블랙풀
@@ -1205,8 +1205,56 @@ team_id, team_name, ko_name, ko_name_short
 18762,Libertad,리베르타드,리베르타드
 20960,Deportivo Garcilaso,데포르티보 가르실라소,D. 가르실라소
 767,Wales,웨일스,
-771,Northern Ireland,북아일랜드
-1111,Kosovo,코소보
-1119,Ireland,아일랜드
+771,Northern Ireland,북아일랜드,
+1111,Kosovo,코소보,
+1119,Ireland,아일랜드,
 16061,North Macedonia W,북마케도니아 (W),북마케도니아
-1105,North Macedonia,북마케도니아
+1105,North Macedonia,북마케도니아,
+1380,Macclesfield,매클즈필드,
+1820,Chester,체스터,
+1826,Southport,사우스포트,
+1839,AFC Fylde,파일드,
+4677,Alfreton Town,알프레턴 타운,알프레턴
+4679,Chorley,촐리,
+4684,Oxford City,옥스퍼드 시티,옥스퍼드C
+4688,AFC Telford United,텔포드 유나이티드,텔포드
+4692,Hereford,헤러포드,
+4695,Kidderminster Harriers,키더민스터 해리어스,키더민스터
+4703,Curzon Ashton,커즌 애시턴,커즌
+4707,Spennymoor Town,스페니무어 타운,스페니무어
+7266,Worksop Town,워크솝 타운,워크솝
+7616,Bedford Town,베드포드 타운,베드포드
+7656,Marine,마린,
+7706,Buxton,벅스턴,
+7732,Merthyr Town,머서 타운,머서
+7737,Peterborough Sports,피터버러 스포츠,피터버러S
+7740,Radcliffe,래드클리프,
+7745,Scarborough Athletic,스카버러 애슬레틱,스카버러
+7746,South Shields,사우스 실즈,
+8655,King's Lynn Town,킹스 린 타운,킹스 린
+8656,Leamington,레밍턴,
+10157,Darlington 1883,달링턴,
+1821,Dagenham & Redbridge,대거넘 앤 레드브리지,대그 앤 레드
+1825,Maidstone Utd,메이드스톤 유나이티드,메이드스톤
+1827,Torquay,토키 유나이티드,토키
+1829,Dover,도버 애슬레틱,도버
+1838,Maidenhead,메이든헤드 유나이티드,메이든헤드
+1840,Ebbsfleet United,엡스플리트 유나이티드,엡스플리트
+4680,Hampton & Richmond,햄튼 앤 리치먼드 보로,H&R
+4685,Slough Town,슬라우 타운,슬라우
+4687,Weston-super-Mare,웨스턴 수퍼 메어,WSM
+4689,Chelmsford City,쳄스퍼드 시티,쳄스퍼트
+4702,Chesham United,체셤 유나이티드,체셤
+4704,Eastbourne Borough,이스트본 보로,이스트본
+7612,AFC Totton,터튼,
+7690,AFC Hornchurch,혼처치,
+7714,Enfield Town,엔필드 타운,엔필드
+7715,Farnborough,판버러,
+7723,Horsham,호셤,
+7744,Salisbury,솔즈버리,
+7761,Worthing,워딩,
+8147,Chippenham Town,치퍼넘 타운,치퍼넘
+8657,Bath City,배스 시티,배스
+8659,Dorking Wanderers,도킹 원더러스,도킹
+8660,Hemel Hempstead Town,헤멜 헴스테드 타운,헤멜 헴스테드
+8662,Tonbridge Angels,톤브리지 앤젤스,톤브리지
