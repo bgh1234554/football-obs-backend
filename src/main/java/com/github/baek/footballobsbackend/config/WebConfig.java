@@ -2,6 +2,7 @@ package com.github.baek.footballobsbackend.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -12,12 +13,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * [CORS 정책]
  * 실운영에서는 BunnyCDN Pull Zone의 Allowed Referers / IP Whitelist 기능으로 접근을 제어함.
- * 백엔드 자체 CORS 필터는 개발 편의를 위해 전체 허용("*")으로 두고,
- * 도메인 제한은 CDN 레이어에서 담당.
+ * 백엔드 자체 CORS 필터는 개발 시에는 편의를 위해 전체 허용("*")으로 두고,
+ * 서비스 런칭 후 도메인 제한은 CDN 레이어에서 화이트리스트 추가 및 제한 추가
  */
 @RequiredArgsConstructor
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+    private final RateLimitInterceptor rateLimitInterceptor;
+
+    @Value("${cors.allowed-origins}")
+    private String[] allowedOrigins;
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
@@ -25,10 +31,9 @@ public class WebConfig implements WebMvcConfigurer {
         // CORS -> 다른 웹사이트에서 JS로 무단 호출 방어 역할
         registry.addMapping("/api/**")
                 .allowedOrigins("*")
+//                .allowedOrigins(allowedOrigins)
                 .allowedMethods("GET");
     }
-
-    private final RateLimitInterceptor rateLimitInterceptor;
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

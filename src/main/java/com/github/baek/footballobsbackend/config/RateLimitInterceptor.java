@@ -29,8 +29,8 @@ public class RateLimitInterceptor implements HandlerInterceptor {
                 )
                 .build();
     }
-    // 쉽게 말하면: 1분마다 30개짜리 토큰 통이 가득 채워짐
-    // 요청할 때마다 토큰 1개 소모, 토큰 다 떨어지면 429 반환
+    // 쉽게 말하면: 4초마다 최대 용량 15개짜리 토큰 통을 가득 채움.
+    // 처음에는 가득 찬 상태로 시작, 요청할 때마다 토큰 1개 소모, 토큰 다 떨어지면 429 반환
 
     @Override
     public boolean preHandle(HttpServletRequest request,
