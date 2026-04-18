@@ -34,6 +34,8 @@ dependencies {
     //health check 관련
     //Spring Acutator - Spring Boot 앱의 운영 정보를 HTTP 엔드포인트로 노출해주는 라이브러리
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    //API 리밋 핸들
+    implementation 'com.bucket4j:bucket4j-core:8.10.1'
 }
 
 tasks.named('test') {
