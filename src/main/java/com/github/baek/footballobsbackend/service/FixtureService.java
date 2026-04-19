@@ -484,12 +484,16 @@ public class FixtureService {
                 log.info("[KO_NAME_LONG_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
             }
 
-            // 2. grid는 벤치 선수면 null → isNull() 체크 후 처리
+            // 2. 선수 사진 URL — API가 제공하는 lineup 응답엔 photo 필드가 없으므로 ID로 직접 구성
+            String photoUrl = koResolver.buildPlayerPhotoUrl(playerId);
+
+            // 3. grid는 벤치 선수면 null → isNull() 체크 후 처리
             JsonNode gridNode = p.path("grid");
             result.add(PlayerDto.builder()
                     .playerId(playerId)
                     .name(koResolver.resolvePlayerDisplayName(playerId, apiName))
                     .nameKoLong(nameKoLong)
+                    .photoUrl(photoUrl)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText())            // "G" | "D" | "M" | "F"
                     .grid(gridNode.isNull() ? null : gridNode.asText(null))

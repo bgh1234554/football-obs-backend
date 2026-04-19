@@ -42,6 +42,14 @@ public class KoResolver {
         return apiUrl.replace("https://media.api-sports.io", mediaCdnUrl);
     }
 
+    /**
+     * 선수 ID로 Media CDN 프로필 사진 URL을 직접 구성.
+     * lineup API 응답엔 photo 필드가 없어 ID 기반으로 빌드.
+     */
+    public String buildPlayerPhotoUrl(long playerId) {
+        return mediaCdnUrl + "/football/players/" + playerId + ".png";
+    }
+
     // ──────────────────────────────────────────────
     // 팀 이름 / 로고
     // ──────────────────────────────────────────────
