@@ -1,23 +1,30 @@
 package com.github.baek.footballobsbackend.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.baek.footballobsbackend.error.ErrorCode;
+import com.github.baek.footballobsbackend.error.ErrorResult;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Refill;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import java.time.Duration;
+import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
+@Slf4j
 public class RateLimitInterceptor implements HandlerInterceptor {
 
-    // IP 주소별로 버킷을 저장하는 Map
-    // ConcurrentHashMap: 멀티스레드 환경(여러 요청 동시 처리)에서 안전한 Map
     private final Map<String, Bucket> buckets = new ConcurrentHashMap<>();
+    //ObjectMapper - JSON 문자열 생성기
+    private final ObjectMapper objectMapper = new ObjectMapper()
+            //Instant 타입을 JSON으로 올바르게 직렬화 해주는 모듈.
+            .findAndRegisterModules();
 
     private Bucket createBucket() {
         return Bucket.builder()
@@ -50,7 +57,26 @@ public class RateLimitInterceptor implements HandlerInterceptor {
         }
 
         // 토큰 없음 → 429 Too Many Requests 반환
-        response.setStatus(429);
-        return false;  // 컨트롤러로 요청 안 넘어감
+        /*
+        인터셉터에서 JSON 바디를 직접 쓰는 패턴은 흔하게 사용한다.
+        Spring Security의 AuthenticationEntryPoint나 AccessDeniedHandler도 같은 방식입니다.
+
+        다만 이 경우처럼 GlobalExceptionAdvice 같은 @ControllerAdvice가 이미 있으면,
+        인터셉터는 컨트롤러 진입 전에 막으니까 @ControllerAdvice가 개입할 수 없다.
+        그래서 response.getWriter().write(...) 로 직접 내려주는 방법밖에 없다.
+         */
+        ErrorCode errorCode = ErrorCode.RATE_LIMIT_EXCEEDED;
+        ErrorResult errorResult = new ErrorResult(
+                errorCode.name(),
+                errorCode.getMessage(),
+                errorCode.getStatus().value(),
+                request.getRequestURI(),
+                Instant.now()
+        );
+        response.setStatus(errorCode.getStatus().value());
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().write(objectMapper.writeValueAsString(errorResult));
+        log.info("[LIMIT_EXCEEDED] Rate limit exceeded for IP: {}", ip);
+        return false;
     }
 }
