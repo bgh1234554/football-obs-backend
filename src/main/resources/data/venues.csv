@@ -255,7 +255,7 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 5175,Paju Public Stadium,Paju,파주스타디움,파주
 6349,Yongin Football Center,Jungneung-ri,용인미르스타디움,용인
 ,Busan Gudeok Stadium,Busan,구덕운동장,부산
-489, Wembley Stadium, London, 웸블리 스타디움
+489, Wembley Stadium, London, 웸블리 스타디움,
 173,Stade Roi Baudouin,Brussel,보두앵 국왕 경기장,브뤼셀
 20332,Stade de France,Saint-Denis,스타드 드 프랑스,생드니
 412,Stadion Maksimir,Zagreb,스타디온 막시미르,자그레브
@@ -314,3 +314,27 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 19762,Trening centar Petar Miloševski,Skopje,트레닝 첸타르 페타르 밀로셰프스키,스코페
 7136,Toše Proeski Arena,Skopje,토셰 프로에스키 아레나,스코페
 19419,BMO Stadium,"Los Angeles, California",BMO 스타디움,로스앤젤레스
+11534,Lumen Field,"Seattle, Washington",루먼 필드,시애틀
+1612,Toyota Stadium,"Frisco, Texas",도요타 스타디움,텍사스
+20500,Inter&Co Stadium,"Orlando, Florida",인터&코 스타디움,올랜도
+1620,Subaru Park,"Chester, Pennsylvania",스바루 파크,체스터
+19418,Shell Energy Stadium,"Houston, Texas",셸 에너지 스타디움,휴스턴
+21544,Sports Illustrated Stadium,"Harrison, New Jersey",스포츠 일러스트레이티드 스타디움,해리슨
+19445,BC Place,"Vancouver, British Columbia",BC 플레이스,밴쿠버
+1833,Yankee Stadium,New York City,양키 스타디움,뉴욕
+1616,Dignity Health Sports Park,"Carson, California",디그니티 헬스 스포츠 파크,카슨
+19223,America First Field,"Sandy, Utah",아메리카 퍼스트 필드,샌디
+1609,Soldier Field,"Chicago, Illinois",솔저 필드,시카고
+1898,Mercedes-Benz Stadium,"Atlanta, Georgia",메르세데스-벤츠 스타디움,애틀란타
+1618,Gillette Stadium,"Foxborough, Massachusetts",질레트 스타디움,폭스버러
+1610,Dick's Sporting Goods Park,"Commerce City, Colorado",딕스 스포팅 굿즈 파크,코머스 시티
+1615,Children's Mercy Park,"Kansas City, Kansas",칠드런스 머시 파크,캔자스
+1617,Allianz Field,"Saint Paul, Minnesota",알리안츠 필드,세인트 폴
+12667,ScottsMiracle-Gro Field,"Columbus, Ohio",스코츠미라클-그로 필드,콜럼버스
+310,Stade Saputo,"Montreal, Quebec",스타드 사푸토,몬트리올
+1613,Audi Field,"Washington, District of Columbia",아우디 필드,워싱턴 DC
+1748,Providence Park,"Portland, Oregon",프로비던스 파크,포틀랜드
+19229,TQL Stadium,"Cincinnati, Ohio",TQL 스타디움,신시내티
+20764,Chase Stadium,"Fort Lauderdale, Florida",체이스 스타디움,포트 로더데일
+18659,Bank of America Stadium,"Charlotte, North Carolina",뱅크 오브 아메리카 스타디움,샬럿
+19408,Energizer Park,"St. Louis, Missouri",에너자이저 파크,세인트루이스

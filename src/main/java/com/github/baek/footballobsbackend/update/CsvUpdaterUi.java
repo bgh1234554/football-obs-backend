@@ -76,6 +76,7 @@ class CsvUpdaterUi {
     static final List<LeagueEntry> SPRING_LEAGUES = List.of(
             new LeagueEntry(292,  "K League 1",                            true),
             new LeagueEntry(293,  "K League 2",                            true),
+            new LeagueEntry(253,   "Major League Soccer",                  true),
             new LeagueEntry(71,   "Brasileirao (Serie A)",                  true),
             new LeagueEntry(15,   "FIFA Club World Cup",                    true),
             new LeagueEntry(1,    "World Cup",                                      true),
