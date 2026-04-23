@@ -1,15 +1,18 @@
 package com.github.baek.footballobsbackend.web;
 
-import com.github.baek.footballobsbackend.dto.fixtures.FixtureResponseDto;
-import com.github.baek.footballobsbackend.dto.hth.HthResponseDto;
-import com.github.baek.footballobsbackend.service.FixtureService;
-import com.github.baek.footballobsbackend.service.HeadtoheadService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.github.baek.footballobsbackend.dto.fixtures.FixtureResponseDto;
+import com.github.baek.footballobsbackend.dto.hth.HthResponseDto;
+import com.github.baek.footballobsbackend.service.FixtureService;
+import com.github.baek.footballobsbackend.service.HeadtoheadService;
+
+import lombok.RequiredArgsConstructor;
 
 /**
  * 경기(fixture) 관련 API 엔드포인트를 제공하는 컨트롤러.
@@ -46,13 +49,17 @@ public class FixtureController {
     /**
      * teamId 2개를 받아, 해당 두 팀에 대한 역대 상대 전적을 날짜, 대회, 심판 정보와 함께 조회.
      *
-     * @param teamA 홈팀
-     * @param teamB 원정팀
+     * @param teamA 홈팀 (query parameter)
+     * @param teamB 원정팀 (query parameter)
      * (다만, 순서가 바뀌어도 리턴 값은 동일함)
+     * 
+     * 20260423 @PathVariable -> @RequestParam으로 변경
+     * @PathVariable은 **조회 대상의 정체성 자체가 URL에 들어갈 때** 적합
+     * @RequestParam은 **조회 조건, 필터, 옵션**일 때 적합
      * @return 200 OK + HthResponseDto | 404 Not Found (데이터 없음)
      */
-    @GetMapping("/hth/{teamA}/{teamB}")
-    public ResponseEntity<HthResponseDto> getHth(@PathVariable("teamA") long teamA, @PathVariable("teamB") long teamB) {
+    @GetMapping("/hth")
+    public ResponseEntity<HthResponseDto> getHth(@RequestParam("teamA") long teamA, @RequestParam("teamB") long teamB) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         HthResponseDto dto = headtoheadService.getHeadtoHead(teamA,teamB);
         return ResponseEntity.ok(dto);
