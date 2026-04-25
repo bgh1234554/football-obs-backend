@@ -72,7 +72,6 @@ public class FixtureService {
         // 2. 홈/원정 팀 ID 추출 (이후 여러 메서드에서 side 구분에 사용)
         long homeTeamId = data.path("teams").path("home").path("id").asLong();
         long awayTeamId = data.path("teams").path("away").path("id").asLong();
-
         // 3. 부상/결장 전체 목록 먼저 조립 후 홈/원정으로 분리 (InjuryDto.teamId 기준)
         List<InjuryDto> allInjuries = buildInjuries(fixtureId);
         List<InjuryDto> homeInjuries = allInjuries.stream()
@@ -114,44 +113,80 @@ public class FixtureService {
 
         List<InjuryDto> result = new ArrayList<>();
         Set<String> seen = new HashSet<>();
+        Set<Long> loggedPlayerIds = new HashSet<>();
+        Map<Long, InjuryPlayerExtra> playerExtraCache = new HashMap<>();
         for (JsonNode item : response) {
             JsonNode player = item.path("player");
             JsonNode team = item.path("team");
 
-            // 2. 선수 ID로 한글 이름 조회, 없으면 영문 이름 사용
+            // 2. 중복 제거에 필요한 기본 값 먼저 추출
             long playerId = player.path("id").asLong();
-            String apiName = player.path("name").asText();
-            String nameKo = csvLoader.getPlayerNameKo(playerId);
-            if (nameKo == null) {
-                log.info("[KO_NAME_NEEDED] id={}, name={}", playerId, apiName);
-            }
-
-            // 3. 팀 이름 한글화 (팀 ID 기반 조회)
             long teamId = team.path("id").asLong();
-            String teamApiName = team.path("name").asText();
-            String teamNameKo = csvLoader.getTeamNameKo(teamId);
             String injuryType = player.path("type").asText();
             String injuryReason = player.path("reason").asText();
 
-            // 4. API가 동일 부상 항목을 중복 반환하는 경우가 있어 복합키로 한 번만 반영
+            // 3. API가 동일 부상 항목을 중복 반환하는 경우가 있어 복합키로 한 번만 반영
             String dedupeKey = teamId + "|" + playerId + "|" + injuryType + "|" + injuryReason;
             if (!seen.add(dedupeKey)) {
                 continue;
             }
 
+            // 4. 선수 이름/풀네임/등번호 추출
+            String apiName = player.path("name").asText();
+            String playerNameKo = csvLoader.getPlayerNameKo(playerId);
+            String playerNameKoLong = koResolver.resolvePlayerNameKoLong(playerId);
+            printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiName, playerNameKo);
+            InjuryPlayerExtra playerExtra = playerExtraCache.computeIfAbsent(
+                    playerId,
+                    id -> fetchInjuryPlayerExtra(id, apiName, playerNameKoLong)
+            );
+
+            String teamApiName = team.path("name").asText();
+
             // 5. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
             result.add(InjuryDto.builder()
                     .playerId(playerId)
                     .playerName(koResolver.resolvePlayerDisplayName(playerId, apiName))
+                    .playerNameKoLong(playerExtra.playerNameKoLong())
                     .playerPhotoUrl(koResolver.toMediaCdnUrl(player.path("photo").asText()))
+                    .number(playerExtra.number())
                     .type(injuryType)     // ex. "Missing Fixture"
                     .reason(injuryReason) // ex. "Knee Injury"
                     .teamId(teamId)
-                    .teamName(teamNameKo != null ? teamNameKo : teamApiName)
+                    .teamName(koResolver.resolveTeamName(teamId, teamApiName))
                     .teamLogo(koResolver.toMediaCdnUrl(team.path("logo").asText()))
                     .build());
         }
         return result;
+    }
+
+    private InjuryPlayerExtra fetchInjuryPlayerExtra(long playerId, String apiName, String playerNameKoLong) {
+        JsonNode playerProfileResponse = apiClient.getPlayerProfile(playerId);
+        JsonNode playerNode = (playerProfileResponse != null && playerProfileResponse.isArray() && !playerProfileResponse.isEmpty())
+                ? playerProfileResponse.get(0).path("player")
+                : null;
+        String longName = playerNameKoLong;
+        if (longName == null) {
+            String csvLong = csvLoader.getPlayerNameLong(playerId);
+            longName = csvLong != null ? csvLong : buildApiPlayerLongName(playerNode, apiName);
+        }
+
+        Integer number = playerNode == null ? null : nullableInt(playerNode.path("number"));
+        return new InjuryPlayerExtra(longName, number);
+    }
+
+    private String buildApiPlayerLongName(JsonNode playerNode, String apiName) {
+        if (playerNode != null) {
+            String firstName = playerNode.path("firstname").asText(null);
+            String lastName = playerNode.path("lastname").asText(null);
+            String fullName = ((firstName == null ? "" : firstName.trim()) + " " +
+                    (lastName == null ? "" : lastName.trim())).trim();
+            if (!fullName.isBlank()) return fullName;
+
+            String apiFullName = playerNode.path("name").asText(null);
+            if (apiFullName != null && !apiFullName.isBlank()) return apiFullName;
+        }
+        return (apiName == null || apiName.isBlank()) ? null : apiName;
     }
 
     // ──────────────────────────────────────────────
@@ -649,4 +684,6 @@ public class FixtureService {
     private Integer nullableInt(JsonNode node) {
         return (node == null || node.isNull() || node.isMissingNode()) ? null : node.asInt();
     }
+
+    private record InjuryPlayerExtra(String playerNameKoLong, Integer number) {}
 }
