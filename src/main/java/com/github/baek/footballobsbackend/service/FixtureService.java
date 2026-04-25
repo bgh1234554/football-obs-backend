@@ -1,6 +1,7 @@
 package com.github.baek.footballobsbackend.service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -48,6 +49,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class FixtureService {
+
+    private static final int UNKNOWN_POSITION_ORDER = 4;
 
     private final ApiFootballClient apiClient;
     private final CsvLoader csvLoader;
@@ -134,7 +137,7 @@ public class FixtureService {
             // 4. 선수 이름/풀네임/등번호 추출
             String apiName = player.path("name").asText();
             String playerNameKo = csvLoader.getPlayerNameKo(playerId);
-            String playerNameKoLong = koResolver.resolvePlayerNameKoLong(playerId);
+            String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
             printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiName, playerNameKo);
             InjuryPlayerExtra playerExtra = playerExtraCache.computeIfAbsent(
                     playerId,
@@ -483,7 +486,7 @@ public class FixtureService {
             return LineupDto.builder()
                     .formation(lu.path("formation").asText(null))   // ex. "4-2-3-1"
                     .startXi(buildPlayerList(lu.path("startXI")))   // API 응답 키는 "startXI" (대문자)
-                    .substitutes(buildPlayerList(lu.path("substitutes")))
+                    .substitutes(buildSubstitutePlayerList(lu.path("substitutes")))
                     .coach(CoachDto.builder()
                             .coachId(coachId)
                             .name(koResolver.resolveCoachDisplayName(coachId, coachApiName))
@@ -499,6 +502,26 @@ public class FixtureService {
      * 각 item은 { player: { id, name, number, pos, grid } } 구조.
      * grid는 선발만 있고 벤치는 null임 (ex. "2:3" = 2행 3열 포지션).
      */
+    private List<PlayerDto> buildSubstitutePlayerList(JsonNode listNode) {
+        List<PlayerDto> result = buildPlayerList(listNode);
+        result.sort(Comparator
+                .comparingInt((PlayerDto player) -> positionOrder(player.getPos()))
+                .thenComparingInt(PlayerDto::getNumber));
+        return result;
+    }
+
+    private int positionOrder(String pos) {
+        if (pos == null) return UNKNOWN_POSITION_ORDER;
+
+        return switch (pos) {
+            case "G" -> 0;
+            case "D" -> 1;
+            case "M" -> 2;
+            case "F" -> 3;
+            default -> UNKNOWN_POSITION_ORDER;
+        };
+    }
+
     private List<PlayerDto> buildPlayerList(JsonNode listNode) {
         List<PlayerDto> result = new ArrayList<>();
         if (!listNode.isArray()) return result;
@@ -530,7 +553,7 @@ public class FixtureService {
                     .nameKoLong(nameKoLong)
                     .photoUrl(photoUrl)
                     .number(p.path("number").asInt())
-                    .pos(p.path("pos").asText())            // "G" | "D" | "M" | "F"
+                    .pos(p.path("pos").asText(null))        // "G" | "D" | "M" | "F"
                     .grid(gridNode.isNull() ? null : gridNode.asText(null))
                     .build());
         }

@@ -241,14 +241,6 @@ public class KoResolver {
     }
 
     /**
-     * 선수 한글 풀네임.
-     * players.csv name_ko_long이 있으면 반환, 없으면 null.
-     */
-    public String resolvePlayerNameKoLong(long playerId) {
-        return csvLoader.getPlayerNameKoLong(playerId);
-    }
-
-    /**
      * 감독 표시 이름 우선순위.
      * 1. coaches.csv name_ko_short
      * 2. coaches.csv name_short (CSV — diff 로그)
