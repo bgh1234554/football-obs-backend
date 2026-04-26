@@ -13,6 +13,7 @@ public class MatchInfoDto {
     private long fixtureId;
     private String leagueName;
     private String leagueRound;
+    private String kickoffAt;
     private String leagueLogoUrl;
 
     private String venueName;    // 경기장 한글 이름. venues.csv에 없으면 API 영문 이름 fallback
