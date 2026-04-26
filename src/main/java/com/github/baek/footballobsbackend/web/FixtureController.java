@@ -1,5 +1,6 @@
 package com.github.baek.footballobsbackend.web;
 
+import org.springframework.http.CacheControl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,8 @@ import com.github.baek.footballobsbackend.service.FixtureService;
 import com.github.baek.footballobsbackend.service.HeadtoheadService;
 
 import lombok.RequiredArgsConstructor;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 경기(fixture) 관련 API 엔드포인트를 제공하는 컨트롤러.
@@ -43,7 +46,9 @@ public class FixtureController {
     public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable("fixtureId") long fixtureId) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         FixtureResponseDto dto = fixtureService.getFixture(fixtureId);
-        return ResponseEntity.ok(dto);
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.maxAge(30, TimeUnit.SECONDS))
+                .body(dto);
     }
 
     /**
@@ -62,6 +67,8 @@ public class FixtureController {
     public ResponseEntity<HthResponseDto> getHth(@RequestParam("teamA") long teamA, @RequestParam("teamB") long teamB) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         HthResponseDto dto = headtoheadService.getHeadtoHead(teamA,teamB);
-        return ResponseEntity.ok(dto);
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.maxAge(12, TimeUnit.HOURS))
+                .body(dto);
     }
 }

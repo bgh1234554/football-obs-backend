@@ -3,11 +3,14 @@ package com.github.baek.footballobsbackend.web;
 import com.github.baek.footballobsbackend.dto.stats.PlayerProfileStatResponseDto;
 import com.github.baek.footballobsbackend.service.PlayerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.CacheControl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * 선수 데이터 관련 API 엔드포인트를 제공하는 컨트롤러.
@@ -37,6 +40,8 @@ public class PlayerController {
     @GetMapping("/playerStats/{playerId}")
     public ResponseEntity<PlayerProfileStatResponseDto> getStats(@PathVariable("playerId") long playerId) {
         PlayerProfileStatResponseDto dto = playerService.getPlayerStats(playerId);
-        return ResponseEntity.ok(dto);
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.maxAge(12, TimeUnit.HOURS))
+                .body(dto);
     }
 }
