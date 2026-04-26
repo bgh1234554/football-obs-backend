@@ -232,7 +232,7 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 1008,Daejeon World Cup Stadium,Daejeon,대전월드컵경기장,대전
 10498,Gwangju Football Stadium,Gwangju,광주월드컵경기장,광주
 1014,Jeju World Cup Stadium,Seogwipo,제주월드컵경기장,서귀포
-1015,Jeonju World Cup Stadium,Jeonju,제주월드컵경기장,전주
+1015,Jeonju World Cup Stadium,Jeonju,전주월드컵경기장,전주
 1013,Sungui Arena Park,Incheon,인천축구전용경기장,인천
 1016,Steelyard Stadium,Pohang,포항스틸야드,포항
 1002,Seoul World Cup Stadium,Seoul,서울월드컵경기장,서울
@@ -340,3 +340,4 @@ venue_id,venue_name,venue_city,venue_name_ko,city_name_ko
 18659,Bank of America Stadium,"Charlotte, North Carolina",뱅크 오브 아메리카 스타디움,샬럿
 19408,Energizer Park,"St. Louis, Missouri",에너자이저 파크,세인트루이스
 1009,Chuncheon Songam Stadium,Chuncheon,춘천송암스포츠타운,춘천
+22764,St. Andrew's @ Knighthead Park,Birmingham,세인트 앤드류스 파크,버밍엄
