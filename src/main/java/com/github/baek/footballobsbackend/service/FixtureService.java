@@ -25,6 +25,8 @@ import com.github.baek.footballobsbackend.error.ApiException;
 import static com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND;
 import com.github.baek.footballobsbackend.util.CsvLoader;
 import com.github.baek.footballobsbackend.util.KoResolver;
+import com.github.baek.footballobsbackend.util.KoResolver.ResolvedName;
+import com.github.baek.footballobsbackend.util.PersonNameFormatter;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -75,26 +77,29 @@ public class FixtureService {
         // 2. 홈/원정 팀 ID 추출 (이후 여러 메서드에서 side 구분에 사용)
         long homeTeamId = data.path("teams").path("home").path("id").asLong();
         long awayTeamId = data.path("teams").path("away").path("id").asLong();
+
         // 3. 부상/결장 전체 목록 먼저 조립 후 홈/원정으로 분리 (InjuryDto.teamId 기준)
         List<InjuryDto> allInjuries = buildInjuries(fixtureId);
         List<InjuryDto> homeInjuries = allInjuries.stream()
-                .filter(i -> i.getTeamId() == homeTeamId).toList();
+                .filter(i -> i.getTeamId() == homeTeamId)
+                .toList();
         List<InjuryDto> awayInjuries = allInjuries.stream()
-                .filter(i -> i.getTeamId() != homeTeamId).toList();
+                .filter(i -> i.getTeamId() != homeTeamId)
+                .toList();
 
         // 4. 각 섹션별로 DTO 조립 후 한 번에 반환
         FixtureResponseDto result = FixtureResponseDto.builder()
-                .matchInfo(buildMatchInfo(data, homeTeamId, awayTeamId))       // 경기 기본 정보
-                .events(buildEvents(data.path("events"), homeTeamId))           // 골/카드/교체 이벤트
-                .teamStats(buildTeamStats(data.path("statistics"), homeTeamId)) // 팀 스탯
-                .homeLineup(buildLineup(data.path("lineups"), homeTeamId))      // 홈 라인업
-                .awayLineup(buildLineup(data.path("lineups"), awayTeamId))      // 원정 라인업
-                .playerStats(buildPlayerStats(data.path("players"), homeTeamId))          // 선수 개인 스탯
-                .homeInjuries(homeInjuries)                                     // 홈팀 부상/결장
-                .awayInjuries(awayInjuries)                                     // 원정팀 부상/결장
+                .matchInfo(buildMatchInfo(data, homeTeamId, awayTeamId))        // 경기 기본 정보
+                .events(buildEvents(data.path("events"), homeTeamId))            // 골/카드/교체 이벤트
+                .teamStats(buildTeamStats(data.path("statistics"), homeTeamId))  // 팀 스탯
+                .homeLineup(buildLineup(data.path("lineups"), homeTeamId))       // 홈 라인업
+                .awayLineup(buildLineup(data.path("lineups"), awayTeamId))       // 원정 라인업
+                .playerStats(buildPlayerStats(data.path("players"), homeTeamId)) // 선수 개인 스탯
+                .homeInjuries(homeInjuries)                                      // 홈팀 부상/결장
+                .awayInjuries(awayInjuries)                                      // 원정팀 부상/결장
                 .build();
 
-        if(result==null){
+        if (result == null) {
             throw new ApiException(FIXTURE_NOT_FOUND);
         }
 
@@ -104,6 +109,44 @@ public class FixtureService {
     // ──────────────────────────────────────────────
     // injuries
     // ──────────────────────────────────────────────
+
+    /**
+     * injuries 응답에는 선수 풀네임/등번호가 비어 있을 수 있어
+     * 필요할 때 profile API로 보완한다.
+     */
+    private InjuryPlayerExtra fetchInjuryPlayerExtra(long playerId, String apiName, String playerNameKoLong) {
+        JsonNode playerProfileResponse = apiClient.getPlayerProfile(playerId);
+        JsonNode playerNode = (playerProfileResponse != null && playerProfileResponse.isArray() && !playerProfileResponse.isEmpty())
+                ? playerProfileResponse.get(0).path("player")
+                : null;
+
+        String longName = playerNameKoLong;
+        if (longName == null) {
+            String csvLong = csvLoader.getPlayerNameLong(playerId);
+            longName = csvLong != null ? csvLong : buildApiPlayerLongName(playerNode, apiName);
+        }
+
+        Integer number = playerNode == null ? null : nullableInt(playerNode.path("number"));
+        return new InjuryPlayerExtra(longName, number);
+    }
+
+    /**
+     * player profile의 firstname/lastname/nationality만으로 풀네임을 만든다.
+     * 이름 순서는 CSV 생성 시 사용하는 formatter 규칙과 동일하게 맞춘다.
+     */
+    private String buildApiPlayerLongName(JsonNode playerNode, String apiName) {
+        if (playerNode != null) {
+            String firstName = playerNode.path("firstname").asText(null);
+            String lastName = playerNode.path("lastname").asText(null);
+            String nationality = playerNode.path("nationality").asText(null);
+            String fullName = PersonNameFormatter.buildLongName(firstName, lastName, nationality);
+            if (!fullName.isBlank()) return fullName;
+
+            String apiFullName = playerNode.path("name").asText(null);
+            if (apiFullName != null && !apiFullName.isBlank()) return apiFullName;
+        }
+        return (apiName == null || apiName.isBlank()) ? null : apiName;
+    }
 
     /**
      * 해당 경기의 부상/결장 선수 목록을 조립.
@@ -118,6 +161,7 @@ public class FixtureService {
         Set<String> seen = new HashSet<>();
         Set<Long> loggedPlayerIds = new HashSet<>();
         Map<Long, InjuryPlayerExtra> playerExtraCache = new HashMap<>();
+
         for (JsonNode item : response) {
             JsonNode player = item.path("player");
             JsonNode team = item.path("team");
@@ -138,10 +182,18 @@ public class FixtureService {
             String apiName = player.path("name").asText();
             String playerNameKo = csvLoader.getPlayerNameKo(playerId);
             String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+
+            // fixture 응답 전용 이름 fallback:
+            // ko_short -> csv short -> API full name short화 순으로 처리하고,
+            // short화가 실제로 일어났을 때만 longName에 원문 풀네임을 채운다.
+            ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiName);
+
             printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiName, playerNameKo);
+
             InjuryPlayerExtra playerExtra = playerExtraCache.computeIfAbsent(
                     playerId,
-                    id -> fetchInjuryPlayerExtra(id, apiName, playerNameKoLong)
+                    // injuries API에는 등번호나 풀네임이 비어 있을 수 있어 profile API로 보완한다.
+                    id -> fetchInjuryPlayerExtra(id, apiName, resolvedPlayerName.longName())
             );
 
             String teamApiName = team.path("name").asText();
@@ -149,7 +201,7 @@ public class FixtureService {
             // 5. 선수 사진 URL을 Media CDN URL로 치환 후 DTO 조립
             result.add(InjuryDto.builder()
                     .playerId(playerId)
-                    .playerName(koResolver.resolvePlayerDisplayName(playerId, apiName))
+                    .playerName(resolvedPlayerName.displayName())
                     .playerNameKoLong(playerExtra.playerNameKoLong())
                     .playerPhotoUrl(koResolver.toMediaCdnUrl(player.path("photo").asText()))
                     .number(playerExtra.number())
@@ -161,35 +213,6 @@ public class FixtureService {
                     .build());
         }
         return result;
-    }
-
-    private InjuryPlayerExtra fetchInjuryPlayerExtra(long playerId, String apiName, String playerNameKoLong) {
-        JsonNode playerProfileResponse = apiClient.getPlayerProfile(playerId);
-        JsonNode playerNode = (playerProfileResponse != null && playerProfileResponse.isArray() && !playerProfileResponse.isEmpty())
-                ? playerProfileResponse.get(0).path("player")
-                : null;
-        String longName = playerNameKoLong;
-        if (longName == null) {
-            String csvLong = csvLoader.getPlayerNameLong(playerId);
-            longName = csvLong != null ? csvLong : buildApiPlayerLongName(playerNode, apiName);
-        }
-
-        Integer number = playerNode == null ? null : nullableInt(playerNode.path("number"));
-        return new InjuryPlayerExtra(longName, number);
-    }
-
-    private String buildApiPlayerLongName(JsonNode playerNode, String apiName) {
-        if (playerNode != null) {
-            String firstName = playerNode.path("firstname").asText(null);
-            String lastName = playerNode.path("lastname").asText(null);
-            String fullName = ((firstName == null ? "" : firstName.trim()) + " " +
-                    (lastName == null ? "" : lastName.trim())).trim();
-            if (!fullName.isBlank()) return fullName;
-
-            String apiFullName = playerNode.path("name").asText(null);
-            if (apiFullName != null && !apiFullName.isBlank()) return apiFullName;
-        }
-        return (apiName == null || apiName.isBlank()) ? null : apiName;
     }
 
     // ──────────────────────────────────────────────
@@ -215,7 +238,7 @@ public class FixtureService {
         String leagueRound = league.path("round").asText();
         String kickoffAt = fixture.path("date").asText();
 
-        String leagueName    = koResolver.resolveLeagueName(leagueId, leagueApiName);
+        String leagueName = koResolver.resolveLeagueName(leagueId, leagueApiName);
         String leagueLogoUrl = koResolver.resolveLeagueLogoUrl((int) leagueId, league.path("logo").asText());
 
         // 3. 경기 상태 파싱 (API short status → 내부 status 코드로 변환)
@@ -350,19 +373,23 @@ public class FixtureService {
             String playerNameKo = csvLoader.getPlayerNameKo(playerId);
             String playerNameKoLong = csvLoader.getPlayerNameKoLong(playerId);
 
+            // 이벤트 영역도 라인업/스탯과 동일한 short fallback 규칙을 쓴다.
+            ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiPlayerName);
+
             // 1-1. 한글 이름 누락 로그 (선수 1인당 1회)
             printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiPlayerName, playerNameKo);
 
             // 2. assist 선수 처리 (null 가능 — 카드 이벤트 등)
             JsonNode assistNode = e.path("assist");
             Long assistId = assistNode.path("id").isNull() ? null : assistNode.path("id").asLong();
-            String assistName = null;
-            String assistNameKoLong = null;
+            ResolvedName resolvedAssistName = null;
             if (assistId != null) {
                 String assistApiName = assistNode.path("name").asText(null);
                 String assistNameKo = csvLoader.getPlayerNameKo(assistId);
-                assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
-                assistName = koResolver.resolvePlayerDisplayName(assistId, assistApiName);
+                String assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
+
+                // assist도 player와 동일한 표시 이름 규칙을 적용한다.
+                resolvedAssistName = koResolver.resolvePlayerName(assistId, assistApiName);
 
                 // 2-1. 어시스트 선수 한글 이름 누락 로그 (선수 1인당 1회)
                 printMissedPlayerLog(loggedPlayerIds, assistId, assistNameKoLong, assistApiName, assistNameKo);
@@ -377,11 +404,11 @@ public class FixtureService {
                     .side(e.path("team").path("id").asLong() == homeTeamId ? "home" : "away")
                     .teamId(e.path("team").path("id").asLong())
                     .playerId(playerId)
-                    .playerName(koResolver.resolvePlayerDisplayName(playerId, apiPlayerName))
-                    .playerNameKoLong(playerNameKoLong)
+                    .playerName(resolvedPlayerName.displayName())
+                    .playerNameKoLong(resolvedPlayerName.longName())
                     .assistId(assistId)
-                    .assistName(assistName)
-                    .assistNameKoLong(assistNameKoLong)
+                    .assistName(resolvedAssistName == null ? null : resolvedAssistName.displayName())
+                    .assistNameKoLong(resolvedAssistName == null ? null : resolvedAssistName.longName())
                     .type(e.path("type").asText())
                     .detail(e.path("detail").asText())
                     .comments(commentsNode.isNull() ? null : commentsNode.asText())
@@ -390,8 +417,8 @@ public class FixtureService {
         return result;
     }
 
-    private void printMissedPlayerLog(Set<Long> PlayerIds, Long playerId, String playerNameKoLong, String playerApiName, String playerNameKo) {
-        if (PlayerIds.add(playerId)) {
+    private void printMissedPlayerLog(Set<Long> playerIds, Long playerId, String playerNameKoLong, String playerApiName, String playerNameKo) {
+        if (playerIds.add(playerId)) {
             if (playerNameKo == null && playerNameKoLong == null) {
                 log.info("[KO_NAME_NEEDED] id={}, name={}", playerId, playerApiName);
             } else if (playerNameKo == null) {
@@ -476,6 +503,10 @@ public class FixtureService {
             String coachApiName = coachNode.path("name").asText();
             String coachKo = csvLoader.getCoachNameKo(coachId);
             String coachKoLong = csvLoader.getCoachNameKoLong(coachId);
+
+            // 감독도 선수와 동일하게 "표시 이름 + long fallback"을 한 번에 계산한다.
+            ResolvedName resolvedCoachName = koResolver.resolveCoachName(coachId, coachApiName);
+
             if (coachKo == null && coachKoLong == null) {
                 log.info("[KO_COACH_NAME_NEEDED] id={}, name={}", coachId, coachApiName);
             } else if (coachKo == null) {
@@ -491,8 +522,8 @@ public class FixtureService {
                     .substitutes(buildSubstitutePlayerList(lu.path("substitutes")))
                     .coach(CoachDto.builder()
                             .coachId(coachId)
-                            .name(koResolver.resolveCoachDisplayName(coachId, coachApiName))
-                            .nameKoLong(coachKoLong)
+                            .name(resolvedCoachName.displayName())
+                            .nameKoLong(resolvedCoachName.longName())
                             .build())
                     .build();
         }
@@ -536,6 +567,10 @@ public class FixtureService {
             String apiName = p.path("name").asText();
             String nameKo = csvLoader.getPlayerNameKo(playerId);
             String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+
+            // 라인업 name 필드도 다른 섹션과 같은 fallback 규칙을 써야 표기가 일관된다.
+            ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiName);
+
             if (nameKo == null && nameKoLong == null) {
                 log.info("[KO_NAME_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
             } else if (nameKo == null) {
@@ -551,8 +586,8 @@ public class FixtureService {
             JsonNode gridNode = p.path("grid");
             result.add(PlayerDto.builder()
                     .playerId(playerId)
-                    .name(koResolver.resolvePlayerDisplayName(playerId, apiName))
-                    .nameKoLong(nameKoLong)
+                    .name(resolvedPlayerName.displayName())
+                    .nameKoLong(resolvedPlayerName.longName())
                     .photoUrl(photoUrl)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText(null))        // "G" | "D" | "M" | "F"
@@ -590,8 +625,9 @@ public class FixtureService {
                 JsonNode p = item.path("player");
                 long playerId = p.path("id").asLong();
                 String apiName = p.path("name").asText();
-                String nameKo = csvLoader.getPlayerNameKo(playerId);
-                String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+
+                // 개인 스탯 영역도 같은 이름 규칙을 써야 화면 간 표기 차이가 없어진다.
+                ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiName);
 
                 // 3. statistics는 배열이지만 항상 1개만 들어있음 → get(0) 사용
                 JsonNode stats = item.path("statistics").get(0);
@@ -611,8 +647,8 @@ public class FixtureService {
                 // 5. DTO 조립 — 대부분의 스탯은 null 가능이므로 nullableInt() 사용
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
-                        .playerName(koResolver.resolvePlayerDisplayName(playerId, apiName))
-                        .playerNameKoLong(nameKoLong)
+                        .playerName(resolvedPlayerName.displayName())
+                        .playerNameKoLong(resolvedPlayerName.longName())
                         .playerPhotoUrl(koResolver.toMediaCdnUrl(p.path("photo").asText()))
                         .side(side)
                         .minutes(nullableInt(games.path("minutes")))
@@ -658,14 +694,14 @@ public class FixtureService {
      */
     private String mapStatus(String shortStatus, int elapsed) {
         return switch (shortStatus) {
-            case "1H"              -> "1H";
-            case "HT"              -> "HT";
-            case "2H"              -> "2H";
-            case "ET"              -> elapsed <= 105 ? "ET1" : "ET2";
-            case "P"               -> "PSO";            // 승부차기 진행 중
-            case "FT", "AET", "PEN" -> "FT";            // 정규/연장/승부차기 종료 모두 FT
-            case "NS"              -> "NS";
-            default                -> shortStatus;      // BT(휴식), SUSP 등 예외 상황 그대로 전달
+            case "1H"               -> "1H";
+            case "HT"               -> "HT";
+            case "2H"               -> "2H";
+            case "ET"               -> elapsed <= 105 ? "ET1" : "ET2";
+            case "P"                -> "PSO"; // 승부차기 진행 중
+            case "FT", "AET", "PEN" -> "FT";  // 정규/연장/승부차기 종료 모두 FT
+            case "NS"               -> "NS";
+            default                 -> shortStatus; // BT(휴식), SUSP 등 예외 상황 그대로 전달
         };
     }
 

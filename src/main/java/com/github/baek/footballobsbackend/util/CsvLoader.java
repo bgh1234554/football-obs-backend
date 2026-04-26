@@ -490,6 +490,28 @@ public class CsvLoader {
     }
 
     /**
+     * 감독 영문 풀네임(name_long) 조회.
+     * nameKoLong fallback이 필요할 때 실제 풀네임으로 사용한다.
+     */
+    public String getCoachNameLong(long coachId) {
+        String[] row = coaches.get(coachId);
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();   // index 2 = name_long
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 감독 국적(nationality) 조회.
+     * short 이름 축약 규칙에서 이름 순서 판별에 사용한다.
+     */
+    public String getCoachNationality(long coachId) {
+        String[] row = coaches.get(coachId);
+        if (row == null || row.length < 4) return null;
+        String v = row[3].trim();   // index 3 = nationality
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
      * 팀 커스텀 로고 URL 조회.
      * logos.csv에 등록된 커스텀 URL이 있으면 반환, 없으면 null.
      * null이면 FixtureService에서 API Football URL을 Media CDN URL로 치환하여 사용.

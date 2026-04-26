@@ -224,42 +224,97 @@ public class KoResolver {
     // ──────────────────────────────────────────────
 
     /**
-     * 선수 표시 이름 우선순위.
-     * 1. players.csv name_ko_short
-     * 2. players.csv name_short (CSV — diff 로그)
-     * 3. API Football name
+     * fixture 응답에서 내려줄 표시 이름과 풀네임 fallback 쌍.
+     * displayName은 name 계열 필드, longName은 nameKoLong 계열 필드에 사용한다.
      */
-    public String resolvePlayerDisplayName(long playerId, String apiName) {
+    public record ResolvedName(String displayName, String longName) {}
+
+    /**
+     * 선수 이름 fallback 우선순위.
+     * 1. players.csv name_ko_short  → (ko_short, ko_long)
+     * 2. players.csv name_short     → (csv short, ko_long)  + diff 로그
+     * 3. PersonNameFormatter로 API name 약식 변환
+     *    - 실제로 약식화가 일어나면 longName은 (ko_long → csv long → API name) 순으로 채움
+     *    - 이미 "A. Gomes" 같은 형태라 변환이 안 일어나면 longName은 ko_long 그대로 (없으면 null)
+     */
+    public ResolvedName resolvePlayerName(long playerId, String apiName) {
         String nameKo = csvLoader.getPlayerNameKo(playerId);
-        if (nameKo != null) return nameKo;
+        String nameKoLong = csvLoader.getPlayerNameKoLong(playerId);
+        if (nameKo != null) return new ResolvedName(nameKo, nameKoLong);
+
         String csvShort = csvLoader.getPlayerNameShort(playerId);
         if (csvShort != null) {
             logShortNameDiffOnce("player", playerId, apiName, csvShort);
-            return csvShort;
+            return new ResolvedName(csvShort, nameKoLong);
         }
-        return apiName;
+
+        String nationality = csvLoader.getPlayerNationality(playerId);
+        String displayName = PersonNameFormatter.buildNameShortAbbrev(apiName, null, null, nationality);
+        String longName = nameKoLong;
+        if (longName == null && wasShortened(apiName, displayName)) {
+            longName = firstNonBlank(csvLoader.getPlayerNameLong(playerId), blankToNull(apiName));
+        }
+        return new ResolvedName(displayName, longName);
     }
 
     /**
-     * 감독 표시 이름 우선순위.
-     * 1. coaches.csv name_ko_short
-     * 2. coaches.csv name_short (CSV — diff 로그)
-     * 3. API Football name
+     * 감독 이름 fallback 우선순위. 선수와 동일한 규칙을 coaches.csv 기준으로 적용.
      */
-    public String resolveCoachDisplayName(long coachId, String apiName) {
+    public ResolvedName resolveCoachName(long coachId, String apiName) {
         String nameKo = csvLoader.getCoachNameKo(coachId);
-        if (nameKo != null) return nameKo;
+        String nameKoLong = csvLoader.getCoachNameKoLong(coachId);
+        if (nameKo != null) return new ResolvedName(nameKo, nameKoLong);
+
         String csvShort = csvLoader.getCoachNameShort(coachId);
         if (csvShort != null) {
             logShortNameDiffOnce("coach", coachId, apiName, csvShort);
-            return csvShort;
+            return new ResolvedName(csvShort, nameKoLong);
         }
-        return apiName;
+
+        String nationality = csvLoader.getCoachNationality(coachId);
+        String displayName = PersonNameFormatter.buildNameShortAbbrev(apiName, null, null, nationality);
+        String longName = nameKoLong;
+        if (longName == null && wasShortened(apiName, displayName)) {
+            longName = firstNonBlank(csvLoader.getCoachNameLong(coachId), blankToNull(apiName));
+        }
+        return new ResolvedName(displayName, longName);
+    }
+
+    /**
+     * 표시 이름만 필요한 호출자(PlayerService 등)를 위한 위임.
+     */
+    public String resolvePlayerDisplayName(long playerId, String apiName) {
+        return resolvePlayerName(playerId, apiName).displayName();
+    }
+
+    public String resolveCoachDisplayName(long coachId, String apiName) {
+        return resolveCoachName(coachId, apiName).displayName();
     }
 
     // ──────────────────────────────────────────────
     // 공통
     // ──────────────────────────────────────────────
+
+    /**
+     * formatter가 원본 API 이름을 실제로 줄였을 때만 true.
+     */
+    private static boolean wasShortened(String original, String resolved) {
+        if (original == null || original.isBlank() || resolved == null || resolved.isBlank()) return false;
+        return !original.trim().equals(resolved.trim());
+    }
+
+    private static String blankToNull(String value) {
+        if (value == null) return null;
+        String trimmed = value.trim();
+        return trimmed.isEmpty() ? null : trimmed;
+    }
+
+    private static String firstNonBlank(String... values) {
+        for (String v : values) {
+            if (v != null && !v.isBlank()) return v.trim();
+        }
+        return null;
+    }
 
     /**
      * CSV 값과 API 값이 다를 때 diff 로그를 앱 실행 중 1회만 출력.
