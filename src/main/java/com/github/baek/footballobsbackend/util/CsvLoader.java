@@ -9,7 +9,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -95,7 +97,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 7개 컬럼으로 분리 (name_ko_short가 마지막 컬럼)
-                String[] parts = line.split(",", 7);
+                String[] parts = parseCsvLine(line, 7);
                 if (parts.length < 2) continue;
                 // 4. player_id(index 0)를 키로 전체 배열 저장 (id 컬럼이 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
@@ -120,7 +122,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 4개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short)
-                String[] parts = line.split(",", 4);
+                String[] parts = parseCsvLine(line, 4);
                 if (parts.length < 2) continue;
                 // 4. team_id를 키로 저장, team_name 소문자를 역방향 키로도 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
@@ -148,7 +150,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 4개 컬럼으로 분리 (team_id, team_name_ko, logo_url, fa_url)
-                String[] parts = line.split(",", 4);
+                String[] parts = parseCsvLine(line, 4);
                 if (parts.length < 2) continue;
                 // 4. team_id를 키로 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
@@ -172,7 +174,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 6개 컬럼으로 분리
-                String[] parts = line.split(",", 6);
+                String[] parts = parseCsvLine(line, 6);
                 if (parts.length < 2) continue;
                 // 4. coach_id를 키로 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
@@ -202,7 +204,7 @@ public class CsvLoader {
                 if (line.isBlank()) continue;
 
                 // 3. referee_name, referee_country, name_ko 3개 컬럼으로 분리
-                String[] parts = line.split(",", 3);
+                String[] parts = parseCsvLine(line, 3);
                 if (parts.length < 3) continue;
 
                 // 4. API Football 형식 "Anthony Taylor, England"로 key 재조합 (콤마+공백)
@@ -244,7 +246,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 5개 컬럼으로 분리 (venue_id, venue_name, venue_city, venue_name_ko, city_name_ko)
-                String[] parts = line.split(",", 5);
+                String[] parts = parseCsvLine(line, 5);
                 if (parts.length < 2) continue;
                 // 4. venue_name 소문자를 키로 저장 (대소문자 무관 검색)
                 venues.put(parts[1].trim().toLowerCase(), parts);
@@ -274,7 +276,7 @@ public class CsvLoader {
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
                 // 3. 최대 4개 컬럼으로 분리 (league_id, league_name, league_name_ko, logo_url)
-                String[] parts = line.split(",", 4);
+                String[] parts = parseCsvLine(line, 4);
                 if (parts.length < 2) continue;
                 // 4. league_id를 키로 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
@@ -293,6 +295,44 @@ public class CsvLoader {
         return new BufferedReader(
                 new InputStreamReader(new ClassPathResource(path).getInputStream(), StandardCharsets.UTF_8)
         );
+    }
+
+    /**
+     * CSV 한 줄을 RFC 4180 스타일로 파싱.
+     * - 큰따옴표로 감싼 필드 내부의 콤마는 구분자로 취급하지 않음
+     *   (예: `"Washington, District of Columbia"` → 한 필드)
+     * - 필드 내부의 큰따옴표는 `""`로 이스케이프
+     * - limit > 0이면 String.split(",", limit)와 동일하게 최대 limit 컬럼까지 분리하고
+     *   limit-1번째 콤마 이후의 모든 문자는 마지막 필드에 그대로 보존
+     */
+    private static String[] parseCsvLine(String line, int limit) {
+        List<String> result = new ArrayList<>();
+        StringBuilder cur = new StringBuilder();
+        boolean inQuotes = false;
+        for (int i = 0; i < line.length(); i++) {
+            char c = line.charAt(i);
+            if (inQuotes) {
+                if (c == '"') {
+                    if (i + 1 < line.length() && line.charAt(i + 1) == '"') {
+                        cur.append('"');
+                        i++;
+                    } else {
+                        inQuotes = false;
+                    }
+                } else {
+                    cur.append(c);
+                }
+            } else if (c == '"' && cur.length() == 0) {
+                inQuotes = true;
+            } else if (c == ',' && (limit <= 0 || result.size() < limit - 1)) {
+                result.add(cur.toString());
+                cur.setLength(0);
+            } else {
+                cur.append(c);
+            }
+        }
+        result.add(cur.toString());
+        return result.toArray(new String[0]);
     }
 
     // ──────────────────────────────────────────────────────────────
