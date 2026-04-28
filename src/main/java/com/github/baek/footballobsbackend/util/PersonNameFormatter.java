@@ -22,9 +22,6 @@ public final class PersonNameFormatter {
             "vietnam", "viet nam"
     );
 
-    private PersonNameFormatter() {
-    }
-
     /**
      * API name을 short 표기로 변환한다.
      *

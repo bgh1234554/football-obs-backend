@@ -36,6 +36,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     //API 리밋 핸들
     implementation 'com.bucket4j:bucket4j-core:8.10.1'
+    //IP별 버킷 evict용 in-memory 캐시
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.1.8'
 }
 
 tasks.named('test') {
