@@ -270,6 +270,13 @@ public class FixtureService {
         JsonNode homeColors = colors[0];
         JsonNode awayColors = colors[1];
 
+        // 6-1. 팀별 색깔 검증
+        String homePrimaryColor=colorOf(homeColors, "primary");
+        String homeNumberColor=homePrimaryColor.equals(colorOf(homeColors,"number"))?colorOf(homeColors,"border"):colorOf(homeColors,"number");
+        String awayPrimaryColor=colorOf(awayColors, "primary");
+        String awayNumberColor=awayPrimaryColor.equals(colorOf(awayColors,"number"))?colorOf(awayColors,"border"):colorOf(awayColors,"number");
+
+
         // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
         //    한글 이름이 있으면 "앤서니 테일러 (England)", 없으면 "Anthony Taylor (England)"
         String refereeStr = fixture.path("referee").asText(null);
@@ -293,8 +300,8 @@ public class FixtureService {
                 .homeTeamFaUrl(csvLoader.getFaUrl(homeTeamId))  // 클럽팀이면 null
                 .homeScore(goals.path("home").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .homePenaltyScore(homePenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
-                .homePrimaryColor(colorOf(homeColors, "primary"))   // 유니폼 바탕색
-                .homeNumberColor(colorOf(homeColors, "number"))     // 등번호 색
+                .homePrimaryColor(homePrimaryColor)   // 유니폼 바탕색
+                .homeNumberColor(homeNumberColor)     // 등번호 색
                 .awayTeamId(awayTeamId)
                 .awayTeamName(koResolver.resolveTeamName(awayTeamId, awayApiName))
                 .awayTeamNameShort(awayDisplayShort)
@@ -302,8 +309,8 @@ public class FixtureService {
                 .awayTeamFaUrl(csvLoader.getFaUrl(awayTeamId))
                 .awayScore(goals.path("away").asInt())              // 정규+연장 득점 합계 (goals 필드)
                 .awayPenaltyScore(awayPenaltyScore)                 // 페널티 슛아웃 점수, 비해당 경기는 null
-                .awayPrimaryColor(colorOf(awayColors, "primary"))
-                .awayNumberColor(colorOf(awayColors, "number"))
+                .awayPrimaryColor(awayPrimaryColor)
+                .awayNumberColor(awayNumberColor)
                 .refereeName(refereeName)
                 .venueName(venueName)
                 .venueCity(venueCity)
