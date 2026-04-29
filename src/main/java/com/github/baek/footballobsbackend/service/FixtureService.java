@@ -482,6 +482,8 @@ public class FixtureService {
                     .totalPasses(intStat(m, "Total passes"))
                     .passesAccurate(intStat(m, "Passes accurate"))
                     .passesPercent(strStat(m, "Passes %"))          // "60%" 형식
+                    .expectedGoals(strStat(m,"expected_goals"))
+                    .goalsPrevented(intStat(m, "goals_prevented"))
                     .build());
         }
         return result;
