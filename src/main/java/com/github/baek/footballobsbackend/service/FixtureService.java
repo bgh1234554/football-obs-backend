@@ -316,6 +316,7 @@ public class FixtureService {
                 .venueCity(venueCity)
                 .leagueName(leagueName)
                 .leagueRound(leagueRound)
+                .leagueId(leagueId)
                 .kickoffAt(kickoffAt)
                 .leagueLogoUrl(leagueLogoUrl)
                 .build();
