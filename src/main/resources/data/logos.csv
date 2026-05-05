@@ -4,6 +4,7 @@ team_id, team_name_ko, logo_url, fa_url
 6786, 아크론 톨리야티, https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/FC_Akron_Logo_2023.svg/3840px-FC_Akron_Logo_2023.svg.png,
 2011, 파리 니즈니 노브고로드, https://upload.wikimedia.org/wikipedia/ru/thumb/a/ad/FC_Pari_NN_Logo_2023.svg/1920px-FC_Pari_NN_Logo_2023.svg.png,
 2012, 소치, https://upload.wikimedia.org/wikipedia/en/thumb/7/70/PFC_Sochi_logo.svg/1920px-PFC_Sochi_logo.svg.png,
+1088, 디나모 모스크바,https://upload.wikimedia.org/wikipedia/ru/thumb/e/e2/FC_Dynamo_Moscow_Logo.svg/1920px-FC_Dynamo_Moscow_Logo.svg.png
 19449, 스파르타크 코스트로마, https://s3.fnl.pro:9000/fnl/team/team-100-267?date=2026-3-5/22-31,
 6834, 볼가 울리야놉스크, https://s3.fnl.pro:9000/fnl/team/team-100-263?date=2026-3-5/22-31,
 6790, 첼랴빈스크, https://s3.fnl.pro:9000/fnl/team/team-100-159?date=2026-3-5/22-33,
@@ -16,6 +17,7 @@ team_id, team_name_ko, logo_url, fa_url
 6795, 디나모 브랸스크, https://s3.fnl.pro:9000/fnl/team/team-200-271?date=2026-3-5/22-45,
 6831, 쿠반 크라스노다르, https://s3.fnl.pro:9000/fnl/team/team-200-293?date=2026-3-5/22-45,
 21538, 디나모 키로프, https://s3.fnl.pro:9000/fnl/team/team-200-295?date=2026-3-5/22-45,
+2767,울산 HD,https://upload.wikimedia.org/wikipedia/en/b/b5/Ulsan_Hyundai_FC.svg
 2748, 안양, https://i.namu.wiki/i/8LWJrwWxEftmHiAK5HveFzhEhp47OyuLOwwpzQmyvV8tRLLY-9xF8Ys_7oBIamu66zzKVf5ymv89OfkeIkzjeGKTVncZi4OzVEHaFauBBI5OS0y6WBdW4s-aW8l-xDGYxUfiWHCaNscbgItKMN65_g.svg,
 2761, 제주, https://i.namu.wiki/i/nPAce8RTQQjb1WTD-lQHev9A2BPxbFeK069S5i1O2WV7_-gMU1-vjFpb802_1540zhI8QSQqa7moaEYLWrJOBEbVopx03pBG2_CjoXroYtRnPLT7qicd_EZTx_RHPSUBqc43TN-Q9JoOjJbBrPbftQ.svg,
 7098, 파주 프런티어, https://i.namu.wiki/i/BBvIOx0k93MzG5ukssQJgKNxABtpAkz6Im8XjhELtROWnxCK-NsKQw9m_dsT-mU5Ju1zGFcUjiIPeAmspWSAIDDIi9ZL0cF2yim4bZMAUmSy0oZ-W_quZpISQSiS_toOcW9Q2aSbs7iTgQrRiFhs2A.svg,
