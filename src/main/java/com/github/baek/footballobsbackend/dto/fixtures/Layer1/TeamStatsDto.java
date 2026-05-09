@@ -34,5 +34,5 @@ public class TeamStatsDto {
     private String passesPercent;   // "60%"
 
     private String expectedGoals;
-    private Integer goalsPrevented;
+    private String goalsPrevented;
 }

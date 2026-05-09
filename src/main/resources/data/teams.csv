@@ -4,7 +4,7 @@ team_id, team_name, ko_name, ko_name_short
 33,Manchester United,맨체스터 유나이티드, 맨유
 50,Manchester City,맨체스터 시티, 맨시티
 645,Galatasaray,갈라타사라이,
-1113,Bosnia & Herzegovina,보스니아 헤르체고비나, BiH
+1113,Bosnia & Herzegovina,보스니아 헤르체고비나, 보스니아
 768,Italy,이탈리아,
 40,Liverpool,리버풀,
 47,Tottenham,토트넘 홋스퍼, 토트넘
@@ -21,7 +21,7 @@ team_id, team_name, ko_name, ko_name_short
 52,Crystal Palace,크리스탈 팰리스, 팰리스
 55,Brentford,브렌트포드,
 63,Leeds,리즈 유나이티드, 리즈
-65,Nottingham Forest,노팅엄 포레스트, 노팅엄
+65,Nottingham Forest,노팅엄 포레스트, 포레스트
 66,Aston Villa,아스톤 빌라, 빌라
 746,Sunderland, 선덜랜드,
 529,Barcelona,바르셀로나,
@@ -164,20 +164,20 @@ team_id, team_name, ko_name, ko_name_short
 68,Bolton Wanderers,볼턴 원더러스,볼턴
 73,Rotherham United,로더럼 유나이티드,로더럼
 747,Barnsley,반즐리,반즐리
-748,Burton Albion,버튼 알비온,버튼
+748,Burton Albion,버턴 알비온,버턴
 1333,AFC Wimbledon,AFC 윔블던,윔블던
 1337,Northampton Town,노스햄튼 타운,노스햄튼
 1343,Bradford City,브래드포드 시티,브래드포드C
 1350,Peterborough United,피터버러 유나이티드,피터버러U
 1351,Port Vale,포트 베일,포트 베일
-1354,Doncaster Rovers,돈캐스터 로버스,돈캐스터
+1354,Doncaster Rovers,동커스터 로버스,동커스터
 1356,Blackpool,블랙풀,블랙풀
 1357,Plymouth Argyle,플리머스 아가일,플리머스
 1358,Wycombe Wanderers,위컴 원더러스,위컴
 1359,Luton Town,루턴 타운,루턴
 1364,Exeter City,엑시터 시티,엑시터
-1368,Stevenage,스티브니지,스티브니지
-1373,Leyton Orient,레이튼 오리엔트,레이튼
+1368,Stevenage,스티버니지,스티버니지
+1373,Leyton Orient,레이턴 오리엔트,레이턴
 1374,Mansfield Town,맨스필드 타운,맨스필드
 1379,Lincoln City,링컨 시티,링컨
 4686,Stockport County,스톡포트 카운티,스톡포트
@@ -196,7 +196,7 @@ team_id, team_name, ko_name, ko_name_short
 1363,Crewe Alexandra,크루 알렉산드라,크루
 1365,Grimsby Town,그림즈비 타운,그림즈비
 1367,Newport County,뉴포트 카운티,뉴포트
-1369,Barnet,바넷,바넷
+1369,Barnet,바닛,바닛
 1370,Cambridge United,케임브리지 유나이티드,케임브리지
 1372,Cheltenham Town,첼트넘 타운,첼트넘
 1376,Notts County,노츠 카운티,
