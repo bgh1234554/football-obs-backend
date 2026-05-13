@@ -272,9 +272,9 @@ public class FixtureService {
 
         // 6-1. 팀별 색깔 검증
         String homePrimaryColor=colorOf(homeColors, "primary");
-        String homeNumberColor=homePrimaryColor.equals(colorOf(homeColors,"number"))?colorOf(homeColors,"border"):colorOf(homeColors,"number");
+        String homeNumberColor=resolveNumberColor(homePrimaryColor, colorOf(homeColors,"number"), colorOf(homeColors,"border"));
         String awayPrimaryColor=colorOf(awayColors, "primary");
-        String awayNumberColor=awayPrimaryColor.equals(colorOf(awayColors,"number"))?colorOf(awayColors,"border"):colorOf(awayColors,"number");
+        String awayNumberColor=resolveNumberColor(awayPrimaryColor, colorOf(awayColors,"number"), colorOf(awayColors,"border"));
 
 
         // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
@@ -352,6 +352,45 @@ public class FixtureService {
         if (colors == null || colors.isMissingNode()) return null;
         JsonNode n = colors.path(key);
         return n.isNull() || n.isMissingNode() ? null : n.asText();
+    }
+
+    // number 색이 primary와 눈으로 구분 어려울 때 border, 그것도 안 되면 보색 반환
+    private String resolveNumberColor(String primary, String number, String border) {
+        if (!colorsTooSimilar(primary, number)) return number;
+        if (!colorsTooSimilar(primary, border)) return border;
+        return complementColor(primary);
+    }
+
+    // RGB Euclidean distance < 60 이면 "너무 비슷"으로 판단 (null 포함 시 similar 아님으로 처리)
+    private static final int EUCLIDEAN_DISTANCE = 60;
+    private boolean colorsTooSimilar(String hex1, String hex2) {
+        if (hex1 == null || hex2 == null) return false;
+        int[] c1 = parseHex(hex1);
+        int[] c2 = parseHex(hex2);
+        if (c1 == null || c2 == null) return false;
+        int dr = c1[0] - c2[0], dg = c1[1] - c2[1], db = c1[2] - c2[2];
+        return Math.sqrt(dr * dr + dg * dg + db * db) < EUCLIDEAN_DISTANCE;
+    }
+
+    private String complementColor(String hex) {
+        int[] c = parseHex(hex);
+        if (c == null) return "#ffffff";
+        return String.format("#%02x%02x%02x", 255 - c[0], 255 - c[1], 255 - c[2]);
+    }
+
+    private int[] parseHex(String hex) {
+        if (hex == null) return null;
+        String s = hex.startsWith("#") ? hex.substring(1) : hex;
+        if (s.length() != 6) return null;
+        try {
+            return new int[]{
+                Integer.parseInt(s.substring(0, 2), 16),
+                Integer.parseInt(s.substring(2, 4), 16),
+                Integer.parseInt(s.substring(4, 6), 16)
+            };
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
     // ──────────────────────────────────────────────
