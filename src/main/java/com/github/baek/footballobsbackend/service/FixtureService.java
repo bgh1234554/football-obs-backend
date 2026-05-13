@@ -351,11 +351,7 @@ public class FixtureService {
     private String colorOf(JsonNode colors, String key) {
         if (colors == null || colors.isMissingNode()) return null;
         JsonNode n = colors.path(key);
-        if (n.isNull() || n.isMissingNode()) return null;
-        String val = n.asText();
-        // API Football이 # 없이 hex 6자리만 반환하는 경우 정규화
-        if (val != null && !val.startsWith("#") && val.length() == 6) return "#" + val;
-        return val;
+        return n.isNull() || n.isMissingNode() ? null : n.asText();
     }
 
     // number 색이 primary와 눈으로 구분 어려울 때 border, 그것도 안 되면 보색 반환
@@ -379,8 +375,8 @@ public class FixtureService {
 
     private String complementColor(String hex) {
         int[] c = parseHex(hex);
-        if (c == null) return "#ffffff";
-        return String.format("#%02x%02x%02x", 255 - c[0], 255 - c[1], 255 - c[2]);
+        if (c == null) return "ffffff";
+        return String.format("%02x%02x%02x", 255 - c[0], 255 - c[1], 255 - c[2]);
     }
 
     private int[] parseHex(String hex) {
