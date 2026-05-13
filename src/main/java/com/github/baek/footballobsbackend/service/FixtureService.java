@@ -351,13 +351,18 @@ public class FixtureService {
     private String colorOf(JsonNode colors, String key) {
         if (colors == null || colors.isMissingNode()) return null;
         JsonNode n = colors.path(key);
-        return n.isNull() || n.isMissingNode() ? null : n.asText();
+        if (n.isNull() || n.isMissingNode()) return null;
+        String val = n.asText();
+        // API Football이 # 없이 hex 6자리만 반환하는 경우 정규화
+        if (val != null && !val.startsWith("#") && val.length() == 6) return "#" + val;
+        return val;
     }
 
     // number 색이 primary와 눈으로 구분 어려울 때 border, 그것도 안 되면 보색 반환
+    // null은 "구분 가능" 이 아니라 "없음"으로 처리 — null이면 다음 후보로 넘어감
     private String resolveNumberColor(String primary, String number, String border) {
-        if (!colorsTooSimilar(primary, number)) return number;
-        if (!colorsTooSimilar(primary, border)) return border;
+        if (number != null && !colorsTooSimilar(primary, number)) return number;
+        if (border != null && !colorsTooSimilar(primary, border)) return border;
         return complementColor(primary);
     }
 
