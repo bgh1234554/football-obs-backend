@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.util.HtmlUtils;
 
+import java.io.IOException;
 import java.time.Instant;
 import java.util.stream.Collectors;
 
@@ -64,6 +65,11 @@ public class GlobalExceptionAdvice {
     //이외 예상치 못한 예외로직 처리
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResult> generalExceptionHandle(Exception e, HttpServletRequest request){
+        // 클라이언트가 응답 수신 전에 연결을 끊은 경우 — 서버 오류가 아니므로 DEBUG로만 기록
+        if (isClientAbort(e)) {
+            log.debug("Client disconnected mid-response: path={}", request.getRequestURI());
+            return ResponseEntity.ok().build();
+        }
         log.error("Unexpected Error occurred: message={}, path={}", e.getMessage(), request.getRequestURI());
         ErrorResult result = new ErrorResult(
                 "INTERNAL_SERVER_ERROR",
@@ -73,5 +79,18 @@ public class GlobalExceptionAdvice {
                 Instant.now()
         );
         return ResponseEntity.internalServerError().body(result);
+    }
+
+    // Tomcat ClientAbortException 또는 Broken pipe IOException 여부 확인
+    // Tomcat 클래스를 직접 import하지 않고 이름/메시지로 판별
+    private boolean isClientAbort(Throwable e) {
+        for (Throwable t = e; t != null; t = t.getCause()) {
+            if ("ClientAbortException".equals(t.getClass().getSimpleName())) return true;
+            if (t instanceof IOException) {
+                String msg = t.getMessage();
+                if (msg != null && (msg.contains("Broken pipe") || msg.contains("Connection reset"))) return true;
+            }
+        }
+        return false;
     }
 }
