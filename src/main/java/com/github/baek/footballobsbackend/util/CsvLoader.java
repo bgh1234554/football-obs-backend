@@ -124,9 +124,11 @@ public class CsvLoader {
                 // 3. 최대 4개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short)
                 String[] parts = parseCsvLine(line, 4);
                 if (parts.length < 2) continue;
-                // 4. team_id를 키로 저장, team_name 소문자를 역방향 키로도 저장 (id 비어있으면 0으로 저장)
+                // 4. team_id가 있을 때만 ID 맵에 저장, team_name 소문자는 항상 역방향 키로 저장
                 String idStr = parts[0].trim();
-                teams.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
+                if (!idStr.isEmpty()) {
+                    teams.put(Long.parseLong(idStr), parts);
+                }
                 if (parts.length > 1 && !parts[1].trim().isEmpty()) {
                     teamsByName.put(parts[1].trim().toLowerCase(), parts);
                 }

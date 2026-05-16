@@ -56,11 +56,19 @@ public class KoResolver {
 
     /**
      * 팀 표시 이름 우선순위.
-     * 1. teams.csv ko_name (한글 풀네임)
-     * 2. teams.csv team_name (CSV 영문 — API와 다르면 diff 로그)
-     * 3. API Football name + [KO_TEAM_NAME_NEEDED] 로그
+     * 1. teamId가 없으면 teams.csv team_name으로 ko_name 조회, 없으면 null
+     * 2. teams.csv ko_name (한글 풀네임)
+     * 3. teams.csv team_name (CSV 영문 — API와 다르면 diff 로그)
+     * 4. API Football name + [KO_TEAM_NAME_NEEDED] 로그
      */
     public String resolveTeamName(long teamId, String apiName) {
+        if (teamId <= 0) {
+            String koByName = csvLoader.getTeamNameKoByName(apiName);
+            if (koByName != null) return koByName;
+            log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", teamId, apiName);
+            return null;
+        }
+
         String ko = csvLoader.getTeamNameKo(teamId);
         if (ko != null) return ko;
         String csvEnglish = csvLoader.getTeamEnglishName(teamId);
