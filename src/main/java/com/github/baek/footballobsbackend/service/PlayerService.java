@@ -148,8 +148,7 @@ public class PlayerService {
 
         for (JsonNode stat : statsNode) {
             // 친선경기 판별은 API 원문 이름 기준 (한글 변환 전)
-            Integer leagueId     = stat.path("league").path("id").isNull()
-                    ? null : stat.path("league").path("id").asInt();
+            Integer leagueId     = nullableInt(stat.path("league").path("id"));
             String apiLeagueName = stat.path("league").path("name").asText("");
 
             if (isFriendlyLeague(leagueId, apiLeagueName)) {
@@ -160,8 +159,8 @@ public class PlayerService {
         }
 
         //리그 id 순으로 정렬
-        officialGames.sort(Comparator.comparingInt(a -> a.getLeague().getId()));
-        friendlies.sort(Comparator.comparingInt(a -> a.getLeague().getId()));
+        officialGames.sort(Comparator.comparingInt(this::leagueSortId));
+        friendlies.sort(Comparator.comparingInt(this::leagueSortId));
 
         officialGames.addAll(friendlies);
         return officialGames;
@@ -176,8 +175,9 @@ public class PlayerService {
 
         // league
         JsonNode leagueNode  = stat.path("league");
-        Integer leagueId     = leagueNode.path("id").isNull() ? null : leagueNode.path("id").asInt();
-        String apiLeagueName = leagueNode.path("name").asText();
+        Integer leagueId     = nullableInt(leagueNode.path("id"));
+        int responseLeagueId = leagueId != null ? leagueId : 0;
+        String apiLeagueName = leagueNode.path("name").asText("");
 
         // stat section nodes
         JsonNode games      = stat.path("games");
@@ -199,8 +199,8 @@ public class PlayerService {
                         .logo(koResolver.resolveLogoUrl(teamId, teamNode.path("logo").asText(null), apiTeamName))
                         .build())
                 .league(StatLeagueDto.builder()
-                        .id(leagueId)
-                        .name(leagueId != null ? koResolver.resolveLeagueName(leagueId, apiLeagueName) : apiLeagueName)
+                        .id(responseLeagueId)
+                        .name(koResolver.resolveLeagueName(leagueId, apiLeagueName))
                         .logo(koResolver.resolveLeagueLogoUrl(leagueId, leagueNode.path("logo").asText(null)))
                         .season(leagueNode.path("season").asInt())
                         .build())
@@ -271,6 +271,12 @@ public class PlayerService {
     private boolean isFriendlyLeague(Integer leagueId, String apiLeagueName) {
         if (leagueId != null && FRIENDLIES_LEAGUES.contains(leagueId)) return true;
         return apiLeagueName != null && apiLeagueName.toLowerCase().contains("friend");
+    }
+
+    private int leagueSortId(PlayerSeasonStatDto stat) {
+        if (stat == null || stat.getLeague() == null || stat.getLeague().getId() == null) return Integer.MAX_VALUE;
+        int leagueId = stat.getLeague().getId();
+        return leagueId == 0 ? Integer.MAX_VALUE : leagueId;
     }
 
     // ──────────────────────────────────────────────

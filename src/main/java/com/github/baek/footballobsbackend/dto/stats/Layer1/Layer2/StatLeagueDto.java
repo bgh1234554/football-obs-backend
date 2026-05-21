@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StatLeagueDto {
-    private Integer id;    // null 가능 (일부 대회는 id 없음)
+    private Integer id;    // API 리그 id가 없으면 0
     private String name;   // 한글 우선 (leagues.csv league_name_ko), 없으면 API 영문
-    private String logo;   // leagues.csv 커스텀 URL 우선, 없으면 API URL CDN 치환. id가 null이면 null
+    private String logo;   // leagues.csv 커스텀 URL 우선, 없으면 API URL CDN 치환
     private int season;
 }

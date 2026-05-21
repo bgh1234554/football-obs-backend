@@ -115,6 +115,13 @@ public class KoResolver {
      * 3. API Football name + [KO_LEAGUE_NAME_NEEDED] 로그
      */
     public String resolveLeagueName(long leagueId, String apiName) {
+        if (leagueId <= 0) {
+            String byName = resolveLeagueNameByName(apiName);
+            if (byName != null) return byName;
+            log.info("[KO_LEAGUE_NAME_NEEDED] id={}, name={}", leagueId, apiName);
+            return apiName;
+        }
+
         String ko = csvLoader.getLeagueNameKo(leagueId);
         if (ko != null) return ko;
         String csvEnglish = csvLoader.getLeagueName(leagueId);
@@ -122,8 +129,20 @@ public class KoResolver {
             logShortNameDiffOnce("league", leagueId, apiName, csvEnglish);
             return csvEnglish;
         }
+        String byName = resolveLeagueNameByName(apiName);
+        if (byName != null) return byName;
         log.info("[KO_LEAGUE_NAME_NEEDED] id={}, name={}", leagueId, apiName);
         return apiName;
+    }
+
+    public String resolveLeagueName(Integer leagueId, String apiName) {
+        return leagueId == null ? resolveLeagueName(0L, apiName) : resolveLeagueName(leagueId.longValue(), apiName);
+    }
+
+    private String resolveLeagueNameByName(String apiName) {
+        String ko = csvLoader.getLeagueNameKoByName(apiName);
+        if (ko != null) return ko;
+        return csvLoader.getLeagueNameByName(apiName);
     }
 
     /**

@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 앱 시작 시 src/main/resources/data/ 하위 CSV 4개를 Map으로 메모리에 올리는 유틸.
@@ -65,6 +67,8 @@ public class CsvLoader {
 
     // index: 0=league_id, 1=league_name, 2=league_name_ko, 3=logo_url
     private final Map<Long, String[]> leagues = new HashMap<>();
+    private final Map<String, String[]> leaguesByName = new HashMap<>();
+    private final Set<String> duplicateLeagueNames = new HashSet<>();
 
     /**
      * Spring 빈 초기화 직후 CSV 4개를 순서대로 로딩.
@@ -283,6 +287,20 @@ public class CsvLoader {
                 // 4. league_id를 키로 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
                 leagues.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
+
+                // ID가 없는 API 응답을 위한 보조 인덱스. 중복 이름은 오번역 방지를 위해 fallback에서 제외한다.
+                String leagueName = parts[1].trim();
+                if (!leagueName.isEmpty()) {
+                    String key = leagueName.toLowerCase();
+                    if (duplicateLeagueNames.contains(key)) {
+                        leaguesByName.remove(key);
+                    } else if (leaguesByName.containsKey(key)) {
+                        leaguesByName.remove(key);
+                        duplicateLeagueNames.add(key);
+                    } else {
+                        leaguesByName.put(key, parts);
+                    }
+                }
             }
         } catch (IOException e) {
             log.warn("Could not load leagues.csv: {}", e.getMessage());
@@ -603,6 +621,32 @@ public class CsvLoader {
         if (row == null || row.length < 2) return null;
         String v = row[1].trim();   // index 1 = league_name
         return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 리그 영문 이름으로 한글 리그명 조회.
+     * ID가 null인 API 응답에서만 보조 fallback으로 사용한다.
+     */
+    public String getLeagueNameKoByName(String leagueName) {
+        String[] row = getLeagueRowByName(leagueName);
+        if (row == null || row.length < 3) return null;
+        String v = row[2].trim();
+        return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * 리그 영문 이름으로 CSV 영문 리그명 조회.
+     */
+    public String getLeagueNameByName(String leagueName) {
+        String[] row = getLeagueRowByName(leagueName);
+        if (row == null || row.length < 2) return null;
+        String v = row[1].trim();
+        return v.isEmpty() ? null : v;
+    }
+
+    private String[] getLeagueRowByName(String leagueName) {
+        if (leagueName == null || leagueName.isBlank()) return null;
+        return leaguesByName.get(leagueName.trim().toLowerCase());
     }
 
     /**
