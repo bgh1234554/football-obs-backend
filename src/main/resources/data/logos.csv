@@ -4,7 +4,7 @@ team_id, team_name_ko, logo_url, fa_url
 6786, 아크론 톨리야티, https://upload.wikimedia.org/wikipedia/ru/thumb/f/fe/FC_Akron_Logo_2023.svg/3840px-FC_Akron_Logo_2023.svg.png,
 2011, 파리 니즈니 노브고로드, https://upload.wikimedia.org/wikipedia/ru/thumb/a/ad/FC_Pari_NN_Logo_2023.svg/1920px-FC_Pari_NN_Logo_2023.svg.png,
 2012, 소치, https://upload.wikimedia.org/wikipedia/en/thumb/7/70/PFC_Sochi_logo.svg/1920px-PFC_Sochi_logo.svg.png,
-1088, 디나모 모스크바,https://upload.wikimedia.org/wikipedia/ru/thumb/e/e2/FC_Dynamo_Moscow_Logo.svg/1920px-FC_Dynamo_Moscow_Logo.svg.png
+1088, 디나모 모스크바,https://upload.wikimedia.org/wikipedia/ru/thumb/e/e2/FC_Dynamo_Moscow_Logo.svg/1920px-FC_Dynamo_Moscow_Logo.svg.png,
 19449, 스파르타크 코스트로마, https://s3.fnl.pro:9000/fnl/team/team-100-267?date=2026-3-5/22-31,
 6834, 볼가 울리야놉스크, https://s3.fnl.pro:9000/fnl/team/team-100-263?date=2026-3-5/22-31,
 6790, 첼랴빈스크, https://s3.fnl.pro:9000/fnl/team/team-100-159?date=2026-3-5/22-33,
@@ -17,7 +17,7 @@ team_id, team_name_ko, logo_url, fa_url
 6795, 디나모 브랸스크, https://s3.fnl.pro:9000/fnl/team/team-200-271?date=2026-3-5/22-45,
 6831, 쿠반 크라스노다르, https://s3.fnl.pro:9000/fnl/team/team-200-293?date=2026-3-5/22-45,
 21538, 디나모 키로프, https://s3.fnl.pro:9000/fnl/team/team-200-295?date=2026-3-5/22-45,
-2767,울산 HD,https://indvel.github.io/utils/fsm/logos/KLeague/Ulsan_HD_FC.svg
+2767,울산 HD,https://indvel.github.io/utils/fsm/logos/KLeague/Ulsan_HD_FC.svg,
 2748, 안양,https://indvel.github.io/utils/fsm/logos/KLeague/FCAnyang.svg,
 2761, 제주,https://indvel.github.io/utils/fsm/logos/KLeague/Jeju_SK_FC.svg,
 7098, 파주 프런티어, https://i.namu.wiki/i/BBvIOx0k93MzG5ukssQJgKNxABtpAkz6Im8XjhELtROWnxCK-NsKQw9m_dsT-mU5Ju1zGFcUjiIPeAmspWSAIDDIi9ZL0cF2yim4bZMAUmSy0oZ-W_quZpISQSiS_toOcW9Q2aSbs7iTgQrRiFhs2A.svg,
@@ -78,7 +78,7 @@ team_id, team_name_ko, logo_url, fa_url
 1728,South Korea W,https://flagcdn.com/kr.svg,https://i.namu.wiki/i/SVOMyrB-_stGBiwuBJpkLhpGL8fp0zLKFs4gvG4sQEQGpV0No_dAha6_LV5wEKsA8IxgpE9TAR3KG1jcYZn7XHw-u2qNvJIsa4Zs4pbEAJHkyIShcDBJUoSN_VANaipd3IR2oDiyDwEcQ6vfxVgXLQ.svg
 500,볼로냐,https://indvel.github.io/utils/fsm/logos/SerieA/Bologna_FC_1909.svg,
 492,나폴리,https://indvel.github.io/utils/fsm/logos/SerieA/SSC_Napoli.svg,
-157,바이에른 뮌헨,https://indvel.github.io/utils/fsm/logos/Bundesliga/FC_Bayern_Munchen_logo.svg
+157,바이에른 뮌헨,https://indvel.github.io/utils/fsm/logos/Bundesliga/FC_Bayern_Munchen_logo.svg,
 1660,엘페르스베르크,https://upload.wikimedia.org/wikipedia/commons/d/d4/SV_Elversberg_Logo_2021.svg,
 188,아르미니아 빌레펠트,https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Arminia_Bielefeld_crest.svg/3840px-Arminia_Bielefeld_crest.svg.png,
 178,그로이터 퓌르트,https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/SpVgg_Greuther_F%C3%BCrth_logo_%282017%29.svg/3840px-SpVgg_Greuther_F%C3%BCrth_logo_%282017%29.svg.png,
@@ -94,7 +94,7 @@ team_id, team_name_ko, logo_url, fa_url
 69,더비,https://indvel.github.io/utils/fsm/logos/EFL/Derby_County_FC.svg,
 76,스완지,https://indvel.github.io/utils/fsm/logos/EFL/Swansea_City_FC.svg,
 54,버밍엄 시티,https://indvel.github.io/utils/fsm/logos/EFL/Birmingham_City_FC.svg,
-40,리버풀,https://indvel.github.io/utils/fsm/logos/EPL/Liverpool_FC_New.svg
+40,리버풀,https://indvel.github.io/utils/fsm/logos/EPL/Liverpool_FC_New.svg,
 19,Nigeria,https://flagcdn.com/ng.svg,https://i.namu.wiki/i/VsP0ZZN7ceZUl3Vbdz58d3QkT6jffztlSgmV2r-nwhdHdRz3lLa8PhccUcWNPvoFypgHDnBKP0AS2v5pxS3JR49iXHT3jWdRRj2WizBgmM1jR6vUUf2OrYNksoRTZlM_gVHODRGXWfbDJW_VByMieg.svg
 1489,Tanzania,https://flagcdn.com/tz.svg,https://i.namu.wiki/i/GVGi5VEejm7vuDt1Y7wLH8LwHZoBZHCcn8UEagLcH5jt2XAhRAmihWIzUUJzbFe-zGuIppF6orIRUBqrizxk69PX0lo79JoDyX01-ZUfqZzAU44T85fNIrIfsxylQaiy1M59rg1sS-_NBeV8LKJThQ.svg
 1500,Mali,https://flagcdn.com/ml.svg,https://i.namu.wiki/i/G4tEhVLSR72zFXWemm0UriSQV_GqlYnEM-uxCnhEudW5J4y0D-MDhirMmmXuBrq74lCXmtKM46iSPcG46eEv33WPSlmI0QpCNKi0BUWo5oyswQpuXy-1cbifEkOC48Uas3qtrAf9r5KtYPjjC28hvA.svg
@@ -172,9 +172,99 @@ team_id, team_name_ko, logo_url, fa_url
 1119,아일랜드,https://flagcdn.com/ie.svg,https://upload.wikimedia.org/wikipedia/en/f/f8/Republic_of_Ireland_national_football_team_crest.svg
 16061,북마케도니아,https://flagcdn.com/mk.svg,https://upload.wikimedia.org/wikipedia/commons/3/34/Coat_of_arms_of_the_President_of_North_Macedonia.svg
 1105,북마케도니아,https://flagcdn.com/mk.svg,https://upload.wikimedia.org/wikipedia/commons/3/34/Coat_of_arms_of_the_President_of_North_Macedonia.svg
-161,볼프스부르크,https://indvel.github.io/utils/fsm/logos/Bundesliga/Vfl_Wolfsburg.svg
-3588,에윕스포르,https://upload.wikimedia.org/wikipedia/commons/6/62/Ey%C3%BCpspor_Logosu.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
-3573,가지안테프,https://indvel.github.io/utils/fsm/logos/SuperLig/Gaziantep_FK.svg
-1005,안탈리아스포르,https://indvel.github.io/utils/fsm/logos/SuperLig/Antalyaspor.svg
-532,발렌시아,https://indvel.github.io/utils/fsm/logos/Laliga/Valencia_CF.svg
+161,볼프스부르크,https://indvel.github.io/utils/fsm/logos/Bundesliga/Vfl_Wolfsburg.svg,
+3588,에윕스포르,https://upload.wikimedia.org/wikipedia/commons/6/62/Ey%C3%BCpspor_Logosu.png,
+3573,가지안테프,https://indvel.github.io/utils/fsm/logos/SuperLig/Gaziantep_FK.svg,
+1005,안탈리아스포르,https://indvel.github.io/utils/fsm/logos/SuperLig/Antalyaspor.svg,
+532,발렌시아,https://indvel.github.io/utils/fsm/logos/Laliga/Valencia_CF.svg,
 1110,안도라,https://flagcdn.com/ad.svg,https://upload.wikimedia.org/wikipedia/en/3/36/Andorran_Football_Federation_logo.svg
+5536,세인트키츠네비스,https://flagcdn.com/kn.svg,https://upload.wikimedia.org/wikipedia/en/b/b0/Saint_Kitts_%26_Nevis_Football_Association.svg
+5169,터크스 케이커스 제도,https://flagcdn.com/tc.svg,https://media.api-sports.io/football/teams/5169.png
+5158,버뮤다,https://flagcdn.com/bm.svg,https://upload.wikimedia.org/wikipedia/en/b/bb/Bermuda_FA_logo.svg
+1526,리비아,https://flagcdn.com/ly.svg,https://upload.wikimedia.org/wikipedia/en/0/01/Libyan_Football_Federation_Logo.png
+1094,아르메니아,https://flagcdn.com/am.svg,https://upload.wikimedia.org/wikipedia/en/2/22/Football_Federation_of_Armenia_logo.svg
+1497,모리셔스,https://flagcdn.com/mu.svg,https://upload.wikimedia.org/wikipedia/en/0/06/Mauritius_FA.png
+1549,몰디브,https://flagcdn.com/mv.svg,https://upload.wikimedia.org/wikipedia/en/3/3a/Football_Association_of_Maldives_logo.svg
+8173,아메리칸사모아,https://flagcdn.com/as.svg,https://upload.wikimedia.org/wikipedia/en/3/30/Football_Federation_American_Samoa_%28badge%29.svg
+1506,에티오피아,https://flagcdn.com/et.svg,https://upload.wikimedia.org/wikipedia/en/9/9e/Ethiopian_Football_Federation.svg
+1101,에스토니아,https://flagcdn.com/ee.svg,https://upload.wikimedia.org/wikipedia/en/a/a2/Estonian_Football_Association_logo.svg
+8119,괌,https://flagcdn.com/gu.svg,https://upload.wikimedia.org/wikipedia/en/2/20/Guam_national_soccer_team.svg
+1553,아프가니스탄,https://flagcdn.com/af.svg,https://upload.wikimedia.org/wikipedia/en/4/4e/Afghanistan_Football_Federation_logo.png
+1527,중앙아프리카 공화국,https://flagcdn.com/cf.svg,https://upload.wikimedia.org/wikipedia/en/1/10/Central_African_Football_Federation_logo.svg
+5537,동티모르,https://flagcdn.com/tl.svg,https://upload.wikimedia.org/wikipedia/en/c/c8/Football_Federation_of_Timor-Leste_logo.svg
+1496,남수단,https://flagcdn.com/ss.svg,https://upload.wikimedia.org/wikipedia/en/0/03/South_Sudan_Football_Association.png
+2995,에스와티니,https://flagcdn.com/sz.svg,https://upload.wikimedia.org/wikipedia/en/7/74/Eswatini_Football_Association_logo.svg
+5533,그레나다,https://flagcdn.com/gd.svg,https://upload.wikimedia.org/wikipedia/en/f/fd/Grenada_Football_Association_logo_2015.svg
+1491,모리타니,https://flagcdn.com/mr.svg,https://upload.wikimedia.org/wikipedia/en/7/7f/Football_Federation_of_the_Islamic_Republic_of_Mauritania_logo.svg
+1116,이스라엘,https://flagcdn.com/il.svg,https://upload.wikimedia.org/wikipedia/en/5/5a/Israel_Football_Association_logo.svg
+5538,브루나이,https://flagcdn.com/bn.svg,https://upload.wikimedia.org/wikipedia/en/a/af/Football_Association_of_Brunei_Darussalam_logo.svg
+1112,몰타,https://flagcdn.com/mt.svg,https://upload.wikimedia.org/wikipedia/commons/b/b3/Malta_national_football_team_crest.svg
+1100,벨라루스,https://flagcdn.com/by.svg,https://upload.wikimedia.org/wikipedia/commons/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg
+1099,핀란드,https://flagcdn.com/fi.svg,https://upload.wikimedia.org/wikipedia/commons/8/80/Finland_national_football_team_crest.png
+1093,지브롤터,https://flagcdn.com/gi.svg,https://upload.wikimedia.org/wikipedia/en/f/fe/Gibraltar_Football_Association_%282020%29.svg
+1540,부탄,https://flagcdn.com/bt.svg,https://upload.wikimedia.org/wikipedia/en/6/64/Bhutan_FF_logo.svg
+1109,몬테네그로,https://flagcdn.com/me.svg,https://upload.wikimedia.org/wikipedia/en/7/78/Football_Association_of_Montenegro_logo.svg
+8169,케이맨 제도,https://flagcdn.com/ky.svg,https://upload.wikimedia.org/wikipedia/en/b/b6/Cayman_Islands_national_football_team_crest.png
+1115,산마리노,https://flagcdn.com/sm.svg,https://upload.wikimedia.org/wikipedia/commons/3/30/San-marino-logo.png
+1517,콩고,https://flagcdn.com/cg.svg,https://upload.wikimedia.org/wikipedia/en/a/a6/Congolese_Football_Federation_logo.svg
+5535,파키스탄,https://flagcdn.com/pk.svg,https://upload.wikimedia.org/wikipedia/en/e/e6/Pakistan_Football_Federation_logo.svg
+1095,카자흐스탄,https://flagcdn.com/kz.svg,https://upload.wikimedia.org/wikipedia/en/0/08/Kazakhstan_Football_Federation_logo.svg
+18,아이슬란드,https://flagcdn.com/is.svg,https://upload.wikimedia.org/wikipedia/en/6/6d/Iceland_national_football_team_logo.svg
+1556,미얀마,https://flagcdn.com/mm.svg,https://upload.wikimedia.org/wikipedia/en/7/77/Myanmar_national_football_team_crest.svg
+1560,방글라데시,https://flagcdn.com/bd.svg,https://upload.wikimedia.org/wikipedia/commons/2/21/Logo_of_Bangladesh_Football_Federation.svg
+1555,필리핀,https://flagcdn.com/ph.svg,https://upload.wikimedia.org/wikipedia/commons/5/5f/Logo_of_Philippine_Football_Federation.png
+1545,네팔,https://flagcdn.com/np.svg,https://upload.wikimedia.org/wikipedia/en/3/30/Nepal_football_national_team_logo.png
+1550,예멘,https://flagcdn.com/ye.svg,https://upload.wikimedia.org/wikipedia/en/c/c5/Yemen_Football_Association.png
+5541,세인트빈센트 그레나딘,https://flagcdn.com/vc.svg,https://upload.wikimedia.org/wikipedia/en/e/e0/Saint_Vincent_and_the_Grenadines_Football_Federation_logo.svg
+1498,에리트레아,https://flagcdn.com/er.svg,https://upload.wikimedia.org/wikipedia/en/9/91/Eritrean_National_Football_Federation_logo.png
+1511,케냐,https://flagcdn.com/ke.svg,https://upload.wikimedia.org/wikipedia/en/5/5d/Football_Kenya_Federation_logo.svg
+1117,그리스,https://flagcdn.com/gr.svg,https://upload.wikimedia.org/wikipedia/commons/5/50/Greece_National_Football_Team.svg
+1514,르완다,https://flagcdn.com/rw.svg,https://upload.wikimedia.org/wikipedia/en/8/85/Rwanda_FA.png
+1557,중화 타이페이,https://flagcdn.com/tw.svg,https://upload.wikimedia.org/wikipedia/en/9/9e/Chinese_Taipei_Football_Association_logo.svg
+5162,가이아나,https://flagcdn.com/gy.svg,https://upload.wikimedia.org/wikipedia/en/3/3f/Guyana_Football_Federation_logo.svg
+1515,세이셸,https://flagcdn.com/sc.svg,https://upload.wikimedia.org/wikipedia/en/1/11/Seychelles_Football_Federation.png
+1543,캄보디아,https://flagcdn.com/kh.svg,https://upload.wikimedia.org/wikipedia/en/e/e8/Football_Federation_of_Cambodia_logo.svg
+5527,바베이도스,https://flagcdn.com/bb.svg,https://upload.wikimedia.org/wikipedia/en/b/b5/Barbados_FA.png
+1493,나미비아,https://flagcdn.com/na.svg,https://upload.wikimedia.org/wikipedia/en/8/80/Namibia_FA.png
+1523,차드,https://flagcdn.com/td.svg,https://upload.wikimedia.org/wikipedia/en/8/8a/Chadian_Football_Federation_logo.png
+1505,니제르,https://flagcdn.com/ne.svg,https://upload.wikimedia.org/wikipedia/en/6/63/Niger_FF_%28logo%29.png
+2388,쿠바,https://flagcdn.com/cu.svg,https://upload.wikimedia.org/wikipedia/en/a/a7/Cuba_national_football_team.png
+5528,벨리즈,https://flagcdn.com/bz.svg,https://upload.wikimedia.org/wikipedia/en/7/7e/Belize_national_football_team_logo.png
+5157,바하마,https://flagcdn.com/bs.svg,https://upload.wikimedia.org/wikipedia/en/b/b0/Bahamas_FA.png
+8167,아루바,https://flagcdn.com/aw.svg,https://upload.wikimedia.org/wikipedia/en/d/d9/Aruba_Football_Federation_logo.png
+1494,상투메 프린시페,https://flagcdn.com/st.svg,https://upload.wikimedia.org/wikipedia/en/e/e3/Federa%C3%A7%C3%A3o_Santomense_de_Futebol_Logo.png
+1102,룩셈부르크,https://flagcdn.com/lu.svg,https://upload.wikimedia.org/wikipedia/en/9/9d/Luxembourg_national_football_team_crest.png
+1098,페로 제도,https://flagcdn.com/fo.svg,https://upload.wikimedia.org/wikipedia/commons/b/b5/Faroe_Islands_Football_Association_logo.svg
+5164,니카라과,https://flagcdn.com/ni.svg,https://upload.wikimedia.org/wikipedia/commons/f/fc/Nicaragua_Football_Crest.png
+1499,시에라리온,https://flagcdn.com/sl.svg,https://upload.wikimedia.org/wikipedia/commons/1/17/LOGO_SLFA.png
+1518,레소토,https://flagcdn.com/ls.svg,https://upload.wikimedia.org/wikipedia/en/e/e1/Lesotho_Football_Association_logo.svg
+1535,지부티,https://flagcdn.com/dj.svg,https://upload.wikimedia.org/wikipedia/en/e/ed/Djiboutian_Football_Federation_logo.svg
+5166,스리랑카,https://flagcdn.com/lk.svg,https://upload.wikimedia.org/wikipedia/en/b/b9/Football_Federation_of_Sri_Lanka_logo.svg
+5540,세인트루시아,https://flagcdn.com/lc.svg,https://upload.wikimedia.org/wikipedia/en/a/a4/Saint_Lucia_FA.png
+5539,푸에르토리코,https://flagcdn.com/pr.svg,https://upload.wikimedia.org/wikipedia/commons/f/f0/Puerto_Rican_Football_Federation_logo.svg
+1539,투르크메니스탄,https://flagcdn.com/tm.svg,https://upload.wikimedia.org/wikipedia/en/0/04/Football_Federation_of_Turkmenistan_logo.svg
+1092,라트비아,https://flagcdn.com/lv.svg,https://upload.wikimedia.org/wikipedia/en/7/7b/Latvia_national_team_logo.png
+1114,몰도바,https://flagcdn.com/md.svg,https://upload.wikimedia.org/wikipedia/en/c/c9/Moldova_national_football_team.svg
+1107,리히텐슈타인,https://flagcdn.com/li.svg,https://upload.wikimedia.org/wikipedia/en/2/24/Liechtenstein_Football_Association_logo.svg
+1495,말라위,https://flagcdn.com/mw.svg,https://upload.wikimedia.org/wikipedia/en/4/4c/Malawi_FA_%28logo%29.png
+5534,몽골,https://flagcdn.com/mn.svg,https://upload.wikimedia.org/wikipedia/en/2/28/Mongolian_Football_Federation_logo.svg
+8168,영국령 버진제도,https://flagcdn.com/vg.svg,https://upload.wikimedia.org/wikipedia/en/f/f1/British_Virgin_Islands_Football_Association.svg
+1558,라오스,https://flagcdn.com/la.svg,https://upload.wikimedia.org/wikipedia/en/a/a9/Lao_Football_Federation_logo.svg
+1096,아제르바이잔,https://flagcdn.com/az.svg,https://upload.wikimedia.org/wikipedia/en/5/5e/Association_of_Football_Federations_of_Azerbaijan_logo.svg
+1103,불가리아,https://flagcdn.com/bg.svg,https://upload.wikimedia.org/wikipedia/en/1/11/Bgnatcrest.png
+1528,부룬디,https://flagcdn.com/bi.svg,https://upload.wikimedia.org/wikipedia/en/1/19/Football_Federation_of_Burundi_logo.png
+1525,라이베리아,https://flagcdn.com/lr.svg,https://upload.wikimedia.org/wikipedia/commons/2/2e/Liberia_Football_Association_logo.svg
+1097,리투아니아,https://flagcdn.com/lt.svg,https://upload.wikimedia.org/wikipedia/en/8/89/Badge_of_Lithuania_national_football_teams.png
+8172,미국령 버진제도,https://flagcdn.com/vi.svg,https://upload.wikimedia.org/wikipedia/en/0/0a/US_Virgin_Islands_Soccer_Federation.svg
+1490,마다가스카르,https://flagcdn.com/mg.svg,https://api.fifa.com/api/v3/picture/associations-sq-2/MAD
+1492,감비아,https://flagcdn.com/gm.svg,https://upload.wikimedia.org/wikipedia/en/2/21/Gambia_Football_Federation_%28association_football_federation%29_logo.png
+1534,토고,https://flagcdn.com/tg.svg,https://upload.wikimedia.org/wikipedia/en/e/e7/Togolese_Football_Federation_logo.svg
+8170,몬트세랫,https://flagcdn.com/ms.svg,https://upload.wikimedia.org/wikipedia/en/5/55/Montserrat_Football_Association.svg
+5526,앤티가 바부다,https://flagcdn.com/ag.svg,https://upload.wikimedia.org/wikipedia/en/e/e2/Antigua_and_Barbuda_Football.png
+8050,소말리아,https://flagcdn.com/so.svg,https://upload.wikimedia.org/wikipedia/commons/8/88/Somali_Football_Federation_logo.svg
+1544,마카오,https://flagcdn.com/mo.svg,https://upload.wikimedia.org/wikipedia/en/7/73/Macau_Football_Association_logo.svg
+5531,도미니카 연방,https://flagcdn.com/dm.svg,https://upload.wikimedia.org/wikipedia/en/8/8e/Dominica_Football_Association.svg
+8150,앵귈라,https://flagcdn.com/ai.svg,https://upload.wikimedia.org/wikipedia/en/6/63/Anguilla_Football_Association_%282020%29.png
+1509,기니,https://flagcdn.com/gn.svg,https://upload.wikimedia.org/wikipedia/en/8/8a/Fgf_guinee_logo_shirt.png
+1106,키프로스,https://flagcdn.com/cy.svg,https://upload.wikimedia.org/wikipedia/en/4/48/Cyprus_Football_Association_logo.svg
+1513,기니비사우,https://flagcdn.com/gw.svg,https://upload.wikimedia.org/wikipedia/en/b/bf/Football_Federation_of_Guinea-Bissau_logo.png
