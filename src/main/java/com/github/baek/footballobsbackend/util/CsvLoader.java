@@ -42,8 +42,11 @@ public class CsvLoader {
     // index: 0=player_id, 1=name_short, 2=name_long, 3=position, 4=nationality, 5=name_ko_long, 6=name_ko_short
     private final Map<Long, String[]> players = new HashMap<>();
     // 역방향 이름 인덱스 — id=0 선수 한글화에 사용 (name_short/name_long 소문자 키)
-    private final Map<String, String[]> playersByShortName = new HashMap<>();
-    private final Map<String, String[]> playersByLongName  = new HashMap<>();
+    private final Map<String, String[]> playersByShortName     = new HashMap<>();
+    private final Map<String, String[]> playersByLongName      = new HashMap<>();
+    // 퍼지 매칭용 정규화 인덱스 — '.' 제거 + '-' → 공백 치환 후 소문자 키
+    // API가 "J Mateta" (점 없음) / "Jean Philippe" (하이픈 없음) 형태로 올 때 fallback 매칭
+    private final Map<String, String[]> playersByShortNameNorm = new HashMap<>();
 
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
@@ -110,8 +113,13 @@ public class CsvLoader {
                 String idStr = parts[0].trim();
                 players.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
                 // 5. name_short / name_long 역방향 인덱스 (id=0 선수 이름 매칭용)
-                if (parts.length > 1 && !parts[1].trim().isEmpty())
-                    playersByShortName.put(parts[1].trim().toLowerCase(), parts);
+                if (parts.length > 1 && !parts[1].trim().isEmpty()) {
+                    String shortName = parts[1].trim();
+                    playersByShortName.put(shortName.toLowerCase(), parts);
+                    // 퍼지 인덱스: '.' 제거 + '-' → 공백 정규화
+                    String norm = normalizeForPlayerMatch(shortName);
+                    if (!norm.isEmpty()) playersByShortNameNorm.put(norm, parts);
+                }
                 if (parts.length > 2 && !parts[2].trim().isEmpty())
                     playersByLongName.put(parts[2].trim().toLowerCase(), parts);
             }
@@ -369,14 +377,35 @@ public class CsvLoader {
 
     /**
      * API name(short 형식) 또는 full name으로 players.csv 행 조회.
-     * id=0 선수 한글화 시 name_short(우선) → name_long 순으로 매칭.
-     * 대소문자 무관 검색. 없으면 null.
+     * id=0 선수 한글화 시 아래 순서로 fallback 매칭.
+     *
+     * 1) name_short 정확 일치 (대소문자 무관)
+     * 2) name_long  정확 일치 (대소문자 무관)
+     * 3) name_short 퍼지 일치: '.' 제거 + '-' → 공백 정규화 후 재시도
+     *    예) API "J Mateta" ↔ CSV "J. Mateta"
+     *        API "Jean Philippe Mateta" ↔ CSV "Jean-Philippe Mateta"
      */
     public String[] getPlayerRowByName(String apiName) {
         if (apiName == null || apiName.isBlank()) return null;
         String key = apiName.trim().toLowerCase();
         String[] row = playersByShortName.get(key);
-        return row != null ? row : playersByLongName.get(key);
+        if (row != null) return row;
+        row = playersByLongName.get(key);
+        if (row != null) return row;
+        // 퍼지 fallback: 정규화 후 name_short 재시도
+        return playersByShortNameNorm.get(normalizeForPlayerMatch(apiName.trim()));
+    }
+
+    /**
+     * 퍼지 매칭용 이름 정규화: '.' 제거, '-' → 공백 치환, 연속 공백 단일화, 소문자.
+     * CSV와 API 이름 양쪽에 동일하게 적용해 surface-level 표기 차이를 흡수.
+     */
+    private static String normalizeForPlayerMatch(String s) {
+        return s.toLowerCase()
+                .replace(".", "")
+                .replace("-", " ")
+                .trim()
+                .replaceAll("\\s+", " ");
     }
 
     /**
