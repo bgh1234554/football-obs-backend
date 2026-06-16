@@ -75,7 +75,19 @@ public class PlayerService {
             result.put(String.valueOf(season), buildSeasonStats(item.path("statistics")));
         }
 
-        if (result.isEmpty()) throw new ApiException(ErrorCode.STAT_NOT_AVAILABLE);
+        // 시즌 스탯이 없을 때: /players/profiles 로 선수 프로필만이라도 반환
+        // (이름·사진이 있어야 ID 연결 팝업이 정상 동작함)
+        if (result.isEmpty()) {
+            JsonNode profileResponse = apiClient.getPlayerProfile(playerId);
+            if (profileResponse != null && profileResponse.isArray() && !profileResponse.isEmpty()) {
+                player = buildPlayerInfo(profileResponse.get(0).path("player"), playerId);
+                return PlayerProfileStatResponseDto.builder()
+                        .player(player)
+                        .statistics(result)   // 빈 map — 프론트에서 "스탯 없음" 처리
+                        .build();
+            }
+            throw new ApiException(ErrorCode.STAT_NOT_AVAILABLE);
+        }
 
         return PlayerProfileStatResponseDto.builder()
                 .player(player)

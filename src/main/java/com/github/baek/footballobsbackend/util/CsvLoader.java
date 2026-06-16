@@ -41,6 +41,9 @@ public class CsvLoader {
 
     // index: 0=player_id, 1=name_short, 2=name_long, 3=position, 4=nationality, 5=name_ko_long, 6=name_ko_short
     private final Map<Long, String[]> players = new HashMap<>();
+    // 역방향 이름 인덱스 — id=0 선수 한글화에 사용 (name_short/name_long 소문자 키)
+    private final Map<String, String[]> playersByShortName = new HashMap<>();
+    private final Map<String, String[]> playersByLongName  = new HashMap<>();
 
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
@@ -106,6 +109,11 @@ public class CsvLoader {
                 // 4. player_id(index 0)를 키로 전체 배열 저장 (id 컬럼이 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
                 players.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
+                // 5. name_short / name_long 역방향 인덱스 (id=0 선수 이름 매칭용)
+                if (parts.length > 1 && !parts[1].trim().isEmpty())
+                    playersByShortName.put(parts[1].trim().toLowerCase(), parts);
+                if (parts.length > 2 && !parts[2].trim().isEmpty())
+                    playersByLongName.put(parts[2].trim().toLowerCase(), parts);
             }
         } catch (IOException e) {
             log.warn("Could not load players.csv: {}", e.getMessage());
@@ -358,6 +366,18 @@ public class CsvLoader {
     // ──────────────────────────────────────────────────────────────
     // 조회 메서드 — null 반환 시 호출부에서 영문 fallback 처리할 것
     // ──────────────────────────────────────────────────────────────
+
+    /**
+     * API name(short 형식) 또는 full name으로 players.csv 행 조회.
+     * id=0 선수 한글화 시 name_short(우선) → name_long 순으로 매칭.
+     * 대소문자 무관 검색. 없으면 null.
+     */
+    public String[] getPlayerRowByName(String apiName) {
+        if (apiName == null || apiName.isBlank()) return null;
+        String key = apiName.trim().toLowerCase();
+        String[] row = playersByShortName.get(key);
+        return row != null ? row : playersByLongName.get(key);
+    }
 
     /**
      * 선수 한글 단축 이름(name_ko_short) 조회.
