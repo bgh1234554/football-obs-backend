@@ -47,6 +47,11 @@ public class CsvLoader {
     // 퍼지 매칭용 정규화 인덱스 — '.' 제거 + '-' → 공백 치환 후 소문자 키
     // API가 "J Mateta" (점 없음) / "Jean Philippe" (하이픈 없음) 형태로 올 때 fallback 매칭
     private final Map<String, String[]> playersByShortNameNorm = new HashMap<>();
+    // name_long의 중간 이름을 뺀 "첫 토큰 + 끝 토큰" 인덱스 — API가 중간 이름을 생략/추가해서
+    // name_long과 토큰 수가 다르게 올 때 fallback 매칭 (예: CSV "Cristian Jesús Martínez" ↔ API "Cristian Martínez")
+    private final Map<String, String[]> playersByLongNameCore   = new HashMap<>();
+    // 위 코어 키가 둘 이상의 선수에게 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
+    private final Set<String> ambiguousLongNameCoreKeys         = new HashSet<>();
 
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
     private final Map<Long, String[]> teams = new HashMap<>();
@@ -120,8 +125,22 @@ public class CsvLoader {
                     String norm = normalizeForPlayerMatch(shortName);
                     if (!norm.isEmpty()) playersByShortNameNorm.put(norm, parts);
                 }
-                if (parts.length > 2 && !parts[2].trim().isEmpty())
-                    playersByLongName.put(parts[2].trim().toLowerCase(), parts);
+                if (parts.length > 2 && !parts[2].trim().isEmpty()) {
+                    String longName = parts[2].trim();
+                    playersByLongName.put(longName.toLowerCase(), parts);
+                    String coreKey = coreNameKey(longName);
+                    if (!coreKey.isEmpty()) {
+                        if (ambiguousLongNameCoreKeys.contains(coreKey)) {
+                            // 이미 충돌로 제외된 키 — 추가로 들어와도 무시
+                        } else if (playersByLongNameCore.containsKey(coreKey)) {
+                            // 동일 코어 키를 가진 다른 선수가 이미 있으면 오매칭 방지를 위해 인덱스에서 제거
+                            playersByLongNameCore.remove(coreKey);
+                            ambiguousLongNameCoreKeys.add(coreKey);
+                        } else {
+                            playersByLongNameCore.put(coreKey, parts);
+                        }
+                    }
+                }
             }
         } catch (IOException e) {
             log.warn("Could not load players.csv: {}", e.getMessage());
@@ -384,6 +403,9 @@ public class CsvLoader {
      * 3) name_short 퍼지 일치: '.' 제거 + '-' → 공백 정규화 후 재시도
      *    예) API "J Mateta" ↔ CSV "J. Mateta"
      *        API "Jean Philippe Mateta" ↔ CSV "Jean-Philippe Mateta"
+     * 4) name_long 코어(첫 토큰 + 끝 토큰) 일치: 중간 이름 생략/추가 흡수
+     *    예) API "Cristian Martínez" ↔ CSV name_long "Cristian Jesús Martínez"
+     *    동일 코어 키에 선수가 2명 이상 걸리면 오매칭 방지를 위해 매칭하지 않음
      */
     public String[] getPlayerRowByName(String apiName) {
         if (apiName == null || apiName.isBlank()) return null;
@@ -393,7 +415,13 @@ public class CsvLoader {
         row = playersByLongName.get(key);
         if (row != null) return row;
         // 퍼지 fallback: 정규화 후 name_short 재시도
-        return playersByShortNameNorm.get(normalizeForPlayerMatch(apiName.trim()));
+        row = playersByShortNameNorm.get(normalizeForPlayerMatch(apiName.trim()));
+        if (row != null) return row;
+        // 중간 이름 생략/추가 fallback: name_long을 "첫 토큰 + 끝 토큰"으로 축약해 재시도
+        // (예: CSV name_long "Cristian Jesús Martínez" ↔ API "Cristian Martínez")
+        String coreKey = coreNameKey(apiName.trim());
+        if (ambiguousLongNameCoreKeys.contains(coreKey)) return null;
+        return playersByLongNameCore.get(coreKey);
     }
 
     /**
@@ -406,6 +434,20 @@ public class CsvLoader {
                 .replace("-", " ")
                 .trim()
                 .replaceAll("\\s+", " ");
+    }
+
+    /**
+     * 중간 이름을 뺀 "첫 토큰 + 끝 토큰" 키 생성.
+     * 토큰이 2개 이하이면 정규화한 이름 그대로 반환(이미 축약된 형태이므로 자를 게 없음).
+     * 토큰이 3개 이상이면 중간 토큰(들)을 버리고 첫 토큰 + 끝 토큰만 사용해
+     * API/CSV 양쪽 어느 쪽에 중간 이름이 더 있어도 동일한 키로 수렴시킨다.
+     */
+    private static String coreNameKey(String s) {
+        String norm = normalizeForPlayerMatch(s);
+        if (norm.isEmpty()) return norm;
+        String[] tokens = norm.split(" ");
+        if (tokens.length <= 2) return norm;
+        return tokens[0] + " " + tokens[tokens.length - 1];
     }
 
     /**
