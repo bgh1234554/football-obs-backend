@@ -441,7 +441,7 @@
 41621,M. Nunes,Matheus Luiz Nunes,Midfielder,Portugal,마테우스 누느스,M. 누느스
 323591,S. Nypan,Sverre Halseth Nypan,Midfielder,Norway,스베레 뉘판,S. 뉘판
 307123,N. O'Reilly,Nico O'Reilly,Defender,England,니코 오라일리,N. 오라일리
-36902,T. Reijnders,Tijjani Reijnders,Midfielder,Netherlands,티야니 레인더르스,T. 레인더르스
+36902,T. Reijnders,Tijjani Reijnders,Midfielder,Netherlands,티자니 레인더르스,T. 레인더르스
 44,Rodri,Rodrigo Hernández Cascante,Midfielder,Spain,로드리,로드리
 568413,T. Samba,Tyrone Samba,Attacker,England,타이론 삼바,T. 삼바
 636,B. Silva,Bernardo Mota Veiga de Carvalho e Silva,Midfielder,Portugal,베르나르두 실바,B. 실바
@@ -462,7 +462,7 @@
 412086,F. Simmonds,Freddie Simmonds,Defender,England,프레디 시먼즈,F. 시먼즈
 328076,C. Tasker,Charlie Tasker,Defender,England,찰리 태스커,C. 태스커
 537,J. Veltman,Joël Ivo Veltman,Defender,Netherlands,요엘 펠트만,J. 펠트만
-38695,J. van Hecke,Jan Paul van Hecke,Defender,Netherlands,얀 폴 판헤커,J. 판헤커
+38695,J. van Hecke,Jan Paul van Hecke,Defender,Netherlands,얀 파울 판헤커,J. 판헤커
 265820,Y. Ayari,Yasin Abbas Ayari,Midfielder,Sweden,야신 아야리,Y. 아야리
 356041,C. Baleba,Carlos Noom Quomah Baleba,Midfielder,Cameroon,카를로스 발레바,C. 발레바
 278370,D. Gómez,Diego Alexander Gómez Amarilla,Midfielder,Paraguay,디에고 고메스,D. 고메스
@@ -1849,7 +1849,7 @@
 563846,S. Cinquegrano,Simone Cinquegrano,Defender,Italy,시모네 친퀘그라노,S. 친퀘그라노
 392493,M. Cocchi,Matteo Cocchi,Defender,Italy,마테오 코키,M. 코키
 887,M. Darmian,Matteo Darmian,Defender,Italy,마테오 다르미안,M. 다르미안
-226,D. Dumfries,Denzel Justus Morris Dumfries,Defender,Netherlands,덴절 둠프리스,D. 둠프리스
+226,D. Dumfries,Denzel Justus Morris Dumfries,Defender,Netherlands,덴절 뒴프리스,D. 뒴프리스
 563858,Y. Maye,Yvan Maye,Defender,France,이반 마예,Y. 마예
 562570,F. Stante,Francesco Stante,Defender,Italy,프란체스코 스탄테,F. 스탄테
 194,S. de Vrij,Stefan de Vrij,Defender,Netherlands,스테판 더브레이,S. 더브레이
@@ -2816,7 +2816,7 @@
 1101,T. Minamino,Minamino Takumi,Midfielder,Japan,미나미노 타쿠미,T. 미나미노
 562237,A. Akabou,Ayoub Akabou,Goalkeeper,France,아유브 아카부,A. 아카부
 601332,K. Belazzoug,Kilian Belazzoug,Goalkeeper,Algeria,킬리앙 벨라주그,K. 벨라주그
-21628,B. Samba,Brice Lauriche Samba,Goalkeeper,France,브리스 삼바,B. 삼바
+21628,B. Samba,Brice Lauriche Samba,Goalkeeper,France,브라이스 삼바,B. 삼바
 361462,M. Silistrie,Mathys Silistrie,Goalkeeper,France,마티스 실리스트리,M. 실리스트리
 417830,A. Ait Boudlal,Abdelhamid Aït Boudlal,Defender,Morocco,압델하미드 아이트 부들랄,A. A. 부들랄
 640701,J. Aké,Junior Aké,Defender,France,주니오르 아케,J. 아케
@@ -8409,7 +8409,7 @@
 123802,F. Talib,Fahad Talib Raheem,Goalkeeper,Iraq,파하드 탈리브,F. 탈리브
 145465,H. Ali,Hussein Ali,Defender,Iraq,후세인 알리,H. 알리
 271444,M. Doski,Merchas Ghazi Salih Doski,Defender,Iraq,메르하스 도스키,M. 도스키
-292253,A. Maknazi,Ahmed Hasan Maknazi Al Reeshawee,Defender,Iraq,아흐메드 마크나지,A. 마크나지
+292253,A. Maknazi,Ahmed Hasan Maknazi Al Reeshawee,Defender,Iraq,아흐메드 마큰지,A. 마큰지
 15769,F. Putros,Frans Dhia Jirjis Haddad,Defender,Iraq,프란스 푸트로스,F. 푸트로스
 42261,R. Sulaka,Rebin Ghareeb Sulaka Adhamat,Defender,Iraq,레빈 술라카,R. 술라카
 296373,Z. Tahseen,Zayed Tahseen,Defender,Iraq,자이드 타신,Z. 타신
@@ -9766,3 +9766,6 @@
 409670,A. Malić,Arjan Malić,Defender,Bosnia and Herzegovina,아랸 말리치,A. 말리치
 339795,A. Al-Hussain,Al-Hashmi Al-Hussain,Defender,Qatar,알 하슈미 알 후사인,A. 알 후사인
 50042,M. Saadane,Marwane Saadane,Defender,Morocco,마르완 사단,M. 사단
+53894,M. Ali,Mohanad Ali,Midfielder,Iraq,모하나드 알리,M. 알리
+154767,M. Ali,Mohanad Ali,Midfielder,Iraq,모하나드 알리,M. 알리
+163854,A. Yousif,Ali Yousif Hashim,Forward,Iraq,알리 유시프,A. 유시프

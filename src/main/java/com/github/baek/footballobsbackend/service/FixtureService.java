@@ -431,8 +431,9 @@ public class FixtureService {
             JsonNode assistNode = e.path("assist");
             Long assistId = assistNode.path("id").isNull() ? null : assistNode.path("id").asLong();
             ResolvedName resolvedAssistName = null;
+            String assistApiName = null;
             if (assistId != null) {
-                String assistApiName = assistNode.path("name").asText(null);
+                assistApiName = assistNode.path("name").asText(null);
                 String assistNameKo = csvLoader.getPlayerNameKo(assistId);
                 String assistNameKoLong = csvLoader.getPlayerNameKoLong(assistId);
 
@@ -454,9 +455,11 @@ public class FixtureService {
                     .playerId(playerId)
                     .playerName(resolvedPlayerName.displayName())
                     .playerNameKoLong(resolvedPlayerName.longName())
+                    .playerOrigName(apiPlayerName)
                     .assistId(assistId)
                     .assistName(resolvedAssistName == null ? null : resolvedAssistName.displayName())
                     .assistNameKoLong(resolvedAssistName == null ? null : resolvedAssistName.longName())
+                    .assistOrigName(assistApiName)
                     .type(e.path("type").asText())
                     .detail(e.path("detail").asText())
                     .comments(commentsNode.isNull() ? null : commentsNode.asText())
@@ -638,6 +641,7 @@ public class FixtureService {
                     .playerId(playerId)
                     .name(resolvedPlayerName.displayName())
                     .nameKoLong(resolvedPlayerName.longName())
+                    .origName(apiName)
                     .photoUrl(photoUrl)
                     .number(p.path("number").asInt())
                     .pos(p.path("pos").asText(null))        // "G" | "D" | "M" | "F"
