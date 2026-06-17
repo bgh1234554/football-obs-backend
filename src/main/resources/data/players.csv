@@ -208,7 +208,7 @@
 19549,A. Robinson,Antonee Robinson,Defender,USA,안토니 로빈슨,A. 로빈슨
 657,K. Tete,Kenny Joelle Tete,Defender,Netherlands,케니 테터,K. 테터
 1934,S. Berge,Sander Gard Bolin Berge,Midfielder,Norway,산데르 베르게,S. 베르게
-278133,O. Bobb,Oscar Bobb,Midfielder,Norway,오스카 밥,O. 밥
+278133,O. Bobb,Oscar Bobb,Midfielder,Norway,오스카르 보브,O. 보브
 19025,T. Cairney,Thomas Cairney,Midfielder,Scotland,톰 케어니,T. 케어니
 1455,A. Iwobi,Alexander Chuka Iwobi,Midfielder,Nigeria,알렉스 이워비,A. 이워비
 389315,J. King,Joshua King,Midfielder,England,조시 킹,J. 킹
@@ -2114,7 +2114,7 @@
 149557,K. Paredes,Kevin Alexander Paredes,Midfielder,USA,케빈 파레데스,K. 파레데스
 30484,M. Svanberg,Mattias Olof Svanberg,Midfielder,Sweden,마티아스 스반베리,M. 스반베리
 10169,V. Souza,Vinicius de Souza Costa,Midfielder,Brazil,비니시우스 소자,V. 소자
-126642,P. Wimmer,Patrick Wimmer,Attacker,Austria,파트리크 빔머,P. 빔머
+126642,P. Wimmer,Patrick Wimmer,Attacker,Austria,파트리크 비머,P. 비머
 200139,M. Amoura,Mohammed El Amine Amoura,Attacker,Algeria,모하메드 아무라,M. 아무라
 584360,T. Benedict,Trevor Chidubem Benedict,Attacker,Germany,트레버 베네딕트,T. 베네딕트
 362564,A. Daghim,Adam Daghim,Attacker,Denmark,아담 다김,A. 다김
@@ -8377,13 +8377,14 @@
 44612,G. Rodrigues,Garry Mendes Rodrigues,Midfielder,Cape Verde,가리 호드리게스,G. 호드리게스
 113580,W. Semedo,Willy Johnson Semedo Afonso,Midfielder,Cape Verde,윌리 세메두,W. 세메두
 140607,Y. Abulaila,Yazid Moeen Hasan Abulaila,Goalkeeper,Jordan,야지드 아불라일라,Y. 아불라일라
-163908,N. Zaid,Noureddin Zaid Khaleel Bani Ateyah,Goalkeeper,Jordan,누레딘 자이드,N. 자이드
+163908,N. Bani Ateyah,Noureddin Zaid Khaleel Bani Ateyah,Goalkeeper,Jordan,누레딘 바니 아티아,N. 바니 아티아
 575282,M. Shalabiya,Malek Samih Yousef Shalabiya,Goalkeeper,Jordan,말레크 샬라비야,M. 샬라비야
 542822,H. Abu Dahab,Husam Ali Mohammad Abu Dahab,Defender,Jordan,후삼 아부 다하브,H. 아부 다하브
 542710,M. Abu Hasheesh,Mohammad Ali Hasan Abu Hasheesh,Defender,Jordan,모하마드 아부 하시슈,M. 아부 하시슈
 213977,H. Al Hourani,Hadi Omar Ahmed Al Hourani,Defender,Jordan,하디 알 후라니,H. 알 후라니
 163865,A. Al Quraishi,Adham Mohammad Salem Al Quraishi,Defender,Jordan,아드함 알 쿠라이시,A. 알 쿠라이시
 213978,S. Al Rosan,Saed Ahmad Salameh Al Rosan,Defender,Jordan,사이드 알 로산,S. 알 로산
+314882,S. Al Rosan,Saad Al Rosan,Defender,Jordan,사에드 알 로산,S. 알 로산
 542855,A. Assaf,Ahmad Assaf,Defender,Jordan,아흐마드 아사프,A. 아사프
 543038,A. Hajabi,Ali Ahmad Asad Hajabi,Defender,Jordan,알리 하자비,A. 하자비
 310835,A. Naseeb,Abdallah Mousa Musallam Naseeb,Defender,Jordan,압달라 나시브,A. 나시브
@@ -9769,3 +9770,8 @@
 53894,M. Ali,Mohanad Ali,Midfielder,Iraq,모하나드 알리,M. 알리
 154767,M. Ali,Mohanad Ali,Midfielder,Iraq,모하나드 알리,M. 알리
 163854,A. Yousif,Ali Yousif Hashim,Forward,Iraq,알리 유시프,A. 유시프
+492980,O. Fakhury,Odeh Burhan Shehade Fakhoury,Midfielder,Jordan,오데 파후리,O. 파후리
+1725,D. Ljubičić,Dejan Ljubičić,Midfielder,Austria,데얀 류비치치,D. 류비치치
+315099,M. Abu Hasheesh,Mohammad Ali Hasan Abu Hasheesh,Defender,Jordan,모하메드 아부 하시시,M. 아부 하시시
+104244,M. Al Daoud,Mohammad Al Daoud,Midfielder,Jordan,모하마드 알 다우드,M. 알 다우드
+164214,I. Sadeh,Ibrahim Sadeh,Midfielder,Jordan,이브라힘 사데,I. 사데

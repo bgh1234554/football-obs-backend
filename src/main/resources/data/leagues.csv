@@ -1,13 +1,13 @@
 league_id, league_name, league_name_ko, logo_url
-39, Premier League, 잉글랜드 프리미어 리그, https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/3840px-Premier_League_Logo.svg.png
+39, Premier League, 잉글랜드 프리미어 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/PremierLeague.png
 40, EFL Championship, EFL 챔피언십,
 41, EFL League One, EFL 리그 원,
 42, EFL League Two, EFL 리그 투,
-43, National League, 내셔널 리그, https://upload.wikimedia.org/wikipedia/commons/a/a0/Enterprise-National-League-Colour-Badged.png
-50, National League North, 내셔널 리그 노스, https://upload.wikimedia.org/wikipedia/commons/e/e0/Enterprise-National-League-North-Colour-Badged.png
-51, National League South, 내셔널 리그 사우스, https://upload.wikimedia.org/wikipedia/commons/c/cc/Enterprise-National-League-South-Colour-Badged.png
-984, National League North Playoffs, 내셔널 리그 노스 승격 플레이오프, https://upload.wikimedia.org/wikipedia/commons/e/e0/Enterprise-National-League-North-Colour-Badged.png
-985, National League South Playoffs, 내셔널 리그 사우스 승격 플레이오프, https://upload.wikimedia.org/wikipedia/commons/c/cc/Enterprise-National-League-South-Colour-Badged.png
+43, National League, 내셔널 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/NationalLeague.png
+50, National League North, 내셔널 리그 노스, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/NationalLeagueNorth.png
+51, National League South, 내셔널 리그 사우스, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/NationalLeagueSouth.png
+984, National League North Playoffs, 내셔널 리그 노스 승격 플레이오프, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/NationalLeagueNorth.png
+985, National League South Playoffs, 내셔널 리그 사우스 승격 플레이오프, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/NationalLeagueSouth.png
 45, FA Cup, FA 컵
 48, EFL Cup, EFL 컵
 47, FA Trophy, FA 트로피
@@ -30,19 +30,19 @@ league_id, league_name, league_name_ko, logo_url
 66, Coupe de France, 쿠프 드 프랑스
 526, Trophée des Champions, 트로페 데 샹피옹
 235, Premier League, 러시아 프리미어 리그
-236, First League, 러시아 퍼스트 리그, https://i.namu.wiki/i/vv-vdfrHnljtll1NxMlVXpZmVqX9AbPs-EpR-Ly9CGYOrZUqvulnDtxPRwWR3wNMbrQjCf5QZAvaERFZPFP-_H9LzWpqrjZ_jSZkoMWrtMrx-hROxkJMOkrlfOTYkeeyz6WuBrXL4R1yZrdX0uiFBw.svg
+236, First League, 러시아 퍼스트 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CzechFirstLeague.png
 1025, Russian Second League Division A Group Gold, 러시아 퍼스트 리그 디비전 A 금 그룹
 1026, Russian Second League Division A Group Silver, 러시아 퍼스트 리그 디비전 A 은 그룹
 651, Russian Second League Division B Group 1, 러시아 세컨드 리그 디비전 B 그룹 1
 652, Russian Second League Division B Group 2, 러시아 세컨드 리그 디비전 B 그룹 2
 650, Russian Second League Division B Group 3, 러시아 세컨드 리그 디비전 B 그룹 3
 653, Russian Second League Division B Group 4, 러시아 세컨드 리그 디비전 B 그룹 4
-237, Kubok Rossii, 러시아 컵, https://upload.wikimedia.org/wikipedia/ru/8/8a/Fonbet_Russian_Cup.png
+237, Kubok Rossii, 러시아 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/KubokRossii.png
 633, Super Cup, 러시아 슈퍼컵
-294, Korea Cup, 코리아 컵, https://i.namu.wiki/i/JJTVB6lmLfaiVmhbyss1vSa0DnXlpZkBXPnAIxOPSRCqkidyl1dL55EMmXY0uoebmaRy4PU9VyD0vYDxq8jiNmoEN_rSWZWHSIKOo40Gq6VMWS-W93TGYCz-mBV3Eyvt6cw4NUdXMYDovQtK5HZu9Q.svg
-292, K League 1, K리그1, https://i.namu.wiki/i/z-qVLkPL4D7IYA2jpi2kkTuKKnl-tfpxlnHEi311Rh--PawcgsKihZnpX8dbpboYCmfG4-TYtIELyzoFv_oaoPR2_IWqNI5VuMdjb2EogTEnf4UtHxslNCtO-yB_7BcpRfmGb_VfofqgjRjTM9ohLw.svg
-293, K League 2, K리그2, https://i.namu.wiki/i/5lZXpO3WE95Vx5YcG83N6LMqBJT9l4w9y_-CfJ121RJD5bVkCibt3jzAHAzZ4UGfLXTIncBGjGcu8NuGe-OklIyk0CIH_oHlbMbfLOfUZj4MyoMT8Gc6TfSrsyC5kpDWlaup8VuQyVxrYcrMRuPc7g.svg
-295, K3 League, K3리그, https://i.namu.wiki/i/qnTEwSYkVTKPAGyVUhzk7k-EnF1b8V1zxFcXlBCHtqbPaxhhcsmaUpIzDIogtLOHTt_MNKoJ7KNokEf_0_JgUafwuhrd_Vju3KdvGS2XdPAlDbUdNR8xhUGXE3oJ2QZd2CLoBRtJGQZO2Iw4qDu2HQ.svg
+294, Korea Cup, 코리아 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/KoreaCup.svg
+292, K League 1, K리그1, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/KLeague1.svg
+293, K League 2, K리그2, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/KLeague2.svg
+295, K3 League, K3리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/K3League.svg
 102, Emperor Cup, 일왕컵
 101, J-League Cup, J리그 컵
 98, J1 League, J1리그
@@ -66,8 +66,8 @@ league_id, league_name, league_name_ko, logo_url
 531, UEFA Super Cup, UEFA 슈퍼 컵,
 38, UEFA U21 Championship, U-21 유로
 1132, AFC Challenge League, AFC 챌린지 리그
-17, AFC Champions League, AFC 챔피언스 리그 엘리트, https://i.namu.wiki/i/OnbZNdJTiJaxdfDkWmKPbLqfzR59kKg-qj5FsYEySN44d9cZ5AHSqXy89BI-9PDr6_JFoHyRd8amR_FybLKMpA.svg
-18, AFC Champions League 2, AFC 챔피언스 리그 2, https://i.namu.wiki/i/4R-Byc46mWyD_vsgcZAdWS8T536o306ncMt1J7bFKh6hlDRFhvfCW5eGiOLwjTDpE9yXGx3J9yFy153RcV9-fb7Bzcmqt5jLVntouHU6OO9OkW7neb74zduUm89vxQefnnrI8H4vTGZWxBvuOY4OcA.svg
+17, AFC Champions League, AFC 챔피언스 리그 엘리트, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/AFCChampionsLeagueElite.svg
+18, AFC Champions League 2, AFC 챔피언스 리그 2, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/AFCChampionsLeague2.svg
 532, AFC U23 Asian Cup, U-23 아시안컵
 952, AFC U23 Asian Cup - Qualification, U-23 아시안컵 예선
 1140, AFC Women's Champions League, AFC 여자 챔피언스 리그
@@ -85,7 +85,7 @@ league_id, league_name, league_name_ko, logo_url
 856, CONCACAF Caribbean Club Championship, 캐리비안 클럽 챔피언십
 534, CONCACAF Caribbean Club Shield, 캐리비안 클럽 실드
 1028, CONCACAF Central American Cup, 중앙아메리카 컵
-16, CONCACAF Champions Cup, CONCACAF 챔피언스 컵, https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/CONCACAF_Champions_Cup_logo.svg/3840px-CONCACAF_Champions_Cup_logo.svg.png
+16, CONCACAF Champions Cup, CONCACAF 챔피언스 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CONCACAFChampionsCup.png
 22, CONCACAF Gold Cup, CONCACAF 골드 컵
 858, CONCACAF Gold Cup - Qualification, CONCACAF 골드 컵 예선
 536, CONCACAF Nations League, CONCACAF 네이션스 리그
@@ -93,8 +93,8 @@ league_id, league_name, league_name_ko, logo_url
 541, CONMEBOL Recopa, CONMEBOL 레코파
 11, CONMEBOL Sudamericana, 코파 수다메리카나
 9, Copa America, 코파 아메리카
-23, EAFF E-1 Football Championship, 동아시아컵, https://upload.wikimedia.org/wikipedia/en/7/73/2017_EAFF_E-1_Football_Championship.png
-1169, EAFF E-1 Football Championship - Qualification, 동아시아컵 예선, https://upload.wikimedia.org/wikipedia/en/7/73/2017_EAFF_E-1_Football_Championship.png
+23, EAFF E-1 Football Championship, 동아시아컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/EAFFE1FootballChampionship.png
+1169, EAFF E-1 Football Championship - Qualification, 동아시아컵 예선, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/EAFFE1FootballChampionship.png
 25, Gulf Cup of Nations, 걸프 컵
 772, Leagues Cup, 리그스 컵
 27, OFC Champions League, OFC 챔피언스 리그
@@ -133,15 +133,15 @@ league_id, league_name, league_name_ko, logo_url
 89, Eerste Divisie, 에이르스터 디비시
 90, KNVB Beker, KNVB 베커르
 543, Super Cup, 요한 크라위프 실드
-94, Primeira Liga, 프리메이라 리가, https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Liga_Portugal_Betclic_logo.svg/1920px-Liga_Portugal_Betclic_logo.svg.png
-95, Segunda Liga, 리가 포르투갈 2, https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Liga_Portugal_Meu_Super_logo.svg/1920px-Liga_Portugal_Meu_Super_logo.svg.png
+94, Primeira Liga, 프리메이라 리가, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/PrimeiraLiga.png
+95, Segunda Liga, 리가 포르투갈 2, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/SegundaLiga.png
 550, Super Cup, 수페르타사 칸디두 드 올리베이라
 97, Taça da Liga, 타사 다 리가
 96, Taça de Portugal, 타사 드 포르투갈
-145, Challenger Pro League, 챌린저 프로 리그, https://statics-maker.llt-services.com/prl/images/2023/12/18/xsmall-wp/deea37f1-9a5c-42b3-ba2d-21cb81bb8dca-466.webp
-147, Cup, 벨기에 컵, https://upload.wikimedia.org/wikipedia/en/4/42/Belgian_Cup%2C_Croky_Cup%2C_sponsored_logo_since_2022-23.png
-144, Jupiler Pro League, 벨기에 프로 리그, https://statics-maker.llt-services.com/prl/images/2023/12/18/xsmall-wp/3d0bbec7-6aa5-460a-8a1f-3e5bee5c8d43-512.webp
-345, Czech Liga, 체코 퍼스트 리그, https://upload.wikimedia.org/wikipedia/en/7/78/Chance_Liga%2C_Czech_First_League%2C_since_2024.jpg
+145, Challenger Pro League, 챌린저 프로 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/ChallengerProLeague.webp
+147, Cup, 벨기에 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/Cup.png
+144, Jupiler Pro League, 벨기에 프로 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/JupilerProLeague.webp
+345, Czech Liga, 체코 퍼스트 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CzechFirstLeague.png
 346, FNL, 체코 풋볼 내셔널 리그
 347, Cup, 체코 컵
 179, Scottish Premiership, 스코티시 프리미어십
@@ -192,7 +192,7 @@ league_id, league_name, league_name_ko, logo_url
 486, Coppa, 벨라루스 컵
 812, Super Cup, 벨라루스 슈퍼 컵
 285, Cupa României, 쿠파 로므니에이
-283, Liga I, 루마니아 리가 I, https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Superliga.svg/3840px-Superliga.svg.png
+283, Liga I, 루마니아 리가 I, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/RomaniaLigaI.svg
 284, Liga II, 루마니아 리가 II,
 555, SuperCupa, 수페르쿠파 로므니에이
 273, Magyar Kupa, 마자르 쿠파
@@ -219,7 +219,7 @@ league_id, league_name, league_name_ko, logo_url
 10, Friendlies, 남자 국가대표 친선경기
 667, Club Friendlies, 클럽 친선경기
 666, Friendlies Women, 여자 국가대표 친선경기
-1,World Cup,월드컵,https://upload.wikimedia.org/wikipedia/en/1/17/2026_FIFA_World_Cup_emblem.svg
+1,World Cup,월드컵,https://bgh1234554.github.io/football-obs-logo-cdn/leagues/WorldCup.svg
 569, Premier League, 키르기스 프리미어 리그
 326, Erovnuli Liga 2, 에로브눌리리가 2
 327, Erovnuli Liga, 에로브눌리리가
