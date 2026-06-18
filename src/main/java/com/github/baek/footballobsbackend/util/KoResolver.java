@@ -228,6 +228,9 @@ public class KoResolver {
             String nameKo  = csvLoader.getRefereeNameKo(refereeStr);
             String country = csvLoader.getRefereeCountry(refereeStr);
             if (nameKo == null) {
+                nameKo = csvLoader.getRefereeNameKoFuzzy(refereeStr, country);
+            }
+            if (nameKo == null) {
                 log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
                 return country != null ? refereeStr + " (" + country + ")" : refereeStr;
             }
@@ -239,6 +242,9 @@ public class KoResolver {
         if (country.isEmpty()) country = csvLoader.getRefereeCountry(refereeStr);
 
         String nameKo = csvLoader.getRefereeNameKo(refereeStr);
+        if (nameKo == null) {
+            nameKo = csvLoader.getRefereeNameKoFuzzy(name, country);
+        }
         if (nameKo == null) {
             log.info("[KO_REFEREE_NAME_NEEDED] referee={}", refereeStr);
         }

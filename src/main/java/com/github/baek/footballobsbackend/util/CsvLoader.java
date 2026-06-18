@@ -70,6 +70,9 @@ public class CsvLoader {
     // key: "referee_name, referee_country" 또는 "referee_name", value: referee_country
     private final Map<String, String> refereeCountries = new HashMap<>();
 
+    // CSV 원본 행 그대로 보관: [name, country, name_ko] — 이니셜/풀네임 형식 fallback 매칭용
+    private final List<String[]> refereeEntries = new ArrayList<>();
+
     // index: 0=venue_id(빈 문자열이면 미등록), 1=venue_name, 2=venue_city, 3=venue_name_ko, 4=city_name_ko
     // key: venue_name 소문자 (대소문자 무관 검색을 위해)
     private final Map<String, String[]> venues = new HashMap<>();
@@ -265,11 +268,65 @@ public class CsvLoader {
                     if (!country.isEmpty()) {
                         referees.put(name + ", " + country, nameKo);
                     }
+                    // 7. 이니셜/풀네임 형식 불일치 fallback 매칭용 원본 보관
+                    refereeEntries.add(new String[]{name, country, nameKo});
                 }
             }
         } catch (IOException e) {
             log.warn("Could not load referees.csv: {}", e.getMessage());
         }
+    }
+
+    /**
+     * referees.csv에 정확히 일치하는 키가 없을 때 쓰는 fallback 매칭.
+     *
+     * API Football이 같은 심판을 어떨 때는 "이니셜. 성"(짧은 형식), 어떨 때는 "이름 성"(긴 형식)으로
+     * 내려줘서 CSV에 한쪽 형식만 등록돼 있으면 정확 일치가 깨지는 문제 보정.
+     * 마지막 토큰(성, 또는 한국식 표기의 이름 뒷부분)이 같고 나머지 선행 토큰이 이니셜로 봐도
+     * 양립 가능하면 동일 인물로 간주한다. 후보가 둘 이상으로 모호하면 null(오매칭보다 미매칭이 안전).
+     */
+    public String getRefereeNameKoFuzzy(String name, String country) {
+        if (name == null || name.isBlank()) return null;
+        String[] inputTokens = name.trim().split("\\s+");
+        if (inputTokens.length < 2) return null;
+        String inputCore = normalizeRefereeToken(inputTokens[inputTokens.length - 1]);
+        String inputLead = inputTokens[0];
+        if (inputCore.isEmpty()) return null;
+
+        Set<String> matches = new HashSet<>();
+        for (String[] row : refereeEntries) {
+            String[] rowTokens = row[0].split("\\s+");
+            if (rowTokens.length < 2) continue;
+            if (!normalizeRefereeToken(rowTokens[rowTokens.length - 1]).equals(inputCore)) continue;
+
+            String rowCountry = row[1];
+            if (country != null && !country.isBlank() && !rowCountry.isBlank()
+                    && !country.trim().equalsIgnoreCase(rowCountry.trim())) {
+                continue;
+            }
+
+            if (!refereeLeadTokensCompatible(inputLead, rowTokens[0])) continue;
+            matches.add(row[2]);
+        }
+        return matches.size() == 1 ? matches.iterator().next() : null;
+    }
+
+    private String normalizeRefereeToken(String token) {
+        return token.replaceAll("[^A-Za-z0-9가-힣\\-]", "").toLowerCase();
+    }
+
+    /**
+     * 두 선행 토큰이 같은 사람의 약어/풀네임 표기로 양립 가능한지 검사.
+     * 둘 중 하나가 이니셜 형태(2자 이하)면 첫 글자만 비교, 둘 다 풀네임이면 동일 문자열인지 비교.
+     */
+    private boolean refereeLeadTokensCompatible(String a, String b) {
+        String na = normalizeRefereeToken(a);
+        String nb = normalizeRefereeToken(b);
+        if (na.isEmpty() || nb.isEmpty()) return false;
+        if (na.equals(nb)) return true;
+        if (na.length() <= 2 && nb.charAt(0) == na.charAt(0)) return true;
+        if (nb.length() <= 2 && na.charAt(0) == nb.charAt(0)) return true;
+        return false;
     }
 
     /**
