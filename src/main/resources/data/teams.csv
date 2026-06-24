@@ -585,7 +585,7 @@ team_id, team_name, ko_name, ko_name_short
 614,AEK Larnaca,AEK 라르나카,
 619,PAOK,PAOK,PAOK
 620,Dinamo Zagreb,디나모 자그레브,디나모 Z.
-646,Levski Sofia,레프스키 소피아,레프스키
+646,Levski Sofia,레프스키 소피아,레프스키 Sf.
 680,Prishtina,프리슈티나,프리슈티나
 1025,Wolfsberger AC,볼프스베르크 AC,볼프스베르크
 1120,Spartak Trnava,스파르타크 트르나바,스파르타크 Tr.
@@ -1369,3 +1369,13 @@ team_id, team_name, ko_name, ko_name_short
 1509,Guinea,기니,
 1106,Cyprus,키프로스,
 1513,Guinea-Bissau,기니비사우,
+634,Botev Plovdiv,보테프 플로브디프,보테프 Pl.
+683,Dunav Ruse,두나프 루세,두나프
+853,CSKA Sofia,CSKA 소피아,CSKA Sf.
+854,Slavia Sofia,슬라비아 소피아,슬라비아 Sf.
+856,Septemvri Sofia,셉템브리 소피아,셉템브리
+858,Lokomotiv Plovdiv,로코모티프 플로브디프,로코모티프 Pl.
+859,Botev Vratsa,보테프 브라차,보테프 Vr.
+1416,Lokomotiv Sofia,로코모티프 소피아,로코모티프 Sf.
+1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948 Sf.
+4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.

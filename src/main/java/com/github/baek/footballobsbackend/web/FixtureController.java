@@ -47,7 +47,7 @@ public class FixtureController {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         FixtureResponseDto dto = fixtureService.getFixture(fixtureId);
         return ResponseEntity.ok()
-                .cacheControl(CacheControl.maxAge(30, TimeUnit.SECONDS))
+                .cacheControl(CacheControl.maxAge(15, TimeUnit.SECONDS))
                 .body(dto);
     }
 
@@ -68,7 +68,7 @@ public class FixtureController {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
         HthResponseDto dto = headtoheadService.getHeadtoHead(teamA,teamB);
         return ResponseEntity.ok()
-                .cacheControl(CacheControl.maxAge(12, TimeUnit.HOURS))
+                .cacheControl(CacheControl.maxAge(1, TimeUnit.HOURS))
                 .body(dto);
     }
 }
