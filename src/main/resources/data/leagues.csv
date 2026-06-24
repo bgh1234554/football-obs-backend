@@ -139,18 +139,18 @@ league_id, league_name, league_name_ko, logo_url
 97, Taça da Liga, 타사 다 리가
 96, Taça de Portugal, 타사 드 포르투갈
 145, Challenger Pro League, 챌린저 프로 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/ChallengerProLeague.webp
-147, Cup, 벨기에 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/Cup.png
+147, Crocky Cup, 벨기에 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/Cup.png
 144, Jupiler Pro League, 벨기에 프로 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/JupilerProLeague.webp
 345, Czech Liga, 체코 퍼스트 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CzechFirstLeague.png
 346, FNL, 체코 풋볼 내셔널 리그
-347, Cup, 체코 컵
+347, Czech Cup, 체코 컵
 179, Scottish Premiership, 스코티시 프리미어십
 180, Scottish Championship, 스코티시 챔피언십
 183, Scottish League One, 스코티시 리그 원
 184, Scottish League Two, 스코티시 리그 투
 181, FA Cup, 스코티시 컵
 185, League Cup, 스코티시 리그 컵
-732, Cup, 세르비아 컵
+732, Serbian Cup, 세르비아 컵
 287, Prva Liga, 세르비아 프르바리가
 286, Super Liga, 세르비아 수페르리가
 113, Allsvenskan, 알스벤스칸
@@ -160,13 +160,13 @@ league_id, league_name, league_name_ko, logo_url
 104, 1. Division, 노르웨이 퍼스트 디비전
 105, NM Cupen, 노르웨이 컵
 106, Ekstraklasa, 엑스트라클라사
-108, Cup, 푸하르 폴스키
+108, Puchar Polski, 푸하르 폴스키
 727, Super Cup, 수페르푸하르 폴스키
 197, Super League 1, 수페르리가 엘라다
-199, Cup, 쿠펠로 엘라다스
+199, Greek Cup, 쿠펠로 엘라다스
 1210, Super Cup, 수페르카프 엘라다스
 218, Bundesliga, 오스트리아 분데스리가
-220, Cup, ÖFB-컵
+220, OFB Cup, ÖFB-컵
 188, A-League, A-리그
 307, Pro League, 사우디 프로 리그
 308, Division 1, 사우디 퍼스트 디비전 리그
@@ -179,14 +179,14 @@ league_id, league_name, league_name_ko, logo_url
 207, Super League, 스위스 슈퍼 리그
 208, Challenge League, 스위스 챌린지 리그
 209, Schweizer Cup, 스위스 컵
-709, Cup, 아르메니아 컵
+709, Armenia Cup, 아르메니아 컵
 342, Premier League, 아르메니아 프리미어 리그
 389, Premier League, 카자흐스탄 프리미어 리그
-498, Cup, 카자흐스탄 컵
+498, Kazakhstan Cup, 카자흐스탄 컵
 388, 1. Division, 카자흐스탄 퍼스트 리그
 818, Super Cup, 카자흐스탄 슈퍼 컵
 419, Premyer Liqa, 아제르바이잔 프리미어 리그
-420, Cup, 아제르바이잔 컵
+420, Azerbaijan Cup, 아제르바이잔 컵
 116, Premier League, 벨라루스 프리미어 리그
 117, 1.Division, 벨라루스 퍼스트 리그
 486, Coppa, 벨라루스 컵
@@ -204,7 +204,7 @@ league_id, league_name, league_name_ko, logo_url
 112, Welsh Cup, 웨일스 컵
 333, Premier League, 우크라이나 프리미어 리그
 334, Persha Liga, 우크라이나 퍼스트 리그
-335, Cup, 우크라이나 컵
+335, Ukrainian Cup, 우크라이나 컵
 336, Druha Liga, 우크라이나 세컨드 리그
 678, Super Cup, 우크라이나 슈퍼 컵
 571, Vysshaya Liga, 타지키스탄 최고 리그

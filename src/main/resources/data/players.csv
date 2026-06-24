@@ -302,7 +302,7 @@
 181797,B. Humphreys,Bashir Humphreys,Defender,England,바시르 험프리스,B. 험프리스
 330238,L. Pires,Lucas Pires Silva,Defender,Brazil,루카스 피레스,L. 피레스
 637787,C. Scott,Cameron Scott,Defender,Scotland,캐머런 스콧,C. 스콧
-19182,A. Tuanzebe,Axel Tuanzebe,Defender,DR Congo,악셀 튀앙제브,A. 튀앙제브
+19182,A. Tuanzebe,Axel Tuanzebe,Defender,DR Congo,악셀 투안제베,A. 투안제베
 627,K. Walker,Kyle Andrew Walker,Defender,England,카일 워커,K. 워커
 1746,J. Worrall,Joseph Adrian Worrall,Defender,England,조 워럴,J. 워럴
 361388,E. Agyei,Enock Atta Agyei,Attacker,Belgium,이녹 에제이,E. 에제이
@@ -2092,7 +2092,7 @@
 15573,K. Grabara,Kamil Mieczysław Grabara,Goalkeeper,Poland,카밀 그라바라,K. 그라바라
 1141,M. Müller,Marius Müller,Goalkeeper,Germany,마리우스 뮐러,M. 뮐러
 25396,P. Pervan,Pavao Pervan,Goalkeeper,Austria,파바오 페르판,P. 페르판
-369425,J. Adjetey,Jonas Adjei Adjetey,Defender,Ghana,조나스 아제테이,J. 아제테이
+369425,J. Adjetey,Jonas Adjei Adjetey,Defender,Ghana,조나스 아제티,J. 아제티
 343316,J. Belocian,Jeanuël Belocian,Defender,France,자누엘 벨로시앙,J. 벨로시앙
 340067,Cleiton,Cleiton Santana dos Santos,Defender,Brazil,클레이통,클레이통
 177618,K. Fischer,Kilian Fischer,Defender,Germany,킬리안 피셔,K. 피셔
@@ -2978,6 +2978,7 @@
 115588,B. Okoh,Bryan Ikemefuna Okoh,Defender,Switzerland,브리안 이케메푸나 오코,B. 오코
 215827,F. Oppegård,Fredrik Oppegård,Midfielder,Norway,프레드릭 오페고르,F. 오페고르
 191240,M. Senaya,Marvin Senaya,Defender,France,마빈 세나야,M. 세나야
+527120,M. Senaya,Marvin Senaya,Defender,France,마빈 세나야,M. 세나야
 31016,F. Sierralta,Francisco Andrés Sierralta Carvallo,Defender,Chile,프란시스코 시에랄타,F. 시에랄타
 402542,T. Siwe,Telli Siwe,Defender,France,텔리 시웨,T. 시웨
 193953,L. Sy,Lamine Sy,Defender,France,라민 시,L. 시
@@ -2998,7 +2999,7 @@
 613216,Y. Zaddy,Yvan Zaddy,Attacker,Côte d'Ivoire,이방 자디,Y. 자디
 395808,P. Argney,Paul Argney,Goalkeeper,France,폴 아르니에,P. 아르니에
 119853,M. Diaw,Mory Diaw,Goalkeeper,Senegal,모리 디아우,M. 디아우
-24012,L. Mpasi,Lionel Mpasi-Nzau,Goalkeeper,Congo DR,리오넬 음파시은조,L. 음파시은조
+24012,L. Mpasi,Lionel Mpasi-Nzau,Goalkeeper,Congo DR,리오넬 음파시,L. 음파시
 515772,A. Teixeira,Kabangu Alex Teixeira,Goalkeeper,France,알레스 테이셰이라,A. 테이셰이라
 174625,F. Doucouré,Fodé Doucouré,Defender,Mali,포데 두쿠레,F. 두쿠레
 355955,R. Davidson,Rory Davidson,Defender,Scotland,로리 데이비슨,R. 데이비슨
@@ -3103,7 +3104,7 @@
 369500,I. Ganiou,Pierre-Ismaëlo Ganiou,Defender,France,이스마엘로 가니우,I. 가니우
 21635,J. Gradit,Jonathan Gradit,Defender,France,조나탕 그라디,J. 그라디
 441256,O. Lenne,Oscar Quentin David Lenne,Defender,France,오스카 렌,O. 렌
-18816,A. Masuaku,Fuka-Arthur Masuaku Kawela,Defender,Congo DR,아르튀르 마쉬아퀴,A. 마쉬아퀴
+18816,A. Masuaku,Fuka-Arthur Masuaku Kawela,Defender,Congo DR,아르튀르 마수아쿠,A. 마수아쿠
 22166,M. Sarr,Malang Mamadou William Georges Sarr,Defender,France,말랑 사르,M. 사르
 20525,M. Udol,Matthieu Udol,Midfielder,France,마티유 위돌,M. 위돌
 394950,A. Bulatović,Andrija Bulatović,Midfielder,Montenegro,안드리야 불라토비치,A. 불라토비치
@@ -8185,7 +8186,7 @@
 323974,E. Saad,Elias Saad,Attacker,Tunisia,엘리아스 사드,E. 사드
 2957,F. Sassi,Ferjani Sassi,Midfielder,Tunisia,페르자니 사시,F. 사시
 49636,H. Teka,Houssem Teka,Midfielder,Tunisia,호우셈 테카,H. 테카
-42012,E. Achouri,Mohamed Elias Achouri,Midfielder,Tunisia,모하메드 엘리아스 아슈리,E. 아슈리
+42012,E. Achouri,Mohamed Elias Achouri,Midfielder,Tunisia,엘리아스 아슈리,E. 아슈리
 2962,F. Chaouat,Firas Chaouat,Attacker,Tunisia,피라스 샤와트,F. 샤와트
 16933,S. Jaziri,Seifeddine Jaziri,Attacker,Tunisia,세이페딘 자지리,S. 자지리
 264419,S. Ltaief,Sayfallah Ltaief,Midfielder,Tunisia,사이팔라 르타이프,S. 르타이프
@@ -8204,8 +8205,9 @@
 47422,Y. En-Nesyri,Youssef En-Nesyri,Attacker,Morocco,유세프 엔네시리,Y. 엔네시리
 36579,S. Rahimi,Soufiane Rahimi,Attacker,Morocco,수피안 라히미,S. 라히미
 2648,A. El Shenawy,Ahmed Nasser Abdel Razek El Shenawy,Goalkeeper,Egypt,아흐메드 엘 셰나위,A. 엘 셰나위
-16797,M. Gomaa,Mohamed El Sayed Mohamed El Sh Gomaa,Goalkeeper,Egypt,모하메드 엘 스헤나비,M. 엘 스헤나비
+16797,A. El Shenawy,Ahmed Nasser Abdel Razek El Shenawy,Goalkeeper,Egypt,아흐메드 엘 셰나위,A. 엘 셰나위
 269174,M. Shobeir,Mostafa Ahmed Abdelaziz Mohamed Shobeir,Goalkeeper,Egypt,모스타파 쇼베이르,M. 쇼베이르
+498250,M. Alaa,Mohammed Alaa,Goalkeeper,Egypt,모하메드 알라,M. 알라
 17190,M. Daader,Mohamed Sobhi Mohamed Daader,Goalkeeper,Egypt,모하메드 소비,M. 소비
 16831,A. Soliman,Al Mahdi Soliman,Goalkeeper,Egypt,알 마흐디 솔리만,A. 솔리만
 269621,H. Abdelmaguid,Hossam Abdelmaguid Abdelsalam Abdelmaguid,Defender,Egypt,호삼 압델마기드,H. 압델마기드
@@ -8380,7 +8382,8 @@
 163908,N. Bani Ateyah,Noureddin Zaid Khaleel Bani Ateyah,Goalkeeper,Jordan,누레딘 바니 아티아,N. 바니 아티아
 575282,M. Shalabiya,Malek Samih Yousef Shalabiya,Goalkeeper,Jordan,말레크 샬라비야,M. 샬라비야
 542822,H. Abu Dahab,Husam Ali Mohammad Abu Dahab,Defender,Jordan,후삼 아부 다하브,H. 아부 다하브
-542710,M. Abu Hasheesh,Mohammad Ali Hasan Abu Hasheesh,Defender,Jordan,모하마드 아부 하시슈,M. 아부 하시슈
+543035,M. Abu Dahab,Mohamad Abu Dahab,Midfielder,Jordan,후삼 아부 다하브,H. 아부 다하브
+542710,M. Abu Hasheesh,Mohammad Ali Hasan Abu Hasheesh,Defender,Jordan,모하마드 아부 하시시,M. 아부 하시시
 213977,H. Al Hourani,Hadi Omar Ahmed Al Hourani,Defender,Jordan,하디 알 후라니,H. 알 후라니
 163865,A. Al Quraishi,Adham Mohammad Salem Al Quraishi,Defender,Jordan,아드함 알 쿠라이시,A. 알 쿠라이시
 213978,S. Al Rosan,Saed Ahmad Salameh Al Rosan,Defender,Jordan,사이드 알 로산,S. 알 로산
@@ -8390,7 +8393,6 @@
 310835,A. Naseeb,Abdallah Mousa Musallam Naseeb,Defender,Jordan,압달라 나시브,A. 나시브
 72140,S. Obaid,Saleem Obaid,Defender,Jordan,살림 오바이드,S. 오바이드
 577714,I. Smeeri,Issam Smeeri,Defender,Jordan,이삼 스메에리,I. 스메에리
-543035,M. Abu Dahab,Mohamad Abu Dahab,Midfielder,Jordan,모하마드 아부 다하브,M. 아부 다하브
 310785,M. Taha,Mohannad Mahmoud Saleh Abu Taha,Midfielder,Jordan,모한나드 아부 타하,M. 타하
 123530,M. Al Mardi,Mahmoud Nayef Ahmad Al Mardi,Midfielder,Jordan,마흐무드 알 마르디,M. 알 마르디
 213980,N. Al Rashdan,Nizar Mahmoud Ahmed Al Rashdan,Midfielder,Jordan,니자르 알 라시단,N. 알 라시단
@@ -8478,7 +8480,7 @@
 42089,M. Muntari,Mohammed Muntari,Attacker,Qatar,모하메드 문타리,M. 문타리
 2496,J. Espínola,Juan Ángel Espínola González,Goalkeeper,Paraguay,후안 에스피놀라,J. 에스피놀라
 535737,R. Fernández,Roberto Fernández,Goalkeeper,Paraguay,로베르토 페르난데스,R. 페르난데스
-70852,O. Gill,Orlando David Gill Noldin,Goalkeeper,Paraguay,올란도 힐,O. 힐
+70852,O. Gill,Orlando David Gill Noldin,Goalkeeper,Paraguay,오를란도 힐,O. 힐
 2499,J. Alonso,Júnior Osmar Ignacio Alonso Mujica,Defender,Paraguay,후니오르 알론소,J. 알론소
 70723,A. Benítez,Alan Max Benítez Domínguez,Defender,Paraguay,알란 베니테스,A. 베니테스
 70549,A. Duarte,Alexis David Duarte Pereira,Defender,Paraguay,알렉시스 두아르테,A. 두아르테
@@ -9778,3 +9780,4 @@
 50911,C. Martínez,Cristian Jesús Martínez,Midfielder,Panama,크리스티안 마르티네스,C. 마르티네스
 53830,F. Sayfiev,Farrukh Sayfiev,Defender,Uzbekistan,파루흐 사이피예프,F. 사이피예프
 312231,R. Jiyanov,Ruslanbek Jiyanov,Forward,Uzbekistan,루슬란베크 지야노프,R. 지야노프
+2497,R. Fernández,Roberto Fernández,Goalkeeper,Paraguay,로베르토 페르난데스,R. 페르난데스
