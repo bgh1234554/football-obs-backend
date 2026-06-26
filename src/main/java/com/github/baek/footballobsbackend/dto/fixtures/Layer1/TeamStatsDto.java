@@ -21,6 +21,7 @@ public class TeamStatsDto {
     private Integer shotsOutsidebox;
 
     private Integer fouls;
+    private Integer freeKicks;
     private Integer cornerKicks;
     private Integer offsides;
     private String ballPossession;  // "31%"

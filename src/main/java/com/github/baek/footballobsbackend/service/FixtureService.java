@@ -563,6 +563,7 @@ public class FixtureService {
                     .shotsInsidebox(intStat(m, "Shots insidebox"))
                     .shotsOutsidebox(intStat(m, "Shots outsidebox"))
                     .fouls(intStat(m, "Fouls"))
+                    .freeKicks(intStat(m,"Free Kicks"))
                     .cornerKicks(intStat(m, "Corner Kicks"))
                     .offsides(intStat(m, "Offsides"))
                     .ballPossession(strStat(m, "Ball Possession"))  // "31%" 형식
