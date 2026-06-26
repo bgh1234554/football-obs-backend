@@ -212,10 +212,10 @@ league_id, league_name, league_name_ko, logo_url
 120, 1.Division, 덴마크 퍼스트 디비전
 121, DBU Pokalen, DBU 포칼렌
 119, Superliga, 덴마크 수페르리가
-171, FA Cup, 중국 FA컵
-170, Leauge One, 중국 갑급리그
-972, Super Cup, 중국 슈퍼컵
-169, Super League, 중국 슈퍼리그
+171, Chinese FA Cup, 중국 FA컵
+170, Chinese Leauge One, 중국 갑급리그
+972, Chinese Super Cup, 중국 슈퍼컵
+169, Chinese Super League, 중국 슈퍼리그
 10, Friendlies, 남자 국가대표 친선경기
 667, Club Friendlies, 클럽 친선경기
 666, Friendlies Women, 여자 국가대표 친선경기

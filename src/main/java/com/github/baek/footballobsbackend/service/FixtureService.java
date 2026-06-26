@@ -271,10 +271,12 @@ public class FixtureService {
         JsonNode awayColors = colors[1];
 
         // 6-1. 팀별 색깔 검증
-        String homePrimaryColor=colorOf(homeColors, "primary");
-        String homeNumberColor=resolveNumberColor(homePrimaryColor, colorOf(homeColors,"number"), colorOf(homeColors,"border"));
-        String awayPrimaryColor=colorOf(awayColors, "primary");
-        String awayNumberColor=resolveNumberColor(awayPrimaryColor, colorOf(awayColors,"number"), colorOf(awayColors,"border"));
+        TeamColors homeTeamColors = resolveTeamColors(homeColors);
+        String homePrimaryColor = homeTeamColors.primary();
+        String homeNumberColor = homeTeamColors.number();
+        TeamColors awayTeamColors = resolveTeamColors(awayColors);
+        String awayPrimaryColor = awayTeamColors.primary();
+        String awayNumberColor = awayTeamColors.number();
 
 
         // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
@@ -344,6 +346,34 @@ public class FixtureService {
         return new JsonNode[]{homeColors, awayColors};
     }
 
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // [팀 유니폼 색상 보정 흐름] API player 색상 → 응답 DTO primary/number
+    //
+    // 배경:
+    //   API-Football의 lineups[].team.colors.player는 primary/number/border 중 일부를
+    //   null로 줄 수 있다. 프론트 스코어보드는 primary를 배경색, number를 글자색으로
+    //   바로 쓰므로, 백엔드에서 최대한 대비가 나는 primary/number 쌍으로 정리해서 내려준다.
+    //
+    // 1단계 — 원본 색상 정규화 (colorOf)
+    //   missing/null/blank 값을 모두 null로 통일한다.
+    //
+    // 2단계 — number 후보 선택 (resolveNumberColor)
+    //   number가 있고 primary와 충분히 다르면 number를 쓴다.
+    //   number가 없거나 primary와 너무 비슷하면 border를 다음 후보로 검사한다.
+    //   border도 primary와 충분히 다를 때만 쓴다.
+    //   number/border 둘 다 없거나 primary와 너무 비슷하면 null을 반환한다.
+    //   이 단계에서는 보색을 만들지 않는다.
+    //
+    // 3단계 — 최종 누락값 보완 (resolveTeamColors)
+    //   primary 없음 + number 후보 있음: number를 primary로 올리고 number는 그 보색으로 설정.
+    //   primary 있음 + number 후보 없음: number를 primary의 보색으로 설정.
+    //   둘 다 없음: 둘 다 null 유지.
+    //
+    // 주의:
+    //   보색 생성은 후보 선택이 끝난 뒤 마지막 보완 단계에서만 한다. 그래야 border fallback이
+    //   먼저 적용되고, 그래도 부족한 케이스만 보색으로 채워진다.
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
     /**
      * colors JsonNode에서 특정 색상 값(hex 문자열)을 꺼냄.
      * colors 자체가 null이거나 key가 없으면 null 반환.
@@ -351,15 +381,31 @@ public class FixtureService {
     private String colorOf(JsonNode colors, String key) {
         if (colors == null || colors.isMissingNode()) return null;
         JsonNode n = colors.path(key);
-        return n.isNull() || n.isMissingNode() ? null : n.asText();
+        if (n.isNull() || n.isMissingNode()) return null;
+        String value = n.asText(null);
+        return (value == null || value.isBlank()) ? null : value;
     }
 
-    // number 색이 primary와 눈으로 구분 어려울 때 border, 그것도 안 되면 보색 반환
-    // null은 "구분 가능" 이 아니라 "없음"으로 처리 — null이면 다음 후보로 넘어감
+    private TeamColors resolveTeamColors(JsonNode colors) {
+        String primary = colorOf(colors, "primary");
+        String number = resolveNumberColor(primary, colorOf(colors, "number"), colorOf(colors, "border"));
+
+        if (primary == null && number != null) {
+            return new TeamColors(number, complementColor(number));
+        }
+
+        if (primary != null && number == null) {
+            return new TeamColors(primary, complementColor(primary));
+        }
+
+        return new TeamColors(primary, number);
+    }
+
+    // primary와 number가 너무 비슷하면 border를 검사한다. border도 비슷하면 null을 반환하고 보색 보완은 resolveTeamColors에서 처리한다.
     private String resolveNumberColor(String primary, String number, String border) {
         if (number != null && !colorsTooSimilar(primary, number)) return number;
         if (border != null && !colorsTooSimilar(primary, border)) return border;
-        return complementColor(primary);
+        return null;
     }
 
     // RGB Euclidean distance < 60 이면 "너무 비슷"으로 판단 (null 포함 시 similar 아님으로 처리)
@@ -800,5 +846,6 @@ public class FixtureService {
         return (node == null || node.isNull() || node.isMissingNode()) ? null : node.asInt();
     }
 
+    private record TeamColors(String primary, String number) {}
     private record InjuryPlayerExtra(String playerNameKoLong, Integer number) {}
 }
