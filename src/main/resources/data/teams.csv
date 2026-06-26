@@ -1,4 +1,4 @@
-team_id, team_name, ko_name, ko_name_short
+team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color_override
 621,FC Krasnodar,크라스노다르,
 4,Russia,러시아,
 33,Manchester United,맨체스터 유나이티드, 맨유
@@ -239,14 +239,14 @@ team_id, team_name, ko_name, ko_name_short
 9,Spain,스페인,
 10,England,잉글랜드,
 11,Panama,파나마,
-12,Japan,일본,
+12,Japan,일본,,212b57,ffffff
 13,Senegal,세네갈,
 15,Switzerland,스위스,
 16,Mexico,멕시코,
 20,Australia,오스트레일리아,호주
 22,Iran,이란,
 23,Saudi Arabia,사우디아라비아,사우디
-25,Germany,독일,
+25,Germany,독일,,ffffff,000000
 26,Argentina,아르헨티나,
 27,Portugal,포르투갈,
 28,Tunisia,튀니지,
@@ -258,7 +258,7 @@ team_id, team_name, ko_name, ko_name_short
 1090,Norway,노르웨이,
 1108,Scotland,스코틀랜드,
 1118,Netherlands,네덜란드,
-1501,Ivory Coast,코트디부아르,
+1501,Ivory Coast,코트디부아르,,ff8200,ffffff
 1504,Ghana,가나,
 1508,Congo DR,콩고민주공화국,DR 콩고
 1531,South Africa,남아프리카공화국,남아공
@@ -269,12 +269,12 @@ team_id, team_name, ko_name, ko_name_short
 1568,Uzbekistan,우즈베키스탄,
 1569,Qatar,카타르,
 2380,Paraguay,파라과이,
-2382,Ecuador,에콰도르,
+2382,Ecuador,에콰도르,,ffce00,002255
 2384,USA,미국,
 2386,Haiti,아이티,
 4673,New Zealand,뉴질랜드,
 5529,Canada,캐나다,
-5530,Curaçao,퀴라소,
+5530,Curaçao,퀴라소,,002b7f,ffffff
 17,South Korea,대한민국,
 ,Korea Republic,대한민국,
 1728,South Korea W,대한민국 (W),

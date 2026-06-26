@@ -53,7 +53,7 @@ public class CsvLoader {
     // 위 코어 키가 둘 이상의 선수에게 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
     private final Set<String> ambiguousLongNameCoreKeys         = new HashSet<>();
 
-    // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short
+    // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short, 4=primary_color_override, 5=number_color_override
     private final Map<Long, String[]> teams = new HashMap<>();
     // key: team_name 소문자 → teams 배열과 동일한 String[] 공유 (역방향 이름 조회용)
     private final Map<String, String[]> teamsByName = new HashMap<>();
@@ -151,7 +151,7 @@ public class CsvLoader {
     }
 
     /**
-     * teams.csv를 읽어 team_id → [team_id, team_name, ko_name] 형태로 저장.
+     * teams.csv를 읽어 team_id → [team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color_override] 형태로 저장.
      * ko_name이 비어있으면 Map에는 저장하되, getTeamNameKo에서 null을 반환함.
      */
     private void loadTeams() {
@@ -163,8 +163,8 @@ public class CsvLoader {
                 if (first) { first = false; continue; }
                 // 2. 빈 줄 스킵
                 if (line.isBlank()) continue;
-                // 3. 최대 4개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short)
-                String[] parts = parseCsvLine(line, 4);
+                // 3. 최대 6개 컬럼으로 분리 (team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color_override)
+                String[] parts = parseCsvLine(line, 6);
                 if (parts.length < 2) continue;
                 // 4. team_id가 있을 때만 ID 맵에 저장, team_name 소문자는 항상 역방향 키로 저장
                 String idStr = parts[0].trim();
@@ -622,6 +622,20 @@ public class CsvLoader {
         if (row == null || row.length < 4) return null;
         String v = row[3].trim();   // index 3 = ko_name_short
         return v.isEmpty() ? null : v;
+    }
+
+    /**
+     * teams.csv의 primary_color_override / number_color_override 반환.
+     * 두 값 모두 비어있으면 null을 반환한다.
+     * 반환값: [0]=primary_color_override, [1]=number_color_override (개별 값이 비어있으면 null)
+     */
+    public String[] getTeamColorOverride(long teamId) {
+        String[] row = teams.get(teamId);
+        if (row == null) return null;
+        String primary = row.length > 4 ? row[4].trim() : "";
+        String number  = row.length > 5 ? row[5].trim() : "";
+        if (primary.isEmpty() && number.isEmpty()) return null;
+        return new String[]{ primary.isEmpty() ? null : primary, number.isEmpty() ? null : number };
     }
 
     /**

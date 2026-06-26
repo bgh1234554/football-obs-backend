@@ -278,6 +278,18 @@ public class FixtureService {
         String awayPrimaryColor = awayTeamColors.primary();
         String awayNumberColor = awayTeamColors.number();
 
+        // 6-2. CSV 컬러 override — 위 모든 로직 후에도 null이 남아있는 컬럼만 보완
+        String[] homeColorOverride = csvLoader.getTeamColorOverride(homeTeamId);
+        if (homeColorOverride != null) {
+            if (homePrimaryColor == null && homeColorOverride[0] != null) homePrimaryColor = homeColorOverride[0];
+            if (homeNumberColor  == null && homeColorOverride[1] != null) homeNumberColor  = homeColorOverride[1];
+        }
+        String[] awayColorOverride = csvLoader.getTeamColorOverride(awayTeamId);
+        if (awayColorOverride != null) {
+            if (awayPrimaryColor == null && awayColorOverride[0] != null) awayPrimaryColor = awayColorOverride[0];
+            if (awayNumberColor  == null && awayColorOverride[1] != null) awayNumberColor  = awayColorOverride[1];
+        }
+
 
         // 7. 심판 이름 파싱 — "Anthony Taylor, England" 형식에서 이름/국적 분리 후 표시용 문자열 조립
         //    한글 이름이 있으면 "앤서니 테일러 (England)", 없으면 "Anthony Taylor (England)"
