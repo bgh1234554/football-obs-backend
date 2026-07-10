@@ -236,6 +236,7 @@ public class FixtureService {
         long leagueId = league.path("id").asLong();
         String leagueApiName = league.path("name").asText();
         String leagueRound = league.path("round").asText();
+        long leagueSeason = league.path("season").asLong();
         String kickoffAt = fixture.path("date").asText();
 
         String leagueName = koResolver.resolveLeagueName(leagueId, leagueApiName);
@@ -331,6 +332,7 @@ public class FixtureService {
                 .leagueName(leagueName)
                 .leagueRound(leagueRound)
                 .leagueId(leagueId)
+                .season(leagueSeason)
                 .kickoffAt(kickoffAt)
                 .leagueLogoUrl(leagueLogoUrl)
                 .build();

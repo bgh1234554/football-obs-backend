@@ -1,4 +1,4 @@
-team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color_override
+team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_override
 621,FC Krasnodar,크라스노다르,
 4,Russia,러시아,
 33,Manchester United,맨체스터 유나이티드, 맨유
@@ -281,7 +281,7 @@ team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color
 534,Las Palmas,라스 팔마스,라스 팔마스
 535,Malaga,말라가,말라가
 537,Leganes,레가네스,레가네스
-544,Deportivo La Coruna,데포르티보 라 코루냐,데포르티보
+544,Deportivo La Coruna,데포르티보 아 코루냐,데포르티보
 545,Eibar,에이바르,에이바르
 713,Cordoba,코르도바,코르도바
 715,Granada CF,그라나다,그라나다
@@ -971,7 +971,7 @@ team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color
 751,Slavia Mozyr,슬라비야 모지리,슬라비야 Mz.
 3383,Baranovichi,바라노비치,
 3384,Belshina,벨시나 보브루이스크,벨시나
-7808,ML Vitebsk,ML 비텝스크,
+7808,ML Vitebsk,ML 비텝스크,ML
 9419,Arsenal,아르세날 제르진스크,아르세날 Dz.
 281,Kashiwa Reysol,가시와 레이솔,가시와
 283,Shimizu S-pulse,시미즈 S-펄즈,시미즈
@@ -1379,3 +1379,4 @@ team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color
 1416,Lokomotiv Sofia,로코모티프 소피아,로코모티프 Sf.
 1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948 Sf.
 4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.
+3733,Zbrojovka Brno,즈브로요프카 브르노,즈브로요프카
