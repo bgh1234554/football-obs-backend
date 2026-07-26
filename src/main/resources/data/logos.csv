@@ -2,7 +2,7 @@ team_id, team_name_ko, logo_url, fa_url
 1113, 보스니아 헤르체고비나,https://flagcdn.com/ba.svg, https://bgh1234554.github.io/football-obs-logo-cdn/nt/BosniaAndHerzegovinaFA.png
 768, 이탈리아,https://flagcdn.com/it.svg, https://bgh1234554.github.io/football-obs-logo-cdn/nt/ItalyFA.png
 6786, 아크론 톨리야티, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/AkronTolyatti.png,
-2011, 파리 니즈니 노브고로드, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/PariNizhnyNovgorod.png,
+2011, 니즈니 노브고로드, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/PariNizhnyNovgorod.png,
 2012, 소치, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/Sochi.png,
 558,Spartak Moscow, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/SpartakMoscow.svg
 6813,Dinamo Makhachkala, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/DynamoMakhachkala.svg
@@ -19,6 +19,9 @@ team_id, team_name_ko, logo_url, fa_url
 6795, 디나모 브랸스크, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/DinamoBryansk.png,
 6831, 쿠반 크라스노다르, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/KubanKrasnodar.png,
 21538, 디나모 키로프, https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/DinamoKirov.png,
+6822,Rodina Moskva,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/RodinaMoscow.svg,
+19453,Rodina Moskva II,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/RodinaMoscow.svg,
+19448,Rodina Moskva III,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/RodinaMoscow.svg,
 2767,울산 HD,https://indvel.github.io/utils/fsm/logos/KLeague/Ulsan_HD_FC.svg,
 2748, 안양,https://indvel.github.io/utils/fsm/logos/KLeague/FCAnyang.svg,
 2761, 제주,https://indvel.github.io/utils/fsm/logos/KLeague/Jeju_SK_FC.svg,
@@ -275,6 +278,7 @@ team_id, team_name_ko, logo_url, fa_url
 560,Slavia Praha,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Czech%20Republic/SlaviaPraha.png
 1122,FK Jablonec,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Czech%20Republic/Jablonec.svg
 3733,Zbrojovka Brno,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Czech%20Republic/ZbrojovkaBrno.svg
+3724,Pardubice,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Czech%20Republic/Pardubice.svg
 384,FC Dnepr Mogilev,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/DneprMogilyov.png
 750,Naftan,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/NaftanNovopolotsk.svg
 3384,Belshina,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/BelshinaBobruisk.png
