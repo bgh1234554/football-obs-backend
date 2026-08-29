@@ -299,7 +299,9 @@ public class KoResolver {
         String csvShort = csvLoader.getPlayerNameShort(playerId);
         if (csvShort != null) {
             logShortNameDiffOnce("player", playerId, apiName, csvShort);
-            return new ResolvedName(csvShort, nameKoLong);
+            // 한글 번역이 아직 없으면 CSV 영문 풀네임(name_long)으로라도 채운다.
+            String longFallback = nameKoLong != null ? nameKoLong : csvLoader.getPlayerNameLong(playerId);
+            return new ResolvedName(csvShort, longFallback);
         }
 
         String nationality = csvLoader.getPlayerNationality(playerId);
@@ -313,8 +315,28 @@ public class KoResolver {
 
     /**
      * 감독 이름 fallback 우선순위. 선수와 동일한 규칙을 coaches.csv 기준으로 적용.
+     * [id=0 또는 id 미제공 감독] coaches.csv name_short/name_long 이름 역매칭으로 한글화 시도.
      */
     public ResolvedName resolveCoachName(long coachId, String apiName) {
+        if (coachId == 0) {
+            String[] row = csvLoader.getCoachRowByName(apiName);
+            if (row != null) {
+                String koShort = (row.length > 5) ? row[5].trim() : "";
+                String koLong  = (row.length > 4) ? row[4].trim() : "";
+                if (!koShort.isEmpty()) {
+                    return new ResolvedName(koShort, koLong.isEmpty() ? null : koLong);
+                }
+                if (!koLong.isEmpty()) {
+                    // ko_long만 있을 때: 표시 이름은 API 이름 포맷 유지, longName만 한글
+                    String display = PersonNameFormatter.buildNameShortAbbrev(apiName, null, null, null);
+                    return new ResolvedName(display, koLong);
+                }
+            }
+            // CSV 매칭 실패 — API 이름 그대로 반환
+            String display = PersonNameFormatter.buildNameShortAbbrev(apiName, null, null, null);
+            return new ResolvedName(display, null);
+        }
+
         String nameKo = csvLoader.getCoachNameKo(coachId);
         String nameKoLong = csvLoader.getCoachNameKoLong(coachId);
         if (nameKo != null) return new ResolvedName(nameKo, nameKoLong);
@@ -322,7 +344,9 @@ public class KoResolver {
         String csvShort = csvLoader.getCoachNameShort(coachId);
         if (csvShort != null) {
             logShortNameDiffOnce("coach", coachId, apiName, csvShort);
-            return new ResolvedName(csvShort, nameKoLong);
+            // 한글 번역이 아직 없으면 CSV 영문 풀네임(name_long)으로라도 채운다.
+            String longFallback = nameKoLong != null ? nameKoLong : csvLoader.getCoachNameLong(coachId);
+            return new ResolvedName(csvShort, longFallback);
         }
 
         String nationality = csvLoader.getCoachNationality(coachId);

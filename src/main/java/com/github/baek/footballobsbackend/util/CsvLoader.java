@@ -63,6 +63,9 @@ public class CsvLoader {
 
     // index: 0=coach_id, 1=name_short, 2=name_long, 3=nationality, 4=name_ko_long, 5=name_ko_short
     private final Map<Long, String[]> coaches = new HashMap<>();
+    // 역방향 이름 인덱스 — id=0(또는 id 미제공) 감독 한글화에 사용 (name_short/name_long 소문자 키)
+    private final Map<String, String[]> coachesByShortName = new HashMap<>();
+    private final Map<String, String[]> coachesByLongName  = new HashMap<>();
 
     // key: "referee_name, referee_country" 또는 "referee_name", value: name_ko
     private final Map<String, String> referees = new HashMap<>();
@@ -223,6 +226,13 @@ public class CsvLoader {
                 // 4. coach_id를 키로 저장 (id 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
                 coaches.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
+                // 5. name_short / name_long 역방향 인덱스 (id=0 또는 id 미제공 감독 이름 매칭용)
+                if (parts.length > 1 && !parts[1].trim().isEmpty()) {
+                    coachesByShortName.put(parts[1].trim().toLowerCase(), parts);
+                }
+                if (parts.length > 2 && !parts[2].trim().isEmpty()) {
+                    coachesByLongName.put(parts[2].trim().toLowerCase(), parts);
+                }
             }
         } catch (IOException e) {
             log.warn("Could not load coaches.csv: {}", e.getMessage());
@@ -636,6 +646,18 @@ public class CsvLoader {
         String number  = row.length > 5 ? row[5].trim() : "";
         if (primary.isEmpty() && number.isEmpty()) return null;
         return new String[]{ primary.isEmpty() ? null : primary, number.isEmpty() ? null : number };
+    }
+
+    /**
+     * API name(short 형식) 또는 full name으로 coaches.csv 행 조회.
+     * id=0(또는 id 미제공) 감독 한글화 시 name_short → name_long 순으로 정확 일치 매칭한다.
+     */
+    public String[] getCoachRowByName(String apiName) {
+        if (apiName == null || apiName.isBlank()) return null;
+        String key = apiName.trim().toLowerCase();
+        String[] row = coachesByShortName.get(key);
+        if (row != null) return row;
+        return coachesByLongName.get(key);
     }
 
     /**
