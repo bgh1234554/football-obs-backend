@@ -1,10 +1,13 @@
 package com.github.baek.footballobsbackend.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.github.baek.footballobsbackend.error.ApiException;
+import com.github.baek.footballobsbackend.error.ErrorCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.client.RestClientResponseException;
 
 /**
  * BunnyCDN 프록시를 통해 API Football v3를 호출하는 HTTP 클라이언트.
@@ -44,10 +47,7 @@ public class ApiFootballClient {
         log.info("Fetching fixture id={}", fixtureId);
 
         // 1. CDN에 GET /fixtures?id={fixtureId} 요청
-        JsonNode root = restClient.get()
-                .uri("/fixtures?id=" + fixtureId)
-                .retrieve()
-                .body(JsonNode.class);
+        JsonNode root = fetchRoot("/fixtures?id=" + fixtureId);
 
         // 2. 응답 자체가 null이면 중단
         if (root == null) return null;
@@ -185,12 +185,31 @@ public class ApiFootballClient {
      * 응답이 null이거나 "response"가 배열이 아니면 null 반환.
      */
     private JsonNode fetchArray(String path) {
-        JsonNode root = restClient.get()
-                .uri(path)
-                .retrieve()
-                .body(JsonNode.class);
+        JsonNode root = fetchRoot(path);
         if (root == null) return null;
         JsonNode response = root.path("response");
         return response.isArray() ? response : null;
+    }
+
+    /**
+     * CDN(→ API Football)에 GET 요청을 보내고 루트 JsonNode를 반환하는 공통 헬퍼.
+     *
+     * API Football이 자체 오류로 4xx/5xx를 내려줄 때(예: 응답 본문에 "errors":{"bug":"This is on
+     * our side..."}) RestClient가 기본적으로 RestClientResponseException을 던지는데, 이걸 그대로
+     * 흘려보내면 GlobalExceptionAdvice의 catch-all(Exception)에 걸려 "서버 내부에 오류 발생"이라는
+     * 부정확한 500 메시지로 로그가 ERROR 레벨에 찍히고 프론트에도 우리 쪽 버그처럼 보이게 된다.
+     * 여기서 잡아서 업스트림 문제임을 명확히 하는 ApiException(UPSTREAM_API_ERROR, 502)로 변환한다.
+     */
+    private JsonNode fetchRoot(String path) {
+        try {
+            return restClient.get()
+                    .uri(path)
+                    .retrieve()
+                    .body(JsonNode.class);
+        } catch (RestClientResponseException e) {
+            log.warn("API Football upstream error: status={}, path={}, body={}",
+                    e.getStatusCode().value(), path, e.getResponseBodyAsString());
+            throw new ApiException(ErrorCode.UPSTREAM_API_ERROR);
+        }
     }
 }
