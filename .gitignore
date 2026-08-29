@@ -45,3 +45,5 @@ src/main/resources/csvExample/
 .codex-tmp
 __pycache__
 .editorconfig
+
+tmp*
