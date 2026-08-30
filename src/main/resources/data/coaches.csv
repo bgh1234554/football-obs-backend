@@ -74,7 +74,7 @@
 6757,Manolo González,José Manuel González Álvarez,Spain,마놀로 곤살레스,M. 곤살레스
 25639,Manolo González,José Manuel González Álvarez,Spain,마놀로 곤살레스,M. 곤살레스
 1584,Z. Zidane,Zinédine Zidane,France,지네딘 지단,Z. 지단
-6801,X. Alonso,Xabier Alonso Olano,Spain,사비에르 알론소,X. 알론소
+6801,X. Alonso,Xabier Alonso Olano,Spain,사비 알론소,X. 알론소
 25679,Á. Arbeloa,Álvaro Arbeloa Coca,Spain,알바로 아르벨로아,Á. 아르벨로아
 45,Luis García,Luis García Plaza,Spain,루이스 가르시아,L. 가르시아
 2910,J. Muñiz,Juan Ramón López Muñiz,Spain,후안 라몬 무니스,J. 무니스
@@ -1089,119 +1089,212 @@
 108,M. Hudson,Mark Hudson,England,마크 허드슨,M. 허드슨
 632,B. Barry-Murphy,Brian Barry-Murphy,Republic of Ireland,브라이언 배리머피,B. 배리머피
 10647,Ö. Riza,Ömer Kerim Ali Riza,England,외메르 르자,Ö. 르자
-19188,D. Whitehead,Dean Whitehead,England,딘 화이트헤드,화이트헤드
-24995,A. Ramsey,Aaron James Ramsey,Wales,에런 램지,램지
-26580,Brian Barry-Murphy,Brian Barry-Murphy,Ireland,브라이언 배리-머피,배리-머피
-28675,Mike Jackson,Michael James Jackson,England,마이크 잭슨,잭슨
-28816,Tony Mowbray,Anthony Mark Mowbray,England,토니 모브레이,모브레이
-685,I. Evatt,Ian Ross Evatt,England,이언 에버트,에버트
-969,J. Phillips,Jimmy Phillips,England,지미 필립스,필립스
-16373,S. Schumacher,Steven Schumacher,England,스티븐 슈마허,슈마허
-24326,J. Darby,Julian Darby,England,줄리언 더비,더비
-26564,Steven Schumacher,Steven Schumacher,England,스티븐 슈마허,슈마허
-17848,M. Skubala,Michael Skubala,England,마이클 스쿠발라,스쿠발라
-21603,T. Shaw,Tom William Shaw,England,톰 쇼,쇼
-26579,Michael Skubala,Michael Skubala,England,마이클 스쿠발라,스쿠발라
-18172,J. Worthington,Jonathan Worthington,England,조너선 워싱턴,워싱턴
-18570,M. Fotheringham,Mark Fotheringham,Scotland,마크 포더링엄,포더링엄
-25316,Lee Grant,Lee Anderson Grant,England,리 그랜트,그랜트
-26575,Lee Grant,Lee Anderson Grant,England,리 그랜트,그랜트
-28578,Liam Manning,Liam John Manning,England,리엄 매닝,매닝
-29001,Russell Martin,Russell Kenneth Alexander Martin,England,러셀 마틴,마틴
-13276,N. Hunt,Noel Hunt,Republic of Ireland,노엘 헌트,헌트
-17754,P. Ince,Paul Ince,England,폴 인스,인스
-26566,Leam Richardson,Leam Nathan Richardson,England,레암 리차드슨,리차드슨
-618,R. Lowe,Ryan Thomas Lowe,England,라이언 로우,로우
-13345,G. Rioch,Gregor Rioch,England,그레고르 리오크,리오크
-13497,R. Kelly,Rob Kelly,England,롭 켈리,켈리
-16417,S. Maloney,Shaun Maloney,Scotland,숀 말로니,말로니
-19055,K. Touré,Kolo Touré,Cote d'Ivoire,콜로 투레,투레
-24638,G. Whelan,Glenn Whelan,Republic of Ireland,글렌 웰런,웰런
-26567,Gary Caldwell,Gary Caldwell,Scotland,게리 콜드웰,콜드웰
-26578,Ryan Lowe,Ryan Thomas Lowe,England,라이언 로우,로우
-17230,M. Devaney,Martin Devaney,England,마틴 데버니,데버니
-24677,C. Hourihane,Conor Hourihane,Republic of Ireland,코너 휴리한,휴리한
-25933,Conor Hourihane,Conor Hourihane,Republic of Ireland,코너 휴리한,휴리한
-591,G. Bowyer,Gary Bowyer,England,게리 보이어,보이어
-624,D. Maamria,Noureddine Maamria,Tunisia,누레딘 마암리아,마암리아
-9450,J. Hasselbaink,Jimmy Floyd Hasselbaink,Netherlands,지미 플로이드 하셀바잉크,하셀바잉크
-13835,M. Robinson,Mark Robinson,England,마크 로빈슨,로빈슨
-21623,G. Mills,Gary Mills,England,게리 밀스,밀스
-23794,T. Hounsell,Tom Hounsell,England,톰 하운셀,하운셀
-25935,Gary Bowyer,Gary Bowyer,England,게리 보이어,보이어
-2815,M. Bowen,Mark Bowen,Wales,마크 보언,보언
-2818,G. Hodges,Glyn Hodges,Wales,글린 호지스,호지스
-14311,J. Jackson,Johnnie Jackson,England,조니 잭슨,잭슨
-25925,Johnnie Jackson,Johnnie Jackson,England,조니 잭슨,잭슨
-628,G. Alexander,Graham Alexander,Scotland,그레이엄 알렉산더,알렉산더
-13498,M. Trueman,Mark Trueman,England,마크 트루먼,트루먼
-26565,Graham Alexander,Graham Alexander,Scotland,그레이엄 알렉산더,알렉산더
-580,P. Warne,Paul Warne,England,폴 원,원
-9453,R. Barker,Richard Barker,England,리처드 바커,바커
-15157,D. Lewington,Dean Lewington,England,딘 루잉턴,루잉턴
-23621,B. Gladwin,Benjamin Gladwin,England,벤저민 글래드윈,글래드윈
-26583,Paul Warne,Paul Warne,England,폴 원,원
-598,D. Ferguson,Darren Ferguson,Scotland,대런 퍼거슨,퍼거슨
-26574,Luke Williams,Luke Williams,England,루크 윌리엄스,윌리엄스
-99,G. McCann,Grant McCann,Northern Ireland,그랜트 맥캔,맥캔
-12109,D. Schofield,Danny Schofield,England,대니 스코필드,스코필드
-16354,G. McSheffrey,Gary McSheffrey,England,게리 맥셰프리,맥셰프리
-25936,Grant McCann,Grant McCann,Northern Ireland,그랜트 맥캔,맥캔
-17,S. Bruce,Steve Bruce,England,스티브 브루스,브루스
-188,M. McCarthy,Mick McCarthy,Republic of Ireland,믹 매카시,매카시
-3572,T. McPhillips,Terry McPhillips,England,테리 맥필립스,맥필립스
-19754,S. Dobbie,Stephen Dobbie,Scotland,스티븐 도비,도비
-23089,R. Keogh,Richard Keogh,Republic of Ireland,리처드 키오,키오
-26571,Ian Evatt,Ian Evatt,England,이언 에버트,에버트
-3582,K. Nancekivell,Kevin Nancekivell,England,케빈 낸시키벨,낸시키벨
-3609,M. Muslić,Miron Muslić,Austria,미론 무슬리치,무슬리치
-13523,W. Rooney,Wayne Rooney,England,웨인 루니,루니
-16315,I. Foster,Ian Foster,England,이언 포스터,포스터
-21932,T. Cleverley,Tom Cleverley,England,톰 클레벌리,클레벌리
-22222,N. Dewsnip,Neil Dewsnip,England,닐 듀스닙,듀스닙
-26577,Tom Cleverley,Tom Cleverley,England,톰 클레벌리,클레벌리
-627,M. Duff,Michael Duff,Northern Ireland,마이클 더프,더프
-16093,M. Dodds,Mike Dodds,England,마이크 도즈,도즈
-24301,S. Grace,Sam Grace,England,샘 그레이스,그레이스
-26573,Michael Duff,Michael Duff,Northern Ireland,마이클 더프,더프
-3577,M. Harford,Michael Harford,England,마이클 하포드,하포드
-9538,P. Trollope,Paul Trollope,Wales,폴 트롤로프,트롤로프
-18552,M. Bloomfield,Matt Bloomfield,England,맷 블룸필드,블룸필드
-26570,Jack Wilshere,Jack Wilshere,England,잭 윌셔,윌셔
-625,P. Tisdale,Paul Tisdale,England,폴 티스데일,티스데일
-7245,G. Westley,Graham Westley,England,그레이엄 웨슬리,웨슬리
-12349,A. Revell,Alex Revell,England,알렉스 레벨,레벨
-92,N. Harris,Neil Harris,England,닐 해리스,해리스
-110,G. Monk,Garry Monk,England,개리 몽크,몽크
-640,C. Calderwood,Colin Calderwood,Scotland,콜린 캘더우드,캘더우드
-2971,J. Dunne,Joe Dunne,Republic of Ireland,조 던,던
-21570,B. Corr,Barry Corr,Republic of Ireland,배리 코어,코어
-26593,Neil Harris,Neil Harris,England,닐 해리스,해리스
-582,R. Wellens,Richie Wellens,England,리치 웰렌스,웰렌스
-622,K. Jackett,Kenny Jackett,Wales,케니 재킷,재킷
-2817,C. Fletcher,Carl Fletcher,Wales,칼 플레처,플레처
-3799,J. Edinburgh,Justin Edinburgh,England,저스틴 에든버러,에든버러
-10650,D. Webb,Dave Webb,England,데이브 웹,웹
-10651,A. Edwards,Alan Edwards,England,앨런 에드워즈,에드워즈
-14061,J. McAnuff,Jobi McAnuff,Jamaica,조비 매카너프,매카너프
-16722,M. Harrold,Matt Harrold,England,맷 해롤드,해롤드
-26569,Richie Wellens,Richie Wellens,England,리치 웰렌스,웰렌스
-597,N. Clough,Nigel Clough,England,나이절 클로프,클로프
-2970,D. Flitcroft,David Flitcroft,England,데이비드 플리트크로프트,플리트크로프트
-26572,Nigel Clough,Nigel Clough,England,나이절 클로프,클로프
-21702,M. Paterson,Martin Paterson,Northern Ireland,마틴 패터슨,패터슨
-14319,A. Woodman,Andy Woodman,England,앤디 우드먼,우드먼
-26591,Andy Woodman,Andy Woodman,England,앤디 우드먼,우드먼
-665,D. Challinor,Dave Challinor,England,데이브 찰리너,찰리너
-680,J. Gannon,Jim Gannon,Republic of Ireland,짐 개넌,개넌
-21651,W. McStay,Willie McStay,Scotland,윌리 맥스테이,맥스테이
-26576,Dave Challinor,Dave Challinor,England,데이브 찰리너,찰리너
-18109,I. Abate,Ignazio Abate,Italy,이냐치오 아바테,아바테
-413,M. Alvini,Massimiliano Alvini,Italy,마시밀리아노 알비니,알비니
-17982,L. Greco,Luca Greco,Italy,루카 그레코,그레코
-406,I. Javorčić,Ivan Javorčić,Croatia,이반 야보르치치,야보르치치
-1604,G. Stroppa,Giovanni Stroppa,Italy,조반니 스트로파,스트로파
-1621,A. Nesta,Alessandro Nesta,Italy,알레산드로 네스타,네스타
-3728,P. Bianco,Paolo Bianco,Italy,파올로 비안코,비안코
-18111,S. Bocchetti,Salvatore Bocchetti,Italy,살바토레 보케티,보케티
-28998,I. Jurić,Ivan Jurić,Croatia,이반 유리치,유리치
+19188,D. Whitehead,Dean Whitehead,England,딘 화이트헤드,D. 화이트헤드
+24995,A. Ramsey,Aaron James Ramsey,Wales,에런 램지,A. 램지
+26580,B. Barry-Murphy,Brian Barry-Murphy,Ireland,브라이언 배리-머피,B. 배리-머피
+28675,M. Jackson,Michael James Jackson,England,마이크 잭슨,M. 잭슨
+28816,A. Mowbray,Anthony Mark Mowbray,England,토니 모브레이,A. 모브레이
+685,I. Evatt,Ian Ross Evatt,England,이언 에버트,I. 에버트
+969,J. Phillips,Jimmy Phillips,England,지미 필립스,J. 필립스
+16373,S. Schumacher,Steven Schumacher,England,스티븐 슈마허,S. 슈마허
+24326,J. Darby,Julian Darby,England,줄리언 더비,J. 더비
+26564,S. Schumacher,Steven Schumacher,England,스티븐 슈마허,S. 슈마허
+17848,M. Skubala,Michael Skubala,England,마이클 스쿠발라,M. 스쿠발라
+21603,T. Shaw,Tom William Shaw,England,톰 쇼,T. 쇼
+26579,M. Skubala,Michael Skubala,England,마이클 스쿠발라,M. 스쿠발라
+18172,J. Worthington,Jonathan Worthington,England,조너선 워싱턴,J. 워싱턴
+18570,M. Fotheringham,Mark Fotheringham,Scotland,마크 포더링엄,M. 포더링엄
+25316,L. Grant,Lee Anderson Grant,England,리 그랜트,L. 그랜트
+26575,L. Grant,Lee Anderson Grant,England,리 그랜트,L. 그랜트
+28578,L. Manning,Liam John Manning,England,리엄 매닝,L. 매닝
+29001,R. Martin,Russell Kenneth Alexander Martin,England,러셀 마틴,R. 마틴
+13276,N. Hunt,Noel Hunt,Republic of Ireland,노엘 헌트,N. 헌트
+17754,P. Ince,Paul Ince,England,폴 인스,P. 인스
+26566,L. Richardson,Leam Nathan Richardson,England,레암 리차드슨,L. 리차드슨
+618,R. Lowe,Ryan Thomas Lowe,England,라이언 로우,R. 로우
+13345,G. Rioch,Gregor Rioch,England,그레고르 리오크,G. 리오크
+13497,R. Kelly,Rob Kelly,England,롭 켈리,R. 켈리
+16417,S. Maloney,Shaun Maloney,Scotland,숀 말로니,S. 말로니
+19055,K. Touré,Kolo Touré,Cote d'Ivoire,콜로 투레,K. 투레
+24638,G. Whelan,Glenn Whelan,Republic of Ireland,글렌 웰런,G. 웰런
+26567,G. Caldwell,Gary Caldwell,Scotland,게리 콜드웰,G. 콜드웰
+26578,R. Lowe,Ryan Thomas Lowe,England,라이언 로우,R. 로우
+17230,M. Devaney,Martin Devaney,England,마틴 데버니,M. 데버니
+24677,C. Hourihane,Conor Hourihane,Republic of Ireland,코너 휴리한,C. 휴리한
+25933,C. Hourihane,Conor Hourihane,Republic of Ireland,코너 휴리한,C. 휴리한
+591,G. Bowyer,Gary Bowyer,England,게리 보이어,G. 보이어
+624,N. Maamria,Noureddine Maamria,Tunisia,누레딘 마암리아,N. 마암리아
+9450,J. Hasselbaink,Jimmy Floyd Hasselbaink,Netherlands,지미 플로이드 하셀바잉크,J. 하셀바잉크
+13835,M. Robinson,Mark Robinson,England,마크 로빈슨,M. 로빈슨
+21623,G. Mills,Gary Mills,England,게리 밀스,G. 밀스
+23794,T. Hounsell,Tom Hounsell,England,톰 하운셀,T. 하운셀
+25935,G. Bowyer,Gary Bowyer,England,게리 보이어,G. 보이어
+2815,M. Bowen,Mark Bowen,Wales,마크 보언,M. 보언
+2818,G. Hodges,Glyn Hodges,Wales,글린 호지스,G. 호지스
+14311,J. Jackson,Johnnie Jackson,England,조니 잭슨,J. 잭슨
+25925,J. Jackson,Johnnie Jackson,England,조니 잭슨,J. 잭슨
+628,G. Alexander,Graham Alexander,Scotland,그레이엄 알렉산더,G. 알렉산더
+13498,M. Trueman,Mark Trueman,England,마크 트루먼,M. 트루먼
+26565,G. Alexander,Graham Alexander,Scotland,그레이엄 알렉산더,G. 알렉산더
+580,P. Warne,Paul Warne,England,폴 원,P. 원
+9453,R. Barker,Richard Barker,England,리처드 바커,R. 바커
+15157,D. Lewington,Dean Lewington,England,딘 루잉턴,D. 루잉턴
+23621,B. Gladwin,Benjamin Gladwin,England,벤저민 글래드윈,B. 글래드윈
+26583,P. Warne,Paul Warne,England,폴 원,P. 원
+598,D. Ferguson,Darren Ferguson,Scotland,대런 퍼거슨,D. 퍼거슨
+26574,L. Williams,Luke Williams,England,루크 윌리엄스,L. 윌리엄스
+99,G. McCann,Grant McCann,Northern Ireland,그랜트 맥캔,G. 맥캔
+12109,D. Schofield,Danny Schofield,England,대니 스코필드,D. 스코필드
+16354,G. McSheffrey,Gary McSheffrey,England,게리 맥셰프리,G. 맥셰프리
+25936,G. McCann,Grant McCann,Northern Ireland,그랜트 맥캔,G. 맥캔
+17,S. Bruce,Steve Bruce,England,스티브 브루스,S. 브루스
+188,M. McCarthy,Mick McCarthy,Republic of Ireland,믹 매카시,M. 매카시
+3572,T. McPhillips,Terry McPhillips,England,테리 맥필립스,T. 맥필립스
+19754,S. Dobbie,Stephen Dobbie,Scotland,스티븐 도비,S. 도비
+23089,R. Keogh,Richard Keogh,Republic of Ireland,리처드 키오,R. 키오
+26571,I. Evatt,Ian Evatt,England,이언 에버트,I. 에버트
+3582,K. Nancekivell,Kevin Nancekivell,England,케빈 낸시키벨,K. 낸시키벨
+3609,M. Muslić,Miron Muslić,Austria,미론 무슬리치,M. 무슬리치
+13523,W. Rooney,Wayne Rooney,England,웨인 루니,W. 루니
+16315,I. Foster,Ian Foster,England,이언 포스터,I. 포스터
+21932,T. Cleverley,Tom Cleverley,England,톰 클레벌리,T. 클레벌리
+22222,N. Dewsnip,Neil Dewsnip,England,닐 듀스닙,N. 듀스닙
+26577,T. Cleverley,Tom Cleverley,England,톰 클레벌리,T. 클레벌리
+627,M. Duff,Michael Duff,Northern Ireland,마이클 더프,M. 더프
+16093,M. Dodds,Mike Dodds,England,마이크 도즈,M. 도즈
+24301,S. Grace,Sam Grace,England,샘 그레이스,S. 그레이스
+26573,M. Duff,Michael Duff,Northern Ireland,마이클 더프,M. 더프
+3577,M. Harford,Michael Harford,England,마이클 하포드,M. 하포드
+9538,P. Trollope,Paul Trollope,Wales,폴 트롤로프,P. 트롤로프
+18552,M. Bloomfield,Matt Bloomfield,England,맷 블룸필드,M. 블룸필드
+26570,J. Wilshere,Jack Wilshere,England,잭 윌셔,J. 윌셔
+625,P. Tisdale,Paul Tisdale,England,폴 티스데일,P. 티스데일
+7245,G. Westley,Graham Westley,England,그레이엄 웨슬리,G. 웨슬리
+12349,A. Revell,Alex Revell,England,알렉스 레벨,A. 레벨
+92,N. Harris,Neil Harris,England,닐 해리스,N. 해리스
+110,G. Monk,Garry Monk,England,개리 몽크,G. 몽크
+640,C. Calderwood,Colin Calderwood,Scotland,콜린 캘더우드,C. 캘더우드
+2971,J. Dunne,Joe Dunne,Republic of Ireland,조 던,J. 던
+21570,B. Corr,Barry Corr,Republic of Ireland,배리 코어,B. 코어
+26593,N. Harris,Neil Harris,England,닐 해리스,N. 해리스
+582,R. Wellens,Richie Wellens,England,리치 웰렌스,R. 웰렌스
+622,K. Jackett,Kenny Jackett,Wales,케니 재킷,K. 재킷
+2817,C. Fletcher,Carl Fletcher,Wales,칼 플레처,C. 플레처
+3799,J. Edinburgh,Justin Edinburgh,England,저스틴 에든버러,J. 에든버러
+10650,D. Webb,Dave Webb,England,데이브 웹,D. 웹
+10651,A. Edwards,Alan Edwards,England,앨런 에드워즈,A. 에드워즈
+14061,J. McAnuff,Jobi McAnuff,Jamaica,조비 매카너프,J. 매카너프
+16722,M. Harrold,Matt Harrold,England,맷 해롤드,M. 해롤드
+26569,R. Wellens,Richie Wellens,England,리치 웰렌스,R. 웰렌스
+597,N. Clough,Nigel Clough,England,나이절 클로프,N. 클로프
+2970,D. Flitcroft,David Flitcroft,England,데이비드 플리트크로프트,D. 플리트크로프트
+26572,N. Clough,Nigel Clough,England,나이절 클로프,N. 클로프
+21702,M. Paterson,Martin Paterson,Northern Ireland,마틴 패터슨,M. 패터슨
+14319,A. Woodman,Andy Woodman,England,앤디 우드먼,A. 우드먼
+26591,A. Woodman,Andy Woodman,England,앤디 우드먼,A. 우드먼
+665,D. Challinor,Dave Challinor,England,데이브 찰리너,D. 찰리너
+680,J. Gannon,Jim Gannon,Republic of Ireland,짐 개넌,J. 개넌
+21651,W. McStay,Willie McStay,Scotland,윌리 맥스테이,W. 맥스테이
+26576,D. Challinor,Dave Challinor,England,데이브 찰리너,D. 찰리너
+18109,I. Abate,Ignazio Abate,Italy,이냐치오 아바테,I. 아바테
+413,M. Alvini,Massimiliano Alvini,Italy,마시밀리아노 알비니,M. 알비니
+17982,L. Greco,Luca Greco,Italy,루카 그레코,L. 그레코
+406,I. Javorčić,Ivan Javorčić,Croatia,이반 야보르치치,I. 야보르치치
+1604,G. Stroppa,Giovanni Stroppa,Italy,조반니 스트로파,G. 스트로파
+1621,A. Nesta,Alessandro Nesta,Italy,알레산드로 네스타,A. 네스타
+3728,P. Bianco,Paolo Bianco,Italy,파올로 비안코,P. 비안코
+18111,S. Bocchetti,Salvatore Bocchetti,Italy,살바토레 보케티,S. 보케티
+28998,I. Jurić,Ivan Jurić,Croatia,이반 유리치,I. 유리치
+28903,E. Terzić,Edin Terzić,Germany,에딘 테르지치,E. 테르지치
+7001,S. García,Sergio Pellicer García,Spain,세르히오 페예세르,S. 페예세르
+9721,J. Cano,Juan de la Cruz Ramos Cano,Spain,후안데 라모스,J. 라모스
+10402,C. Silva,Clever Marcelo Romero Silva,Uruguay,마르셀로 로메로,C. 로메로
+26032,J. Arjona,Juan Francisco Funes Arjona,Spain,후안 프란시스코 푸네스,J. 푸네스
+28360,L. Plaza,Luis García Plaza,Spain,루이스 가르시아 플라사,L. 플라사
+27961,E. Flores,Enrique Sánchez Flores,Spain,키케 산체스 플로레스,E. 플로레스
+2066,J. Barkaiztegi,Joseba Imanol Idiakez Barkaiztegi,Spain,이마놀 이디아케스,J. 이디아케스
+6821,A. Morilla,Antonio Hidalgo Morilla,Spain,안토니오 이달고,A. 이달고
+7472,F. Pena,Fernando Vázquez Pena,Spain,페르난도 바스케스,F. 바스케스
+15588,Ó. González,Óscar Manuel Gilsanz González,Spain,오스카르 힐산스,Ó. 힐산스
+26018,A. Morilla,Antonio Hidalgo Morilla,Spain,안토니오 이달고,A. 이달고
+26015,L. Monfort,Luis Miguel Ramis Monfort,Spain,루이스 미겔 라미스,L. 라미스
+26023,B. Gil,Beñat San José Gil,Spain,베냐트 산 호세,B. 호세
+25742,M. Anselmi,Martín Anselmi,Argentina,마르틴 안셀미,M. 안셀미
+2115,J. Menéndez,José Alberto López Menéndez,Spain,호세 알베르토 로페스,J. 로페스
+26030,J. Menéndez,José Alberto López Menéndez,Spain,호세 알베르토 로페스,J. 로페스
+28906,A. Hütter,Adolf "Adi" Hütter,Austria,아디 휘터,A. 휘터
+28454,M. Baum,Manuel Baum,Germany,마누엘 바움,M. 바움
+3087,H. Stevens,Hubertus "Huub" Stevens,Netherlands,휘프 스테번스,H. 스테번스
+3345,C. Gross,Christian Jürgen Gross,Switzerland,크리스티안 그로스,C. 그로스
+5324,F. Kramer,Frank Kramer,Germany,프랑크 크라머,F. 크라머
+8742,M. Büskens,Michael Büskens,Germany,미하엘 뷔스켄스,M. 뷔스켄스
+12507,K. van Wonderen,Kees van Wonderen,Netherlands,케스 판 원더렌,K. 판 원더렌
+17021,J. Fimpel,Jakob Fimpel,Germany,야코프 핌펠,J. 핌펠
+18746,M. Kreutzer,Marco Kreutzer,Germany,마르코 크로이처,M. 크로이처
+25739,M. Lustrinelli,Mauro Lustrinelli,Switzerland,마우로 루스트리넬리,M. 루스트리넬리
+28486,M. Eta,Marie-Louise Eta,Germany,마리루이제 에타,M. 에타
+1414,L. Kwasniok,Lukas Kwasniok,Germany,루카스 크바스니오크,L. 크바스니오크
+10634,R. Müller,Ralf Müller,Germany,랄프 뮐러,R. 뮐러
+6413,H. Steffen,Horst Steffen,Germany,호르스트 슈테펜,H. 슈테펜
+1330,C. Fiél,Cristian Ramon Fiél Casanova,Germany,크리스티안 피엘,C. 피엘
+1340,S. Leitl,Stefan Leitl,Germany,슈테판 라이틀,S. 라이틀
+3078,P. Dárdai,Pál Dárdai,Hungary,팔 다르더이,P. 다르더이
+3084,T. Korkut,Tayfun Korkut,Türkiye,타이푼 코르쿠트,T. 코르쿠트
+5472,F. Magath,Felix Magath,Germany,펠릭스 마가트,F. 마가트
+14885,O. Rehhagel,Otto Rehhagel,Germany,오토 레하겔,O. 레하겔
+1329,M. Slomka,Mirko Slomka,Germany,미르코 슬롬카,M. 슬롬카
+3082,A. Breitenreiter,André Breitenreiter,Germany,안드레 브라이텐라이터,A. 브라이텐라이터
+25028,L. Barlemann,Lars Barlemann,Germany,라스 발레만,L. 발레만
+3086,M. Weinzierl,Markus Weinzierl,Germany,마르쿠스 바인치를,M. 바인치를
+12049,M. Wiesinger,Michael Wiesinger,Germany,미하엘 비징거,M. 비징거
+17641,M. Klose,Miroslav Klose,Germany,미로슬라프 클로제,M. 클로제
+1336,D. Hecking,Dieter-Klaus Hecking,Germany,디터 헤킹,D. 헤킹
+10299,H. Butscher,Heiko Butscher,Germany,하이코 부처,H. 부처
+14240,M. Feldhoff,Markus Feldhoff,Germany,마르쿠스 펠트호프,M. 펠트호프
+25643,U. Rösler,Uwe Rösler,Germany,우베 뢰슬러,U. 뢰슬러
+106,J. Siewert,Jan Siewert,Germany,얀 지베르트,J. 지베르트
+1412,H. Vogel,Heiko Vogel,Germany,하이코 포겔,H. 포겔
+8596,L. Haas,Leonhard Haas,Germany,레온하르트 하스,L. 하스
+17726,T. Kleine,Thomas Kleine,Germany,토마스 클라이네,T. 클라이네
+3088,C. Titz,Christian Titz,Germany,크리스티안 티츠,C. 티츠
+8160,T. Hoßmang,Torsten Hoßmang,Germany,토르스텐 호스망,T. 호스망
+10746,P. Sander,Petrik Sander,Germany,페트리크 잔더,P. 잔더
+20364,M. Fiedler,Markus Fiedler,Germany,마르쿠스 피들러,M. 피들러
+1536,F. Kohfeldt,Florian Kohfeldt,Germany,플로리안 코펠트,F. 코펠트
+3098,K. Schmitz,Karl-Heinz Schmitz,Germany,카를하인츠 슈미츠,K. 슈미츠
+3093,M. Walpurgis,Maik Walpurgis,Germany,마이크 발푸르기스,M. 발푸르기스
+8168,T. Stamm,Thomas Stamm,Switzerland,토마스 슈탐,T. 슈탐
+1344,U. Neuhaus,Uwe Neuhaus,Germany,우베 노이하우스,U. 노이하우스
+16736,M. Kniat,Michél Kniat,Germany,미셸 크니아트,M. 크니아트
+17173,M. Kostmann,Marco Kostmann,Germany,마르코 코스트만,M. 코스트만
+28824,O. Kirch,Oliver Kirch,Germany,올리버 키르히,O. 키르히
+5348,M. Rapp,Marcel Rapp,Germany,마르셀 라프,M. 라프
+27755,T. Walter,Tim Walter,Germany,팀 발터,T. 발터
+1398,M. Schiele,Michael Schiele,Germany,미하엘 실레,M. 실레
+1409,C. Flüthmann,Christian Flüthmann,Germany,크리스티안 플뤼트만,C. 플뤼트만
+21293,M. Pfitzner,Marc Pfitzner,Germany,마르크 피츠너,M. 피츠너
+28073,L. Kornetka,Lars Kornetka,Germany,라스 코르네트카,L. 코르네트카
+1337,D. Grammozis,Dimitrios Grammozis,Greece,디미트리오스 그라모지스,D. 그라모지스
+1402,T. Lieberknecht,Torsten Lieberknecht,Germany,토르스텐 리버크네히트,T. 리버크네히트
+2962,M. Frontzeck,Michael Frontzeck,Germany,미하엘 프론체크,M. 프론체크
+3089,M. Anfang,Markus Anfang,Germany,마르쿠스 안팡,M. 안팡
+12663,O. Schäfer,Oliver Schäfer,Germany,올리버 셰퍼,O. 셰퍼
+7673,C. Eichner,Christian Eichner,Germany,크리스티안 아이히너,C. 아이히너
+2961,C. Wollitz,Claus-Dieter Wollitz,Germany,클라우스디터 볼리츠,C. 볼리츠
+7623,S. Abt,Sascha Abt,Germany,자샤 아프트,S. 아프트
+2963,M. Antwerpen,Marco Antwerpen,Germany,마르코 안트베르펜,M. 안트베르펜
+12525,P. Reimers,Pit Reimers,Germany,피트 라이머스,P. 라이머스
+12774,T. Schultz,Timo Schultz,Germany,티모 슐츠,T. 슐츠
+18171,T. Schweinsteiger,Tobias Schweinsteiger,Germany,토비아스 슈바인슈타이거,T. 슈바인슈타이거
+25253,D. Ancelotti,Davide Ancelotti,Italy,다비데 안첼로티,D. 안첼로티
+23648,F. Luís,Filipe Luís Kasmirski,Brazil,필리피 루이스,F. 루이스
+18648,B. Grougi,Bruno Grougi,France,브뤼노 그루지,B. 그루지
+25,D. Guion,David Guion,France,다비드 기옹,D. 기옹
+15042,S. Dumont,Stéphane Dumont,France,스테판 뒤몽,S. 뒤몽
+20751,A. Diarra,Alou Diarra,France,알루 디아라,A. 디아라
+12500,P. Videira,Patrick Videira,France,파트리크 비데이라,P. 비데이라
+19024,Y. Feurppier,Yohann Feurppier,France,요한 푀르피에,Y. 푀르피에
+28683,Choi S.Y.,Choi Sung-yong,South Korea,최성용,최성용
+28682,A. Gaspar,André Luís Alves Santos,Brazil,안드레 가스파르,A. 가스파르
+27940,Park J.S.,Park Jin-sub,South Korea,박진섭,박진섭
+28756,Choi M.S.,Choi Myeong-seong,South Korea,최명성,최명성
