@@ -6,6 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -311,6 +316,48 @@ public class KoResolver {
             longName = firstNonBlank(csvLoader.getPlayerNameLong(playerId), blankToNull(apiName));
         }
         return new ResolvedName(displayName, longName);
+    }
+
+    /**
+     * 경기 하나(양 팀 선발+교체)에 실제로 등장하는 player_id 목록을 받아, 이 경기 안에서는
+     * 동명이인 충돌이 없어서 name_ko_short 이니셜을 1글자로 줄여도 되는 선수의 축약 표시
+     * 이름을 계산한다. 예: CSV엔 "Ju. 벨링엄"(주드)/"Jo. 벨링엄"(조브) 둘 다 등록돼 있어도,
+     * 이번 경기에 주드만 뛰면 "J. 벨링엄"으로 줄여서 반환한다.
+     *
+     * csvLoader.hasKoShortInitialCollision()로 "애초에 동명이인 대비용으로 확장된 이니셜"만
+     * 대상으로 하므로, Kh./Dž./Ng.처럼 음절 특성상 여러 글자를 쓰는 이니셜은 이 경기에 그
+     * 성을 쓰는 선수가 혼자뿐이어도 절대 줄이지 않는다(항상 원본 name_ko_short 유지).
+     *
+     * 반환된 Map에 없는 player_id는 원래 이름(csvLoader.getPlayerNameKo 그대로)을 쓰면 된다.
+     * id=0(라인업 응답에 실제 id가 안 온 선수)은 대상에서 제외 — 별도의 이름 기반 매칭 경로를 탄다.
+     */
+    public Map<Long, String> computeInitialShrinkOverrides(Collection<Long> fixturePlayerIds) {
+        Map<String, List<Long>> groups = new HashMap<>();
+        Map<Long, String[]> parsedByPlayer = new HashMap<>();
+
+        for (Long playerId : fixturePlayerIds) {
+            if (playerId == null || playerId == 0L) continue;
+            String[] parsed = KoreanInitialUtil.splitLeadingInitial(csvLoader.getPlayerNameKo(playerId));
+            if (parsed == null) continue;
+            parsedByPlayer.put(playerId, parsed);
+            String key = KoreanInitialUtil.reducedKey(parsed[0], parsed[1]);
+            groups.computeIfAbsent(key, k -> new ArrayList<>()).add(playerId);
+        }
+
+        Map<Long, String> overrides = new HashMap<>();
+        for (Map.Entry<Long, String[]> entry : parsedByPlayer.entrySet()) {
+            long playerId = entry.getKey();
+            String[] parsed = entry.getValue();
+            if (parsed[0].length() <= 1) continue;                          // 이미 1글자
+            if (!csvLoader.hasKoShortInitialCollision(playerId)) continue;  // 음절 특성상의 표기 — 보존
+
+            String key = KoreanInitialUtil.reducedKey(parsed[0], parsed[1]);
+            List<Long> group = groups.get(key);
+            if (group != null && group.size() > 1) continue; // 이 경기 안에서도 실제 동명이인 충돌 존재 — 유지
+
+            overrides.put(playerId, parsed[0].substring(0, 1) + ". " + parsed[1]);
+        }
+        return overrides;
     }
 
     /**

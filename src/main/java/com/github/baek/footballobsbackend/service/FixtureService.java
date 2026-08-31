@@ -87,14 +87,22 @@ public class FixtureService {
                 .filter(i -> i.getTeamId() != homeTeamId)
                 .toList();
 
+        // 3-1. 양 팀 선발+교체 전체 player_id를 먼저 모아, 이 경기 안에서는 동명이인 충돌이
+        //      없어서 name_ko_short 이니셜을 1글자로 줄여도 되는 선수를 미리 계산해둔다.
+        //      (예: CSV엔 "Ju. 벨링엄"/"Jo. 벨링엄" 둘 다 있어도 이번 경기에 한 명만 뛰면
+        //      "J. 벨링엄"으로 표시) — 라인업/이벤트/개인스탯 어디서 이름을 만들든 이 결과를
+        //      그대로 적용해야 화면 간 표기가 일관된다.
+        Map<Long, String> initialShrinkOverrides =
+                koResolver.computeInitialShrinkOverrides(collectLineupPlayerIds(data.path("lineups")));
+
         // 4. 각 섹션별로 DTO 조립 후 한 번에 반환
         FixtureResponseDto result = FixtureResponseDto.builder()
                 .matchInfo(buildMatchInfo(data, homeTeamId, awayTeamId))        // 경기 기본 정보
-                .events(buildEvents(data.path("events"), homeTeamId))            // 골/카드/교체 이벤트
+                .events(buildEvents(data.path("events"), homeTeamId, initialShrinkOverrides))            // 골/카드/교체 이벤트
                 .teamStats(buildTeamStats(data.path("statistics"), homeTeamId))  // 팀 스탯
-                .homeLineup(buildLineup(data.path("lineups"), homeTeamId))       // 홈 라인업
-                .awayLineup(buildLineup(data.path("lineups"), awayTeamId))       // 원정 라인업
-                .playerStats(buildPlayerStats(data.path("players"), homeTeamId)) // 선수 개인 스탯
+                .homeLineup(buildLineup(data.path("lineups"), homeTeamId, initialShrinkOverrides))       // 홈 라인업
+                .awayLineup(buildLineup(data.path("lineups"), awayTeamId, initialShrinkOverrides))       // 원정 라인업
+                .playerStats(buildPlayerStats(data.path("players"), homeTeamId, initialShrinkOverrides)) // 선수 개인 스탯
                 .homeInjuries(homeInjuries)                                      // 홈팀 부상/결장
                 .awayInjuries(awayInjuries)                                      // 원정팀 부상/결장
                 .build();
@@ -467,7 +475,7 @@ public class FixtureService {
      * - "subst" : player=교체아웃 선수, assist=교체인 선수
      * - "Var"   : VAR 판정 (득점 취소 등)
      */
-    private List<EventDto> buildEvents(JsonNode eventsNode, long homeTeamId) {
+    private List<EventDto> buildEvents(JsonNode eventsNode, long homeTeamId, Map<Long, String> initialShrinkOverrides) {
         List<EventDto> result = new ArrayList<>();
         if (!eventsNode.isArray()) return result;
 
@@ -483,6 +491,8 @@ public class FixtureService {
 
             // 이벤트 영역도 라인업/스탯과 동일한 short fallback 규칙을 쓴다.
             ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiPlayerName);
+            // 이 경기 안에서 동명이인 충돌이 없으면 이니셜을 1글자로 줄인 표시 이름으로 대체.
+            String playerDisplayName = initialShrinkOverrides.getOrDefault(playerId, resolvedPlayerName.displayName());
 
             // 1-1. 한글 이름 누락 로그 (선수 1인당 1회)
             printMissedPlayerLog(loggedPlayerIds, playerId, playerNameKoLong, apiPlayerName, playerNameKo);
@@ -491,6 +501,7 @@ public class FixtureService {
             JsonNode assistNode = e.path("assist");
             Long assistId = assistNode.path("id").isNull() ? null : assistNode.path("id").asLong();
             ResolvedName resolvedAssistName = null;
+            String assistDisplayName = null;
             String assistApiName = null;
             if (assistId != null) {
                 assistApiName = assistNode.path("name").asText(null);
@@ -499,6 +510,7 @@ public class FixtureService {
 
                 // assist도 player와 동일한 표시 이름 규칙을 적용한다.
                 resolvedAssistName = koResolver.resolvePlayerName(assistId, assistApiName);
+                assistDisplayName = initialShrinkOverrides.getOrDefault(assistId, resolvedAssistName.displayName());
 
                 // 2-1. 어시스트 선수 한글 이름 누락 로그 (선수 1인당 1회)
                 printMissedPlayerLog(loggedPlayerIds, assistId, assistNameKoLong, assistApiName, assistNameKo);
@@ -513,11 +525,11 @@ public class FixtureService {
                     .side(e.path("team").path("id").asLong() == homeTeamId ? "home" : "away")
                     .teamId(e.path("team").path("id").asLong())
                     .playerId(playerId)
-                    .playerName(resolvedPlayerName.displayName())
+                    .playerName(playerDisplayName)
                     .playerNameKoLong(resolvedPlayerName.longName())
                     .playerOrigName(apiPlayerName)
                     .assistId(assistId)
-                    .assistName(resolvedAssistName == null ? null : resolvedAssistName.displayName())
+                    .assistName(assistDisplayName)
                     .assistNameKoLong(resolvedAssistName == null ? null : resolvedAssistName.longName())
                     .assistOrigName(assistApiName)
                     .type(e.path("type").asText())
@@ -604,7 +616,7 @@ public class FixtureService {
      *
      * 경기 전(NS) 또는 라인업 미발표 상태이면 lineups 배열이 비어있어 null 반환.
      */
-    private LineupDto buildLineup(JsonNode lineups, long targetTeamId) {
+    private LineupDto buildLineup(JsonNode lineups, long targetTeamId, Map<Long, String> initialShrinkOverrides) {
         if (!lineups.isArray()) return null;
 
         for (JsonNode lu : lineups) {
@@ -632,8 +644,8 @@ public class FixtureService {
             // 3. 선발 + 벤치 선수 리스트 조립 후 DTO 반환
             return LineupDto.builder()
                     .formation(lu.path("formation").asText(null))   // ex. "4-2-3-1"
-                    .startXi(buildPlayerList(lu.path("startXI")))   // API 응답 키는 "startXI" (대문자)
-                    .substitutes(buildSubstitutePlayerList(lu.path("substitutes")))
+                    .startXi(buildPlayerList(lu.path("startXI"), initialShrinkOverrides))   // API 응답 키는 "startXI" (대문자)
+                    .substitutes(buildSubstitutePlayerList(lu.path("substitutes"), initialShrinkOverrides))
                     .coach(CoachDto.builder()
                             .coachId(coachId)
                             .name(resolvedCoachName.displayName())
@@ -649,8 +661,8 @@ public class FixtureService {
      * 각 item은 { player: { id, name, number, pos, grid } } 구조.
      * grid는 선발만 있고 벤치는 null임 (ex. "2:3" = 2행 3열 포지션).
      */
-    private List<PlayerDto> buildSubstitutePlayerList(JsonNode listNode) {
-        List<PlayerDto> result = buildPlayerList(listNode);
+    private List<PlayerDto> buildSubstitutePlayerList(JsonNode listNode, Map<Long, String> initialShrinkOverrides) {
+        List<PlayerDto> result = buildPlayerList(listNode, initialShrinkOverrides);
         result.sort(Comparator
                 .comparingInt((PlayerDto player) -> positionOrder(player.getPos()))
                 .thenComparingInt(PlayerDto::getNumber));
@@ -669,7 +681,26 @@ public class FixtureService {
         };
     }
 
-    private List<PlayerDto> buildPlayerList(JsonNode listNode) {
+    /**
+     * lineups 배열(양 팀 startXI + substitutes)에서 실제로 등장하는 player_id 전체를 모은다.
+     * computeInitialShrinkOverrides에 넘길 "이 경기에 실제로 뛴 선수" 목록 — 이벤트/개인스탯에는
+     * 나오지만 라인업엔 없는 선수는 없으므로 라인업만 훑으면 충분하다. id=0(미제공)은
+     * KoResolver 쪽에서 걸러지므로 여기서는 그대로 모아도 무해하다.
+     */
+    private List<Long> collectLineupPlayerIds(JsonNode lineups) {
+        List<Long> ids = new ArrayList<>();
+        if (!lineups.isArray()) return ids;
+        for (JsonNode lu : lineups) {
+            for (String key : new String[]{"startXI", "substitutes"}) {
+                for (JsonNode item : lu.path(key)) {
+                    ids.add(item.path("player").path("id").asLong());
+                }
+            }
+        }
+        return ids;
+    }
+
+    private List<PlayerDto> buildPlayerList(JsonNode listNode, Map<Long, String> initialShrinkOverrides) {
         List<PlayerDto> result = new ArrayList<>();
         if (!listNode.isArray()) return result;
 
@@ -684,6 +715,8 @@ public class FixtureService {
 
             // 라인업 name 필드도 다른 섹션과 같은 fallback 규칙을 써야 표기가 일관된다.
             ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiName);
+            // 이 경기 안에서 동명이인 충돌이 없으면 이니셜을 1글자로 줄인 표시 이름으로 대체.
+            String displayName = initialShrinkOverrides.getOrDefault(playerId, resolvedPlayerName.displayName());
 
             if (nameKo == null && nameKoLong == null) {
                 log.info("[KO_NAME_NEEDED] id={}, name={}, pos={}", playerId, apiName, p.path("pos").asText());
@@ -700,7 +733,7 @@ public class FixtureService {
             JsonNode gridNode = p.path("grid");
             result.add(PlayerDto.builder()
                     .playerId(playerId)
-                    .name(resolvedPlayerName.displayName())
+                    .name(displayName)
                     .nameKoLong(resolvedPlayerName.longName())
                     .origName(apiName)
                     .photoUrl(photoUrl)
@@ -726,7 +759,7 @@ public class FixtureService {
      * ]
      * 홈팀 entry와 원정팀 entry 두 개가 배열로 오고, 각 팀의 선수 배열이 안에 있음.
      */
-    private List<PlayerStatsDto> buildPlayerStats(JsonNode playersNode, long homeTeamId) {
+    private List<PlayerStatsDto> buildPlayerStats(JsonNode playersNode, long homeTeamId, Map<Long, String> initialShrinkOverrides) {
         List<PlayerStatsDto> result = new ArrayList<>();
         if (!playersNode.isArray()) return result;
 
@@ -743,6 +776,8 @@ public class FixtureService {
 
                 // 개인 스탯 영역도 같은 이름 규칙을 써야 화면 간 표기 차이가 없어진다.
                 ResolvedName resolvedPlayerName = koResolver.resolvePlayerName(playerId, apiName);
+                // 이 경기 안에서 동명이인 충돌이 없으면 이니셜을 1글자로 줄인 표시 이름으로 대체.
+                String playerDisplayName = initialShrinkOverrides.getOrDefault(playerId, resolvedPlayerName.displayName());
 
                 // 3. statistics는 배열이지만 항상 1개만 들어있음 → get(0) 사용
                 JsonNode stats = item.path("statistics").get(0);
@@ -762,7 +797,7 @@ public class FixtureService {
                 // 5. DTO 조립 — 대부분의 스탯은 null 가능이므로 nullableInt() 사용
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
-                        .playerName(resolvedPlayerName.displayName())
+                        .playerName(playerDisplayName)
                         .playerNameKoLong(resolvedPlayerName.longName())
                         .playerPhotoUrl(koResolver.toMediaCdnUrl(p.path("photo").asText()))
                         .side(side)

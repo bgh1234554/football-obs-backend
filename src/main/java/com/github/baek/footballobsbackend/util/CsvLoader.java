@@ -52,6 +52,10 @@ public class CsvLoader {
     private final Map<String, String[]> playersByLongNameCore   = new HashMap<>();
     // 위 코어 키가 둘 이상의 선수에게 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
     private final Set<String> ambiguousLongNameCoreKeys         = new HashSet<>();
+    // name_ko_short 이니셜이 "성+이니셜 첫 글자가 겹치는 다른 선수가 CSV 전체에 있어서"
+    // 2글자 이상으로 확장된 선수 id 집합(computeKoShortInitialCollisions 참고).
+    // Kh./Dž./Ng.처럼 애초에 음절 특성상 여러 글자인 경우는 겹치는 상대가 없어 포함되지 않는다.
+    private final Set<Long> koShortInitialCollisionPlayerIds    = new HashSet<>();
 
     // index: 0=team_id, 1=team_name, 2=ko_name, 3=ko_name_short, 4=primary_color_override, 5=number_color_override
     private final Map<Long, String[]> teams = new HashMap<>();
@@ -151,6 +155,49 @@ public class CsvLoader {
         } catch (IOException e) {
             log.warn("Could not load players.csv: {}", e.getMessage());
         }
+        computeKoShortInitialCollisions();
+    }
+
+    /**
+     * players.csv 전체에서 "성 + 이니셜 첫 글자"가 겹치는 다른 선수가 있어서
+     * name_ko_short 이니셜이 2글자 이상으로 확장된 선수 id를 미리 계산해 캐싱한다.
+     *
+     * 예: 벨링엄 형제(Ju./Jo.)는 둘 다 이 집합에 들어가지만, Kh. 크바라츠헬리아처럼
+     * 겹치는 상대가 CSV 어디에도 없는 경우는 포함되지 않는다 — 그런 이니셜은 애초에
+     * 동명이인 대비용이 아니라 음절 특성상의 표기이므로 KoResolver가 경기별로 줄여도
+     * 되는지 판단할 때 이 집합에 없으면 항상 원본 그대로 유지한다.
+     */
+    private void computeKoShortInitialCollisions() {
+        Map<String, List<Long>> groups = new HashMap<>();
+        Map<Long, String[]> parsedByPlayer = new HashMap<>();
+
+        for (Map.Entry<Long, String[]> entry : players.entrySet()) {
+            String[] row = entry.getValue();
+            if (row.length < 7) continue;
+            String[] parsed = KoreanInitialUtil.splitLeadingInitial(row[6].trim());
+            if (parsed == null) continue;
+            parsedByPlayer.put(entry.getKey(), parsed);
+            String key = KoreanInitialUtil.reducedKey(parsed[0], parsed[1]);
+            groups.computeIfAbsent(key, k -> new ArrayList<>()).add(entry.getKey());
+        }
+
+        for (Map.Entry<Long, String[]> entry : parsedByPlayer.entrySet()) {
+            String[] parsed = entry.getValue();
+            if (parsed[0].length() <= 1) continue; // 이미 1글자 — 줄일 대상 자체가 아님
+            String key = KoreanInitialUtil.reducedKey(parsed[0], parsed[1]);
+            List<Long> group = groups.get(key);
+            if (group != null && group.size() > 1) {
+                koShortInitialCollisionPlayerIds.add(entry.getKey());
+            }
+        }
+    }
+
+    /**
+     * playerId의 name_ko_short 이니셜이 "동명이인 구분용"으로 2글자 이상 확장된 경우인지.
+     * true여야만 KoResolver가 경기별 충돌 여부를 다시 확인해 1글자로 줄이는 걸 고려한다.
+     */
+    public boolean hasKoShortInitialCollision(long playerId) {
+        return koShortInitialCollisionPlayerIds.contains(playerId);
     }
 
     /**
