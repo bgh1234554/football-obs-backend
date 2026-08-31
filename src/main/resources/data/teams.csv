@@ -302,7 +302,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 10139,AD Ceuta,AD 세우타,세우타
 487,Lazio,라치오,라치오
 488,Sassuolo,사수올로,사수올로
-489,AC Milan,AC 밀란,AC밀란
+489,AC Milan,AC 밀란,AC 밀란
 490,Cagliari,칼리아리,칼리아리
 492,Napoli,나폴리,나폴리
 494,Udinese,우디네세,우디네세
@@ -314,7 +314,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 502,Fiorentina,피오렌티나,피오렌티나
 503,Torino,토리노,토리노
 504,Hellas Verona,엘라스 베로나,H. 베로나
-505,Inter,인터 밀란,인테르
+505,Inter,인테르,인테르
 520,Cremonese,크레모네세,크레모네세
 523,Parma,파르마,파르마
 801,Pisa,피사,피사
@@ -1385,3 +1385,6 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 195,Willem II,빌럼 II 틸뷔르흐,빌럼 II
 198,ADO Den Haag,ADO 덴 하흐,덴 하흐
 420,Cambuur,캄뷔르,캄뷔르
+259,Lommel SK,로멀,로멀
+734,Kortrijk,코르트레이크,
+738,SK Beveren,베베런,
