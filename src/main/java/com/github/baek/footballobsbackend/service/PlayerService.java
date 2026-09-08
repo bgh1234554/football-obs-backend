@@ -1,21 +1,40 @@
 package com.github.baek.footballobsbackend.service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.client.ApiFootballClient;
-import com.github.baek.footballobsbackend.dto.stats.PlayerProfileStatResponseDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.PlayerBirthDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatCardsDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatDribblesDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatDuelsDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatFoulsDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatGamesDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatGoalsDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatLeagueDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatPassesDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatPenaltyDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatShotsDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatSubstitutesDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatTacklesDto;
+import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatTeamDto;
 import com.github.baek.footballobsbackend.dto.stats.Layer1.PlayerInfoDto;
 import com.github.baek.footballobsbackend.dto.stats.Layer1.PlayerSeasonStatDto;
-import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.*;
+import com.github.baek.footballobsbackend.dto.stats.PlayerProfileStatResponseDto;
 import com.github.baek.footballobsbackend.error.ApiException;
 import com.github.baek.footballobsbackend.error.ErrorCode;
 import com.github.baek.footballobsbackend.util.CsvLoader;
 import com.github.baek.footballobsbackend.util.KoResolver;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.util.*;
 
 /**
  * 선수 스탯 조회 서비스.
@@ -55,10 +74,10 @@ public class PlayerService {
     public PlayerProfileStatResponseDto getPlayerStats(long playerId) {
         if (playerId == 0) throw new ApiException(ErrorCode.PLAYER_NOT_FOUND);
 
-        // 1. 9월 1일 기준으로 호출할 시즌 결정 (추춘제 시즌 초반에 지난시즌 스탯 제공 도움)
+        // 1. 10월 1일 기준으로 호출할 시즌 결정 (추춘제 시즌 초반에 지난시즌 스탯 제공 도움)
         LocalDate today = LocalDate.now();
         int year = today.getYear();
-        boolean callBoth = today.isBefore(LocalDate.of(year, 9, 1));
+        boolean callBoth = today.isBefore(LocalDate.of(year, 10, 1));
         List<Integer> seasons = callBoth ? List.of(year - 1, year) : List.of(year);
 
         // 2. 시즌별로 API 호출 → DTO 조립
