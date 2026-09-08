@@ -61,7 +61,7 @@ class CsvUpdaterUi {
             new LeagueEntry(1026, "Russian Second League Division A Group Silver", true),
             new LeagueEntry(2,    "UEFA Champions League",                  true),
             new LeagueEntry(3,    "UEFA Europa League",                     true),
-            new LeagueEntry(848,  "UEFA Europa Conference League",          true),
+            new LeagueEntry(848,  "UEFA Conference League",                 true),
             new LeagueEntry(17,  "AFC Champions League Elite",              true),
             new LeagueEntry(18,   "AFC Champions League Two",               true),
             new LeagueEntry(1132, "AFC Challenge League",                   true),

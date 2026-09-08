@@ -1,4 +1,4 @@
-team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_override
+team_id, team_name, ko_name,"""ko_name_short, primary_color_override, number_color_override"""
 621,FC Krasnodar,크라스노다르,
 4,Russia,러시아,
 33,Manchester United,맨체스터 유나이티드, 맨유
@@ -239,14 +239,14 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 9,Spain,스페인,
 10,England,잉글랜드,
 11,Panama,파나마,
-12,Japan,일본,,212b57,ffffff
+12,Japan,일본,""",212b57,ffffff"""
 13,Senegal,세네갈,
 15,Switzerland,스위스,
 16,Mexico,멕시코,
 20,Australia,오스트레일리아,호주
 22,Iran,이란,
 23,Saudi Arabia,사우디아라비아,사우디
-25,Germany,독일,,ffffff,000000
+25,Germany,독일,""",ffffff,000000"""
 26,Argentina,아르헨티나,
 27,Portugal,포르투갈,
 28,Tunisia,튀니지,
@@ -258,7 +258,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 1090,Norway,노르웨이,
 1108,Scotland,스코틀랜드,
 1118,Netherlands,네덜란드,
-1501,Ivory Coast,코트디부아르,,ff8200,ffffff
+1501,Ivory Coast,코트디부아르,""",ff8200,ffffff"""
 1504,Ghana,가나,
 1508,Congo DR,콩고민주공화국,DR 콩고
 1531,South Africa,남아프리카공화국,남아공
@@ -269,12 +269,12 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 1568,Uzbekistan,우즈베키스탄,
 1569,Qatar,카타르,
 2380,Paraguay,파라과이,
-2382,Ecuador,에콰도르,,ffce00,002255
+2382,Ecuador,에콰도르,""",ffce00,002255"""
 2384,USA,미국,
 2386,Haiti,아이티,
 4673,New Zealand,뉴질랜드,
 5529,Canada,캐나다,
-5530,Curaçao,퀴라소,,002b7f,ffffff
+5530,Curaçao,퀴라소,""",002b7f,ffffff"""
 17,South Korea,대한민국,
 ,Korea Republic,대한민국,
 1728,South Korea W,대한민국 (W),
@@ -538,7 +538,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 560,Slavia Praha,슬라비아 프라하,슬라비아 Pr.
 561,HNK Rijeka,HNK 리예카,리예카
 566,Ludogorets,루도고레츠 라즈그라드,루도고레츠
-567,Plzen,빅토리아 플젠,빅토리아 Pl.
+567,Viktoria Plzen,빅토리아 플젠,빅토리아 Pl.
 571,Red Bull Salzburg,레드불 잘츠부르크,잘츠부르크
 572,Dynamo Kyiv,디나모 키이우,디나모 Ky.
 579,Buducnost Podgorica,부두치노스트 포드고리차,부두치노스트
@@ -554,7 +554,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 651,Ferencvarosi TC,페렌츠바로시,페렌츠바로시
 656,Slovan Bratislava,슬로반 브라티슬라바,슬로반 Br.
 664,Kairat Almaty,카이라트 알마티,카이라트
-667,Lincoln Red Imps FC,링컨 레드 임프스,링컨 R. I.
+667,Lincoln Red Imps FC,링컨 레드 임프스,링컨 R.I.
 677,Olimpija Ljubljana,올림피야 류블랴나,올림피야 L.
 684,FC Differdange 03,디페르당주 03,디페르당주
 691,Milsami Orhei,밀사미 오르헤이,밀사미
@@ -564,7 +564,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 3327,Egnatia Rrogozhinë,에그나티아,에그나티아
 3342,Inter Club d'Escaldes,인테르 클루브 데스칼데스,인테르 클루브 D.
 3403,Pafos,파포스,파포스
-3502,Saburtalo,사부르탈로,사부르탈로
+3502,Saburtalo,이베리아 1999,이베리아
 3684,FC Noah,노아,노아
 3854,Shelbourne,셸번,셸번
 4160,Rīgas FS,리가 FS,RFS
@@ -613,7 +613,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 552,Maribor,마리보르,마리보르
 562,FC Astana,아스타나,아스타나
 574,Vardar Skopje,바르다르 스코페,바르다르
-575,AEK Athens FC,AEK 아테네,AEK
+575,AEK Athens FC,AEK 아테네,
 578,F91 Dudelange,F91 뒤들랑주,뒤들랑주
 591,FC Santa Coloma,산타 콜로마,산타 콜로마
 601,Austria Vienna,아우스트리아 빈,A. 빈
@@ -1377,7 +1377,7 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 858,Lokomotiv Plovdiv,로코모티프 플로브디프,로코모티프 Pl.
 859,Botev Vratsa,보테프 브라차,보테프 Vr.
 1416,Lokomotiv Sofia,로코모티프 소피아,로코모티프 Sf.
-1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948 Sf.
+1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948
 4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.
 3733,Zbrojovka Brno,즈브로요프카 브르노,즈브로요프카
 1320,Energie Cottbus,에네르기 코트부스,E. 코트부스
@@ -1391,3 +1391,31 @@ team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_
 1009,Erzurumspor FK,에르주룸스포르,에르주룸스포르
 3579,Amed,아메드,아메드
 6343,Çorum FK,초룸,초룸
+15847,Atert Bissen,아테르트 비센,비센
+670,Derry City,데리 시티,
+4165,Vestri,베스트리,
+4358,Aluminij,알루미니,
+275,Stjarnan,스탸르난,
+356,Caernarfon Town,캐나본 타운,캐나본
+357,GAP Connah S Quay FC,코나스 키 노마즈,코나스 키
+602,Apollon Limassol,아폴론 리마솔,아폴린 Lm.
+659,Valletta FC,발레타,
+661,FK Liepaja,리에파야,
+669,Coleraine FC,콜러레인,
+1164,Inter Turku,인테르 투르쿠,
+2037,US Mondorf-les-bains,몽도르르뱅,
+2257,Dunajska Streda,두나이스카 스트레다,DAC
+2262,Dinamo Tbilisi,디나모 트빌리시,디나모 Tb.
+2270,Neftchi Baku,네프트치 바쿠,네프트치
+3381,Velež,벨레주 모스타르,벨레주 Ms.
+3740,Mornar,모르나르 바르,모르나르
+3741,Petrovac,페트로바츠,
+3840,Bohemians,보헤미안스,
+3874,Panevėžys,파네베지스,
+4359,Bravo,브라보,
+4501,Hapoel Tel Aviv,하포엘 텔아비브,H. 텔아비브
+5352,Glentoran,글렌토런,
+10125,Europa,유로파,
+14393,Dukagjini,두카지니,
+14507,Marsaxlokk,마르사슐로크,
+20406,AF Elbasani,엘바사니,

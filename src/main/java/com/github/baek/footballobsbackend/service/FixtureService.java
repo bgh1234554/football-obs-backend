@@ -380,20 +380,20 @@ public class FixtureService {
     //   missing/null/blank 값을 모두 null로 통일한다.
     //
     // 2단계 — number 후보 선택 (resolveNumberColor)
-    //   number가 있고 primary와 충분히 다르면 number를 쓴다.
-    //   number가 없거나 primary와 너무 비슷하면 border를 다음 후보로 검사한다.
-    //   border도 primary와 충분히 다를 때만 쓴다.
-    //   number/border 둘 다 없거나 primary와 너무 비슷하면 null을 반환한다.
-    //   이 단계에서는 보색을 만들지 않는다.
+    //   number가 있고 primary와 WCAG 명도 대비가 3:1 이상이면 number를 쓴다.
+    //   대비가 부족하면(또는 number가 없으면) border를 다음 후보로 검사 — border도 3:1 이상일 때만 쓴다.
+    //   RGB 유클리드 거리가 아니라 명도 대비를 보는 이유: 색상(hue)이 달라도 둘 다 밝은/어두운 톤이면
+    //   실제로는 잘 안 보이는데 유클리드 거리만으로는 "충분히 다르다"고 오판하는 경우가 있었다
+    //   (예: 옅은 크림색 배경 + 밝은 회색 번호 — hue는 다르지만 명도가 비슷해 가독성이 나쁨).
+    //   number/border 둘 다 없거나 대비 부족이면, 검정/흰색 중 대비가 더 좋은 쪽으로 대체하고,
+    //   그것도 기준 미달이면(중간 톤 회색 primary 등 드문 경우) primary의 보색으로 최종 대체한다.
     //
     // 3단계 — 최종 누락값 보완 (resolveTeamColors)
     //   primary 없음 + number 후보 있음: number를 primary로 올리고 number는 그 보색으로 설정.
-    //   primary 있음 + number 후보 없음: number를 primary의 보색으로 설정.
+    //   primary 있음 + number 후보 없음: 이 경우는 2단계에서 이미 검정/흰색/보색으로 채워지므로
+    //     정상 흐름에서는 발생하지 않지만, primary가 깨진 hex 형식이라 2단계가 null을 반환한
+    //     방어적 케이스에 한해 여기서도 보색으로 보완한다.
     //   둘 다 없음: 둘 다 null 유지.
-    //
-    // 주의:
-    //   보색 생성은 후보 선택이 끝난 뒤 마지막 보완 단계에서만 한다. 그래야 border fallback이
-    //   먼저 적용되고, 그래도 부족한 케이스만 보색으로 채워진다.
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     /**
@@ -423,22 +423,71 @@ public class FixtureService {
         return new TeamColors(primary, number);
     }
 
-    // primary와 number가 너무 비슷하면 border를 검사한다. border도 비슷하면 null을 반환하고 보색 보완은 resolveTeamColors에서 처리한다.
+    // primary와 number의 대비가 부족하면 border를 검사한다. border도 부족하면 검정/흰색 중 대비가
+    // 더 좋은 색을 시도하고, 그마저 기준 미달이면(중간 톤 primary 등) 보색으로 대체한다.
+    // primary가 없으면(대비를 판단할 기준이 없음) 후보를 그대로 다음 단계(resolveTeamColors)로 넘긴다.
     private String resolveNumberColor(String primary, String number, String border) {
-        if (number != null && !colorsTooSimilar(primary, number)) return number;
-        if (border != null && !colorsTooSimilar(primary, border)) return border;
-        return null;
+        if (primary == null) {
+            if (number != null) return number;
+            if (border != null) return border;
+            return null;
+        }
+        if (number != null && hasReadableContrast(primary, number)) return number;
+        if (border != null && hasReadableContrast(primary, border)) return border;
+        return bestReadableTextColor(primary);
     }
 
-    // RGB Euclidean distance < 60 이면 "너무 비슷"으로 판단 (null 포함 시 similar 아님으로 처리)
-    private static final int EUCLIDEAN_DISTANCE = 60;
-    private boolean colorsTooSimilar(String hex1, String hex2) {
+    // WCAG 큰 텍스트 기준(3:1). 프런트 js/core/utils.js의 TEAM_COLOR_MIN_TEXT_CONTRAST와 동일하게 맞춤 —
+    // 등번호처럼 굵고 큰 글자는 일반 텍스트 기준(4.5:1)보다 완화된 3:1이면 충분히 읽힌다.
+    private static final double MIN_TEXT_CONTRAST_RATIO = 3.0;
+
+    /**
+     * 두 색의 WCAG 명도 대비가 최소 기준(3:1) 이상인지. RGB 유클리드 거리와 달리, 색상(hue)이
+     * 다르더라도 둘 다 밝은(또는 둘 다 어두운) 톤이면 낮은 값이 나와 "대비 부족"으로 정확히 잡아낸다
+     * — 예: primary #faefc7(옅은 크림색) vs number #c3c4c2(밝은 회색)는 RGB 거리로는 60을 넘지만
+     * 실제로는 둘 다 밝은 톤이라 등번호가 잘 안 보이는 케이스.
+     */
+    private boolean hasReadableContrast(String hex1, String hex2) {
         if (hex1 == null || hex2 == null) return false;
-        int[] c1 = parseHex(hex1);
-        int[] c2 = parseHex(hex2);
-        if (c1 == null || c2 == null) return false;
-        int dr = c1[0] - c2[0], dg = c1[1] - c2[1], db = c1[2] - c2[2];
-        return Math.sqrt(dr * dr + dg * dg + db * db) < EUCLIDEAN_DISTANCE;
+        return contrastRatio(hex1, hex2) >= MIN_TEXT_CONTRAST_RATIO;
+    }
+
+    /**
+     * 배경색(primary) 대비 가장 읽기 좋은 글자색을 반환.
+     * 1) 검정/흰색 중 대비가 더 높은 쪽을 우선 시도 — 기준(3:1) 이상이면 그대로 채택.
+     * 2) 검정/흰색 둘 다 기준 미달이면(중간 톤 회색 등 드문 경우) primary의 보색으로 대체.
+     * primary가 잘못된 hex 형식이면 판단 불가 — null 반환(호출부의 기존 fallback에 위임).
+     */
+    private String bestReadableTextColor(String primaryHex) {
+        if (parseHex(primaryHex) == null) return null;
+        double blackContrast = contrastRatio(primaryHex, "000000");
+        double whiteContrast = contrastRatio(primaryHex, "ffffff");
+        String best = blackContrast >= whiteContrast ? "000000" : "ffffff";
+        if (Math.max(blackContrast, whiteContrast) >= MIN_TEXT_CONTRAST_RATIO) return best;
+        return complementColor(primaryHex);
+    }
+
+    /** WCAG 상대 휘도 (sRGB 감마 보정 포함). 파싱 실패 시 0(가장 어두운 값)으로 처리. */
+    private double relativeLuminance(String hex) {
+        int[] c = parseHex(hex);
+        if (c == null) return 0;
+        return 0.2126 * linearizeSrgbChannel(c[0])
+             + 0.7152 * linearizeSrgbChannel(c[1])
+             + 0.0722 * linearizeSrgbChannel(c[2]);
+    }
+
+    private double linearizeSrgbChannel(int channel8bit) {
+        double v = channel8bit / 255.0;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    }
+
+    /** WCAG 명도 대비 = (밝은 휘도 + 0.05) / (어두운 휘도 + 0.05). 값이 클수록 대비가 좋음(최대 21). */
+    private double contrastRatio(String hex1, String hex2) {
+        double l1 = relativeLuminance(hex1);
+        double l2 = relativeLuminance(hex2);
+        double lighter = Math.max(l1, l2);
+        double darker = Math.min(l1, l2);
+        return (lighter + 0.05) / (darker + 0.05);
     }
 
     private String complementColor(String hex) {

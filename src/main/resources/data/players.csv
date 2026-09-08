@@ -395,7 +395,7 @@
 64167,G. Słonina,Gabriel Paweł Słonina,Goalkeeper,USA,가브리엘 슬로니나,G. 슬로니나
 366735,J. Acheampong,Joshua Kofi Acheampong,Defender,England,조시 아쳄퐁,J. 아쳄퐁
 19145,T. Adarabioyo,Abdul-Nasir Oluwatosin Oluwadoyinsolami Adarabioyo,Defender,England,토신 아다라비오요,T. 아다라비오요
-95,B. Badiashile,Benoît Ntambue Badiashile Mukinayi Baya,Defender,France,베노아 바디아실,B. 바디아실
+95,B. Badiashile,Benoît Ntambue Badiashile Mukinayi Baya,Defender,France,브누아 바디아실,B. 바디아실
 19720,T. Chalobah,Trevoh Thomas Chalobah,Defender,England,트레보 찰로바,T. 찰로바
 47380,M. Cucurella,Marc Cucurella Saseta,Defender,Spain,마르크 쿠쿠레야,M. 쿠쿠레야
 22094,W. Fofana,Wesley Tidjan Fofana,Defender,France,웨슬리 포파나,W. 포파나
@@ -3893,10 +3893,12 @@
 342208,D. Kozlov,Danila Kozlov,Midfielder,Russia,다닐라 코즐로프,D. 코즐로프
 465200,M. Alves,Matheus Alves Nascimento,Midfielder,Brazil,마테우스 아우베스,Ma. 아우베스
 543554,M. Popovic,Matija Popovic,Midfielder,Serbia,마티야 포포비치,M. 포포비치
+456928,M. Popovic,Matija Popovic,Midfielder,Serbia,마티야 포포비치,M. 포포비치
 59635,D. Rivera,Daniel Felipe Ruiz Rivera,Attacker,Colombia,다니엘 루이스,Da. 루이스
 531831,I. Firov,Imran Firov,Midfielder,Russia,임란 피로프,I. 피로프
 265909,L. Zanelli,Luciano Emilio Gondou Zanelli,Attacker,Argentina,루시아노 곤도우,L. 곤도우
 543555,H. Carmo,Henrique Fabiano do Carmo,Midfielder,Brazil,엔히키 카르무,H. 카르무
+460230,H. Carmo,Henrique Fabiano do Carmo,Midfielder,Brazil,엔히키 카르무,H. 카르무
 474887,M. Voronov,Maksim Voronov,Attacker,Russia,막심 보로노프,M. 보로노프
 53559,A. Dovbnya,Aleksandr Dovbnya,Goalkeeper,Russia,알렉산드르 도브브냐,A. 도브브냐
 520453,R. Pichienko,Ruslan Pichienko,Goalkeeper,Russia,루슬란 피치옌코,R. 피치옌코
@@ -4773,6 +4775,7 @@
 569259,D. Terekhov,Denis Terekhov,Goalkeeper,Russia,데니스 테레호프,D. 테레호프
 43839,S. Bugriyev,Sergey Bugriyev,Defender,Russia,세르게이 부그리예프,S. 부그리예프
 543805,M. Ignatyev,Maksim Ignatyev,Defender,Russia,막심 이그나티예프,M. 이그나티예프
+324433,M. Ignatyev,Maksim Ignatyev,Defender,Russia,막심 이그나티예프,M. 이그나티예프
 7921,V. Lyakh,Vladislav Lyakh,Defender,Belarus,블라디슬라프 랴흐,V. 랴흐
 524894,Y. Makarenko,Yaroslav Makarenko,Defender,Russia,야로슬라프 마카렌코,Y. 마카렌코
 543650,D. Sadov,Dmitriy Sadov,Midfielder,Russia,드미트리 사도프,D. 사도프
@@ -6631,10 +6634,10 @@
 406923,A. Dobbels,Arnaud Dobbels,Goalkeeper,Belgium,아르노 도벨스,A. 도벨스
 61,B. Gabriël,Brent Georges Gabriël,Goalkeeper,Belgium,브렌트 가브리엘,B. 가브리엘
 447097,Y. Cappelle,Yannick Cappelle,Defender,Belgium,야니크 카펠,Y. 카펠
-585178,B. De Jaegere,Benoît De Jaegere,Defender,Belgium,베노아 더 야헤러,B. 야헤러
+585178,B. De Jaegere,Benoît De Jaegere,Defender,Belgium,브누아 더 야헤러,B. 야헤러
 118343,J. Kiilerich,Jakob Kiilerich Rask,Defender,Denmark,야콥 킬러리흐,J. 킬러리흐
 8929,L. Lemoine,Laurent Lemoine,Defender,Belgium,로랑 르무안,L. 르무안
-157231,B. Nyssen,Benoît Vivian Nyssen,Midfielder,Belgium,베노아 뉘센,B. 뉘센
+157231,B. Nyssen,Benoît Vivian Nyssen,Midfielder,Belgium,브누아 뉘센,B. 뉘센
 275367,W. Paugain,Wilguens Paugain,Defender,France,윌갱 포갱,W. 포갱
 325553,K. Seven,Kadir Seven,Defender,Türkiye,카디르 세웬,K. 세웬
 343211,E. Soglo,Emran Soglo,Midfielder,England,엠란 솔로,E. 솔로
@@ -13114,7 +13117,7 @@
 5981,C. Pavón,Cristian David Pavón,Defender,Argentina,크리스티안 파본,C. 파본
 576652,Roger,Roger,Midfielder,Brazil,호제르,호제르
 691,Tetê,Mateus Cardoso Lemos Martins,Attacker,Brazil,테테,테테
-2294,Willian,Willian Borges da Silva,Midfielder,Brazil,윌리안,윌리안
+2294,Willian,Willian Borges da Silva,Midfielder,Brazil,윌리앙,윌리앙
 415084,F. Longo Fernandes da Silva,Felipe Longo Fernandes da Silva,Goalkeeper,Brazil,펠리피 롱고,F. 롱고
 415083,K. de Souza Camargo,Kauê Vinicius de Souza Camargo,Goalkeeper,Brazil,카우에 카마르구,K. 카마르구
 1085,A. Ramalho Silva,André Ramalho Silva,Defender,Brazil,안드레 시우바,A. 시우바
@@ -13197,7 +13200,7 @@
 54102,A. Cordeiro Pessôa Neto,Altemir Cordeiro Pessôa Neto,Attacker,Brazil,네투 페소아,A. 페소아
 51589,K. Ramírez,Kevin Federik Ramírez Dutra,Attacker,Uruguay,케빈 라미레스,K. 라미레스
 310781,F. Rossi,Franco Andrés Rossi Donazar,Attacker,Uruguay,프랑코 로시,F. 로시
-403060,Túlio,Túlio Eduardo Silva de Oliveira,Attacker,Brazil,툴리우 에두아르두,툴리우 에두아르두
+403060,Túlio,Túlio Eduardo Silva de Oliveira,Attacker,Brazil,툴리우 에두아르두,툴리우
 763,D. Cerantola Fuzato,Daniel Cerantola Fuzato,Goalkeeper,Brazil,다니에우 푸자투,D. 푸자투
 41169,L. Jardim,Leonardo César Jardim,Goalkeeper,Brazil,레우 자르징,L. 자르징
 454136,Pablo,Pablo de Paula Cardoso,Goalkeeper,Brazil,파블루,파블루
@@ -13493,3 +13496,1362 @@
 77680,Fernandinho,Fernando José Marques Maciel,Attacker,Brazil,페르난지뉴,페르난지뉴
 9620,G. Henric da Silva,Gustavo Henric da Silva,Midfielder,Brazil,구스타부 시우바,G. 시우바
 153458,Negueba,Luiz Henrique Soares Firmino,Midfielder,Brazil,네게바,네게바
+431177,N. Domchak,Nazar Domchak,Goalkeeper,Ukraine,나자르 돔차크,N. 돔차크
+1227,O. Kolář,Ondřej Kolář,Goalkeeper,Czechia,온드르제이 콜라르시,O. 콜라르시
+128768,J. Markovič,Jakub Markovič,Goalkeeper,Czechia,야쿠프 마르코비치,J. 마르코비치
+544046,A. Rezek,Adam Rezek,Goalkeeper,Czechia,아담 레제크,A. 레제크
+512859,S. Isife,Samuel Kelechi Isife,Midfielder,Nigeria,사무엘 이시페,S. 이시페
+462213,J. Kolísek,Jakub Kolísek,Defender,Czechia,야쿠프 콜리세크,J. 콜리세크
+543962,M. Konečný,Mikuláš Konečný,Defender,Czechia,미쿨라시 코네치니,M. 코네치니
+524412,O. Kubiak,Oskar Kubiak,Midfielder,Poland,오스카르 쿠비아크,O. 쿠비아크
+276551,A. N'Guessan,Caumenan Ange Emmanu N'Guessan,Defender,France,안주 은게상,A. 은게상
+1174,I. Ogbu,Igoh Ogbu,Defender,Nigeria,이고 오그부,I. 오그부
+388772,E. Piták,Eliáš Piták,Defender,Czechia,엘리아시 피타크,E. 피타크
+1236,T. Vlček,Tomáš Vlček,Defender,Czechia,토마시 블체크,T. 블체크
+365840,E. Ayaosi,Emmanuel Dennis Ayaosi,Midfielder,Nigeria,에마누엘 아야오시,E. 아야오시
+512806,T. Diakité,Toumani Diakité,Midfielder,Côte d'Ivoire,투마니 디아키테,T. 디아키테
+555416,H. Kante,Hamidou Kante,Defender,Senegal,하미두 칸테,H. 칸테
+400679,Da. Moses,David Moses,Midfielder,Nigeria,데이비드 모지스,Da. 모지스
+368737,W. Nowak,Wiktor Nowak,Midfielder,Poland,빅토르 노바크,W. 노바크
+497651,A. Rajnoha,Adam Rajnoha,Midfielder,Slovakia,아담 라이노하,A. 라이노하
+551776,M. Suleiman,Mubarak Suleiman,Midfielder,Nigeria,무바라크 술레이만,M. 술레이만
+450921,P. Kačor,Pavel Kačor,Midfielder,Czechia,파벨 카초르,P. 카초르
+522293,D. Kohout,Dan Kohout,Attacker,Czechia,단 코호우트,D. 코호우트
+561874,A. Ouanda,Adonija Ouanda,Attacker,Canada,아도니자 완다,A. 완다
+491797,Y. Sanyang,Youssoupha Sanyang,Midfielder,Gambia,유수파 사냥,Y. 사냥
+135273,D. Šturm,Danijel Šturm,Midfielder,Slovenia,다니옐 슈투름,D. 슈투름
+441295,R. Bahlai,Rostyslav Bahlai,Goalkeeper,Ukraine,로스티슬라우 바흘라이,R. 바흘라이
+670716,V. Chympoiesh,Vladyslav Chympoiesh,Goalkeeper,Ukraine,블라디슬라우 침포예시,V. 침포예시
+158447,K. Fesyun,Kyrylo Fesyun,Goalkeeper,Ukraine,키릴 페슌,K. 페슌
+544640,D. Tvardovskyi,Denys Tvardovskyi,Defender,Ukraine,데니스 트바르도우스키,D. 트바르도우스키
+425848,D. Arroyo,Diego Arroyo,Defender,Bolivia,디에고 아로요,D. 아로요
+24597,I. Azarovi,Irakli Azarovi,Defender,Georgia,이라클리 아자로비,I. 아자로비
+49439,A. Ghram,Alaa Ghram,Defender,Tunisia,알라 그람,A. 그람
+30529,Marlon,Marlon Santos da Silva Barbosa,Defender,Brazil,마를롱,마를롱
+299925,P. Henrique,Pedro Henrique Azevedo Pereira,Defender,Brazil,페드루 엔히키,P. 엔히키
+279792,V. Tobias,Vinícius Augusto Tobias da Silva,Defender,Brazil,비니시우스 토비아스,V. 토비아스
+570392,Bruninho,Bruno Braga Ramos,Midfielder,Brazil,브루니뉴,브루니뉴
+415049,Ga. Carvalho,Gabriel Carvalho Teixeira,Attacker,Brazil,가브리에우 카르발류,Ga. 카르발류
+463988,Isaque,Isaque Severino Silva,Midfielder,Brazil,이자키,이자키
+55877,O. Karavayev,Oleksandr Karavaev,Defender,Ukraine,올렉산드르 카라바예우,O. 카라바예우
+162050,D. Kryskiv,Dmytro Kryskiv,Midfielder,Ukraine,드미트로 크리스키우,D. 크리스키우
+465199,L. Ferreira,Lucas dos Santos Ferreira,Midfielder,Brazil,루카스 페헤이라,L. 페헤이라
+374356,Ma. Gomes,Marlon Gomes Claudino,Midfielder,Brazil,마를롱 고메스,Ma. 고메스
+8458,Y. Nazaryna,Ehor Nazaryna,Midfielder,Ukraine,예호르 나자리나,Y. 나자리나
+428137,P. Obah,Prosper Soporuchi Obah,Attacker,Nigeria,프로스퍼 오바,P. 오바
+545356,D. Smetana,Denys Smetana,Midfielder,Ukraine,데니스 스메타나,D. 스메타나
+386300,V. Tsukanov,Viktor Tsukanov,Midfielder,Ukraine,빅토르 추카노우,V. 추카노우
+415116,Alisson,Alisson Santana Lopes da Fonseca,Midfielder,Brazil,알리송,알리송
+374094,Eguinaldo,Eguinaldo de Sousa Lemos,Attacker,Brazil,이기나우두,이기나우두
+414358,K. Elias,Kauã Elias Nogueira,Attacker,Brazil,카우앙 일리아스,K. 일리아스
+500094,L. Meirelles,Luca Oliveira Meirelles,Attacker,Brazil,루카 메이렐리스,L. 메이렐리스
+406224,G. Mendoza,Gleiker Teodoro Mendoza Barrios,Midfielder,Venezuela,글레이케르 멘도사,G. 멘도사
+415151,Newertton,Newertton Martins da Silva,Midfielder,Brazil,네웨르통,네웨르통
+10244,Pedrinho,Pedro Victor Delmino da Silva,Midfielder,Brazil,페드리뉴,페드리뉴
+570400,R. Roberto,Ryan Roberto,Midfielder,Brazil,히앙 호베르투,R. 호베르투
+63557,M. Shved,Marian Shved,Midfielder,Ukraine,마르얀 시베드,M. 시베드
+555,L. Traoré,Lassina Chamste Soudine Franck Traoré,Attacker,Burkina Faso,라시나 트라오레,L. 트라오레
+592903,M. Balamotis,Marios Balamotis,Goalkeeper,Greece,마리오스 발라모티스,M. 발라모티스
+31538,A. Brignoli,Alberto Brignoli,Goalkeeper,Italy,알베르토 브리뇰리,A. 브리뇰리
+669218,S. Christakopoulos,Spyros Christakopoulos,Defender,Greece,스피로스 흐리스타코풀로스,S. 흐리스타코풀로스
+426673,M. Georgiev,Martin Georgiev Todorski,Defender,Bulgaria,마르틴 게오르기에프,M. 게오르기에프
+20689,H. Moukoudi,Harold-Desty Moukoudi,Defender,Cameroon,아롤드 무쿠디,H. 무쿠디
+141841,F. Relvas,Filipe do Bem Relvas Vitó Oliveira,Defender,Portugal,필리프 헬바스,F. 헬바스
+61257,L. Rota,Lazaros Rota,Defender,Greece,라자로스 로타,L. 로타
+1986,D. Vida,Domagoj Vida,Defender,Croatia,도마고이 비다,D. 비다
+1818,M. Gaćinović,Mijat Gaćinović,Midfielder,Serbia,미야트 가치노비치,M. 가치노비치
+55404,K. Kairinen,Kasper Kaan Özden Kairinen,Midfielder,Finland,칸 카이리넨,K. 카이리넨
+561151,D. Kaloskamis,Dimitrios Kaloskamis,Midfielder,Greece,디미트리오스 칼로스카미스,D. 칼로스카미스
+606,P. Mantalos,Petros Mantalos,Midfielder,Greece,페트로스 만탈로스,P. 만탈로스
+351886,H. Sahabo,Hakim Sahabo,Midfielder,Rwanda,하킴 사하보,H. 사하보
+28041,M. Vitális,Vitális Milán,Midfielder,Hungary,비탈리스 밀란,M. 비탈리스
+1828,L. Jović,Luka Jović,Attacker,Serbia,루카 요비치,L. 요비치
+8543,A. Koita,Aboubakary Yeli Koita,Attacker,Mauritania,아부바카리 코이타,A. 코이타
+48488,D. Kutesa,Dereck Germano Kutesa,Midfielder,Switzerland,데레크 쿠테사,D. 쿠테사
+7398,B. Varga,Varga Barnabás,Attacker,Hungary,버르거 버르너바스,B. 버르거
+237121,Zini,Ambrosini António Cabaça Salvador,Attacker,Angola,지니,지니
+263057,L. Jungwirth,Lukas Jungwirth,Goalkeeper,Austria,루카스 융비르트,L. 융비르트
+472147,F. Schillinger,Fabian Schillinger,Goalkeeper,Austria,파비안 실링거,F. 실링거
+7573,T. Schützenauer,Tobias Schützenauer,Goalkeeper,Austria,토비아스 쉬체나우어,T. 쉬체나우어
+50873,G. Bello,George Oluwaseun Bello,Defender,USA,조지 벨로,G. 벨로
+558335,C. Kébé,Cheikne Kébé,Defender,Mali,셰크네 케베,C. 케베
+303684,Y. Dibango,Junior Yvan Nyabeye Dibango,Midfielder,Cameroon,이반 디방고,Y. 디방고
+400054,M. Freckleton,Miguel Freckleton,Defender,England,미겔 프레클턴,M. 프레클턴
+644875,A. Ibrahim,Amin Ibrahim,Defender,USA,아민 이브라힘,A. 이브라힘
+38781,X. Mbuyamba,Xavier Mbuyamba,Defender,Netherlands,사비에르 음부얌바,X. 음부얌바
+15876,K. Jørgensen,Kasper Poul Mølgaard Jørgensen,Midfielder,Denmark,카스퍼 예르겐센,K. 예르겐센
+363691,J. Tornich,João Victor Tornich,Defender,Brazil,주앙 토르니시,J. 토르니시
+551281,M. Verhaeghe,Manoël Verhaeghe,Defender,Congo DR,마노엘 페르하거,M. 페르하거
+181786,K. Daněk,Kryštof Daněk,Attacker,Czechia,크리스토프 다네크,K. 다네크
+7756,F. Flecker,Florian Flecker,Attacker,Austria,플로리안 플레커,F. 플레커
+7738,S. Horvath,Sascha Horvath,Midfielder,Austria,사샤 호바르트,S. 호바르트
+271327,C. Lang,Christoph Lang,Attacker,Austria,크리스토프 랑,C. 랑
+7627,R. Ljubičić,Robert Ljubičić,Midfielder,Croatia,로베르트 류비치치,R. 류비치치
+348168,A. Smakaj,Art Smakaj,Midfielder,Kosovo,아르트 스마카이,A. 스마카이
+107151,S. Adeniran,Samuel Oluwabukunmi Adeniran,Attacker,USA,사무엘 아데니란,S. 아데니란
+329612,R. Harakaté,Ramiz Harakaté,Attacker,France,라미즈 하라카테,R. 하라카테
+511959,N. Kane,Naël Mamadou Lamine Kane,Midfielder,Canada,나엘 칸,N. 칸
+367672,M. Usor,Moses Usor,Attacker,Nigeria,모지스 우소르,M. 우소르
+204996,Ľ. Belko,Ľubomír Belko,Goalkeeper,Slovakia,류보미르 벨코,Ľ. 벨코
+576939,A. Escobar,Arn-Sebastian Wiik Escobar,Goalkeeper,Norway,아른세바스티안 에스코바르,A. 에스코바르
+676708,E. Jacobsen,Erlend Jacobsen,Goalkeeper,Norway,엘렌 야콥센,E. 야콥센
+1170,A. Østbø,Arild Østbø,Goalkeeper,Norway,아릴 외스트뵈,A. 외스트뵈
+531303,V. Auklend,Vetle Auklend,Defender,Norway,베틀레 에우클렌,V. 에우클렌
+15712,A. Bærtelsen,Anders Bloch Bærtelsen,Defender,Denmark,안데르스 베르텔센,A. 베르텔센
+39130,S. Bjørshol,Sondre Flem Bjørshol,Defender,Norway,손드레 비외르숄,S. 비외르숄
+57242,J. Daland,Jesper Normann Daland,Defender,Norway,예스페르 달란,J. 달란
+639368,J. Debes,Jonathan Debes,Midfielder,Norway,요나탄 데베스,J. 데베스
+191732,H. Haugen,Herman Johan Haugen,Defender,Norway,헤르만 헤우겐,H. 헤우겐
+264710,H. Heggheim,Henrik Heggheim,Defender,Norway,헨리크 헤그헤임,H. 헤그헤임
+6937,G. Stensness,Gianni Ryan Stensness,Defender,Australia,자니 스텐스네스,G. 스텐스네스
+39132,V. Vevatne,Viljar Helland Vevatne,Defender,Norway,빌리아르 베바트네,V. 베바트네
+269347,R. Alte,Ruben Kristensen Alte,Midfielder,Norway,루벤 알테,R. 알테
+39285,K. Askildsen,Kristoffer Askildsen,Midfielder,Norway,크리스토페르 아스킬센,K. 아스킬센
+457199,J. Hansen,Jakob Segadal Hansen,Midfielder,Norway,야코브 세가달 한센,J. 한센
+39040,K. Haugen,Kristoffer Haugen,Defender,Norway,크리스토페르 헤우겐,K. 헤우겐
+637832,J. Middelthon,Jacob Nordbø Middelthon,Midfielder,Norway,야코브 노르뵈 미델톤,J. 미델톤
+464563,T. Moi,Tobias Saliou Séne Moi,Midfielder,Norway,토비아스 모이,T. 모이
+464564,O. Visted,Ola Visted,Midfielder,Norway,올라 비스테,O. 비스테
+368793,E. Austbø,Edvin Austbø,Attacker,Norway,에드빈 에우스트뵈,E. 에우스트뵈
+39220,Ve. Berisha,Veton Berisha,Attacker,Norway,베톤 베리샤,Ve. 베리샤
+15622,P. Christiansen,Peter Buch Christiansen,Attacker,Denmark,페테르 크리스티안센,P. 크리스티안센
+539326,A. Cosic,Amin Cosic,Midfielder,Iceland,아민 소시치,A. 소시치
+637833,K. Frimpong,Kelvin Frimpong,Attacker,Ghana,켈빈 프림퐁,K. 프림퐁
+465702,N. Fuglestad,Niklas Kemp Fuglestad,Attacker,Norway,니클라스 푸글레스타,N. 푸글레스타
+318591,S. Kvia-Egeskog,Simen Kvia-Egeskog,Midfielder,Norway,시멘 크비아에게스코그,S. 크비아에게스코그
+135882,R. Postema,Romano Ceciel Postema,Attacker,Netherlands,로마노 포스테마,R. 포스테마
+39145,Z. Tripić,Zlatko Tripić,Midfielder,Norway,즐라트코 트리피치,Z. 트리피치
+471143,D. Balog,Dávid Balog,Goalkeeper,Slovakia,다비트 발로크,D. 발로크
+61190,M. Macík,Matúš Macík,Goalkeeper,Slovakia,마투시 마치크,M. 마치크
+45822,A. Popović,Aleksandar Popović,Goalkeeper,Serbia,알렉산다르 포포비치,A. 포포비치
+61149,K. Bajrić,Kenan Bajrić,Defender,Slovenia,케난 바이리치,K. 바이리치
+41574,S. Cruz,Sandro Plínio Rosa da Cruz,Defender,Angola,산드루 크루스,S. 크루스
+98863,S. Kozlovský,Samuel Kozlovský,Defender,Slovakia,사무엘 코즐로우스키,S. 코즐로우스키
+45824,S. Marković,Svetozar Marković,Defender,Serbia,스베토자르 마르코비치,S. 마르코비치
+61146,J. Medveděv,Jurij Medveděv,Defender,Czechia,유리 메드베데프,J. 메드베데프
+485607,R. Tománek,Róbert Tománek,Defender,Slovakia,로베르트 토마네크,R. 토마네크
+550364,M. Tomáško,Matúš Tomáško,Attacker,Slovakia,마투시 토마슈코,M. 토마슈코
+25374,K. Wimmer,Kevin Wimmer,Defender,Austria,케빈 비머,K. 비머
+56132,T. Barseghyan,Tigran Barseghyan,Midfielder,Armenia,티그란 바르세갼,T. 바르세갼
+289661,A. Gajdoš,Artur Gajdoš,Midfielder,Slovakia,아르투르 가이도시,A. 가이도시
+600916,L. Hofstädter,Leo Hofstädter,Midfielder,Slovakia,레오 호프슈테터,L. 호프슈테터
+309011,R. Ibrahim,Rash Rahim Ibrahim,Midfielder,Ghana,라힘 이브라힘,R. 이브라힘
+105321,D. Ignatenko,Danylo Ignatenko,Midfielder,Ukraine,다닐로 이그나텐코,D. 이그나텐코
+33402,D. Matsuoka,Matsuoka Daiki,Midfielder,Japan,마츠오카 다이키,D. 마츠오카
+76975,A. Mustafić,Alen Mustafić,Midfielder,Bosnia and Herzegovina,알렌 무스타피치,A. 무스타피치
+127843,K. Ofori,Kelvin Ofori,Midfielder,Ghana,켈빈 오포리,K. 오포리
+7326,P. Pokorný,Peter Pokorný,Midfielder,Slovakia,페테르 포코르니,P. 포코르니
+286075,S. Camara,Suleiman Camara Sanneh,Midfielder,Gambia,술레이만 카마라,S. 카마라
+161630,R. Čerepkai,Roman Čerepkai,Attacker,Slovakia,로만 체렙카이,R. 체렙카이
+269240,A. Griger,Adam Griger,Attacker,Slovakia,아담 그리게르,A. 그리게르
+649099,M. Kianga,Manasse Kianga,Attacker,England,마나세 키앙가,M. 키앙가
+208398,M. Kukharevych,Mykola Kukharevych,Attacker,Ukraine,미콜라 쿠하레비치,M. 쿠하레비치
+383041,N. Marcelli,Nino Marcelli,Midfielder,Slovakia,니노 마르첼리,N. 마르첼리
+409546,A. Maroš,Alexej Maroš,Midfielder,Slovakia,알렉세이 마로시,A. 마로시
+56026,A. Šporar,Andraž Šporar,Attacker,Slovenia,안드라시 슈포라르,A. 슈포라르
+457339,A. Yirajang,Alasana Yirajang,Midfielder,Gambia,알라사나 이라장,A. 이라장
+500030,R. Əyyubov,Rauf Əyyubov,Goalkeeper,Azerbaijan,라우프 애유보프,R. 애유보프
+449613,R. Mirzəmmədov,Rəvan Mirzəmmədov,Goalkeeper,Azerbaijan,래반 미르재매도프,R. 미르재매도프
+56074,S. Pokatilov,Stas Pokatilov,Goalkeeper,Kazakhstan,스타스 포카틸로프,S. 포카틸로프
+334257,A. Ramazanov,Amin Ramazanov,Goalkeeper,Azerbaijan,아민 라마자노프,A. 라마자노프
+557435,G. Boakye,Godfred Boakye,Defender,Belgium,고드프레드 보아체,G. 보아체
+610845,J. Bulus,Japhet Bulus,Defender,Nigeria,자펫 불루스,J. 불루스
+123366,R. Daşdəmirov,Rəhman Daşdəmirov,Defender,Azerbaijan,래흐만 다쉬대미로프,R. 다쉬대미로프
+266387,Jú. Almeida,Erivaldo Almeida Santos Júnior,Defender,Brazil,주니오르 아우메이다,Jú. 아우메이다
+349345,Ad. McCarthy,Aden McCarthy,Defender,South Africa,에이든 맥카시,Ad. 맥카시
+544624,T. Mütəllimov,Tellur Mütəllimov,Defender,Azerbaijan,텔루르 뮈탤리모프,T. 뮈탤리모프
+40984,T. Puchacz,Tymoteusz Puchacz,Defender,Poland,티모테우시 푸하치,T. 푸하치
+174827,S. Solvet,Steve Loic Solvet,Defender,Guadeloupe,스테브 솔베,S. 솔베
+21233,A. Zedadka,Akim Zedadka,Defender,Algeria,아킴 제다드카,A. 제다드카
+158107,Ro. Fernandes,Rodrigo Francisco Pinto Vieira Fernandes,Midfielder,Portugal,호드리구 페르난드스,Ro. 페르난드스
+55960,A. İsayev,Aleksey İsayev,Midfielder,Azerbaijan,알렉세이 이사예프,A. 이사예프
+271724,A. Xaybulayev,Abdulla Xaybulayev,Midfielder,Azerbaijan,압둘라흐 하이불라예프,A. 하이불라예프
+14285,I. Lepinjica,Ivan Lepinjica,Midfielder,Croatia,이반 레피니차,I. 레피니차
+587825,C. Muxtarov,Cəfər Muxtarov,Midfielder,Azerbaijan,재패르 무흐타로프,C. 무흐타로프
+174723,Z. Ould Khaled,Zinédine Ould Khaled,Midfielder,France,지네딘 울드 할레드,Z. 울드 할레드
+328186,R. Rüstəmli,Rauf Rüstəmli,Midfielder,Azerbaijan,라우프 뤼스탬리,R. 뤼스탬리
+348230,X. Əliyev,Xəyal Əliyev,Attacker,Azerbaijan,해얄 앨리예프,X. 앨리예프
+191322,O. Mbina,Patrick Orphé Mbina,Attacker,Gabon,오프레 음비나,O. 음비나
+127602,J. Mickels,Joy-Lance Mickels,Attacker,Rwanda,조이랜스 미켈스,J. 미켈스
+461130,C. Nwachukwu,Christian Nwachukwu,Midfielder,Nigeria,크리스티안 은와추쿠,C. 은와추쿠
+32397,K. Parris,Kaheem Anthony Parris,Midfielder,Jamaica,카힘 패리스,K. 패리스
+360,V. Simić,Veljko Simić,Midfielder,Serbia,벨코 시미치,V. 시미치
+568264,Ma. Andersen,Martin Lund Andersen,Goalkeeper,Norway,마르틴 룬 안데르센,Ma. 안데르센
+39055,N. Haikin,Nikita Haikin,Goalkeeper,Russia,니키타 하이킨,N. 하이킨
+39178,J. Faye Lund,Julian Rekdahl Faye Lund,Goalkeeper,Norway,율리안 파예 룬,J. 파예 룬
+407659,I. Sjong,Isak Aron Sjong,Goalkeeper,Norway,이사크 시옹,I. 시옹
+31541,H. Aleesami,Haitam Aleesami,Defender,Norway,하이탐 알레사미,H. 알레사미
+39352,J. Gundersen,Jostein Maurstad Gundersen,Defender,Norway,요스테인 군데르센,J. 군데르센
+610674,M. Jaiteh,Matias Jaiteh,Defender,Norway,마티아스 자이테,M. 자이테
+449592,V. Nielsen,Villads Schmidt Nielsen,Defender,Denmark,빌라스 닐센,V. 닐센
+567801,M. Brenne,Matheus Brenne,Defender,Norway,마테우스 브렌네,M. 브렌네
+262598,S. Auklend,Sondre Auklend,Midfielder,Norway,손드레 에우클렌,S. 에우클렌
+39065,H. Evjen,Håkon Evjen,Midfielder,Norway,호콘 에비엔,H. 에비엔
+57159,S. Fet,Sondre Brunstad Fet,Midfielder,Norway,손드레 브룬스타 페트,S. 페트
+57153,I. Määttä,Isak Dybvik Määttä,Defender,Norway,이사크 뒤브비크 메테,I. 메테
+158551,J. Mvuka,Joel Mugisha Mvuka,Midfielder,Norway,조엘 음부카,J. 음부카
+610675,J. Nygård,Jesper Rabben Nygård,Midfielder,Norway,예스페르 라벤 뉘고르,J. 뉘고르
+266663,M. Riisnæs,Magnus Bech Riisnæs,Midfielder,Norway,망누스 리스네스,M. 리스네스
+39069,U. Saltnes,Ulrik Saltnes,Midfielder,Norway,울리크 살트네스,U. 살트네스
+351483,F. Sjøvold,Fredrik Sjøvold,Defender,Norway,프레드리크 시에볼,F. 시에볼
+568260,K. Solhaug,Kasper Solhaug,Midfielder,Norway,카스페르 솔헤우그,K. 솔헤우그
+151510,O. Blomberg,Ole Didrik Blomberg,Attacker,Norway,올레 디드리크 블롬베르그,O. 블롬베르그
+39287,O. Brynhildsen,Ola Brynhildsen,Midfielder,Norway,올라 브륀힐센,O. 브륀힐센
+567794,H. Chooly,Hindrin Chooly,Attacker,Norway,힌드린 출리,H. 출리
+39099,A. Helmersen,Andreas Klausen Helmersen,Attacker,Norway,안드레아스 헬메르센,A. 헬메르센
+39360,A. Mikkelsen,August Mikkelsen,Attacker,Norway,에우구스트 미켈센,A. 미켈센
+9943,L. Paes,Lucas Paes Souza,Goalkeeper,Brazil,루카스 파이스,L. 파이스
+343349,L. Olmeta,Lisandru Olmeta,Goalkeeper,France,리산드루 올메타,L. 올메타
+290115,U. Pérez,Unai Pérez Alkorta,Goalkeeper,Spain,우나이 페레스,U. 페레스
+279825,B. Agbor,Brian Emo Agbor,Defender,Cameroon,브리안 아그보르,B. 아그보르
+285285,J. Alcedo,Juan María Alcedo Serrano,Defender,Spain,후안 마리아 알세도,J. 알세도
+460493,Danilo,Danilo Ferreira dos Santos,Defender,Brazil,다닐루,다닐루
+41436,D. Bruno,David Carneiro Dias de Rezende Bruno,Defender,Portugal,다비드 브루누,D. 브루누
+535462,J. Mounsesse,Jérémy Mounsesse,Defender,Congo,제레미 문세스,J. 문세스
+288334,H. Pérez,Hugo Pérez Balderas,Defender,Spain,우고 페레스,H. 페레스
+2046,J. Vázquez,Javier María Vázquez López,Defender,Spain,하비 바스케스,J. 바스케스
+277165,Volnei,Volnei Feltes,Defender,Brazil,보우네이,보우네이
+332315,A. Alfaro,Alejandro Alfaro Cascales,Midfielder,Spain,알레한드로 알파로,A. 알파로
+501200,C. Injai,Patrick Lassana Carraro Injai,Midfielder,France,카라로 인자이,C. 인자이
+413072,N. Jatta,Nuha Jatta,Midfielder,Germany,누하 자타,N. 자타
+237292,D. Jean,Dany Jean,Midfielder,Haiti,다니 장,D. 장
+392656,M. Diadié,Mohamed Ali Diadié,Defender,France,모하메드 알리 디아디에,M. 디아디에
+41760,A. Oudrhiri,Amine Mehdi Oudrhiri Idrissi,Midfielder,France,아민 우드리리,A. 우드리리
+400947,C. Reina,Carlos Reina Luengo,Midfielder,Spain,카를로스 레이나,C. 레이나
+506562,J. Romero,Joel Sebastián Romero Hurtado,Midfielder,Colombia,조엘 로메로,J. 로메로
+379974,A. Simões,André Filipe Encarnação Simões,Midfielder,Portugal,안드레 시몽이스,A. 시몽이스
+457041,Z. Breno,José Breno Silva Costa,Midfielder,Brazil,제 브레누,Z. 브레누
+561130,Jo. Aguirre,Jorge Aguirre,Attacker,Cuba,호르헤 아기레,Jo. 아기레
+639174,A. Baradji,Adama Baradji,Attacker,France,아다마 바라지,A. 바라지
+41423,Costinha,João José Pereira da Costa,Attacker,Portugal,코스티냐,코스티냐
+287212,M. Drammeh,Musa Drammeh Jaiteh,Attacker,Gambia,무사 드라메,M. 드라메
+353611,B. Omoregbe,Bob Murphy Omoregbe,Attacker,Italy,보브 머피 오모레그베,B. 오모레그베
+286961,M. Pozo,Manuel Pozo Guerrero,Attacker,Spain,마누엘 포소,M. 포소
+369481,L. Quintero,Luis Eduardo Quintero Hernández,Attacker,Colombia,루이스 킨테로,L. 킨테로
+22263,K. Zohi,Kévin Lucien Zohi,Attacker,Mali,케빈 조이,K. 조이
+66898,Ba. Popović,Balša Popović,Goalkeeper,Montenegro,발샤 포포비치,Ba. 포포비치
+162491,D. Stournaras,Dimitrios Stournaras,Goalkeeper,Greece,디미트리오스 스투르나라스,D. 스투르나라스
+358495,A. Tsompanidis,Alexandros Tsompanidis,Goalkeeper,Greece,알렉산드로스 촘바니디스,A. 촘바니디스
+344538,I. Koutsidis,Isidoros Koutsidis,Defender,Greece,이시도로스 쿠치디스,I. 쿠치디스
+278196,B. Onyemaechi,Sopuruchukwu Bruno Onyemaechi,Defender,Nigeria,브루노 오녜마에치,B. 오녜마에치
+134431,L. Pirola,Lorenzo Pirola,Defender,Italy,로렌초 피롤라,L. 피롤라
+971,P. Retsos,Panagiotis Retsos,Defender,Greece,파나요티스 레초스,P. 레초스
+10157,Rodinei,Rodinei Marcelo de Almeida,Defender,Brazil,호지네이,호지네이
+413662,Z. Smajlović,Zinedin Smajlović,Defender,Bosnia and Herzegovina,지네딘 스마일로비치,Z. 스마일로비치
+841,N. Tiknizyan,Nayair Tiknizyan,Defender,Armenia,나이르 티크니쟌,N. 티크니쟌
+443714,T. Bakoulas,Theofanis Bakoulas,Midfielder,Greece,테오파니스 바쿨라스,T. 바쿨라스
+41130,Chiquinho,Francisco Leonel Lima Silva Machado,Midfielder,Portugal,시키뉴,시키뉴
+496741,C. Filis,Christos Filis,Midfielder,Greece,흐리스토스 필리스,C. 필리스
+1609,K. Fortounis,Konstantinos Fortounis,Midfielder,Greece,콘스탄티노스 포르투니스,K. 포르투니스
+47281,D. García,Daniel García Carrillo,Midfielder,Spain,다니 가르시아,D. 가르시아
+195929,S. Hezze,Santiago Hezze,Midfielder,Argentina,산티아고 에세,S. 에세
+392514,C. Mouzakitis,Christos Mouzakitis,Midfielder,Greece,흐리스토스 무자키티스,C. 무자키티스
+364513,L. Scipioni,Lorenzo Scipioni,Midfielder,Argentina,로렌소 시피오니,L. 시피오니
+49888,Y. Yazıcı,Yusuf Yazıcı,Attacker,Türkiye,유수프 야즈즈,Y. 야즈즈
+195580,Clayton,Clayton Fernandes Silva,Attacker,Brazil,클라이통,클라이통
+118,Ge. Martins,Gelson Dany Batalha Martins,Midfielder,Portugal,젤송 마르팅스,Ge. 마르팅스
+7169,A. Helac,Ammar Helac,Goalkeeper,Austria,아마르 헬라츠,A. 헬라츠
+281989,D. Khudyakov,Daniil Khudyakov,Goalkeeper,Russia,다니일 후댜코프,D. 후댜코프
+366341,E. Lorenz,Elias Lorenz,Goalkeeper,Austria,엘리아스 로렌츠,E. 로렌츠
+409607,C. Wiener-Pucher,Christoph Wiener-Pucher,Goalkeeper,Austria,크리스토프 비너푸허,C. 비너푸허
+422408,L. Balbo,Luis Francisco Balbo Vieira,Defender,Venezuela,루이스 발보,L. 발보
+169498,N. Geyrhofer,Niklas Geyrhofer,Defender,Austria,니클라스 가이르호퍼,N. 가이르호퍼
+169525,G. Haider,Gabriel Haider,Defender,Austria,가브리엘 하이더,G. 하이더
+7701,P. Koller,Paul-Friedrich Koller,Defender,Austria,파울 콜러,P. 콜러
+559952,B. Maierhofer,Bastian Maierhofer,Midfielder,Austria,바스티안 마이어호퍼,B. 마이어호퍼
+491487,K. Nnamdi,Kelechi Nnamdi,Defender,Austria,켈레치 은남디,K. 은남디
+443800,P. Petrović,Petar Petrović,Defender,Montenegro,페타르 페트로비치,P. 페트로비치
+542355,E. Roche,Elijah Roche,Defender,Canada,일라이저 로치,E. 로치
+1088,A. Vallci,Albert Vallci,Defender,Austria,알베르트 발치,A. 발치
+19041,J. Gorenc Stankovič,Jon Gorenc Stankovič,Midfielder,Slovenia,욘 고렌츠 스탄코비치,J. 고렌츠 스탄코비치
+322987,J. Halwachs,Julian Halwachs,Midfielder,Austria,율리안 할박스,J. 할박스
+7757,J. Heil,Jürgen Heil,Defender,Austria,위르겐 하일,J. 하일
+451425,J. Hödl,Jacob Peter Hödl,Midfielder,Austria,야콥 페터 회들,J. 회들
+7586,O. Kiteishvili,Otar Kiteishvili,Midfielder,Georgia,오타르 키테이슈빌리,O. 키테이슈빌리
+273295,G. Mamageishvili,Gizo Mamageishvili,Midfielder,Georgia,기조 마마게이슈빌리,G. 마마게이슈빌리
+395191,V. Matoshi,Valmir Matoshi,Midfielder,Switzerland,발미르 마토시,V. 마토시
+176023,S. Seidl,Simon Seidl,Midfielder,Austria,지몬 지들,S. 지들
+461977,L. Weinhandl,Luca Weinhandl,Midfielder,Austria,루카 바인한들,L. 바인한들
+357424,B. Beganović,Belmin Beganović,Attacker,Bosnia and Herzegovina,벨민 베가노비치,B. 베가노비치
+372585,L. Grgić,Leon Grgić,Attacker,Austria,레온 그르기치,L. 그르기치
+216761,S. Jatta,Seedy Jatta,Attacker,Norway,시디 자타,S. 자타
+427260,A. Kayombo,Axel Kayombo,Attacker,France,악셀 카욤보,A. 카욤보
+25306,M. Malone,Maurice Maximilian Malone,Attacker,Germany,모리스 말론,M. 말론
+490796,L. Franc,Lukáš Franc,Goalkeeper,Czechia,루카시 프란츠,L. 프란츠
+144723,K. Hegyi,Hegyi Krisztián,Goalkeeper,Hungary,헤지 크리스티안,K. 헤지
+161864,J. Surovčík,Jakub Surovčík,Goalkeeper,Slovakia,야쿠프 수로우치크,J. 수로우치크
+551842,S. Zajac,Sebastián Zajac,Goalkeeper,Slovakia,세바스티안 자야츠,S. 자야츠
+314257,T. Guddal,Tobias Kvalvågnes Guddal,Defender,Norway,토비아스 구달,T. 구달
+709,P. Kadeřábek,Pavel Kadeřábek,Defender,Czechia,파벨 카데르자베크,P. 카데르자베크
+606998,M. Kotíšek,Maxim Kotíšek,Defender,Czechia,막심 코티셰크,M. 코티셰크
+66425,J. Martinec,Jakub Martinec,Defender,Czechia,야쿠프 마르티네츠,J. 마르티네츠
+340644,A. Ševínský,Adam Ševínský,Defender,Czechia,아담 셰빈스키,A. 셰빈스키
+323899,M. Suchomel,Martin Suchomel,Defender,Czechia,마르틴 소후멜,M. 소후멜
+555431,J. Topič,Jonáš Topič,Defender,Czechia,요나시 토피치,J. 토피치
+471381,E. Uchenna,Emmanuel Uchenna Aririerisim,Defender,Nigeria,엠마누엘 우첸나,E. 우첸나
+446115,V. Vitályos,Vitályos Viktor Tamás,Defender,Hungary,비탈리오스 빅토르,V. 비탈리오스
+153717,S. Eneme,Santiago Eneme Bocari,Midfielder,Equatorial Guinea,산티아고 에네메,S. 에네메
+555386,J. Feit,Jan Feit,Midfielder,Czechia,얀 페이트,J. 페이트
+48408,R. Macek,Roman Macek,Midfielder,Czechia,로만 마체크,R. 마체크
+57443,S. Mannsverk,Sivert Heggheim Mannsverk,Midfielder,Norway,시베르트 만스베르크,S. 만스베르크
+295027,M. Ryneš,Matěj Ryneš,Defender,Czechia,마테이 리네시,M. 리네시
+340646,P. Vydra,Patrik Vydra,Midfielder,Czechia,파트리크 비드라,P. 비드라
+570547,L. Azaka,Lewis Azaka,Attacker,Czechia,루이스 아자카,L. 아자카
+95018,J. Braut Brunes,Jonatan Braut Brunes,Attacker,Norway,요나탄 브레우트 브루네스,J. 브레우트 브루네스
+195098,J. Grimaldo,Joao Alberto Grimaldo Ubidia,Attacker,Peru,주앙 그리말도,J. 그리말도
+352525,E. Singhateh,Ebrima Singhateh,Midfielder,Gambia,에브리마 싱가테,E. 싱가테
+291632,M. Vojta,Matyáš Vojta,Attacker,Czechia,마티아시 보이타,M. 보이타
+11255,M. Lukov,Martin Lukov,Goalkeeper,Bulgaria,마르틴 루코프,M. 루코프
+477038,O. Vladimirov,Ognyan Dilyanov Vladimirov,Goalkeeper,Bulgaria,오그냔 블라디미로프,O. 블라디미로프
+11292,S. Vutsov,Svetoslav Velislavov Vutsov,Goalkeeper,Bulgaria,스베토슬라프 부초프,S. 부초프
+914,Á. Centelles,Alejandro Centelles Plaza,Defender,Spain,알렉스 센테예스,Á. 센테예스
+11074,K. Dimitrov,Kristian Traychev Dimitrov,Defender,Bulgaria,크리스티얀 디미트로프,K. 디미트로프
+277056,O. Kamdem,Wabo Oliver Kamdem,Defender,Cameroon,올리비에 캄뎀,O. 캄뎀
+367528,Maicon,Maicon Araújo dos Santos,Attacker,Brazil,마이콩,마이콩
+56290,C. Makoun,Christian Frederick Bayoi Makoun Reyes,Defender,Venezuela,크리스티안 마쿤,C. 마쿤
+286910,Aldair,Aldair Neves Paulo Faustino,Defender,Portugal,알다이르,알다이르
+317375,A. Bouras,Akram Bouras,Midfielder,Algeria,아크람 부라스,A. 부라스
+25350,M. Grujić,Marko Grujić,Midfielder,Serbia,마르코 그루이치,M. 그루이치
+670370,A. Manov,Anton Manov,Midfielder,Bulgaria,안톤 마노프,A. 마노프
+315881,A. Mitkov,Asen Ivanov Mitkov,Midfielder,Bulgaria,아센 미트코프,A. 미트코프
+21157,M. Soula,Mazire Soula,Midfielder,France,마지르 술라,M. 술라
+109864,G. Trdin,Gašper Trdin,Midfielder,Slovenia,가스페르 트르딘,G. 트르딘
+160077,E. Bala,Francisco Everton Mota de Castro,Attacker,Brazil,에베르통 발라,E. 발라
+11249,R. Kirilov,Radoslav Kirilov Kirilov,Midfielder,Bulgaria,라도슬라프 키릴로프,R. 키릴로프
+480403,D. Kusso,David João Kusso,Attacker,Angola,다비드 쿠소,D. 쿠소
+550561,I. Motev,Ivo Motev,Attacker,Bulgaria,이보 모테프,I. 모테프
+1131,A. Oko-Flex,Armstrong Inya Echezolachuku Oko-Flex,Attacker,Republic of Ireland,암스트롱 오코플렉스,A. 오코플렉스
+352778,J. Perea,Juan Esteban Perea Sanchez,Attacker,Colombia,후안 페레아,J. 페레아
+394170,A. Raychev,Adrian Raychev,Attacker,Bulgaria,아드리얀 라이체프,A. 라이체프
+9650,Reinaldo,Reinaldo Nascimento Satorno,Attacker,Brazil,헤이나우두,헤이나우두
+194236,Mu. Sangaré,Mustapha Sangaré,Attacker,France,무스타파 상가레,Mu. 상가레
+503858,S. Stoyanchov,Stivan Yordanov Stoyanchov,Attacker,Bulgaria,스테벤 스토얀초프,S. 스토얀초프
+45150,R. Doohan,Ross Doohan,Goalkeeper,Scotland,로스 두한,R. 두한
+169291,V. Sinisalo,Viljami Kari Veikko Sinisalo,Goalkeeper,Finland,빌랴미 시니살로,V. 시니살로
+451314,C. Donovan,Colby Donovan,Defender,Scotland,콜비 도노번,C. 도노번
+619563,J. Haney,Joseph Haney,Defender,Scotland,조지프 헤이니,J. 헤이니
+311820,D. Murray,Dane Murray,Defender,Scotland,데인 머리,D. 머리
+69450,L. Scales,Liam Scales,Defender,Republic of Ireland,리엄 스케일스,L. 스케일스
+180758,R. Hatate,Hatate Reo,Midfielder,Japan,하타테 레오,R. 하타테
+667541,L. Kennedy,Liam Kennedy,Midfielder,Scotland,리엄 케네디,L. 케네디
+634104,S. McGarry,Shea McGarry,Midfielder,Northern Ireland,셰이 맥개리,S. 맥개리
+1129,C. McGregor,Callum William McGregor,Midfielder,Scotland,칼럼 맥그리거,C. 맥그리거
+443670,S. McArdle,Sean McArdle,Midfielder,Scotland,숀 매카들,S. 매카들
+339172,C. Osmand,Callum James Osmand,Attacker,Wales,칼럼 오스만드,C. 오스만드
+297,A. Oxlade-Chamberlain,Alexander Mark David Oxlade-Chamberlain,Midfielder,England,알렉스 옥슬레이드체임벌린,A. 옥슬레이드체임벌린
+394686,F. Turley,Francis Turley,Midfielder,Northern Ireland,프랜시스 털리,F. 털리
+328035,Mi. Baur,Mika Baur,Midfielder,Germany,미카 바우어,Mi. 바우어
+454968,C. Durán,Camilo Andres Durán Marquez,Attacker,Colombia,카밀로 두란,C. 두란
+1127,J. Forrest,James Forrest,Midfielder,Scotland,제임스 포레스트,J. 포레스트
+308868,J. Kenny,Johnny Kenny,Attacker,Republic of Ireland,조니 케니,J. 케니
+45169,L. McCowan,Luke McCowan,Midfielder,Scotland,루크 맥코완,L. 맥코완
+14406,I. Filipović,Ivan Filipović,Goalkeeper,Croatia,이반 필리포비치,I. 필리포비치
+14532,I. Nevistić,Ivan Nevistić,Goalkeeper,Croatia,이반 네비스티치,I. 네비스티치
+1306,D. Zagorac,Danijel Zagorac,Goalkeeper,Croatia,다니옐 자고라츠,D. 자고라츠
+576947,T. Žnuderl,Tai Žnuderl,Goalkeeper,Slovenia,타이 주누데를,T. 주누데를
+396624,S. Domínguez,Sergi Domínguez Viloria,Defender,Spain,세르지 도밍게스,S. 도밍게스
+263476,N. Galešić,Niko Galešić,Defender,Croatia,니코 갈레시치,N. 갈레시치
+14410,B. Goda,Bruno Goda,Defender,Croatia,브루노 고다,B. 고다
+338947,M. Pérez Vinlöf,Olof Matteo Pérez Vinlöf,Defender,Sweden,마테오 페레스 빈뢰프,M. 페레스 빈뢰프
+606826,N. Radnić,Nikola Radnić,Defender,Croatia,니콜라 라드니치,N. 라드니치
+662188,N. Šimić,Nikolas Šimić,Defender,Croatia,니콜라스 시미치,N. 시미치
+307952,P. Tabinas,Paul Bismarck Tabinas,Defender,Philippines,폴 타비나스,P. 타비나스
+288319,M. Valinčić,Moris Valinčić,Defender,Croatia,모리스 발린치치,M. 발린치치
+653226,P. Žaja,Petar Šimun Žaja,Defender,Croatia,페타르 시문 자야,P. 자야
+412891,M. Zebić,Marko Zebić,Defender,Croatia,마르코 제비치,M. 제비치
+389602,I. Almena,Iker Almena Horcajo,Attacker,Spain,이케르 알메나,I. 알메나
+619976,J. Brundić,Josip Brundić,Midfielder,Croatia,요시프 브룬디치,J. 브룬디치
+310135,L. Kačavenda,Lukas Kačavenda,Midfielder,Croatia,루카스 카차벤다,L. 카차벤다
+430742,L. Kulušić,Lovre Kulušić,Midfielder,Croatia,로브레 쿨루시치,L. 쿨루시치
+2373,J. Mišić,Josip Mišić,Midfielder,Croatia,요시프 미시치,J. 미시치
+1297,R. Mudražija,Robert Mudražija,Midfielder,Croatia,로베르트 무드라지야,R. 무드라지야
+371912,Da. Rodríguez,Daniel Rodríguez Crespo,Attacker,Spain,다니 로드리게스,Da. 로드리게스
+679208,L. Ultra,Lautaro Ultra,Midfielder,Uruguay,라우타로 울트라,L. 울트라
+1369,M. Zajc,Miha Zajc,Midfielder,Slovenia,미하 자이츠,M. 자이츠
+182434,D. Beljo,Dion Drena Beljo,Attacker,Croatia,디온 벨료,D. 벨료
+583902,P. Horvat,Patrik Horvat,Attacker,Croatia,파트리크 호르바트,P. 호르바트
+265491,M. Lisica,Mateo Lisica,Attacker,Croatia,마테오 리시차,M. 리시차
+1102,S. Prevljak,Smail Prevljak,Attacker,Bosnia and Herzegovina,스마일 프레블랴크,S. 프레블랴크
+428414,A. Stojaković,Aleks Stojaković,Attacker,Slovenia,알렉스 스토야코비치,A. 스토야코비치
+308814,L. Stojković,Luka Stojković,Midfielder,Croatia,루카 스토이코비치,L. 스토이코비치
+570214,S. Šunta,Sven Šunta,Midfielder,Slovenia,스벤 슌타,S. 슌타
+339162,F. Topić,Fran Topić,Attacker,Croatia,프란 토피치,F. 토피치
+108460,Ž. Frelih,Žiga Frelih,Goalkeeper,Slovenia,지가 프렐리흐,Ž. 프렐리흐
+348848,L. Kolar,Luka Kolar,Goalkeeper,Slovenia,루카 콜라르,L. 콜라르
+284326,Ž. Leban,Žan-Luk Leban,Goalkeeper,Slovenia,잔루크 레반,Ž. 레반
+2759,S. Sluga,Simon Sluga,Goalkeeper,Croatia,시몬 슬루가,S. 슬루가
+163053,Ł. Bejger,Łukasz Bejger,Defender,Poland,우카시 베이게르,Ł. 베이게르
+144730,A. Diounkou,Alpha Richard Diounkou Tecagne,Defender,Senegal,알파 디운쿠,A. 디운쿠
+1595,L. Koútris,Leonárdo Páblo Koútris,Defender,Greece,레오나르도 쿠트리스,L. 쿠트리스
+674496,Ž. Šega,Žan Luka Šega,Defender,Slovenia,잔 루카 셰가,Ž. 셰가
+69932,P. Širvys,Pijus Širvys,Defender,Lithuania,피유스 시르비스,P. 시르비스
+325384,A. Tutyškinas,Artemijus Tutyškinas,Defender,Lithuania,아르테미유스 투티슈키나스,A. 투티슈키나스
+293550,G. Vodeb,Gašper Vodeb,Defender,Slovenia,가슈페르 보데브,G. 보데브
+162524,N. Vukasović,Nino Vukasović,Defender,Croatia,니노 부카소비치,N. 부카소비치
+66040,D. Vuklišević,Damjan Vuklišević,Defender,Slovenia,다먄 부클리셰비치,D. 부클리셰비치
+131343,M. Zabukovnik,Mark Zabukovnik,Midfielder,Slovenia,마르크 자부코우니크,M. 자부코우니크
+126314,I. Ćalušić,Ivan Ćalušić,Defender,Croatia,이반 찰루시치,I. 찰루시치
+301642,P. Daniel,Papa Mustapha Daniel,Midfielder,Nigeria,파파 다니엘,P. 다니엘
+110057,D. Hrka,Darko Hrka,Defender,Slovenia,다르코 흐르카,D. 흐르카
+91447,A. Kotnik,Andrej Kotnik,Attacker,Slovenia,안드레이 코트니크,A. 코트니크
+25102,M. Kvesić,Mario Kvesić,Midfielder,Bosnia and Herzegovina,마리오 크베시치,M. 크베시치
+652706,T. Letonja,Tilen Letonja,Midfielder,Slovenia,틸렌 레토냐,T. 레토냐
+109685,R. Požeg Vancaš,Rudi Požeg Vancaš,Attacker,Slovenia,라디 포제그 반차스,R. 포제그 반차스
+109987,S. Sešlar,Svit Sešlar,Midfielder,Slovenia,스비트 세슐라르,S. 세슐라르
+278810,M. Avdyli,Milot Avdyli,Defender,Kosovo,밀로트 아브뒬리,M. 아브뒬리
+6917,Y. Dukuly,Yaya Dukuly,Midfielder,Australia,야야 두쿨리,Y. 두쿨리
+360349,M. Ivanšek,Matic Ivanšek,Attacker,Slovenia,마티치 이반셰크,M. 이반셰크
+626811,A. Kučys,Armandas Kučys,Attacker,Lithuania,아르만다스 쿠치스,A. 쿠치스
+60138,M. Poplatnik,Matej Poplatnik,Attacker,Slovenia,마테이 포플라트니크,M. 포플라트니크
+638308,D. Suhovrsnik,Dejan Suhovrsnik,Attacker,Slovenia,데얀 수호우르스니크,D. 수호우르스니크
+215855,V. Tusha,Veton Tusha,Attacker,Kosovo,베톤 투샤,V. 투샤
+2183,B. Verbič,Benjamin Verbič,Midfielder,Slovenia,베냐민 베르비치,B. 베르비치
+395841,I. Hemi,Itay Hemi,Goalkeeper,Israel,이타이 헤미,I. 헤미
+44829,O. Marciano,Ofir Meir Marciano,Goalkeeper,Israel,오피르 마르시아누,O. 마르시아누
+544632,Y. Shani,Yonatan Shani,Goalkeeper,Israel,요나탄 샤니,Y. 샤니
+6135,M. Wolff,Marco Wolff,Goalkeeper,Argentina,마르코 올프,M. 올프
+111309,M. Baltaxa,Matan Baltaxa,Defender,Israel,마탄 발탁사,M. 발탁사
+79153,O. Davidzada,Ofir Davidzada,Defender,Israel,오피르 다비드자다,O. 다비드자다
+554375,D. Diop,Djibril Diop,Defender,Senegal,지브릴 디오프,D. 디오프
+105605,M. Vítor,Miguel Ângelo Leonardo Vítor,Defender,Israel,미겔 비토르,M. 비토르
+215821,G. Mizrahi,Guy Mizrahi,Defender,Israel,기 미즈라히,G. 미즈라히
+111288,I. Nachmias,Idan Nachmias,Defender,Israel,이단 나흐미아스,I. 나흐미아스
+162269,I. Rotman,Itay Rotman,Defender,Israel,이타이 로트만,I. 로트만
+419515,I. Hazut,Itay Azut,Midfielder,Israel,이타이 하주트,I. 하주트
+126564,M. Kna'an,Mohammad Kna'an,Attacker,Israel,모하마드 크나안,M. 크나안
+126960,R. Levy,Roy Levy,Midfielder,Israel,로이 레비,R. 레비
+80354,L. Ventura,Lucas de Souza Ventura,Midfielder,Brazil,루카스 벤투라,L. 벤투라
+105786,E. Peretz,Eliel Peretz,Midfielder,Israel,엘리엘 페레츠,E. 페레츠
+678227,L. Shugar,Lior Shugar,Midfielder,Israel,리오르 슈가르,L. 슈가르
+643106,Y. Stoyanov,Yoan Stoyanov,Midfielder,Bulgaria,요안 스토야노프,Y. 스토야노프
+371922,N. Yehoshua,Niv Yehoshua,Midfielder,Israel,니브 예호슈아,N. 예호슈아
+399719,M. Abu Rumi,Mohamad Abu Rumi,Attacker,Israel,무하마드 아부 루미,M. 아부 루미
+137521,Z. Ahmed,Zahi Ahmed,Attacker,Israel,자히 아흐메드,Z. 아흐메드
+70481,D. Biton,Dan Biton,Midfielder,Israel,단 비톤,D. 비톤
+668301,S. Dahan,Shlomo Dahan,Attacker,Israel,슐로모 다한,S. 다한
+32266,J. East,Javon Romario East,Attacker,Jamaica,제이본 이스트,J. 이스트
+393937,A. Ganah,Amir Chaim Ganah,Attacker,Israel,아미르 가나,A. 가나
+307834,J. Victor,João Victor Vieira Ferreira Sousa,Attacker,Brazil,주앙 빅토르,J. 빅토르
+111319,Y. Malede,Yonas Malede,Attacker,Israel,요나스 말레데,Y. 말레데
+655592,A. Ohana,Amit Ohana,Attacker,Israel,아미트 오하나,A. 오하나
+45983,I. Zlatanović,Igor Zlatanović,Attacker,Serbia,이고르 즐라타노비치,I. 즐라타노비치
+28322,D. Dibusz,Dibusz Dénes,Goalkeeper,Hungary,디부스 데네시,D. 디부스
+290057,L. Őri,Őri Levente,Goalkeeper,Hungary,외리 레벤테,L. 외리
+28209,G. Szécsi,Szécsi Gergő,Goalkeeper,Hungary,세치 게르괴,G. 세치
+544040,Z. Tóth,Tóth Zalán,Goalkeeper,Hungary,토트 절란,Z. 토트
+28324,Á. Varga,Varga Ádám Gábor,Goalkeeper,Hungary,버르거 아담,Á. 버르거
+28326,E. Botka,Botka Endre,Defender,Hungary,보트커 엔드레,E. 보트커
+76109,Ma. Gómez,Mariano Gómez,Defender,Argentina,마리아노 고메스,Ma. 고메스
+478483,C. Lakatos,Lakatos Csongor,Defender,Hungary,러커토시 총고르,C. 러커토시
+127657,B. Nagy,Nagy Barnabás Szabolcs,Midfielder,Hungary,너지 버르너바스,B. 너지
+325356,O. Nagy,Nagy Olivér Zoltán,Defender,Hungary,너지 올리베르,O. 너지
+28467,A. Osváth,Osváth Attila,Defender,Hungary,오스바트 어틸러,A. 오스바트
+153287,T. Raemaekers,Toon Raemaekers,Defender,Belgium,톤 라마커르스,T. 라마커르스
+128993,N. Zohoré,Guédé Nathan Zohoré,Defender,France,나탕 자호레,N. 자호레
+397433,Á. Bagi,Bagi Ádám Gyula,Attacker,Hungary,버지 아담,Á. 버지
+216553,Cadu,Carlos Eduardo Lopes Cruz,Defender,Brazil,카두,카두
+130148,M. Corbu,Marius Dumitru Corbu,Midfielder,Romania,마리우스 코르부,M. 코르부
+111148,G. Kanichowsky,Gavriel Gilad Kanichowsky,Midfielder,Israel,가비 카니코프스키,G. 카니코프스키
+294,N. Keïta,Naby Laye Keïta,Midfielder,Guinea,나비 케이타,N. 케이타
+342442,K. Lisztes,Lisztes Krisztián,Attacker,Hungary,리스테스 크리스티안,K. 리스테스
+544042,Á. Madarász,Madarász Ádám,Midfielder,Hungary,머더라스 아담,Á. 머더라스
+20531,H. Maïga,Digbo G'nampa Habib Maïga,Midfielder,Côte d'Ivoire,하비브 마이가,H. 마이가
+30481,Á. Nagy,Nagy Ádám,Midfielder,Hungary,너지 아담,Á. 너지
+19272,C. O'Dowda,Callum Joshua Ryan O'Dowda,Midfielder,Republic of Ireland,칼럼 오다우다,C. 오다우다
+37833,P. Rommens,Philippe Rommens,Midfielder,Belgium,필리프 로먼스,P. 로먼스
+2027,K. Zachariassen,Kristoffer Zachariassen,Midfielder,Norway,크리스토페르 자카리아센,K. 자카리아센
+1121,D. Arzani,Daniel Arzani,Midfielder,Australia,다니엘 아르자니,D. 아르자니
+152786,A. Ćirković,Aleksandar Ćirković,Attacker,Serbia,알렉산다르 치르코비치,A. 치르코비치
+199779,B. Yusuf,Bamidele Isa Yusuf,Midfielder,Nigeria,바미델레 유수프,B. 유수프
+550217,B. Gólik,Gólik Benjámin,Attacker,Hungary,골리크 벤야민,B. 골리크
+14517,F. Kovačević,Franko Kovačević,Attacker,Croatia,프란코 코바체비치,F. 코바체비치
+48072,J. Levi,Jonathan Alberto Levi,Attacker,Sweden,요나탄 레비,J. 레비
+419576,S. Szabó,Szabó Szilárd,Attacker,Hungary,서보 실라르드,S. 서보
+397434,Z. Varga,Varga Zétény István,Attacker,Hungary,버르거 제테니,Z. 버르거
+516693,S. Badalyan,Shirak Badalyan,Goalkeeper,Armenia,시라크 바달랸,S. 바달랸
+141575,J. Bravim,João Victor Donna Bravim,Goalkeeper,Brazil,주앙 브라빙,J. 브라빙
+575183,A. Martirosyan,Andranik Martirosyan,Goalkeeper,Armenia,안드라니크 마르티로샨,A. 마르티로샨
+215963,A. Nersesyan,Arman Nersesyan,Goalkeeper,Armenia,아르만 네르세샨,A. 네르세샨
+130806,E. Grigoryan,Edgar Grigoryan,Defender,Armenia,에드가르 그리고랸,E. 그리고랸
+56129,K. Hovhannisyan,Kamo Hovhannisyan,Defender,Armenia,카모 호브한니샨,K. 호브한니샨
+5693,J. Julio,José Junior Julio Bueno,Defender,Colombia,후니오르 훌리오,J. 훌리오
+271956,L. Felipe,Luís Felipe Hungria Martins,Defender,Brazil,루이스 펠리피,L. 펠리피
+26770,A. Malis,Alexandros Malis,Defender,Greece,알렉산드로스 말리스,A. 말리스
+294599,H. Oliveira,Hugo da Silva Oliveira,Midfielder,Portugal,우구 올리베이라,H. 올리베이라
+119525,Br. Pereira,Bruno Martins Pereira,Defender,Portugal,브루누 페레이라,Br. 페레이라
+41969,B. Wilson,Bruno Ricardo Valdez Wilson,Defender,Portugal,브루누 윌송,B. 윌송
+24562,A. Tera,Alwyn Luheni Tera,Midfielder,Kenya,알윈 테라,A. 테라
+65359,A. Ambartsumyan,Armen Ambartsumyan,Midfielder,Armenia,아르멘 암바르추먄,A. 암바르추먄
+422505,M. Ayvazyan,Michel Ayvazyan,Midfielder,Armenia,미셸 아이바쟌,M. 아이바쟌
+57818,Balanta Jr.,Juan Andrés Balanta Palacios,Midfielder,Colombia,발란타 주니오르,발란타 주니오르
+96576,Z. Banjaqui,Zidane Agustini Banjaqui,Attacker,Guinea-Bissau,지단 반자키,Z. 반자키
+579371,Benny,Bernardo Oliveira Dias,Midfielder,Portugal,베니,베니
+21252,M. Carlier,Maxence Carlier,Midfielder,France,막상스 카를리에,M. 카를리에
+646062,M. Hovhannisyan,Martun Hovhannisyan,Midfielder,Armenia,마르툰 호브한니샨,M. 호브한니샨
+671860,M. Khudaverdyan,Mikayel Khudaverdyan,Midfielder,Armenia,미카엘 후다베르댠,M. 후다베르댠
+674129,V. Movsisyan,Vahe Movsisyan,Midfielder,Armenia,바헤 모브시샨,V. 모브시샨
+65477,K. Muradyan,Karen Muradyan,Midfielder,Armenia,카렌 무라댠,K. 무라댠
+646063,E. Poghosyan,Edgar Poghosyan,Midfielder,Armenia,에드가르 포고샨,E. 포고샨
+41530,P. Ayongo,Paul Ayongo,Attacker,Ghana,폴 아용고,P. 아용고
+390563,A. Eloyan,Arayik Eloyan,Attacker,Armenia,아라이크 엘로얀,A. 엘로얀
+9856,C. França,Carlos Henrique França Freires,Midfielder,Brazil,카를루스 프란사,C. 프란사
+57449,A. Ndour,Alioune Badou Ndour,Attacker,Senegal,알리운 은두르,A. 은두르
+269533,A. Serobyan,Artur Serobyan,Attacker,Armenia,아르투르 세로뱐,A. 세로뱐
+65374,Z. Shaghoyan,Zhirayr Shaghoyan,Midfielder,Armenia,지라이르 샤고얀,Z. 샤고얀
+370,Fabiano,Fabiano Ribeiro de Freitas,Goalkeeper,Brazil,파비아누,파비아누
+455561,P. Michail,Pantelis Michael,Goalkeeper,Cyprus,판델리스 미하일,P. 미하일
+30918,J. Balkovec,Jure Balkovec,Defender,Slovenia,유레 발코베츠,J. 발코베츠
+647802,P. Christoforou,Panagiotis Christoforou,Defender,Cyprus,파나요티스 흐리스토포루,P. 흐리스토포루
+561359,A. Christou,Andreas Christou,Midfielder,Cyprus,안드레아스 흐리스투,A. 흐리스투
+21699,Se. Coulibaly,Senou Coulibaly,Defender,Mali,세누 쿨리발리,Se. 쿨리발리
+497685,C. Konstantinidis,Christos Konstantinidis,Defender,Cyprus,흐리스토스 콘스탄티니디스,C. 콘스탄티니디스
+19348,M. Odubajo,Moses Adeshina Ayoola Junior Odubajo,Defender,England,모지스 오두바조,M. 오두바조
+15411,N. Panagiotou,Nikolas Panagiotou,Defender,Cyprus,니콜라스 파나요투,N. 파나요투
+31077,S. Simič,Stefan Simič,Defender,Czechia,스테판 시미치,S. 시미치
+388757,P. Andreou,Panagiotis Andreou,Midfielder,Cyprus,파나요티스 안드레우,P. 안드레우
+10325,E. Costa,Ewandro Felipe de Lima Costa,Midfielder,Brazil,이완드루 코스타,E. 코스타
+540,C. Eiting,Carel Willem Hendrik Eiting,Midfielder,Netherlands,카럴 에이팅,C. 에이팅
+669028,T. Kazakeos,Theos Kazakeos,Defender,Cyprus,테오스 카자케오스,T. 카자케오스
+15371,I. Kousoulos,Ioannis Kousoulos,Midfielder,Cyprus,이오아니스 쿠술로스,I. 쿠술로스
+76868,M. Marić,Mateo Marić,Midfielder,Bosnia and Herzegovina,마테오 마리치,M. 마리치
+284287,M. Musiałowski,Mateusz Konrad Musiałowski,Attacker,Poland,마테우시 무시아워프스키,M. 무시아워프스키
+48132,M. Tanković,Muamer Tanković,Midfielder,Sweden,무아메르 탄코비치,M. 탄코비치
+26748,A. Chatzigiovanis,Anastasios Chatzigiovanis,Midfielder,Greece,아나스타시오스 하지요바니스,A. 하지요바니스
+22100,L. Diony,Loïs Diony,Attacker,France,로이스 디오니,L. 디오니
+410870,C. Evangelou,Chrysis Evangelou,Attacker,Cyprus,흐리시스 에방겔루,C. 에방겔루
+15392,A. Kakoullis,Andronikos Kakoullis,Attacker,Cyprus,안드로니코스 카쿨리스,A. 카쿨리스
+41900,M. Mayambela,Mihlali Samson Mabhuti Mayambela,Midfielder,South Africa,미흘랄리 마얌벨라,M. 마얌벨라
+347681,J. Montnor,Jaden Sean Montnor,Midfielder,Netherlands,제이든 몬트노르,J. 몬트노르
+343302,A. Neophytou,Angelos Neophytou,Attacker,Cyprus,앙겔로스 네오피투,A. 네오피투
+531313,K. Panagi,Konstantinos Panagi,Attacker,Cyprus,콘스탄디노스 파나기,K. 파나기
+355829,D. Ťapaj,Dominik Ťapaj,Goalkeeper,Slovakia,도미니크 탸파이,D. 탸파이
+66447,M. Tvrdoň,Marián Tvrdoň,Goalkeeper,Slovakia,마리안 트브르돈,M. 트브르돈
+607415,R. Büchner,Radek Büchner,Defender,Czechia,라데크 뷔흐네르,R. 뷔흐네르
+317825,S. Dweh,Sampson Kargeoh Dweh Jr.,Defender,Liberia,샘슨 드웨,S. 드웨
+287565,A. Gabriel,Adam Gabriel,Defender,Czechia,아담 가브리엘,A. 가브리엘
+635853,P. Kubín,Petr Kubín,Defender,Czechia,페트르 쿠빈,P. 쿠빈
+551772,Z. Paidar,Zbyněk Paidar,Defender,Czechia,즈비네크 파이다르,Z. 파이다르
+426130,K. Spáčil,Karel Spáčil,Defender,Czechia,카렐 스파칠,K. 스파칠
+367674,S. Boháč,Sebastian Boháč,Midfielder,Czechia,세바스티안 보하치,S. 보하치
+449656,J. Panoš,Jiří Maxim Panoš,Midfielder,Czech Republic,이르지 파노스,J. 파노스
+340621,S. Pirgić,Stefan Pirgić,Midfielder,Serbia,스테판 피르기치,S. 피르기치
+181824,F. Prebsl,Filip Prebsl,Defender,Czechia,필리프 프렙슬,F. 프렙슬
+179449,C. Souaré,Cheick Oumar Souaré,Midfielder,France,셰크 수아레,C. 수아레
+406418,Ba. Faal,Baboucarr Faal,Attacker,Gambia,바부카르 폴,Ba. 폴
+271869,C. Kabongo,Christophe Kabongo,Attacker,Czechia,크리스토프 카봉고,C. 카봉고
+546460,S. Lawal,Salim Fago Lawal,Attacker,Nigeria,살림 파고 라왈,S. 라왈
+586148,A. Novák,Adam Novák,Attacker,Czechia,아담 노바크,A. 노바크
+489935,M. Touré,Mohamed Touré,Attacker,Guinea,모하메드 투레,M. 투레
+18930,M. Vydra,Matěj Vydra,Attacker,Czechia,마테이 비드라,M. 비드라
+570730,L. Babić,Lazar Babić,Goalkeeper,Norway,라자르 바비치,L. 바비치
+18790,P. Dahlberg,Pontus Jacob Ragne Dahlberg,Goalkeeper,Sweden,폰투스 달베리,P. 달베리
+57189,S. Hagerup,Stefan Hagerup,Goalkeeper,Norway,스테판 하게루프,S. 하게루프
+265641,F. Elkær,Frederik Elkær,Defender,Denmark,프레데릭 엘케르,F. 엘케르
+57167,S. Moen Foss,Sander Moen Foss,Defender,Norway,산데르 모엔 포스,S. 모엔 포스
+39038,R. Gabrielsen,Lunan Ruben Gabrielsen,Defender,Norway,루벤 가브리엘센,R. 가브리엘센
+57192,E. Garnås,Espen Bjørnsen Garnås,Defender,Norway,에스펜 가르노스,E. 가르노스
+410596,S. Kristiansen,Stian Kristiansen,Defender,Norway,스티안 크리스티안센,S. 크리스티안센
+151242,S. Ottesen,Sturla Ottesen,Defender,Norway,스툴라 오테센,S. 오테센
+665692,L. Aastorp,Leo Aastorp,Midfielder,Norway,레오 오스토르프,L. 오스토르프
+39148,Y. Ibrahimaj,Ylldren Ibrahimaj,Midfielder,Kosovo,윌드렌 이브라히마이,Y. 이브라히마이
+57198,E. Kitolano,Eric Bugale Kitolano,Midfielder,Norway,에릭 키톨라노,E. 키톨라노
+39246,K. Krygård,Kevin Martin Krygård,Midfielder,Norway,케빈 크뤼고르,K. 크뤼고르
+317446,H. Melland,Henrik Molvær Melland,Midfielder,Norway,헨리크 멜란,H. 멜란
+151251,Y. Paintsil,Winston Robin Yaw Paintsil,Midfielder,Norway,요 페인칠,Y. 페인칠
+57194,L. Ranger,Lars Mogstad Ranger,Defender,Norway,라르스 랑게르,L. 랑게르
+580202,F. Reshane,Filip Reshane,Midfielder,Norway,필리프 레스하네,F. 레스하네
+498766,H. Woxen,Harald Woxen,Midfielder,Norway,하랄 복센,H. 복센
+585665,S. Akanji,Seun Akanji,Attacker,Nigeria,세운 아칸지,S. 아칸지
+458514,L. Alperud,Karl Linus Alperud,Midfielder,Sweden,리누스 알페루드,L. 알페루드
+364814,D. Bassi,Daniel Joshua Bassi Jakobsen,Midfielder,Norway,다니엘 바시,D. 바시
+3322,Vá,Vladimiro Etson António Félix,Midfielder,Angola,바,바
+1099,F. Gulbrandsen,Fredrik Aasmundrud Gulbrandsen,Attacker,Norway,프레드리크 굴브란센,F. 굴브란센
+331919,C. Jebara,Camil Abdelhakim Jebara,Midfielder,Sweden,카밀 예바라,C. 예바라
+226691,G. Nordh,Gustav Nordh,Attacker,Sweden,구스타브 노르드,G. 노르드
+531341,G. Nyheim,Gustav Nyheim,Midfielder,Norway,구스타브 뉘헤임,G. 뉘헤임
+39323,T. Lehne Olsen,Thomas Lehne Olsen,Attacker,Norway,토마스 레흐네 올센,T. 레흐네 올센
+341375,S. Abramowicz,Sławomir Abramowicz,Goalkeeper,Poland,스와보미르 아브라모비치,S. 아브라모비치
+492602,A. Damasiewicz,Adrian Damasiewicz,Goalkeeper,Poland,아드리안 다마시에비치,A. 다마시에비치
+473713,M. Perchel,Michał Perchel,Goalkeeper,Poland,미하우 페르헬,M. 페르헬
+33236,Y. Kobayashi,Kobayashi Yuki,Defender,Japan,코바야시 유키,Y. 코바야시
+264407,A. Konstantopoulos,Apostolos Konstantopoulos,Defender,Greece,아포스톨로스 콘스탄토풀로스,A. 콘스탄토풀로스
+476106,B. Krasiewicz,Bartłomiej Krasiewicz,Defender,Poland,바르트워메이 크라시에비치,B. 크라시에비치
+386310,G. Montóia,Guilherme Manuel Serrão Montóia,Defender,Portugal,길례르므 몬토이아,G. 몬토이아
+290644,S. Pankiewicz,Szymon Pankiewicz,Defender,Poland,시몬 판키에비치,S. 판키에비치
+330247,C. Polak,Cezary Polak,Defender,Poland,체자리 폴라크,C. 폴라크
+109762,D. Stojinović,Dušan Stojinović,Defender,Slovenia,두샨 스토이노비치,D. 스토이노비치
+277166,B. Vital,Bernardo Maria Morais Cardoso Vital,Defender,Portugal,베르나르두 비탈,B. 비탈
+148676,N. Wojtuszek,Norbert Wojtuszek,Defender,Poland,노르베르트 보이투셰크,N. 보이투셰크
+364659,D. Drachal,Dawid Drachal,Midfielder,Poland,다비트 드라할,D. 드라할
+48046,H. Finndell,Hampus Finndell,Midfielder,Sweden,함푸스 핀델,H. 핀델
+178723,L. Flach,Leon Maximilian Flach,Midfielder,USA,레온 플라흐,L. 플라흐
+40485,J. Imaz,Jesús Imaz Ballesté,Midfielder,Spain,헤수스 이마스,J. 이마스
+264692,A. Klynge,Anders Ferslev Klynge,Midfielder,Denmark,안데르스 클륑게,A. 클륑게
+491470,E. Kozłowski,Eryk Kozłowski,Midfielder,Poland,에리크 코즈워프스키,E. 코즈워프스키
+182150,Se. Lozano,Sergio Lozano Lluch,Midfielder,Spain,세르히오 로사노,Se. 로사노
+668630,O. Pankiewicz,Olaf Pankiewicz,Midfielder,Poland,올라프 판키에비치,O. 판키에비치
+40482,T. Romanczuk,Taras Wiktorowycz Romanczuk,Midfielder,Poland,타라스 로만추크,T. 로만추크
+386852,J. Agbonifo,Jeremy Nosakhare Agbonifo,Attacker,Sweden,제레미 아그보니포,J. 아그보니포
+40559,K. Jóźwiak,Kamil Jan Jóźwiak,Midfielder,Poland,카밀 유지비아크,K. 유지비아크
+670267,M. Kononov,Maksim Kononov,Attacker,Belarus,막심 코노노프,M. 코노노프
+599282,M. Kuczyński,Maciej Kuczyński,Midfielder,Poland,마치에이 쿠친스키,M. 쿠친스키
+480855,D. Rallis,Dimitris Rallis,Attacker,Netherlands,디미트리스 랄리스,D. 랄리스
+394784,O. Sow,Ousmane Sow,Midfielder,France,우스만 소우,O. 소우
+297520,Y. Sylla,Youssuf Sylla,Attacker,Guinea,유수프 실라,Y. 실라
+40858,Ka. Szmyt,Kajetan Szmyt,Midfielder,Poland,카예탄 슈미트,Ka. 슈미트
+574681,Z. Zalewski,Zachary Zalewski,Midfielder,Poland,자하리 잘레프스키,Z. 잘레프스키
+428304,N. Šarčević,Nikola Šarčević,Goalkeeper,Austria,니콜라 사르체비치,N. 사르체비치
+445566,C. Zawieschitzky,Christian Zawieschitzky,Goalkeeper,Austria,크리스티안 자비에시츠키,C. 자비에시츠키
+334178,H. Blank,Hendry Aron Blank,Defender,Germany,헨드리 블랑크,H. 블랑크
+361981,A. Chase,Chase Anrie,Defender,Japan,체이스 안리,A. 체이스
+327861,T. Drexler,Tim Drexler,Defender,Germany,팀 드렉슬러,T. 드렉슬러
+280335,F. Krätzig,Frans Krätzig,Defender,Germany,프란스 크레치히,F. 크레치히
+1082,S. Lainer,Stefan Lainer,Defender,Austria,슈테판 라이너,S. 라이너
+394986,J. Mellberg,John Olof Mellberg,Defender,Sweden,욘 멜베리,J. 멜베리
+329265,L. Morgalla,Leandro Morgalla,Defender,Germany,레안드로 모르갈라,L. 모르갈라
+48722,D. Schmid,Dominik Robin Schmid,Defender,Switzerland,도미니크 슈미트,D. 슈미트
+418214,L. Traoré,Lassina Traoré,Defender,Burkina Faso,라시나 트라오레,L. 트라오레
+444437,V. Zabransky,Valentin Zabransky,Defender,Austria,발렌틴 자브란스키,V. 자브란스키
+136154,A. Barry,Abubakr Barry,Midfielder,Gambia,아부바크르 바리,A. 바리
+403326,S. Diabaté,Soumaïla Diabaté,Midfielder,Mali,수마일라 디아바테,S. 디아바테
+115587,M. Kjærgaard,Maurits Kjærgaard,Midfielder,Denmark,마우리츠 케르고르,M. 케르고르
+498282,F. Matijašević,Filip Matijašević,Midfielder,Serbia,필리프 마티야셰비치,F. 마티야셰비치
+442544,B. Mazurek,Bartosz Mazurek,Midfielder,Poland,바르토시 마주레크,B. 마주레크
+279907,U. Tohumcu,Umut Deger Tohumcu,Midfielder,Germany,우무트 토훔주,U. 토훔주
+444468,E. Aguilar,Enrique Marlon Aguilar,Attacker,Switzerland,엔리케 아길라르,E. 아길라르
+464055,E. Baidoo,Edmund Baidoo,Midfielder,Ghana,에드문드 바이두,E. 바이두
+418198,A. Camara,Aboubacar Sidiki Camara,Midfielder,Burkina Faso,아부바카르 카마라,A. 카마라
+457023,G. Diakité,Gaoussou Diakité,Attacker,Mali,가우수 디아키테,G. 디아키테
+331865,K. Konaté,Karim Konaté,Attacker,Côte d'Ivoire,카림 코나테,K. 코나테
+494747,J. Moser,Johannes Mathias Moser,Midfielder,Austria,요하네스 모저,J. 모저
+286784,D. Redžić,Redžić Damir,Midfielder,Hungary,레지치 다미르,D. 레지치
+565366,Y. Sulbarán,Yerwin Sulbarán,Attacker,Venezuela,예르윈 술바란,Y. 술바란
+129072,Y. Vertessen,Yorbe Vertessen,Midfielder,Belgium,요르버 페르테선,Y. 페르테선
+667933,W. Obremski,Wiktor Obremski,Goalkeeper,Poland,빅토르 오브렘스키,W. 오브렘스키
+410640,M. Pruchniewski,Mateusz Pruchniewski,Goalkeeper,Poland,마테우시 프루흐니에프스키,M. 프루흐니에프스키
+105170,A. Douglas,Alex Raymond Douglas,Defender,Sweden,알렉스 더글라스,A. 더글라스
+3001,R. Gumny,Robert Krzysztof Gumny,Defender,Poland,로베르트 굼니,R. 굼니
+394956,M. Gurgul,Michał Gurgul,Defender,Poland,미하우 구르굴,M. 구르굴
+574725,H. Janyszka,Hubert Janyszka,Defender,Poland,후베르트 야니슈카,H. 야니슈카
+429408,W. Mońka,Wojciech Mońka,Defender,Poland,보이치에흐 몬카,W. 몬카
+50922,J. Moutinho,João Gervásio Bragança Moutinho,Defender,Portugal,주앙 무티뉴,J. 무티뉴
+15491,J. Pereira,Joel Vieira Pereira,Defender,Portugal,조엘 페레이라,J. 페레이라
+40565,M. Skrzypczak,Mateusz Skrzypczak,Defender,Poland,마테우시 스크시프차크,M. 스크시프차크
+566804,K. Delikat,Karol Delikat,Midfielder,Poland,카롤 델리카트,K. 델리카트
+8564,A. Gholizadeh,Ali Gholizadeh Nojedeh,Midfielder,Iran,알리 골리자데,A. 골리자데
+40529,F. Jagiełło,Filip Wojciech Jagiełło,Midfielder,Poland,필리프 야기에워,F. 야기에워
+269892,A. Kozubal,Antoni Kozubal,Midfielder,Poland,안토니 코주발,A. 코주발
+31556,R. Murawski,Radosław Paweł Murawski,Midfielder,Poland,라도스와프 무라프스키,R. 무라프스키
+27760,L. Palma,Luis Enrique Palma Oseguera,Midfielder,Honduras,루이스 팔마,L. 팔마
+386756,Y. Agnero,Mel Yannick Joel Agnero,Attacker,Côte d'Ivoire,야니크 아녜로,Y. 아녜로
+47910,L. Bengtsson,Erik Martin Leo Bengtsson,Midfielder,Sweden,레오 벵트손,L. 벵트손
+55342,D. Håkans,Daniel Noel Mikael Håkans,Midfielder,Finland,다니엘 호칸스,D. 호칸스
+25619,M. Ishak,Mikael Ishak,Attacker,Sweden,미카엘 이샤크,M. 이샤크
+162029,P. Rodríguez,Pablo Rodríguez Delgado,Midfielder,Spain,파블로 로드리게스,P. 로드리게스
+161176,P. Wålemark,Jens Patrik Wålemark,Midfielder,Sweden,파트리크 볼레마르크,P. 볼레마르크
+122040,N. Christogeorgos,Nikos Christogeorgos,Goalkeeper,Greece,니콜라오스 흐리스토예오르고스,N. 흐리스토예오르고스
+594076,M. Kalafatis,Manuel Kalafatis,Goalkeeper,Greece,마누엘 칼라파티스,M. 칼라파티스
+26701,P. Katsikas,Panagiotis Katsikas,Goalkeeper,Greece,파나요티스 카치카스,P. 카치카스
+388962,K. Lilo,Klidman Lilo,Goalkeeper,Albania,클리드만 릴로,K. 릴로
+310442,N. Athanasiou,Nicolaos Athanasiou,Midfielder,Greece,니콜라오스 아타나시우,N. 아타나시우
+30857,L. Dickmann,Lorenzo Maria Dickmann,Midfielder,Italy,로렌초 디크만,L. 디크만
+92525,B. González,Borja González Tejada,Defender,Spain,보르하 곤살레스,B. 곤살레스
+554036,P. Kenourgiakis,Pavlos Kenourgiakis,Defender,Greece,파블로스 케누르야키스,P. 케누르야키스
+417556,K. Kostoulas,Konstantinos Kostoulas,Defender,Greece,콘스탄디노스 코스툴라스,K. 코스툴라스
+14361,K. Krizmanić,Krešimir Krizmanić,Defender,Croatia,크레시미르 크리즈마니치,K. 크리즈마니치
+482621,K. Lagoudakis,Konstantinos Lagoudakis,Midfielder,Greece,콘스탄디노스 라구다키스,K. 라구다키스
+26771,N. Marinakis,Nikolaos Marinakis,Defender,Greece,니콜라오스 마리나키스,N. 마리나키스
+31045,D. Nikolaou,Dimitrios Nikolaou,Defender,Greece,디미트리오스 니콜라우,D. 니콜라우
+610694,K. Papadakis,Konstantinos Papadakis,Defender,Greece,콘스탄디노스 파파다키스,K. 파파다키스
+26741,A. Poungouras,Achilleas Poungouras,Defender,Greece,아힐레아스 풍구라스,A. 풍구라스
+20294,C. Sielis,Christos Sielis,Defender,Cyprus,흐리스토스 시엘리스,C. 시엘리스
+1602,T. Androutsos,Thanasis Androutsos,Midfielder,Greece,타나시스 안드루초스,T. 안드루초스
+349497,G. Apostolakis,Ioannis Apostolakis,Midfielder,Greece,야니스 아포스톨라키스,G. 아포스톨라키스
+1603,A. Bouchalakis,Andreas Bouchalakis,Midfielder,Greece,안드레아스 부할라키스,A. 부할라키스
+36848,A. Cantalapiedra,Aitor Cantalapiedra Fernández,Attacker,Spain,아이토르 칸탈라피에드라,A. 칸탈라피에드라
+482616,M. Chnaris,Manolis Chnaris,Midfielder,Greece,마노스 흐나리스,M. 흐나리스
+135853,G. Kanellópoulos,Geórgios Kanellópoulos,Midfielder,Greece,예오르요스 카넬로풀로스,G. 카넬로풀로스
+26952,Z. Karachalios,Zisis Karachalios,Midfielder,Greece,지시스 카라할리오스,Z. 카라할리오스
+614179,A. Sitmalidis,Athanasios Sitmalidis,Midfielder,Greece,아타나시오스 시트말리디스,A. 시트말리디스
+7625,T. Fountas,Taxiarchis Fountas,Midfielder,Greece,탁시아르히스 푼다스,T. 푼다스
+47292,K. Kodro,Kenan Kodro,Attacker,Bosnia and Herzegovina,케난 코드로,K. 코드로
+22153,A. Leya Iseka,Aaron Leya Iseka,Attacker,Belgium,아론 레야 이세카,A. 레야 이세카
+170077,T. Nuss,Thiago Thomas Nuss,Midfielder,Argentina,티아고 누스,T. 누스
+626652,T. Romano,Thiago Romano,Attacker,Argentina,티아고 로마노,T. 로마노
+382218,G. Theodosoulakis,Giannis Theodosoulakis,Attacker,Greece,야니스 테오도술라키스,G. 테오도술라키스
+442502,M. Goga,Matei Goga,Goalkeeper,Romania,마테이 고가,M. 고가
+70485,P. Isenko,Pavlo Isenko,Goalkeeper,Ukraine,파울로 이센코,P. 이센코
+401860,A. Maxim,Alexandru Gabriel Maxim,Goalkeeper,Romania,알렉산드루 막심,A. 막심
+172883,O. Romanchuk,Oleksandr Romanchuk,Defender,Ukraine,올렉산드르 로만추크,O. 로만추크
+46136,N. Stevanović,Nikola Stevanović,Defender,Serbia,니콜라 스테바노비치,N. 스테바노비치
+43071,T. Băluță,Tudor Cristian Băluță,Midfielder,Romania,투도르 벌루처,T. 벌루처
+450410,L. Băsceanu,Luca Băsceanu,Midfielder,Romania,루카 버스케아누,L. 버스케아누
+43050,A. Cicâldău,Alexandru Cicâldău,Midfielder,Romania,알렉산드루 치클더우,A. 치클더우
+104553,A. Crețu,Alexandru Crețu,Midfielder,Romania,알렉산드루 크레추,A. 크레추
+409845,D. Matei,David Matei,Attacker,Romania,다비드 마테이,D. 마테이
+179935,A. Mekvabishvili,Anzor Mekvabishvili,Midfielder,Georgia,안조르 메크바비슈빌리,A. 메크바비슈빌리
+142018,S. Teles,Samuel Teles Pereira Nunes da Silva,Midfielder,Portugal,사무엘 텔레스,S. 텔레스
+190548,A. Al-Hamlawi,Assad Al Islam Al Hamlawi,Attacker,Sweden,아사드 알 함라위,A. 알 함라위
+102823,M. Etim,Monday Bassey Etim,Attacker,Nigeria,먼데이 에팀,M. 에팀
+41125,He. Tavares,Heriberto Moreno Borges Tavares,Defender,Portugal,에리 타바르스,He. 타바르스
+196480,C. Mora,Carlos Andrei Mora Montoya,Midfielder,Costa Rica,카를로스 모라,C. 모라
+107426,S. Nsimba,Aimé Steven Nsimba Labe,Attacker,France,스테벤 은심바,S. 은심바
+367688,M. Rădulescu,Mihnea Gabriel Rădulescu,Midfielder,Romania,미흐네아 러둘레스쿠,M. 러둘레스쿠
+198395,I. Guteša,Ivan Guteša,Goalkeeper,Serbia,이반 구테샤,I. 구테샤
+41089,Matheus,Matheus Lima Magalhães,Goalkeeper,Brazil,마테우스,마테우스
+496789,S. Radanović,Savo Radanović,Goalkeeper,Serbia,사보 라다노비치,S. 라다노비치
+419610,A. Avdić,Adem Avdić,Defender,Serbia,아뎀 아브디치,A. 아브디치
+495936,S. Gudelj,Stefan Gudelj,Defender,Bosnia and Herzegovina,스테판 구델,S. 구델
+36920,Y. Nakayama,Nakayama Yūta,Defender,Japan,나카야마 유타,Y. 나카야마
+80566,Rodrigão,Rodrigo de Souza Prado,Defender,Brazil,호드리강,호드리강
+610938,M. Strika,Matej Strika,Defender,Serbia,마테이 스트리카,M. 스트리카
+319388,F. Uchenna,Franklin Degaulle Tebo Uchenna,Defender,Nigeria,프랭클린 테보 우첸나,F. 우첸나
+2821,M. Veljković,Miloš Veljković,Defender,Serbia,밀로시 벨코비치,M. 벨코비치
+108017,M. Abu Fani,Mohamed Abu Fani,Midfielder,Israel,모하메드 아부 파니,M. 아부 파니
+408543,M. Bajo,Mahmudu Bajo,Midfielder,Gambia,마흐무두 바조,M. 바조
+146008,M. Cham,Muhammed Cham Saračević,Attacker,Austria,무하메드 참,M. 참
+17789,T. Elšnik,Timi Max Elšnik,Midfielder,Slovenia,티미 막스 엘슈니크,T. 엘슈니크
+641573,M. Gashtarov,Matej Gastarov,Midfielder,North Macedonia,마테이 가시타로프,M. 가시타로프
+187926,T. Händel,Tomás Romano Pereira Santos Händel,Midfielder,Portugal,토마스 헨델,T. 헨델
+353,M. Ivanić,Mirko Ivanić,Attacker,Montenegro,미르코 이바니치,M. 이바니치
+50910,A. Katai,Aleksandar Katai,Midfielder,Serbia,알렉산다르 카타이,A. 카타이
+462208,V. Kostov,Vasilije Kostov,Midfielder,Serbia,바실리예 코스토브,V. 코스토브
+31054,R. Krunić,Rade Krunić,Midfielder,Bosnia and Herzegovina,라데 크루니치,R. 크루니치
+394173,K. Balov,Kristiyan Teodorov Balov,Attacker,Bulgaria,크리스티얀 발로프,K. 발로프
+61418,O. Bukari,Osman Bukari,Midfielder,Ghana,오스만 부카리,O. 부카리
+68106,L. Loizou,Loizos Loizou,Attacker,Cyprus,로이조스 로이주,L. 로이주
+264495,V. Lučić,Vladimir Lučić,Attacker,Serbia,블라디미르 루치치,V. 루치치
+610569,Di. Šarić,Dimitrije Šarić,Attacker,Serbia,디미트리예 샤리치,Di. 샤리치
+628274,D. Afful,Daniel Afful,Goalkeeper,Ghana,다니엘 아풀,D. 아풀
+660545,B. Puja,Bruno Puja,Goalkeeper,Albania,브루노 푸야,B. 푸야
+264663,L. Tandilashvili,Levan Tandilashvili,Goalkeeper,Georgia,레반 탄딜라슈빌리,L. 탄딜라슈빌리
+395753,N. Ajetovikj,Numan Ajetovikj,Defender,North Macedonia,누만 아예토비치,N. 아예토비치
+204046,Z. Əliyev,Zamiq Əliyev,Defender,Azerbaijan,자미크 앨리예프,Z. 앨리예프
+3713,E. Bitri,Eneo Bitri,Defender,Albania,에네오 비트리,E. 비트리
+132,G. Jaime,Guillem Jaime Serrano,Defender,Spain,기옘 하이메,G. 하이메
+624124,A. Kacbufi,Alessandro Kacbufi,Defender,Albania,알레산드로 카츠부피,A. 카츠부피
+3687,E. Ndreca,Edison Ndreca,Defender,Albania,에디손 은드레차,E. 은드레차
+321420,G. Smajli,Geralb Smajli,Defender,Albania,게랄브 스마일리,G. 스마일리
+4227,E. Sota,Eljon Sota,Defender,Albania,엘리온 소타,E. 소타
+405801,A. Yago,Andrey Yago da Silva Mesquita Almeida,Midfielder,Brazil,안드레이 야구,A. 야구
+3661,A. Aleksi,Albano Aleksi,Midfielder,Albania,알바노 알렉시,A. 알렉시
+661156,R. Bakalli,Reis Bakalli,Midfielder,Albania,레이스 바칼리,R. 바칼리
+3545,L. Beqja,Ledio Beqja,Midfielder,Albania,레디오 베치아,L. 베치아
+676895,Z. Cullhaj,Zyber Cullhaj,Midfielder,Albania,쥐베르 출하이,Z. 출하이
+422597,I. Diabaté,Ibrahim Diabaté,Midfielder,Côte d'Ivoire,이브라힘 디아바테,I. 디아바테
+620063,B. Duka,Bjorni Duka,Midfielder,Albania,비오르니 두카,B. 두카
+10032,Fe. Medeiros,Fernando Medeiros da Silva,Midfielder,Brazil,페르난두 메데이루스,Fe. 메데이루스
+157998,A. Kryeziu,Altin Kryeziu,Midfielder,Kosovo,알틴 크리에지우,A. 크리에지우
+634358,D. Adjessa,Daniel Adjessa,Attacker,Cameroon,다니엘 아제사,D. 아제사
+260819,A. Albanese,Alessandro Albanese,Midfielder,Belgium,알레산드로 알바네세,A. 알바네세
+372077,So. Bakayoko,Soumaila Bakayoko,Attacker,Côte d'Ivoire,수마일라 바카요코,So. 바카요코
+624383,D. Duro,Dejvi Duro,Attacker,Albania,데이비 두로,D. 두로
+140971,I. Gruda,Ildi Gruda,Midfielder,Albania,일디 그루다,I. 그루다
+518663,D. Hoxha,Deivid Hoxha,Attacker,Albania,데이비드 호자,D. 호자
+93030,K. Loukili,Karim Loukili,Midfielder,Morocco,카림 루킬리,K. 루킬리
+14021,J. Montenegro,Jurguens Josafat Montenegro Vallejo,Attacker,Costa Rica,후르겐스 몬테네그로,J. 몬테네그로
+307333,R. Kurtanidze,Revaz Kurtanidze,Goalkeeper,Georgia,레바즈 쿠르타니제,R. 쿠르타니제
+41379,G. Makaridze,Giorgi Makaridze,Goalkeeper,Georgia,기오르기 마카리제,G. 마카리제
+24545,T. Megrelishvili,Tornike Megrelishvili,Goalkeeper,Georgia,토르니케 메그렐리슈빌리,T. 메그렐리슈빌리
+395823,A. Amisulashvili,Aleksandre Amisulashvili,Defender,Georgia,알렉상드르 아미술라슈빌리,A. 아미술라슈빌리
+540516,N. Bochorishvili,Nikoloz Bochorishvili,Defender,Georgia,니콜로즈 보초리슈빌리,N. 보초리슈빌리
+156990,P. Čančar,Phillip Čančar,Defender,Australia,필립 찬차르,P. 찬차르
+540418,G. Chanturia,Giorgi Chanturia,Defender,Georgia,기오르기 찬투리아,G. 찬투리아
+352928,S. Figueredo,Sebastián María Figueredo Vilar del Valle,Defender,Uruguay,세바스티안 피게이레도,S. 피게이레도
+342481,T. Gobeshia,Tengo Gobeshia,Defender,Georgia,텐고 고베시아,T. 고베시아
+423227,G. Gogsadze,Giorgi Gogsadze,Midfielder,Georgia,기오르기 고그사제,G. 고그사제
+24550,J. Jinjolava,Jemali-Giorgi Jinjolava,Defender,Georgia,제말리기오르기 진졸라바,J. 진졸라바
+24461,G. Kobuladze,Giorgi Kobuladze,Defender,Georgia,기오르기 코불라제,G. 코불라제
+665806,L. Mamulashvili,Luka Mamulashvili,Defender,Georgia,루카 마물라슈빌리,L. 마물라슈빌리
+112862,V. Mudrac,Victor Mudrac,Defender,Moldova,빅토르 무드라크,V. 무드라크
+1875,V. Selimović,Vahid Selimović,Defender,Luxembourg,바히드 셀리모비치,V. 셀리모비치
+163530,J. Tiboué,Jean-Marc Tiboué,Defender,Côte d'Ivoire,장마르크 티부에,J. 티부에
+41467,I. Alhassan,Abdullahi Ibrahim Alhassan,Midfielder,Nigeria,이브라힘 알하산,I. 알하산
+619520,S. Avdoevi,Saba Avdoevi,Midfielder,Georgia,사바 아브도에비,S. 아브도에비
+410304,N. Dadiani,Nikoloz Dadiani,Midfielder,Georgia,니콜로즈 다디아니,N. 다디아니
+24609,B. Kardava,Bakar Kardava,Midfielder,Georgia,바카르 카르다바,B. 카르다바
+278614,E. Kuliyev,Eldar Kuliev,Midfielder,Ukraine,엘다르 쿨리예우,E. 쿨리예우
+24676,G. Kutsia,Giorgi Kutsia,Midfielder,Georgia,기오르기 쿠치아,G. 쿠치아
+292336,L. Café,Lucas Oliveira Brune,Midfielder,Brazil,루카스 카페,L. 카페
+540450,G. Sajaia,Giorgi Sajaia,Midfielder,Georgia,기오르기 사자이아,G. 사자이아
+311864,N. Sikharulashvili,Nika Sikharulashvili,Midfielder,Georgia,니카 시하룰라슈빌리,N. 시하룰라슈빌리
+540416,S. Tsamalashvili,Shotiko Tsamalashvili,Midfielder,Georgia,쇼티코 차말라슈빌리,S. 차말라슈빌리
+494364,A. Bartishvili,Andria Bartishvili,Attacker,Georgia,안드리아 바르티슈빌리,A. 바르티슈빌리
+427652,V. Bedoshvili,Vakho Bedoshvili,Midfielder,Georgia,바호 베도슈빌리,V. 베도슈빌리
+560489,L. Chikhradze,Lado Chikhradze,Attacker,Georgia,라도 치흐라제,L. 치흐라제
+306190,A. Dzagania,Amiran Dzagania,Attacker,Georgia,아미란 자가니아,A. 자가니아
+636874,S. Ende,Stephen Ende,Attacker,Nigeria,스티븐 엔데,S. 엔데
+540414,D. Gogilashvili,Davit Gogilashvili,Midfielder,Georgia,다비트 고길라슈빌리,D. 고길라슈빌리
+423228,D. Kvartskhava,Daniel Kvartskhava,Attacker,Georgia,다니엘 크바르츠하바,D. 크바르츠하바
+543954,Z. Natchkebia,Zviad Natchkebia,Attacker,Georgia,즈비아드 나치케비아,Z. 나치케비아
+673007,M. Ahlstrand,Melker Ahlstrand,Goalkeeper,Sweden,멜케르 알스트란드,M. 알스트란드
+161270,A. Lundin,Henric Alexander Lundin,Goalkeeper,Sweden,알렉산데르 룬딘,A. 룬딘
+216777,R. Wallinder,Robin Lars Wallinder,Goalkeeper,Sweden,로빈 발린데르,R. 발린데르
+264106,M. Agnarsson,Martin Agnarsson,Defender,Faroe Islands,마르틴 아그나르손,M. 아그나르손
+651165,D. Hodzić,Dani Hodzić,Defender,Sweden,다니 호지치,D. 호지치
+202850,I. Hoffmann,Ian Jakob Hoffmann,Defender,USA,아인 호프만,I. 호프만
+305443,A. Iqbal,Abdullah Iqbal,Defender,Pakistan,압둘라 이크발,A. 이크발
+55362,T. Miettinen,Tony Miettinen,Defender,Finland,토니 미에티넨,T. 미에티넨
+425316,M. Nielsen,Max Nielsen,Defender,Denmark,막스 닐센,M. 닐센
+107245,A. Norén,Axel Vilhelm Lindberg Norén,Defender,Sweden,악셀 노렌,A. 노렌
+48089,T. Pettersson,Tom Peder Pettersson,Defender,Sweden,톰 페테르손,T. 페테르손
+207909,L. Svanberg,Ludvig Oliver Svanberg,Defender,Sweden,루드비그 스반베리,L. 스반베리
+662742,I. Andersen,Isak Andersen,Midfielder,Sweden,이사크 안데르센,I. 안데르센
+483307,R. Leandersson,Romeo Arrhenius Leandersson,Midfielder,Sweden,로메오 레안데르손,R. 레안데르손
+281660,M. Enggård,Mads Enggård,Midfielder,Denmark,마스 엥고르,M. 엥고르
+161057,V. Granath,Villiam John Morgan Granath,Defender,Sweden,빌리암 그라나트,V. 그라나트
+47720,V. Gustafson,Viktor Gustafson,Midfielder,Sweden,빅토르 구스타프손,V. 구스타프손
+47721,J. Gustavsson,Per Jesper Gustavsson,Midfielder,Sweden,예스페르 구스타브손,J. 구스타브손
+392103,T. Helge,Teo Helge,Midfielder,Sweden,테오 헬게,T. 헬게
+519717,O. Lindberg,Olle Lindberg,Midfielder,Sweden,올레 린드베리,O. 린드베리
+672183,O. Lindberg,Per Olle Lindberg,Midfielder,Sweden,올레 린드베리,O. 린드베리
+561203,C. Rosén,Charles Rosén,Attacker,Sweden,샬스 로센,C. 로센
+377040,L. Tidstrand,Ludvig Tidstrand,Midfielder,Sweden,루드비그 티스트란드,L. 티스트란드
+47729,J. Bergström,Anders Jacob Bergström,Attacker,Sweden,야코브 베리스트룀,J. 베리스트룀
+613186,V. Dalsgaard,Villum Dalsgaard,Attacker,Denmark,비툼 달스고르,V. 달스고르
+201898,J. Kjær,Jeppe Kjær Jensen,Midfielder,Denmark,예페 키에르,J. 키에르
+263203,Á. Samuelsen,Áki Debes Samuelsen,Attacker,Faroe Islands,아키 사무엘센,Á. 사무엘센
+55533,T. Stavitski,Timo Stavitski,Attacker,Finland,티모 사비츠키,T. 사비츠키
+48027,A. Youssef,Ali Ben Safouane Youssef,Midfielder,Tunisia,알리 유세프,A. 유세프
+494741,B. Aldashev,Bakhtiyar Aldashev,Goalkeeper,Kazakhstan,바흐티야르 알다셰프,B. 알다셰프
+265533,T. Anarbekov,Temirlan Anarbekov,Goalkeeper,Kazakhstan,테미를란 아나르베코프,T. 아나르베코프
+532218,D. Buch,Danila Buch,Goalkeeper,Kazakhstan,다닐라 부치,D. 부치
+445524,S. Kalmurza,Sherkhan Kalmurza,Goalkeeper,Kazakhstan,셰르한 칼무르자,S. 칼무르자
+445526,A. Bazarbaev,Amirbek Bazarbaev,Defender,Kazakhstan,아미르베크 바자르바예프,A. 바자르바예프
+490790,A. Kalikulov,Akezhan Kalikulov,Defender,Kazakhstan,아케잔 칼리쿨로프,A. 칼리쿨로프
+490791,R. Kenesbekov,Rayimbek Kenesbekov,Defender,Kazakhstan,라이음베크 케네스베코프,R. 케네스베코프
+324709,L. Kurgin,Lev Kurgin,Defender,Kazakhstan,레프 쿠르긴,L. 쿠르긴
+41265,L. Áfrico,Lucas Henrique da Silva,Defender,Brazil,루카스 아프리쿠,L. 아프리쿠
+96329,L. Mata,Luís Carlos Machado Mata,Defender,Portugal,루이스 마타,L. 마타
+2074,A. Martynovich,Aleksandr Martynovich,Defender,Belarus,알렉산드르 마르티노비치,A. 마르티노비치
+323820,A. Mrynskiy,Aleksandr Mrynskiy,Defender,Kazakhstan,알렉산드르 므린스키,A. 므린스키
+445534,A. Nurgaliev,Adlan Nurgaliev,Defender,Kazakhstan,아들란 누르갈리예프,A. 누르갈리예프
+319495,A. Sadybekov,Adilet Sadybekov,Midfielder,Kazakhstan,아딜레트 사디베코프,A. 사디베코프
+265528,A. Shirobokov,Aleksandr Shirobokov,Defender,Kazakhstan,알렉산드르 시로보코프,A. 시로보코프
+111532,Y. Tapalov,Erkin Tapalov,Defender,Kazakhstan,예르킨 타팔로프,Y. 타팔로프
+445473,D. Tashpulatov,Daniyar Tashpulatov,Defender,Kazakhstan,다니야르 타시풀라토프,D. 타시풀라토프
+529982,M. Abish,Mukhamedali Abish,Midfielder,Kazakhstan,무하메트알리 아비시,M. 아비시
+345422,O. Baybek,Olzhas Baybek,Midfielder,Kazakhstan,올자스 바이베크,O. 바이베크
+531970,S. Duysenbek,Shyngys Duysenbek,Midfielder,Kazakhstan,싱기스 두이센베크,S. 두이센베크
+322050,D. Kasabulat,Damir Kasabulat,Midfielder,Kazakhstan,다미르 카사불라트,D. 카사불라트
+445529,K. Makhametzhan,Karim Makhametzhan,Midfielder,Kazakhstan,카림 마하메트잔,K. 마하메트잔
+19349,J. Oksanen,Jaakko Tapio Oksanen,Midfielder,Finland,야코 옥사넨,J. 옥사넨
+490789,E. Petrik,Evgeniy Petrik,Midfielder,Kazakhstan,예브게니 페트리크,E. 페트리크
+490788,A. Tuyakbayev,Azamat Tuyakbayev,Midfielder,Kazakhstan,아자마트 투야크바예프,A. 투야크바예프
+453725,R. Bagdat,Ramazan Bagdat,Attacker,Kazakhstan,라마잔 바그다트,R. 바그다트
+453670,I. Bekbolat,Ismail Bekbolat,Attacker,Kazakhstan,이스마일 베크볼라트,I. 베크볼라트
+532067,M. Birkurmanov,Mansur Birkurmanov,Attacker,Kazakhstan,만수르 비르쿠르마노프,M. 비르쿠르마노프
+301363,Edmilson,Edmilson de Paula Santos Filho,Attacker,Brazil,이드미우송,이드미우송
+142620,Jorginho,Jorge Gabriel Costa Monteiro,Midfielder,Portugal,조르지뉴,조르지뉴
+264531,O. Jukkola,Oiva Jukkola,Midfielder,Finland,오이바 유콜라,O. 유콜라
+494717,A. Toleukhan,Abylay Toleukhan,Midfielder,Kazakhstan,아빌라이 톨레우한,A. 톨레우한
+323375,T. Spycher,Tim Spycher,Goalkeeper,Switzerland,팀 슈퓌허,T. 슈퓌허
+163139,N. Steffen,Niklas Steffen,Goalkeeper,Switzerland,니클라스 슈테펜,N. 슈테펜
+667665,L. Stucki,Leo Stucki,Goalkeeper,Switzerland,레오 슈투키,L. 슈투키
+412766,D. Wälti,Dario Wälti,Goalkeeper,Switzerland,다리오 벨티,D. 벨티
+195849,A. Balaruban,Ashvin Balaruban,Defender,Switzerland,아슈빈 발라루반,A. 발라루반
+48507,J. Bamert,Jan Alexandre Bamert,Defender,Switzerland,얀 바메르트,J. 바메르트
+48654,N. Bürgy,Nicolas Sandro Bürgy,Defender,Switzerland,니콜라스 뷔르기,N. 뷔르기
+8608,M. Bürki,Marco Bürki,Defender,Switzerland,마르코 뷔르키,M. 뷔르키
+392623,L. Dähler,Lucien Dähler,Defender,Switzerland,루시엥 델러,L. 델러
+180400,F. Fehr,Fabio Fehr,Defender,Switzerland,파비오 페어,F. 페어
+47456,G. Montolio,Genís Montolio Lafuente,Defender,Spain,제니스 몬톨리오,G. 몬톨리오
+660753,L. Passavant,Louis Passavant,Defender,Switzerland,루이 파사방,L. 파사방
+670266,M. Seiler,Mats Seiler,Defender,Switzerland,마츠 자일러,M. 자일러
+426405,D. Derbaci,Dorian Derbaci,Midfielder,Switzerland,도리안 데르바치,D. 데르바치
+592874,Ad. Ilić,Adam Ilić,Midfielder,Switzerland,아담 일리치,Ad. 일리치
+55911,M. Käit,Mattias Käit,Midfielder,Estonia,마티아스 케이트,M. 케이트
+667664,S. Lengen,Simon Lengen,Attacker,Switzerland,지몬 렝겐,S. 렝겐
+667662,A. Maaroufi,Amir Maaroufi,Midfielder,Switzerland,아미르 마루피,A. 마루피
+265753,N. Reichmuth,Nils Ramiro Reichmuth,Midfielder,Switzerland,닐스 라이흐무트,N. 라이흐무트
+125623,J. Roth,Justin Roth,Midfielder,Switzerland,유스틴 로트,J. 로트
+546614,F. Saiz,Fabio Saiz,Midfielder,Switzerland,파비오 사인스,F. 사인스
+156561,T. Strannegård,Tom Henning Strannegård,Midfielder,Sweden,톰 스트란네고르드,T. 스트란네고르드
+335988,N. Zoukit,Nassim-Othmane Zoukit,Midfielder,Switzerland,나심 주키트,N. 주키트
+339922,F. Dursun,Furkan Dursun,Attacker,Austria,푸르칸 두르순,F. 두르순
+427425,M. Gutbub,Marc Gutbub,Attacker,Switzerland,마르크 구트부프,M. 구트부프
+21775,B. Labeau,Brighton Andy Labeau Melchior,Attacker,Martinique,브라이튼 라보,B. 라보
+161820,N. Maier,Nico Maier,Midfielder,Switzerland,니코 마이어,N. 마이어
+152977,L. Stewart,Layton Rhys Stewart,Attacker,England,레이턴 스튜어트,L. 스튜어트
+388944,J. Aliukonis,Joris Aliukonis,Goalkeeper,Lithuania,요리스 알리우코니스,J. 알리우코니스
+69926,D. Mikelionis,Deividas Mikelionis,Goalkeeper,Lithuania,데이비다스 미켈리오니스,D. 미켈리오니스
+69948,T. Švedkauskas,Tomas Švedkauskas,Goalkeeper,Lithuania,토마스 슈베드카우스카스,T. 슈베드카우스카스
+357742,T. Burdzilauskas,Tautvydas Burdzilauskas,Defender,Lithuania,타우트비다스 부르질라우스카스,T. 부르질라우스카스
+55714,Al. Hernández,Aldayr Hernández Basanta,Defender,Colombia,알다이르 에르난데스,Al. 에르난데스
+7183,N. Edokpolor,Nosa Iyobosa Edokpolor,Defender,Austria,노사 이요보사 에독폴로르,N. 에독폴로르
+80109,L. Kastrati,Lirim Kastrati,Defender,Kosovo,리림 카스트라티,L. 카스트라티
+133392,M. Konatar,Marko Konatar,Defender,Serbia,마르코 코나타르,M. 코나타르
+128737,R. Lekiatas,Rokas Lekiatas,Defender,Lithuania,로카스 레키아타스,R. 레키아타스
+174815,J. Moutachy,Joris Moutachy,Defender,France,조리스 무타시,J. 무타시
+19350,L. Račić,Luka Račić,Defender,Denmark,루카 라치치,L. 라치치
+24362,A. Tolordava,Anton Tolordava,Defender,Georgia,안톤 톨로르다바,A. 톨로르다바
+5297,F. Baldassarra,Franco Pedro Baldassarra,Midfielder,Argentina,프랑코 발다사라,F. 발다사라
+8752,A. Benchaib,Amine Benchaib,Attacker,Belgium,아민 벤샤이브,A. 벤샤이브
+1936,I. Fiolić,Ivan Fiolić,Midfielder,Croatia,이반 피올리치,I. 피올리치
+14342,A. Kalik,Anthony Kalik,Midfielder,Australia,안토니 칼리크,A. 칼리크
+281035,Y. Karashima,Karashima Yukiyoshi,Midfielder,Japan,카라시마 유키요시,Y. 카라시마
+69899,G. Sirgėdas,Gratas Sirgėdas,Midfielder,Lithuania,그라타스 시르게다스,G. 시르게다스
+44850,V. Slivka,Vykintas Slivka,Midfielder,Lithuania,비킨타스 슬리우카,V. 슬리우카
+210027,M. Burba,Motiejus Burba,Attacker,Lithuania,모티에유스 부르바,M. 부르바
+53655,F. Černych,Fedor Černych,Midfielder,Lithuania,표도르 체르니흐,F. 체르니흐
+119277,G. Debeljuh,Gabriel Debeljuh,Attacker,Croatia,가브리엘 데벨류흐,G. 데벨류흐
+105509,H. Kadrić,Haris Kadrić,Attacker,Slovenia,하리스 카드리치,H. 카드리치
+14603,L. Kreković,Leon Kreković,Midfielder,Croatia,레온 크레코비치,L. 크레코비치
+237770,L. Ribeiro,Leonardo Ribeiro Da Cruz,Midfielder,Brazil,레우 히베이루,L. 히베이루
+20610,F. Ourega,Fabien Ourega,Midfielder,France,파비엥 우레가,F. 우레가
+112386,R. Oliveira,Renan Abner do Carmo de Oliveira,Attacker,Brazil,헤낭 올리베이라,R. 올리베이라
+557854,M. Tunc,Metin Tunc,Attacker,Lithuania,메틴 툰치,M. 툰치
+15786,Je. Hansen,Jesper Hansen,Goalkeeper,Denmark,예스퍼 한센,Je. 한센
+39301,M. Hedenstad,Mads Hedenstad Christiansen,Goalkeeper,Norway,마스 헤덴스타,M. 헤덴스타
+635531,O. Lyhne,Otto Lyhne,Goalkeeper,Denmark,오토 뤼네,O. 뤼네
+669273,M. van der Raad,Marius van der Raad,Goalkeeper,Denmark,마리우스 판데르라트,M. 판데르라트
+465901,L. Callø,Luka Callø Carstensen,Defender,Denmark,루카 칼뢰,L. 칼뢰
+635532,M. Camara,Mouhammade Camara,Defender,Mali,무하마드 카마라,M. 카마라
+550857,Z. Grantzau,Zander Grantzau,Defender,Denmark,산데르 그란차우,Z. 그란차우
+57141,D. Grétarsson,Daníel Leó Grétarsson Schmidt,Defender,Iceland,다니엘 레오 그리에타르손,D. 그리에타르손
+151738,E. Kahl,Eric Andre Kahl,Defender,Sweden,에릭 칼,E. 칼
+15668,T. Mølgaard,Tobias Mølgaard Henriksen,Defender,Denmark,토비아스 묄고르,T. 묄고르
+137131,C. Rösler,Colin Rösler,Defender,Norway,콜린 뢰슬러,C. 뢰슬러
+607093,H. Sengooba,Hamuza Sengooba,Defender,Uganda,하무자 센고바,H. 센고바
+521025,C. Storch,Christian Storch,Defender,Denmark,크리스티안 스토르크,C. 스토르크
+15584,F. Tingager,Frederik Beyer Tingager,Defender,Denmark,프레데릭 팅아거,F. 팅아거
+315567,Ja. Andersen,Jacob Florentin Andersen,Defender,Denmark,야콥 안데르센,Ja. 안데르센
+37880,M. Anderson,Mikael Neville Anderson,Midfielder,Iceland,미카엘 안데르손,M. 안데르손
+15931,R. Carstensen,Rasmus Carstensen,Midfielder,Denmark,라스무스 카르스텐센,R. 카르스텐센
+550856,O. Haugstrup,Oskar Haugstrup,Midfielder,Denmark,오스카르 하우그스트룹,O. 하우그스트룹
+50009,J. Jønsson,Jens Jønsson,Midfielder,Denmark,옌스 옌손,J. 옌손
+39315,M. Knudsen,Magnus Nordengen Knudsen,Midfielder,Norway,망누스 크누드센,M. 크누드센
+46283,G. Links,Neo Gift Links,Midfielder,South Africa,기프트 링크스,G. 링크스
+15699,N. Poulsen,Nicolai Søberg Poulsen,Midfielder,Denmark,니콜라이 포울센,N. 포울센
+57425,M. Solbakken,Markus Solbakken,Midfielder,Norway,마르쿠스 솔바켄,M. 솔바켄
+108490,K. Arnstad,Kristian Fredrik Malt Arnstad,Midfielder,Norway,크리스티안 아른스타,K. 아른스타
+15964,T. Bech,Tobias Bech Kristensen,Attacker,Denmark,토비아스 베크,T. 베크
+606217,J. Bogere,James Bogere,Attacker,Uganda,제임스 보게레,J. 보게레
+470281,F. Emmery,Frederik Emmery Søgaard,Attacker,Denmark,프레데릭 에메리,F. 에메리
+15943,S. Jørgensen,Sebastian Vinther Jørgensen,Attacker,Denmark,세바스티안 예르겐센,S. 예르겐센
+495841,T. Kristjánsson,Tómas Óli Kristjánsson,Attacker,Iceland,토마스 크리스티아운손,T. 크리스티아운손
+24973,J. Serra,Janni-Luca Serra,Attacker,Germany,야니 세라,J. 세라
+514279,S. Tchamche,Stefen Erwan Tchamche,Attacker,Denmark,스테펜 참체,S. 참체
+20162,D. Evtimov,Dimitar Ivanov Evtimov,Goalkeeper,Bulgaria,디미터르 에프티모프,D. 에프티모프
+325077,F. Lapoukhov,Fedor Lapoukhov,Goalkeeper,Belarus,표도르 라포우호프,F. 라포우호프
+549108,D. Nikolov,Daniel Nikolov,Goalkeeper,Bulgaria,다니엘 니콜로프,D. 니콜로프
+26856,D. Almeida,Dinis da Costa Lima Almeida,Defender,Portugal,디니스 알메이다,D. 알메이다
+375004,T. Ivanov,Teodor Valentinov Ivanov,Defender,Bulgaria,테오도르 이바노프,T. 이바노프
+5641,Á. Martino,Ángelo Martino,Defender,Argentina,앙헬로 마르티노,Á. 마르티노
+197253,Pastor,David Samuel Custódio Lima,Defender,Brazil,파스토르,파스토르
+6302,F. Rodríguez,Facundo Santiago Rodríguez,Defender,Argentina,파쿤도 로드리게스,F. 로드리게스
+546210,A. Tunchev,Aleks Tunchev,Defender,Bulgaria,알렉스 툰체프,A. 툰체프
+11007,A. Yordanov,Andrey Yordanov Yordanov,Defender,Bulgaria,안드레이 요르다노프,A. 요르다노프
+349211,G. Chorbadzhiyski,Georgi Brankov Chorbadzhiyski,Midfielder,Bulgaria,게오르기 초르바지스키,G. 초르바지스키
+7782,M. Ebong,Afrid Max Ebong Ngome,Midfielder,Belarus,막스 에봉,M. 에봉
+174834,J. Eto'o,James Armel Eto'o Eyenga,Midfielder,Cameroon,제임스 에토,J. 에토
+663100,Y. Iliev,Yulian Iliev,Midfielder,Bulgaria,율리안 일리예프,Y. 일리예프
+1853,B. Jordão,Bruno André Cavaco Jordão,Midfielder,Portugal,브루누 조르당,B. 조르당
+546221,V. Kaymakanov,Vasil Kaymakanov,Midfielder,Bulgaria,바실 카이마카노프,V. 카이마카노프
+381024,T. Ouorou,Tamimou Ouorou,Defender,Benin,타미무 워루,T. 워루
+471581,P. Panayotov,Petko Hristov Panayotov,Midfielder,Bulgaria,페트코 파나요토프,P. 파나요토프
+30535,S. Sensi,Stefano Sensi,Midfielder,Italy,스테파노 센시,S. 센시
+174609,I. Solet,Isaac Solet Bomawoko,Midfielder,France,이삭 솔레,I. 솔레
+85416,M. Brahimi,Mohamed Amine Brahimi,Midfielder,France,모하메드 브라히미,M. 브라히미
+278358,L. Godoy,Santiago Leandro Godoy,Attacker,Argentina,레안드로 고도이,L. 고도이
+42996,C. Itu,Cătălin Mihai Itu,Midfielder,Romania,커털린 이투,C. 이투
+159774,L. Pereira,Leonardo Augusto dos Santos Pereira,Midfielder,Brazil,레우 페레이라,L. 페레이라
+287860,A. Piedrahita,Alejandro Piedrahita Díaz,Midfielder,Colombia,알레한드로 피에드라이타,A. 피에드라이타
+15518,I. Pittas,Ioannis Pittas,Attacker,Cyprus,이오아니스 피타스,I. 피타스
+37728,J. Zwarts,Joël Zwarts,Attacker,Netherlands,요엘 즈바르츠,J. 즈바르츠
+318344,N. Ćetković,Nikola Ćetković,Goalkeeper,Bosnia and Herzegovina,니콜라 체트코비치,N. 체트코비치
+37450,J. Carolina,Jurich Christopher Alexander Carolina,Defender,Curaçao,유리히 카롤리나,J. 카롤리나
+109751,N. Jakšić,Nemanja Jakšić,Defender,Serbia,네마냐 약시치,N. 약시치
+37578,B. Meijers,Bart Adrianus Johannes Meijers,Defender,Netherlands,바르트 메이여르스,B. 메이여르스
+137447,A. Pascual,Abel Pascual Urbón,Defender,Spain,아벨 파스콸,A. 파스콸
+550633,E. Riđan,Erik Riđan,Defender,Croatia,에리크 리잔,E. 리잔
+286376,V. Rogan,Viktor Rogan,Defender,Serbia,빅토르 로간,V. 로간
+45936,S. Saničanin,Siniša Saničanin,Defender,Bosnia and Herzegovina,시니샤 사니차닌,S. 사니차닌
+8484,A. Esiti,Anderson Esiti,Midfielder,Nigeria,안데르손 에시티,A. 에시티
+1723,S. Grahovac,Srđan Grahovac,Midfielder,Bosnia and Herzegovina,스르잔 그라호바츠,S. 그라호바츠
+49855,M. Jojić,Miloš Jojić,Midfielder,Serbia,밀로시 요이치,M. 요이치
+534470,I. Kukavica,Ivan Kukavica,Defender,Croatia,이반 쿠카비차,I. 쿠카비차
+105633,S. Ogrinec,Sandi Ogrinec,Midfielder,Slovenia,산디 오그리네츠,S. 오그리네츠
+61413,A. Roguljić,Ante Roguljić,Midfielder,Croatia,안테 로굴리치,A. 로굴리치
+80207,S. Savić,Stefan Savić,Midfielder,Austria,스테판 사비치,S. 사비치
+76932,S. Vranješ,Stojan Vranješ,Midfielder,Bosnia and Herzegovina,스토얀 브라녜시,S. 브라녜시
+567431,M. Deket,Matej Deket,Attacker,Bosnia and Herzegovina,마테이 데케트,M. 데케트
+471874,P. Đajić,Pavle Đajić,Attacker,Bosnia and Herzegovina,파블레 자이치,P. 자이치
+77040,A. Hiroš,Amer Hiroš,Midfielder,Bosnia and Herzegovina,아메르 히로시,A. 히로시
+312351,D. Hrelja,Damir Hrelja,Midfielder,Bosnia and Herzegovina,다미르 흐렐랴,D. 흐렐랴
+128717,L. Juričić,Luka Juričić,Attacker,Bosnia and Herzegovina,루카 유리치치,L. 유리치치
+26815,P. Kunić,Petar Kunić,Attacker,Bosnia and Herzegovina,페타르 쿠니치,P. 쿠니치
+421789,A. Milak,Amar Milak,Midfielder,Bosnia and Herzegovina,아마르 밀라크,A. 밀라크
+134720,K. Perić,Karlo Perić,Midfielder,Croatia,카를로 페리치,K. 페리치
+47118,D. Romera,Daniel Romera Andújar,Attacker,Spain,다니 로메라,D. 로메라
+202722,O. Sijarić,Omar-Šarif Sijarić,Attacker,Montenegro,오스마르 시야리치,O. 시야리치
+316338,D. Vuković,David Vuković,Midfielder,Bosnia and Herzegovina,다비드 부코비치,D. 부코비치
+7060,J. Kreidl,Johannes Kreidl,Goalkeeper,Austria,요하네스 크라이들,J. 크라이들
+55358,H. Riihimäki,Hemmo Riihimäki,Goalkeeper,Finland,헴모 리히메키,H. 리히메키
+469825,K. Silen,Kasperi Silen,Goalkeeper,Finland,카스페리 실렌,K. 실렌
+710,K. Adams,Kasim Adams Nuhu,Defender,Ghana,카심 아담스,K. 아담스
+15898,C. Antwi,Clinton Antwi,Defender,Ghana,클린턴 안트위,C. 안트위
+633450,E. Ergüner,Erol Ergüner,Defender,Finland,에롤 에르귀네르,E. 에르귀네르
+196073,T. Hämäläinen,Taneli Hämäläinen,Defender,Finland,타넬리 헤멜레이넨,T. 헤멜레이넨
+55474,S. Heiskanen,Saku Heiskanen,Midfielder,Finland,사쿠 헤이스카넨,S. 헤이스카넨
+41575,Jorginho,Ricardo Jorge Silva Araújo,Defender,Portugal,조르지뉴,조르지뉴
+263910,A. Lötjönen,Arttu Mikael Lötjönen,Defender,Finland,아르투 뢰티외넨,A. 뢰티외넨
+535331,B. Magassa,Brahima Magassa,Defender,France,브라히마 마가사,B. 마가사
+616150,A. Puukko,Akseli Puukko,Defender,Finland,악셀리 푸코,A. 푸코
+55388,S. Savolainen,Saku Savolainen,Defender,Finland,사쿠 사볼라이넨,S. 사볼라이넨
+468240,R. Tikkanen,Rasmus Tikkanen,Defender,Finland,라스무스 티카넨,R. 티카넨
+15857,J. Eskesen,Julius Eskesen,Midfielder,Denmark,율리우스 에스케센,J. 에스케센
+313748,V. Gasc,Valentín Román Gasc,Midfielder,Argentina,발렌틴 가스크,V. 가스크
+55382,A. Heinonen,Arttu Heinonen,Midfielder,Finland,아르투 헤이노넨,A. 헤이노넨
+55374,T. Jyry,Tommi Jyry,Midfielder,Finland,토미 위뤼,T. 위뤼
+549163,J. Kivijärvi,Joni Kivijärvi,Midfielder,Finland,요니 키비얘르비,J. 키비얘르비
+358156,N. Kujasalo,Niilo Kujasalo,Midfielder,Finland,닐로 쿠야살로,N. 쿠야살로
+355318,S. Pasanen,Samuel Pasanen,Midfielder,Finland,사무엘 파사넨,S. 파사넨
+55376,P. Pennanen,Petteri Henri Juhana Pennanen,Midfielder,Finland,페테리 펜나넨,P. 펜나넨
+638099,S. Soumahoro,Souleymane Soumahoro,Midfielder,Côte d'Ivoire,술레만 수마오로,S. 수마오로
+340124,A. Toivonen,Aaro Toivonen,Midfielder,Finland,아로 토이보넨,A. 토이보넨
+127751,S. Touray,Saikou Touray,Midfielder,Gambia,사이쿠 투라이,S. 투라이
+339601,A. Aiki,Ayman Aiki,Attacker,France,아이만 아이키,A. 아이키
+434046,B. Armah,Bob Nii Armah,Defender,Ghana,밥 니 아마,B. 아마
+8944,G. Engvall,Gustav Per Fredrik Engvall,Attacker,Sweden,구스타브 엥발,G. 엥발
+343378,C. Kabuye,Hope Calvin Ddamulira Kabuye,Attacker,Sweden,칼빈 카부예,C. 카부예
+264134,J. Luyeye-Lutumba,Joslyn Luyeye-Lutumba,Midfielder,Congo DR,조슬린 루예예루툼바,J. 루예예루툼바
+52727,J. Moreno,Jaime José Moreno Ciorciari,Attacker,Nicaragua,하이메 모레노,J. 모레노
+40431,P. Parzyszek,Piotr Parzyszek,Attacker,Poland,피오트르 파지셰크,P. 파지셰크
+380752,E. Tanninen,Eemil Tanninen,Attacker,Finland,에밀 탄니넨,E. 탄니넨
+490290,J. Terrádez,Juan David Terrádez Becerra,Goalkeeper,Spain,후안다 테라데스,J. 테라데스
+2034,J. Díaz,Javier Díaz Sánchez,Goalkeeper,Spain,하비 디아스,J. 디아스
+568283,R. Rosaria,Rodrigo Rosaria Fernandes,Goalkeeper,Andorra,로드리구 로자리아,R. 로자리아
+568278,P. Cabanes,Pol Cabanes,Defender,Andorra,폴 카베나스,P. 카베나스
+588653,An. Hernández,Anwar Hernández,Defender,Mexico,안와르 에르난데스,An. 에르난데스
+588654,J. Erraji,Jaouad Erraji,Defender,Spain,자와드 에라지,J. 에라지
+586426,M. Jurado,Marc Jurado,Defender,Spain,마르크 후라도,M. 후라도
+122623,J. Muguruza,Joseba Muguruza Bengoa,Defender,Spain,호세바 무구루사,J. 무구루사
+340240,Ma. Rodríguez,Marc Rodríguez,Defender,Andorra,마르크 로드리게스,Ma. 로드리게스
+270474,Á. Sánchez,Álexandre Sánchez Rodríguez,Defender,Spain,알렉스 산체스,Á. 산체스
+122740,J. Torres,Jilmar Steed Torres Martínez,Defender,Colombia,힐마르 토레스,J. 토레스
+122616,V. Alonso,Víctor Alonso Madueño,Midfielder,Spain,빅토르 알론소,V. 알론소
+183974,D. Berlanga,Domingo Berlanga Ouggouti,Midfielder,Morocco,도미 베를랑가,D. 베를랑가
+163245,M. Calderón,Martín Manuel Calderón Gómez,Midfielder,Spain,마르틴 칼데론,M. 칼데론
+40266,J. Cámara,Juan del Cármen Cámara Mesa,Midfielder,Spain,후안 카마라,J. 카마라
+576996,Dacu,Adrian da Cunha Costa Gomes,Midfielder,Andorra,다쿠,다쿠
+183999,D. López,David López Herrera,Midfielder,Spain,다비드 로페스,D. 로페스
+568280,H. de Miguel,Hugo de Miguel Vicente,Attacker,Spain,우고 데미겔,H. 데미겔
+609969,L. Diaby,Lamine Diaby,Midfielder,Spain,라민 디아비,L. 디아비
+332316,P. Molina,Pablo Molina Serafín,Midfielder,Spain,파블로 몰리나,P. 몰리나
+576085,A. Otegui,Antonio Otegui,Midfielder,Spain,안토니오 오테기,A. 오테기
+576090,A. Sans,Arnau Sans,Midfielder,Spain,아르나우 산스,A. 산스
+581145,B. Arellano,Borja Arellano,Attacker,Spain,보르하 아레야노,B. 아레야노
+182702,F. Chouaib,Faysal Chouaib Hassany,Attacker,Spain,파이살 슈아이브,F. 슈아이브
+183920,Á. de la Torre,Ángel de la Torre Pérez,Midfielder,Spain,앙헬 델라토레,Á. 델라토레
+119973,Kaxe,Álex Aizpuru Aizbitarte,Attacker,Spain,칵세,칵세
+626384,D. Messoussi,Diego Messoussi,Midfielder,Spain,디에고 메수시,D. 메수시
+667089,T. Paredes,Toni Paredes,Attacker,Spain,토니 파레데스,T. 파레데스
+154802,M. Pochettino,Maurizio Pochettino,Defender,Argentina,마우리시오 포체티노,M. 포체티노
+568165,A. Prelado,Alex Prelado,Attacker,Andorra,알렉스 프렐라도,A. 프렐라도
+549469,S. Sidibe,Soule Sidibe,Attacker,Mali,술레 시디베,S. 시디베
+492923,M. Kazainis,Mārcis Kazainis,Goalkeeper,Latvia,마르치스 카자이니스,M. 카자이니스
+72446,F. Orols,Frenks Dāvids Orols,Goalkeeper,Latvia,프렝크스 오롤스,F. 오롤스
+344535,A. Papadoudis,Thanasis Theologos Papadoudis,Goalkeeper,Greece,아타나시오스 파파두디스,A. 파파두디스
+72517,K. Zommers,Kristaps Zommers,Goalkeeper,Latvia,크리스탑스 좀메르스,K. 좀메르스
+70000,K. Zviedris,Krišjānis Zviedris,Goalkeeper,Latvia,크리샤니스 즈비에드리스,K. 즈비에드리스
+406569,Abner,Abner Salles da Silva,Defender,Brazil,아브네르,아브네르
+72542,E. Birka,Emīls Birka,Defender,Latvia,에밀스 비르카,E. 비르카
+553938,J. Blaževičs,Jegors Blaževičs,Defender,Latvia,예고르스 블라제비치스,J. 블라제비치스
+56030,A. Černomordijs,Antonijs Černomordijs,Defender,Latvia,안토니스 체르노모르디스,A. 체르노모르디스
+70397,R. Jurkovskis,Raivis Andris Jurkovskis,Defender,Latvia,라이비스 유르코우스키스,R. 유르코우스키스
+313790,B. Musah,Baba Musah,Defender,Ghana,바바 무사,B. 무사
+267861,P. Eduardo,Paulo Eduardo Ferreira Godinho,Defender,Brazil,파울루 에두아르두,P. 에두아르두
+308805,A. Salazar,Andrés Salazar Osorio,Defender,Colombia,안드레스 살라사르,A. 살라사르
+72502,M. Toņiševs,Maksims Toņiševs,Defender,Latvia,막심스 토니세우스,M. 토니세우스
+564981,R. Zemītis,Ralfs Zemītis,Defender,Latvia,랄프스 제미티스,R. 제미티스
+348567,A. Ankrah,Ahmed Ankrah,Midfielder,Ghana,아흐메드 안크라,A. 안크라
+13937,O. Galo,Orlando Moisés Galo Calderón,Midfielder,Costa Rica,오를란도 갈로,O. 갈로
+190497,I. Siqueira,Iago Siqueira Augusto,Midfielder,Brazil,이아구 시케이라,I. 시케이라
+661202,A. Mandeke,Abdu Mandeke,Midfielder,Tanzania,압두 만데케,A. 만데케
+564916,Ē. Maurs-Boks,Ēriks Maurs-Boks,Midfielder,Latvia,에릭스 마우르스복스,Ē. 마우르스복스
+278074,S. Oulad,Salah Oulad M'Hand,Midfielder,Netherlands,살라 울라드,S. 울라드
+564951,N. Prudchenko,Nazar Prudchenko,Midfielder,Ukraine,나자르 프루드첸코,N. 프루드첸코
+338966,D. Putrāns,Daniils Putrāns,Midfielder,Latvia,다닐스 푸트란스,D. 푸트란스
+341914,C. Saco,Coli Saco,Midfielder,Mali,콜리 사코,C. 사코
+667261,Ab. Sylla,Abou Sylla,Midfielder,Côte d'Ivoire,아부 실라,Ab. 실라
+72564,R. Varslavāns,Renārs Varslavāns,Attacker,Latvia,레나르스 바르슬라반스,R. 바르슬라반스
+474271,K. Wassom,Karl Gameni Wassom,Defender,Cameroon,카를 가메니 와솜,K. 와솜
+367083,R. Aouani,Raki Aouani,Midfielder,Tunisia,라키 아와니,R. 아와니
+122421,M. Badamosi,Muhammed Cray Badamosi,Attacker,Gambia,모하메드 바다모시,M. 바다모시
+564944,M. Blaubergs,Markuss Blaubergs,Attacker,Latvia,마르쿠스 블라우베르그스,M. 블라우베르그스
+465459,Caio,Caio Ferreira Martins,Midfielder,Brazil,카이우,카이우
+13955,A. Contreras,Anthony Daniel Contreras Enríquez,Attacker,Costa Rica,안토니 콘트레라스,A. 콘트레라스
+308634,Me. Diop,Meïssa Diop,Midfielder,Senegal,메이사 디오프,Me. 디오프
+307421,J. Christian,Juan Christian Pereira Coelho,Attacker,Brazil,주앙 크리스치앙,J. 크리스치앙
+667262,V. Lūsis,Valters Lūsis,Attacker,Latvia,발테르스 루시스,V. 루시스
+270988,R. Ramires,Reginaldo Ramires de Oliveira Albertino,Attacker,Brazil,헤지나우두 하미레스,R. 하미레스
+129777,S. Pedro,Samuel Lopes Robalo Pedro,Attacker,Portugal,사무엘 페드루,S. 페드루
+61185,A. Taiwo,Abdulrahman Taiwo,Attacker,Nigeria,압둘라흐만 타이워,A. 타이워
+567842,N. Voitišķis,Nils Voitišķis,Attacker,Latvia,닐스 보이티슈키스,N. 보이티슈키스
+281696,M. Hamm,Mark Hamm,Goalkeeper,Netherlands,마르크 함,M. 함
+544024,J. Hankins,Jalyan Hankins,Goalkeeper,Gibraltar,제일런 행킨스,J. 행킨스
+28946,N. García,Nauzet García Santana,Goalkeeper,Spain,나우세트 가르시아,N. 가르시아
+55925,E. Britto,Ethan Britto,Defender,Gibraltar,이선 브리토,E. 브리토
+186514,G. Cardozo,Gabriel Sebastián Cardozo Tomás,Defender,Uruguay,가브리 카르도소,G. 카르도소
+203802,J. Eersteling,Julliani Eersteling,Defender,Netherlands,줄리아니 에이르스텔링,J. 에이르스텔링
+667088,Y. Flalhi Idrissi,Yussef Flalhi Idrissi,Attacker,Spain,유세프 플랄리 이드리시,Y. 플랄리 이드리시
+55929,E. Jolley,Ethan Terence Jolley,Defender,Gibraltar,이선 졸리,E. 졸리
+91618,Be. Lopes,Bernardo Morgado Gaspar Lopes,Defender,Gibraltar,베르나르두 로페스,Be. 로페스
+91426,C. Rutjens,Oliva Christian Rutjens,Defender,Spain,크리스티안 뤼티언스,C. 뤼티언스
+217441,F. Álvarez,Facundo Rafael Álvarez,Attacker,Argentina,파쿤도 알바레스,F. 알바레스
+182692,Joe,José Manuel Martínez Oliver,Midfielder,Spain,조,조
+6936,Mandi,Armando Sosa Peña,Midfielder,Spain,만디,만디
+573699,L. Mason,Leon Mason,Midfielder,Gibraltar,레온 메이슨,L. 메이슨
+46907,Nano,Mariano González Maroto,Midfielder,Spain,나노,나노
+551172,N. Clara Pinto,Nico Clara Pinto,Midfielder,Netherlands,니코 클라라 핀투,N. 클라라 핀투
+134458,G. Torrilla,Graeme Lee Torrilla,Midfielder,Gibraltar,그레임 토리야,G. 토리야
+55940,L. Casciaro,Lee Henry Casciaro,Attacker,Gibraltar,리 카시아로,L. 카시아로
+625428,A. El Ghobashy,Ayman El Ghobashy,Attacker,Egypt,아이만 엘 고바시,A. 엘 고바시
+667090,R. García,Rubén García,Attacker,Spain,루벤 가르시아,R. 가르시아
+105684,T. García,Antonio García Montero,Midfielder,Spain,토니 가르시아,T. 가르시아
+108526,K. Gómez,Enrique Gómez Bernal,Attacker,Philippines,키케 고메스,K. 고메스
+46831,Á. Mula,Alejandro Miguel Mula Sánchez,Midfielder,Spain,알렉스 물라,Á. 물라
+554480,Ál. Romero,Álvaro Romero,Attacker,Spain,알바로 로메로,Ál. 로메로
+667087,M. Toledano,Manu Toledano,Attacker,Spain,마누 톨레다노,M. 톨레다노
+568382,T. Breum-Harild,Tobias Breum-Harild,Goalkeeper,Denmark,토비아스 브레움하릴,T. 브레움하릴
+568454,G. Fritz,Gustav Fritz Wybrandt Rasmussen,Goalkeeper,Denmark,구스타우 프리츠,G. 프리츠
+2784,R. Rúnarsson,Rúnar Alex Rúnarsson,Goalkeeper,Iceland,루나르 알렉스 루나르손,R. 루나르손
+25312,F. Beijmo,Felix Olof Allan Nelson Beijmo,Defender,Sweden,펠릭스 베이모,F. 베이모
+159511,G. Pereira,Gabriel Pereira Magalhães dos Santos,Defender,Brazil,가르비에우 페레이라,G. 페레이라
+581943,H. Haraldsen,Henrik Haraldsen,Defender,Norway,헨리크 하랄센,H. 하랄센
+568097,Lee K.H.,Lee Kyung-hyun,Defender,Korea Republic,이경현,이경현
+2431,M. López,Marcos Johan López Lanfranco,Defender,Peru,마르코스 로페스,M. 로페스
+443849,Á. Markgráf,Markgráf Ákos,Defender,Hungary,머르크그라프 아코시,Á. 머르크그라프
+1173,B. Meling,Birger Solberg Meling,Midfielder,Norway,비르게르 멜링,B. 멜링
+504208,K. Myrie,Kenay Myrie Reyes,Defender,Costa Rica,케나이 미리에,K. 미리에
+666429,M. Nyassi,Mustapha Nyassi,Defender,Gambia,무스타파 냐시,M. 냐시
+24985,A. Sørensen,Asger Strømgaard Sørensen,Defender,Denmark,아스게르 쇠렌센,A. 쇠렌센
+349212,W. Clem,William Clem,Midfielder,Denmark,윌리엄 클렘,W. 클렘
+15,T. Delaney,Thomas Joseph Delaney,Midfielder,Denmark,토마스 딜레이니,T. 딜레이니
+15934,M. Madsen,Mads Emil Møller Madsen,Midfielder,Denmark,마스 에밀 마드센,M. 마드센
+529934,M. Nasnas,Marvin Nasnas,Midfielder,Denmark,마르빈 나스나스,M. 나스나스
+419587,H. Németh,Németh Hunor Vajk,Midfielder,Hungary,네메트 후노르,H. 네메트
+442537,D. Sarapata,Dominik Sarapata,Midfielder,Poland,도미니크 사라파타,D. 사라파타
+1274,A. Cornelius,Andreas Evald Cornelius,Attacker,Denmark,안드레아스 코르넬리우스,A. 코르넬리우스
+426288,V. Dadason,Viktor Bjarki Dadason,Attacker,Iceland,빅토르 다다손,V. 다다손
+18946,M. Elyounoussi,Mohamed Amine Elyounoussi,Midfielder,Norway,모하메드 엘유누시,M. 엘유누시
+161919,Y. Moukoko,Youssoufa Moukoko,Attacker,Germany,유수파 무코코,Y. 무코코
+567955,G. Olsen,Gunnar Olsen,Attacker,Iceland,귄나르 올센,G. 올센
+422779,Robert,Robert Vinicius Rodrigues Silva,Attacker,Brazil,호베르트,호베르트
+633096,G. Ndjee,Geovanni Vianney Ndjee,Attacker,Cameroon,제오바니 비아네 은지,G. 은지
+416088,L. West,Liam Christopher West,Attacker,Norway,리암 베스트,L. 베스트
+44885,Z. Clark,Alexander Clark,Goalkeeper,Scotland,젠더 클라크,Z. 클라크
+44961,R. Fulton,Ryan William Fulton,Goalkeeper,Scotland,라이언 풀턴,R. 풀턴
+38811,B. Reus,Beau Reus,Goalkeeper,Netherlands,보 뢰스,B. 뢰스
+138415,K. Wright,Kieran Wright,Goalkeeper,Scotland,키어런 라이트,K. 라이트
+57454,C. Borchgrevink,Christian Dahle Borchgrevink,Defender,Norway,크리스티안 보르흐그레빙크,C. 보르흐그레빙크
+154800,M. Fagan-Walcott,Malachi Michael Fagan-Walcott,Defender,England,말라치 페이건월콧,M. 페이건월콧
+44781,S. Findlay,Stuart John Findlay,Defender,Scotland,스튜어트 핀리,S. 핀리
+579274,M. Gillies,Matthew Gillies,Defender,Scotland,매슈 길리스,M. 길리스
+44942,C. Halkett,Craig Peter Halkett,Defender,Scotland,크레이그 할켓,C. 할켓
+19412,S. Kingsley,Stephen Iain Kingsley,Defender,Scotland,스티븐 킹슬리,S. 킹슬리
+45128,J. McCart,Jamie Daniel McCart,Defender,Scotland,제이미 맥카트,J. 맥카트
+138258,H. Milne,Harry Milne,Defender,Scotland,해리 밀른,H. 밀른
+431652,J. Altena,Jordi Altena,Defender,Netherlands,조르디 알테나,J. 알테나
+400499,A. Benjaminsen,Aron Benjaminsen,Midfielder,Faroe Islands,아론 벤야민센,A. 벤야민센
+19336,Y. Dhanda,Yan Dhanda,Midfielder,England,얀 단다,Y. 단다
+444464,L. Kabashi,Leart Kabashi,Attacker,Switzerland,레아르트 카바시,L. 카바시
+28934,T. Magnússon,Tómas Bent Magnússon,Midfielder,Iceland,토마스 벤트 마그누손,T. 마그누손
+138903,O. McEntee,Oisin Michael McEntee,Defender,Republic of Ireland,오신 메켄티,O. 메켄티
+125694,J. McPake,Joshua McPake,Midfielder,Scotland,조시 맥페이크,J. 맥페이크
+538503,L. Mendy,Laurent Mendy,Midfielder,France,로랑 멘디,L. 멘디
+45155,C. Miller,Calvin Miller,Midfielder,Scotland,칼빈 밀러,C. 밀러
+128341,T. Renaud,Tom Renaud,Midfielder,France,톰 르노,T. 르노
+175133,A. Ba-Sy,Amadou Ba-Sy,Attacker,France,아마두 바시,A. 바시
+141994,C. Braga,Cláudio Rafael Soares Braga,Midfielder,Portugal,클라우지우 브라가,C. 브라가
+191415,S. Guendouz,Severin Sabri Guendouz,Attacker,France,사브리 겐두즈,S. 겐두즈
+37656,E. Kabangu,Elton Daniël Kabangu,Attacker,Belgium,엘통 카방구,E. 카방구
+214282,P. Kaboré,Pierre Landry Kaboré,Attacker,Burkina Faso,피에르 랑드리 카보레,P. 카보레
+503078,S. Kerjota,Sabah Kerjota,Attacker,Albania,사바흐 케르요타,S. 케르요타
+351187,R. Mato,Rogers Mato Kassim,Attacker,Uganda,로저스 마토,R. 마토
+45220,B. Spittal,Blair Thomas Spittal,Midfielder,Scotland,블레어 스피털,B. 스피털
+50843,J. Williams,Jerome Williams Jr.,Attacker,USA,JJ 윌리엄스,J. 윌리엄스
+381480,D. Fesyuk,David Fesyuk,Goalkeeper,Ukraine,다비트 페슈크,D. 페슈크
+524947,I. Pocrnjić,Ivan Pocrnjić,Goalkeeper,Croatia,이반 포츠르니치,I. 포츠르니치
+292514,T. Silić,Toni Silić,Goalkeeper,Croatia,토니 실리치,T. 실리치
+10990,D. Stipica,Dante Stipica,Goalkeeper,Croatia,단테 스티피차,D. 스티피차
+542490,L. Banović,Luka Banović,Defender,Canada,루카 바노비치,L. 바노비치
+606824,M. Čupić,Mateo Čupić,Defender,Croatia,마테오 추피치,M. 추피치
+629354,R. Gabrić,Roko Gabrić,Defender,Croatia,로코 가브리치,R. 가브리치
+449608,L. Hodak,Luka Hodak,Defender,Croatia,루카 호다크,L. 호다크
+340566,Š. Hrgović,Šimun Hrgović,Defender,Croatia,시몬 흐르고비치,Š. 흐르고비치
+14386,F. Karačić,Fran Karačić,Defender,Australia,프란 카라치치,F. 카라치치
+7577,D. Marešić,Dario Marešić,Defender,Austria,다리오 마레시치,D. 마레시치
+50027,D. Melnjak,Dario Melnjak,Defender,Croatia,다리오 멜냐크,D. 멜냐크
+544629,R. Raçi,Ron Raçi,Defender,Kosovo,론 라치,R. 라치
+412892,M. Skelin,Marino Skelin,Defender,Croatia,마리노 스켈린,M. 스켈린
+278834,E. Brruti,Etnik Brruti,Midfielder,Kosovo,에트니크 브루티,E. 브루티
+640441,A. Guram,Adam Guram,Midfielder,Ukraine,아담 구람,A. 구람
+634182,I. Kutya,Ilya Kutya,Midfielder,Ukraine,일랴 쿠티아,I. 쿠티아
+340571,R. Pukštas,Rokas Pukštas,Midfielder,USA,로카스 푹슈타스,R. 푹슈타스
+602741,A. Šutalo,Anđelo Šutalo,Midfielder,Croatia,안젤로 슈탈로,A. 슈탈로
+14305,M. Žaper,Mihael Žaper,Midfielder,Croatia,미하엘 자페르,M. 자페르
+181474,A. del Moral,Alberto del Moral Saelices,Midfielder,Spain,알베르토 델 모랄,A. 델 모랄
+364812,R. Brajković,Roko Brajković,Midfielder,Croatia,로코 브라이코비치,R. 브라이코비치
+611,M. Livaja,Marko Livaja,Attacker,Croatia,마르코 리바야,M. 리바야
+111386,A. Sanyang,Abdoulie Sanyang,Midfielder,Gambia,압둘리 사냥,A. 사냥
+14352,M. Šego,Michele Šego,Attacker,Croatia,미켈레 셰고,M. 셰고
+375290,M. Šotiček,Marin Šotiček,Midfielder,Croatia,마린 쇼티체크,M. 쇼티체크
+181394,D. de Almeida,Dalisson de Almeida Leite,Midfielder,Brazil,달리송 지아우메이다,D. 지아우메이다
+6697,Lu. Chaves,Lucas Abraham Chaves,Goalkeeper,Argentina,루카스 차베스,Lu. 차베스
+619667,C. Gitonas,Christos Gitonas,Goalkeeper,Greece,흐리스토스 이토나스,C. 이토나스
+26731,K. Kotsaris,Konstantinos Kotsaris,Goalkeeper,Greece,콘스탄디노스 코차리스,K. 코차리스
+1627,D. Calabria,Davide Calabria,Defender,Italy,다비데 칼라브리아,D. 칼라브리아
+2361,S. Ingason,Sverrir Ingi Ingason,Defender,Iceland,스베리르 잉기 잉가손,S. 잉가손
+561134,G. Katris,Georgios Katris,Defender,Greece,예오르요스 카트리스,G. 카트리스
+26828,G. Kyriakopoulos,Giorgos Kiriakopoulos,Defender,Greece,예오르요스 키리아코풀로스,G. 키리아코풀로스
+550216,V. Lavdas,Vasilios Lavdas,Defender,Greece,비실리오스 라브다스,V. 라브다스
+38692,E. Palmer-Brown,Erik Ross Palmer-Brown,Defender,USA,에릭 파머브라운,E. 파머브라운
+204290,T. Tsapras,Triantafyllos Tsapras,Defender,Greece,트리안타필로스 차프라스,T. 차프라스
+607,A. Bakasetas,Anastasios Bakasetas,Midfielder,Greece,아나스타시오스 바카세타스,A. 바카세타스
+650482,P. Biniaris,Panagiotis Biniaris,Midfielder,Greece,파나요티스 비니아리스,P. 비니아리스
+93671,P. Chirivella,Pedro Chirivella Burgos,Midfielder,Spain,페드로 치리베야,P. 치리베야
+550627,A. Jagušić,Adriano Jagušić,Midfielder,Croatia,아드리아노 야구시치,A. 야구시치
+122428,K. Kangwa,Kings Kangwa,Midfielder,Zambia,킹스 캉과,K. 캉과
+449603,S. Kontouris,Sotiris Kontouris,Midfielder,Greece,소티리스 콘두리스,S. 콘두리스
+154742,M. Pantović,Miloš Pantović,Midfielder,Serbia,밀로시 판토비치,M. 판토비치
+179,Mo. Sissoko,Moussa Sissoko,Midfielder,France,무사 시소코,Mo. 시소코
+323785,V. Taborda,Vicente Taborda,Midfielder,Argentina,비센테 타보르다,V. 타보르다
+129169,A. Zaroury,Anass Zaroury,Midfielder,Morocco,아나스 자루리,A. 자루리
+490156,S. Andino,Santino Andino Valencia,Midfielder,Argentina,산티노 안디노,S. 안디노
+37186,C. Dessers,Cyriel Kolawole Dessers,Attacker,Nigeria,시릴 데서스,C. 데서스
+388842,G. Kyriopoulos,Giorgos Kyriopoulos,Attacker,Greece,예오르요스 키리오풀로스,G. 키리오풀로스
+561145,P. Pantelidis,Pavlos Pantelidis,Attacker,Greece,파블로스 판델리디스,P. 판델리디스
+561139,A. Tetteh,Andreas Tetteh,Attacker,Greece,안드레아스 테테,A. 테테
+415940,H. Stakset,Herman Stang Stakset,Goalkeeper,Norway,헤르만 스탁세트,H. 스탁세트
+216759,S. Nilsen,Simen Vidtun Nilsen,Goalkeeper,Norway,시멘 비툰 닐센,S. 닐센
+474826,N. Boakye,Nana Kwame Boakye,Defender,Ghana,나나 콰메 보아치에,N. 보아치에
+99538,L. Cornic,Leo Erik Jean Cornic,Defender,Norway,레오 초르니치,L. 초르니치
+39194,V. Dragsnes,Vetle Winger Dragsnes,Defender,Norway,베틀레 드라그스네스,V. 드라그스네스
+39232,F. Knudsen,Fredrik Pallesen Knudsen,Defender,Norway,프레드리크 팔레센 크누드센,F. 크누드센
+39239,T. Pedersen,Thore Baardsen Pedersen,Defender,Norway,토레 페데르센,T. 페데르센
+57445,J. Soltvedt,Joachim Soltvedt,Defender,Norway,요아힘 솔트베트,J. 솔트베트
+340393,J. Torsvik,Jonas Tviberg Torsvik,Defender,Norway,요나스 토르스비크,J. 토르스비크
+416063,J. Eikrem,Jesper Nerhus Eikrem,Midfielder,Norway,예스페르 에이크렘,J. 에이크렘
+151191,K. Eriksen,Kristian Eriksen,Midfielder,Norway,크리스티안 에릭센,K. 에릭센
+197625,E. Guðmundsson,Eggert Aron Guðmundsson,Midfielder,Iceland,에게르트 아론 그뷔드뮌손,E. 그뷔드뮌손
+638541,B. Haugen,Brage Haugen,Midfielder,Norway,브라게 헤우겐,B. 헤우겐
+98842,U. Mathisen,Ulrik Mathisen,Attacker,Norway,울리크 마티센,U. 마티센
+15832,J. Sørensen,Jakob Lungi Sørensen,Midfielder,Denmark,야콥 룽기 쇠렌센,J. 쇠렌센
+465750,S. Vindenes,Sondre Blumenfeldt Vindenes,Midfielder,Norway,손드레 빈데네스,S. 빈데네스
+310076,N. Wassberg,Niklas Jensen Wassberg,Midfielder,Norway,니클라스 옌센 바스베르그,N. 바스베르그
+57160,N. Castro,Niklas Fernando Nygård Castro,Attacker,Chile,니클라스 카스트로,N. 카스트로
+39122,B. Finne,Bård Finne,Attacker,Norway,보르드 핀네,B. 핀네
+161943,N. Holm,Noah Emmanuel Jean Holm,Attacker,Norway,노아 홀름,N. 홀름
+89768,K. Ingason,Kristall Máni Ingason,Attacker,Iceland,크리스타들 마우니 잉가손,K. 잉가손
+373297,K. Kjartansson,Kjartan Már Kjartansson,Midfielder,Iceland,캬르탄 마우르 캬르탄손,K. 캬르탄손
+437112,J. Lægreid,Julian Lægreid,Attacker,Norway,율리안 레그레이드,J. 레그레이드
+61558,S. Magnússon,Sævar Atli Magnússon,Attacker,Iceland,사이바르 아틀리 마그누손,S. 마그누손
+284543,O. Ejeheri,Ovie Prince Ejeheri,Goalkeeper,England,오비 에제헤리,O. 에제헤리
+89754,E. Ólafsson,Elías Rafn Ólafsson,Goalkeeper,Iceland,엘리아스 올라프손,E. 올라프손
+374525,M. Ugboh,Mark Nnamdi Ugboh,Goalkeeper,Nigeria,마크 우그보,M. 우그보
+162218,V. Bak,Victor Bak Jensen,Defender,Denmark,빅토르 바크,V. 바크
+435266,B. Junior,Béni Junior Dje Bi Dje,Defender,Côte d'Ivoire,베니 주니오르,B. 주니오르
+404026,O. Diao,Ousmane Diao,Defender,Senegal,우스만 디아오,O. 디아오
+81132,Ma. Jensen,Magnus Riisgaard Jensen,Defender,Denmark,마그누스 옌센,Ma. 옌센
+634852,Ab. Ndiaye,Abdou Aziz Ndiaye,Defender,Senegal,압두 아지즈 은디아이,Ab. 은디아이
+19345,M. Sørensen,Mads Bech Sørensen,Defender,Denmark,마스 베흐 쇠렌센,M. 쇠렌센
+311432,P. Bravo,Pedro Antonio Bravo Landazuri,Midfielder,Colombia,페드로 브라보,P. 브라보
+42007,D. Silva,Daniel Filipe Bandeira e Silva,Midfielder,Portugal,다니 실바,D. 실바
+443703,S. Johannesen,Sofus Østergaard Grandjean Johannesen,Midfielder,Denmark,소푸스 요한네센,S. 요한네센
+397740,K. Wätjen,Kjell-Arik Wätjen,Midfielder,Germany,키엘 베티엔,K. 베티엔
+371909,V. Byskov,Valdemar Byskov Andreasen,Midfielder,Denmark,발데마르 뷔스코우,V. 뷔스코우
+48056,E. Chilufya,Edward Chilufya Jr.,Attacker,Zambia,에드워드 칠루피아,E. 칠루피아
+496782,J. Emefile,Julius Emefile,Midfielder,Denmark,율리우스 에메필레,J. 에메필레
+351146,F. Etim,Friday Ubi Etim,Attacker,Nigeria,프라이데이 에팀,F. 에팀
+340625,Franculino,Franculino Gluda Djú,Attacker,Guinea-Bissau,프랑쿨리누,프랑쿨리누
+435061,M. Gogorza,Mikel Johan Gogorza Krüger-Johnsen,Attacker,Denmark,미켈 고고르자,M. 고고르자
+438628,S. Iheanacho,Stanley Chimeremeze Iheanacho,Attacker,Nigeria,스탠리 이헤아나초,S. 이헤아나초
+15810,J. Brumado,José Francisco dos Santos Júnior,Attacker,Brazil,주니오르 브루마두,J. 브루마두
+307117,D. Osorio,Darío Esteban Osorio Osorio,Midfielder,Chile,다리오 오소리오,D. 오소리오
+15894,M. Uhre,Mikael Brandhof Uhre,Attacker,Denmark,미카엘 우레,M. 우레
+2249,J. Hanuš,Jan Hanuš,Goalkeeper,Czechia,얀 하누시,J. 하누시
+154928,M. Kukučka,Michal Kukučka,Goalkeeper,Slovakia,미할 쿠쿠치카,M. 쿠쿠치카
+131323,K. Mihelak,Klemen Mihelak,Goalkeeper,Slovenia,클레멘 미헬라크,K. 미헬라크
+66303,M. Cedidla,Martin Cedidla,Defender,Czechia,마르틴 체디들라,M. 체디들라
+162455,N. Innocenti,Nassim Patrice Innocenti,Defender,Burkina Faso,나심 이노센티,N. 이노센티
+552106,E. Malý,Evžen Malý,Defender,Czechia,에브젠 말리,E. 말리
+49874,F. Novák,Filip Novák,Defender,Czechia,필리프 노바크,F. 노바크
+353864,D. Nykrín,David Nykrín,Midfielder,Czechia,다비트 니크린,D. 니크린
+475578,D. Pavlović,Dušan Pavlović,Defender,Serbia,두샨 파블로비치,D. 파블로비치
+66284,J. Sláma,Jiří Sláma,Midfielder,Czechia,이르지 슬라마,J. 슬라마
+2259,E. Sobol,Eduard Sobol,Defender,Ukraine,에두아르트 소볼,E. 소볼
+66222,D. Souček,Daniel Souček,Defender,Czechia,다니엘 소우체크,D. 소우체크
+46022,N. Tekijaški,Nemanja Tekijaški,Defender,Serbia,네마냐 테키야슈키,N. 테키야슈키
+585748,S. Tubić,Salem Tubić,Defender,Switzerland,살렘 투비치,S. 투비치
+309749,H. Ahl,Hugo Ahl,Midfielder,Sweden,후고 알,H. 알
+55948,V. Chanturishvili,Vakhtang Tchanturishvili,Midfielder,Georgia,바흐탕 찬투리슈빌리,V. 찬투리슈빌리
+338972,R. Horák,Roman Horák,Midfielder,Czech Republic,로만 호라크,R. 호라크
+144722,S. Nebyla,Sebastian Nebyla,Midfielder,Slovakia,세바스티안 네빌라,S. 네빌라
+323491,N. Okeke,Nelson Okeke,Midfielder,Nigeria,넬슨 오케케,N. 오케케
+66164,M. Polidar,Matěj Polidar,Midfielder,Czechia,마테이 폴리다르,M. 폴리다르
+38823,R. Sedláček,Richard Sedláček,Midfielder,Czechia,리하르트 세들라체크,R. 세들라체크
+66203,J. Suchan,Jan Suchan,Attacker,Czechia,얀 수한,J. 수한
+66439,F. Zorvan,Filip Zorvan,Midfielder,Czechia,필리프 조르반,F. 조르반
+303107,S. Alioum,Saidou Alioum Moubarak,Attacker,Cameroon,사이두 알리움,S. 알리움
+2270,J. Chramosta,Jan Chramosta,Attacker,Czechia,얀 흐라모스타,J. 흐라모스타
+66390,L. Jawo,Lamin Jawo,Attacker,Gambia,라민 자워,L. 자워
+349987,G. Kuol,Garang Mawien Kuol,Midfielder,Australia,가랑 쿠올,G. 쿠올
+366835,M. Malenšek,Matej Malenšek,Attacker,Slovenia,마테이 말렌셰크,M. 말렌셰크
+303095,K. Milla,Kevin-Prince Milla,Attacker,Cameroon,케빈프린스 미야,K. 미야
+66410,A. Růsek,Antonín Růsek,Attacker,Czechia,안토닌 루세크,A. 루세크
+72075,F. Vecheta,Filip Vecheta,Attacker,Czechia,필리프 베헤타,F. 베헤타
+37599,J. Gorter,Jay Gorter,Goalkeeper,Netherlands,제이 호르터르,J. 호르터르
+348307,N. Kyriakidis,Nikolas Kyriakidis,Defender,Cyprus,니콜라스 키리아키디스,N. 키리아키디스
+1868,M. Papastylianou,Michalis Papastylianou,Goalkeeper,Cyprus,미할리스 파파스틸리아누,M. 파파스틸리아누
+443765,P. Petrou,Petros Petrou,Goalkeeper,Cyprus,페트로스 페트루,P. 페트루
+2283,D. Luiz,David Luiz Moreira Marinho,Defender,Brazil,다비드 루이스,D. 루이스
+108561,D. Goldar,David Goldar Gómez,Defender,Spain,다비드 골다르,D. 골다르
+443681,K. Ioannou,Kosmas Ioannou,Defender,Cyprus,코스마스 이오아누,K. 이오아누
+15281,N. Ioannou,Nicholas Ioannou,Defender,Cyprus,니콜라스 이오나누,N. 이오나누
+8503,S. Mmaee,Samy Mmaee A Nwambeben,Defender,Morocco,사미 마이,S. 마이
+610760,L. Paulino,Lucca Vetter Paulino,Defender,Brazil,루카 베테르 파울리누,L. 파울리누
+386285,Y. Zague,Yoram Zague,Defender,France,요랑 자그,Y. 자그
+430774,A. Brito,Alexandre Miguel Soares Carvalho Brito,Midfielder,Portugal,알레샨드르 브리투,A. 브리투
+432784,C. Evzona,Christos Efzona,Midfielder,Cyprus,흐리스토스 에브조나,C. 에브조나
+26779,Guga,Gonçalo Rosa Gonçalves Pereira Rodrigues,Midfielder,Portugal,구가,구가
+568255,G. Michael,Georgios Michael,Midfielder,Cyprus,예오르요스 미하일,G. 미하일
+41155,Pêpê,Pedro Filipe Figueiredo Rodrigues,Midfielder,Portugal,페페,페페
+18807,D. Quina,Domingos Quina,Midfielder,Portugal,도밍구스 키나,D. 키나
+41560,An. Silva,Anderson Oliveira Silva,Attacker,Brazil,안데르송 시우바,An. 시우바
+22347,M. Bassouamina,Mons Rogeani Andre Bassouamina,Attacker,Congo,몽스 바수아미나,M. 바수아미나
+305817,Biel,Gabriel Teixeira Aragão,Attacker,Brazil,비에우,비에우
+26669,Bruno,Bruno Felipe Souza da Silva,Defender,Brazil,브루누,브루누
+41994,J. Correia,João Pedro Araújo Correia,Attacker,Cape Verde,주앙 코헤이아,J. 코헤이아
+196159,Jajá,Jair Diego Alves de Brito,Midfielder,Brazil,자자,자자
+669616,M. Kais,Melinos Kais,Attacker,Cyprus,멜리노스 카이스,M. 카이스
+350153,Lelê,Leanderson da Silva Genésio,Attacker,Brazil,렐레,렐레
+669614,M. Məmmədov,Murad Məmmədov,Attacker,Azerbaijan,무라트 맴매도프,M. 맴매도프
+163131,F. Gebhardt,Felix Karl-Ernst Gebhardt,Goalkeeper,Germany,펠릭스 게프하르트,F. 게프하르트
+384129,D. Mina,Diego Mina,Goalkeeper,Switzerland,지에구 미나,D. 미나
+437334,C. Ndiaye,Cheikh Ndiaye,Goalkeeper,Switzerland,셰이크 은디아예,C. 은디아예
+939,D. von Ballmoos,David von Ballmoos,Goalkeeper,Switzerland,다비트 폰발모스,D. 폰발모스
+161818,J. Bichsel,Joel Bichsel,Defender,Switzerland,요엘 빅셀,J. 빅셀
+454456,Carbone,João Victor Schlickmann Carbone,Defender,Brazil,카르보니,카르보니
+381495,D. Kelvin,Damian Kelvin,Defender,Switzerland,데이미언 켈빈,D. 켈빈
+503,L. Mai,Lars Lukas Mai,Defender,Germany,루카스 마이,L. 마이
+336574,M. Marques,Martim Alexandre Costa Marques,Defender,Portugal,마르팅 마르케스,M. 마르케스
+26626,A. Papadopoulos,Antonios Papadopoulos,Defender,Germany,안도니스 파파도풀로스,A. 파파도풀로스
+322626,M. Zanotti,Mattia Zanotti,Defender,Italy,마티아 차노티,M. 차노티
+586021,G. Ajdin,Gjan Ajdin,Midfielder,Sweden,잔 아이딘,G. 아이딘
+125708,U. Bislimi,Uran Bislimi,Midfielder,Switzerland,우란 비슬리미,U. 비슬리미
+193645,Y. Cimignani,Yanis Cimignani,Midfielder,France,야니스 시미냐니,Y. 시미냐니
+303004,D. Dos Santos,Daniel Dos Santos Correia,Midfielder,Switzerland,다니엘 두스산투스,D. 두스산투스
+48520,A. Grgić,Anto Grgić,Midfielder,Switzerland,안토 그르기치,A. 그르기치
+4496,A. Kendouci,Ahmed Kendouci,Midfielder,Algeria,아흐메드 켄두시,A. 켄두시
+394182,J. Parente,Jason-Lee Parente,Midfielder,Switzerland,야손 파렌테,J. 파렌테
+25192,K. Behrens,Kevin Behrens,Attacker,Germany,케빈 베렌스,K. 베렌스
+351925,B. Castro,Beckham David Castro Espinosa,Attacker,Colombia,베컴 카스트로,B. 카스트로
+454964,D. Moncada,Dereck Alessandro Moncada Arguijo,Attacker,Honduras,데레크 몬카다,D. 몬카다
+458180,E. Pihlström,Erik Elias Pihlström,Attacker,Sweden,엘리아스 필스트룀,E. 필스트룀
+595013,N. Puddu,Nicolò Puddu,Midfielder,Switzerland,니콜로 푸두,N. 푸두
+595011,C. Raffa,Christian Raffa,Midfielder,Switzerland,크리스티안 라파,C. 라파
+2809,R. Steffen,Renato Steffen,Attacker,Switzerland,레나토 슈테펜,R. 슈테펜
+644304,I. Tiraboschi,Ian Tiraboschi,Attacker,Switzerland,이안 티라보스키,I. 티라보스키
+595015,B. Zurmühle,Bryan Zurmühle,Attacker,Switzerland,브리안 취르뮐레,B. 취르뮐레
