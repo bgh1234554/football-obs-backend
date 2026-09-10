@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 두 팀 간 상대 전적(Head-to-Head)을 조립 서비스.
@@ -40,8 +41,14 @@ public class HeadtoheadService {
      * 최신 경기가 앞으로 오도록 date 내림차순 정렬.
      */
     public HthResponseDto getHeadtoHead(long teamA, long teamB) {
+        // DEBUG 시작/종료 로그. 자세한 설계는 docs/logging.md.
+        log.debug("getHeadtoHead start teamA={} teamB={}", teamA, teamB);
+        long startedAt = System.nanoTime();
+
         JsonNode entries = apiClient.getHeadtoHeadRecord(teamA, teamB);
         if (entries == null || !entries.isArray()) {
+            log.debug("getHeadtoHead done teamA={} teamB={} matches=0 durationMs={}",
+                    teamA, teamB, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
             return HthResponseDto.builder().matches(List.of()).build();
         }
 
@@ -53,9 +60,14 @@ public class HeadtoheadService {
 
         HthResponseDto result = HthResponseDto.builder().matches(matches).build();
         if(result.getMatches().isEmpty()){
+            log.debug("getHeadtoHead done teamA={} teamB={} matches=0 durationMs={}",
+                    teamA, teamB, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
             throw new ApiException(ErrorCode.H2H_NOT_AVAILABLE);
         }
 
+        log.debug("getHeadtoHead done teamA={} teamB={} matches={} durationMs={}",
+                teamA, teamB, result.getMatches().size(),
+                TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
         return result;
     }
 

@@ -1,22 +1,24 @@
 package com.github.baek.footballobsbackend.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.baek.footballobsbackend.error.ErrorCode;
-import com.github.baek.footballobsbackend.error.ErrorResult;
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
-import io.github.bucket4j.Bandwidth;
-import io.github.bucket4j.Bucket;
-import io.github.bucket4j.ConsumptionProbe;   // 추가
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.util.concurrent.TimeUnit;         // 추가
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.baek.footballobsbackend.error.ErrorCode;
+import com.github.baek.footballobsbackend.error.ErrorResult;   // 추가
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+
+import io.github.bucket4j.Bandwidth;
+import io.github.bucket4j.Bucket;
+import io.github.bucket4j.ConsumptionProbe;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;         // 추가
 
 @Component
 @Slf4j
@@ -113,8 +115,11 @@ public class RateLimitInterceptor implements HandlerInterceptor {
                              HttpServletResponse response,
                              Object handler) throws Exception {
 
-        // 요청자의 IP 주소 추출
-        String ip = request.getRemoteAddr();
+        // 요청자의 IP 주소 추출.
+        // request.getRemoteAddr()를 직접 쓰지 않는 이유: Render(+ 앞단 Cloudflare) 뒤에서는
+        // 이 값이 실제 방문자 IP가 아니라 프록시 홉의 연결 IP를 반환한다 — 배경/근거는
+        // docs/client-ip-resolution.md 참고.
+        String ip = resolveClientIp(request);
 
         // 해당 IP의 버킷이 없으면 새로 생성, 있으면 기존 버킷 사용
         // Caffeine Cache.get(key, mappingFunction):
@@ -207,5 +212,31 @@ public class RateLimitInterceptor implements HandlerInterceptor {
 
         long waitMillis = Math.max(0L, TimeUnit.NANOSECONDS.toMillis(probe.getNanosToWaitForRefill()));
         log.info("[LIMIT_EXCEEDED] Rate limit exceeded for IP: {}, retryAfterMs={}", ip, waitMillis);
+    }
+
+    /**
+     * 실제 방문자 IP를 판별한다.
+     *
+     * Render(+ 앞단 Cloudflare, Render 서비스 자체 설정) 뒤에서 request.getRemoteAddr()는 실제 방문자 IP가 아니라
+     * 프록시가 오리진(Render 컨테이너)에 연결할 때 쓴 IP를 반환한다 — Cloudflare 엣지
+     * 거점이 바뀔 때마다도 이 값이 달라질 수 있어서,
+     * IP별로 버킷을 나누는 이 인터셉터의 전제 자체가 깨진다.
+     * 
+     * (Cloudflare는 이 프로젝트가 추가한 게 아니라, Render가 자기네 인프라로 모든 고객 웹서비스 앞에 기본으로 깔아둔 것)
+     * ("All inbound traffic to Render web services passes through Cloudflare's global network before reaching your application."
+     * "Protection is automatic for every public-facing web service on Render, regardless of plan. There's nothing to configure.")
+     *
+     * Render는 X-Forwarded-For 리스트의 첫 번째 값을 항상 실제 클라이언트 IP로 세팅한다.
+     * (클라이언트가 이 헤더를 위조해서 보내도 Render가 그 자리를 덮어씀 — Render 엔지니어
+     * 공식 답변, 근거/실측 데이터는 docs/client-ip-resolution.md 참고).
+     * 그래서 이 헤더가 있으면 콤마로 나눈 첫 값을 쓰고,
+     * 없으면(로컬 실행 등 프록시를 안 거치는 경우) 기존 getRemoteAddr()로 폴백한다.
+     */
+    private String resolveClientIp(HttpServletRequest request) {
+        String xff = request.getHeader("X-Forwarded-For");
+        if (xff != null && !xff.isBlank()) {
+            return xff.split(",")[0].trim();
+        }
+        return request.getRemoteAddr();
     }
 }

@@ -1,13 +1,17 @@
 package com.github.baek.footballobsbackend.client;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.github.baek.footballobsbackend.error.ApiException;
-import com.github.baek.footballobsbackend.error.ErrorCode;
-import lombok.extern.slf4j.Slf4j;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.github.baek.footballobsbackend.error.ApiException;
+import com.github.baek.footballobsbackend.error.ErrorCode;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * BunnyCDN 프록시를 통해 API Football v3를 호출하는 HTTP 클라이언트.
@@ -199,13 +203,22 @@ public class ApiFootballClient {
      * 흘려보내면 GlobalExceptionAdvice의 catch-all(Exception)에 걸려 "서버 내부에 오류 발생"이라는
      * 부정확한 500 메시지로 로그가 ERROR 레벨에 찍히고 프론트에도 우리 쪽 버그처럼 보이게 된다.
      * 여기서 잡아서 업스트림 문제임을 명확히 하는 ApiException(UPSTREAM_API_ERROR, 502)로 변환한다.
+     *
+     * 성공했을 때도 완료 로그(상태 대신 소요시간)를 남긴다 — 기존엔 호출 시작 로그만 있고 실패
+     * 시 WARN만 있어서, 정상적으로 끝난 호출이 얼마나 걸렸는지 알 방법이 없었다. 이 로그와
+     * RequestLoggingFilter의 요청 완료 로그가 같은 requestId(MDC)를 공유하므로, 전체 요청 시간
+     * 중 upstream 대기 시간이 얼마인지 로그만으로 구분할 수 있다. 자세한 설계는 docs/logging.md.
      */
     private JsonNode fetchRoot(String path) {
+        long startedAt = System.nanoTime();   // 실제 API 호출 시점
         try {
-            return restClient.get()
-                    .uri(path)
-                    .retrieve()
-                    .body(JsonNode.class);
+            JsonNode result = restClient.get()    // 빌더 객체 생성, I/O 없음
+                    .uri(path)                    // 빌더, I/O 없음
+                    .retrieve()                   // 실제로 소켓 연결 + 요청 전송 + 응답 수신
+                    .body(JsonNode.class);        // 응답 바디를 JsonNode로 파싱 완료까지 블로킹
+            log.info("Upstream call completed path={} durationMs={}",
+                    path, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
+            return result;
         } catch (RestClientResponseException e) {
             log.warn("API Football upstream error: status={}, path={}, body={}",
                     e.getStatusCode().value(), path, e.getResponseBodyAsString());

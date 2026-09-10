@@ -2,6 +2,16 @@ spring:
   application:
     name: football-obs-backend
 
+# 콘솔 로그 포맷. requestId는 RequestLoggingFilter가 MDC에 넣어주는 값 —
+# 필터가 아직 없는 시점/스레드에서는 %X{requestId:-no-id}가 "no-id"로 대체됨.
+# 자세한 설명: docs/logging.md
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} %-5level [%X{requestId:-no-id}] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    # com.github.baek.footballobsbackend.service: DEBUG
+
 api:
   cdn-url: ${CDN_URL}
   media-cdn-url: ${MEDIA_CDN_URL}

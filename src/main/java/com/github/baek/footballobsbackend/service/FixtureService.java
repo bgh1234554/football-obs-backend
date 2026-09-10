@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.stereotype.Service;
 
@@ -70,9 +71,19 @@ public class FixtureService {
      * @return 조립된 FixtureResponseDto. 경기 데이터 없으면 null.
      */
     public FixtureResponseDto getFixture(long fixtureId) {
+        // DEBUG 시작/종료 로그. 평소엔 root(INFO)에 가려 안 보이고, 특정 요청을 더 깊게
+        // 파봐야 할 때만 application.yaml의 com.github.baek.footballobsbackend.service를
+        // DEBUG로 잠깐 올려서 확인한다 — 자세한 설계는 docs/logging.md.
+        log.debug("getFixture start fixtureId={}", fixtureId);
+        long startedAt = System.nanoTime();
+
         // 1. BunnyCDN 경유 API Football /fixtures 호출 → response[0] JsonNode
         JsonNode data = apiClient.getFixture(fixtureId);
-        if (data == null) return null;
+        if (data == null) {
+            log.debug("getFixture done fixtureId={} found=false durationMs={}",
+                    fixtureId, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
+            return null;
+        }
 
         // 2. 홈/원정 팀 ID 추출 (이후 여러 메서드에서 side 구분에 사용)
         long homeTeamId = data.path("teams").path("home").path("id").asLong();
@@ -111,6 +122,9 @@ public class FixtureService {
             throw new ApiException(FIXTURE_NOT_FOUND);
         }
 
+        log.debug("getFixture done fixtureId={} found=true events={} playerStats={} durationMs={}",
+                fixtureId, result.getEvents().size(), result.getPlayerStats().size(),
+                TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
         return result;
     }
 

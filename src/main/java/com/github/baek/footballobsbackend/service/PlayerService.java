@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.stereotype.Service;
 
@@ -72,6 +73,10 @@ public class PlayerService {
      * @return 선수 프로필 + 시즌별 스탯. 데이터 없으면 PLAYER_NOT_FOUND 예외.
      */
     public PlayerProfileStatResponseDto getPlayerStats(long playerId) {
+        // DEBUG 시작/종료 로그. 자세한 설계는 docs/logging.md.
+        log.debug("getPlayerStats start playerId={}", playerId);
+        long startedAt = System.nanoTime();
+
         if (playerId == 0) throw new ApiException(ErrorCode.PLAYER_NOT_FOUND);
 
         // 1. 10월 1일 기준으로 호출할 시즌 결정 (추춘제 시즌 초반에 지난시즌 스탯 제공 도움)
@@ -100,14 +105,20 @@ public class PlayerService {
             JsonNode profileResponse = apiClient.getPlayerProfile(playerId);
             if (profileResponse != null && profileResponse.isArray() && !profileResponse.isEmpty()) {
                 player = buildPlayerInfo(profileResponse.get(0).path("player"), playerId);
+                log.debug("getPlayerStats done playerId={} seasons=0 profileFallback=true durationMs={}",
+                        playerId, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
                 return PlayerProfileStatResponseDto.builder()
                         .player(player)
                         .statistics(result)   // 빈 map — 프론트에서 "스탯 없음" 처리
                         .build();
             }
+            log.debug("getPlayerStats done playerId={} found=false durationMs={}",
+                    playerId, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
             throw new ApiException(ErrorCode.STAT_NOT_AVAILABLE);
         }
 
+        log.debug("getPlayerStats done playerId={} seasons={} durationMs={}",
+                playerId, result.size(), TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
         return PlayerProfileStatResponseDto.builder()
                 .player(player)
                 .statistics(result)
