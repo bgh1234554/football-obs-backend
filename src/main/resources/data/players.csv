@@ -134,7 +134,7 @@
 557462,S. Lacey,Shea Lacey,Attacker,England,셰이 레이시,S. 레이시
 404769,B. Mantato,Bendito Mantato,Attacker,England,벤디투 만타투,B. 만타투
 20589,B. Mbeumo,Bryan Tetsadong Marceau Mbeumo,Attacker,Cameroon,브리안 음뵈모,B. 음뵈모
-389309,C. Obi-Martin,Chidozie Obi-Martin,Attacker,Denmark,치도 오비마틴,C. 오비마틴
+389309,C. Obi-Martin,Chidozie Obi-Martin,Attacker,Denmark,치도 오비마틴,C. 오비-마틴
 115589,B. Šeško,Benjamin Šeško,Attacker,Slovenia,베냐민 셰슈코,B. 셰슈코
 70100,J. Zirkzee,Joshua Orobosa Zirkzee,Attacker,Netherlands,조슈아 지르크지,J. 지르크지
 365988,A. Harris,Aidan Harris,Goalkeeper,England,에이던 해리스,Ai. 해리스
@@ -194,7 +194,7 @@
 792,J. Kluivert,Justin Dean Kluivert,Midfielder,Netherlands,저스틴 클라위베르트,J. 클라위베르트
 368030,E. Kroupi,Eli Junior Kroupi,Attacker,France,엘리 주니오르 크루피,E. 크루피
 407806,Rayan,Rayan Vitor Simplício Rocha,Attacker,Brazil,하양,하양
-402434,R. Rees-Dottin,Remy Rees-Dottin,Attacker,England,레미 리스도틴,R. 리스도틴
+402434,R. Rees-Dottin,Remy Rees-Dottin,Attacker,England,레미 리스도틴,R. 리스-도틴
 47499,E. Ünal,Enes Ünal,Attacker,Türkiye,에네스 위날,E. 위날
 21566,B. Lecomte,Benjamin Pascal Lecomte,Goalkeeper,France,벤자맹 르콩트,B. 르콩트
 1438,B. Leno,Bernd Leno,Goalkeeper,Germany,베른트 레노,B. 레노
@@ -221,7 +221,7 @@
 1696,S. Chukwueze,Samuel Chimerenka Chukwueze,Attacker,Nigeria,사무엘 추쿠에제,S. 추쿠에제
 2887,R. Jiménez,Raúl Alonso Jiménez Rodríguez,Attacker,Mexico,라울 히메네스,R. 히메네스
 237819,Kevin,Kevin Santos Lopes de Macedo,Midfielder,Brazil,케빙,케빙
-436443,J. Kusi-Asare,Jonah Kusi-Asare,Attacker,Sweden,요나 쿠시아사레,J. 쿠시아사레
+436443,J. Kusi-Asare,Jonah Kusi-Asare,Attacker,Sweden,요나 쿠시아사레,J. 쿠시-아사레
 195106,R. Muniz,Rodrigo Muniz Carvalho,Attacker,Brazil,호드리구 무니스,R. 무니스
 19341,D. Bentley,Daniel Ian Bentley,Goalkeeper,England,다니엘 벤틀리,D. 벤틀리
 19143,S. Johnstone,Samuel Luke Johnstone,Goalkeeper,England,샘 존스톤,S. 존스톤
@@ -268,7 +268,7 @@
 342243,T. Setford,Tommy Hogan Setford,Goalkeeper,England,토미 세트퍼드,T. 세트퍼드
 22224,G. Magalhães,Gabriel dos Santos Magalhães,Defender,Brazil,가브리에우 마갈량이스,G. 마갈량이스
 127817,P. Hincapié,Piero Martín Hincapié Reyna,Defender,Ecuador,피에로 인카피에,P. 인카피에
-313245,M. Lewis-Skelly,Myles Anthony Lewis-Skelly,Defender,England,마일스 루이스스켈리,M. 루이스스켈리
+313245,M. Lewis-Skelly,Myles Anthony Lewis-Skelly,Defender,England,마일스 루이스스켈리,M. 루이스-스켈리
 333682,C. Mosquera,Cristhian Andrey Mosquera Ibargüen,Defender,Spain,크리스티안 모스케라,C. 모스케라
 380696,J. Nichols,Joshua Nichols,Defender,England,조슈아 니콜스,J. 니콜스
 22090,W. Saliba,William Alain André Gabriel Saliba,Defender,France,윌리앙 살리바,W. 살리바
@@ -283,7 +283,7 @@
 37127,M. Ødegaard,Martin Ødegaard,Midfielder,Norway,마르틴 외데고르,M. 외데고르
 2937,D. Rice,Declan Rice,Midfielder,England,데클런 라이스,D. 라이스
 47315,M. Zubimendi,Martín Zubimendi Ibáñez,Midfielder,Spain,마르틴 수비멘디,M. 수비멘디
-463908,B. Bailey-Joseph,Brando Nyle Bailey-Joseph,Attacker,England,브랜도 베일리조세프,B. 베일리조세프
+463908,B. Bailey-Joseph,Brando Nyle Bailey-Joseph,Attacker,England,브랜도 베일리조세프,B. 베일리-조세프
 643,G. Jesus,Gabriel Fernando de Jesus,Attacker,Brazil,가브리에우 제주스,G. 제주스
 18979,V. Gyökeres,Viktor Einar Gyökeres,Attacker,Sweden,빅토르 예케레스,V. 예케레스
 457731,A. Annous,Andre Harriman-Annous,Attacker,England,안드레 해리먼아누스,A. 해리먼아누스
@@ -316,7 +316,7 @@
 180560,H. Mejbri,Hannibal Mejbri,Midfielder,Tunisia,한니발,한니발 M.
 456637,O. Pimlott,Oliver Pimlott,Midfielder,England,올리버 핌럿,O. 핌럿
 270508,L. Ugochukwu,Lesley Chimuanya Ugochukwu,Midfielder,France,레슬리 우고추쿠,L. 우고추쿠
-2938,J. Ward-Prowse,James Michael Edward Ward-Prowse,Midfielder,England,제임스 워드프라우스,J. 워드프라우스
+2938,J. Ward-Prowse,James Michael Edward Ward-Prowse,Midfielder,England,제임스 워드프라우스,J. 워드-프라우스
 196855,J. Anthony,Jaidon Kya Denley Anthony,Midfielder,England,제이든 안토니,J. 안토니
 18927,A. Barnes,Ashley Luke Barnes,Attacker,England,애슐리 반스,A. 반스
 138822,A. Broja,Armando Broja,Attacker,Albania,아르만도 브로야,A. 브로야
@@ -339,7 +339,7 @@
 195993,C. Alcaraz,Carlos Jonas Alcaraz Duran,Midfielder,Argentina,카를로스 알카라스,C. 알카라스
 405360,H. Armstrong,Harrison Armstrong,Midfielder,England,해리슨 암스트롱,H. 암스트롱
 546654,C. Bates,Callum Bates,Midfielder,England,캘럼 베이츠,C. 베이츠
-148099,K. Dewsbury-Hall,Kiernan Frank Dewsbury-Hall,Midfielder,England,키어넌 듀스버리홀,K. 듀스버리홀
+148099,K. Dewsbury-Hall,Kiernan Frank Dewsbury-Hall,Midfielder,England,키어넌 듀스버리홀,K. 듀스버리-홀
 895,J. Garner,James David Garner,Midfielder,England,제임스 가너,J. 가너
 19187,J. Grealish,Jack Peter Grealish,Midfielder,England,잭 그릴리시,J. 그릴리시
 2990,I. Gueye,Idrissa Gana Gueye,Midfielder,Senegal,이드리사 게이,Id. 게이
@@ -360,7 +360,7 @@
 310531,R. Kyerematen,Rio Kyerematen,Midfielder,England,리오 키예레마텐,R. 키예레마텐
 394935,M. Melia,Mason Melia,Attacker,Republic of Ireland,메이슨 멜리아,M. 멜리아
 557391,T. Thompson,Tynan Thompson,Attacker,England,타이넌 톰프슨,T. 톰프슨
-465310,L. Williams-Barnett,Luca Jamie Williams-Barnett,Midfielder,England,루카 윌리엄스바넷,L. 윌리엄스바넷
+465310,L. Williams-Barnett,Luca Jamie Williams-Barnett,Midfielder,England,루카 윌리엄스바넷,L. 윌리엄스-바넷
 253,A. Areola,Alphonse Francis Areola,Goalkeeper,France,알폰스 아레올라,A. 아레올라
 15870,M. Hermansen,Mads Hermansen,Goalkeeper,Denmark,마스 헤르만센,M. 헤르만센
 337932,F. Herrick,Finlay Jacob Herrick,Goalkeeper,England,핀리 헤릭,F. 헤릭
@@ -368,11 +368,11 @@
 21998,A. Disasi,Axel Wilson Arthur Disasi Mhakinis Belho,Defender,France,악셀 디사시,A. 디사시
 557541,A. Golambeckis,Airidas Golambeckis,Defender,England,아이리다스 골람베키스,A. 골람베키스
 18744,M. Kilman,Maximilian William Kilman,Defender,England,맥스 킬먼,M. 킬먼
-1445,K. Mavropanos,Konstantinos Mavropanos,Defender,Greece,콘스탄티노스 마브로파노스,K. 마브로파노스
+1445,K. Mavropanos,Konstantinos Mavropanos,Defender,Greece,콘스탄디노스 마브로파노스,K. 마브로파노스
 553065,E. Mayers,Ezra Mayers,Defender,England,에즈라 메이어스,E. 메이어스
 327730,O. Scarles,Oliver Scarles,Defender,England,올리버 스칼스,O. 스칼스
 138,J. Todibo,Jean-Clair Dimitri Roger Todibo,Defender,France,장클레어 토디보,J. 토디보
-171,K. Walker-Peters,Kyle Leonardus Walker-Peters,Defender,England,카일 워커피터스,K. 워커피터스
+171,K. Walker-Peters,Kyle Leonardus Walker-Peters,Defender,England,카일 워커피터스,K. 워커-피터스
 18846,A. Wan-Bissaka,Aaron Wan-Bissaka,Defender,DR Congo,아론 완비사카,A. 완비사카
 336585,M. Fernandes,Mateus Gonçalo Espanha Fernandes,Midfielder,Portugal,마테우스 페르난드스,Ma. 페르난드스
 401278,M. Kanté,Mohamadou Kanté,Midfielder,France,모아마두 칸테,M. 칸테
@@ -391,7 +391,7 @@
 286616,F. Jörgensen,Filip Jörgensen,Goalkeeper,Denmark,필리프 예르겐센,F. 예르겐센
 287868,M. Merrick,Max Merrick,Goalkeeper,England,맥스 메릭,M. 메릭
 18959,R. Sánchez,Robert Lynch Sánchez,Goalkeeper,Spain,로베르트 산체스,Ro. 산체스
-180940,T. Sharman-Lowe,Teddy Samuel Sharman-Lowe,Goalkeeper,England,테디 샤먼로,T. 샤먼로
+180940,T. Sharman-Lowe,Teddy Samuel Sharman-Lowe,Goalkeeper,England,테디 샤먼로,T. 샤먼-로
 64167,G. Słonina,Gabriel Paweł Słonina,Goalkeeper,USA,가브리엘 슬로니나,G. 슬로니나
 366735,J. Acheampong,Joshua Kofi Acheampong,Defender,England,조시 아쳄퐁,J. 아쳄퐁
 19145,T. Adarabioyo,Abdul-Nasir Oluwatosin Oluwadoyinsolami Adarabioyo,Defender,England,토신 아다라비오요,T. 아다라비오요
@@ -495,7 +495,7 @@
 126949,C. Richards,Christopher Jeffrey Richards,Defender,USA,크리스 리차즈,C. 리차즈
 26303,B. Sosa,Borna Sosa,Defender,Croatia,보르나 소사,B. 소사
 286458,J. Devenny,Justin Devenny,Midfielder,Scotland,저스틴 드베니,J. 드베니
-557413,J. Drakes-Thomas,Joél Drakes-Thomas,Attacker,England,조엘 드레이크스토머스,J. 드레이크스토머스
+557413,J. Drakes-Thomas,Joél Drakes-Thomas,Attacker,England,조엘 드레이크스토머스,J. 드레이크스-토머스
 18806,W. Hughes,William James Hughes,Midfielder,England,윌 휴즈,W. 휴즈
 2601,D. Kamada,Daichi Kamada,Midfielder,Japan,카마다 다이치,D. 카마다
 2490,J. Lerma,Jefferson Andrés Lerma Solís,Midfielder,Colombia,제페르손 레르마,J. 레르마
@@ -529,7 +529,7 @@
 292,J. Henderson,Jordan Brian Henderson,Midfielder,England,조던 헨더슨,J. 헨더슨
 25073,V. Janelt,Vitaly Janelt,Midfielder,Germany,비탈리 야넬트,V. 야넬트
 47438,M. Jensen,Mathias Jensen,Midfielder,Denmark,마티아스 옌센,M. 옌센
-106725,K. Lewis-Potter,Keane William Lewis-Potter,Defender,England,킨 루이스포터,K. 루이스포터
+106725,K. Lewis-Potter,Keane William Lewis-Potter,Defender,England,킨 루이스포터,K. 루이스-포터
 178077,K. Schade,Kevin Schade,Midfielder,Germany,케빈 샤데,K. 샤데
 263538,Y. Yarmolyuk,Yehor Yarmolyuk,Midfielder,Ukraine,예호르 야르몰류크,Y. 야르몰류크
 402317,R. Donovan,Romelle Donovan,Midfielder,England,로멜 도너번,R. 도너번
@@ -558,7 +558,7 @@
 18901,S. Longstaff,Sean David Longstaff,Midfielder,England,숀 롱스태프,S. 롱스태프
 177665,A. Stach,Anton Levi Stach,Midfielder,Germany,안톤 슈타흐,A. 슈타흐
 32966,A. Tanaka,Ao Tanaka,Midfielder,Japan,타나카 아오,A. 타나카
-18766,D. Calvert-Lewin,Dominic Nathaniel Calvert-Lewin,Attacker,England,도미닉 칼버트르윈,D. 칼버트르윈
+18766,D. Calvert-Lewin,Dominic Nathaniel Calvert-Lewin,Attacker,England,도미닉 칼버트르윈,D. 칼버트-르윈
 162128,W. Gnonto,Degnand Wilfried Gnonto,Attacker,Italy,윌프리드 뇬토,W. 뇬토
 19461,L. Nmecha,Lukas Okechukwu Nmecha,Attacker,Germany,루카스 은메차,L. 은메차
 48389,N. Okafor,Noah Arinzechukwu Okafor,Attacker,Switzerland,노아 오카포,N. 오카포
@@ -582,8 +582,8 @@
 138780,N. Williams,Neco Shay Williams,Defender,Wales,니코 윌리엄스,Ne. 윌리엄스
 138908,E. Anderson,Elliot Anderson,Midfielder,Scotland,엘리엇 앤더슨,E. 앤더슨
 6056,N. Domínguez,Nicolás Martín Domínguez,Midfielder,Argentina,니콜라스 도밍게스,N. 도밍게스
-18746,M. Gibbs-White,Morgan Anthony Gibbs-White,Midfielder,England,모건 깁스화이트,M. 깁스화이트
-2298,C. Hudson-Odoi,Callum James Hudson-Odoi,Midfielder,England,칼럼 허드슨오도이,C. 허드슨오도이
+18746,M. Gibbs-White,Morgan Anthony Gibbs-White,Midfielder,England,모건 깁스화이트,M. 깁스-화이트
+2298,C. Hudson-Odoi,Callum James Hudson-Odoi,Midfielder,England,칼럼 허드슨오도이,C. 허드슨-오도이
 158697,J. McAtee,James John McAtee,Midfielder,England,제임스 매카티,J. 매카티
 22149,I. Sangaré,Ibrahim Sangaré,Midfielder,Côte d'Ivoire,이브라힘 상가레,I. 상가레
 353968,A. Whitehall,Archie Harry Thomas Whitehall,Midfielder,England,아치 화이트홀,A. 화이트홀
@@ -1040,7 +1040,7 @@
 544044,J. Navarro,Javi Navarro Jiménez,Goalkeeper,Spain,하비 나바로,Ja. 나바로
 451355,D. Aguado,Diego Aguado Facio,Defender,Spain,디에고 아과도,D. 아과도
 505,D. Alaba,David Olatukunbo Alaba,Defender,Austria,데이비드 알라바,D. 알라바
-283,T. Alexander-Arnold,Trent John Alexander-Arnold,Defender,England,트렌트 알렉산더아놀드,T. 알렉산더아놀드
+283,T. Alexander-Arnold,Trent John Alexander-Arnold,Defender,England,트렌트 알렉산더아놀드,T. 알렉산더-아놀드
 341640,R. Asencio,Raúl Asencio del Rosario,Defender,Spain,라울 아센시오,R. 아센시오
 284300,Á. Fernández,Álvaro Fernández Carreras,Defender,Spain,알바로 카레라스,Á. 카레라스
 733,D. Carvajal,Daniel Carvajal Ramos,Defender,Spain,다니엘 카르바할,D. 카르바할
@@ -1215,7 +1215,7 @@
 47269,Á. Remiro,Alejandro Remiro Gargallo,Goalkeeper,Spain,알렉스 레미로,Á. 레미로
 199044,J. Aramburu,Jon Mikel Aramburu Mejías,Defender,Venezuela,혼 아람부루,J. 아람부루
 349063,L. Beitia,Luken Beitia Aguirregomezcorta,Defender,Spain,루켄 베이티아,L. 베이티아
-1902,D. Ćaleta-Car,Duje Ćaleta-Car,Defender,Croatia,두예 찰레타차르,D. 찰레타차르
+1902,D. Ćaleta-Car,Duje Ćaleta-Car,Defender,Croatia,두예 찰레타차르,D. 찰레타-차르
 47298,Elustondo,Aritz Elustondo Irribaria,Defender,Spain,엘루스톤도,엘루스톤도
 23,S. Gómez,Sergio Gómez Martín,Defender,Spain,세르히오 고메스,Se. 고메스
 405073,J. Martín,Jon Martín Vicente,Defender,Spain,혼 마르틴,J. 마르틴
@@ -1485,7 +1485,7 @@
 19209,F. Tomori,Oluwafikayomi Oluwadamilola Tomori,Defender,England,피카요 토모리,F. 토모리
 22254,Y. Fofana,Youssouf Fofana,Midfielder,France,유수프 포파나,Yo. 포파나
 264705,A. Jashari,Ardon Jashari,Midfielder,Switzerland,아르돈 야샤리,A. 야샤리
-2292,R. Loftus-Cheek,Ruben Ira Loftus-Cheek,Midfielder,England,루벤 로프터스치크,R. 로프터스치크
+2292,R. Loftus-Cheek,Ruben Ira Loftus-Cheek,Midfielder,England,루벤 로프터스치크,R. 로프터스-치크
 754,L. Modrić,Luka Modrić,Midfielder,Croatia,루카 모드리치,L. 모드리치
 272,A. Rabiot,Adrien Thibault Marie Rabiot-Provost,Midfielder,France,아드리엥 라비오,A. 라비오
 31056,S. Ricci,Samuele Ricci,Midfielder,Italy,사무엘레 리치,S. 리치
@@ -1533,7 +1533,7 @@
 584116,Y. Trepy,Yael Trepy,Attacker,France,야엘 트레피,Y. 트레피
 32172,N. Contini,Nikita Contini Baranovsky,Goalkeeper,Italy,니키타 콘티니,N. 콘티니
 355007,A. Yazıcı,Arda Yazıcı,Goalkeeper,Türkiye,아르다 야즈즈,A. 야즈즈
-31156,V. Milinković-Savić,Vanja Milinković-Savić,Goalkeeper,Serbia,바냐 밀린코비치사비치,V. 밀린코비치사비치
+31156,V. Milinković-Savić,Vanja Milinković-Savić,Goalkeeper,Serbia,바냐 밀린코비치사비치,V. 밀린코비치-사비치
 568115,D. Spinelli,David Spinelli,Goalkeeper,Italy,다비드 스피넬리,D. 스피넬리
 37604,S. Beukema,Sam Beukema,Defender,Netherlands,샘 뵈커마,S. 뵈커마
 31042,G. Di Lorenzo,Giovanni Di Lorenzo,Defender,Italy,조반니 디로렌초,G. 디로렌초
@@ -1595,7 +1595,7 @@
 570213,A. Kumer Čelik,Alin Kumer Čelik,Defender,Slovenia,알린 쿠메르 첼리크,Al. 첼리크
 281826,A. Marcandalli,Alessandro Marcandalli,Defender,Italy,알레산드로 마르칸달리,A. 마르칸달리
 25914,A. Martín,Aarón Martín Caricol,Defender,Spain,아론 마르틴,A. 마르틴
-284570,B. Norton-Cuffy,Brooke Dion Nelson Norton-Cuffy,Midfielder,England,브루크 노턴커피,B. 노턴커피
+284570,B. Norton-Cuffy,Brooke Dion Nelson Norton-Cuffy,Midfielder,England,브루크 노턴커피,B. 노턴-커피
 18967,L. Østigård,Leo Skiri Østigård,Defender,Norway,레오 외스티고르,L. 외스티고르
 387128,S. Otoa,Sebastian Otoa,Defender,Denmark,세바스티안 오토아,S. 오토아
 31137,S. Sabelli,Stefano Sabelli,Defender,Italy,스테파노 사벨리,S. 사벨리
@@ -1659,7 +1659,7 @@
 458411,J. Mirra,Jacopo Mirra,Defender,Italy,야코포 미라,J. 미라
 1807,E. Ndicka,Obite Evan Ndicka,Defender,Côte d'Ivoire,에반 은디카,E. 은디카
 162452,D. Rensch,Devyne Fabian Jairo Rensch,Midfielder,Netherlands,디바인 렌시,D. 렌시
-1600,K. Tsimikas,Konstantinos Tsimikas,Defender,Greece,콘스탄티노스 치미카스,K. 치미카스
+1600,K. Tsimikas,Konstantinos Tsimikas,Defender,Greece,콘스탄디노스 치미카스,K. 치미카스
 349001,Wesley,Wesley Vinícius França Lima,Defender,Brazil,웨즐레이,웨즐레이
 384543,J. Ziółkowski,Jan Ziółkowski,Defender,Poland,얀 지우코프스키,J. 지우코프스키
 626686,M. Bah,Muhammed Bah,Midfielder,Gambia,무함메드 바,M. 바
@@ -1806,7 +1806,7 @@
 31383,S. Perilli,Simone Perilli,Goalkeeper,Italy,시모네 페릴리,S. 페릴리
 350539,G. Toniolo,Giacomo Toniolo,Goalkeeper,Italy,자코모 토니올로,G. 토니올로
 303362,R. Belghali,Rafik Belghali,Midfielder,Algeria,라피크 벨갈리,R. 벨갈리
-25061,A. Bella-Kotchap,Armel Bella-Kotchap,Defender,Germany,아르멜 벨라코차프,A. 벨라코차프
+25061,A. Bella-Kotchap,Armel Bella-Kotchap,Defender,Germany,아르멜 벨라코차프,A. 벨라-코차프
 14327,D. Bradarić,Domagoj Bradarić,Defender,Croatia,도마고이 브라다니치,D. 브라다니치
 418846,D. De Battisti,Davide De Battisti,Defender,Italy,다비데 데바티스티,D. 데바티스티
 169297,A. Edmundsson,Andrias Edmundsson,Defender,Faroe Islands,안드리아스 에드문드손,A. 에드문드손
@@ -2108,7 +2108,7 @@
 174,C. Eriksen,Christian Dannemann Eriksen,Midfielder,Denmark,크리스티안 에릭센,C. 에릭센
 25400,Y. Gerhardt,Yannick Gerhardt,Midfielder,Germany,야니크 게르하르트,Y. 게르하르트
 585662,P. Hensel,Pharell Hensel,Midfielder,Germany,파렐 헨젤,P. 헨젤
-162409,K. Koulierakis,Konstantinos Koulierakis,Defender,Greece,콘스탄티노스 쿨리에라키스,K. 쿨리에라키스
+162409,K. Koulierakis,Konstantinos Koulierakis,Defender,Greece,콘스탄디노스 쿨리에라키스,K. 쿨리에라키스
 15884,J. Lindstrøm,Jesper Grænge Lindstrøm,Midfielder,Denmark,예스퍼 린스트룀,J. 린스트룀
 1321,L. Majer,Lovro Majer,Midfielder,Croatia,로브로 마예르,L. 마예르
 149557,K. Paredes,Kevin Alexander Paredes,Midfielder,USA,케빈 파레데스,K. 파레데스
@@ -2188,7 +2188,7 @@
 180553,L. Rieß,Lasse Finn Rieß,Goalkeeper,Germany,라세 리스,L. 리스
 25906,R. Zentner,Robin Zentner,Goalkeeper,Germany,로빈 첸트너,R. 첸트너
 25907,S. Bell,Stefan Bell,Defender,Germany,슈테판 벨,St. 벨
-39279,A. Hanche-Olsen,Andreas Schjølberg Hanche-Olsen,Defender,Norway,안드레아스 한체올센,A. 한체올센
+39279,A. Hanche-Olsen,Andreas Schjølberg Hanche-Olsen,Defender,Norway,안드레아스 한체올센,A. 한체-올센
 25066,M. Leitsch,Maxim Leitsch,Defender,Germany,막심 라이치,M. 라이치
 24842,L. Maloney,Lennard Maloney,Midfielder,USA,레너드 말로니,L. 말로니
 25915,P. Mwene,Phillipp Mwene,Midfielder,Austria,필리프 음웨네,P. 음웨네
@@ -2251,7 +2251,7 @@
 380559,K. Frees,Kelven Olagie Frees,Defender,Germany,켈벤 프리스,K. 프리스
 127631,V. Gendrey,Valentin André Stanislas Gendrey,Defender,France,발랑탱 장드레,V. 장드레
 278453,A. Hajdari,Albian Hajdari,Defender,Switzerland,알비안 하이다리,A. 하이다리
-162964,R. Hranáč,Robin Hranáč,Defender,Czechia,로빈 흐라나츠,R. 흐라나츠
+162964,R. Hranáč,Robin Hranáč,Defender,Czechia,로빈 흐라나치,R. 흐라나치
 26300,O. Kabak,Ozan Muhammed Kabak,Defender,Türkiye,오잔 카바크,O. 카바크
 390586,L. Avdullahu,Leon Avdullahu,Midfielder,Switzerland,레온 아브둘라후,L. 아브둘라후
 25389,I. Bebou,Ihlas Bebou,Attacker,Togo,일라스 베부,I. 베부
@@ -2353,7 +2353,7 @@
 348888,M. Kömür,Mert Kömür,Midfielder,Germany,메르트 쾨뮈르,M. 쾨뮈르
 110,H. Massengo,Han-Noah Massengo,Midfielder,France,한노아 마셍고,H. 마셍고
 25413,E. Rexhbeçaj,Elvis Rexhbeçaj,Midfielder,Kosovo,엘비스 레즈베차이,E. 레즈베차이
-20634,A. Claude-Maurice,Alexis Claude-Maurice,Attacker,France,알렉시 클로드모리스,A. 클로드모리스
+20634,A. Claude-Maurice,Alexis Claude-Maurice,Attacker,France,알렉시 클로드모리스,A. 클로드-모리스
 25297,M. Gregoritsch,Michael Gregoritsch,Attacker,Austria,미하엘 그레고리치,M. 그레고리치
 279993,A. Kade,Anton Kade,Attacker,Germany,안톤 카데,A. 카데
 575409,K. Motowilczuk,Kevin Nana Motowilczuk,Attacker,Germany,케빈 모토빌추크,K. 모토빌추크
@@ -2433,7 +2433,7 @@
 302632,W. Mikelbrencis,William Mikelbrencis,Midfielder,France,윌리앙 미켈브렌시스,W. 미켈브렌시스
 48489,M. Muheim,Miro Max Maria Muheim,Midfielder,Switzerland,미로 무하임,M. 무하임
 162265,W. Omari,Warmed Omari,Defender,France,와르메드 오마리,W. 오마리
-470282,A. Røssing-Lelesiit,Alexander Røssing-Lelesiit,Midfielder,Norway,알렉산데르 뢰싱렐레시트,A. 뢰싱렐레시트
+470282,A. Røssing-Lelesiit,Alexander Røssing-Lelesiit,Midfielder,Norway,알렉산데르 뢰싱렐레시트,A. 뢰싱-렐레시트
 25346,J. Torunarigha,Jordan Torunarigha,Defender,Germany,조던 토루나리가,J. 토루나리가
 387521,L. Vušković,Luka Vušković,Defender,Croatia,루카 부슈코비치,L. 부슈코비치
 5973,N. Capaldo,Nicolás Capaldo Taboas,Defender,Argentina,니콜라스 카팔도,N. 카팔도
@@ -2549,9 +2549,9 @@
 72048,C. Özkacar,Cenk Özkacar,Defender,Türkiye,젱크 외즈카자르,C. 외즈카자르
 48765,J. Schmied,Joël Pascal Schmied,Defender,Switzerland,요엘 슈미트,J. 슈미트
 191740,S. Sebulonsen,Sebastian Søraas Sebulonsen,Defender,Norway,세바스티안 세불론센,S. 세불론센
-404656,J. Simpson-Pusey,Jahmai Simpson-Pusey,Defender,England,제메이 심슨퓨지,J. 심슨퓨지
+404656,J. Simpson-Pusey,Jahmai Simpson-Pusey,Defender,England,제메이 심슨퓨지,J. 심슨-퓨지
 287916,R. den Berg,Rav van den Berg,Defender,Netherlands,라프 판덴베르흐,R. 판덴베르흐
-8641,A. Castro-Montes,Alessio Daniel Castro-Montes,Midfielder,Belgium,알레시오 카스트로몬테스,A. 카스트로몬테스
+8641,A. Castro-Montes,Alessio Daniel Castro-Montes,Midfielder,Belgium,알레시오 카스트로몬테스,A. 카스트로-몬테스
 414474,F. Chávez,Felipe Marlon Chávez,Midfielder,Peru,펠리페 차베스,F. 차베스
 432310,S. El Mala,Said El Mala,Attacker,Germany,사이드 엘 말라,S. 말라
 202838,D. Huseinbašić,Denis Huseinbašić,Midfielder,Germany,데니스 후세인바시치,D. 후세인바시치
@@ -2621,7 +2621,7 @@
 135749,F. Correia,Félix Alexandre Andrade Sanches Correia,Midfielder,Portugal,펠릭스 코헤이라,F. 코헤이라
 487381,S. Diaoune,Soriba Diaoune,Attacker,Guinea,소리바 디아운,S. 디아운
 430816,N. Edjouma,Noah Edjouma,Attacker,France,노아 에주마,N. 에주마
-340077,M. Fernandez-Pardo,Matias Fernandez-Pardo,Attacker,Belgium,마티아스 페르난데스파르도,M. 페르난데스파르도
+340077,M. Fernandez-Pardo,Matias Fernandez-Pardo,Attacker,Belgium,마티아스 페르난데스파르도,M. 페르난데스-파르도
 2295,O. Giroud,Olivier Jonathan Giroud,Attacker,France,올리비에 지루,O. 지루
 67889,H. Haraldsson,Hákon Arnar Haraldsson,Midfielder,Iceland,하우콘 아르나르 하랄드손,H. 하랄드손
 306979,H. Igamane,Hamza Igamane,Attacker,Morocco,함자 이가마네,H. 이가마네
@@ -2639,7 +2639,7 @@
 493026,N. Kamara,Noham Kamara,Defender,France,노암 카마라,N. 카마라
 645969,S. Kango,Steeve Kango,Defender,France,스티브 캉고,S. 캉고
 193293,R. Kluivert,Ruben Kluivert,Defender,Netherlands,루벤 클라위베르트,R. 클라위베르트
-1456,A. Maitland-Niles,Ainsley Cory Maitland-Niles,Defender,England,에인슬리 메인틀런드나일스,A. 메인틀런드나일스
+1456,A. Maitland-Niles,Ainsley Cory Maitland-Niles,Defender,England,에인슬리 메인틀런드나일스,A. 메인틀런드-나일스
 68,C. Mata,Clinton Mukoni Mata Pedro Lourenço,Defender,Angola,클린통 마타,C. 마타
 637593,P. Mukuba,Prince Mbatshi Mukuba,Defender,Congo DR,프린스 음바치 무쿠바,P. 무쿠바
 25916,M. Niakhaté,Moussa Niakhaté,Defender,Senegal,무사 니아카테,M. 니아카테
@@ -2662,11 +2662,11 @@
 345388,A. Moreira,Afonso Bastardo Moreira,Midfielder,Portugal,아폰수 모레이라,Af. 모레이라
 8493,R. Yaremchuk,Roman Yaremchuk,Attacker,Ukraine,로만 야렘추크,R. 야렘추크
 36827,J. de Lange,Jeffrey de Lange,Goalkeeper,Netherlands,제프리 더랑어,J. 더랑어
-47296,G. Rulli,Gerónimo Rulli,Goalkeeper,Argentina,헤로니모 루이,G. 루이
+47296,G. Rulli,Gerónimo Rulli,Goalkeeper,Argentina,헤로니모 룰리,G. 룰리
 336654,J. Van Neck,Jelle Van Neck,Goalkeeper,Belgium,옐러 판네크,J. 판네크
 21694,N. Aguerd,Nayef Aguerd,Defender,Morocco,나예프 아게르,N. 아게르
 6,L. Balerdi,Leonardo Julián Balerdi Rosa,Defender,Argentina,레오나르도 발레르디,L. 발레르디
-181827,C. Egan-Riley,Conrad Jaden Egan-Riley,Defender,England,CJ 이건라일리,C. 이건라일리
+181827,C. Egan-Riley,Conrad Jaden Egan-Riley,Defender,England,CJ 이건라일리,C. 이건-라일리
 2284,Emerson,Emerson Palmieri dos Santos,Defender,Italy,에메르손 팔미에리,에메르손 팔미에리
 6231,F. Medina,Facundo Axel Medina,Defender,Argentina,파쿤도 메디나,F. 메디나
 568242,P. N'Zinga Pambani,Pladi N'Zinga Pambani,Defender,France,P. 은징가 팜바니,P. 은징가 팜바니
@@ -2774,7 +2774,7 @@
 567804,N. Nsoki,Noham Nsoki,Midfielder,France,노암 은소키,N. 은소키
 328,F. Ruiz,Fabián Ruiz Peña,Midfielder,Spain,파비안 루이스,F. 루이스
 128384,Vitinha,Vítor Machado Ferreira,Midfielder,Portugal,비티냐,비티냐
-336657,W. Zaïre-Emery,Warren Zaïre-Emery,Midfielder,France,와렌 자이르에메리,W. 자이르에메리
+336657,W. Zaïre-Emery,Warren Zaïre-Emery,Midfielder,France,와렌 자이르에메리,W. 자이르-에메리
 161904,B. Barcola,Bradley Barcola,Attacker,France,브라들리 바르콜라,B. 바르콜라
 153,O. Dembélé,Masour Ousmane Dembélé,Attacker,France,우스만 뎀벨레,O. 뎀벨레
 343027,D. Doué,Désiré Doué,Midfielder,France,데지레 두에,D. 두에
@@ -2858,7 +2858,7 @@
 396193,L. Høgsberg,Lucas Høgsberg,Defender,Denmark,루카스 회이스베르,L. 회이스베르
 512835,S. Lung,Sacha Lung,Defender,France,사샤 룽,S. 룽
 147835,A. Omobamidele,Andrew Abiola Omobamidele,Defender,Republic of Ireland,앤드류 오모바미델레,A. 오모바미델레
-334035,S. Amo-Ameyaw,Samuel Amo-Ameyaw,Attacker,England,사무엘 아모아메요,S. 아모아메요
+334035,S. Amo-Ameyaw,Samuel Amo-Ameyaw,Attacker,England,사무엘 아모아메요,S. 아모-아메요
 395762,M. Amougou,Mathis Amougou,Midfielder,France,마티스 아무구,M. 아무구
 319572,V. Barco,Valentín Barco,Midfielder,Argentina,발렌틴 바르코,V. 바르코
 415431,S. El Mourabet,Samir El Mourabet,Midfielder,France,사미르 엘 무라베트,S. 엘 무라베트
@@ -2907,7 +2907,7 @@
 84128,Y. Gboho,Gnantin Yann Gboho,Attacker,France,얀 보오,Y. 보오
 362741,S. Hidalgo,Santiago Hidalgo Massa,Attacker,Argentina,산티아고 이달고,S. 이달고
 174724,F. Magri,Frank Magri,Attacker,France,프랑크 마그리,F. 마그리
-203428,J. Russell-Rowe,Jacen Rex Orlando Russell-Rowe,Attacker,Canada,제이슨 러셀로우,J. 러셀로우
+203428,J. Russell-Rowe,Jacen Rex Orlando Russell-Rowe,Attacker,Canada,제이슨 러셀로우,J. 러셀-로우
 457025,J. Vignolo,Julián Vignolo,Attacker,Argentina,훌리안 비뇰로,J. 비뇰로
 22241,B. Kamara,Bingourou Kamara,Goalkeeper,Senegal,빙구루 카마라,Bi. 카마라
 20936,B. Leroy,Benjamin Leroy,Goalkeeper,France,벤자맹 르로이,B. 르로이
@@ -3015,7 +3015,7 @@
 630730,T. Bah,Thierno Bah,Midfielder,France,티에르노 바,T. 바
 471290,A. Diabate,Adams Diabaté,Midfielder,France,아담스 디아바테,A. 디아바테
 364093,S. Ebonog,Simon Ebonog,Midfielder,France,시몽 에보노그,S. 에보노그
-179843,L. Gourna-Douath,Lucas Gourna-Douath,Midfielder,France,뤼카 구르나두아트,L. 구르나두아트
+179843,L. Gourna-Douath,Lucas Gourna-Douath,Midfielder,France,뤼카 구르나두아트,L. 구르나-두아트
 174937,Y. Kechta,Yassine Kechta,Midfielder,Morocco,야신 케슈타,Y. 케슈타
 145476,R. Khadra,Reda Jousef Khadra,Midfielder,Germany,레다 카드라,R. 카드라
 460805,D. Mosengo,Daren Nbenbege Mosengo,Midfielder,France,다렌 모셍고,D. 모셍고
@@ -3035,7 +3035,7 @@
 158532,J. Fischer,Jonathan Frost Fischer,Goalkeeper,Denmark,요나탄 피셔,J. 피셔
 613214,R. Jean-Baptiste,Romain Jean-Baptiste,Goalkeeper,France,로맹 장바티스트,R. 장바티스트
 403878,P. Sy,Pape Mamadou Sy,Goalkeeper,Senegal,파프 마마두 시,P. 시
-105,F. Ballo-Touré,Fodé Ballo-Touré,Defender,Senegal,포데 발로투레,F. 발로투레
+105,F. Ballo-Touré,Fodé Ballo-Touré,Defender,Senegal,포데 발로투레,F. 발로-투레
 19518,M. Colin,Maxime Jean-Yves Colin,Defender,France,막심 콜랭,M. 콜랭
 613215,M. Diop,Moustapha Diop,Defender,Senegal,무스타파 디오프,Mo. 디오프
 3240,J. Gbamin,Jean-Philippe Gbamin,Midfielder,Côte d'Ivoire,장필립 바맹,J. 바맹
@@ -3075,7 +3075,7 @@
 84218,A. Camara,Adama Mohamed Camara,Defender,France,아다마 카마라,Ad. 카마라
 83831,I. Kebbal,Ilan Kais Kebbal,Midfielder,Algeria,일랑 케발,I. 케발
 629705,Z. Khaldi,Zakarya Khaldi,Attacker,France,자카리야 할디,Z. 할디
-22170,P. Lees-Melou,Pierre Lees-Melou,Midfielder,France,피에르 리스멜루,P. 리스멜루
+22170,P. Lees-Melou,Pierre Lees-Melou,Midfielder,France,피에르 리스멜루,P. 리스-멜루
 1910,M. Lopez,Maxime Baila Lopez,Midfielder,France,막심 로페즈,M. 로페즈
 20925,V. Marchetti,Vincent Marchetti,Midfielder,France,뱅상 마르셰티,V. 마르셰티
 496896,R. Matondo,Rudy Matondo,Midfielder,France,뤼디 마통도,R. 마통도
@@ -3158,8 +3158,8 @@
 18935,A. McCarthy,Alex Simon McCarthy,Goalkeeper,England,알렉스 맥카시,A. 맥카시
 126530,D. Peretz,Daniel Peretz,Goalkeeper,Israel,다니엘 페레츠,D. 페레츠
 19719,J. Bree,James Patrick Bree,Defender,England,제임스 브리,J. 브리
-557522,T. Dobson-Ventura,Tommy Dobson-Ventura,Defender,England,토미 돕슨벤투라,T. 돕슨벤투라
-144729,T. Harwood-Bellis,Taylor Jay Harwood-Bellis,Defender,England,테일러 하우드벨리스,T. 하우드벨리스
+557522,T. Dobson-Ventura,Tommy Dobson-Ventura,Defender,England,토미 돕슨벤투라,T. 돕슨-벤투라
+144729,T. Harwood-Bellis,Taylor Jay Harwood-Bellis,Defender,England,테일러 하우드벨리스,T. 하우드-벨리스
 341234,E. Jelert,Elias Jelert Kristensen,Defender,Denmark,엘리아스 옐레르트,E. 옐레르트
 19587,R. Manning,Ryan Phelim Manning,Defender,Republic of Ireland,라이언 매닝,R. 매닝
 334353,J. Quarshie,Joshua Quarshie,Defender,Germany,조슈아 콰시,J. 콰시
@@ -3174,7 +3174,7 @@
 283278,T. Fellows,Tom Allen Fellows,Midfielder,England,톰 펠로스,T. 펠로스
 282060,C. Jander,Caspar Jander,Midfielder,Germany,카스파어 얀더,C. 얀더
 351013,K. Matsuki,Matsuki Kuryu,Midfielder,Japan,마츠키 쿠류,K. 마츠키
-322305,J. O'Brien-Whitmarsh,Joseph O'Brien-Whitmarsh,Midfielder,Republic of Ireland,조지프 오브라이언위트마시,J. 오브라이언위트마시
+322305,J. O'Brien-Whitmarsh,Joseph O'Brien-Whitmarsh,Midfielder,Republic of Ireland,조지프 오브라이언위트마시,J. 오브라이언-위트마시
 18949,O. Romeu,Oriol Romeu Vidal,Midfielder,Spain,오리올 로메우,O. 로메우
 401241,M. Sesay,Moses Sesay,Midfielder,England,모지스 세세이,M. 세세이
 557372,B. Williams,Barnaby Williams,Midfielder,England,바나비 윌리엄스,B. 윌리엄스
@@ -3201,7 +3201,7 @@
 18943,J. Vestergaard,Jannik Vestergaard,Defender,Denmark,야니크 베스테르고르,J. 베스테르고르
 19825,J. Aribo,Joseph Oluwaseyi Temitope Ayodele-Aribo,Midfielder,Nigeria,조 아리보,J. 아리보
 18779,H. Choudhury,Hamza Dewan Choudhury,Midfielder,England,함자 차우두리,H. 차우두리
-19004,B. De Cordova-Reid,Bobby Armani De Cordova-Reid,Attacker,Jamaica,바비 데코르도바리드,B. 데코르도바리드
+19004,B. De Cordova-Reid,Bobby Armani De Cordova-Reid,Attacker,Jamaica,바비 데코르도바리드,B. 데코르도바-리드
 328074,J. James,Jordan Anthony James,Midfielder,Wales,조던 제임스,J. 제임스
 284487,W. Marçal,Wanya Marçal-Madivadua,Attacker,Portugal,와냐 마르살,W. 마르살
 278079,A. Ramsey,Aaron James Ramsey,Defender,England,애런 램지,A. 램지
@@ -3223,7 +3223,7 @@
 138859,C. Klarer,Christoph Klarer,Defender,Austria,크리스토프 클라러,C. 클라러
 138775,E. Laird,Ethan Benjamin Laird,Defender,England,이선 레어드,E. 레어드
 25206,P. Neumann,Phil Yannik Neumann,Defender,Germany,필 노이만,P. 노이만
-19588,B. Osayi-Samuel,Bright Osayi-Samuel,Defender,Nigeria,브라이트 오세이새뮤얼,B. 오세이새뮤얼
+19588,B. Osayi-Samuel,Bright Osayi-Samuel,Defender,Nigeria,브라이트 오세이새뮤얼,B. 오세이-새뮤얼
 84088,J. Panzo,Jonathan William Panzo,Defender,England,조너선 판조,J. 판조
 19294,J. Robinson,Jack Robinson,Defender,England,잭 로빈슨,Ja. 로빈슨
 50738,K. Wagner,Kai Harley Wagner,Defender,Germany,카이 바그너,K. 바그너
@@ -3318,10 +3318,10 @@
 375467,D. Kelly,Daniel Kelly,Midfielder,Scotland,다니엘 켈리,D. 켈리
 524516,R. Lamptey,Rafiq Lamptey,Midfielder,England,라피크 램프티,R. 램프티
 2752,M. Luongo,Massimo Corey Luongo,Midfielder,Australia,마시모 루옹고,M. 루옹고
-325787,D. Mazou-Sacko,Derek Mazou-Sacko,Midfielder,France,데레크 마주사코,D. 마주사코
+325787,D. Mazou-Sacko,Derek Mazou-Sacko,Midfielder,France,데레크 마주사코,D. 마주-사코
 19642,B. Mitchell,Billy James Mitchell,Midfielder,England,빌리 미첼,Bi. 미첼
 130421,W. Smallbone,William Anthony Patrick Smallbone,Midfielder,Republic of Ireland,윌 스몰본,W. 스몰본
-504648,R. Bangura-Williams,Raees Bangura-Williams,Attacker,England,라이스 방구라윌리엄스,R. 방구라윌리엄스
+504648,R. Bangura-Williams,Raees Bangura-Williams,Attacker,England,라이스 방구라윌리엄스,R. 방구라-윌리엄스
 272553,J. Coburn,Joshua Guy Coburn,Attacker,England,조시 코번,J. 코번
 368659,M. Ivanović,Mihailo Ivanović,Attacker,Serbia,미하일로 이바노비치,M. 이바노비치
 459167,S. Kendall,Sheldon Kendall,Attacker,England,셸던 켄달,S. 켄달
@@ -3459,7 +3459,7 @@
 403232,T. Atcheson,Tom Atcheson,Defender,England,톰 애치슨,T. 애치슨
 199692,H. Carter,Hayden James Carter,Defender,England,헤이든 카터,H. 카터
 161663,E. Cashin,Eiran Joe Cashin,Defender,Republic of Ireland,에이런 캐신,E. 캐신
-231078,T. Gardner-Hickman,Taylor Gardner-Hickman,Midfielder,England,테일러 가드너히크먼,T. 가드너히크먼
+231078,T. Gardner-Hickman,Taylor Gardner-Hickman,Midfielder,England,테일러 가드너히크먼,T. 가드너-히크먼
 313248,M. Litherland,Matthew Litherland,Midfielder,England,매튜 리덜랜드,M. 리덜랜드
 69419,S. McLoughlin,Sean McLoughlin,Defender,Republic of Ireland,션 맥러플린,S. 맥러플린
 7037,L. Miller,Lewis Miller,Defender,Australia,루이스 밀러,Le. 밀러
@@ -3476,7 +3476,7 @@
 306954,A. Henriksson,Per Axel Nils Henriksson,Midfielder,Sweden,악셀 헨릭손,A. 헨릭손
 284306,K. Montgomery,Kristi Montgomery,Midfielder,Scotland,크리스티 몽고메리,K. 몽고메리
 199150,R. Morishita,Morishita Ryoya,Attacker,Japan,모리시타 료야,R. 모리시타
-405358,L. Mullarkey-Matthews,Lorenze Mullarkey-Matthews,Midfielder,England,로렌즈 멀라키매슈스,L. 멀라키매슈스
+405358,L. Mullarkey-Matthews,Lorenze Mullarkey-Matthews,Midfielder,England,로렌즈 멀라키매슈스,L. 멀라키-매슈스
 231081,S. Tavares,Sidnei Wilson Vieira David Tavares,Midfielder,Portugal,시드네이 타바르스,S. 타바르스
 39243,S. Tronstad,Sondre Bjorvand Tronstad,Midfielder,Norway,손드레 트론스타,S. 트론스타
 401103,F. Vare,Frank Vare,Midfielder,England,프랭크 베어,F. 베어
@@ -3582,7 +3582,7 @@
 403889,P. Diallo,Pape Amadou Diallo,Midfielder,Senegal,파파 아마두 디알로,P. 디알로
 265546,M. Kvistgaarden,Mathias Damm Kvistgaarden,Attacker,Denmark,마티아스 크비스트고르덴,M. 크비스트고르덴
 326105,J. Makama,Jovon Makama,Attacker,England,조본 마카마,J. 마카마
-434177,E. Mundle-Smith,Errol Mundle-Smith,Attacker,England,에럴 먼들스미스,E. 먼들스미스
+434177,E. Mundle-Smith,Errol Mundle-Smith,Attacker,England,에럴 먼들스미스,E. 먼들-스미스
 374141,O. Schwartau,Oscar Schwartau,Attacker,Denmark,오스카르 스바르다우,O. 스바르다우
 278064,T. Springett,Anthony Gary Springett,Attacker,England,앤서니 스프링엣,T. 스프링엣
 198352,M. Touré,Mohamed Touré,Attacker,Australia,모하메드 투레,M. 투레
@@ -3590,13 +3590,13 @@
 8657,P. Nardi,Paul Nardi,Goalkeeper,France,폴 나르디,P. 나르디
 127206,J. Walsh,Joseph Anthony Walsh,Goalkeeper,England,조 월시,J. 월시
 358719,K. Adamson,Kealey Adamson,Defender,Australia,킬리 애덤슨,K. 애덤슨
-37116,J. Clarke-Salter,Jake-Liam Clarke-Salter,Defender,England,제이크 클라크솔터,J. 클라크솔터
+37116,J. Clarke-Salter,Jake-Liam Clarke-Salter,Defender,England,제이크 클라크솔터,J. 클라크-솔터
 18863,S. Cook,Steve Anthony Cook,Defender,England,스티브 쿡,S. 쿡
 19886,J. Dunne,James Gerard Dunne,Defender,Republic of Ireland,제임스 던,J. 던
 159420,R. Edwards,Ronnie Lee Edwards,Defender,England,로니 에드워즈,Ro. 에드워즈
 415075,João Henrique,João Henrique Mendes da Silva,Defender,Brazil,주앙 엔히키,주앙 엔히키
 276553,A. Mbengue,Amadou Salif Mbengue,Defender,Senegal,아마두 실리프 음벵게,A. 음벵게
-18331,R. Norrington-Davies,Rhys Llewelyn Norrington-Davies,Defender,Wales,리스 노링턴데이비스,R. 노링턴데이비스
+18331,R. Norrington-Davies,Rhys Llewelyn Norrington-Davies,Defender,Wales,리스 노링턴데이비스,R. 노링턴-데이비스
 461412,T. Smith,Tylon Smith,Defender,South Africa,타일런 스미스,Ty. 스미스
 387129,I. Alemayehu,Isak Alexander Alemayehu Mulugeta,Midfielder,Sweden,이삭 알레마예후 물루게타,I. 알레마예후
 17632,I. Chair,Ilias Emilian Chair,Midfielder,Morocco,일리아스 샤이르,I. 샤이르
@@ -3645,7 +3645,7 @@
 19866,J. Lowe,Jamal Akua Lowe,Attacker,Jamaica,자말 로우,Ja. 로우
 288107,C. McNeill,Charlie Martin McNeill,Attacker,England,찰리 맥닐,C. 맥닐
 328096,J. Tshisanga Ndala,Joel Tshisanga Ndala,Attacker,England,조엘 은달라,J. 조엘 은달라
-298060,Z. Silcott-Duberry,Zain Rio Silcott-Duberry,Midfielder,England,제인 실콧듀베리,Z. 실콧듀베리
+298060,Z. Silcott-Duberry,Zain Rio Silcott-Duberry,Midfielder,England,제인 실콧듀베리,Z. 실콧-듀베리
 67973,I. Ugbo,Iké Dominique Ugbo,Attacker,Canada,이케 우그보,I. 우그보
 19682,J. Yates,Jerry Aaron Yates,Attacker,England,제리 예이츠,J. 예이츠
 105971,G. Bazunu,Gavin Okeroghene Bazunu,Goalkeeper,Republic of Ireland,가빈 바주누,G. 바주누
@@ -3671,7 +3671,7 @@
 546713,J. Osei Kyremeh,Jerome Osei Kyremeh,Attacker,England,제롬 오세이 키레메,J. 오세이 키레메
 557419,R. Otegbayo,Raphael Pijus Otegbayo,Midfielder,Ireland,라파엘 오테그바요,R. 오테그바요
 19454,B. Pearson,Benjamin David Pearson,Midfielder,England,벤 피어슨,B. 피어슨
-284449,J. Rak-Sakyi,Jesurun Rak-Sakyi,Attacker,England,제저룬 라크사키,J. 라크사키
+284449,J. Rak-Sakyi,Jesurun Rak-Sakyi,Attacker,England,제저룬 라크사키,J. 라크-사키
 290211,T. Rigo,Tomáš Rigo,Attacker,Slovakia,토마시 리고,T. 리고
 153321,T. Seko,Seko Tatsuki,Midfielder,Japan,세코 타츠키,T. 세코
 339202,W. Smith,William Smith,Midfielder,England,윌리엄 스미스,W. 스미스
@@ -3689,7 +3689,7 @@
 20457,C. Burgess,Cameron Robert Burgess,Defender,Australia,캐머런 버지스,Ca. 버지스
 104041,B. Cabango,Benjamin George Cabango,Defender,Wales,벤 카방고,B. 카방고
 17606,J. Key,Joshua Myles Abraham Key,Defender,England,조시 키,J. 키
-328093,I. Samuels-Smith,Ishé Barrington Samuels-Smith,Defender,England,이셰 새뮤얼스스미스,I. 새뮤얼스스미스
+328093,I. Samuels-Smith,Ishé Barrington Samuels-Smith,Defender,England,이셰 새뮤얼스스미스,I. 새뮤얼스-스미스
 18382,Ricardo,Ricardo Alexandre Almeida Santos,Defender,Portugal,히카르두 산투스,히카르두 산투스
 19499,J. Tymon,Joshua Lewis Tymon,Defender,England,조시 타이먼,J. 타이먼
 18847,J. Ward,Joel Edward Philip Ward,Defender,England,조엘 워드,Jo. 워드
@@ -3722,7 +3722,7 @@
 20389,L. Jones,Lloyd Richard Jones,Defender,England,로이드 존스,L. 존스
 386501,Z. Mitchell,Zach Joseph Mitchell,Defender,England,잭 미첼,Z. 미첼
 18939,K. Ramsay,Kayne Ramsay,Defender,England,케인 램지,K. 램지
-129723,J. Rankin-Costello,Joseph Scott Rankin-Costello,Midfielder,England,조 랭킨코스텔로,J. 랭킨코스텔로
+129723,J. Rankin-Costello,Joseph Scott Rankin-Costello,Midfielder,England,조 랭킨코스텔로,J. 랭킨-코스텔로
 283144,C. Sichenje,Collins Lusaka Sichenje,Defender,Kenya,콜린스 시첸제,C. 시첸제
 19759,L. Berry,Luke David Berry,Midfielder,England,루크 배리,L. 배리
 167165,S. Carey,Sonny Jack Carey,Attacker,England,소니 케어리,S. 케어리
@@ -3759,7 +3759,7 @@
 430734,Y. Konak,Yunus Emre Konak,Midfielder,Türkiye,유누스 엠레 코나크,Y. 코나크
 327609,J. Carson McDonnell,Jamie Carson McDonnell,Midfielder,Northern Ireland,제이미 맥도넬,J. 제이미 맥도넬
 284187,S. Mills,Stanley Mills,Midfielder,England,스탠리 밀스,S. 밀스
-180308,M. Peart-Harris,Myles Spencer Peart-Harris,Midfielder,England,마일스 퍼트해리스,M. 퍼트해리스
+180308,M. Peart-Harris,Myles Spencer Peart-Harris,Midfielder,England,마일스 퍼트해리스,M. 퍼트-해리스
 293163,J. Donley,Jamie Donley,Midfielder,England,제이미 돈리,J. 돈리
 199856,A. Emakhu,Aidomo Emakhu,Attacker,Republic of Ireland,아이도모 에마쿠,A. 에마쿠
 17932,M. Harris,Mark Thomas Harris,Attacker,Wales,마크 해리스,M. 해리스
@@ -3774,7 +3774,7 @@
 19574,J. Bidwell,Jake Brian Bidwell,Defender,England,제이크 비드웰,J. 비드웰
 291147,M. Brau,Miguel Ángel Brau Blanquez,Defender,Spain,미겔 앙헬 브라우,M. 브라우
 19260,J. Dasilva,Jay Rhys Dasilva,Defender,England,제이 다실바,Ja. 다실바
-298128,K. Kesler-Hayden,Kaine Kesler-Hayden,Defender,England,케인 케슬러헤이든,K. 케슬러헤이든
+298128,K. Kesler-Hayden,Kaine Kesler-Hayden,Defender,England,케인 케슬러헤이든,K. 케슬러-헤이든
 18202,L. Kitching,Liam Kitching,Defender,England,리엄 키칭,L. 키칭
 264437,B. Thomas,Bobby Craig Thomas,Defender,England,바비 토마스,B. 토마스
 17714,L. Woolfenden,Luke Matthew Woolfenden,Defender,England,루크 울픈든,L. 울픈든
@@ -3791,8 +3791,8 @@
 138786,E. Simms,Ellis Reco Simms,Attacker,England,엘리스 심스,E. 심스
 16046,V. Torp,Victor Torp Overgaard,Midfielder,Denmark,빅토르 토르프,V. 토르프
 335185,J. Markelo,Jahnoah Guevara Markelo,Attacker,Netherlands,야노아 마르켈로,J. 마르켈로
-18404,E. Mason-Clark,Ephron Jardell Mason-Clark,Midfielder,England,에프론 메이슨클라크,E. 메이슨클라크
-82090,B. Thomas-Asante,Solomon Brandon Michael Clarke Thomas-Asante,Midfielder,England,브랜든 토마스아산테,B. 토마스아산테
+18404,E. Mason-Clark,Ephron Jardell Mason-Clark,Midfielder,England,에프론 메이슨클라크,E. 메이슨-클라크
+82090,B. Thomas-Asante,Solomon Brandon Michael Clarke Thomas-Asante,Midfielder,England,브랜든 토마스아산테,B. 토마스-아산테
 427,H. Wright,Haji Amir Wright,Attacker,USA,하지 라이트,H. 라이트
 423708,Yang M.H.,Yang Min-Hyeok,Attacker,Korea Republic,양민혁,양민혁
 87878,J. Bursik,Josef John Bursik,Goalkeeper,England,요세프 부르시크,J. 부르시크
@@ -3844,7 +3844,7 @@
 126791,N. Broadhead,Nathan Paul Broadhead,Midfielder,Wales,네이선 브로드헤드,N. 브로드헤드
 20436,G. Dobson,George David Dobson,Midfielder,England,조지 돕슨,G. 돕슨
 18782,M. James,Matthew Lee James,Midfielder,England,매티 제임스,Ma. 제임스
-45322,D. Keillor-Dunn,Davis James Marshall Keillor-Dunn,Midfielder,England,데이비스 케일러던,D. 케일러던
+45322,D. Keillor-Dunn,Davis James Marshall Keillor-Dunn,Midfielder,England,데이비스 케일러던,D. 케일러-던
 138790,R. Longman,Ryan James Longman,Midfielder,England,라이언 롱먼,R. 롱먼
 20503,L. O'Brien,Lewis John O'Brien,Midfielder,England,루이스 오브라이언,L. 오브라이언
 20248,O. Rathbone,Oliver Michael Rathbone,Midfielder,England,올리버 래스본,O. 래스본
@@ -4116,6 +4116,7 @@
 2816,M. Bogosavac,Miroslav Bogosavac,Defender,Serbia,미로슬라브 보고사바츠,M. 보고사바츠
 3619,K. Cake,Klisman Cake,Defender,Albania,클리스만 차케,K. 차케
 8990,N. Ghandri,Nader Ghandri,Defender,Tunisia,나데르 간드리,N. 간드리
+22087,M. Nadé,Mickaël Nadé,France,Defender,미카엘 나데,M. 나데
 53504,D. Khlusevich,Daniil Khlusevich,Defender,Russia,다니일 흘루세비치,D. 흘루세비치
 196738,O. Ndong,Ousmane Ndong,Defender,Senegal,우스만 은동,O. 은동
 97663,M. Sidorov,Maksim Sidorov,Defender,Russia,막심 시도로프,M. 시도로프
@@ -4310,7 +4311,7 @@
 180231,D. Sangaré,David Sangaré,Goalkeeper,Russia,데비트 상가레,D. 상가레
 374143,M. Tsulaya,Mikhail Tsulaya,Goalkeeper,Russia,미하일 출라야,M. 출라야
 267976,K. Bolshakov,Kirill Bolshakov,Defender,Russia,키릴 볼샤코프,K. 볼샤코프
-122387,E. Botaka-Ioboma,Erving Botaka-Ioboma,Defender,Russia,에르빙 보타카이오보마,E. 보타카이오보마
+122387,E. Botaka-Ioboma,Erving Botaka-Ioboma,Defender,Russia,에르빙 보타카이오보마,E. 보타카-이오보마
 71353,O. Isayenko,Oleg Isayenko,Defender,Russia,올레크 이사옌코,O. 이사옌코
 203878,N. Karmayev,Nikita Karmayev,Defender,Russia,니키타 카르마예프,N. 카르마예프
 550215,S. Oleynik,Stanislav Oleynik,Defender,Russia,스타니슬라프 올레이니크,S. 올레이니크
@@ -4627,6 +4628,7 @@
 531732,A. Revazov,Arsen Revazov,Attacker,Russia,아르센 레바조프,Ar. 레바조프
 53766,K. Savichev,Konstantin Savichev,Defender,Russia,콘스탄틴 사비체프,K. 사비체프
 271664,V. Shitov,Vladislav Shitov,Attacker,Russia,블라디슬라프 시토프,V. 시토프
+267984,V. Shitov,Vladislav Shitov,Attacker,Russia,블라디슬라프 시토프,V. 시토프
 43502,D. Tsypchenko,Dmitriy Tsypchenko,Attacker,Russia,드미트리 칩첸코,D. 칩첸코
 8196,A. Yushin,Aleksandr Yushin,Midfielder,Russia,알렉산드르 유신,A. 유신
 410652,D. Golikov,Daniil Golikov,Goalkeeper,Russia,다니일 골리코프,D. 골리코프
@@ -4905,7 +4907,7 @@
 361433,J. Carvalho,João Gonçalo Carapinha Carvalho,Goalkeeper,Portugal,주앙 카르발류,Jo. 카르발류
 269349,L. Horníček,Lukáš Horníček,Goalkeeper,Czechia,루카시 호르니체크,L. 호르니체크
 41090,T. Magalhães de Sá,Tiago Magalhães de Sá,Goalkeeper,Portugal,티아구 사,T. 사
-162535,B. Arrey-Mbi,Bright Akwo Arrey-Mbi,Defender,Germany,브라이트 에리음비,B. 에리음비
+162535,B. Arrey-Mbi,Bright Akwo Arrey-Mbi,Defender,Germany,브라이트 에리음비,B. 에리-음비
 68090,A. Barišić,Adrian Leon Barišić,Defender,Bosnia and Herzegovina,아드리안 바리시치,A. 바리시치
 153290,V. Gómez Perea,Víctor Gómez Perea,Midfielder,Spain,빅토르 고메스,Ví. 고메스
 137721,G. Lagerbielke,Gustaf Johan Lagerbielke,Defender,Sweden,구스타프 라게르비엘케,G. 라게르비엘케
@@ -5469,7 +5471,7 @@
 73868,R. Pepi,Ricardo Pepi,Attacker,USA,리카르도 페피,R. 페피
 207,I. Perišić,Ivan Perišić,Attacker,Croatia,이반 페리시치,I. 페리시치
 278308,D. Deen,Daniël Virginio Deen,Goalkeeper,Netherlands,다니엘 데인,D. 데인
-340711,R. Owusu-Oduro,Rome Jayden Owusu-Oduro,Goalkeeper,Netherlands,롬 제이든 오우수오두로,R. 오우수오두로
+340711,R. Owusu-Oduro,Rome Jayden Owusu-Oduro,Goalkeeper,Netherlands,롬 제이든 오우수오두로,R. 오우수-오두로
 411287,J. Schipper,Jur Schipper,Goalkeeper,Netherlands,유르 스히퍼르,J. 스히퍼르
 37602,H. Verhulst,Hobie Verhulst,Goalkeeper,Netherlands,호비 페르휠스트,H. 페르휠스트
 224,J. Zoet,Jeroen Zoet,Goalkeeper,Netherlands,예룬 줏,J. 줏
@@ -5762,7 +5764,7 @@
 635837,D. Vernooij,Douwe Vernooij,Defender,Netherlands,다우어 페르노이,D. 페르노이
 1813,J. Willems,Jetro Willems,Defender,Netherlands,예트로 빌럼스,J. 빌럼스
 50120,T. Chery,Tjaron Chery,Attacker,Suriname,차론 헤리,T. 헤리
-216770,I. Hansen-Aarøen,Isak Hansen-Aarøen,Midfielder,Norway,이삭 한센아뢰엔,I. 한센아뢰엔
+216770,I. Hansen-Aarøen,Isak Hansen-Aarøen,Midfielder,Norway,이삭 한센아뢰엔,I. 한센-아뢰엔
 330315,N. Lebreton,Noé Lebreton,Attacker,France,노에 르브레통,N. 르브레통
 37134,B. Linssen,Bryan Linssen,Attacker,Netherlands,브라이언 린선,B. 린선
 14343,D. Nejasmic,Darko Nejasmic,Midfielder,Croatia,다르코 네야스미치,D. 네야스미치
@@ -6161,7 +6163,7 @@
 598478,O. Ertem,Oguzhan Ertem,Midfielder,Türkiye,오구즈한 에르템,O. 에르템
 62323,M. Eskihellaç,Mustafa Eskihellaç,Defender,Türkiye,무스타파 에스키헬라치,M. 에스키헬라치
 474591,C. Oulaï,Christ Inao Oulaï,Midfielder,Côte d'Ivoire,크리스트 이나오 울라이,C. 울라이
-22408,T. Jabol-Folcarelli,Tim Jabol-Folcarelli,Midfielder,France,팀 자볼폴카레이,T. 자볼폴카레이
+22408,T. Jabol-Folcarelli,Tim Jabol-Folcarelli,Midfielder,France,팀 자볼폴카레이,T. 자볼-폴카레이
 422404,S. Malkoçoğlu,Salih Malkoçoğlu,Midfielder,Türkiye,살리흐 말코촐루,S. 말코촐루
 371027,C. Nwaiwu,Chibuike Nwaiwu,Defender,Nigeria,치부이케 은와이우,C. 은와이우
 49942,O. Tufan,Ozan Tufan,Midfielder,Türkiye,오잔 투판,O. 투판
@@ -6306,7 +6308,7 @@
 289306,L. Augusto,Loide Augusto,Midfielder,Angola,로이드 아우구스투,L. 아우구스투
 383860,E. Bulut,Emrecan Bulut,Attacker,Türkiye,엠레잔 불루트,E. 불루트
 37440,H. Dervişoğlu,Halil Dervişoğlu,Attacker,Türkiye,할릴 데르비숄루,H. 데르비숄루
-162418,A. Awokoya-Mebude,Adedire Awokoya-Mebude,Midfielder,Scotland,아데디레 아워코야메부데,A. 아워코야메부데
+162418,A. Awokoya-Mebude,Adedire Awokoya-Mebude,Midfielder,Scotland,아데디레 아워코야메부데,A. 아워코야-메부데
 43056,V. Mihăilă,Valentin Mihăilă,Midfielder,Romania,발렌틴 미허일러,V. 미허일러
 180644,I. Olawoyin,Ibrahim Olawoyin,Midfielder,Nigeria,이브라힘 올라워인,I. 올라워인
 385760,F. Orak,Furkan Orak,Defender,Türkiye,푸르칸 오라크,F. 오라크
@@ -6519,10 +6521,10 @@
 162513,E. Bayram,Emin Bayram,Defender,Türkiye,에민 바이람,E. 바이람
 109271,S. Kimura,Kimura Seiji,Defender,Japan,키무라 세이지,S. 키무라
 372563,A. Lapage,Amando Lapage,Defender,Belgium,아만도 라파주,A. 라파주
-392700,L. Mbamba-Muanda,Lucas Mbamba-Muanda,Defender,Belgium,뤼카 음밤바무안다,L. 음밤바무안다
+392700,L. Mbamba-Muanda,Lucas Mbamba-Muanda,Defender,Belgium,뤼카 음밤바무안다,L. 음밤바-무안다
 462230,M. Ndembi,Michée Ndembi,Defender,Belgium,미셰 은뎀비,M. 은뎀비
 1348,R. Neustädter,Roman Neustädter,Defender,Russia,로만 노이슈테터,R. 노이슈테터
-338507,C. Nsiala-Makengo,Clinton Nsiala-Makengo,Defender,France,클린톤 은시알라마켕고,C. 은시알라마켕고
+338507,C. Nsiala-Makengo,Clinton Nsiala-Makengo,Defender,France,클린톤 은시알라마켕고,C. 은시알라-마켕고
 371950,A. Piedfort,Arthur Piedfort,Midfielder,Belgium,아르튀르 피에포르,A. 피에포르
 51144,B. Reynolds,Bryan Keith Reynolds Jr.,Defender,USA,브라이언 레이놀즈,B. 레이놀즈
 323942,J. Alcócer,Josimar Angelo Alcócer McCook,Midfielder,Costa Rica,호시마르 알코세르,J. 알코세르
@@ -6532,7 +6534,7 @@
 354875,R. Smekens,Raf Smekens,Midfielder,Belgium,라프 스메컨스,R. 스메컨스
 2180,S. Sydorchuk,Serhii Sydorchuk,Midfielder,Ukraine,세르히 시도르추크,S. 시도르추크
 161995,T. Van den Keybus,Thomas Van den Keybus,Midfielder,Belgium,토마스 판덴케이뷔스,T. 판덴케이뷔스
-551343,N. Bohamdi-Kamoni,Naoufal Bohamdi-Kamoni,Attacker,Belgium,나우팔 보함디카모니,N. 보함디카모니
+551343,N. Bohamdi-Kamoni,Naoufal Bohamdi-Kamoni,Attacker,Belgium,나우팔 보함디카모니,N. 보함디-카모니
 400751,E. Bujupi,Eliot Bujupi,Attacker,Germany,엘리오트 부유피,E. 부유피
 182422,E. Destan,Enis Destan,Attacker,Türkiye,에니스 데스탄,E. 데스탄
 300941,F. Gouré,Bi Irié Fernand Gouré,Attacker,Côte d'Ivoire,페르낭 구레,F. 구레
@@ -6676,7 +6678,7 @@
 551260,W. Asselman,Wout Asselman,Midfielder,Belgium,바우트 아셀만,W. 아셀만
 20144,L. da Silva Lopes,Leonardo Adelino da Silva Lopes,Midfielder,Portugal,레안드루 로페스,L. 로페스
 381830,T. De Vlieger,Tibe De Vlieger,Midfielder,Belgium,티버 데플리허르,T. 데플리허르
-299972,M. Delorge-Knieper,Mathias Delorge-Knieper,Midfielder,Belgium,마티아스 들로르주크니퍼르,M. 들로르주크니퍼르
+299972,M. Delorge-Knieper,Mathias Delorge-Knieper,Midfielder,Belgium,마티아스 들로르주크니퍼르,M. 들로르주-크니퍼르
 446302,M. El Âdfaoui,Mohammed Jamel El Âdfaoui,Midfielder,Belgium,모하메드 엘아드파위,M. 엘아드파위
 26519,Hong H. S.,Hong Hyun-Seok,Attacker,Korea Republic,홍현석,홍현석
 266927,A. Ito,Ito Atsuki,Midfielder,Japan,이토 아츠키,A. 이토
@@ -6696,7 +6698,7 @@
 8495,L. Pirard,Lucas Frédéric Pirard,Goalkeeper,Belgium,뤼카 피라르,L. 피라르
 431988,S. Assengue,Steeven Assengue,Midfielder,Belgium,스티벤 아상그,S. 아상그
 24865,D. Bates,David Robert Bates,Defender,Scotland,데이비드 베이츠,D. 베이츠
-1715,B. Bolingoli-Mbombo,Boli Bolingoli-Mbombo,Defender,Belgium,볼리 볼링골리음봄보,B. 볼링골리음봄보
+1715,B. Bolingoli-Mbombo,Boli Bolingoli-Mbombo,Defender,Belgium,볼리 볼링골리음봄보,B. 볼링골리-음봄보
 313567,A. Calut,Alexandro Calut,Defender,Belgium,알렉산드로 칼뤼,A. 칼뤼
 162592,D. Dierckx,Daan Dierckx,Defender,Belgium,단 디르크스,D. 디르크스
 129706,M. Fossey,Marlon Joseph Fossey,Midfielder,USA,말론 포시,M. 포시
@@ -6849,9 +6851,9 @@
 494715,A. De Wannemacker,August De Wannemacker,Midfielder,Belgium,아우휘스트 더 바네마커르,A. 바네마커르
 8845,D. Heymans,Daan Heymans,Attacker,Belgium,단 헤이만스,D. 헤이만스
 1937,B. Heynen,Bryan Heynen,Midfielder,Belgium,브라이언 헤이넌,B. 헤이넌
-404891,K. Karetsas,Konstantinos Karetsas,Attacker,Belgium,콘스탄티노스 카레차스,K. 카레차스
+404891,K. Karetsas,Konstantinos Karetsas,Attacker,Belgium,콘스탄디노스 카레차스,K. 카레차스
 287790,N. Sattlberger,Nikolas Sattlberger,Midfielder,Austria,니콜라스 자틀베르거,N. 자틀베르거
-380647,N. Adedeji-Sternberg,Noah Adedeji-Sternberg,Attacker,Belgium,노아 아데데지슈테른베르크,N. 아데데지슈테른베르크
+380647,N. Adedeji-Sternberg,Noah Adedeji-Sternberg,Attacker,Belgium,노아 아데데지슈테른베르크,N. 아데데지-슈테른베르크
 413237,A. Bibout,Aaron Banind Bibout,Attacker,Cameroon,아롱 비부,A. 비부
 288078,J. Erabi,Jusef Erabi,Attacker,Sweden,유세프 에라비,J. 에라비
 1942,J. Ito,Ito Junya,Attacker,Japan,이토 준야,Ju. 이토
@@ -6928,7 +6930,7 @@
 98855,D. Hrnčár,Dávid Hrnčár,Midfielder,Slovakia,다비드 흐른차르,D. 흐른차르
 649145,E. Lembi,Elnora Lembi,Defender,Belgium,엘노라 렘비,E. 렘비
 287793,L. Marijnissen,Luc Marijnissen,Defender,Netherlands,뤽 마레이니선,L. 마레이니선
-415495,N. Moutha-Sebtaoui,Nail Moutha-Sebtaoui,Defender,Belgium,나일 무타셉타위,N. 무타셉타위
+415495,N. Moutha-Sebtaoui,Nail Moutha-Sebtaoui,Defender,Belgium,나일 무타셉타위,N. 무타-셉타위
 131664,M. Sambu,Junior Marsoni Sambu Mansoni,Defender,Belgium,마르소니 삼부,M. 삼부
 373826,D. Acquah,Desmond Acquah,Midfielder,Belgium,데스먼드 아콰,D. 아콰
 592891,A. Daali,Amine Daali,Midfielder,Belgium,아미너 달리,A. 달리
@@ -8534,7 +8536,7 @@
 25335,J. Klinsmann,Jonathan Lee Klinsmann,Goalkeeper,USA,요나탄 클린스만,J. 클린스만
 102685,P. Schulte,Patrick Schulte,Goalkeeper,USA,파트리크 슐테,P. 슐테
 50999,M. Turner,Matthew Charles Turner,Goalkeeper,USA,맷 터너,M. 터너
-19314,C. Carter-Vickers,Cameron Robert Carter-Vickers,Defender,USA,카메론 카터비커스,C. 카터비커스
+19314,C. Carter-Vickers,Cameron Robert Carter-Vickers,Defender,USA,카메론 카터비커스,C. 카터-비커스
 19023,T. Ream,Timothy Michael Ream,Defender,USA,팀 림,T. 림
 50879,M. Robinson,Miles Gordon Robinson,Defender,USA,마일스 로빈슨,M. 로빈슨
 119002,J. Tolkin,John Michael Tolkin,Defender,USA,존 톨킨,J. 톨킨
@@ -8576,7 +8578,7 @@
 51307,T. Smith,Thomas Jefferson Smith,Defender,New Zealand,토미 스미스,Th. 스미스
 210165,F. Surman,Finn Surman,Defender,New Zealand,핀 서먼,F. 서먼
 51149,M. Boxall,Michael Joseph Boxall,Defender,New Zealand,마이클 복설,M. 복설
-376246,L. Kelly-Heald,Lukas Eric Kelly-Heald,Defender,New Zealand,루카스 켈리힐드,L. 켈리힐드
+376246,L. Kelly-Heald,Lukas Eric Kelly-Heald,Defender,New Zealand,루카스 켈리힐드,L. 켈리-힐드
 94344,N. Pijnaker,Nando Zen Pijnaker,Defender,New Zealand,난도 페이나커르,N. 페이나커르
 94346,T. Payne,Timothy John Payne,Defender,New Zealand,팀 페인,T. 페인
 6852,S. Roux,Storm James Roux,Defender,New Zealand,스톰 루,S. 루
@@ -8610,7 +8612,7 @@
 8660,Z. Bassong,Zorhan Ludovic Bassong,Defender,Canada,조란 바송,Z. 바송
 51295,D. Cornelius,Derek Austin Cornelius,Defender,Canada,데렉 코르넬리우스,D. 코르넬리우스
 50816,R. Laryea,Richmond Mamah Laryea,Defender,Canada,리치 라리아,R. 라리아
-201707,J. Marshall-Rutty,Jahkeele Stanford Jack Marshall-Rutty,Defender,Canada,자킬 마셜러티,J. 마셜러티
+201707,J. Marshall-Rutty,Jahkeele Stanford Jack Marshall-Rutty,Defender,Canada,자킬 마셜러티,J. 마셜-러티
 50925,K. Miller,Kamal Anthony Miller,Defender,Canada,카말 밀러,K. 밀러
 78494,J. Waterman,Joel Robert Waterman,Defender,Canada,조엘 워터먼,J. 워터먼
 407583,J. Badwal,Jeevan Singh Badwal,Midfielder,Canada,지반 싱 바드왈,J. 바드왈
@@ -8714,7 +8716,7 @@
 22982,J. Saïko,Jean-Philippe Saïko,Attacker,New Caledonia,장필리프 사이코,J. 사이코
 360172,G. Haewegene,Germain Haewegene,Attacker,New Caledonia,제르맹 하에웨게네,G. 하에웨게네
 360322,L. Waya,Lues Waya,Attacker,New Caledonia,루에스 와야,L. 와야
-24203,G. Gope-Fenepej,Georges Gope-Fenepej,Midfielder,New Caledonia,조르주 고프페네페이,G. 고프페네페이
+24203,G. Gope-Fenepej,Georges Gope-Fenepej,Midfielder,New Caledonia,조르주 고프페네페이,G. 고프-페네페이
 360162,T. Richard,Titouan Richard,Attacker,New Caledonia,티투앙 리차드,T. 리차드
 165723,B. Kaï,Bertrand Kaï,Attacker,New Caledonia,베르트랑 카이,B. 카이
 22868,R. Sélé,Richard Sélé,Attacker,New Caledonia,리샤르 셀레,R. 셀레
@@ -8739,7 +8741,7 @@
 82034,J. Sheehan,Josh Sheehan,Midfielder,Wales,조시 시헌,J. 시헌
 348262,J. Clarke,Josh Clarke,Goalkeeper,Northern Ireland,조시 클라크,Jo. 클라크
 45203,C. Hazard,Conor Hazard,Goalkeeper,Northern Ireland,코너 해저드,C. 해저드
-19115,B. Peacock-Farrell,Bailey Peacock-Farrell,Goalkeeper,Northern Ireland,베일리 피콕패럴,B. 피콕패럴
+19115,B. Peacock-Farrell,Bailey Peacock-Farrell,Goalkeeper,Northern Ireland,베일리 피콕패럴,B. 피콕-패럴
 69319,E. Toal,Eoin Toal,Defender,Northern Ireland,오언 톨,E. 톨
 45010,B. Lyons,Brad Lyons,Midfielder,Northern Ireland,브래드 라이언스,B. 라이언스
 19244,G. Saville,George Saville,Midfielder,Northern Ireland,조지 새빌,G. 새빌
@@ -8897,7 +8899,7 @@
 313381,C. Baker,Cody Baker,Defender,USA,코디 베이커,C. 베이커
 6108,Y. Andrade,Yeimar Gómez Andrade,Defender,Colombia,예이마르 고메스 안드라데,Y. 안드라데
 362437,S. Hawkins,Stuart Hawkins,Defender,USA,스튜어트 호킨스,S. 호킨스
-415232,K. Kossa-Rienzi,Kalani Kossa-Rienzi,Defender,USA,칼라니 코사리엔지,K. 코사리엔지
+415232,K. Kossa-Rienzi,Kalani Kossa-Rienzi,Defender,USA,칼라니 코사리엔지,K. 코사-리엔지
 542150,A. Lopez,Antion Lopez,Defender,USA,안티노 로페즈,A. 로페즈
 51107,Nouhou,Nouhou,Defender,Cameroon,누후,누후
 103292,J. Ragen,Jackson Ragen,Defender,USA,잭슨 레이건,J. 레이건
@@ -8975,7 +8977,7 @@
 50924,R. Jansson,Robin Jansson,Defender,Sweden,로빈 얀손,R. 얀손
 47358,A. Marín,Adrián Marín,Defender,Spain,아드리안 마린,A. 마린
 641988,N. Miller,Nolan Miller,Defender,USA,놀란 밀러,N. 밀러
-362428,T. Reid-Brown,Tahir Reid-Brown,Defender,USA,타히르 리드브라운,T. 리드브라운
+362428,T. Reid-Brown,Tahir Reid-Brown,Defender,USA,타히르 리드브라운,T. 리드-브라운
 382291,Z. Taifi,Zakaria Taifi,Midfielder,USA,자카리아 타이피,Z. 타이피
 51033,E. Atuesta,Eduard Atuesta,Midfielder,Colombia,에두아르드 아투에스타,E. 아투에스타
 2427,W. Cartagena,Wilder Cartagena,Midfielder,Peru,윌데르 카르타헤나,W. 카르타헤나
@@ -9092,7 +9094,7 @@
 418310,R. Donkor,Ronald Donkor,Midfielder,Ghana,로널드 동커,R. 동커
 461645,A. Mehmeti,Adri Mehmeti,Midfielder,USA,아드리 메흐메티,Ad. 메흐메티
 487304,M. Morigi,Marco Morigi,Midfielder,Venezuela,마르코 모리기,M. 모리기
-275,E. Choupo-Moting,Eric-Maxim Choupo-Moting,Attacker,Cameroon,에릭막심 추포모팅,E. 추포모팅
+275,E. Choupo-Moting,Eric-Maxim Choupo-Moting,Attacker,Cameroon,에릭막심 추포모팅,E. 추포-모팅
 51186,C. Cowell,Cade Cowell,Attacker,USA,케이드 카월,C. 카월
 1152,E. Forsberg,Emil Forsberg,Midfielder,Sweden,에밀 포르스베리,E. 포르스베리
 418618,J. Hall,Julian Hall,Attacker,USA,줄리안 홀,Ju. 홀
@@ -9302,10 +9304,10 @@
 265884,P. Aaronson,Paxten Aaronson,Midfielder,USA,팩스턴 애런슨,P. 애런슨
 73863,J. Atencio,Josh Atencio,Midfielder,USA,조시 아텐시오,J. 아텐시오
 458378,W. Frederick,Wayne Frederick,Midfielder,Trinidad and Tobago,웨인 프레데릭,W. 프레데릭
-71110,T. Ku-DiPietro,Theodore Ku-DiPietro,Midfielder,USA,시어도어 쿠디피에트로,T. 쿠디피에트로
+71110,T. Ku-DiPietro,Theodore Ku-DiPietro,Midfielder,USA,시어도어 쿠디피에트로,T. 쿠-디피에트로
 237232,H. Ojediran,Hamzat Ojediran,Midfielder,Nigeria,함자트 오제디란,H. 오제디란
 61178,C. Ronan,Connor Ronan,Midfielder,Ireland,코너 로넌,C. 로넌
-453232,K. Stewart-Baynes,Kimani Stewart-Baynes,Attacker,Canada,키마니 스튜어트베인스,K. 스튜어트베인스
+453232,K. Stewart-Baynes,Kimani Stewart-Baynes,Attacker,Canada,키마니 스튜어트베인스,K. 스튜어트-베인스
 542059,M. Diop,Mamadou Billo Diop,Attacker,Senegal,마마두 빌로 디오프,Ma. 디오프
 510679,A. Harris,Alex Harris,Attacker,USA,알렉스 해리스,Al. 해리스
 391152,B. Jamison,Bryce Jamison,Attacker,USA,브라이스 제미슨,B. 제미슨
@@ -9409,7 +9411,7 @@
 336619,I. Losenko,Ivan Losenko,Midfielder,Ukraine,이반 로센코,I. 로센코
 78589,V. Loturi,Victor Loturi,Midfielder,Canada,빅터 로투리,V. 로투리
 50792,S. Piette,Samuel Piette,Midfielder,Canada,사뮈엘 피에트,S. 피에트
-508998,O. Graham-Roache,Owen Graham-Roache,Attacker,Canada,오언 그레이엄로치,O. 그레이엄로치
+508998,O. Graham-Roache,Owen Graham-Roache,Attacker,Canada,오언 그레이엄로치,O. 그레이엄-로치
 50909,F. Herbers,Fabian Herbers,Attacker,Germany,파비안 헤르베르스,F. 헤르베르스
 310968,S. Ibrahim,Sunusi Ibrahim,Attacker,Nigeria,수누시 이브라힘,S. 이브라힘
 283673,M. Opoku,Mahala Opoku,Attacker,Ghana,마할라 오포쿠,M. 오포쿠
@@ -9449,7 +9451,7 @@
 383793,S. Jura,Sawyer Jura,Defender,USA,소이어 주라,S. 주라
 51154,E. Miller,Eric Miller,Defender,USA,에릭 밀러,E. 밀러
 197913,J. Mosquera,Juan Mosquera,Defender,Colombia,후안 모스케라,J. 모스케라
-385486,C. Nduwuisi-Ondo,Charles Nduwuisi-Ondo,Defender,Equatorial Guinea,찰스 은두위시온도,C. 은두위시온도
+385486,C. Nduwuisi-Ondo,Charles Nduwuisi-Ondo,Defender,Equatorial Guinea,찰스 은두위시온도,C. 은두위시-온도
 510681,I. Smith,Ian Smith,Defender,USA,이안 스미스,I. 스미스
 51312,C. Bassett,Cole Bassett,Midfielder,USA,콜 배세트,C. 배세트
 123435,J. Caicedo,José Caicedo,Midfielder,Colombia,호세 카이세도,Jo. 카이세도
@@ -9499,7 +9501,7 @@
 644834,M. Vázquez,Mathías Vázquez,Attacker,Honduras,마티아스 바스케스,M. 바스케스
 50847,L. Barraza,Luis Barraza,Goalkeeper,USA,루이스 바라사,L. 바라사
 196737,R. Novo,Rocco Ríos Novo,Goalkeeper,Argentina,로코 리오스 노보,R. 노보
-513293,E. Abadia-Reda,Ezequiel Abadia-Reda,Defender,USA,에세키엘 아바디아레다,E. 아바디아레다
+513293,E. Abadia-Reda,Ezequiel Abadia-Reda,Defender,USA,에세키엘 아바디아레다,E. 아바디아-레다
 282407,N. Allen,Noah Allen,Defender,Greece,노아 앨런,N. 앨런
 67896,M. Falcón,Maximiliano Falcón,Defender,Uruguay,막시밀리아노 팔콘,M. 팔콘
 306705,G. Luján,Gonzalo Luján,Defender,Argentina,곤살로 루한,G. 루한
@@ -9521,7 +9523,7 @@
 357334,X. Valdez,Xavier Valdez,Goalkeeper,Dominican Republic,사비에르 발데스,X. 발데스
 51075,J. Willis,Joe Willis,Goalkeeper,USA,조 윌리스,J. 윌리스
 461516,C. Applewhite,Christopher Applewhite,Defender,USA,크리스토퍼 애플화이트,C. 애플화이트
-265762,R. Baker-Whiting,Reed Baker-Whiting,Defender,USA,리드 베이커화이팅,R. 베이커화이팅
+265762,R. Baker-Whiting,Reed Baker-Whiting,Defender,USA,리드 베이커화이팅,R. 베이커-화이팅
 271602,J. Bauer,Josh Bauer,Defender,USA,조시 바우어,J. 바우어
 362062,J. Knight,Jordan Knight,Defender,Canada,조던 나이트,Jo. 나이트
 50790,D. Lovitz,Daniel Lovitz,Defender,USA,다니엘 로비츠,D. 로비츠
@@ -9547,7 +9549,7 @@
 39229,M. Desler,Mikkel Desler,Defender,Denmark,미켈 데슬레르,M. 데슬레르
 323378,M. Đorđević,Mateja Đorđević,Defender,Serbia,마테야 조르제비치,M. 조르제비치
 197449,G. Biro,Guilherme Biro,Defender,Brazil,길례르미 비루,G. 비루
-8527,B. Hines-Ike,Brandon Hines-Ike,Defender,USA,브랜든 하인스아이크,B. 하인스아이크
+8527,B. Hines-Ike,Brandon Hines-Ike,Defender,USA,브랜든 하인스아이크,B. 하인스-아이크
 105632,Ž. Kolmanič,Žan Kolmanič,Defender,Slovenia,잔 콜마니치,Ž. 콜마니치
 57748,J. Rosales,Joseph Rosales,Midfielder,Honduras,조세프 로살레스,J. 로살레스
 511387,R. Thomas,Riley Thomas,Defender,USA,라일리 토마스,Ri. 토마스
@@ -9806,7 +9808,7 @@
 180316,H. Davies,Harvey Davies,Goalkeeper,England,하비 데이비스,H. 데이비스
 287109,J. McConnell,James McConnell,Midfielder,England,제임스 맥코넬,J. 맥코넬
 588501,J. Abe,Joshua Abe,Attacker,England,조슈아 에이브,J. 에이브
-437561,J. Sonni-Lambie,Joshua Sonni-Lambie,Attacker,England,조슈아 소니램비,J. 소니램비
+437561,J. Sonni-Lambie,Joshua Sonni-Lambie,Attacker,England,조슈아 소니램비,J. 소니-램비
 348818,B. Clarke,Brayden Clarke,Defender,Wales,브레이든 클라크,B. 클라크
 418403,J. Dixon,Jaden Dixon,Defender,England,제이든 딕슨,J. 딕슨
 409798,L. Copley,Louie Copley,Midfielder,England,루이 코플리,L. 코플리
@@ -9822,7 +9824,7 @@
 454935,L. Emenalo,Landon Emenalo,Defender,England,랜던 에메날로,L. 에메날로
 167663,T. McGill,Tom McGill,Goalkeeper,Canada,톰 맥길,T. 맥길
 204037,Costinha,Costinha,Defender,Portugal,코스티냐,코스티냐
-309501,A. Cozier-Duberry,Amario Cozier-Duberry,Midfielder,England,아마리오 코지어듀베리,A. 코지어듀베리
+309501,A. Cozier-Duberry,Amario Cozier-Duberry,Midfielder,England,아마리오 코지어듀베리,A. 코지어-듀베리
 570150,J. Middleton,Jesse Middleton,Midfielder,England,제시 미들턴,J. 미들턴
 340135,M. O'Mahony,Mark O'Mahony,Attacker,Republic of Ireland,마크 오마호니,M. 오마호니
 524411,Z. Yohanna,Zadok Yohanna,Attacker,Nigeria,자도크 요하나,Z. 요하나
@@ -9847,10 +9849,10 @@
 2930,J. Butland,Jack Butland,Goalkeeper,England,잭 버틀랜드,J. 버틀랜드
 1591,K. Tzolakis,Konstantinos Tzolakis,Goalkeeper,Greece,콘스탄디노스 졸라키스,K. 졸라키스
 581989,C. Okike,Calvin Okike,Defender,Nigeria,캘빈 오키케,C. 오키케
-396407,J. Hjertø-Dahl,Jens Hjertø-Dahl,Midfielder,Norway,옌스 히에르퇴달,J. 히에르퇴달
+396407,J. Hjertø-Dahl,Jens Hjertø-Dahl,Midfielder,Norway,옌스 히에르퇴달,J. 히에르퇴-달
 338046,Ó. Zambrano,Óscar Zambrano,Midfielder,Ecuador,오스카르 삼브라노,Ó. 삼브라노
 557455,D. Daley,Damari Daley,Attacker,England,다마리 데일리,D. 데일리
-366630,T. Sellars-Fleming,Tyrell Sellars-Fleming,Attacker,England,타이럴 셀러스플레밍,T. 셀러스플레밍
+366630,T. Sellars-Fleming,Tyrell Sellars-Fleming,Attacker,England,타이럴 셀러스플레밍,T. 셀러스-플레밍
 329345,J. Thompson,Jack Thompson,Midfielder,England,잭 톰프슨,J. 톰프슨
 551288,G. McDonnell,Grady McDonnell,Midfielder,England,그레이디 맥도널,G. 맥도널
 498864,L. Sillah,Lamin Sillah,Defender,Gambia,라민 실라,L. 실라
@@ -9866,7 +9868,7 @@
 557389,C. Dinsdale,Charlie Dinsdale,Midfielder,England,찰리 딘스데일,C. 딘스데일
 553846,A. Lightfoot,Archie Lightfoot,Midfielder,England,아치 라이트풋,A. 라이트풋
 553701,F. Geragusyan,Finn Geragusyan,Attacker,Armenia,핀 게라구샨,F. 게라구샨
-400739,T. Samuel-Ogunsuyi,Trey Samuel-Ogunsuyi,Attacker,Belgium,트레이 사무엘오군수이,T. 사무엘오군수이
+400739,T. Samuel-Ogunsuyi,Trey Samuel-Ogunsuyi,Attacker,Belgium,트레이 사무엘오군수이,T. 사무엘-오군수이
 553730,F. Scott,Finley Scott,Defender,England,핀리 스콧,F. 스콧
 553665,T. Tuterov,Timur Tuterov,Attacker,Ukraine,티무르 투테로우,T. 투테로우
 431884,K. Andrews,Kai Andrews,Midfielder,England,카이 앤드류스,K. 앤드류스
@@ -9875,13 +9877,13 @@
 19600,S. Walker,Samuel Colin Walker,Goalkeeper,England,사무엘 워커,S. 워커
 351341,T. Akomeah,Travis Akomeah,Defender,England,트래비스 아코메아,T. 아코메아
 329359,J. Clarridge,James Andrew Clarridge,Defender,England,제임스 클래리지,J. 클래리지
-621008,L. Ramirez-Espain,Leo Ramirez-Espain,Midfielder,England,레오 라미레스에스파인,L. 라미레스에스파인
+621008,L. Ramirez-Espain,Leo Ramirez-Espain,Midfielder,England,레오 라미레스에스파인,L. 라미레스-에스파인
 667675,K. Gorman,Kiefer Gorman,Midfielder,England,키퍼 고먼,K. 고먼
 459634,A. Sanghrajka,Amar Sanghrajka,Midfielder,England,아마르 상라지카,A. 상라지카
-403063,M. Adu-Poku,Michael Adu-Poku,Midfielder,England,마이클 아두포쿠,M. 아두포쿠
+403063,M. Adu-Poku,Michael Adu-Poku,Midfielder,England,마이클 아두포쿠,M. 아두-포쿠
 330599,I. Bravo,Iker Bravo,Attacker,Spain,이케르 브라보,I. 브라보
 540481,N. Chikovani,Nikoloz Chikovani,Attacker,Georgia,니콜로즈 치코바니,N. 치코바니
-459360,Z. Massiah-Edwards,Zavier Massiah-Edwards,Attacker,England,제이비어 매시아에드워즈,Z. 매시아에드워즈
+459360,Z. Massiah-Edwards,Zavier Massiah-Edwards,Attacker,England,제이비어 매시아에드워즈,Z. 매시아-에드워즈
 402504,L. Benjamin,Lewys Benjamin,Goalkeeper,Wales,루이스 벤저민,L. 벤저민
 431387,J. Gracey,Josh Gracey,Goalkeeper,Northern Ireland,조시 그레이시,J. 그레이시
 303322,N. Djiga,Nasser Djiga,Defender,Burkina Faso,나세르 지가,N. 지가
@@ -9919,7 +9921,7 @@
 527616,E. Clark,Ethan Clark,Midfielder,England,이선 클라크,E. 클라크
 549458,L. Castell,Lluc Castell,Attacker,Spain,유크 카스텔,L. 카스텔
 18957,M. Obafemi,Michael Obafemi,Attacker,Republic of Ireland,마이클 오바페미,M. 오바페미
-446948,B. Pouri-Siewe,Brandon Pouri-Siewe,Attacker,England,브랜던 푸리시에베,B. 푸리시에베
+446948,B. Pouri-Siewe,Brandon Pouri-Siewe,Attacker,England,브랜던 푸리시에베,B. 푸리-시에베
 445472,D. Satpaev,Dastan Satpaev,Midfielder,Kazakhstan,다스탄 사트파예프,D. 사트파예프
 557408,R. Battrum,Ryan Battrum,Attacker,England,라이언 배트럼,R. 배트럼
 288116,K. Casey,Kaelan Casey,Defender,England,케일런 케이시,K. 케이시
@@ -9930,7 +9932,7 @@
 388808,J. Landers,Josh Landers,Attacker,Scotland,조시 랜더스,J. 랜더스
 588439,J. Wilson,Junior Wilson,Defender,England,주니어 윌슨,J. 윌슨
 557345,A. Da Silva,Alezandro da Silva,Midfielder,England,알레잔드루 다 시우바,A. 시우바
-585151,D. Martin-Moore,Dynaeo Dieago Martin-Moore,Midfielder,England,디네오 마틴무어,D. 마틴무어
+585151,D. Martin-Moore,Dynaeo Dieago Martin-Moore,Midfielder,England,디네오 마틴무어,D. 마틴-무어
 557511,M. Mazwi,Menzi Mazwi,Midfielder,Zimbabwe,멘지 마즈위,M. 마즈위
 670184,L. McCourtie,Luca McCourtie,Midfielder,England,루카 맥코티,L. 맥코티
 45049,S. Wright,Scott Wright,Attacker,Scotland,스콧 라이트,S. 라이트
@@ -9993,7 +9995,7 @@
 347939,C. Warren,Charlie Warren,Attacker,England,찰리 워렌,C. 워렌
 19470,R. Nyambe,Ryan Nyambe,Defender,Namibia,라이언 냠베,R. 냠베
 125726,F. Bilbija,Filip Bilbija,Midfielder,Germany,필리프 빌비야,F. 빌비야
-20450,C. Blackett-Taylor,Corey Blackett-Taylor,Midfielder,England,코리 블래켓테일러,C. 블래켓테일러
+20450,C. Blackett-Taylor,Corey Blackett-Taylor,Midfielder,England,코리 블래켓테일러,C. 블래켓-테일러
 557528,J. Daley,Jai Daley,Defender,England,자이 데일리,J. 데일리
 643442,H. Hunt,Harry Hunt,Defender,England,해리 헌트,H. 헌트
 384828,A. Kanté,Abdoulaye Kanté,Midfielder,France,압둘라이 캉테,A. 캉테
@@ -10032,7 +10034,7 @@
 583772,M. Ani,Michael Ani,Defender,England,마이클 아니,M. 아니
 430827,B. Arthur,Benjamin Arthur,Defender,England,벤자민 아서,B. 아서
 82023,O. Bailey,Odin Bailey,Midfielder,England,오딘 베일리,O. 베일리
-462900,L. Brooke-Smith,Luke Brooke-Smith,Attacker,New Zealand,루크 브루크스미스,L. 브루크스미스
+462900,L. Brooke-Smith,Luke Brooke-Smith,Attacker,New Zealand,루크 브루크스미스,L. 브루크-스미스
 668589,M. Hammond,Max Hammond,Midfielder,England,맥스 해먼드,M. 해먼드
 668590,B. Phillipson,Ben Phillipson,Midfielder,England,벤 필립슨,B. 필립슨
 60371,R. Shein,Rocco Shein,Midfielder,Estonia,로코 셰인,R. 셰인
@@ -10076,7 +10078,7 @@
 19894,B. Mumba,Bali Mumba,Midfielder,England,발리 뭄바,B. 뭄바
 660743,M. Wallace,Murray Wallace,Defender,Scotland,머리 월리스,M. 월리스
 275565,S. Roughan,Sean Roughan,Defender,Republic of Ireland,션 로언,S. 로언
-454439,J. Smith-Sway,Jay Smith-Sway,Midfielder,England,제이 스미스스웨이,J. 스미스스웨이
+454439,J. Smith-Sway,Jay Smith-Sway,Midfielder,England,제이 스미스스웨이,J. 스미스-스웨이
 593034,I. Togo,Ian Togo,Defender,USA,이언 토고,I. 토고
 19636,M. Wallace,Murray Wallace,Defender,Scotland,머리 월리스,M. 월리스
 19857,J. Whatmough,Jack Whatmough,Defender,England,잭 왓모우,J. 왓모우
@@ -10118,7 +10120,7 @@
 313246,B. Beacroft,Boyd Beacroft,Defender,England,보이드 비크로프트,B. 비크로프트
 194804,J. Dorsett,Jeriel Dorsett,Defender,England,제리엘 도세트,J. 도세트
 434174,P. Duah,Phillip Duah,Defender,Ghana,필립 두아,P. 두아
-17482,U. Godwin-Malife,Udoka Godwin-Malife,Defender,England,우도카 고드윈말리프,U. 고드윈말리프
+17482,U. Godwin-Malife,Udoka Godwin-Malife,Defender,England,우도카 고드윈말리프,U. 고드윈-말리프
 482914,S. Harrison,Sam Harrison,Defender,England,샘 해리슨,S. 해리슨
 20489,P. O&apos;Connor,Paudie O'Connor,Defender,Republic of Ireland,포디 오코너,P. 오코너
 137300,H. Roberts,Haydon Roberts,Defender,England,헤이든 로버츠,H. 로버츠
@@ -10146,7 +10148,7 @@
 158696,F. Burns,Finley Burns,Defender,England,핀리 번즈,F. 번즈
 326767,J. Carragher,James Carragher,Defender,England,제임스 캐러거,J. 캐러거
 630605,L. Chapman,Llyton Chapman,Defender,England,릴턴 채프먼,L. 채프먼
-278242,J. Chilokoa-Mullen,Jeremiah Chilokoa-Mullen,Defender,Scotland,제레미아 칠로코아멀렌,J. 칠로코아멀렌
+278242,J. Chilokoa-Mullen,Jeremiah Chilokoa-Mullen,Defender,Scotland,제레미아 칠로코아멀렌,J. 칠로코아-멀렌
 19372,M. Fox,Morgan Fox,Defender,Wales,모건 폭스,M. 폭스
 449224,A. Harris,Archie Harris,Defender,England,아치 해리스,A. 해리스
 18288,J. Mellish,Jon Mellish,Defender,England,존 멜리시,J. 멜리시
@@ -10213,7 +10215,7 @@
 18969,W. Collar,William Guy Collar,Midfielder,England,윌 콜러,W. 콜러
 19213,G. Evans,George Evans,Midfielder,England,조지 에반스,G. 에반스
 670181,C. Gilbert,Cameron Gilbert,Midfielder,England,캐머런 길버트,C. 길버트
-553732,M. Matthews-Lewis,Myles Matthews-Lewis,Attacker,England,마일스 매슈스루이스,M. 매슈스루이스
+553732,M. Matthews-Lewis,Myles Matthews-Lewis,Attacker,England,마일스 매슈스루이스,M. 매슈스-루이스
 620205,S. Oyemade,Samuel Oyemade,Midfielder,England,새뮤얼 오예마데,S. 오예마데
 620207,K. Piper,Kairo Piper,Midfielder,England,카이로 파이퍼,K. 파이퍼
 284442,C. Webster,Charlie Webster,Attacker,England,찰리 웹스터,C. 웹스터
@@ -10239,7 +10241,7 @@
 394167,O. Harrison,Ollie Harrison,Midfielder,England,올리 해리슨,O. 해리슨
 593031,H. Hedges,Harry Hedges,Midfielder,England,해리 헤지스,H. 헤지스
 436976,K. Jennings,Kai Jennings,Midfielder,England,카이 제닝스,K. 제닝스
-327728,D. McCoy-Splatt,Delano McCoy-Splatt,Midfielder,Jamaica,델라노 맥코이스플랫,D. 맥코이스플랫
+327728,D. McCoy-Splatt,Delano McCoy-Splatt,Midfielder,Jamaica,델라노 맥코이스플랫,D. 맥코이-스플랫
 379627,Z. Nelson,Zack Nelson,Midfielder,England,잭 넬슨,Z. 넬슨
 87807,J. Reeves,Jake Kenny Reeves,Midfielder,England,제이크 리브스,J. 리브스
 17465,A. Smith,Alistair Smith,Midfielder,England,알리스테어 스미스,A. 스미스
@@ -10260,7 +10262,7 @@
 1459,A. Ramsey,Aaron James Ramsey,Midfielder,Wales,에런 램지,A. 램지
 129708,L. Sibley,Louie Sibley,Midfielder,England,루이 시블리,L. 시블리
 438101,K. Burton,Kasway Burton,Attacker,England,카스웨이 버턴,K. 버턴
-413136,A. Elliott-Wheeler,Aidan Elliott-Wheeler,Attacker,England,에이든 엘리엇휠러,A. 엘리엇휠러
+413136,A. Elliott-Wheeler,Aidan Elliott-Wheeler,Attacker,England,에이든 엘리엇휠러,A. 엘리엇-휠러
 294756,G. O'Donkor,Gatlin O'Donkor,Attacker,England,개틀린 오동커,G. 오동커
 449046,L. Snowden,Leo Snowden,Attacker,England,레오 스노든,L. 스노든
 19367,C. Dawson,Cameron Dawson,Goalkeeper,England,카메론 도슨,C. 도슨
@@ -10301,18 +10303,18 @@
 17434,A. Gilbey,Alexander Scott Gilbey,Midfielder,England,알렉스 길비,A. 길비
 152696,J. Matete,Jay Matete,Midfielder,England,제이 마테트,J. 마테트
 450683,R. Silver,Rian Silver,Midfielder,England,라이언 실버,R. 실버
-482048,D. Singh-Hurditt,Damerai Singh-Hurditt,Midfielder,England,다머라이 싱허딧,D. 싱허딧
+482048,D. Singh-Hurditt,Damerai Singh-Hurditt,Midfielder,England,다머라이 싱허딧,D. 싱-허딧
 568947,S. Troso,Samuel Troso,Midfielder,England,새뮤얼 트로소,S. 트로소
 428606,C. Waller,Charlie Waller,Defender,England,찰리 월러,C. 월러
 19675,B. Wiles,Benjamin Jack Wiles,Midfielder,England,벤 와일스,B. 와일스
 17697,R. Wintle,Ryan Wintle,Midfielder,England,라이언 윈틀,R. 윈틀
 17551,A. Collins,Aaron Collins,Attacker,Wales,애런 콜린스,A. 콜린스
-17962,R. Hepburn-Murphy,Rushian Marcus Amari Hepburn-Murphy,Attacker,England,루시언 헵번머피,R. 헵번머피
+17962,R. Hepburn-Murphy,Rushian Marcus Amari Hepburn-Murphy,Attacker,England,루시언 헵번머피,R. 헵번-머피
 668642,B. Kazungu,Brooklyn Kazungu,Forward,England,브루클린 카중구,B. 카중구
-19008,N. Méndez-Laing,Nathaniel Méndez-Laing,Attacker,Guatemala,나다니엘 멘데스라잉,N. 멘데스라잉
+19008,N. Méndez-Laing,Nathaniel Méndez-Laing,Attacker,Guatemala,나다니엘 멘데스라잉,N. 멘데스-라잉
 18572,S. Nombe,Samuel Tshiayima Nombe,Attacker,England,샘 놈,S. 놈
 18993,C. Paterson,Callum Paterson,Attacker,Scotland,칼럼 패터슨,C. 패터슨
-334009,C. Andeng-Ndi,Collin Andeng-Ndi,Goalkeeper,Cameroon,콜린 안뎅은디,C. 안뎅은디
+334009,C. Andeng-Ndi,Collin Andeng-Ndi,Goalkeeper,Cameroon,콜린 안뎅은디,C. 안뎅-은디
 19844,A. Bass,Alexander Michael Bass,Goalkeeper,England,알렉스 배스,A. 배스
 313240,B. Smith,Bastian Smith,Goalkeeper,England,바스티안 스미스,B. 스미스
 673328,E. Chang,Ethan Chang,Defender,England,이선 창,E. 창
@@ -10324,11 +10326,11 @@
 284204,D. Okagbue,David Okagbue,Defender,Republic of Ireland,데이비드 오카그부에,D. 오카그부에
 200234,E. Weir,Evan Weir,Defender,Republic of Ireland,에반 위어,E. 위어
 389036,J. Andrews,Joseph Andrews,Midfielder,Wales,조지프 앤드루스,J. 앤드루스
-215132,C. Conn-Clarke,Chris Conn-Clarke,Midfielder,Northern Ireland,크리스 콘클라크,C. 콘클라크
+215132,C. Conn-Clarke,Chris Conn-Clarke,Midfielder,Northern Ireland,크리스 콘클라크,C. 콘-클라크
 152697,C. Johnston,Carl Johnston,Defender,Northern Ireland,칼 존스턴,C. 존스턴
 19616,L. Kelly,Liam Kelly,Midfielder,Republic of Ireland,리엄 켈리,L. 켈리
 328078,B. Khela,Brandon Singh Khela,Midfielder,England,브랜던 켈라,B. 켈라
-385481,D. O'Brien-Brady,Donay O'Brien-Brady,Midfielder,England,도네이 오브라이언브레이디,D. 오브라이언브레이디
+385481,D. O'Brien-Brady,Donay O'Brien-Brady,Midfielder,England,도네이 오브라이언브레이디,D. 오브라이언-브레이디
 626590,P. Sykut,Patryk Sykut,Midfielder,Poland,파트리크 시쿠트,P. 시쿠트
 284215,B. Woods,Benjamin Woods,Midfielder,England,벤 우즈,B. 우즈
 167314,O. Edwards,Owura Edwards,Midfielder,England,오우라 에드워즈,O. 에드워즈
@@ -10349,7 +10351,7 @@
 18205,J. Senior,Jack Senior,Midfielder,England,잭 시니어,J. 시니어
 82100,J. Sterry,Jamie Sterry,Defender,England,제이미 스테리,J. 스테리
 196854,G. Broadbent,George Broadbent,Midfielder,England,조지 브로드벤트,G. 브로드벤트
-432838,S. Straughan-Brown,Sam Ellis Straughan-Brown,Midfielder,England,샘 스트로건브라운,S. 스트로건브라운
+432838,S. Straughan-Brown,Sam Ellis Straughan-Brown,Midfielder,England,샘 스트로건브라운,S. 스트로건-브라운
 17835,H. Clifton,Harry Clifton,Midfielder,Wales,해리 클리프턴,H. 클리프턴
 20338,I. Hutchinson,Isaac Hutchinson,Attacker,England,아이작 허친슨,I. 허친슨
 584386,B. McCann,Bayley McCann,Midfielder,Northern Ireland,베일리 맥캔,B. 맥캔
@@ -10409,7 +10411,7 @@
 340815,C. Roberts,Caleb Roberts,Midfielder,England,케일렙 로버츠,C. 로버츠
 237124,C. Watts,Caleb Watts,Midfielder,Australia,케일렙 왓츠,C. 왓츠
 138793,H. White,Harvey White,Midfielder,England,하비 화이트,H. 화이트
-18366,B. Sarpong-Wiredu,Brendan Nana Sarpong-Wiredu,Midfielder,England,브렌던 사르퐁위레두,B. 사르퐁위레두
+18366,B. Sarpong-Wiredu,Brendan Nana Sarpong-Wiredu,Midfielder,England,브렌던 사르퐁위레두,B. 사르퐁-위레두
 126876,X. Amaechi,Xavier Amaechi,Attacker,England,제이비어 아마에치,X. 아마에치
 19862,R. Curtis,Ronan Curtis,Attacker,Republic of Ireland,로넌 커티스,R. 커티스
 53326,W. Evans,Will Evans,Attacker,Wales,윌 에반스,W. 에반스
@@ -10427,7 +10429,7 @@
 670180,J. King,Josh King,Defender,England,조시 킹,J. 킹
 20428,L. Leahy,Luke Leahy,Midfielder,England,루크 리히,L. 리히
 296534,C. Taylor,Connor Taylor,Defender,England,코너 테일러,C. 테일러
-129721,C. Boyd-Munce,Caolan Boyd-Munce,Midfielder,Northern Ireland,키린 보이드먼스,C. 보이드먼스
+129721,C. Boyd-Munce,Caolan Boyd-Munce,Midfielder,Northern Ireland,키린 보이드먼스,C. 보이드-먼스
 19985,J. Grimmer,Jack Grimmer,Defender,Scotland,잭 그리머,J. 그리머
 1110,E. Henderson,Ewan Henderson,Midfielder,Scotland,에원 헨더슨,E. 헨더슨
 20247,A. Morley,Aaron Morley,Midfielder,England,애런 몰리,A. 몰리
@@ -10470,7 +10472,7 @@
 284432,S. Earley,Saxon Earley,Defender,England,색슨 얼리,S. 얼리
 82630,L. Freestone,Lewis Freestone,Defender,England,루이스 프리스톤,L. 프리스톤
 17424,J. Houghton,Jordan Houghton,Midfielder,England,조던 휴턴,J. 휴턴
-17640,L. James-Wildin,Luther James-Wildin,Defender,Antigua and Barbuda,루터 제임스윌딘,L. 제임스윌딘
+17640,L. James-Wildin,Luther James-Wildin,Defender,Antigua and Barbuda,루터 제임스윌딘,L. 제임스-윌딘
 615946,D. Okwara,David Okwara,Defender,England,데이비드 오콰라,D. 오콰라
 18120,C. Piergianni,Carl Piergianni,Defender,England,칼 피에르자니,C. 피에르자니
 538412,J. Taylor,Jack Taylor,Defender,England,잭 테일러,J. 테일러
@@ -10537,7 +10539,7 @@
 18934,H. Lewis,Harry Lewis,Goalkeeper,England,해리 루이스,H. 루이스
 483950,A. Núñez,Anthony Núñez,Goalkeeper,Dominican Republic,앤서니 누녜스,A. 누녜스
 20419,L. Roberts,Liam Roberts,Goalkeeper,England,리엄 로버츠,L. 로버츠
-127207,F. Blake-Tracy,Frazer Blake-Tracy,Defender,England,프레이저 블레이크트레이시,F. 블레이크트레이시
+127207,F. Blake-Tracy,Frazer Blake-Tracy,Defender,England,프레이저 블레이크트레이시,F. 블레이크-트레이시
 17422,B. Cargill,Baily Cargill,Defender,England,베일리 카길,B. 카길
 284297,O. Dodgson,Owen Dodgson,Defender,England,오언 도지슨,O. 도지슨
 18009,E. Hewitt,Elliott Hewitt,Defender,Wales,엘리엇 헤위트,E. 헤위트
@@ -10549,7 +10551,7 @@
 526483,E. Hartmann,Ellis Hartmann,Midfielder,England,엘리스 하트만,E. 하트만
 138307,R. Hendry,Regan Hendry,Midfielder,Scotland,레이건 헨드리,R. 헨드리
 20344,S. McLaughlin,Stephen McLaughlin,Midfielder,Republic of Ireland,스티븐 맥러플린,S. 맥러플린
-308668,N. Moriah-Welsh,Nathan Moriah-Welsh,Midfielder,Guyana,네이선 모리아웰시,N. 모리아웰시
+308668,N. Moriah-Welsh,Nathan Moriah-Welsh,Midfielder,Guyana,네이선 모리아웰시,N. 모리아-웰시
 19967,L. Reed,Louis Reed,Midfielder,England,루이스 리드,L. 리드
 152946,J. Russell,Jonathan Edward Russell,Midfielder,Jamaica,존 러셀,J. 러셀
 629238,O. Taylor,Ollie Taylor,Midfielder,England,올리 테일러,O. 테일러
@@ -10607,8 +10609,8 @@
 135099,M. Ifill,Marcus Ifill,Defender,England,마커스 이필,M. 이필
 283563,J. McKiernan,John Joshua McKiernan,Midfielder,Northern Ireland,JJ 맥키어넌,J. 맥키어넌
 585138,N. Patten,Noah Patten,Midfielder,England,노아 패튼,N. 패튼
-436947,N. Paul-Lavely,Nathan Nyakeh Paul-Lavely,Midfielder,England,네이선 폴레이블리,N. 폴레이블리
-380713,A. Stepien-Iwumene,Alex Stepien-Iwumene,Midfielder,England,알렉스 스테피엔이우메네,A. 스테피엔이우메네
+436947,N. Paul-Lavely,Nathan Nyakeh Paul-Lavely,Midfielder,England,네이선 폴레이블리,N. 폴-레이블리
+380713,A. Stepien-Iwumene,Alex Stepien-Iwumene,Midfielder,England,알렉스 스테피엔이우메네,A. 스테피엔-이우메네
 19644,B. Thompson,Ben Thompson,Attacker,England,벤 톰슨,B. 톰슨
 19801,V. Adeboyejo,Victor Adeboyejo,Attacker,Nigeria,빅터 아데보예조,V. 아데보예조
 18264,M. Cheek,Michael Cheek,Attacker,England,마이클 치크,M. 치크
@@ -10617,14 +10619,14 @@
 20383,M. Pinnock,Mitch Pinnock,Midfielder,England,미치 피녹,M. 피녹
 585136,D. Przybylo,Dawid Przybyło,Attacker,Poland,다비트 프시빌로,D. 프시빌로
 18269,C. Whitely,Corey Whitely,Midfielder,England,코리 화이틀리,C. 화이틀리
-129705,L. Ashby-Hammond,Luca Ashby-Hammond,Goalkeeper,England,루카 애시비해먼드,L. 애시비해먼드
+129705,L. Ashby-Hammond,Luca Ashby-Hammond,Goalkeeper,England,루카 애시비해먼드,L. 애시비-해먼드
 412024,O. Whatmuff,Oliver Whatmuff,Goalkeeper,England,올리버 왓머프,O. 왓머프
-19517,J. Dacres-Cogley,Josh Dacres-Cogley,Midfielder,England,조시 데이커스코글리,J. 데이커스코글리
+19517,J. Dacres-Cogley,Josh Dacres-Cogley,Midfielder,England,조시 데이커스코글리,J. 데이커스-코글리
 277714,K. Gordon,Kyron Gordon,Defender,England,카이런 고든,K. 고든
 284564,B. Hills,Bradley Hills,Defender,England,브래드 힐스,B. 힐스
 17392,E. O'Connell,Eoghan O'Connell,Defender,Republic of Ireland,오언 오코넬,E. 오코넬
 312267,E. Pye,Ethan Pye,Defender,England,이선 파이,E. 파이
-305732,T. Wilson-Brown,Tom Wilson-Brown,Defender,England,톰 윌슨브라운,T. 윌슨브라운
+305732,T. Wilson-Brown,Tom Wilson-Brown,Defender,England,톰 윌슨브라운,T. 윌슨-브라운
 613455,J. Adigun,Jason Adigun,Midfielder,England,제이슨 아디군,J. 아디군
 162446,L. Bate,Lewis Bate,Midfielder,England,루이스 베이트,L. 베이트
 81775,T. Edun,Adetayo Oluwatosin Olusegun Ad Edun,Defender,England,타요 에둔,T. 에둔
@@ -11006,7 +11008,7 @@
 334014,M. Gueye,Maguette Gueye,Midfielder,Senegal,마게트 게이,M. 게이
 630685,H. Martín,Hugo Martín,Midfielder,Spain,우고 마르틴,H. 마르틴
 643970,S. Martínez,Sergio Martínez,Midfielder,Spain,세르히오 마르티네스,S. 마르티네스
-183683,Í. Sainz-Maza,Íñigo Sainz-Maza,Midfielder,Spain,이니고 사인스마사,Í. 사인스마사
+183683,Í. Sainz-Maza,Íñigo Sainz-Maza,Midfielder,Spain,이니고 사인스마사,Í. 사인스-마사
 584008,M. Solórzano,Mario Solórzano,Midfielder,Spain,마리오 솔로르사노,M. 솔로르사노
 609875,A. Vallecillo,Andrés Vallecillo,Midfielder,Spain,안드레스 바예시요,A. 바예시요
 184193,J. Carlos,Juan Carlos,Attacker,Spain,후안 카를로스,J. 카를로스
@@ -11139,7 +11141,7 @@
 668547,L. Pepinski,Louis Pepinski,Attacker,Germany,루이스 페핀스키,L. 페핀스키
 203329,N. Noll,Nahuel Noll,Goalkeeper,Germany,나우엘 놀,N. 놀
 25114,M. Schubert,Marcus Schubert,Goalkeeper,Germany,마르쿠스 슈베르트,M. 슈베르트
-373443,N. Awortwie-Grant,Nyamekye Awortwie-Grant,Defender,Germany,냐메체 아워트위그랜트,N. 아워트위그랜트
+373443,N. Awortwie-Grant,Nyamekye Awortwie-Grant,Defender,Germany,냐메체 아워트위그랜트,N. 아워트위-그랜트
 163078,L. Curda,Laurin Curda,Midfielder,Germany,라우린 쿠르다,L. 쿠르다
 25289,F. Götze,Felix Götze,Defender,Germany,펠릭스 괴체,F. 괴체
 119173,M. Hoffmeier,Marcel Hoffmeier,Defender,Germany,마르첼 호프마이어,M. 호프마이어
@@ -11555,7 +11557,7 @@
 405112,S. Fukuda,Fukuda Shio,Attacker,Japan,후쿠다 시오,S. 후쿠다
 579164,E. Laghrissi,Eymen Laghrissi,Attacker,Germany,에이멘 라그리시,E. 라그리시
 673983,J. Meyer,John Davis Meyer,Attacker,Germany,존 데이비스 마이어,J. 마이어
-610626,J. Ponente-Ramirez,Jason Ponente-Ramirez,Attacker,Italy,하손 포넨테라미레스,J. 포넨테라미레스
+610626,J. Ponente-Ramirez,Jason Ponente-Ramirez,Attacker,Italy,하손 포넨테라미레스,J. 포넨테-라미레스
 280063,M. Böhnke,Max Böhnke,Goalkeeper,Germany,막스 뵝케,M. 뵝케
 273882,K. Kratzsch,Kevin Kratzsch,Goalkeeper,Germany,케빈 크라치,K. 크라치
 162502,M. Lotka,Marcel Lotka,Goalkeeper,Germany,마르첼 로트카,M. 로트카
@@ -11724,7 +11726,7 @@
 568478,E. Mbemba,Emmanuel Mbemba,Defender,France,에마뉘엘 음벰바,E. 음벰바
 610561,A. Kvirikadze,Andria Kvirikadze,Midfielder,Georgia,안드리아 크비리카제,A. 크비리카제
 505518,P. Gueu,Patrick Zabi Gueu,Midfielder,Côte d'Ivoire,파트리크 자비 게우,P. 게우
-668701,N. Kemtchoum-Stasiowski,Noé Kemtchoum-Stasiowski,Defender,France,노에 켐추움스타시오프스키,N. 켐추움스타시오프스키
+668701,N. Kemtchoum-Stasiowski,Noé Kemtchoum-Stasiowski,Defender,France,노에 켐추움스타시오프스키,N. 켐추움-스타시오프스키
 178708,M. Nawrocki,Maik Nawrocki,Defender,Poland,마이크 나브로츠키,M. 나브로츠키
 437139,S. Sagnan,Souleymane Sagnan,Defender,France,술레이만 사냥,S. 사냥
 25634,M. Cuisance,Michaël Cuisance,Midfielder,France,미카엘 퀴장스,M. 퀴장스
@@ -11769,6 +11771,7 @@
 263017,B. Knežević,Branislav Knežević,Midfielder,Serbia,브라니슬라브 크네제비치,B. 크네제비치
 661122,Oh H.J.,Oh Hyeong-jun,Attacker,Korea Republic,오형준,오형준
 554452,B. Tsague,Blaise Tsague,Attacker,Cameroon,블레즈 차그,B. 차그
+277787,B. Tsague,Blaise Tsague,Attacker,Cameroon,블레즈 차그,B. 차그
 668889,Park B.C.,Park Byung-chan,Midfielder,Korea Republic,박병찬,박병찬
 550541,Kim D.H.,Kim Dong-hwa,Goalkeeper,Korea Republic,김동화,김동화
 311286,João Pedro,João Pedro Reginaldo,Defender,Brazil,주앙 페드루,Jo. 페드루
@@ -12049,7 +12052,7 @@
 629522,Je. Pedro,Jesus Pedro,Defender,Brazil,제수스 페드루,Je. 페드루
 566913,G. Liberato,Guilherme Liberato,Midfielder,Brazil,길례르미 리베라투,G. 리베라투
 637620,Manu Silva,Manu Silva,Midfielder,Portugal,마누 실바,마누 실바
-275291,A. Duville-Parsemain,Alexandre Duville-Parsemain,Attacker,Martinique,알렉상드르 뒤빌파르스맹,A. 뒤빌파르스맹
+275291,A. Duville-Parsemain,Alexandre Duville-Parsemain,Attacker,Martinique,알렉상드르 뒤빌파르스맹,A. 뒤빌-파르스맹
 397951,K. Mottoh,Koby Mottoh,Attacker,England,코비 모토,K. 모토
 614108,A. Vieira,Afonso Vieira,Midfielder,Portugal,아폰수 비에이라,A. 비에이라
 580847,J. Noro,Jonatás Noro,Defender,Portugal,조나타스 노루,J. 노루
@@ -12365,7 +12368,7 @@
 1933,D. Wouters,Dries Wouters,Defender,Belgium,드리스 바우터르스,D. 바우터르스
 661734,L. Beirinckx,Lars Beirinckx,Defender,Belgium,라르스 베이린크스,L. 베이린크스
 582349,N. Corthouts,Niek Corthouts,Attacker,Belgium,니크 코르트하우츠,N. 코르트하우츠
-344234,I. Dada-Mascoll,Isaiah Dada-Mascoll,Midfielder,England,이사이아 다다매스콜,I. 다다매스콜
+344234,I. Dada-Mascoll,Isaiah Dada-Mascoll,Midfielder,England,이사이아 다다매스콜,I. 다다-매스콜
 314422,Đ. Gordić,Đorđje Gordić,Midfielder,Serbia,조르제 고르디치,Đ. 고르디치
 481512,T. Mununga,Théo Mununga,Midfielder,Belgium,테오 무눙가,T. 무눙가
 19395,J. Pelupessy,Joey Pelupessy,Midfielder,Netherlands,조이 페루페시,J. 페루페시
@@ -12403,7 +12406,7 @@
 584943,A. Ouahabi,Amine Ouahabi,Midfielder,Morocco,아민 와하비,A. 와하비
 154737,R. Teague,Ryan Teague,Midfielder,Australia,라이언 티그,R. 티그
 674102,S. Ayodele,Shina Ayodele,Attacker,Nigeria,시나 아요델레,S. 아요델레
-624613,M. Lohunanu-Mbasi,Malcom Lohunanu-Mbasi,Attacker,Belgium,말콤 로후나누음바시,M. 로후나누음바시
+624613,M. Lohunanu-Mbasi,Malcom Lohunanu-Mbasi,Attacker,Belgium,말콤 로후나누음바시,M. 로후나누-음바시
 551268,C. Van Meirvenne,Cedric Van Meirvenne,Attacker,Belgium,세드릭 판메이르베너,C. 판메이르베너
 626145,M. Seghers,Mattis Seghers,Goalkeeper,Belgium,마티스 세게르스,M. 세게르스
 396220,K. Barry,Kaïs Barry,Defender,Belgium,카이스 바리,K. 바리
@@ -12422,13 +12425,13 @@
 568147,S. Coulibaly,Soumaïla Coulibaly,Defender,France,수마일라 쿨리발리,S. 쿨리발리
 346895,M. Dams,Matteo Dams,Defender,Belgium,마테오 담스,M. 담스
 551259,T. Koren,Tian Nai Koren,Attacker,Slovenia,티안 나이 코렌,T. 코렌
-496791,G. Okon-Engstler,Gianluca Okon-Engstler,Midfielder,Australia,잔루카 오콘엥슈틀러,G. 오콘엥슈틀러
+496791,G. Okon-Engstler,Gianluca Okon-Engstler,Midfielder,Australia,잔루카 오콘엥슈틀러,G. 오콘-엥슈틀러
 394206,C. Tsawa,Cheveyo Tsawa,Midfielder,Switzerland,셰베요 차와,C. 차와
 444463,A. Vasovic,Andrej Vasovic,Attacker,Switzerland,안드레이 바소비치,A. 바소비치
 280801,S. Diakité,Salim Diakité,Defender,France,살림 디아키테,S. 디아키테
 524875,E. Mbodji,El Hadji Mbodji,Defender,Senegal,엘 하지 음보지,E. 음보지
 666437,M. Sall,Mouhamadou Sall,Defender,Senegal,무하마두 살,M. 살
-432055,H. Akpa-Chukwu,Hemsley Akpa-Chukwu,Attacker,Belgium,헴슬리 아크파추쿠,H. 아크파추쿠
+432055,H. Akpa-Chukwu,Hemsley Akpa-Chukwu,Attacker,Belgium,헴슬리 아크파추쿠,H. 아크파-추쿠
 406784,I. Átrók,István Átrók,Attacker,Hungary,아트록 이슈트반,I. 아트록
 526543,K. Vémba,Kewan Vémba,Attacker,Belgium,케완 벰바,K. 벰바
 453386,B. Evers,Bas Evers,Goalkeeper,Belgium,바스 에버르스,B. 에버르스
@@ -12458,7 +12461,7 @@
 8980,G. Dewaele,Gilles Dewaele,Defender,Belgium,힐스 드발러,G. 드발러
 551229,Mo. Fofana,Mohamed Fofana,Defender,Côte d'Ivoire,모하메드 포파나,Mo. 포파나
 325785,R. Kohon,Rudy Kohon,Defender,France,뤼디 코혼,R. 코혼
-364048,H. Murray-Campbell,Harrison Murray-Campbell,Defender,England,해리슨 머리캠벨,H. 머리캠벨
+364048,H. Murray-Campbell,Harrison Murray-Campbell,Defender,England,해리슨 머리캠벨,H. 머리-캠벨
 379116,J. Ndjeungoue,James Ndjeungoue,Defender,Cameroon,제임스 은죈구에,J. 은죈구에
 79133,G. Ruyssen,Gilles Ruyssen,Defender,Belgium,질 라위선,G. 라위선
 291910,Li. De Smet,Liam De Smet,Midfielder,Belgium,리암 더스멧,Li. 더스멧
@@ -12766,7 +12769,7 @@
 542338,R. Turdean,Robert Turdean,Midfielder,USA,로버트 터딘,R. 터딘
 2550,P. Díaz,Paulo Díaz,Defender,Chile,파울로 디아스,P. 디아스
 406527,M. Amaro,Mauricio Amaro,Midfielder,Uruguay,마우리시오 아마로,M. 아마로
-542301,I. Suárez-Couri,Ignacio Suárez-Couri,Midfielder,USA,이그나시오 수아레스쿠리,I. 수아레스쿠리
+542301,I. Suárez-Couri,Ignacio Suárez-Couri,Midfielder,USA,이그나시오 수아레스쿠리,I. 수아레스-쿠리
 418619,A. Torres,Adyn Torres,Midfielder,USA,에이딘 토레스,A. 토레스
 542152,A. Kovac,Arif Kovac,Attacker,USA,아리프 코바치,A. 코바치
 542117,J. Siqueira,Judah Siqueira,Attacker,USA,주다 시케이라,J. 시케이라
@@ -13618,7 +13621,7 @@
 539326,A. Cosic,Amin Cosic,Midfielder,Iceland,아민 소시치,A. 소시치
 637833,K. Frimpong,Kelvin Frimpong,Attacker,Ghana,켈빈 프림퐁,K. 프림퐁
 465702,N. Fuglestad,Niklas Kemp Fuglestad,Attacker,Norway,니클라스 푸글레스타,N. 푸글레스타
-318591,S. Kvia-Egeskog,Simen Kvia-Egeskog,Midfielder,Norway,시멘 크비아에게스코그,S. 크비아에게스코그
+318591,S. Kvia-Egeskog,Simen Kvia-Egeskog,Midfielder,Norway,시멘 크비아에게스코그,S. 크비아-에게스코그
 135882,R. Postema,Romano Ceciel Postema,Attacker,Netherlands,로마노 포스테마,R. 포스테마
 39145,Z. Tripić,Zlatko Tripić,Midfielder,Norway,즐라트코 트리피치,Z. 트리피치
 471143,D. Balog,Dávid Balog,Goalkeeper,Slovakia,다비트 발로크,D. 발로크
@@ -13742,7 +13745,7 @@
 443714,T. Bakoulas,Theofanis Bakoulas,Midfielder,Greece,테오파니스 바쿨라스,T. 바쿨라스
 41130,Chiquinho,Francisco Leonel Lima Silva Machado,Midfielder,Portugal,시키뉴,시키뉴
 496741,C. Filis,Christos Filis,Midfielder,Greece,흐리스토스 필리스,C. 필리스
-1609,K. Fortounis,Konstantinos Fortounis,Midfielder,Greece,콘스탄티노스 포르투니스,K. 포르투니스
+1609,K. Fortounis,Konstantinos Fortounis,Midfielder,Greece,콘스탄디노스 포르투니스,K. 포르투니스
 47281,D. García,Daniel García Carrillo,Midfielder,Spain,다니 가르시아,D. 가르시아
 195929,S. Hezze,Santiago Hezze,Midfielder,Argentina,산티아고 에세,S. 에세
 392514,C. Mouzakitis,Christos Mouzakitis,Midfielder,Greece,흐리스토스 무자키티스,C. 무자키티스
@@ -13753,7 +13756,7 @@
 7169,A. Helac,Ammar Helac,Goalkeeper,Austria,아마르 헬라츠,A. 헬라츠
 281989,D. Khudyakov,Daniil Khudyakov,Goalkeeper,Russia,다니일 후댜코프,D. 후댜코프
 366341,E. Lorenz,Elias Lorenz,Goalkeeper,Austria,엘리아스 로렌츠,E. 로렌츠
-409607,C. Wiener-Pucher,Christoph Wiener-Pucher,Goalkeeper,Austria,크리스토프 비너푸허,C. 비너푸허
+409607,C. Wiener-Pucher,Christoph Wiener-Pucher,Goalkeeper,Austria,크리스토프 비너푸허,C. 비너-푸허
 422408,L. Balbo,Luis Francisco Balbo Vieira,Defender,Venezuela,루이스 발보,L. 발보
 169498,N. Geyrhofer,Niklas Geyrhofer,Defender,Austria,니클라스 가이르호퍼,N. 가이르호퍼
 169525,G. Haider,Gabriel Haider,Defender,Austria,가브리엘 하이더,G. 하이더
@@ -13820,7 +13823,7 @@
 11249,R. Kirilov,Radoslav Kirilov Kirilov,Midfielder,Bulgaria,라도슬라프 키릴로프,R. 키릴로프
 480403,D. Kusso,David João Kusso,Attacker,Angola,다비드 쿠소,D. 쿠소
 550561,I. Motev,Ivo Motev,Attacker,Bulgaria,이보 모테프,I. 모테프
-1131,A. Oko-Flex,Armstrong Inya Echezolachuku Oko-Flex,Attacker,Republic of Ireland,암스트롱 오코플렉스,A. 오코플렉스
+1131,A. Oko-Flex,Armstrong Inya Echezolachuku Oko-Flex,Attacker,Republic of Ireland,암스트롱 오코플렉스,A. 오코-플렉스
 352778,J. Perea,Juan Esteban Perea Sanchez,Attacker,Colombia,후안 페레아,J. 페레아
 394170,A. Raychev,Adrian Raychev,Attacker,Bulgaria,아드리얀 라이체프,A. 라이체프
 9650,Reinaldo,Reinaldo Nascimento Satorno,Attacker,Brazil,헤이나우두,헤이나우두
@@ -13838,7 +13841,7 @@
 1129,C. McGregor,Callum William McGregor,Midfielder,Scotland,칼럼 맥그리거,C. 맥그리거
 443670,S. McArdle,Sean McArdle,Midfielder,Scotland,숀 매카들,S. 매카들
 339172,C. Osmand,Callum James Osmand,Attacker,Wales,칼럼 오스만드,C. 오스만드
-297,A. Oxlade-Chamberlain,Alexander Mark David Oxlade-Chamberlain,Midfielder,England,알렉스 옥슬레이드체임벌린,A. 옥슬레이드체임벌린
+297,A. Oxlade-Chamberlain,Alexander Mark David Oxlade-Chamberlain,Midfielder,England,알렉스 옥슬레이드체임벌린,A. 옥슬레이드-체임벌린
 394686,F. Turley,Francis Turley,Midfielder,Northern Ireland,프랜시스 털리,F. 털리
 328035,Mi. Baur,Mika Baur,Midfielder,Germany,미카 바우어,Mi. 바우어
 454968,C. Durán,Camilo Andres Durán Marquez,Attacker,Colombia,카밀로 두란,C. 두란
@@ -14515,7 +14518,7 @@
 434046,B. Armah,Bob Nii Armah,Defender,Ghana,밥 니 아마,B. 아마
 8944,G. Engvall,Gustav Per Fredrik Engvall,Attacker,Sweden,구스타브 엥발,G. 엥발
 343378,C. Kabuye,Hope Calvin Ddamulira Kabuye,Attacker,Sweden,칼빈 카부예,C. 카부예
-264134,J. Luyeye-Lutumba,Joslyn Luyeye-Lutumba,Midfielder,Congo DR,조슬린 루예예루툼바,J. 루예예루툼바
+264134,J. Luyeye-Lutumba,Joslyn Luyeye-Lutumba,Midfielder,Congo DR,조슬린 루예예루툼바,J. 루예예-루툼바
 52727,J. Moreno,Jaime José Moreno Ciorciari,Attacker,Nicaragua,하이메 모레노,J. 모레노
 40431,P. Parzyszek,Piotr Parzyszek,Attacker,Poland,피오트르 파지셰크,P. 파지셰크
 380752,E. Tanninen,Eemil Tanninen,Attacker,Finland,에밀 탄니넨,E. 탄니넨
@@ -14569,7 +14572,7 @@
 13937,O. Galo,Orlando Moisés Galo Calderón,Midfielder,Costa Rica,오를란도 갈로,O. 갈로
 190497,I. Siqueira,Iago Siqueira Augusto,Midfielder,Brazil,이아구 시케이라,I. 시케이라
 661202,A. Mandeke,Abdu Mandeke,Midfielder,Tanzania,압두 만데케,A. 만데케
-564916,Ē. Maurs-Boks,Ēriks Maurs-Boks,Midfielder,Latvia,에릭스 마우르스복스,Ē. 마우르스복스
+564916,Ē. Maurs-Boks,Ēriks Maurs-Boks,Midfielder,Latvia,에릭스 마우르스복스,Ē. 마우르스-복스
 278074,S. Oulad,Salah Oulad M'Hand,Midfielder,Netherlands,살라 울라드,S. 울라드
 564951,N. Prudchenko,Nazar Prudchenko,Midfielder,Ukraine,나자르 프루드첸코,N. 프루드첸코
 338966,D. Putrāns,Daniils Putrāns,Midfielder,Latvia,다닐스 푸트란스,D. 푸트란스
@@ -14614,7 +14617,7 @@
 46831,Á. Mula,Alejandro Miguel Mula Sánchez,Midfielder,Spain,알렉스 물라,Á. 물라
 554480,Ál. Romero,Álvaro Romero,Attacker,Spain,알바로 로메로,Ál. 로메로
 667087,M. Toledano,Manu Toledano,Attacker,Spain,마누 톨레다노,M. 톨레다노
-568382,T. Breum-Harild,Tobias Breum-Harild,Goalkeeper,Denmark,토비아스 브레움하릴,T. 브레움하릴
+568382,T. Breum-Harild,Tobias Breum-Harild,Goalkeeper,Denmark,토비아스 브레움하릴,T. 브레움-하릴
 568454,G. Fritz,Gustav Fritz Wybrandt Rasmussen,Goalkeeper,Denmark,구스타우 프리츠,G. 프리츠
 2784,R. Rúnarsson,Rúnar Alex Rúnarsson,Goalkeeper,Iceland,루나르 알렉스 루나르손,R. 루나르손
 25312,F. Beijmo,Felix Olof Allan Nelson Beijmo,Defender,Sweden,펠릭스 베이모,F. 베이모
@@ -14646,7 +14649,7 @@
 38811,B. Reus,Beau Reus,Goalkeeper,Netherlands,보 뢰스,B. 뢰스
 138415,K. Wright,Kieran Wright,Goalkeeper,Scotland,키어런 라이트,K. 라이트
 57454,C. Borchgrevink,Christian Dahle Borchgrevink,Defender,Norway,크리스티안 보르흐그레빙크,C. 보르흐그레빙크
-154800,M. Fagan-Walcott,Malachi Michael Fagan-Walcott,Defender,England,말라치 페이건월콧,M. 페이건월콧
+154800,M. Fagan-Walcott,Malachi Michael Fagan-Walcott,Defender,England,말라치 페이건월콧,M. 페이건-월콧
 44781,S. Findlay,Stuart John Findlay,Defender,Scotland,스튜어트 핀리,S. 핀리
 579274,M. Gillies,Matthew Gillies,Defender,Scotland,매슈 길리스,M. 길리스
 44942,C. Halkett,Craig Peter Halkett,Defender,Scotland,크레이그 할켓,C. 할켓
@@ -14663,7 +14666,7 @@
 538503,L. Mendy,Laurent Mendy,Midfielder,France,로랑 멘디,L. 멘디
 45155,C. Miller,Calvin Miller,Midfielder,Scotland,칼빈 밀러,C. 밀러
 128341,T. Renaud,Tom Renaud,Midfielder,France,톰 르노,T. 르노
-175133,A. Ba-Sy,Amadou Ba-Sy,Attacker,France,아마두 바시,A. 바시
+175133,A. Ba-Sy,Amadou Ba-Sy,Attacker,France,아마두 바시,A. 바-시
 141994,C. Braga,Cláudio Rafael Soares Braga,Midfielder,Portugal,클라우지우 브라가,C. 브라가
 191415,S. Guendouz,Severin Sabri Guendouz,Attacker,France,사브리 겐두즈,S. 겐두즈
 37656,E. Kabangu,Elton Daniël Kabangu,Attacker,Belgium,엘통 카방구,E. 카방구
@@ -14707,7 +14710,7 @@
 561134,G. Katris,Georgios Katris,Defender,Greece,예오르요스 카트리스,G. 카트리스
 26828,G. Kyriakopoulos,Giorgos Kiriakopoulos,Defender,Greece,예오르요스 키리아코풀로스,G. 키리아코풀로스
 550216,V. Lavdas,Vasilios Lavdas,Defender,Greece,비실리오스 라브다스,V. 라브다스
-38692,E. Palmer-Brown,Erik Ross Palmer-Brown,Defender,USA,에릭 파머브라운,E. 파머브라운
+38692,E. Palmer-Brown,Erik Ross Palmer-Brown,Defender,USA,에릭 파머브라운,E. 파머-브라운
 204290,T. Tsapras,Triantafyllos Tsapras,Defender,Greece,트리안타필로스 차프라스,T. 차프라스
 607,A. Bakasetas,Anastasios Bakasetas,Midfielder,Greece,아나스타시오스 바카세타스,A. 바카세타스
 650482,P. Biniaris,Panagiotis Biniaris,Midfielder,Greece,파나요티스 비니아리스,P. 비니아리스
@@ -14864,3 +14867,8 @@
 389191,A. Cosic,Amin Cosic,Forward,Iceland,아민 초시치,A. 초시치
 108485,F. Kastenmeier,Florian Kastenmeier,Forward,Germany,플로리안 카슈텐마이어,F. 카슈텐마이어
 206,J. Mario,João Mario,Midfielder,Portugal,주앙 마리우,J. 마리우
+374997,M. Ladefoged,Mikkel Ladefoged,Forward,Denmark,미켈 라데포게드,M. 라데포게드
+311508,I. Chesnokov,Islam Chesnokov,Forward,Kazakhstan,이슬람 체스노코프,I. 체스노코프
+398190,M. Cvetković,Mihajlo Cvetković,Forward,Serbia,미하일로 츠베트코비치,M. 츠베트코비치
+303485,T. Bentayeb,Tawfik Bentayeb,Morocco,Forward,타우피크 벤타예브,T. 벤타예브
+152424,H. El Mahasni,Houdaifa El Mahasni,Morocco,Defender,후다이파 엘마사니,H. 엘마사니
