@@ -708,6 +708,15 @@ public class CsvLoader {
     }
 
     /**
+     * coach_id가 coaches.csv에 실제로 등록돼 있는지 여부.
+     * API가 내려준 id가 CSV에 없는(오타/미등록) 경우를 "id=0"과 동일하게 이름 기반
+     * 역매칭으로 넘기기 위한 판별용 — KoResolver.resolveCoachName에서 사용.
+     */
+    public boolean hasCoachId(long coachId) {
+        return coaches.containsKey(coachId);
+    }
+
+    /**
      * 감독 한글 단축 이름(name_ko_short) 조회.
      * coaches.csv에 없거나 컬럼이 비어있으면 null 반환.
      */

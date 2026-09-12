@@ -362,10 +362,12 @@ public class KoResolver {
 
     /**
      * 감독 이름 fallback 우선순위. 선수와 동일한 규칙을 coaches.csv 기준으로 적용.
-     * [id=0 또는 id 미제공 감독] coaches.csv name_short/name_long 이름 역매칭으로 한글화 시도.
+     * [id=0 또는 id 미제공 감독, 혹은 id는 왔지만 coaches.csv에 없는 감독] name_short/name_long
+     * 이름 역매칭으로 한글화 시도. (API가 coach_id를 내려줬는데 CSV엔 그 id가 없는 경우도
+     * id=0과 동일하게 취급 — 오타/미등록 id로 인해 ID 조회만으로는 못 찾는 경우 대응)
      */
     public ResolvedName resolveCoachName(long coachId, String apiName) {
-        if (coachId == 0) {
+        if (coachId == 0 || !csvLoader.hasCoachId(coachId)) {
             String[] row = csvLoader.getCoachRowByName(apiName);
             if (row != null) {
                 String koShort = (row.length > 5) ? row[5].trim() : "";
