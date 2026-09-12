@@ -90,7 +90,7 @@ public class FixtureService {
         long awayTeamId = data.path("teams").path("away").path("id").asLong();
 
         // 3. 부상/결장 전체 목록 먼저 조립 후 홈/원정으로 분리 (InjuryDto.teamId 기준)
-        List<InjuryDto> allInjuries = buildInjuries(fixtureId);
+        List<InjuryDto> allInjuries = buildInjuries(fixtureId, homeTeamId, awayTeamId);
         List<InjuryDto> homeInjuries = allInjuries.stream()
                 .filter(i -> i.getTeamId() == homeTeamId)
                 .toList();
@@ -133,22 +133,64 @@ public class FixtureService {
     // ──────────────────────────────────────────────
 
     /**
-     * injuries 응답에는 선수 풀네임/등번호가 비어 있을 수 있어
-     * 필요할 때 profile API로 보완한다.
+     * 홈/원정 스쿼드에서 playerId → 등번호 맵을 만든다.
+     * /players/squads는 팀 단위 호출 한 번으로 스쿼드 전원의 등번호를 받아올 수 있어서,
+     * 부상 선수 수만큼 /players/profiles를 개별 호출하던 것보다 훨씬 적은 API 호출로 끝난다.
+     * 두 팀 다 해봐야 2회 호출이고, 스쿼드 구성은 자주 안 바뀌어 BunnyCDN players 캐시(24시간)
+     * 재사용률도 개별 선수 프로필보다 높다(같은 팀이 다른 경기에서도 재사용됨).
      */
-    private InjuryPlayerExtra fetchInjuryPlayerExtra(long playerId, String apiName, String playerNameKoLong) {
+    private Map<Long, Integer> buildSquadNumberMap(long homeTeamId, long awayTeamId) {
+        Map<Long, Integer> numberByPlayerId = new HashMap<>();
+        for (long teamId : new long[]{homeTeamId, awayTeamId}) {
+            JsonNode squadResp = apiClient.getPlayerSquad(teamId);
+            if (squadResp == null || !squadResp.isArray() || squadResp.isEmpty()) continue;
+            for (JsonNode player : squadResp.get(0).path("players")) {
+                long playerId = player.path("id").asLong();
+                Integer number = nullableInt(player.path("number"));
+                if (playerId > 0 && number != null) {
+                    numberByPlayerId.put(playerId, number);
+                }
+            }
+        }
+        return numberByPlayerId;
+    }
+
+    /**
+     * injuries 응답에는 선수 풀네임/등번호가 비어 있을 수 있어 필요할 때 보완한다.
+     * 등번호는 우선 스쿼드 맵(knownNumber)에서 찾고, 이름은 CSV를 우선 사용 — 둘 다 이미
+     * 확보됐으면 /players/profiles를 아예 호출하지 않는다. 스쿼드에도 없는 신규 이적생 등
+     * 드문 경우에만 profile API로 폴백한다.
+     */
+    private InjuryPlayerExtra fetchInjuryPlayerExtra(long playerId, String apiName, String playerNameKoLong, Integer knownNumber) {
+        String longName = playerNameKoLong;
+        boolean needsNameFromProfile = false;
+        if (longName == null) {
+            String csvLong = csvLoader.getPlayerNameLong(playerId);
+            if (csvLong != null) {
+                longName = csvLong;
+            } else {
+                needsNameFromProfile = true;
+            }
+        }
+
+        Integer number = knownNumber;
+        boolean needsNumberFromProfile = (number == null);
+
+        if (!needsNameFromProfile && !needsNumberFromProfile) {
+            return new InjuryPlayerExtra(longName, number);
+        }
+
         JsonNode playerProfileResponse = apiClient.getPlayerProfile(playerId);
         JsonNode playerNode = (playerProfileResponse != null && playerProfileResponse.isArray() && !playerProfileResponse.isEmpty())
                 ? playerProfileResponse.get(0).path("player")
                 : null;
 
-        String longName = playerNameKoLong;
-        if (longName == null) {
-            String csvLong = csvLoader.getPlayerNameLong(playerId);
-            longName = csvLong != null ? csvLong : buildApiPlayerLongName(playerNode, apiName);
+        if (needsNameFromProfile) {
+            longName = buildApiPlayerLongName(playerNode, apiName);
         }
-
-        Integer number = playerNode == null ? null : nullableInt(playerNode.path("number"));
+        if (needsNumberFromProfile) {
+            number = playerNode == null ? null : nullableInt(playerNode.path("number"));
+        }
         return new InjuryPlayerExtra(longName, number);
     }
 
@@ -174,10 +216,13 @@ public class FixtureService {
      * 해당 경기의 부상/결장 선수 목록을 조립.
      * API Football /injuries는 양팀 결장 선수를 하나의 배열로 반환함.
      */
-    private List<InjuryDto> buildInjuries(long fixtureId) {
+    private List<InjuryDto> buildInjuries(long fixtureId, long homeTeamId, long awayTeamId) {
         // 1. BunnyCDN 경유 API Football /injuries 호출
         JsonNode response = apiClient.getInjuries(fixtureId);
         if (response == null || !response.isArray()) return List.of();
+
+        // 1-1. 등번호는 개별 선수 profile API 대신 팀 스쿼드 API(2회 호출)로 한 번에 확보
+        Map<Long, Integer> squadNumberByPlayerId = buildSquadNumberMap(homeTeamId, awayTeamId);
 
         List<InjuryDto> result = new ArrayList<>();
         Set<String> seen = new HashSet<>();
@@ -214,8 +259,9 @@ public class FixtureService {
 
             InjuryPlayerExtra playerExtra = playerExtraCache.computeIfAbsent(
                     playerId,
-                    // injuries API에는 등번호나 풀네임이 비어 있을 수 있어 profile API로 보완한다.
-                    id -> fetchInjuryPlayerExtra(id, apiName, resolvedPlayerName.longName())
+                    // injuries API에는 등번호나 풀네임이 비어 있을 수 있어 보완한다 — 등번호는
+                    // 스쿼드 맵 우선, 이름은 CSV 우선. 둘 다 있으면 profile API는 호출 안 함.
+                    id -> fetchInjuryPlayerExtra(id, apiName, resolvedPlayerName.longName(), squadNumberByPlayerId.get(id))
             );
 
             String teamApiName = team.path("name").asText();
