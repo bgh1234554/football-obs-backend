@@ -41,9 +41,13 @@ import lombok.extern.slf4j.Slf4j;
  * 선수 스탯 조회 서비스.
  *
  * [시즌 결정 규칙]
- * 7월 1일 이전: 전 시즌 + 현 시즌 모두 호출 (예: 4월이면 2025 + 2026)
- * 7월 1일 이후: 현 시즌만 호출 (예: 8월이면 2026만)
- * 결과 Map의 key는 시즌 연도 문자열 ("2025", "2026").
+ * 추춘제(유럽 빅리그 등, 8월 개막)와 춘추제(K리그 등, 3월 개막) 리그가 섞여 있어
+ * fixture 하나만 보고 어느 쪽인지 판별하기 어렵다 - 그래서 리그 종류를 따지지 않고
+ * "지난 시즌은 최소 하나는 항상 보이게" 하는 걸 우선해 연도 3개(6월까지)/2개(7월부터)로 단순화한다.
+ * 6월 30일까지: 올해 + 작년 + 재작년 3시즌 호출 (예: 2027년 3월이면 2027+2026+2025)
+ * 7월 1일부터: 올해 + 작년 2시즌 호출 (예: 2027년 9월이면 2027+2026)
+ * 데이터 없는 시즌은 API 응답이 비어서(response.isEmpty()) 결과 Map에서 자동으로 빠진다.
+ * 결과 Map의 key는 시즌 연도 문자열 ("2025", "2026"), 오래된 시즌부터 순서대로 삽입.
  *
  * [한글화 우선순위]
  * 선수 단축명 : name_ko_short → name_short(CSV) → API name
@@ -79,11 +83,15 @@ public class PlayerService {
 
         if (playerId == 0) throw new ApiException(ErrorCode.PLAYER_NOT_FOUND);
 
-        // 1. 10월 1일 기준으로 호출할 시즌 결정 (추춘제 시즌 초반에 지난시즌 스탯 제공 도움)
+        // 1. 6월 30일 기준으로 호출할 시즌 개수 결정. 리그가 추춘제인지 춘추제인지 안 가리고
+        //    올해(year)와 작년(year-1)은 항상 포함하고, 상반기(1~6월)에는 추춘제의
+        //    지난 시즌도 볼 수 있도록 재작년(year-2)을 추가로 호출한다.
         LocalDate today = LocalDate.now();
         int year = today.getYear();
-        boolean callBoth = today.isBefore(LocalDate.of(year, 10, 1));
-        List<Integer> seasons = callBoth ? List.of(year - 1, year) : List.of(year);
+        boolean includeTwoYearsAgo = today.isBefore(LocalDate.of(year, 7, 1));
+        List<Integer> seasons = includeTwoYearsAgo
+                ? List.of(year - 2, year - 1, year)
+                : List.of(year - 1, year);
 
         // 2. 시즌별로 API 호출 → DTO 조립
         // 삽입 순서 보장을 위해 LinkedHashMap으로 구현
