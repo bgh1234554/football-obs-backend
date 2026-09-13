@@ -81,19 +81,35 @@ public class KoResolver {
             logShortNameDiffOnce("team", teamId, apiName, csvEnglish);
             return csvEnglish;
         }
+        // 연령대별/여자부 대표팀(예: "South Korea U22", "South Korea W")은 teams.csv에 개별
+        // 등록이 없는 경우가 많음 — 접미사를 뗀 기준 팀명(예: "South Korea")이 등록돼 있으면
+        // 그 한글 이름을 그대로 물려받는다.
+        String[] baseRow = csvLoader.getTeamRowByAgeGroupBaseName(apiName);
+        if (baseRow != null) {
+            String baseKo = baseRow.length > 2 ? baseRow[2].trim() : "";
+            if (!baseKo.isEmpty()) return baseKo;
+        }
         log.info("[KO_TEAM_NAME_NEEDED] id={}, name={}", teamId, apiName);
         return apiName;
     }
 
     /**
      * 팀 단축명 우선순위.
-     * ko_name_short → ko_name → API 영문명 순 fallback.
+     * ko_name_short → ko_name → (연령대/여자부 접미사 뗀 기준 팀의 ko_name_short/ko_name) → API 영문명 순 fallback.
      */
     public String resolveTeamNameShort(long teamId, String apiName) {
         String koShort = csvLoader.getTeamNameKoShort(teamId);
         if (koShort != null) return koShort;
         String ko = csvLoader.getTeamNameKo(teamId);
-        return ko != null ? ko : apiName;
+        if (ko != null) return ko;
+        String[] baseRow = csvLoader.getTeamRowByAgeGroupBaseName(apiName);
+        if (baseRow != null) {
+            String baseKoShort = baseRow.length > 3 ? baseRow[3].trim() : "";
+            if (!baseKoShort.isEmpty()) return baseKoShort;
+            String baseKo = baseRow.length > 2 ? baseRow[2].trim() : "";
+            if (!baseKo.isEmpty()) return baseKo;
+        }
+        return apiName;
     }
 
     /**

@@ -689,10 +689,65 @@ public class CsvLoader {
     public String[] getTeamColorOverride(long teamId) {
         String[] row = teams.get(teamId);
         if (row == null) return null;
+        return colorOverrideFromRow(row);
+    }
+
+    /**
+     * teamId로 못 찾으면(연령대별/여자부 대표팀 등) apiName 끝의 연령대/여자부 접미사를 뗀
+     * 기준 팀명으로 재조회해 그 팀의 override를 대신 반환한다.
+     */
+    public String[] getTeamColorOverride(long teamId, String apiName) {
+        String[] direct = getTeamColorOverride(teamId);
+        if (direct != null) return direct;
+        String[] baseRow = getTeamRowByAgeGroupBaseName(apiName);
+        if (baseRow == null) return null;
+        return colorOverrideFromRow(baseRow);
+    }
+
+    private static String[] colorOverrideFromRow(String[] row) {
         String primary = row.length > 4 ? row[4].trim() : "";
         String number  = row.length > 5 ? row[5].trim() : "";
         if (primary.isEmpty() && number.isEmpty()) return null;
         return new String[]{ primary.isEmpty() ? null : primary, number.isEmpty() ? null : number };
+    }
+
+    /**
+     * teamId 조회가 실패했을 때(연령대별/여자부 대표팀처럼 teams.csv에 개별 등록이 없는 team_id)
+     * API 팀명 끝의 연령대/여자부 접미사를 떼어낸 "기준 팀명"으로 재조회한 행을 반환.
+     * 반환값은 teams.csv 원본 행([team_id, team_name, ko_name, ko_name_short,
+     * primary_color_override, number_color_override])이며, 없으면 null.
+     */
+    public String[] getTeamRowByAgeGroupBaseName(String apiName) {
+        String base = stripAgeGroupSuffix(apiName);
+        if (base == null) return null;
+        return teamsByName.get(base.toLowerCase());
+    }
+
+    /**
+     * "South Korea U22 W" → "South Korea"처럼 팀명 끝의 연령대/여자부 접미사를 제거한다.
+     * 떼어내는 대상: 맨 끝 토큰이 "W"이거나 "U<숫자>"인 경우, 또는 맨 끝 두 토큰이 "U<숫자> W"인 경우.
+     * 해당하지 않으면(접미사가 없으면) null 반환 — 원래 이름 그대로 쓰라는 신호.
+     */
+    private static String stripAgeGroupSuffix(String apiName) {
+        if (apiName == null) return null;
+        String[] tokens = apiName.trim().split("\\s+");
+        if (tokens.length < 2) return null;
+
+        int cut = tokens.length;
+        boolean lastIsW = tokens[cut - 1].equalsIgnoreCase("W");
+        boolean lastIsAge = tokens[cut - 1].matches("(?i)U\\d+");
+        if (lastIsW && cut >= 2 && tokens[cut - 2].matches("(?i)U\\d+")) {
+            cut -= 2;   // "... U<n> W" 두 토큰 제거
+        } else if (lastIsW || lastIsAge) {
+            cut -= 1;   // "... W" 또는 "... U<n>" 한 토큰 제거
+        } else {
+            return null;
+        }
+        if (cut == 0) return null;
+
+        StringBuilder sb = new StringBuilder(tokens[0]);
+        for (int i = 1; i < cut; i++) sb.append(' ').append(tokens[i]);
+        return sb.toString();
     }
 
     /**

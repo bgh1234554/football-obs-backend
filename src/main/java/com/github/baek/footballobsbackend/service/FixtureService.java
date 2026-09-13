@@ -348,12 +348,13 @@ public class FixtureService {
         String awayNumberColor = awayTeamColors.number();
 
         // 6-2. CSV 컬러 override — 위 모든 로직 후에도 null이 남아있는 컬럼만 보완
-        String[] homeColorOverride = csvLoader.getTeamColorOverride(homeTeamId);
+        //      (연령대별/여자부 대표팀)의 경우 teamId로 못 찾으면 apiName의 연령대 접미사를 뗀 기준 팀의 override를 대신 씀
+        String[] homeColorOverride = csvLoader.getTeamColorOverride(homeTeamId, homeApiName);
         if (homeColorOverride != null) {
             if (homePrimaryColor == null && homeColorOverride[0] != null) homePrimaryColor = homeColorOverride[0];
             if (homeNumberColor  == null && homeColorOverride[1] != null) homeNumberColor  = homeColorOverride[1];
         }
-        String[] awayColorOverride = csvLoader.getTeamColorOverride(awayTeamId);
+        String[] awayColorOverride = csvLoader.getTeamColorOverride(awayTeamId, awayApiName);
         if (awayColorOverride != null) {
             if (awayPrimaryColor == null && awayColorOverride[0] != null) awayPrimaryColor = awayColorOverride[0];
             if (awayNumberColor  == null && awayColorOverride[1] != null) awayNumberColor  = awayColorOverride[1];
