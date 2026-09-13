@@ -781,7 +781,7 @@
 133185,J. Cardoso,João Lucas de Souza Cardoso,Midfielder,USA,조니 카르도소,J. 카르도소
 50,Koke,Jorge Resurrección Merodio,Midfielder,Spain,코케,코케
 341371,R. Mendoza,Rodrigo Mendoza Martinez Moya,Midfielder,Spain,로그리고 멘도사,R. 멘도사
-451594,A. Monserrate,Alejandro Monserrate Pueyo,Midfielder,Spain,알레한드로 몬세라테,A. 몬세라테
+451594,J. Monserrate,Alejandro Monserrate Pueyo,Midfielder,Spain,하노 몬세라테,J. 몬세라테
 548867,T. Seidu,Taufik Seidu,Midfielder,Ghana,타우피크 세이두,T. 세이두
 303378,J. Serrano,Javier Serrano Martínez,Midfielder,Spain,하비 세라노,J. 세라노
 313383,O. Vargas,Obed Gómez Vargas,Midfielder,USA,오베드 바르가스,O. 바르가스
@@ -997,7 +997,7 @@
 182639,U. Vencedor,Unai Vencedor Paris,Midfielder,Spain,우나이 벤세도르,U. 벤세도르
 328139,T. Abed,Tai Abed Kassus,Attacker,Israel,타이 아베드,T. 아베드
 47225,Brugui,Roger Brugué Ayguadé,Midfielder,Spain,로제르 브루게,R. 브루게
-645724,F. Cortes,Francisco Cortés Gracia,Attacker,Spain,프란시스코 코르테스,F. 코르테스
+645724,P. Cortés,Francisco Cortés Gracia,Attacker,Spain,파코 코르테스,P. 코르테스
 450497,C. Espí,Carlos Espí Escrihuela,Attacker,Spain,카를로스 에스피,C. 에스피
 378284,E. Eyong,Karl Edouard Blaise Etta Eyong,Attacker,Cameroon,카를 에타 에용,E. 에용
 46790,V. García,Víctor García Raja,Midfielder,Spain,빅토르 가르시아,V. 가르시아
@@ -1065,7 +1065,7 @@
 509470,T. Pitarch,Thiago Pitarch Pinar,Midfielder,Spain,티아고 피타르치,T. 피타르치
 1271,A. Tchouaméni,Aurélien Djani Tchouaméni,Midfielder,France,오렐리앵 추아메니,A. 추아메니
 756,F. Valverde,Federico Santiago Valverde Dipetta,Midfielder,Uruguay,페데리코 발베르데,F. 발베르데
-440339,A. Arnuncio,Adrián Arnuncio Baquerín,Attacker,Spain,아드리안 아르눈시오,A. 아르눈시오
+440339,Arnu,Adrián Arnuncio Baquerín,Attacker,Spain,아르누,아르누
 336711,G. García,Gonzalo García Torres,Attacker,Spain,곤살로 가르시아,Go. 가르시아
 308998,A. Leiva,Álvaro Leiva Alemany,Midfielder,Spain,알바로 레이바,A. 레이바
 449249,F. Mastantuono,Franco Mastantuono,Attacker,Argentina,프랑코 마스탄투오노,F. 마스탄투오노
@@ -1241,7 +1241,7 @@
 925,G. Guedes,Gonçalo Manuel Ganchinho Guedes,Attacker,Portugal,곤살루 게드스,G. 게드스
 183748,J. Karrikaburu,Jon Karrikaburu Jaimerena,Attacker,Spain,혼 카리카부루,J. 카리카부루
 32862,T. Kubo,Kubo Takefusa,Midfielder,Japan,쿠보 타케후사,T. 쿠보
-449063,A. Garcia,Alex Marchal García,Attacker,Spain,알렉스 가르시아,Al. 가르시아
+449063,A. Marchal,Alex Marchal García,Attacker,Spain,알렉스 마르찰,A. 마르찰
 402168,A. Mariezkurrena,Arkaitz Mariezkurrena Etxezarreta,Attacker,Spain,아르카이츠 마리에스쿠레나,A. 마리에스쿠레나
 61774,O. Óskarsson,Orri Steinn Óskarsson,Attacker,Iceland,오리 오스카르손,O. 오스카르손
 47323,M. Oyarzabal,Mikel Oyarzabal Ugarte,Attacker,Spain,미켈 오야르사발,M. 오야르사발
@@ -1259,7 +1259,7 @@
 647008,A. Fernández,Adri Fernández,Defender,Spain,아드리 페르난데스,Ad. 페르난데스
 182636,J. López,Javier López Carballo,Defender,Spain,하비 로페스,Ja. 로페스
 46657,N. Vidal,Ignacio Vidal Miralles,Defender,Spain,나초 비달,N. 비달
-600938,P. Agudin,Pablo Menéndez Agudín,Midfielder,Spain,파블로 메넨데스,P. 아구딘
+600938,P. Agudín,Pablo Menéndez Agudín,Midfielder,Spain,파블로 아구딘,P. 아구딘
 1695,S. Cazorla,Santiago Cazorla González,Midfielder,Spain,산티 카소를라,S. 카소를라
 30927,S. Colombatto,Santiago Colombatto,Midfielder,Argentina,산티아고 콜롬바토,S. 콜롬바토
 2922,L. Dendoncker,Leander Dendoncker,Midfielder,Belgium,레안더르 덴동커르,L. 덴동커르
@@ -2231,7 +2231,7 @@
 984,J. Brandt,Julian Brandt,Midfielder,Germany,율리안 브란트,J. 브란트
 864,E. Can,Emre Can,Defender,Germany,엠레 잔,E. 잔
 138935,C. Chukwuemeka,Carney Chibueze Chukwuemeka,Midfielder,England,카니 추쿠에메카,C. 추쿠에메카
-478991,S. Piá,Samuele Inácio Piá,Attacker,Italy,사무엘레 피아,S. 피아
+478991,S. Inácio,Samuele Inácio Piá,Attacker,Italy,사무엘레 이나시우,S. 이나시우
 592218,M. Kaba,Mussa Kaba,Midfielder,Germany,무사 카바,Mu. 카바
 637,F. Nmecha,Felix Kalu Nmecha,Midfielder,Germany,펠릭스 은메차,F. 은메차
 24807,S. Özcan,Salih Özcan,Midfielder,Türkiye,살리흐 외즈잔,S. 외즈잔
@@ -6538,12 +6538,12 @@
 400751,E. Bujupi,Eliot Bujupi,Attacker,Germany,엘리오트 부유피,E. 부유피
 182422,E. Destan,Enis Destan,Attacker,Türkiye,에니스 데스탄,E. 데스탄
 300941,F. Gouré,Bi Irié Fernand Gouré,Attacker,Côte d'Ivoire,페르낭 구레,F. 구레
-353943,I. Ferri Julià,Ignacio Ferri Julià,Attacker,Spain,이그나시오 페리 훌리아,I. 훌리아
+353943,N. Ferri,Ignacio Ferri Julià,Attacker,Spain,나초 페리,N. 페리
 449102,A. Cruz Patrão,Afonso Cruz Patrão,Attacker,Portugal,아폰수 크루스 파트랑,A. 파트랑
 278950,I. Sakamoto,Sakamoto Isa,Midfielder,Japan,사카모토 이사,I. 사카모토
 29784,A. Sayyadmanesh,Allahyar Sayyadmanesh,Midfielder,Iran,알라흐야르 사야드마네시,A. 사야드마네시
 8741,O. De Wolf,Ortwin De Wolf,Goalkeeper,Belgium,오르트빈 더볼프,O. 더볼프
-182825,I. Mirás Blanco,Ignacio Mirás Blanco,Goalkeeper,Spain,이그나시오 미라스 블랑코,I. 블랑코
+182825,N. Miras,Ignacio Mirás Blanco,Goalkeeper,Spain,나초 미라스,N. 미라스
 441809,T. Van Ingelgom,Tijn Van Ingelgom,Goalkeeper,Belgium,테인 판잉엘홈,T. 판잉엘홈
 519606,A. Willockx,Axel Willockx,Goalkeeper,Belgium,악셀 빌록스,A. 빌록스
 388568,G. Diouf,Gora Diouf,Defender,Senegal,고라 디우프,G. 디우프
@@ -6617,7 +6617,7 @@
 290213,H. Siquet,Hugo Thierry Siquet,Defender,Belgium,위고 시케,H. 시케
 304984,J. Spileers,Jorne Spileers,Defender,Belgium,요르네 스필레이르스,J. 스필레이르스
 271609,L. Audoor,Lynnt Audoor,Midfielder,Belgium,린트 아우도르,L. 아우도르
-362047,A. Granados Torres,Alejandro Granados Torres,Midfielder,Spain,알레한드로 그라나도스 토레스,A. 토레스
+362047,A. Granados,Alejandro Granados Torres,Midfielder,Spain,알레한드로 그라나도스,A. 그라나도스
 325594,F. Lemaréchal,Félix Lemaréchal,Midfielder,France,펠릭스 르마레샬,F. 르마레샬
 162219,R. Onyedika,Raphael Onyedika Nwadike,Midfielder,Nigeria,라파엘 오녜디카,R. 오녜디카
 38124,L. Reis,Ludovit Reis,Midfielder,Netherlands,뤼도빗 레이스,L. 레이스
@@ -6845,7 +6845,7 @@
 306940,Y. Medina,Yaimar Abel Medina Ortiz,Midfielder,Ecuador,야이마르 메디나,Y. 메디나
 8573,K. Nkuba,Ken Nkuba Tshiend,Defender,Belgium,켄 은쿠바,K. 은쿠바
 374581,A. Palacios,Adrián José Palacios Hernández,Defender,Venezuela,아드리안 팔라시오스,A. 팔라시오스
-104795,M. Sadick Aliu,Mujaid Sadick Aliu,Defender,Spain,무하이드 사디크 알리우,M. 알리우
+104795,M. Sadick,Mujaid Sadick Aliu,Defender,Spain,무자이드 사디크,M. 사디크
 377009,M. Smets,Matte Smets,Defender,Belgium,마터 스메츠,M. 스메츠
 380780,I. Bangoura,Ibrahima Sory Bangoura,Midfielder,Guinea,이브라히마 소리 방구라,I. 방구라
 494715,A. De Wannemacker,August De Wannemacker,Midfielder,Belgium,아우휘스트 더 바네마커르,A. 바네마커르
@@ -6889,13 +6889,13 @@
 76579,G. François,Guillaume François,Defender,Belgium,기욤 프랑수아,G. 프랑수아
 359006,M. Fuseini,Mohammed Gadafi Fuseini,Attacker,Ghana,모하메드 푸세이니,M. 푸세이니
 455438,M. Giger,Marc Giger,Attacker,Switzerland,마르크 기거,M. 기거
-314145,G. da Silva Carvalho,Guilherme Henriques da Silva Carvalho,Midfielder,Brazil,길례르미 다 실바 카르발류,G. 카르발류
+314145,Gu. Smith,Guilherme Henriques da Silva Carvalho,Midfielder,Brazil,길례르미 스미트,G. 스미트
 338735,A. Khalaili,Anan Khalaili,Midfielder,Israel,아난 할라일리,A. 할라일리
 203456,O. Niang,Ousseynou Niang,Midfielder,Senegal,우세이누 니앙,O. 니앙
 297979,C. De Schrevel,Célestin Eric De Schrevel,Goalkeeper,Belgium,셀레스탱 드 슈레벨,C. 슈레벨
 382869,L. Alves Monteiro,Lucas Alves Monteiro,Goalkeeper,Portugal,루카스 몬테이루,L. 몬테이루
 6102,M. Peano,Marcos Hernán Peano,Goalkeeper,Argentina,마르코스 페아노,M. 페아노
-335057,D. Benavides Fuentes,Darío Benavides Fuentes,Midfielder,Spain,다리오 베나비데스 푸엔테스,D. 푸엔테스
+335057,D. Benavides,Darío Benavides Fuentes,Midfielder,Spain,다리오 베나비데스,D. 베나비데스
 131659,W. Faye,Wagane Faye,Defender,Senegal,와간 파이,W. 파이
 191651,N. Gillot,Nolan Gillot,Midfielder,France,놀란 질로,N. 질로
 333136,Dj. Lamego,Djibril Lamego,Defender,France,지브릴 라메고,Dj. 라메고
@@ -7169,14 +7169,14 @@
 34329,Kim S.S.,Kim Seung-Sub,Midfielder,Korea Republic,김승섭,김승섭
 34171,Lee D.J.,Lee Dong-Jun,Midfielder,Korea Republic,이동준,이동준
 2914,Lee S.W.,Lee Seung-Woo,Midfielder,Korea Republic,이승우,이승우
-197251,T. Pereira da Silva,Tiago Pereira da Silva,Attacker,Brazil,치아구 페레이라 다 시우바,치아구 S.
+197251,T. Orobó,Tiago Pereira da Silva,Attacker,Brazil,치아구 오로보,T. 오로보
 47374,P. Twumasi,Patrick Twumasi,Attacker,Ghana,패트릭 트우마시,P. 트우마시
 34788,Kim D.H.,Kim Dong-Heon,Goalkeeper,Korea Republic,김동헌,김동헌
 34789,Lee T.H.,Lee Tae-Hui,Goalkeeper,Korea Republic,이태희,이태희
 644080,Wang M.J.,Wang Min-jun,Goalkeeper,Korea Republic,왕민준,왕민준
 547229,Choe S.G.,Choe Seung-Gu,Defender,Korea Republic,최승구,최승구
 644079,Go J.M.,Go Jung-min,Defender,Korea Republic,고정민,고정민
-46906,J. Fernández Blanco,Juan Fernández Blanco,Defender,Spain,후안 페르난데스 블랑코,J. 블랑코
+46906,J. Ibiza,Juan Fernández Blanco,Defender,Spain,후안 이비사,J. 이비사
 34453,Jeong T.W.,Jeong Tae-Wook,Defender,Korea Republic,정태욱,정태욱
 547318,Kang Y.H.,Kang Young-Hoon,Defender,Korea Republic,강영훈,강영훈
 403336,Kim G.H.,Kim Geon-Hui,Defender,Korea Republic,김건희,김건희
@@ -7249,7 +7249,7 @@
 34137,Lee H.D.,Lee Han-Do,Defender,Korea Republic,이한도,이한도
 356197,Park S.H.,Park Seong-Hun,Defender,Korea Republic,박성훈,박성훈
 34310,Park S.I.,Park Soo-Il,Defender,Korea Republic,박수일,박수일
-182514,J. Ros Martínez,Juan Antonio Ros Martínez,Defender,Spain,후안 로스 마르티네스,J. 로스
+182514,J. Ros,Juan Antonio Ros Martínez,Defender,Spain,후안 로스,J. 로스
 129035,H. Babec,Hrvoje Babec,Midfielder,Croatia,흐르보예 바베츠,H. 바베츠
 403353,Hwang D.Y.,Hwang Do-Yoon,Midfielder,Korea Republic,황도윤,황도윤
 511830,Kim J.W.,Kim Ji-Won,Midfielder,Korea Republic,김지원,김지원
@@ -7287,7 +7287,7 @@
 2907,Lee J.H.,Lee Jin-Hyun,Midfielder,Korea Republic,이진현,이진현
 405545,Lee M.H.,Lee Min-Hyeok,Midfielder,Korea Republic,이민혁,이민혁
 547441,Park W.J.,Park Woo-Jin,Midfielder,Korea Republic,박우진,박우진
-146018,E. Corrêa Farias,Erick Samuel Corrêa Farias,Attacker,Brazil,이리크 사무에우 코헤아 파리아스,이리크 F.
+146018,E. Farias,Erick Samuel Corrêa Farias,Attacker,Brazil,이리크 파리아스,E. 파리아스
 224658,Heo Y.,Heo Yool,Attacker,Korea Republic,허율,허율
 403576,Jang S.Y.,Jang Si-Young,Attacker,Korea Republic,장시영,장시영
 453302,Jung J.S.,Jung Jae-Sang,Attacker,Korea Republic,정재상,정재상
@@ -7814,7 +7814,7 @@
 403360,Seo D.H.,Seo Dong-Han,Attacker,Korea Republic,서동한,서동한
 644910,You J.J.,You Jae-jun,Midfielder,Korea Republic,유재준,유재준
 37303,J. Arias,Jafar Aurelio Miguel Arias,Attacker,Curaçao,자파르 아리아스,Ja. 아리아스
-47370,B. González Tomás,Borja González Tomás,Attacker,Spain,보르하 곤살레스 토마스,Bo. 곤살레스
+47370,B. Bastón,Borja González Tomás,Attacker,Spain,보르하 바스톤,B. 바스톤
 645758,Choi S.Y.,Choi Sang-yoon,Forward,Korea Republic,최상윤,최상윤
 646203,Choi W.R.,Choi Won-rock,Forward,Korea Republic,최원록,최원록
 645989,Jeon Y.S.,Jeon Yu-Sang,Forward,Korea Republic,전유상,전유상
@@ -10770,7 +10770,7 @@
 14704,B. Franjić,Bartol Franjić,Defender,Croatia,바르톨 프라니치,B. 프라니치
 275394,A. Hainaut,Antoine Hainaut,Midfielder,France,앙투안 애노,A. 애노
 364511,A. Okoro,Alvin Okoro,Attacker,Nigeria,앨빈 오코로,A. 오코로
-107153,E. Pérez Muñoz,Enrique Pérez Muñoz,Midfielder,Spain,엔리케 페레스 무뇨스,E. 페레스 무뇨스
+107153,K. Pérez,Enrique Pérez Muñoz,Midfielder,Spain,키케 페레스,K. 페레스
 212,A. Adorante,Andrea Adorante,Attacker,Italy,안드레아 아도란테,A. 아도란테
 185533,A. Casas,Antonio Casas,Attacker,Spain,안토니오 카사스,A. 카사스
 26438,L. Lauberbach,Lion Lauberbach,Attacker,Germany,리온 라우버바흐,L. 라우버바흐
@@ -10962,7 +10962,7 @@
 671625,Á. Gutiérrez,Álvaro Gutiérrez,Midfielder,Spain,알바로 구티에레스,Á. 구티에레스
 575281,Ó. López,Óscar López,Midfielder,Bolivia,오스카르 로페스,Ó. 로페스
 669800,M. Macalou,Mady Macalou,Midfielder,Spain,마디 마칼루,M. 마칼루
-184459,A. Cristóbal,Alejandro San Cristóbal,Attacker,Spain,알레한드로 산크리스토발,A. 산크리스토발
+184459,A. Sancris,Alejandro San Cristóbal,Attacker,Spain,알렉스 산크리스,A. 산크리스
 671518,E. Drammeh,Ebrahima Drammeh,Attacker,Gambia,에브라히마 드라메,E. 드라메
 427182,F. Burgos,Francisco Burgos,Defender,Spain,프란시스코 부르고스,F. 부르고스
 499908,Ó. López,Óscar López,Midfielder,Bolivia,오스카르 로페스,Ó. 로페스
@@ -11024,7 +11024,7 @@
 673308,B. Mohamed,Billal Mohamed,Midfielder,England,빌랄 모하메드,B. 모하메드
 270836,O. Wójcik,Oskar Wójcik,Defender,Poland,오스카르 부이치크,O. 부이치크
 193720,S. Alvero,Skelly Alvero,Midfielder,France,스켈리 알베로,S. 알베로
-331004,I. San José,Iván San José,Midfielder,Spain,이반 산호세,I. 산호세
+331004,Chuki,Iván San José,Midfielder,Spain,추키,추키
 585661,D. Soylu,Darwin Soylu,Midfielder,Türkiye,다르윈 소일루,D. 소일루
 323507,D. Stalmach,Dariusz Stalmach,Midfielder,Poland,다리우시 스탈마흐,D. 스탈마흐
 623771,P. Erevbenagie,Paul Erevbenagie,Attacker,Germany,파울 에레브베나기에,P. 에레브베나기에
@@ -12836,10 +12836,10 @@
 459837,R. Gómez,Román Agustín Gómez,Defender,Argentina,로만 고메스,R. 고메스
 10059,Kanu,Victor Hugo Soares dos Santos,Defender,Brazil,카누,카누
 454562,L. Marinho Ribeiro dos Santos,Luiz Gustavo Marinho Ribeiro dos Santos,Defender,Brazil,루이스 구스타부,L. 구스타부
-350808,M. Ferreira da Silva,Marcos Victor Ferreira da Silva,Defender,Brazil,마테우스 시우바,M. 시우바
+350808,M. Victor,Marcos Victor Ferreira da Silva,Defender,Brazil,마르쿠스 빅토르,M. 빅토르
 162138,M. Moreno Ojeda,Marco Moreno Ojeda,Defender,Spain,마르코 모레노,M. 모레노
 129880,S. Ramos,Santiago Martín Ramos Mingo,Defender,Argentina,산티아고 라모스 밍고,S. 밍고
-411433,J. de Lima Costa,José Guilherme de Lima Costa,Defender,Brazil,주앙 코스타,J. 코스타
+411433,Z. Guilherme,José Guilherme de Lima Costa,Defender,Brazil,제 길례르미,Z. 길례르미
 180236,C. Souza e Silva,Caio Alexandre Souza e Silva,Midfielder,Brazil,카이우 알레샨드리,C. 알레샨드리
 510204,D. Martins Almeida de Lira,David Martins Almeida de Lira,Midfielder,Brazil,다비드 마르칭스,D. 마르칭스
 10130,Erick,Erick Luis Conrado Carvalho,Midfielder,Brazil,이리크,이리크
@@ -12955,7 +12955,7 @@
 669472,M. C. Bilong,Miguel Bilong,Attacker,Cameroon,미게우 빌롱,M. 빌롱
 570417,Eduardo,Eduardo,Attacker,Brazil,에두아르두,에두아르두
 512522,E. Machado Belé,Erick Machado Belé,Midfielder,Brazil,이리크 벨레,E. 벨레
-2412,F. Anderson Pereira Gomes,Felipe Anderson Pereira Gomes,Attacker,Brazil,프레지 고미스,F. 고미스
+2412,Fe. Anderson,Felipe Anderson Pereira Gomes,Attacker,Brazil,펠리피 안데르송,F. 안데르송
 516815,R. Pereira Ventura,Ramon Riquelme Felipe Pereira Ventura,Midfielder,Brazil,하몽 히켈미,R. 히켈미
 575324,Heittor,Heitor,Attacker,Brazil,에이토르,에이토르
 987,Paulinho,Paulo Henrique Sampaio Filho,Attacker,Brazil,파울리뉴,파울리뉴
@@ -13022,7 +13022,7 @@
 10040,Artur,Artur Victor Guimarães,Attacker,Brazil,아르투르,아르투르
 106510,Ferreira,Aldemir dos Santos Ferreira,Attacker,Brazil,페드루 페헤이라,페드루 페헤이라
 47368,J. Calleri,Jonathan Calleri,Attacker,Argentina,호나탄 카예리,J. 카예리
-178,L. Rodrigues Moura da Silva,Lucas Rodrigues Moura da Silva,Attacker,Brazil,루카스 시우바,L. 시우바
+178,L. Moura,Lucas Rodrigues Moura da Silva,Attacker,Brazil,루카스 모라,L. 모라
 505994,L. Marques Alencar,Lucca Marques Alencar,Attacker,Brazil,루카 마르케스,L. 마르케스
 10323,Luciano,Luciano da Rocha Neves,Attacker,Brazil,루시아누,루시아누
 465195,P. Venuto Bezerra,Paulo Sérgio Venuto Bezerra,Attacker,Brazil,파울리뉴,파울리뉴
@@ -13064,7 +13064,7 @@
 522702,J. Santos Paes da Costa,João Alencar Santos Paes da Costa,Defender,Brazil,주앙 코스타,J. 코스타
 527683,J. Paulo Ananias,João Ananias,Defender,Brazil,주앙 아나니아스,J. 아나니아스
 71,L. Peres Petroni,Luan Peres Petroni,Defender,Brazil,루앙 페리스,L. 페리스
-9991,L. Veríssimo da Silva,Lucas Veríssimo da Silva,Defender,Brazil,루카스 시우바,L. 시우바
+9991,L. Veríssimo,Lucas Veríssimo da Silva,Defender,Brazil,루카스 베리시무,L. 베리시무
 609523,S. Pierri,Samuel Pierri Mendes e Silva,Midfielder,Brazil,사무에우 피에리,S. 피에리
 609540,R. Gonzaga,Rafael Gonzaga,Defender,Brazil,하파에우 곤자가,R. 곤자가
 507379,V. Rodrigues Lira,Vinicius Rodrigues Lira,Defender,Brazil,비니시우스 리라,V. 리라
@@ -13092,7 +13092,7 @@
 10527,C. de Oliveira,Caio Fernando de Oliveira,Defender,Brazil,카이우 파울리스타,C. 파울리스타
 405703,D. Barcellos Oliveira dos Santos,Diego Caito Barcellos Oliveira dos Santos,Defender,Brazil,지에구 카이투,D. 카이투
 304867,G. Martins de Souza Santos,Gustavo Martins de Souza Santos,Defender,Brazil,구스타부 마르칭스,G. 마르칭스
-374,J. Maturano dos Santos,João Pedro Maturano dos Santos,Defender,Brazil,주니오르 산투스,J. 산투스
+374,J. Pedro,João Pedro Maturano dos Santos,Defender,Brazil,주앙 페드루,J. 페드루
 510552,L. Guedes de Souza,Luis Eduardo Guedes de Souza,Defender,Brazil,루이스 에두아르두,L. 에두아르두
 9916,M. Rocha Aquino,Marcos Luis Rocha Aquino,Defender,Brazil,마르쿠스 호샤,M. 호샤
 10309,Marlon,Marlon Rodrigues Xavier,Defender,Brazil,마를롱,마를롱
@@ -13104,7 +13104,7 @@
 510554,B. Schons Zortea,Bernardo Schons Zortea,Midfielder,Brazil,베르나르두 숀스,B. 숀스
 22167,D. Barbosa da Silva,Danilo Barbosa da Silva,Midfielder,Brazil,다닐루 바르보자,D. 바르보자
 10314,Dodi,Douglas Moreira Fagundes,Midfielder,Brazil,도지,도지
-457508,R. Freitas dos Santos,Riquelme Freitas dos Santos,Midfielder,Brazil,호베르트 산투스,R. 산투스
+457508,Riquelme,Riquelme Freitas dos Santos,Midfielder,Brazil,히케우미,히케우미
 634340,Jefinho,Jéferson Forneck,Midfielder,Brazil,제페르송 포르네키,Jefinho 포르네키
 574,F. Krovinović,Filip Krovinović,Midfielder,Croatia,필리프 크로비노비치,F. 크로비노비치
 277771,M. Monsalve,Miguel Ángel Monsalve González,Midfielder,Colombia,미겔 몬살베,M. 몬살베
@@ -13116,14 +13116,14 @@
 2737,M. Braithwaite,Martin Christensen Braithwaite,Attacker,Denmark,마틴 브레이스웨이트,M. 브레이스웨이트
 104,C. Alves Morais,Carlos Vinícius Alves Morais,Attacker,Brazil,카를루스 비니시우스,C. 비니시우스
 13616,J. Enamorado,José David Enamorado Gómez,Midfielder,Colombia,호세 에나모라도,J. 에나모라도
-507527,G. Ferreira de Carvalho,Gabriel Ferreira de Carvalho,Attacker,Brazil,가브리에우 페헤이라,G. 페헤이라
+507527,G. Carvalho,Gabriel Ferreira de Carvalho,Attacker,Brazil,가브리에우 카르발류,G. 카르발류
 5981,C. Pavón,Cristian David Pavón,Defender,Argentina,크리스티안 파본,C. 파본
 576652,Roger,Roger,Midfielder,Brazil,호제르,호제르
 691,Tetê,Mateus Cardoso Lemos Martins,Attacker,Brazil,테테,테테
 2294,Willian,Willian Borges da Silva,Midfielder,Brazil,윌리앙,윌리앙
 415084,F. Longo Fernandes da Silva,Felipe Longo Fernandes da Silva,Goalkeeper,Brazil,펠리피 롱고,F. 롱고
 415083,K. de Souza Camargo,Kauê Vinicius de Souza Camargo,Goalkeeper,Brazil,카우에 카마르구,K. 카마르구
-1085,A. Ramalho Silva,André Ramalho Silva,Defender,Brazil,안드레 시우바,A. 시우바
+1085,A. Ramalho,André Ramalho Silva,Defender,Brazil,안드레 하말류,A. 하말류
 5987,F. Angileri,Fabrizio Germán Angileri,Defender,Argentina,파브리시오 앙힐레리,F. 앙힐레리
 915,G. de Abreu,Gabriel Armando de Abreu,Defender,Brazil,가브리에우 파울리스타,G. 파울리스타
 9992,G. Vernes,Gustavo Henrique Vernes,Defender,Brazil,구스타부 엔히키,G. 엔히키
@@ -13143,7 +13143,7 @@
 5794,R. Garro,Rodrigo Garro,Midfielder,Argentina,로드리고 가로,R. 가로
 543,Z. Labyad,Zakaria Labyad,Midfielder,Morocco,자카리아 라비아드,Z. 라비아드
 900,J. Lingard,Jesse Ellis Lingard,Midfielder,England,제시 린가드,J. 린가드
-871,M. Pereira da Silva,Matheus Pereira da Silva,Midfielder,Brazil,마테우스 시우바,M. 시우바
+871,M. Pereira,Matheus Pereira da Silva,Midfielder,Brazil,마테우스 페레이라,M. 페레이라
 160436,Raniele,Raniele Almeida Melo,Midfielder,Brazil,하니엘리,하니엘리
 2426,A. Carrillo,André Martín Carrillo Díaz,Midfielder,Peru,안드레 카리요,A. 카리요
 463975,Dieguinho,Diego da Cruz Lopes,Midfielder,Brazil,지에기뉴,지에기뉴
@@ -13167,7 +13167,7 @@
 650652,I. Gnoatto,Iago Gnoatto,Defender,Brazil,이아구 그노아투,I. 그노아투
 544977,G. Talles,Gustavo Talles,Defender,Brazil,구스타부 탈리스,G. 탈리스
 10384,Heitor,Heitor Rodrigues da Fonseca,Defender,Brazil,에이토르,에이토르
-197064,J. Silveira dos Santos,João Paulo Silveira dos Santos,Defender,Brazil,주니오르 산투스,J. 산투스
+197064,J. Paulo,João Paulo Silveira dos Santos,Defender,Brazil,주앙 파울루,J. 파울루
 660597,M. Kalebe,Márcio Kalebe,Defender,Brazil,마르시우 칼레비,M. 칼레비
 545022,Kauan,Kauan,Defender,Brazil,카우앙,카우앙
 306254,Mancha,Gianluca Piola Minozzo,Defender,Brazil,만샤,만샤
@@ -13226,7 +13226,7 @@
 614200,R. Rique,Ramon Rique Santos de Souza Barros,Midfielder,Brazil,하몽 히키,R. 히키
 351920,J. Rojas,Johan Rojas Echavarría,Attacker,Colombia,호안 로하스,J. 로하스
 606272,Samuel,Samuel de Jesus dos Santos,Midfielder,Brazil,사무에우,사무에우
-9958,D. das Neves Pinheiro,Danilo das Neves Pinheiro,Midfielder,Brazil,다닐루 네베스,D. 네베스
+9958,Tchê Tchê,Danilo das Neves Pinheiro,Midfielder,Brazil,체 체,체 체
 22232,T. Mendes Ribeiro,Thiago Henrique Mendes Ribeiro,Midfielder,Brazil,티아구 멘지스,T. 멘지스
 306261,Adson,Adson Ferreira Soares,Midfielder,Brazil,아드송,아드송
 505407,Andrey,Andrey Fernandes de Oliveira Nunes,Attacker,Brazil,안드레이,안드레이
@@ -13339,7 +13339,7 @@
 464022,W. dos Santos Sacramento,Wendell dos Santos Sacramento,Midfielder,Brazil,웬데우 산투스,W. 산투스
 296061,Benassi,João Victor Silva Benassi,Goalkeeper,Brazil,베나시,베나시
 10370,Keiller,Keiller da Silva Nunes,Goalkeeper,Brazil,케일레르,케일레르
-425831,P. Luccas Morisco da Silva,Pedro Luccas Morisco da Silva,Goalkeeper,Brazil,페드루 루카스,P. 루카스
+425831,P. Morisco,Pedro Luccas Morisco da Silva,Goalkeeper,Brazil,페드루 모리스쿠,P. 모리스쿠
 293555,P. de Faria Rangel,Pedro Felipe de Faria Rangel,Goalkeeper,Brazil,페드루 한제우,P. 한제우
 10416,B. Ferreira Melo,Bruno Ferreira Melo,Defender,Brazil,브루누 멜루,B. 멜루
 504965,E. Moraes de Souza,Enzo Vágner Moraes de Souza,Attacker,Brazil,엔조 바그네르,E. 바그네르
@@ -13377,7 +13377,7 @@
 297893,Alix,Alix Vinicius de Souza Sampaio,Defender,Brazil,알리스,알리스
 570422,Breno,Breno de Moraes Souza,Defender,Brazil,브레누,브레누
 525527,C. Nascimento Santos,Cauê Nascimento Santos,Defender,Brazil,카우에 나시멘투,C. 나시멘투
-41544,E. Gonzaga Mendes Santos,Eduardo Gonzaga Mendes Santos,Defender,Brazil,에두아르두 곤자가,E. 곤자가
+41544,Eduardo,Eduardo Gonzaga Mendes Santos,Defender,Brazil,에두아르두,에두아르두
 304827,G. Alves dos Santos,Gustavo Marques Alves dos Santos,Defender,Brazil,구스타부 마르케스,G. 마르케스
 68113,J. Hurtado,José Andrés Hurtado Cheme,Defender,Ecuador,호세 안드레스 우르타도,J. 우르타도
 10481,L. da Rocha Júnior,Luis Antônio da Rocha Júnior,Defender,Brazil,주니뉴 카피샤바,주니뉴 카피샤바
@@ -13389,7 +13389,7 @@
 279800,Vanderlan,Vanderlan Barbosa da Silva,Defender,Brazil,반데를랑,반데를랑
 197814,Bruninho,Bruno Gonçalves de Jesus,Attacker,Brazil,브루니뉴,브루니뉴
 468162,D. Gomes de Alvarenga,Davi Gomes de Alvarenga,Midfielder,Brazil,다비 고미스,D. 고미스
-10027,E. dos Santos Rodrigues,Eric dos Santos Rodrigues,Midfielder,Brazil,이리크 산투스,E. 산투스
+10027,E. Ramires,Eric dos Santos Rodrigues,Midfielder,Brazil,이리크 하미리스,E. 하미리스
 279805,Fabinho,Fábio Silva de Freitas,Midfielder,Brazil,파비뉴,파비뉴
 10247,Gabriel,Gabriel Girotto Franco,Midfielder,Brazil,가브리에우,가브리에우
 403951,Gustavinho,Gustavo Ribeiro Neves,Midfielder,Brazil,구스타비뉴,구스타비뉴
@@ -13460,7 +13460,7 @@
 9962,V. Frezarin Bueno,Vitor Frezarin Bueno,Midfielder,Brazil,비토르 부에누,V. 부에누
 10310,J. Araújo Fernandes,José Ricardo Araújo Fernandes,Midfielder,Brazil,제 히카르두,제 히카르두
 9882,J. da Silva,José Welison da Silva,Midfielder,Brazil,제 웰리종,제 웰리종
-96343,A. Mangueira Severino Pereira,Alef Mangueira Severino Pereira,Attacker,Brazil,안드레아스 페레이라,A. 페레이라
+96343,A. Manga,Alef Mangueira Severino Pereira,Attacker,Brazil,알레프 망가,A. 망가
 197073,E. de Queiroz Melo,Eduardo de Queiroz Melo,Attacker,Brazil,에두아르두 멜루,E. 멜루
 10141,G. Buscariol Poveda,Gabriel Buscariol Poveda,Attacker,Brazil,가브리에우 포베다,G. 포베다
 80273,G. Pereira Taliari,Gabriel Pereira Taliari,Attacker,Brazil,가브리에우 탈리아리,G. 탈리아리
@@ -13494,7 +13494,7 @@
 9429,Alesson,Alesson dos Santos Batista,Midfielder,Brazil,알레송,알레송
 41430,A. Silva de Aguiar,André Luís Silva de Aguiar,Attacker,Brazil,안드레 루이스,A. 루이스
 159843,B. Santos de Oliveira,Bruno Santos de Oliveira,Attacker,Brazil,브루누 산투스,B. 산투스
-520668,C. Souza de Barros,Carlos Eduardo Souza de Barros,Goalkeeper,Brazil,카를루스 에두아르두 소우자 지 바후스,C. 바후스
+520668,C. Eduardo,Carlos Eduardo Souza de Barros,Goalkeeper,Brazil,카를루스 에두아르두,C. 에두아르두
 54238,Edson,Edson Guilherme Mendes dos Santos,Attacker,Brazil,에드송,에드송
 77680,Fernandinho,Fernando José Marques Maciel,Attacker,Brazil,페르난지뉴,페르난지뉴
 9620,G. Henric da Silva,Gustavo Henric da Silva,Midfielder,Brazil,구스타부 시우바,G. 시우바
