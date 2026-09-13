@@ -34,7 +34,8 @@ public class PlayerStatsDto {
 
     private Integer passesTotal;
     private Integer passesKey;
-    private String passesAccuracy;
+    private Integer passesSuccessful; // 패스 성공 횟수. API-Football의 passes.accuracy는 실제로 이 값(개수)을 담고 있음
+    private String passesAccuracy;    // 패스 성공률(%). passesSuccessful/passesTotal로 직접 계산한 값 (% 기호 없음)
 
     private Integer tacklesTotal;
     private Integer tacklesBlocks;

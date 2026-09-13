@@ -903,6 +903,12 @@ public class FixtureService {
                 JsonNode fouls = stats.path("fouls");
                 JsonNode cards = stats.path("cards");
 
+                // API-Football의 players stats "passes.accuracy"는 실제로는 패스 성공률(%)이 아니라
+                // 패스 성공 횟수(개수)를 담고 있음 — passesSuccessful로 원본을 보존하고,
+                // 진짜 성공률은 passesSuccessful/passesTotal로 별도 계산한다.
+                Integer passesSuccessful = nullableInt(passes.path("accuracy"));
+                Integer passesTotalCount = nullableInt(passes.path("total"));
+
                 // 5. DTO 조립 — 대부분의 스탯은 null 가능이므로 nullableInt() 사용
                 result.add(PlayerStatsDto.builder()
                         .playerId(playerId)
@@ -922,9 +928,10 @@ public class FixtureService {
                         .goalsConceded(nullableInt(goals.path("conceded")))
                         .assists(nullableInt(goals.path("assists")))
                         .saves(nullableInt(goals.path("saves")))    // GK 전용
-                        .passesTotal(nullableInt(passes.path("total")))
+                        .passesTotal(passesTotalCount)
                         .passesKey(nullableInt(passes.path("key")))
-                        .passesAccuracy(passes.path("accuracy").isNull() ? null : passes.path("accuracy").asText())
+                        .passesSuccessful(passesSuccessful)
+                        .passesAccuracy(calcPassAccuracyPercent(passesSuccessful, passesTotalCount))
                         .tacklesTotal(nullableInt(tackles.path("total")))
                         .tacklesBlocks(nullableInt(tackles.path("blocks")))
                         .tacklesInterceptions(nullableInt(tackles.path("interceptions")))
@@ -1003,6 +1010,15 @@ public class FixtureService {
      */
     private Integer nullableInt(JsonNode node) {
         return (node == null || node.isNull() || node.isMissingNode()) ? null : node.asInt();
+    }
+
+    /**
+     * 패스 성공률(%)을 성공 횟수/전체 횟수로 직접 계산. 둘 중 하나라도 없거나 전체가 0이면 null.
+     * % 기호는 붙이지 않음 (프런트에서 표시 시 붙임).
+     */
+    private String calcPassAccuracyPercent(Integer successful, Integer total) {
+        if (successful == null || total == null || total == 0) return null;
+        return String.valueOf(Math.round(successful * 100.0 / total));
     }
 
     private record TeamColors(String primary, String number) {}
