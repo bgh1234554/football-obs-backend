@@ -1,4 +1,4 @@
-team_id, team_name, ko_name,ko_name_short, primary_color_override, number_color_override
+team_id, team_name, ko_name,"""ko_name_short, primary_color_override, number_color_override"""
 621,FC Krasnodar,크라스노다르,
 4,Russia,러시아,
 33,Manchester United,맨체스터 유나이티드, 맨유
