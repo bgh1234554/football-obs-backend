@@ -1,6 +1,6 @@
 team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_override
 621,FC Krasnodar,크라스노다르,,004a22,ffffff
-4,Russia,러시아,
+4,Russia,러시아,,e31f2b,ffffff
 33,Manchester United,맨체스터 유나이티드, 맨유,da020e,ffe500
 50,Manchester City,맨체스터 시티, 맨시티,a4cdee,00285e
 645,Galatasaray,갈라타사라이,,fbba00,a90a2e
@@ -276,8 +276,8 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 5529,Canada,캐나다,,da291c,ffffff
 5530,Curaçao,퀴라소,,002b7f,ffffff
 17,South Korea,대한민국,,e6002d,021858
-,Korea Republic,대한민국,
-1728,South Korea W,대한민국,
+,Korea Republic,대한민국,,e6002d,021858
+1728,South Korea W,대한민국,,e6002d,021858
 534,Las Palmas,라스 팔마스,라스 팔마스
 535,Malaga,말라가,말라가,a8d7f5,00469b
 537,Leganes,레가네스,레가네스
@@ -582,7 +582,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 568,Sheriff Tiraspol,셰리프 티라스폴,셰리프
 573,FK Partizan,파르티잔,파르티잔,000000,ffffff
 606,FC Lugano,루가노,루가노,000000,ffffff
-614,AEK Larnaca,AEK 라르나카,
+614,AEK Larnaca,AEK 라르나카,,fde200,00883f
 619,PAOK,PAOK,PAOK,000000,ad9059
 620,Dinamo Zagreb,디나모 자그레브,디나모 Z.,00499a,ffffff
 646,Levski Sofia,레프스키 소피아,레프스키 Sf.,28348a,ffffff
@@ -645,7 +645,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1014,Lausanne,로잔 스포르,로잔,282b63,ffffff
 1123,Aris Thessalonikis,아리스 테살로니키,아리스 Th.,fcd011,000000
 1430,Arda Kardzhali,아르다 카르잘리,아르다
-1483,NK Varazdin,바라주딘,바라주딘
+1483,NK Varazdin,바라주딘,바라주딘,2465aa,ffffff
 2030,Racing FC Union Luxembourg,라싱 위니옹 룩셈부르크,라싱 위니옹
 2036,UNA Strassen,UNA 슈트라센,UNA
 2073,Silkeborg,실케보르,실케보르,0995d4,ffffff
@@ -811,24 +811,24 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 18310,Charlotte,샬럿,샬럿,0085ca,ffffff
 20787,St. Louis City,세인트루이스 시티,세인트루이스,dd004a,ffffff
 25484,San Diego,샌디에이고,샌디에이고,02152b,697a7c
-2278,Guadalajara,과달라하라,과달라하라
-2279,Tigres UANL,티그레스 UANL,티그레스
-2280,Tijuana,클럽 티후아나,티후아나
-2281,Toluca,톨루카,톨루카
-2282,Monterrey,몬테레이,몬테레이
-2283,Atlas,아틀라스,아틀라스
-2285,Santos Laguna,산토스 라구나,산토스
-2286,Pumas UNAM,푸마스 UNAM,푸마스
-2287,Club America,클루브 아메리카,아메리카
-2288,Necaxa,네카사,네카사
-2289,Leon,레온,레온
-2290,Queretaro,클럽 케레타로,케레타로
-2291,Puebla,푸에블라,푸에블라
+2278,Guadalajara,과달라하라,과달라하라,002856,ffffff
+2279,Tigres UANL,티그레스 UANL,티그레스,015daa,fbaf35
+2280,Tijuana,클럽 티후아나,티후아나,ed1b26,000000
+2281,Toluca,톨루카,톨루카,d53741,09154c
+2282,Monterrey,몬테레이,몬테레이,0a2240,ffffff
+2283,Atlas,아틀라스,아틀라스,ec1c24,ffffff
+2285,Santos Laguna,산토스 라구나,산토스,008066,ffffff
+2286,Pumas UNAM,푸마스 UNAM,푸마스,132347,cbab58
+2287,Club America,클루브 아메리카,아메리카,eeea9e,192441
+2288,Necaxa,네카사,네카사,e1001e,ffffff
+2289,Leon,레온,레온,187b56,ffffff
+2290,Queretaro,클럽 케레타로,케레타로,0056b3,211915
+2291,Puebla,푸에블라,푸에블라,2b4b75,ffffff
 2292,Pachuca,파추카,파추카
-2295,Cruz Azul,크루스 아술,크루 스아술
-2298,Juarez,FC 후아레스,후아레스
-2314,Atletico San Luis,아틀레티코 산 루이스,산 루이스
-14002,Mazatlan,마사틀란,마사틀란
+2295,Cruz Azul,크루스 아술,크루 스아술,2e3192,ffffff
+2298,Juarez,FC 후아레스,후아레스,1f1d1c,21cb35
+2314,Atletico San Luis,아틀레티코 산 루이스,산 루이스,e12229,ffffff
+14002,Mazatlan,마사틀란,마사틀란,533278,ffffff
 320,Kristiansund BK,크리스티안순,,0a213f,ffffff
 321,Lillestrom,릴레스트룀,,fddd00,000000
 325,Tromso,트롬쇠,,c20c19,ffffff
@@ -893,12 +893,12 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 282,Sanfrecce Hiroshima,산프레체 히로시마,히로시마,59358c,ffffff
 289,Vissel Kobe,비셀 고베,비셀 고베,a40931,ffffff
 303,Machida Zelvia,마치다 젤비아,마치다 Z,182865,c1ad76
-833,Shanghai Shenhua,상하이 선화,
-836,SHANGHAI SIPG,상하이 하이강,
+833,Shanghai Shenhua,상하이 선화,,115199,ffffff
+836,SHANGHAI SIPG,상하이 하이강,,b50201,ffffff
 945,Melbourne City,멜버른 시티,
 2523,Johor Darul Takzim FC,조호르 다룰 탁짐,
-2737,Tractor Sazi,트락토르,
-2744,Sepahan FC,세파한,
+2737,Tractor Sazi,트락토르,,c00404,ffffff
+2744,Sepahan FC,세파한,,ffcc00,000000
 2770,Bangkok United,방콕 유나이티드,
 2780,Buriram United,부리람 유나이티드,
 2870,Shabab Al Ahli Dubai,샤바브 알 아흘리,,ac2328,ffffff
@@ -906,12 +906,12 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2875,Al Wahda FC,알 와흐다,,92204c,c3b295
 4215,Nasaf,나사프 카르시,나사프
 5242,Al Shorta,알 쇼르타,
-5648,Chengdu Better City,청두 룽청,청두
+5648,Chengdu Better City,청두 룽청,청두,ba0014,ffffff
 293,Gamba Osaka,감바 오사카,G. 오사카,003287,ffffff
-830,Beijing Guoan,베이징 궈안,
+830,Beijing Guoan,베이징 궈안,,0f7d40,fdce1d
 2445,Persib Bandung,페르시브 반둥,페르시브 Bd.
 2526,Selangor,슬랑오르,
-2733,Esteghlal FC,에스테글랄,
+2733,Esteghlal FC,에스테글랄,,3069b5,ffffff
 2769,BG Pathum United,BG 빠툼 유나이티드,빠툼
 2776,Ratchaburi,랏차부리,
 2872,Al-Wasl FC,알 와슬,,fff100,000000
@@ -1211,7 +1211,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1111,Kosovo,코소보,,1d3d91,ffffff
 1119,Ireland,아일랜드,,007120,ffffff
 16061,North Macedonia W,북마케도니아,북마케도니아,d30000,ffe700
-1105,North Macedonia,북마케도니아,
+1105,North Macedonia,북마케도니아,북마케도니아,d30000,ffe700
 1380,Macclesfield,매클즈필드,
 1820,Chester,체스터,
 1826,Southport,사우스포트,
