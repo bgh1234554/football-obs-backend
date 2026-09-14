@@ -401,7 +401,7 @@ public class CsvUpdater {
             throws Exception {
 
         // teams.csv를 통째로 로딩해 upsert 준비
-        final int TEAM_COLUMN_COUNT = 4; // team_id, team_name, ko_name, ko_name_short
+        final int TEAM_COLUMN_COUNT = 6; // team_id, team_name, ko_name, ko_name_short, primary_color_override, number_color_override
         CsvUpdaterCsvHelper.CsvTable table =
                 CsvUpdaterCsvHelper.loadCsvTable(DATA_DIR + "/teams.csv", TEAM_COLUMN_COUNT);
 
@@ -477,7 +477,7 @@ public class CsvUpdater {
                     }
                 } else {
                     // 신규 팀
-                    rows.add(new String[]{String.valueOf(teamId), apiName, "", ""});
+                    rows.add(new String[]{String.valueOf(teamId), apiName, "", "", "", ""});
                     idToIndex.put(teamId, rows.size() - 1);
                     insertedCount++;
                     System.out.printf("  [TEAM+] %d %s%n", teamId, apiName);
