@@ -44,7 +44,7 @@
 31226,A. Buongiorno,Alessandro Buongiorno,Defender,Italy,알레산드로 부온조르노,A. 부온조르노
 127011,A. Cambiaso,Andrea Cambiaso,Defender,Italy,안드레아 캄비아소,A. 캄비아소
 268341,F. Gatti,Federico Gatti,Defender,Italy,페데리코 가티,F. 가티
-345808,F. Esposito,Francesco Pio Esposito,Attacker,Italy,프란체스코 피오 에스포시토,F. 에스포시토
+345808,P. Esposito,Francesco Pio Esposito,Attacker,Italy,피오 에스포시토,P. 에스포시토
 356888,N. Pisilli,Niccolo Pisilli,Midfielder,Italy,니콜로 피실리,N. 피실리
 383018,M. Palestra,Marco Palestra,Defender,Italy,마르코 팔레스트라,M. 팔레스트라
 778,B. Cristante,Bryan Cristante,Midfielder,Italy,브리안 크리스탄테,B. 크리스탄테
@@ -277,7 +277,7 @@
 19959,B. White,Benjamin William White,Defender,England,벤 화이트,Be. 화이트
 442044,M. Dowman,Max Dowman,Midfielder,England,맥스 다우먼,M. 다우먼
 19586,E. Eze,Eberechi Oluchi Eze,Midfielder,England,에베레치 에제,E. 에제
-553530,I. Ibrahim,Ife Ibrahim,Midfielder,England,이페 이브라힘,I. 이브라힘
+553530,I. Ibrahim,Ife Ibrahim,Midfielder,England,이페 이브라힘,If. 이브라힘
 47311,M. Merino,Mikel Merino Zazón,Midfielder,Spain,미켈 메리노,M. 메리노
 30407,C. Nørgaard,Christian Thers Nørgaard,Midfielder,Denmark,크리스티안 뇌르고르,C. 뇌르고르
 37127,M. Ødegaard,Martin Ødegaard,Midfielder,Norway,마르틴 외데고르,M. 외데고르
@@ -11777,6 +11777,9 @@
 550541,Kim D.H.,Kim Dong-hwa,Goalkeeper,Korea Republic,김동화,김동화
 311286,João Pedro,João Pedro Reginaldo,Defender,Brazil,주앙 페드루,Jo. 페드루
 547427,Ri Y.J.,Ri Yong-jik,Defender,Korea DPR,리영직,리영직
+33790,Ri Y.J.,Ri Yong-jik,Defender,Korea DPR,리영직,리영직
+179951,E. Saitoski,Emir Saitoski,Midfielder,Slovenia,에미르 사이토스키,E. 사이토스키
+34614,Ju H.W.,Ju Hyun-woo,Forward,Korea Republic,주현우,주현우
 38296,T. van Grunsven,Teun van Grunsven,Defender,Netherlands,퇸 판흐룬스번,T. 판흐룬스번
 667472,Kim W.J.,Kim Woo-jin,Midfielder,Korea Republic,김우진,김우진
 66205,A. Ba Loua,Adriel D'Avila Ba Loua,Midfielder,Côte d'Ivoire,아드리엘 바 루아,A. 바 루아
@@ -14885,7 +14888,7 @@
 465942,T. Thompson,Tynan Thompson,Attacker,England,타이넌 톰슨,T. 톰슨
 395773,V. Salia,Vakhtang Salia,Attacker,Georgia,바흐탕 살리아,V. 살리아
 380678,B. Slade,Bradley Gregory Slade,Defender,England,브래들리 슬레이드,B. 슬레이드
-457730,I. Ibrahim,Ifeoluwa David Ibrahim,Midfielder,England,이페올루와 이브라힘,I. 이브라힘
+457730,I. Ibrahim,Ifeoluwa David Ibrahim,Midfielder,England,이페올루와 이브라힘,If. 이브라힘
 403066,W. Tamen,William Tamen,Defender,England,윌리엄 테이먼,W. 테이먼
 496411,M. Eboue,Mathis Eboue,Midfielder,England,마티스 에부에,M. 에부에
 586131,R. Watson,Reggie Watson,Midfielder,England,레지 왓슨,R. 왓슨
@@ -14900,3 +14903,5 @@
 264739,L. Skjellerup,Laurs Skjellerup,Forward,Denmark,라우르스 스켈러루프,L. 스켈러루프
 59513,Y. Paz,Yeferson Paz Blandón,Defender,Colombia,예페르손 파스 블란돈,Y. 파스
 342055,E. Pieragnolo,Edoardo Pieragnolo,Defender,Italy,에도아르도 피에라뇰로,E. 피에라뇰로
+349185,J. Enem,Jay Enem,Forward,Netherlands,제이 에넘,J. 에넘
+628328,M. Miley,Mason Miley,Midfielder,England,메이슨 마일리,M. 마일리

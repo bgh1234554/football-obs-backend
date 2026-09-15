@@ -115,10 +115,11 @@ public class KoResolver {
     /**
      * 팀 로고 URL 우선순위.
      * 1. logos.csv 커스텀 URL
-     * 2. API URL을 Media CDN으로 치환 + [LOGO_NEEDED] 로그
+     * 2. 연령대/여자부 접미사를 뗀 기준 팀의 logos.csv 커스텀 URL
+     * 3. API URL을 Media CDN으로 치환 + [LOGO_NEEDED] 로그
      */
     public String resolveLogoUrl(long teamId, String apiLogoUrl, String teamApiName) {
-        String custom = csvLoader.getLogoUrl(teamId);
+        String custom = csvLoader.getLogoUrl(teamId, teamApiName);
         if (custom != null) return custom;
         log.info("[LOGO_NEEDED] id={}, name={}", teamId, teamApiName);
         if (apiLogoUrl == null || apiLogoUrl.isBlank()) return null;

@@ -259,6 +259,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1108,Scotland,스코틀랜드,,101e37,ffffff
 1118,Netherlands,네덜란드,,f36c21,ffffff
 1501,Ivory Coast,코트디부아르,,ff8200,ffffff
+,Côte d'Ivoire,코트디부아르,,ff8200,ffffff
 1504,Ghana,가나,,ffffff,000000
 1508,Congo DR,콩고민주공화국,DR 콩고,007fff,ce1021
 1531,South Africa,남아프리카공화국,남아공,fbc31f,009637
@@ -314,7 +315,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 502,Fiorentina,피오렌티나,피오렌티나,5a318c,ffffff
 503,Torino,토리노,토리노,7c1d21,ffffff
 504,Hellas Verona,엘라스 베로나,H. 베로나
-505,Inter,인테르,인테르
+505,Inter,인테르나치오날레 밀라노,인테르
 520,Cremonese,크레모네세,크레모네세
 523,Parma,파르마,파르마,ffffff,000000
 801,Pisa,피사,피사

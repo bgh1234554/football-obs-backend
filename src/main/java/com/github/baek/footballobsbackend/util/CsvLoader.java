@@ -725,7 +725,7 @@ public class CsvLoader {
 
     /**
      * "South Korea U22 W" → "South Korea"처럼 팀명 끝의 연령대/여자부 접미사를 제거한다.
-     * 떼어내는 대상: 맨 끝 토큰이 "W"이거나 "U<숫자>"인 경우, 또는 맨 끝 두 토큰이 "U<숫자> W"인 경우.
+     * 떼어내는 대상: 맨 끝 토큰이 "W"이거나 "U<숫자>"/"U-<숫자>"인 경우, 또는 연령대 뒤에 "W"가 붙은 경우.
      * 해당하지 않으면(접미사가 없으면) null 반환 — 원래 이름 그대로 쓰라는 신호.
      */
     private static String stripAgeGroupSuffix(String apiName) {
@@ -735,8 +735,8 @@ public class CsvLoader {
 
         int cut = tokens.length;
         boolean lastIsW = tokens[cut - 1].equalsIgnoreCase("W");
-        boolean lastIsAge = tokens[cut - 1].matches("(?i)U\\d+");
-        if (lastIsW && cut >= 2 && tokens[cut - 2].matches("(?i)U\\d+")) {
+        boolean lastIsAge = tokens[cut - 1].matches("(?i)U-?\\d+");
+        if (lastIsW && cut >= 2 && tokens[cut - 2].matches("(?i)U-?\\d+")) {
             cut -= 2;   // "... U<n> W" 두 토큰 제거
         } else if (lastIsW || lastIsAge) {
             cut -= 1;   // "... W" 또는 "... U<n>" 한 토큰 제거
@@ -838,6 +838,14 @@ public class CsvLoader {
         return v.isEmpty() ? null : v;
     }
 
+    /** 팀 로고가 없으면 연령대/여자부 접미사를 뗀 기준 팀의 logos.csv URL을 조회한다. */
+    public String getLogoUrl(long teamId, String apiName) {
+        String direct = getLogoUrl(teamId);
+        if (direct != null) return direct;
+        Long baseId = getAgeGroupBaseTeamId(apiName);
+        return baseId == null ? null : getLogoUrl(baseId);
+    }
+
     /**
      * 팀 협회 로고 URL 조회.
      * 국가대표팀만 logos.csv에 fa_url이 채워져 있고, 클럽팀은 비어있어 null 반환.
@@ -848,6 +856,20 @@ public class CsvLoader {
         if (row == null || row.length < 4) return null;
         String v = row[3].trim();   // index 3 = fa_url
         return v.isEmpty() ? null : v;
+    }
+
+    /** 협회 로고가 없으면 연령대/여자부 접미사를 뗀 기준 팀의 협회 로고를 조회한다. */
+    public String getFaUrl(long teamId, String apiName) {
+        String direct = getFaUrl(teamId);
+        if (direct != null) return direct;
+        Long baseId = getAgeGroupBaseTeamId(apiName);
+        return baseId == null ? null : getFaUrl(baseId);
+    }
+
+    private Long getAgeGroupBaseTeamId(String apiName) {
+        String[] baseRow = getTeamRowByAgeGroupBaseName(apiName);
+        if (baseRow == null || baseRow[0].isBlank()) return null;
+        return Long.parseLong(baseRow[0].trim());
     }
 
     /**
