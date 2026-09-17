@@ -1,6 +1,7 @@
 package com.github.baek.footballobsbackend.util;
 
 import java.util.Set;
+import org.springframework.web.util.HtmlUtils;
 
 /**
  * API Football 인명 표기를 CSV 생성 규칙과 같은 방식으로 정규화한다.
@@ -36,7 +37,7 @@ public final class PersonNameFormatter {
     public static String buildNameShortAbbrev(String apiName, String firstName, String lastName, String nationality) {
         if (apiName == null || apiName.isBlank()) return apiName == null ? "" : apiName;
 
-        String normalizedApiName = apiName.trim();
+        String normalizedApiName = decodeHtmlEntities(apiName).trim();
 
         // 이미 이니셜 형태면 다시 축약하지 않는다.
         if (normalizedApiName.contains(".")) return normalizedApiName;
@@ -44,8 +45,8 @@ public final class PersonNameFormatter {
         // 닉네임/단일 이름은 줄일 정보가 없으므로 그대로 쓴다.
         if (!normalizedApiName.contains(" ")) return normalizedApiName;
 
-        String fn = firstName != null ? firstName.trim() : "";
-        String ln = lastName != null ? lastName.trim() : "";
+        String fn = decodeHtmlEntities(firstName).trim();
+        String ln = decodeHtmlEntities(lastName).trim();
         String nat = nationality != null ? nationality.trim().toLowerCase() : "";
 
         // firstname/lastname이 비어 있으면 API name 자체를 나눠 fallback한다.
@@ -90,8 +91,8 @@ public final class PersonNameFormatter {
      * 국적에 따라 성-이름 / 이름-성 순서만 정리한다.
      */
     public static String buildLongName(String firstName, String lastName, String nationality) {
-        String first = firstName == null ? "" : firstName.trim();
-        String last = lastName == null ? "" : lastName.trim();
+        String first = decodeHtmlEntities(firstName).trim();
+        String last = decodeHtmlEntities(lastName).trim();
 
         if (first.isEmpty()) return last;
         if (last.isEmpty()) return first;
@@ -122,5 +123,16 @@ public final class PersonNameFormatter {
     private static boolean isFamilyNameFirstNationality(String nationality) {
         if (nationality == null) return false;
         return FAMILY_NAME_FIRST_NATIONALITIES.contains(nationality.trim().toLowerCase());
+    }
+
+    public static String decodeHtmlEntities(String value) {
+        if (value == null) return "";
+        // Some upstream names are double-encoded; HTML4 decoding alone omits &apos;.
+        for (int i = 0; i < 4; i++) {
+            String decoded = HtmlUtils.htmlUnescape(value.replace("&apos;", "'"));
+            if (decoded.equals(value)) break;
+            value = decoded;
+        }
+        return value;
     }
 }

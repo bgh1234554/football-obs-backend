@@ -1,5 +1,6 @@
 package com.github.baek.footballobsbackend.update;
 
+import com.github.baek.footballobsbackend.util.PersonNameFormatter;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -181,6 +182,7 @@ class CsvUpdaterCsvHelper {
      */
     static String esc(String value) {
         if (value == null) return "";
+        value = PersonNameFormatter.decodeHtmlEntities(value);
         if (value.contains(",") || value.contains("\"") || value.contains("\n")) {
             return "\"" + value.replace("\"", "\"\"") + "\"";
         }
