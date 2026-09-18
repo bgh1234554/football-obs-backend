@@ -127,7 +127,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 6833,Veles Moscow,벨레스 모스크바, 벨레스,7a1938,7fc0e8
 14139,Dinamo Moskva II,디나모-2 모스크바, 디나모-2
 16864,Torpedo Miass,토르페도 미아스, 토르페도 Mi.
-19453,Rodina Moskva II,로디나-2 모스크바, 로디나-2
+19453,Rodina Moskva II,로디나-2 모스크바, 로디나-2,00b3e4,001b2d
 21538,Dinamo Kirov,디나모 키로프, 디나모 Kr.
 2005,Zenit 2,제니트-2 상트페테르부르크, 제니트-2
 6817,Murom,무롬,
@@ -255,6 +255,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 770,Czech Republic,체코,,97102a,ffffff
 775,Austria,오스트리아,,c8102e,ffffff
 777,Türkiye,튀르키예,,ffffff,e00310
+,Turkey,튀르키예,,ffffff,e00310
 1090,Norway,노르웨이,,ba0c2f,ffffff
 1108,Scotland,스코틀랜드,,101e37,ffffff
 1118,Netherlands,네덜란드,,f36c21,ffffff
@@ -1092,7 +1093,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 27647,Lugansk,자랴 루간스크,자랴
 27648,Shahter Taganrog,샤흐툐르 도네츠크,샤흐툐르 Dn.
 27649,Pervorechenskij,PSK 딘스카야,PSK
-2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2 Mc.
+2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2 Mc.,c9072a,ffffff
 6812,Luki-Energiya,루키 에네르기야 벨리키예 루키,루키-에네르기야
 6830,Torpedo Vladimir,토르페도 블라디미르,토르페도 Vl.
 6840,Zvezda St. Petersburg,즈베즈다 상트페테르부르크,즈베즈다 SPB
@@ -1124,9 +1125,9 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 12840,Rotor-2,로토르-2 볼고그라드,로토르-2
 14124,Volna Nizhegorodskaya,볼나 니즈니 노브고로드,볼나
 16866,Zenit Penza,제니트 펜자,제니트 Pn.
-17720,Arsenal Tula II,아르세날-2 툴라,아르세날-2 Tl.
-17721,SKA Khabarovsk II,SKA 하바롭스크-2,SKA-2
-19448,Rodina Moskva III,로디나-3 모스크바,로디나-3
+17720,Arsenal Tula II,아르세날-2 툴라,아르세날-2 Tl.,ee141f,ffffff
+17721,SKA Khabarovsk II,SKA 하바롭스크-2,SKA-2,00338d,ffffff
+19448,Rodina Moskva III,로디나-3 모스크바,로디나-3,00b3e4,001b2d
 19451,FK Spartak Tambov,스파르타크 탐보프,스파르타크 Tm.
 23318,Orel,오룔,
 26148,Shumbrat,슘브라트 사란스크,슘브라트
