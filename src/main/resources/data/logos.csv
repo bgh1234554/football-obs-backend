@@ -79,8 +79,8 @@ team_id, team_name_ko, logo_url, fa_url
 4673,New Zealand,https://flagcdn.com/nz.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/NewZealandFA.png
 5529,Canada,https://flagcdn.com/ca.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/CanadaFA.png
 5530,Curaçao,https://flagcdn.com/cw.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/CuracaoFA.png
-17,South Korea,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
-1728,South Korea W,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
+17,Korea Republic,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
+1728,Korea Republic W,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
 500,볼로냐,https://indvel.github.io/utils/fsm/logos/SerieA/Bologna_FC_1909.svg,
 492,나폴리,https://indvel.github.io/utils/fsm/logos/SerieA/SSC_Napoli.svg,
 157,바이에른 뮌헨,https://indvel.github.io/utils/fsm/logos/Bundesliga/FC_Bayern_Munchen_logo.svg,
@@ -131,8 +131,8 @@ team_id, team_name_ko, logo_url, fa_url
 1538,Malaysia,https://flagcdn.com/my.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/MalaysiaFA.svg
 1542,Vietnam,https://flagcdn.com/vn.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/VietnamFA.svg
 1546,Singpore,https://flagcdn.com/sg.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/SingaporeFA.svg
-1561,North Korea,https://flagcdn.com/kp.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/NorthKoreaFA.svg
-1740,North Korea (W),https://flagcdn.com/kp.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/NorthKoreaFA.svg
+1561,Korea DPR,https://flagcdn.com/kp.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/NorthKoreaFA.svg
+1740,Korea DPR (W),https://flagcdn.com/kp.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/NorthKoreaFA.svg
 1547,Bahrain,https://flagcdn.com/bh.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/BahrainFA.svg
 1551,Lebanon,https://flagcdn.com/lb.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/LebanonFA.svg
 1552,Oman,https://flagcdn.com/om.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/OmanFA.svg
