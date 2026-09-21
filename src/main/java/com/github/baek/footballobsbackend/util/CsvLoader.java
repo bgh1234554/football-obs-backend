@@ -70,6 +70,11 @@ public class CsvLoader {
     // 역방향 이름 인덱스 — id=0(또는 id 미제공) 감독 한글화에 사용 (name_short/name_long 소문자 키)
     private final Map<String, String[]> coachesByShortName = new HashMap<>();
     private final Map<String, String[]> coachesByLongName  = new HashMap<>();
+    // name_long의 중간 이름을 뺀 "첫 토큰 + 끝 토큰" 인덱스 — API의 coach.name이 CSV name_long과
+    // 토큰 수가 다르게 올 때 fallback 매칭 (예: CSV "Álvaro Arbeloa Coca" ↔ API "Álvaro Arbeloa")
+    private final Map<String, String[]> coachesByLongNameCore = new HashMap<>();
+    // 위 코어 키가 둘 이상의 감독에게 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
+    private final Set<String> ambiguousCoachLongNameCoreKeys = new HashSet<>();
 
     // key: "referee_name, referee_country" 또는 "referee_name", value: name_ko
     private final Map<String, String> referees = new HashMap<>();
@@ -278,7 +283,22 @@ public class CsvLoader {
                     coachesByShortName.put(parts[1].trim().toLowerCase(), parts);
                 }
                 if (parts.length > 2 && !parts[2].trim().isEmpty()) {
-                    coachesByLongName.put(parts[2].trim().toLowerCase(), parts);
+                    String longName = parts[2].trim();
+                    coachesByLongName.put(longName.toLowerCase(), parts);
+                    String coreKey = coreNameKey(longName);
+                    if (!coreKey.isEmpty()) {
+                        String[] existing = coachesByLongNameCore.get(coreKey);
+                        if (ambiguousCoachLongNameCoreKeys.contains(coreKey)) {
+                            // 이미 충돌로 제외된 키 — 추가로 들어와도 무시
+                        } else if (existing == null) {
+                            coachesByLongNameCore.put(coreKey, parts);
+                        } else if (!isSameCoachIdentity(existing, parts)) {
+                            // 같은 코어 키인데 실제로 다른 감독(동명이인)이면 오매칭 방지를 위해 인덱스에서 제거
+                            coachesByLongNameCore.remove(coreKey);
+                            ambiguousCoachLongNameCoreKeys.add(coreKey);
+                        }
+                        // existing이 사실상 동일 감독(coach_id만 다른 중복 등록)이면 충돌로 취급하지 않고 기존 값 유지
+                    }
                 }
             }
         } catch (IOException e) {
@@ -752,14 +772,42 @@ public class CsvLoader {
 
     /**
      * API name(short 형식) 또는 full name으로 coaches.csv 행 조회.
-     * id=0(또는 id 미제공) 감독 한글화 시 name_short → name_long 순으로 정확 일치 매칭한다.
+     * id=0(또는 id 미제공) 감독 한글화 시 아래 순서로 fallback 매칭.
+     *
+     * 1) name_short 정확 일치 (대소문자 무관)
+     * 2) name_long  정확 일치 (대소문자 무관)
+     * 3) name_long 코어(첫 토큰 + 끝 토큰) 일치: 중간 이름 생략/추가 흡수
+     *    예) API "Álvaro Arbeloa" ↔ CSV name_long "Álvaro Arbeloa Coca"
+     *    동일 코어 키에 감독이 2명 이상 걸리면 오매칭 방지를 위해 매칭하지 않음
      */
     public String[] getCoachRowByName(String apiName) {
         if (apiName == null || apiName.isBlank()) return null;
         String key = apiName.trim().toLowerCase();
         String[] row = coachesByShortName.get(key);
         if (row != null) return row;
-        return coachesByLongName.get(key);
+        row = coachesByLongName.get(key);
+        if (row != null) return row;
+        String coreKey = coreNameKey(apiName.trim());
+        if (ambiguousCoachLongNameCoreKeys.contains(coreKey)) return null;
+        return coachesByLongNameCore.get(coreKey);
+    }
+
+    /**
+     * coaches.csv에 같은 감독이 API 쪽 coach_id 변경/오타로 인해 서로 다른 coach_id로
+     * 중복 등록된 경우(예: Michael Carrick이 25762/16246 두 id로 등록)를 판별한다.
+     * name_short/name_long/name_ko_long/name_ko_short가 모두 같으면 실제로는 동일 인물의
+     * 중복 행일 뿐이므로, coreNameKey 충돌 시 이 경우까지 "동명이인"으로 오판해 인덱스에서
+     * 제외하지 않도록 구분한다.
+     */
+    private static boolean isSameCoachIdentity(String[] a, String[] b) {
+        return coachField(a, 1).equals(coachField(b, 1))
+                && coachField(a, 2).equals(coachField(b, 2))
+                && coachField(a, 4).equals(coachField(b, 4))
+                && coachField(a, 5).equals(coachField(b, 5));
+    }
+
+    private static String coachField(String[] row, int idx) {
+        return (row.length > idx) ? row[idx].trim().toLowerCase() : "";
     }
 
     /**
