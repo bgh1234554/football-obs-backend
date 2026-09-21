@@ -583,7 +583,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 568,Sheriff Tiraspol,셰리프 티라스폴,셰리프
 573,FK Partizan,파르티잔,파르티잔,000000,ffffff
 606,FC Lugano,루가노,루가노,000000,ffffff
-614,AEK Larnaca,AEK 라르나카,,fde200,00883f
+614,AEK Larnaca,AEK 라르나카,AEK L.,fde200,00883f
 619,PAOK,PAOK,PAOK,000000,ad9059
 620,Dinamo Zagreb,디나모 자그레브,디나모 Z.,00499a,ffffff
 646,Levski Sofia,레프스키 소피아,레프스키 Sf.,28348a,ffffff
@@ -614,7 +614,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 552,Maribor,마리보르,마리보르
 562,FC Astana,아스타나,아스타나
 574,Vardar Skopje,바르다르 스코페,바르다르
-575,AEK Athens FC,AEK 아테네,,fcd20f,000000
+575,AEK Athens FC,AEK 아테네,AEK A.,fcd20f,000000
 578,F91 Dudelange,F91 뒤들랑주,뒤들랑주
 591,FC Santa Coloma,산타 콜로마,산타 콜로마
 601,Austria Vienna,아우스트리아 빈,A. 빈,441678,ffffff
@@ -842,7 +842,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2143,KFUM Oslo,KFUM 오슬로,KFUM,d91c23,ffffff
 2159,Ham-Kam,함캄,,1e9745,ffffff
 618,SCR Altach,SCR 알타흐,,ffd400,000000
-1026,Lask Linz,LASK 린츠,LASK,ffffff,000000
+1026,Lask Linz,LASK,LASK,ffffff,000000
 1028,Ried,SV 리트,리트,1e5947,ffffff
 1072,TSV Hartberg,TSV 하르트베르크,하르트베르크,0095da,ffffff
 1394,FC BW Linz,블라우바이스 린츠,BW 린츠
