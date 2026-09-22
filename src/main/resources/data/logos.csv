@@ -82,7 +82,7 @@ team_id, team_name_ko, logo_url, fa_url
 17,Korea Republic,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
 1728,Korea Republic W,https://flagcdn.com/kr.svg,https://bgh1234554.github.io/football-obs-logo-cdn/nt/KFA.svg
 500,볼로냐,https://indvel.github.io/utils/fsm/logos/SerieA/Bologna_FC_1909.svg,
-492,나폴리,https://indvel.github.io/utils/fsm/logos/SerieA/SSC_Napoli.svg,
+492,나폴리,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Italy/Napoli.svg,,
 157,바이에른 뮌헨,https://indvel.github.io/utils/fsm/logos/Bundesliga/FC_Bayern_Munchen_logo.svg,
 1660,엘페르스베르크,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Germany/Elversberg.svg,
 188,아르미니아 빌레펠트,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Germany/ArminiaBielefeld.png,
@@ -284,7 +284,7 @@ team_id, team_name_ko, logo_url, fa_url
 3384,Belshina,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/BelshinaBobruisk.png
 7808,ML Vitebsk,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/MLVitebsk.png
 9419,Arsenal Dzerzhinsk,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/ArsenalDzerzhinsk.svg
-385,Torpedo Zhodino,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/TorpedoBelAZZhodino.svg
+385,Torpedo Zhodino,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belarus/Torpedo-BelAZZhodino.svg
 546,Getafe,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Spain/Getafe.svg
 8009,Al Quwa Al Jawiya,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Iraq/AlQuwaAlJawiya.svg
 4217,Neftchi,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Uzbekistan/NeftchiFergana.png
@@ -556,3 +556,4 @@ team_id, team_name_ko, logo_url, fa_url
 1004,Kasımpaşa,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Turkey/Kasimpasa.svg
 3603,Samsunspor,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Turkey/Samsunspor.svg
 259,Lommel SK,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belgium/Lommel.svg
+496,Juventus,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Italy/Juventus.png
