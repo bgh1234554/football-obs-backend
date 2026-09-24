@@ -61,6 +61,11 @@ public class CsvLoader {
     private final Map<Long, String[]> teams = new HashMap<>();
     // key: team_name 소문자 → teams 배열과 동일한 String[] 공유 (역방향 이름 조회용)
     private final Map<String, String[]> teamsByName = new HashMap<>();
+    // 구단 법인형 접두/접미 토큰(FC/IF/FF/SK 등)을 뗀 정규화 이름 인덱스 — 연령대/여자부 접미사를
+    // 뗀 뒤에도 완전 일치가 안 되는 경우(예: API "Hammarby" ↔ CSV "Hammarby FF")의 fallback 매칭용.
+    private final Map<String, String[]> teamsByNormalizedName = new HashMap<>();
+    // 위 정규화 키가 서로 다른 팀 2곳 이상에 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
+    private final Set<String> ambiguousTeamNormalizedNameKeys = new HashSet<>();
 
     // index: 0=team_id, 1=team_name_ko, 2=logo_url, 3=fa_url
     private final Map<Long, String[]> logos = new HashMap<>();
@@ -227,12 +232,68 @@ public class CsvLoader {
                     teams.put(Long.parseLong(idStr), parts);
                 }
                 if (parts.length > 1 && !parts[1].trim().isEmpty()) {
-                    teamsByName.put(parts[1].trim().toLowerCase(), parts);
+                    String teamName = parts[1].trim();
+                    teamsByName.put(teamName.toLowerCase(), parts);
+                    indexTeamNormalizedName(teamName, parts);
                 }
             }
         } catch (IOException e) {
             log.warn("Could not load teams.csv: {}", e.getMessage());
         }
+    }
+
+    /**
+     * teamName의 정규화 키(법인형 접두/접미 토큰 제거)를 teamsByNormalizedName에 등록.
+     * 같은 키에 team_id가 다른 행이 이미 있으면(진짜 동명이인/다른 구단) 오매칭 방지를 위해
+     * 인덱스에서 제거하고 ambiguousTeamNormalizedNameKeys에 등록해 다시는 채워지지 않게 한다.
+     * team_id가 같은 행(같은 구단의 중복 등록)은 충돌로 취급하지 않는다.
+     */
+    private void indexTeamNormalizedName(String teamName, String[] parts) {
+        String normKey = normalizeTeamNameForMatch(teamName);
+        if (normKey.isEmpty() || ambiguousTeamNormalizedNameKeys.contains(normKey)) return;
+        String[] existing = teamsByNormalizedName.get(normKey);
+        if (existing == null) {
+            teamsByNormalizedName.put(normKey, parts);
+            return;
+        }
+        String existingId = existing.length > 0 ? existing[0].trim() : "";
+        String newId = parts.length > 0 ? parts[0].trim() : "";
+        if (!existingId.equals(newId)) {
+            teamsByNormalizedName.remove(normKey);
+            ambiguousTeamNormalizedNameKeys.add(normKey);
+        }
+    }
+
+    // 정규화 매칭에서 뗄 구단 법인형 접두/접미 토큰 (소문자, 구두점 제거 기준).
+    // 오매칭 위험이 있는 일반 단어(United/City/Town 등 팀명을 실제로 구분짓는 단어)는 포함하지 않는다.
+    private static final Set<String> TEAM_LEGAL_FORM_TOKENS = Set.of(
+            "fc", "cf", "sc", "afc", "fk", "sk", "if", "ff", "bk", "ik", "ac", "as", "us", "ss", "ssc",
+            "acf", "uc", "ca", "ec", "se", "cd", "sd", "ud", "nk", "hnk", "tsv", "vfl", "vfb", "fsv",
+            "sv", "sg", "bsc", "tsg", "spvgg", "cfc", "aa", "rc", "rcd", "1"
+    );
+
+    /**
+     * 팀명 비교용 정규화 키 생성.
+     * 소문자화 + 구두점(마침표) 제거 후, 토큰 배열 양 끝에서 TEAM_LEGAL_FORM_TOKENS에 속하는
+     * 토큰만 반복적으로 제거한다(중간 토큰은 건드리지 않음). 최소 1개 토큰은 항상 남긴다.
+     * 예) "Hammarby" → "hammarby", "Hammarby FF" → "hammarby" (동일 키로 매칭)
+     */
+    private static String normalizeTeamNameForMatch(String name) {
+        if (name == null) return "";
+        String cleaned = name.trim().toLowerCase().replace(".", "");
+        if (cleaned.isEmpty()) return "";
+        String[] tokens = cleaned.split("\\s+");
+        int start = 0;
+        int end = tokens.length;
+        while (end - start > 1 && TEAM_LEGAL_FORM_TOKENS.contains(tokens[start])) start++;
+        while (end - start > 1 && TEAM_LEGAL_FORM_TOKENS.contains(tokens[end - 1])) end--;
+        if (end <= start) return "";
+        StringBuilder sb = new StringBuilder();
+        for (int i = start; i < end; i++) {
+            if (i > start) sb.append(' ');
+            sb.append(tokens[i]);
+        }
+        return sb.toString();
     }
 
     /**
@@ -734,13 +795,20 @@ public class CsvLoader {
     /**
      * teamId 조회가 실패했을 때(연령대별/여자부 대표팀처럼 teams.csv에 개별 등록이 없는 team_id)
      * API 팀명 끝의 연령대/여자부 접미사를 떼어낸 "기준 팀명"으로 재조회한 행을 반환.
+     * 1차: 기준 팀명 완전 일치(teamsByName). 2차: 구단 법인형 접두/접미 토큰(FC/IF/FF/SK 등)을
+     * 뗀 정규화 이름 일치(teamsByNormalizedName) — 예) API "Hammarby W" → 기준명 "Hammarby" →
+     * 정규화 "hammarby"가 CSV "Hammarby FF"(정규화 시 동일 "hammarby")와 매칭.
      * 반환값은 teams.csv 원본 행([team_id, team_name, ko_name, ko_name_short,
      * primary_color_override, number_color_override])이며, 없으면 null.
      */
     public String[] getTeamRowByAgeGroupBaseName(String apiName) {
         String base = stripAgeGroupSuffix(apiName);
         if (base == null) return null;
-        return teamsByName.get(base.toLowerCase());
+        String[] direct = teamsByName.get(base.toLowerCase());
+        if (direct != null) return direct;
+        String normKey = normalizeTeamNameForMatch(base);
+        if (normKey.isEmpty()) return null;
+        return teamsByNormalizedName.get(normKey);
     }
 
     /**
