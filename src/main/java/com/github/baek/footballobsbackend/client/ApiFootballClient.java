@@ -10,6 +10,7 @@ import org.springframework.web.client.RestClientResponseException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.github.baek.footballobsbackend.error.ApiException;
 import com.github.baek.footballobsbackend.error.ErrorCode;
+import com.github.baek.footballobsbackend.util.MojibakeRepair;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -218,6 +219,9 @@ public class ApiFootballClient {
                     .body(JsonNode.class);        // 응답 바디를 JsonNode로 파싱 완료까지 블로킹
             log.info("Upstream call completed path={} durationMs={}",
                     path, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
+            // API 원본에 섞여 오는 인코딩 깨짐("UrbaÅ„ski" → "Urbański")을 모든 호출 결과에서 한 번에 복구.
+            // CSV에 없는 선수/감독/심판/경기장 이름이 영문 그대로 내려갈 때와 CsvUpdater가 CSV에 쓸 때 모두 적용된다.
+            MojibakeRepair.repairTree(result);
             return result;
         } catch (RestClientResponseException e) {
             log.warn("API Football upstream error: status={}, path={}, body={}",
