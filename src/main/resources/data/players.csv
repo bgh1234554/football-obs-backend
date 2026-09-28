@@ -495,7 +495,7 @@
 126949,C. Richards,Christopher Jeffrey Richards,Defender,USA,크리스 리차즈,C. 리차즈
 26303,B. Sosa,Borna Sosa,Defender,Croatia,보르나 소사,B. 소사
 286458,J. Devenny,Justin Devenny,Midfielder,Scotland,저스틴 드베니,J. 드베니
-557413,J. Drakes-Thomas,Joél Drakes-Thomas,Attacker,England,조엘 드레이크스토머스,J. 드레이크스-토머스
+557413,J. Drakes-Thomas,Joél Drakes-Thomas,Attacker,England,조엘 드레이크스토마스,J. 드레이크스-토마스
 18806,W. Hughes,William James Hughes,Midfielder,England,윌 휴즈,W. 휴즈
 2601,D. Kamada,Daichi Kamada,Midfielder,Japan,카마다 다이치,D. 카마다
 2490,J. Lerma,Jefferson Andrés Lerma Solís,Midfielder,Colombia,제페르손 레르마,J. 레르마
@@ -3329,7 +3329,7 @@
 82594,M. Langstaff,Macaulay Langstaff,Attacker,England,매컬리 랭스태프,M. 랭스태프
 350323,Z. Lovelace,Zakariya Lovelace,Attacker,England,자카리아 러브레이스,Z. 러브레이스
 290635,C. Neghli,Camiel Neghli,Midfielder,Algeria,카밀 네글리,C. 네글리
-329369,T. Watson,Thomas Watson,Attacker,England,토머스 왓슨,T. 왓슨
+329369,T. Watson,Thomas Watson,Attacker,England,토마스 왓슨,T. 왓슨
 17767,D. Cornell,David Joseph Cornell,Goalkeeper,Wales,데이비드 코넬,D. 코넬
 17736,D. Iversen,Daniel Lønne Iversen,Goalkeeper,Denmark,다니엘 이베르센,D. 이베르센
 19782,J. Walton,Jack James Walton,Goalkeeper,England,잭 월튼,J. 월튼
@@ -3368,7 +3368,7 @@
 284406,A. Gilchrist,Alfie Gilchrist,Defender,England,알피 길크리스트,A. 길크리스트
 545974,D. Iddrisa,Dauda Amihere Iddrisa,Defender,Italy,다우다 아미헤레 이드리사,D. 이드리사
 196856,D. Imray,Daniel Edward Peter Imray,Defender,England,다니엘 임라이,D. 임라이
-18866,C. Mepham,Christopher James Mepham,Defender,Wales,크리스토퍼 메펌,C. 메펌
+18866,C. Mepham,Christopher James Mepham,Defender,Wales,크리스 메펌,C. 메펌
 127472,N. Phillips,Nathaniel Harry Phillips,Defender,England,나다니엘 필립스,N. 필립스
 18918,C. Taylor,Charles James Taylor,Defender,England,찰리 테일러,Ch. 테일러
 288132,A. Williams,Alex Williams,Defender,Wales,알렉스 윌리엄스,A. 윌리엄스
@@ -3683,7 +3683,7 @@
 272730,M. Manhoef,Million Manhoef,Attacker,Netherlands,밀리온 만후프,M. 만후프
 284409,D. Mubama,Divin Saku Mubama,Attacker,England,디빈 무바마,D. 무바마
 362568,M. Smit,Milan Smit,Attacker,Netherlands,밀란 스밋,M. 스밋
-18599,S. Thomas,Benjamin Sorba William Thomas,Midfielder,Wales,소바 토머스,S. 토머스
+18599,S. Thomas,Benjamin Sorba William Thomas,Midfielder,Wales,소바 토마스,S. 토마스
 17623,P. Farman,Paul David Farman,Goalkeeper,England,폴 파먼,P. 파먼
 81996,A. Fisher,Andrew Lee Fisher,Goalkeeper,England,앤드루 피셔,A. 피셔
 2549,L. Vigouroux,Lawrence Ian Vigouroux,Goalkeeper,Chile,로렌스 비구루,L. 비구루
@@ -10023,7 +10023,7 @@
 303020,F. Lissah,Filip Lissah,Defender,England,필리프 리사,F. 리사
 412743,T. Parente,Tiago Parente,Defender,Portugal,티아구 파렌트,T. 파렌트
 67958,S. Welsh,Stephen Welsh,Defender,Scotland,스티븐 웰시,S. 웰시
-580853,T. Woodward,Thomas Woodward,Midfielder,Wales,토머스 우드워드,T. 우드워드
+580853,T. Woodward,Thomas Woodward,Midfielder,Wales,토마스 우드워드,T. 우드워드
 381810,M. Yeo,Moussa Yeo,Midfielder,Mali,무사 예오,M. 예오
 386498,N. Asiimwe,Nathan Asiimwe,Defender,Uganda,네이선 아시임웨,N. 아시임웨
 152974,B. Koumetio,Billy Koumetio,Defender,France,빌리 쿠메티오,B. 쿠메티오
@@ -13269,7 +13269,7 @@
 152931,B. Zapelli,Bruno Zapelli,Midfielder,Argentina,브루노 사펠리,B. 사펠리
 544932,Isaac,Isaac,Attacker,Brazil,이사크,이사크
 408145,Leozinho,Leonardo Caetano Silva,Attacker,Brazil,레오지뉴,레오지뉴
-21394,S. Mendoza,John Steven Mendoza Valencia,Midfielder,Colombia,스티벤 멘도사,S. 멘도사
+21394,S. Mendoza,John Steven Mendoza Valencia,Midfielder,Colombia,스티벤 멘도사,St. 멘도사
 544933,R. Peixoto,Renan Peixoto,Attacker,Brazil,헤낭 페이쇼투,R. 페이쇼투
 393877,J. Rivaldo Pinto,Jorge Luis Rivaldo Pinto,Attacker,Colombia,호르헤 리발도,J. 리발도
 545020,Vitinho,Vitinho,Defender,Brazil,비치뉴,비치뉴
@@ -15864,3 +15864,10 @@
 158472,M. Dziov,Maks Dziov,Defender,Russia,막스 지오프,M. 지오프
 99186,Oh S.H.,Oh Se-Hun,Forward,Korea Republic,오세훈,오세훈
 51591,T. Cardozo,Thiago Cardozo,Goalkeeper,Uruguay,티아고 카르도소,T. 카르도소
+2443,Y. Osorio,Yordan Hernando Osorio Paredes,Defender,Venezuela,요르단 오소리오,Y. 오소리오
+354030,B.Tamayo,Bianneider Nauj Tamayo Escalona,Defender,Venezuela,비아네이데르 타마요,B. 타마요
+465300,S. Mendoza,Sebastián Mendoza,Midfielder,Venezuela,세바스티안 멘도사,Se. 멘도사
+2456,J. Cádiz,Jhonder Leonel Cádiz Fernández,Forward,Venezuela,존데르 카디스,J. 카디스
+355998,Sh. Nakano,Nakano Shuto,Midfielder,Japan,나카노 슈토,Sh. 나카노
+455195,K. Kumasaka,Kumasaka Koki,Midfielder,Japan,쿠마사카 코키,K. 쿠마사카
+352457,K. Tanimura,Tanimura Kaina,Forward,Japan,타니무라 카이나,K. 타니무라
