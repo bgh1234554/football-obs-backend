@@ -28,6 +28,13 @@ import com.fasterxml.jackson.databind.node.TextNode;
  *   3) 그 바이트열이 올바른 UTF-8이어야 한다 — "Müller"(FC), "Åke"(C5 6B)처럼 정상 악센트 이름은
  *      UTF-8로 유효하지 않아 걸러진다.
  * 이중으로 깨진 경우를 위해 최대 2회 반복한다.
+ *
+ * [HTML 엔티티] API가 이름을 HTML 엔티티로 인코딩한 채 보내는 경우도 있다(예: "Y. Said M&apos;Madi",
+ * 원래 "Y. Said M'Madi"). 프런트는 문자열을 그대로 escape해 표시하므로 "&apos;"가 글자 그대로 보였다.
+ * 이름 정규화용으로 이미 있던 PersonNameFormatter.decodeHtmlEntities("&apos;" 처리 + 이중 인코딩 반복)를
+ * 그대로 재사용한다 - 그 함수는 CSV 생성/약식 이름 만들 때만 쓰여, 약식 변환을 안 거치는 이름
+ * (라인업/교체 명단 등 API 원문 그대로 나가는 경로)에는 적용되지 않았다. 여기서 응답 전체에 한 번 적용한다.
+ * '&'와 ';'가 모두 있을 때만 호출하고, 엔티티가 아닌 일반 "&"는 그대로 둔다. 인코딩 깨짐 복구보다 먼저 적용한다.
  */
 public final class MojibakeRepair {
 
@@ -52,7 +59,7 @@ public final class MojibakeRepair {
     /** 깨진 문자열이면 복구한 값, 아니면 원본을 그대로 반환한다. null은 null. */
     public static String repair(String value) {
         if (value == null) return null;
-        String current = value;
+        String current = unescapeHtmlEntities(value);
         for (int i = 0; i < 2; i++) {
             String repaired = repairOnce(current);
             if (repaired == null) break;
@@ -89,6 +96,12 @@ public final class MojibakeRepair {
                 }
             }
         }
+    }
+
+    /** HTML 엔티티("&apos;", "&amp;", "&#39;" 등)를 문자로 되돌린다. 엔티티가 없으면 원본 그대로. */
+    static String unescapeHtmlEntities(String value) {
+        if (value.indexOf('&') < 0 || value.indexOf(';') < 0) return value;
+        return PersonNameFormatter.decodeHtmlEntities(value);
     }
 
     /** 한 번 복구를 시도한다. 조건을 만족하지 않으면 null. */

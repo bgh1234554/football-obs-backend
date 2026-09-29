@@ -19,6 +19,15 @@ class MojibakeRepairTest {
     }
 
     @Test
+    void unescapesHtmlEntities() {
+        assertThat(MojibakeRepair.repair("Y. Said M&apos;Madi")).isEqualTo("Y. Said M'Madi");
+        assertThat(MojibakeRepair.repair("N&#39;Golo Kant&eacute;")).isEqualTo("N'Golo Kanté");
+        assertThat(MojibakeRepair.repair("Brighton &amp; Hove Albion")).isEqualTo("Brighton & Hove Albion");
+        // 엔티티가 아닌 일반 "&"는 그대로
+        assertThat(MojibakeRepair.repair("Brighton & Hove Albion")).isEqualTo("Brighton & Hove Albion");
+    }
+
+    @Test
     void repairsDoubleMojibake() {
         String once = "Urbański";
         String twice = new String(new String(once.getBytes(java.nio.charset.StandardCharsets.UTF_8),
