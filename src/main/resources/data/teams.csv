@@ -1285,7 +1285,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1110,Andorra,안도라,
 5536,Saint Kitts and Nevis,세인트키츠네비스,세인트키츠
 5169,Turks and Caicos Islands,터크스 케이커스 제도,터크스 케이커스
-5158,Bermuda,버뮤다,
+5158,Bermuda,버뮤다,,1e284f,f08fb0
 1526,Libya,리비아,
 1094,Armenia,아르메니아,
 1497,Mauritius,모리셔스,
@@ -1345,7 +1345,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1518,Lesotho,레소토,
 1535,Djibouti,지부티,
 5166,Sri Lanka,스리랑카,
-5540,Saint Lucia,세인트루시아,
+5540,Saint Lucia,세인트루시아,,005bd0,e9c122
 5539,Puerto Rico,푸에르토리코,
 1539,Turkmenistan,투르크메니스탄,
 1092,Latvia,라트비아,
