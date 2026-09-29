@@ -1059,7 +1059,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 5168,Trinidad and Tobago,트리니다드토바고,트리니다드,db1332,000000
 5532,Dominican Republic,도미니카 공화국,도미니카R
 8171,Suriname,수리남,,ed1c24,ffffff
-10983,Guadeloupe,과들루프,
+10983,Guadeloupe,과들루프,,ff0000,18a538
 30,Peru,페루,
 2379,Venezuela,베네수엘라,,510e26,bd9b52
 2381,Bolivia,볼리비아,,003938,b18d65
@@ -1453,3 +1453,4 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 23384,Taguig,원 타기그,
 27818,Karketu Dili,카르케투 딜리,카르케투
 8117,Martinique,마르티니크,,ef1923,ffffff
+10982,Bonaire,보네르,003087,ffffff
