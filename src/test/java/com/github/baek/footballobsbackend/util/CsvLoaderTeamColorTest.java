@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 /**
  * teams.csv에 새로 채운 primary_color_override/number_color_override가
@@ -77,5 +79,19 @@ class CsvLoaderTeamColorTest {
         String name = koResolver.resolveTeamNameShort(999999L, "South Korea W");
 
         assertThat(name).isEqualTo("대한민국");
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"China PR U23", "China PR U20", "China PR U17", "China PR U17 W",
+            "China PR U20 W", " china pr   u-23 w ", "China U22", "China W"})
+    void chinaVariantsInheritBaseKoreanNameColorsAndLogos(String apiName) {
+        assertThat(koResolver.resolveTeamName(999999L, apiName)).isEqualTo("중국");
+        assertThat(koResolver.resolveTeamNameShort(999999L, apiName)).isEqualTo("중국");
+        assertThat(csvLoader.getTeamColorOverride(999999L, apiName))
+                .containsExactly("d7010a", "fde400");
+        assertThat(koResolver.resolveLogoUrl(999999L, null, apiName))
+                .isEqualTo("https://flagcdn.com/cn.svg");
+        assertThat(csvLoader.getFaUrl(999999L, apiName))
+                .isEqualTo(csvLoader.getFaUrl(1566L));
     }
 }

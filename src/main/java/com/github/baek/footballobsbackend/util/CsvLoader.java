@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,6 +39,12 @@ import java.util.Set;
 @Slf4j
 @Component
 public class CsvLoader {
+
+    // 연령대/여자부 접미사를 제거한 API 별칭 → teams.csv 기준 팀명 (키와 값 모두 소문자).
+    // 다른 표기가 필요하면 Map.entry("별칭", "기준 팀명")만 추가한다.
+    private static final Map<String, String> TEAM_NAME_ALIASES = Map.ofEntries(
+            Map.entry("china pr", "china")
+    );
 
     // index: 0=player_id, 1=name_short, 2=name_long, 3=position, 4=nationality, 5=name_ko_long, 6=name_ko_short
     private final Map<Long, String[]> players = new HashMap<>();
@@ -795,7 +802,8 @@ public class CsvLoader {
     /**
      * teamId 조회가 실패했을 때(연령대별/여자부 대표팀처럼 teams.csv에 개별 등록이 없는 team_id)
      * API 팀명 끝의 연령대/여자부 접미사를 떼어낸 "기준 팀명"으로 재조회한 행을 반환.
-     * 1차: 기준 팀명 완전 일치(teamsByName). 2차: 구단 법인형 접두/접미 토큰(FC/IF/FF/SK 등)을
+     * 1차: 기준 팀명 완전 일치(teamsByName). 2차: TEAM_NAME_ALIASES의 기준 팀명 일치.
+     * 3차: 구단 법인형 접두/접미 토큰(FC/IF/FF/SK 등)을
      * 뗀 정규화 이름 일치(teamsByNormalizedName) — 예) API "Hammarby W" → 기준명 "Hammarby" →
      * 정규화 "hammarby"가 CSV "Hammarby FF"(정규화 시 동일 "hammarby")와 매칭.
      * 반환값은 teams.csv 원본 행([team_id, team_name, ko_name, ko_name_short,
@@ -804,8 +812,14 @@ public class CsvLoader {
     public String[] getTeamRowByAgeGroupBaseName(String apiName) {
         String base = stripAgeGroupSuffix(apiName);
         if (base == null) return null;
-        String[] direct = teamsByName.get(base.toLowerCase());
+        String baseKey = base.toLowerCase(Locale.ROOT);
+        String[] direct = teamsByName.get(baseKey);
         if (direct != null) return direct;
+        String canonicalName = TEAM_NAME_ALIASES.get(baseKey);
+        if (canonicalName != null) {
+            String[] aliased = teamsByName.get(canonicalName);
+            if (aliased != null) return aliased;
+        }
         String normKey = normalizeTeamNameForMatch(base);
         if (normKey.isEmpty()) return null;
         return teamsByNormalizedName.get(normKey);
