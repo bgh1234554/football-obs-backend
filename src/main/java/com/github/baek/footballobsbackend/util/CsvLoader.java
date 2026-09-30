@@ -48,17 +48,10 @@ public class CsvLoader {
 
     // index: 0=player_id, 1=name_short, 2=name_long, 3=position, 4=nationality, 5=name_ko_long, 6=name_ko_short
     private final Map<Long, String[]> players = new HashMap<>();
-    // 역방향 이름 인덱스 — id=0 선수 한글화에 사용 (name_short/name_long 소문자 키)
-    private final Map<String, String[]> playersByShortName     = new HashMap<>();
-    private final Map<String, String[]> playersByLongName      = new HashMap<>();
-    // 퍼지 매칭용 정규화 인덱스 — '.' 제거 + '-' → 공백 치환 후 소문자 키
-    // API가 "J Mateta" (점 없음) / "Jean Philippe" (하이픈 없음) 형태로 올 때 fallback 매칭
-    private final Map<String, String[]> playersByShortNameNorm = new HashMap<>();
-    // name_long의 중간 이름을 뺀 "첫 토큰 + 끝 토큰" 인덱스 — API가 중간 이름을 생략/추가해서
-    // name_long과 토큰 수가 다르게 올 때 fallback 매칭 (예: CSV "Cristian Jesús Martínez" ↔ API "Cristian Martínez")
-    private final Map<String, String[]> playersByLongNameCore   = new HashMap<>();
-    // 위 코어 키가 둘 이상의 선수에게 동시에 매칭되면 오매칭 방지를 위해 인덱스에서 제외
-    private final Set<String> ambiguousLongNameCoreKeys         = new HashSet<>();
+    // ID 없는 선수는 전체 이름이 유일하게 일치할 때만 번역한다.
+    // J. Mickels 같은 축약명이나 중간 이름을 버린 키는 다른 선수와 충돌할 수 있다.
+    private final Map<String, String[]> playersByFullName = new HashMap<>();
+    private final Set<String> ambiguousPlayerFullNames = new HashSet<>();
     // name_ko_short 이니셜이 "성+이니셜 첫 글자가 겹치는 다른 선수가 CSV 전체에 있어서"
     // 2글자 이상으로 확장된 선수 id 집합(computeKoShortInitialCollisions 참고).
     // Kh./Dž./Ng.처럼 애초에 음절 특성상 여러 글자인 경우는 겹치는 상대가 없어 포함되지 않는다.
@@ -144,30 +137,9 @@ public class CsvLoader {
                 // 4. player_id(index 0)를 키로 전체 배열 저장 (id 컬럼이 비어있으면 0으로 저장)
                 String idStr = parts[0].trim();
                 players.put(idStr.isEmpty() ? 0L : Long.parseLong(idStr), parts);
-                // 5. name_short / name_long 역방향 인덱스 (id=0 선수 이름 매칭용)
-                if (parts.length > 1 && !parts[1].trim().isEmpty()) {
-                    String shortName = parts[1].trim();
-                    playersByShortName.put(shortName.toLowerCase(), parts);
-                    // 퍼지 인덱스: '.' 제거 + '-' → 공백 정규화
-                    String norm = normalizeForPlayerMatch(shortName);
-                    if (!norm.isEmpty()) playersByShortNameNorm.put(norm, parts);
-                }
-                if (parts.length > 2 && !parts[2].trim().isEmpty()) {
-                    String longName = parts[2].trim();
-                    playersByLongName.put(longName.toLowerCase(), parts);
-                    String coreKey = coreNameKey(longName);
-                    if (!coreKey.isEmpty()) {
-                        if (ambiguousLongNameCoreKeys.contains(coreKey)) {
-                            // 이미 충돌로 제외된 키 — 추가로 들어와도 무시
-                        } else if (playersByLongNameCore.containsKey(coreKey)) {
-                            // 동일 코어 키를 가진 다른 선수가 이미 있으면 오매칭 방지를 위해 인덱스에서 제거
-                            playersByLongNameCore.remove(coreKey);
-                            ambiguousLongNameCoreKeys.add(coreKey);
-                        } else {
-                            playersByLongNameCore.put(coreKey, parts);
-                        }
-                    }
-                }
+                // 5. 전체 이름만 인덱싱하고, 서로 다른 ID의 동명이인은 제외한다.
+                indexPlayerFullName(parts);
+
             }
         } catch (IOException e) {
             log.warn("Could not load players.csv: {}", e.getMessage());
@@ -596,34 +568,28 @@ public class CsvLoader {
     // 조회 메서드 — null 반환 시 호출부에서 영문 fallback 처리할 것
     // ──────────────────────────────────────────────────────────────
 
-    /**
-     * API name(short 형식) 또는 full name으로 players.csv 행 조회.
-     * id=0 선수 한글화 시 아래 순서로 fallback 매칭.
-     *
-     * 1) name_short 정확 일치 (대소문자 무관)
-     * 2) name_long  정확 일치 (대소문자 무관)
-     * 3) name_short 퍼지 일치: '.' 제거 + '-' → 공백 정규화 후 재시도
-     *    예) API "J Mateta" ↔ CSV "J. Mateta"
-     *        API "Jean Philippe Mateta" ↔ CSV "Jean-Philippe Mateta"
-     * 4) name_long 코어(첫 토큰 + 끝 토큰) 일치: 중간 이름 생략/추가 흡수
-     *    예) API "Cristian Martínez" ↔ CSV name_long "Cristian Jesús Martínez"
-     *    동일 코어 키에 선수가 2명 이상 걸리면 오매칭 방지를 위해 매칭하지 않음
+    /** ID 없는 선수의 전체 이름 조회. 대소문자/하이픈/공백 차이만 허용한다.
+     * CSV에 후보가 하나뿐이어도 J. Mickels 같은 이니셜은 신원 확인 근거가 아니다.
+     * Joy Sloyd Mickels와 Joy-Lance Mickels를 합치지 않도록 중간 이름도 보존한다.
      */
     public String[] getPlayerRowByName(String apiName) {
         if (apiName == null || apiName.isBlank()) return null;
-        String key = apiName.trim().toLowerCase();
-        String[] row = playersByShortName.get(key);
-        if (row != null) return row;
-        row = playersByLongName.get(key);
-        if (row != null) return row;
-        // 퍼지 fallback: 정규화 후 name_short 재시도
-        row = playersByShortNameNorm.get(normalizeForPlayerMatch(apiName.trim()));
-        if (row != null) return row;
-        // 중간 이름 생략/추가 fallback: name_long을 "첫 토큰 + 끝 토큰"으로 축약해 재시도
-        // (예: CSV name_long "Cristian Jesús Martínez" ↔ API "Cristian Martínez")
-        String coreKey = coreNameKey(apiName.trim());
-        if (ambiguousLongNameCoreKeys.contains(coreKey)) return null;
-        return playersByLongNameCore.get(coreKey);
+        String key = normalizeForPlayerMatch(apiName);
+        for (String token : key.split(" ")) {
+            if (token.codePointCount(0, token.length()) == 1) return null;
+        }
+        return playersByFullName.get(key);
+    }
+
+    private void indexPlayerFullName(String[] row) {
+        if (row.length <= 2 || row[2].isBlank()) return;
+        String key = normalizeForPlayerMatch(row[2]);
+        if (key.isEmpty() || ambiguousPlayerFullNames.contains(key)) return;
+        String[] previous = playersByFullName.putIfAbsent(key, row);
+        if (previous != null && !previous[0].trim().equals(row[0].trim())) {
+            playersByFullName.remove(key);
+            ambiguousPlayerFullNames.add(key);
+        }
     }
 
     /**

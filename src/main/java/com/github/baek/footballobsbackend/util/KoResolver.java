@@ -286,7 +286,7 @@ public class KoResolver {
 
     /**
      * 선수 이름 fallback 우선순위.
-     * [id=0 선수] players.csv name_short/name_long 이름 역매칭으로 한글화 시도.
+     * [id=0 선수] players.csv 전체 이름이 유일하게 일치할 때만 한글화 시도.
      * 1. players.csv name_ko_short  → (ko_short, ko_long)
      * 2. players.csv name_short     → (csv short, ko_long)  + diff 로그
      * 3. PersonNameFormatter로 API name 약식 변환
@@ -294,7 +294,7 @@ public class KoResolver {
      *    - 이미 "A. Gomes" 같은 형태라 변환이 안 일어나면 longName은 ko_long 그대로 (없으면 null)
      */
     public ResolvedName resolvePlayerName(long playerId, String apiName) {
-        // id=0: ID 조회가 불가능하므로 API name으로 players.csv 역방향 매칭 시도
+        // id=0: 축약명으로 신원을 추정하지 않고 전체 이름 일치만 허용한다.
         if (playerId == 0) {
             String[] row = csvLoader.getPlayerRowByName(apiName);
             if (row != null) {
@@ -311,7 +311,7 @@ public class KoResolver {
             }
             // CSV 매칭 실패 — API 이름 그대로 반환 (로그는 FixtureService.printMissedPlayerLog가 담당)
             String display = PersonNameFormatter.buildNameShortAbbrev(apiName, null, null, null);
-            return new ResolvedName(display, null);
+            return new ResolvedName(display, wasShortened(apiName, display) ? blankToNull(apiName) : null);
         }
 
         String nameKo = csvLoader.getPlayerNameKo(playerId);
