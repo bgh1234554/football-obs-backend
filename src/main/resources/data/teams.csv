@@ -1304,7 +1304,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1116,Israel,이스라엘,
 5538,Brunei,브루나이,
 1112,Malta,몰타,
-1100,Belarus,벨라루스,
+1100,Belarus,벨라루스,,600020,d9ff00
 1099,Finland,핀란드,
 1093,Gibraltar,지브롤터,
 1540,Bhutan,부탄,
@@ -1455,4 +1455,5 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 8117,Martinique,마르티니크,,ef1923,ffffff
 10982,Bonaire,보네르,,003087,ffffff
 10985,Sint Maarten,신트 마르턴,ed1b24,00529b
-8118,French Guiana,프랑스 기아나,f1d309,07802d
+8118,French Guiana,프랑스 기아나,,f1d309,07802d
+10984,Saint Martin,생마르탱,,ee012d,0041b8
