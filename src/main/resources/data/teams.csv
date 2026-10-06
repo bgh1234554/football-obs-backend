@@ -37,13 +37,13 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 542,Alaves,알라베스,,0232a0,ffffff
 543,Real Betis,레알 베티스, 베티스,009655,ffffff
 546,Getafe,헤타페,,0065ac,ffffff
-547,Girona,지로나,
+547,Girona,지로나,,d5162f,ffffff
 548,Real Sociedad,레알 소시에다드, 소시에다드,2151af,ffffff
-718,Oviedo,레알 오비에도, 오비에도
+718,Oviedo,레알 오비에도, 오비에도,094ca1,ffffff
 727,Osasuna,오사수나,,14213d,ffffff
 728,Rayo Vallecano,라요 바예카노, 라요,ffffff,e53027
 797,Elche,엘체,,ffffff,05642c
-798,Mallorca,마요르카,
+798,Mallorca,마요르카,,ed1b24,fff704
 2745,Bucheon FC 1995, 부천,,ac2424,ffffff
 2746,Gangwon FC, 강원,,dc5310,ffffff
 2748,FC Anyang, 안양,,4b237a,ffffff
@@ -96,7 +96,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1087,Ska-Khabarovsk,SKA 하바롭스크, SKA,00338d,ffffff
 1089,Enisey Krasnoyarsk,예니세이 크라스노야르스크, 예니세이,ef0a02,ffffff
 1993,Fakel Voronezh,파켈 보로네시, 파켈,0047b1,ffffff
-1995,Sokol Saratov,소콜 사라토프, 소콜
+1995,Sokol Saratov,소콜 사라토프, 소콜,0088e1,ffffff
 1998,Shinnik Yaroslavl,신니크 야로슬라블, 신니크,0033aa,ffffff
 2000,Tyumen,튜멘,
 2001,Neftekhimik Nizhnekamsk,네프테히미크 니즈네캄스크, 네프테히미크,2a5528,ffffff
@@ -242,7 +242,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 12,Japan,일본,,212b57,ffffff
 13,Senegal,세네갈,,00863d,fdf040
 15,Switzerland,스위스,,ff0000,ffffff
-16,Mexico,멕시코,
+16,Mexico,멕시코,,006847,ffffff
 20,Australia,오스트레일리아,호주,feba00,008686
 22,Iran,이란,,ffffff,da0000
 23,Saudi Arabia,사우디아라비아,사우디,00532c,ffffff
@@ -272,7 +272,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1569,Qatar,카타르,,8a1538,ffffff
 2380,Paraguay,파라과이,,cc001c,ffffff
 2382,Ecuador,에콰도르,,ffce00,002255
-2384,USA,미국,
+2384,USA,미국,,ffffff,bb2533
 2386,Haiti,아이티,,001aa0,ffffff
 4673,New Zealand,뉴질랜드,,ffffff,000000
 5529,Canada,캐나다,,da291c,ffffff
@@ -315,10 +315,10 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 502,Fiorentina,피오렌티나,피오렌티나,5a318c,ffffff
 503,Torino,토리노,토리노,7c1d21,ffffff
 504,Hellas Verona,엘라스 베로나,H. 베로나
-505,Inter,인테르나치오날레 밀라노,인테르
-520,Cremonese,크레모네세,크레모네세
+505,Inter,인테르나치오날레 밀라노,인테르,0018a1,000000
+520,Cremonese,크레모네세,크레모네세,d81424,808080
 523,Parma,파르마,파르마,ffffff,000000
-801,Pisa,피사,피사
+801,Pisa,피사,피사,0072b4,000000
 867,Lecce,레체,레체,002355,c99d66
 895,Como,코모,코모,114169,ffffff
 498,Sampdoria,삼프도리아,삼프도리아
@@ -359,7 +359,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 182,Union Berlin,우니온 베를린,우니온,cc061d,ffffff
 186,FC St. Pauli,장크트 파울리,St. 파울리,624839,ffffff
 192,1. FC Köln,쾰른,쾰른,ffffff,000000
-158,Fortuna Düsseldorf,포르투나 뒤셀도르프,뒤셀도르프
+158,Fortuna Düsseldorf,포르투나 뒤셀도르프,뒤셀도르프,ca040f,ffffff
 159,Hertha BSC,헤르타 베를린,헤르타,004d9e,ffffff
 166,Hannover 96,하노버 96,하노버,179d33,ffffff
 171,1. FC Nürnberg,뉘른베르크,뉘른베르크,aa1124,ffffff
@@ -375,13 +375,13 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 744,Eintracht Braunschweig,아인트라흐트 브라운슈바이크,브라운슈바이크,efac00,00274b
 745,1. FC Kaiserslautern,카이저슬라우테른,카이저슬라우테른,e0091d,ffffff
 785,Karlsruher SC,카를스루어,카를스루어,004c94,ffffff
-1313,Preußen Münster,프로이센 뮌스터,뮌스터
+1313,Preußen Münster,프로이센 뮌스터,뮌스터,00945e,000000
 1660,Elversberg,엘버스베르크,엘버스베르크,ffffff,000000
 77,Angers,앙제,앙제,ffffff,000000
 79,Lille,릴 OSC,릴,e1180b,ffffff
 80,Lyon,올랭피크 리옹,리옹,0f23aa,ffffff
 81,Marseille,올랭피크 마르세유,마르세유,0d61ab,ffffff
-83,Nantes,낭트,낭트
+83,Nantes,낭트,낭트,ffdc00,00a558
 84,Nice,OGC 니스,니스,000000,ffffff
 85,Paris Saint Germain,파리 생제르맹,PSG,0b3b6a,ffffff
 91,Monaco,AS 모나코,모나코,d12027,ffffff
@@ -392,7 +392,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 106,Stade Brestois 29,스타드 브레스트,브레스트,ffffff,ee151f
 108,Auxerre,AJ 오세르,오세르,ffffff,004ea1
 111,Le Havre,르 아브르,르 아브르,8bc4e5,00305a
-112,Metz,메스,메스
+112,Metz,메스,메스,690606,ffffff
 114,Paris FC,파리 FC,파리FC,090f2a,ffffff
 116,Lens,랑스,랑스,fce000,000000
 82,Montpellier,몽펠리에,몽펠리에
@@ -436,16 +436,16 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 197,PSV Eindhoven,PSV 에인트호번,PSV,f00000,ffffff
 201,AZ Alkmaar,AZ 알크마르,AZ,db0021,ffffff
 202,Groningen,흐로닝언,흐로닝언,008f5a,ffffff
-203,NAC Breda,NAC 브레다,NAC
+203,NAC Breda,NAC 브레다,NAC,282828,ffdd25
 205,Fortuna Sittard,포르튀나 시타르트,포르튀나,ffe01b,004b37
-206,Heracles,헤라클레스 알멜로,헤라클레스
+206,Heracles,헤라클레스 알멜로,헤라클레스,ffffff,000000
 207,Utrecht,위트레흐트,위트레흐트,ffffff,000000
 209,Feyenoord,페예노르트,페예노르트,e30013,ffffff
 210,Heerenveen,헤이렌베인,헤이렌베인,00509f,ffffff
 410,GO Ahead Eagles,고 어헤드 이글스,고 어헤드,c21727,ffd800
 413,NEC Nijmegen,NEC 네이메헌,NEC,ed1c24,ffffff
 415,Twente,트벤터,트벤터,e30621,ffffff
-416,FC Volendam,폴렌담,폴렌담
+416,FC Volendam,폴렌담,폴렌담,f17200,000000
 426,Sparta Rotterdam,스파르타 로테르담,스파르타 R.,ffffff,e50020
 427,Telstar,텔스타,텔스타,0a57a4,f2c200
 260,OH Leuven,뢰번,뢰번,d71920,ffffff
@@ -463,7 +463,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 742,Genk,헹크,헹크,00468f,ffffff
 1393,Union St. Gilloise,위니옹 생질루아,위니옹,1454a1,ffd300
 5902,RAAL La Louvière,라 루비에르,라 루비에르,2b8448,ffffff
-6215,Dender,덴더르,덴더르
+6215,Dender,덴더르,덴더르,394394,ffffff
 247,Celtic,셀틱,셀틱,009b48,ffffff
 249,Hibernian,히버니언,히버니언,00753b,ffffff
 250,Kilmarnock,킬마녹,킬마녹,2f368f,ffffff
