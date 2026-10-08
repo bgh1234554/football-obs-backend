@@ -792,7 +792,7 @@ public class CsvLoader {
     }
 
     /**
-     * "South Korea U22 W" → "South Korea"처럼 팀명 끝의 연령대/여자부 접미사를 제거한다.
+     * "Korea Republic U22 W" → "Korea Republic"처럼 팀명 끝의 연령대/여자부 접미사를 제거한다.
      * 떼어내는 대상: 맨 끝 토큰이 "W"이거나 "U<숫자>"/"U-<숫자>"인 경우, 또는 연령대 뒤에 "W"가 붙은 경우.
      * 해당하지 않으면(접미사가 없으면) null 반환 — 원래 이름 그대로 쓰라는 신호.
      */

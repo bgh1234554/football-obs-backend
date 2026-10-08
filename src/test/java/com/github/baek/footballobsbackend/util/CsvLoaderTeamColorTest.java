@@ -42,9 +42,10 @@ class CsvLoaderTeamColorTest {
 
     @Test
     void ageGroupSuffixFallsBackToBaseTeamColor() {
-        // South Korea(17)는 색이 있지만 "South Korea U22"라는 team_id는 teams.csv에 없음
+        // Korea Republic(17)은 색이 있지만 "Korea Republic U22"라는 team_id는 teams.csv에 없음
+        // (2026-09-20 teams.csv 팀명을 API 표기 "South Korea" -> "Korea Republic"으로 바꿈)
         // -> apiName 접미사를 떼고 기준 팀(17)의 색을 그대로 물려받아야 함
-        String[] override = csvLoader.getTeamColorOverride(999999L, "South Korea U22");
+        String[] override = csvLoader.getTeamColorOverride(999999L, "Korea Republic U22");
 
         assertThat(override).isNotNull();
         assertThat(override[0]).isEqualTo("e6002d");
@@ -53,7 +54,7 @@ class CsvLoaderTeamColorTest {
 
     @Test
     void ageGroupSuffixWithWomenMarkerAlsoFallsBack() {
-        String[] override = csvLoader.getTeamColorOverride(999999L, "South Korea U17 W");
+        String[] override = csvLoader.getTeamColorOverride(999999L, "Korea Republic U17 W");
 
         assertThat(override).isNotNull();
         assertThat(override[0]).isEqualTo("e6002d");
@@ -69,14 +70,14 @@ class CsvLoaderTeamColorTest {
 
     @Test
     void resolveTeamNameFallsBackToBaseKoreanNameForAgeGroupVariant() {
-        String name = koResolver.resolveTeamName(999999L, "South Korea U22");
+        String name = koResolver.resolveTeamName(999999L, "Korea Republic U22");
 
         assertThat(name).isEqualTo("대한민국");
     }
 
     @Test
     void resolveTeamNameShortFallsBackToBaseKoreanShortNameForAgeGroupVariant() {
-        String name = koResolver.resolveTeamNameShort(999999L, "South Korea W");
+        String name = koResolver.resolveTeamNameShort(999999L, "Korea Republic W");
 
         assertThat(name).isEqualTo("대한민국");
     }

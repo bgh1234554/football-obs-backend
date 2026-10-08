@@ -81,8 +81,8 @@ public class KoResolver {
             logShortNameDiffOnce("team", teamId, apiName, csvEnglish);
             return csvEnglish;
         }
-        // 연령대별/여자부 대표팀(예: "South Korea U22", "South Korea W")은 teams.csv에 개별
-        // 등록이 없는 경우가 많음 — 접미사를 뗀 기준 팀명(예: "South Korea")이 등록돼 있으면
+        // 연령대별/여자부 대표팀(예: "Korea Republic U22", "Korea Republic W")은 teams.csv에 개별
+        // 등록이 없는 경우가 많음 — 접미사를 뗀 기준 팀명(예: "Korea Republic")이 등록돼 있으면
         // 그 한글 이름을 그대로 물려받는다.
         String[] baseRow = csvLoader.getTeamRowByAgeGroupBaseName(apiName);
         if (baseRow != null) {
