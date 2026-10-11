@@ -22,7 +22,7 @@ class TeamFixturesServiceTest {
         // 원본 응답 파일 대신 변환에 필요한 필드만 가진 최소 데이터를 사용한다.
         boolean upcoming = name.equals("Next");
         ArrayNode entries = mapper.createArrayNode();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < (upcoming ? 5 : 6); i++) {
             var entry = mapper.createObjectNode();
             var fixture = entry.putObject("fixture");
             fixture.put("id", (upcoming ? 1635690 : 1552780) + i);
@@ -49,14 +49,20 @@ class TeamFixturesServiceTest {
     void lastSamplePreservesScoresAndResolvesBothTeams() throws Exception {
         when(client.getTeamFixtures(85, false)).thenReturn(sample("Last"));
         when(resolver.resolveTeamName(85, "Paris Saint Germain")).thenReturn("파리 생제르맹");
+        when(resolver.resolveTeamNameShort(85, "Paris Saint Germain")).thenReturn("PSG");
+        when(resolver.resolveTeamName(1298, "Le Mans")).thenReturn("르망 FC");
+        when(resolver.resolveTeamNameShort(1298, "Le Mans")).thenReturn("르망");
         when(resolver.resolveLogoUrl(85, "https://media.api-sports.io/football/teams/85.png",
                 "Paris Saint Germain")).thenReturn("https://custom/psg.svg");
         var result = service.getTeamFixtures(85, false);
         assertThat(result.teamId()).isEqualTo(85);
-        assertThat(result.matches()).hasSize(5);
+        assertThat(result.matches()).hasSize(6);
         var first = result.matches().getFirst();
         assertThat(first.getFixtureId()).isEqualTo(1552780);
         assertThat(first.getHomeTeamName()).isEqualTo("파리 생제르맹");
+        assertThat(first.getHomeTeamNameShort()).isEqualTo("PSG");
+        assertThat(first.getAwayTeamName()).isEqualTo("르망 FC");
+        assertThat(first.getAwayTeamNameShort()).isEqualTo("르망");
         assertThat(first.getHomeTeamLogo()).isEqualTo("https://custom/psg.svg");
         assertThat(first.getHomeScore()).isEqualTo(3);
         assertThat(first.getAwayScore()).isEqualTo(1);

@@ -13,12 +13,12 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 
 class TeamFixturesClientTest {
     @Test
-    void requestsExactlyFiveFixturesAndRejectsErrorsInsideHttp200() {
+    void requestsSixLastAndFiveNextFixturesAndRejectsErrorsInsideHttp200() {
         RestClient.Builder builder = RestClient.builder().baseUrl("https://example.test");
         MockRestServiceServer server = MockRestServiceServer.bindTo(builder).build();
         ApiFootballClient client = new ApiFootballClient("https://example.test");
         ReflectionTestUtils.setField(client, "restClient", builder.build());
-        server.expect(requestTo("https://example.test/fixtures?team=85&last=5"))
+        server.expect(requestTo("https://example.test/fixtures?team=85&last=6"))
                 .andRespond(withSuccess("{\"errors\":[],\"response\":[]}", MediaType.APPLICATION_JSON));
         server.expect(requestTo("https://example.test/fixtures?team=85&next=5"))
                 .andRespond(withSuccess("{\"errors\":{\"requests\":\"quota\"},\"response\":[]}", MediaType.APPLICATION_JSON));

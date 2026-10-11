@@ -33,7 +33,7 @@ public class TeamFixturesService {
         Comparator<TeamFixtureDto> byDate = Comparator.comparing(
                 match -> match.getDate() == null ? null : OffsetDateTime.parse(match.getDate()).toInstant(),
                 Comparator.nullsLast(upcoming ? Comparator.<Instant>naturalOrder() : Comparator.<Instant>reverseOrder()));
-        return new TeamFixturesResponseDto(teamId, matches.stream().sorted(byDate).limit(5).toList());
+        return new TeamFixturesResponseDto(teamId, matches.stream().sorted(byDate).limit(upcoming ? 5 : 6).toList());
     }
 
     private TeamFixtureDto buildMatch(JsonNode entry) {
@@ -52,11 +52,13 @@ public class TeamFixturesService {
                 .status(fixture.path("status").path("short").asText(null))
                 .homeTeamId(homeId)
                 .homeTeamName(koResolver.resolveTeamName(homeId, homeName))
+                .homeTeamNameShort(koResolver.resolveTeamNameShort(homeId, homeName))
                 .homeTeamLogo(koResolver.resolveLogoUrl(homeId, home.path("logo").asText(null), homeName))
                 .homeScore(nullableScore(goals.path("home")))
                 .homePenaltyScore(nullableScore(penalty.path("home")))
                 .awayTeamId(awayId)
                 .awayTeamName(koResolver.resolveTeamName(awayId, awayName))
+                .awayTeamNameShort(koResolver.resolveTeamNameShort(awayId, awayName))
                 .awayTeamLogo(koResolver.resolveLogoUrl(awayId, away.path("logo").asText(null), awayName))
                 .awayScore(nullableScore(goals.path("away")))
                 .awayPenaltyScore(nullableScore(penalty.path("away")))

@@ -16,12 +16,14 @@ public class TeamFixtureDto {
     String date;
     String status;
     long homeTeamId;
-    String homeTeamName;
+    String homeTeamName;       // 한글 풀네임 우선
+    String homeTeamNameShort;  // 한글 단축명 우선
     String homeTeamLogo;
     Integer homeScore;
     Integer homePenaltyScore;
     long awayTeamId;
-    String awayTeamName;
+    String awayTeamName;       // 한글 풀네임 우선
+    String awayTeamNameShort;  // 한글 단축명 우선
     String awayTeamLogo;
     Integer awayScore;
     Integer awayPenaltyScore;
