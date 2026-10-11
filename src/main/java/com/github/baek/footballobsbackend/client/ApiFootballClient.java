@@ -98,6 +98,18 @@ public class ApiFootballClient {
         return fetchArray("/fixtures/headtohead?h2h=" + homeTeamId + "-" + awayTeamId);
     }
 
+    /** 특정 팀의 최근 또는 예정 5경기를 조회한다. */
+    public JsonNode getTeamFixtures(long teamId, boolean upcoming) {
+        JsonNode root = fetchRoot("/fixtures?team=" + teamId + (upcoming ? "&next=5" : "&last=5"));
+        // 원본 API는 HTTP 200에도 errors를 담을 수 있으므로 빈 경기 목록과 구분한다.
+        if (root == null || (!root.path("errors").isEmpty() && !root.path("errors").isMissingNode())) {
+            throw new ApiException(ErrorCode.UPSTREAM_API_ERROR);
+        }
+        JsonNode response = root.path("response");
+        if (!response.isArray()) throw new ApiException(ErrorCode.UPSTREAM_API_ERROR);
+        return response;
+    }
+
     // ──────────────────────────────────────────────
     // CsvUpdater 전용 — CSV 초기화 시 사용
     // ──────────────────────────────────────────────
