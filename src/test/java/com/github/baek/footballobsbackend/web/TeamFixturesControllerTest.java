@@ -24,7 +24,7 @@ class TeamFixturesControllerTest {
             when(service.getTeamFixtures(85, upcoming)).thenReturn(new TeamFixturesResponseDto(85, List.of()));
             mvc.perform(get("/api/fixtures/" + (upcoming ? "next" : "last")).param("teamId", "85"))
                     .andExpect(status().isOk())
-                    .andExpect(header().string("Cache-Control", "max-age=300"))
+                    .andExpect(header().string("Cache-Control", "max-age=43200"))
                     .andExpect(jsonPath("$.teamId").value(85))
                     .andExpect(jsonPath("$.matches").isEmpty());
             verify(service).getTeamFixtures(85, upcoming);

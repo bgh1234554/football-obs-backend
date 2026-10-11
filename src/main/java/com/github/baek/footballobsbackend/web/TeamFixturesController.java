@@ -32,7 +32,7 @@ public class TeamFixturesController {
 
     private ResponseEntity<TeamFixturesResponseDto> getFixtures(long teamId, boolean upcoming) {
         if (teamId <= 0) throw new IllegalArgumentException("teamId는 양의 정수여야 합니다.");
-        return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofMinutes(5)))
+        return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofHours(12)))
                 .body(service.getTeamFixtures(teamId, upcoming));
     }
 
