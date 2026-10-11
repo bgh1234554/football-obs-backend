@@ -88,8 +88,8 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2012,PFC Sochi,소치,,ffffff,002c4e
 6786,Akron Tolyatti,아크론 톨리야티, 아크론,ff0000,ffffff
 6813,Dinamo Makhachkala,디나모 마하치칼라, 디나모 Mkh.,1206a5,ffffff
-665,Irtysh Omsk,이르티시 옴스크, 이르티시 O.
-1076,Amkar Prem,암카르 페름, 암카르
+665,Irtysh Omsk,이르티시 옴스크, 이르티시 O.,,
+1076,Amkar Prem,암카르 페름, 암카르,,
 1077,Arsenal Tula,아르세날 툴라, 아르세날 Tl.,ee141f,ffffff
 1078,Ufa,우파,,addec7,2d1044
 1084,Ural Yekaterinburg,우랄 예카테린부르크, 우랄,ff6600,000000
@@ -98,41 +98,41 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1993,Fakel Voronezh,파켈 보로네시, 파켈,0047b1,ffffff
 1995,Sokol Saratov,소콜 사라토프, 소콜,0088e1,ffffff
 1998,Shinnik Yaroslavl,신니크 야로슬라블, 신니크,0033aa,ffffff
-2000,Tyumen,튜멘,
+2000,Tyumen,튜멘,,,
 2001,Neftekhimik Nizhnekamsk,네프테히미크 니즈네캄스크, 네프테히미크,2a5528,ffffff
-2002,Spartak Nalchik,스파르타크 날치크, 스파르타크 Nl.
-2004,Volgar Astrakhan,볼가리 아스트라한, 볼가리
-2009,Avangard Kursk,아반가르트 쿠르스크, 아반가르트
+2002,Spartak Nalchik,스파르타크 날치크, 스파르타크 Nl.,,
+2004,Volgar Astrakhan,볼가리 아스트라한, 볼가리,,
+2009,Avangard Kursk,아반가르트 쿠르스크, 아반가르트,,
 2010,Rotor Volgograd,로토르 볼고그라드, 로토르,76c5f0,ffffff
-2014,Chertanovo Moscow,체르타노보 모스크바, 체르타노보
-3983,Chayka Peschanokopskoye,차이카 페스차노콥스코예, 차이카
+2014,Chertanovo Moscow,체르타노보 모스크바, 체르타노보,,
+3983,Chayka Peschanokopskoye,차이카 페스차노콥스코예, 차이카,,
 3984,Tekstilshchik Ivanovo,텍스틸시크 이바노보, 텍스틸시크,e31e23,000000
 3985,Torpedo Moskva,토르페도 모스크바, 토르페도 Mc.,000000,ffffff
-6787,Alania Vladikavkaz,알라니야 블라디캅카스, 알라니야
+6787,Alania Vladikavkaz,알라니야 블라디캅카스, 알라니야,,
 6790,Chelyabinsk,첼랴빈스크,,01b6e9,ffffff
-6791,Chernomorets Novorossiysk,체르노모레츠 노보로시스크, 체르노모레츠
-6794,Dinamo Barnaul,디나모 바르나울, 디나모 Bn.
-6795,Dinamo Bryansk,디나모 브랸스크, 디나모 Br.
-6796,Dinamo Stavropol,디나모 스타브로폴, 디나모 St.
-6798,Druzhba Maykop,드루즈바 마이코프, 드루즈바
+6791,Chernomorets Novorossiysk,체르노모레츠 노보로시스크, 체르노모레츠,,
+6794,Dinamo Barnaul,디나모 바르나울, 디나모 Bn.,,
+6795,Dinamo Bryansk,디나모 브랸스크, 디나모 Br.,,
+6796,Dinamo Stavropol,디나모 스타브로폴, 디나모 St.,,
+6798,Druzhba Maykop,드루즈바 마이코프, 드루즈바,,
 6801,KAMAZ Naberezhnye-Chelny,KAMAZ 나베레즈니예첼니, KAMAZ,0d3774,ffffff
-6802,Kaluga,칼루가,
-6807,Kvant,크반트 오브닌스크, 크반트
+6802,Kaluga,칼루가,,,
+6807,Kvant,크반트 오브닌스크, 크반트,,
 6822,Rodina Moskva,로디나 모스크바, 로디나,00b3e4,001b2d
 6834,Volga Ulyanovsk,볼가 울리야놉스크, 볼가,ffe500,000000
 19449,Spartak Kostroma,스파르타크 코스트로마, 스파르타크 Ks.,ff1726,ffffff
-6811,Leningradets,레닌그라데츠,
-6814,Mashuk-KMV Pyatigorsk,마슈크-KMV 퍄티고르스크, 마슈크-KMV
-6819,Sibir Novosibirsk,시비리 노보시비르스크, 시비리
+6811,Leningradets,레닌그라데츠,,,
+6814,Mashuk-KMV Pyatigorsk,마슈크-KMV 퍄티고르스크, 마슈크-KMV,,
+6819,Sibir Novosibirsk,시비리 노보시비르스크, 시비리,,
 6833,Veles Moscow,벨레스 모스크바, 벨레스,7a1938,7fc0e8
-14139,Dinamo Moskva II,디나모-2 모스크바, 디나모-2
-16864,Torpedo Miass,토르페도 미아스, 토르페도 Mi.
+14139,Dinamo Moskva II,디나모-2 모스크바, 디나모-2,,
+16864,Torpedo Miass,토르페도 미아스, 토르페도 Mi.,,
 19453,Rodina Moskva II,로디나-2 모스크바, 로디나-2,00b3e4,001b2d
-21538,Dinamo Kirov,디나모 키로프, 디나모 Kr.
-2005,Zenit 2,제니트-2 상트페테르부르크, 제니트-2
-6817,Murom,무롬,
-6831,Kuban Krasnodar,쿠반 크라스노다르, 쿠반
-16856,Dinamo Vladivostok,디나모 블라디보스토크, 디나모 Vl.
+21538,Dinamo Kirov,디나모 키로프, 디나모 Kr.,,
+2005,Zenit 2,제니트-2 상트페테르부르크, 제니트-2,,
+6817,Murom,무롬,,,
+6831,Kuban Krasnodar,쿠반 크라스노다르, 쿠반,,
+16856,Dinamo Vladivostok,디나모 블라디보스토크, 디나모 Vl.,,
 38,Watford,왓포드,왓포드,fbee23,000000
 41,Southampton,사우스햄튼,사우스햄튼,ed1a3b,ffffff
 46,Leicester City,레스터 시티,레스터,0053a0,ffffff
@@ -162,73 +162,73 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 53,Reading,레딩,레딩,004494,ffffff
 61,Wigan Athletic,위건 애슬레틱,위건,1d59af,ffffff
 68,Bolton Wanderers,볼턴 원더러스,볼턴,ffffff,df0024
-73,Rotherham United,로더럼 유나이티드,로더럼
+73,Rotherham United,로더럼 유나이티드,로더럼,,
 747,Barnsley,반즐리,반즐리,d71921,ffffff
 748,Burton Albion,버턴 알비온,버턴,f7b206,000000
 1333,AFC Wimbledon,AFC 윔블던,윔블던,004fbe,fae300
-1337,Northampton Town,노스햄튼 타운,노스햄튼
+1337,Northampton Town,노스햄튼 타운,노스햄튼,,
 1343,Bradford City,브래드포드 시티,브래드포드C,711533,f59b09
 1350,Peterborough United,피터버러 유나이티드,피터버러U,0034cc,ffffff
-1351,Port Vale,포트 베일,포트 베일
+1351,Port Vale,포트 베일,포트 베일,,
 1354,Doncaster Rovers,동커스터 로버스,동커스터,d72325,ffffff
 1356,Blackpool,블랙풀,블랙풀,f6880a,ffffff
 1357,Plymouth Argyle,플리머스 아가일,플리머스,004f3e,ffffff
 1358,Wycombe Wanderers,위컴 원더러스,위컴,5bbaec,ffffff
 1359,Luton Town,루턴 타운,루턴,fa4616,ffffff
-1364,Exeter City,엑시터 시티,엑시터
+1364,Exeter City,엑시터 시티,엑시터,,
 1368,Stevenage,스티버니지,스티버니지,ac152a,ffffff
 1373,Leyton Orient,레이턴 오리엔트,레이턴,e20714,ffffff
 1374,Mansfield Town,맨스필드 타운,맨스필드,faac28,000000
 1379,Lincoln City,링컨 시티,링컨,e7232d,ffffff
 4686,Stockport County,스톡포트 카운티,스톡포트,194f90,ffffff
-1334,Bristol Rovers,브리스톨 로버스,브리스톨R
-1336,Fleetwood Town,플릿우드 타운,플릿우드
-1342,Walsall,월솔,월솔
-1345,Chesterfield,체스터필드,체스터필드
-1347,Gillingham,질링엄,질링엄
+1334,Bristol Rovers,브리스톨 로버스,브리스톨R,,
+1336,Fleetwood Town,플릿우드 타운,플릿우드,,
+1342,Walsall,월솔,월솔,,
+1345,Chesterfield,체스터필드,체스터필드,,
+1347,Gillingham,질링엄,질링엄,,
 1348,Milton Keynes Dons,MK 돈스,MK,ffffff,cfb78f
-1349,Oldham Athletic,올덤 애슬레틱,올덤
-1352,Shrewsbury Town,슈루즈버리 타운,슈루즈버리
-1353,Swindon Town,스윈던 타운,스윈던
-1360,Accrington Stanley,애크링턴 스탠리,애크링턴
-1361,Colchester United,콜체스터 유나이티드,콜체스터
-1362,Crawley Town,크롤리 타운,크롤리
-1363,Crewe Alexandra,크루 알렉산드라,크루
-1365,Grimsby Town,그림즈비 타운,그림즈비
-1367,Newport County,뉴포트 카운티,뉴포트
-1369,Barnet,바닛,바닛
+1349,Oldham Athletic,올덤 애슬레틱,올덤,,
+1352,Shrewsbury Town,슈루즈버리 타운,슈루즈버리,,
+1353,Swindon Town,스윈던 타운,스윈던,,
+1360,Accrington Stanley,애크링턴 스탠리,애크링턴,,
+1361,Colchester United,콜체스터 유나이티드,콜체스터,,
+1362,Crawley Town,크롤리 타운,크롤리,,
+1363,Crewe Alexandra,크루 알렉산드라,크루,,
+1365,Grimsby Town,그림즈비 타운,그림즈비,,
+1367,Newport County,뉴포트 카운티,뉴포트,,
+1369,Barnet,바닛,바닛,,
 1370,Cambridge United,케임브리지 유나이티드,케임브리지,ff9e00,000000
-1372,Cheltenham Town,첼트넘 타운,첼트넘
+1372,Cheltenham Town,첼트넘 타운,첼트넘,,
 1376,Notts County,노츠 카운티,,000000,ffffff
-1381,Tranmere Rovers,트랜미어 로버스,트랜미어
-1819,Barrow,배로,배로
+1381,Tranmere Rovers,트랜미어 로버스,트랜미어,,
+1819,Barrow,배로,배로,,
 1832,Bromley,브롬리,브롬리,ffffff,231f20
-1842,Harrogate Town,해러것 타운,해러것
+1842,Harrogate Town,해러것 타운,해러것,,
 1844,Salford City,솔퍼드 시티,솔퍼드,fe5900,000000
-1339,Rochdale,로치데일,로치데일
-1340,Scunthorpe United,스컨소프 유나이티드,스컨소프
-1341,Southend United,사우스엔드 유나이티드,사우스엔드
-1366,Hartlepool United,하틀리플 유나이티드,하틀리플
-1371,Carlisle United,칼라일 유나이티드,칼라일
-1375,Morecambe,모컴,모컴
-1377,Yeovil Town,요빌 타운,요빌
-1378,Forest Green Rovers,포레스트 그린 로버스,포레스트 그린
-1818,Aldershot Town,올더숏 타운,올더숏
-1822,Eastleigh,이스틀리,이스틀리
-1823,Gateshead,게이츠헤드,게이츠헤드
-1828,York City,요크 시티,요크
-1830,Boreham Wood,보어럼 우드,
-1831,Braintree Town,브레인트리 타운,브레인트리
-1834,Solihull Moors,솔리헐 무어스,솔리헐
-1835,Sutton United,서튼 유나이티드,서튼
-1836,Woking,워킹,워킹
-1841,Halifax Town,핼리팩스 타운,핼리팩스
-4699,Truro City,트루로 시티,트루로
-4700,Altrincham,올트링엄,올트링엄
-4701,Brackley Town,브래클리 타운,브래클리
-7752,Tamworth,탬워스,탬워스
-8146,Boston United,보스턴 유나이티드,보스턴
-8663,Wealdstone,윌드스톤,윌드스톤
+1339,Rochdale,로치데일,로치데일,,
+1340,Scunthorpe United,스컨소프 유나이티드,스컨소프,,
+1341,Southend United,사우스엔드 유나이티드,사우스엔드,,
+1366,Hartlepool United,하틀리플 유나이티드,하틀리플,,
+1371,Carlisle United,칼라일 유나이티드,칼라일,,
+1375,Morecambe,모컴,모컴,,
+1377,Yeovil Town,요빌 타운,요빌,,
+1378,Forest Green Rovers,포레스트 그린 로버스,포레스트 그린,,
+1818,Aldershot Town,올더숏 타운,올더숏,,
+1822,Eastleigh,이스틀리,이스틀리,,
+1823,Gateshead,게이츠헤드,게이츠헤드,,
+1828,York City,요크 시티,요크,,
+1830,Boreham Wood,보어럼 우드,,,
+1831,Braintree Town,브레인트리 타운,브레인트리,,
+1834,Solihull Moors,솔리헐 무어스,솔리헐,,
+1835,Sutton United,서튼 유나이티드,서튼,,
+1836,Woking,워킹,워킹,,
+1841,Halifax Town,핼리팩스 타운,핼리팩스,,
+4699,Truro City,트루로 시티,트루로,,
+4700,Altrincham,올트링엄,올트링엄,,
+4701,Brackley Town,브래클리 타운,브래클리,,
+7752,Tamworth,탬워스,탬워스,,
+8146,Boston United,보스턴 유나이티드,보스턴,,
+8663,Wealdstone,윌드스톤,윌드스톤,,
 1,Belgium,벨기에,,fa0000,ffd700
 2,France,프랑스,,ffffff,000000
 3,Croatia,크로아티아,,ffffff,000000
@@ -279,28 +279,28 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 5530,Curaçao,퀴라소,,002b7f,ffffff
 17,Korea Republic,대한민국,,e6002d,021858
 1728,Korea Republic W,대한민국,,e6002d,021858
-534,Las Palmas,라스 팔마스,라스 팔마스
+534,Las Palmas,라스 팔마스,라스 팔마스,,
 535,Malaga,말라가,말라가,a8d7f5,00469b
-537,Leganes,레가네스,레가네스
+537,Leganes,레가네스,레가네스,,
 544,Deportivo La Coruna,데포르티보 아 코루냐,데포르티보,0164a5,f3f3f3
-545,Eibar,에이바르,에이바르
-713,Cordoba,코르도바,코르도바
-715,Granada CF,그라나다,그라나다
-720,Valladolid,레알 바야돌리드,바야돌리드
-722,Albacete,알바세테,알바세테
-723,Almeria,알메리아,알메리아
-724,Cadiz,카디스,카디스
-725,Cultural Leonesa,쿨투랄 데 레오네사,쿨투랄
-726,Huesca,우에스카,우에스카
-731,Sporting Gijon,스포르팅 히혼,스포르팅G
-732,Zaragoza,레알 사라고사,사라고사
-799,Mirandes,미란데스,미란데스
+545,Eibar,에이바르,에이바르,,
+713,Cordoba,코르도바,코르도바,,
+715,Granada CF,그라나다,그라나다,,
+720,Valladolid,레알 바야돌리드,바야돌리드,,
+722,Albacete,알바세테,알바세테,,
+723,Almeria,알메리아,알메리아,,
+724,Cadiz,카디스,카디스,,
+725,Cultural Leonesa,쿨투랄 데 레오네사,쿨투랄,,
+726,Huesca,우에스카,우에스카,,
+731,Sporting Gijon,스포르팅 히혼,스포르팅G,,
+732,Zaragoza,레알 사라고사,사라고사,,
+799,Mirandes,미란데스,미란데스,,
 4665,Racing Santander,라싱 산탄데르,라싱S,299b24,000000
-5254,Castellón,카스테욘,카스테욘
-8157,Andorra,안도라,안도라
-9580,Burgos,부르고스,부르고스
-9585,Real Sociedad II,레알 소시에다드 B,소시에다드B
-10139,AD Ceuta,AD 세우타,세우타
+5254,Castellón,카스테욘,카스테욘,,
+8157,Andorra,안도라,안도라,,
+9580,Burgos,부르고스,부르고스,,
+9585,Real Sociedad II,레알 소시에다드 B,소시에다드B,,
+10139,AD Ceuta,AD 세우타,세우타,,
 487,Lazio,라치오,라치오,84d8f8,003976
 488,Sassuolo,사수올로,사수올로,00a752,ffffff
 489,AC Milan,AC 밀란,AC 밀란,e30013,ffffff
@@ -314,33 +314,33 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 500,Bologna,볼로냐,볼로냐,1a2f48,dedee2
 502,Fiorentina,피오렌티나,피오렌티나,5a318c,ffffff
 503,Torino,토리노,토리노,7c1d21,ffffff
-504,Hellas Verona,엘라스 베로나,H. 베로나
+504,Hellas Verona,엘라스 베로나,H. 베로나,,
 505,Inter,인테르나치오날레 밀라노,인테르,0018a1,000000
 520,Cremonese,크레모네세,크레모네세,d81424,808080
 523,Parma,파르마,파르마,ffffff,000000
 801,Pisa,피사,피사,0072b4,000000
 867,Lecce,레체,레체,002355,c99d66
 895,Como,코모,코모,114169,ffffff
-498,Sampdoria,삼프도리아,삼프도리아
-508,Bari,바리,바리
-509,Cesena,체세나,체세나
-511,Empoli,엠폴리,엠폴리
+498,Sampdoria,삼프도리아,삼프도리아,,
+508,Bari,바리,바리,,
+509,Cesena,체세나,체세나,,
+511,Empoli,엠폴리,엠폴리,,
 512,Frosinone,프로시노네,프로시노네,ffdd00,004393
-515,Spezia,스페치아,스페치아
+515,Spezia,스페치아,스페치아,,
 517,Venezia,베네치아,베네치아,ee732e,000000
-522,Palermo,팔레르모,팔레르모
-525,Pescara,페스카라,페스카라
-527,Virtus Entella,비르투스 엔텔라,엔텔라
-528,Avellino,아벨리노,아벨리노
-863,Juve Stabia,유베 스타비아,JST
-870,Padova,파도바,파도바
-880,Reggiana,레자나,레자나
-899,Modena,모데나,모데나
-1578,Sudtirol,쥐드티롤,쥐드티롤
+522,Palermo,팔레르모,팔레르모,,
+525,Pescara,페스카라,페스카라,,
+527,Virtus Entella,비르투스 엔텔라,엔텔라,,
+528,Avellino,아벨리노,아벨리노,,
+863,Juve Stabia,유베 스타비아,JST,,
+870,Padova,파도바,파도바,,
+880,Reggiana,레자나,레자나,,
+899,Modena,모데나,모데나,,
+1578,Sudtirol,쥐드티롤,쥐드티롤,,
 1579,Monza,몬차,몬차,d81424,ffffff
-1581,Carrarese,카라레세,카라레세
-1687,Catanzaro,카탄차로,카탄차로
-1693,Mantova,만토바,만토바
+1581,Carrarese,카라레세,카라레세,,
+1687,Catanzaro,카탄차로,카탄차로,,
+1693,Mantova,만토바,만토바,,
 157,Bayern München,바이에른 뮌헨,바이언,ec053d,ffffff
 160,SC Freiburg,프라이부르크,프라이부르크,e40521,ffffff
 161,VfL Wolfsburg,볼프스부르크,볼프스부르크,09633d,ffffff
@@ -395,24 +395,24 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 112,Metz,메스,메스,690606,ffffff
 114,Paris FC,파리 FC,파리FC,090f2a,ffffff
 116,Lens,랑스,랑스,fce000,000000
-82,Montpellier,몽펠리에,몽펠리에
-87,Amiens,아미앵,아미앵
-90,Guingamp,갱강,갱강
-93,Reims,스타드 랭스,랭스
-99,Clermont Foot,클레르몽,클레르몽
-101,Grenoble,그르노블,그르노블
-102,Nancy,낭시,낭시
-104,RED Star FC 93,레드 스타,레드 스타
+82,Montpellier,몽펠리에,몽펠리에,,
+87,Amiens,아미앵,아미앵,,
+90,Guingamp,갱강,갱강,,
+93,Reims,스타드 랭스,랭스,,
+99,Clermont Foot,클레르몽,클레르몽,,
+101,Grenoble,그르노블,그르노블,,
+102,Nancy,낭시,낭시,,
+104,RED Star FC 93,레드 스타,레드 스타,,
 110,Estac Troyes,트루아,트루아,006eb2,ffffff
-433,Laval,스타드 라발,라발
-1063,Saint Etienne,생테티엔,생테티엔
-1297,Pau,포,포
+433,Laval,스타드 라발,라발,,
+1063,Saint Etienne,생테티엔,생테티엔,,
+1297,Pau,포,포,,
 1298,Le Mans,르망,르망,ce0013,efbe00
-1299,Boulogne,불로뉴,불로뉴
-1301,Rodez,로데스,로데스
-1304,Dunkerque,됭케르크,됭케르크
-1305,Bastia,바스티아,바스티아
-3012,Annecy,안시,안시
+1299,Boulogne,불로뉴,불로뉴,,
+1301,Rodez,로데스,로데스,,
+1304,Dunkerque,됭케르크,됭케르크,,
+1305,Bastia,바스티아,바스티아,,
+3012,Annecy,안시,안시,,
 549,Beşiktaş,베식타쉬,베식타쉬,000000,ffffff
 564,Başakşehir,이스탄불 바샥셰히르,바샥셰히르,001d3f,fc5000
 607,Konyaspor,콘야스포르,콘야스포르,00804d,ffffff
@@ -421,13 +421,13 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 996,Alanyaspor,알란야스포르,알란야스포르,40a23d,ffffff
 997,Gençlerbirliği S.K.,겐츨레르비를리이,,e91b23,ffffff
 998,Trabzonspor,트라브존스포르,,75b7e5,5a0e27
-1001,Kayserispor,카이세리스포르,카이세리스포르
+1001,Kayserispor,카이세리스포르,카이세리스포르,,
 1004,Kasımpaşa,카슴파샤,카슴파샤,0f2f62,ffffff
-1005,Antalyaspor,안탈리아스포르,안탈리아스포르
+1005,Antalyaspor,안탈리아스포르,안탈리아스포르,,
 1007,Rizespor,차이쿠르 리제스포르,리제스포르,1d54ac,ffffff
 3573,Gaziantep FK,가지안테프,가지안테프,e50328,000000
 3588,Eyüpspor,에윕스포르,에윕스포르,ffcc00,66549e
-3589,Fatih Karagümrük,파티흐 카라귐뤼크,카라귐뤼크
+3589,Fatih Karagümrük,파티흐 카라귐뤼크,카라귐뤼크,,
 3603,Samsunspor,삼순스포르,삼순스포르,c70a0c,ffffff
 7411,Kocaelispor,코자엘리스포르,코자엘리스포르,00672d,ffffff
 193,PEC Zwolle,즈볼러,즈볼러,1858b0,ffffff
@@ -455,7 +455,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 569,Club Brugge KV,클뤼프 브뤼허,Cl. 브뤼허,027abc,000000
 600,Zulte Waregem,쥘터 바레험,,d30240,ffffff
 631,Gent,헨트,헨트,1c63b7,ffffff
-733,Standard Liege,스탕다르 리에주,리에주,ee2e24,ffffff
+733,Standard Liege,스탕다르 리에주,S. 리에주,ee2e24,ffffff
 735,St. Truiden,신트트라위던,,fcec2c,2c3c7b
 736,Charleroi,로얄 샤를루아,샤를루아,000000,ffffff
 740,Antwerp,로열 앤트워프,앤트워프,d10f2f,ffffff
@@ -471,27 +471,27 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 252,Aberdeen,애버딘,애버딘,e2001a,ffffff
 253,Dundee,던디 FC,던디 FC,142957,ffffff
 254,Heart Of Midlothian,하트 오브 미들로시언,하츠,9f1931,f6be5f
-255,Livingston,리빙스턴,리빙스턴
+255,Livingston,리빙스턴,리빙스턴,,
 256,Motherwell,머더웰,머더웰,fbba2d,7a143f
 257,Rangers,레인저스,레인저스,0032a0,ffffff
 1386,Dundee Utd,던디 유나이티드,던디 Utd.,ff6600,111111
 1389,Falkirk,폴커크,폴커크,ffffff,00205b
-2637,Macva,마츠바,마츠바
+2637,Macva,마츠바,마츠바,,
 2642,Zemun,제문,제문,00519d,f5c72b
-2649,Borac Cacak,보라츠 차차크,보라츠
-2651,FK Trayal,트라얄,트라얄
-2658,FK Vozdovac,보주도바츠,보주도바츠
-4252,Grafičar,그라피차르,그라피차르
-4253,Kabel Novi Sad,카벨 노비사드,카벨
-4254,Semendrija 1924,스메데리야 1924,스메데리야
-12312,Dubočica,두보치차,두보치차
-12319,Jedinstvo Ub,예딘스트보 우브,예딘스트보
-12323,Loznica,로즈니차,로즈니차
-12329,OFK Vršac,OFK 브르샤츠,브르샤츠
-12347,Stepojevac Vaga,스테포예바츠 바가,스테포예바츠
-17438,Tekstilac Odžaci,텍스틸라츠 오자치,텍스틸라츠 O
-19845,FAP,FAP 프리보이,FAP
-24621,Dinamo Jug,디나모 유그,디나모 J.
+2649,Borac Cacak,보라츠 차차크,보라츠,,
+2651,FK Trayal,트라얄,트라얄,,
+2658,FK Vozdovac,보주도바츠,보주도바츠,,
+4252,Grafičar,그라피차르,그라피차르,,
+4253,Kabel Novi Sad,카벨 노비사드,카벨,,
+4254,Semendrija 1924,스메데리야 1924,스메데리야,,
+12312,Dubočica,두보치차,두보치차,,
+12319,Jedinstvo Ub,예딘스트보 우브,예딘스트보,,
+12323,Loznica,로즈니차,로즈니차,,
+12329,OFK Vršac,OFK 브르샤츠,브르샤츠,,
+12347,Stepojevac Vaga,스테포예바츠 바가,스테포예바츠,,
+17438,Tekstilac Odžaci,텍스틸라츠 오자치,텍스틸라츠 O,,
+19845,FAP,FAP 프리보이,FAP,,
+24621,Dinamo Jug,디나모 유그,디나모 J.,,
 2928,Al Khaleej Saihat,알 할리즈,,00703e,ffca05
 2929,Al-Ahli Jeddah,알 아흘리 사우디,알 아흘리,008357,ffffff
 2931,Al-Fateh,알 파테,,69e242,ffffff
@@ -504,9 +504,9 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2940,Al Shabab,알 샤바브,,934530,ffffff
 2944,Al-Fayha,알 파이하,,283177,ffffff
 2945,Al-Hazm,알 하젬,,fab800,000000
-2956,Damac,다마크,
-2977,Al Okhdood,알 오흐두드,
-2992,Al Najma,알 나즈마,
+2956,Damac,다마크,,,
+2977,Al Okhdood,알 오흐두드,,,
+2992,Al Najma,알 나즈마,,,
 10509,Al Kholood,알 홀루드,,9b012a,ffffff
 10511,Al Riyadh,알 리야드,,ee2616,2e2f38
 10513,NEOM,네옴,,1e5fb3,ffffff
@@ -515,7 +515,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2896,Al Ahli Doha,알 아흘리 도하,알 아흘리 D.,c4aa78,09273d
 2897,Al-Rayyan SC,알 라이얀,,ee2633,020505
 2898,Al-Sailiya,알 사일리야,,0017a9,ffffff
-2899,UMM Salal,움 살랄,
+2899,UMM Salal,움 살랄,,,
 2900,Al Wakrah,알 와크라,,10cafc,00205b
 2903,Al-Gharafa,알 가라파,,fac705,172e6b
 2904,Al-Duhail SC,알 두하일,,ee3435,ffffff
@@ -524,54 +524,54 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2916,Al Shamal,알 샤말,,e71922,ffffff
 211,Benfica,벤피카,벤피카,c30000,ffffff
 228,Sporting CP,스포르팅 CP,스포르팅,047750,ffffff
-276,Breidablik,브레이다블리크,브레이다블리크
+276,Breidablik,브레이다블리크,브레이다블리크,,
 319,Brann,브란,브란,e31a22,ffffff
 327,Bodo/Glimt,보되/글림트,보되,ffe500,000000
 347,Lech Poznan,레흐 포즈난,레흐,004b92,ffffff
-354,The New Saints,더 뉴 세인츠,TNS
+354,The New Saints,더 뉴 세인츠,TNS,,
 375,Malmo FF,말뫼 FF,말뫼,2f97da,ffffff
-394,Dinamo Minsk,디나모 민스크,디나모 Mn.
+394,Dinamo Minsk,디나모 민스크,디나모 Mn.,,
 400,FC Copenhagen,쾨벤하운,,ffffff,0f2db9
 551,FC Basel 1893,바젤,,143a84,ffe500
 553,Olympiakos Piraeus,올림피아코스,올림피아코스,e21e26,ffffff
-556,Qarabag,가라바흐,
+556,Qarabag,가라바흐,,,
 559,FCSB,FCSB,FCSB,da2928,ffffff
 560,Slavia Praha,슬라비아 프라하,슬라비아 Pr.,ed0e28,ffffff
-561,HNK Rijeka,HNK 리예카,리예카
-566,Ludogorets,루도고레츠 라즈그라드,루도고레츠
+561,HNK Rijeka,HNK 리예카,리예카,,
+566,Ludogorets,루도고레츠 라즈그라드,루도고레츠,,
 567,Viktoria Plzen,빅토리아 플젠,빅토리아 Pl.,0000b3,ffffff
 571,Red Bull Salzburg,레드불 잘츠부르크,잘츠부르크,e31147,ffffff
-572,Dynamo Kyiv,디나모 키이우,디나모 Ky.
-579,Buducnost Podgorica,부두치노스트 포드고리차,부두치노스트
-580,Vikingur Gota,비킹구르 괴타,비킹구르 G.
-583,Linfield,린필드,린필드
-586,FK Zalgiris Vilnius,잘기리스 빌뉴스,잘기리스
-588,Zrinjski,즈린스키 모스타르,즈린스키
+572,Dynamo Kyiv,디나모 키이우,디나모 Ky.,,
+579,Buducnost Podgorica,부두치노스트 포드고리차,부두치노스트,,
+580,Vikingur Gota,비킹구르 괴타,비킹구르 G.,,
+583,Linfield,린필드,린필드,,
+586,FK Zalgiris Vilnius,잘기리스 빌뉴스,잘기리스,,
+588,Zrinjski,즈린스키 모스타르,즈린스키,,
 598,FK Crvena Zvezda,츠르베나 즈베즈다,즈베즈다,da291c,ffffff
-604,Maccabi Tel Aviv,마카비 텔아비브,M. 텔아비브
-609,Shkendija,슈컨디야,슈컨디야
+604,Maccabi Tel Aviv,마카비 텔아비브,M. 텔아비브,,
+609,Shkendija,슈컨디야,슈컨디야,,
 617,Panathinaikos,파나티나이코스,파나티나이코스,00793f,ffffff
 637,Sturm Graz,슈투름 그라츠,S. 그라츠,000000,ffffff
 651,Ferencvarosi TC,페렌츠바로시,페렌츠바로시,0b713f,ffffff
 656,Slovan Bratislava,슬로반 브라티슬라바,슬로반 Br.,2cb2e7,ffffff
 664,Kairat Almaty,카이라트 알마티,카이라트,ffcb00,000000
 667,Lincoln Red Imps FC,링컨 레드 임프스,링컨 R.I.,ee0f11,ffffff
-677,Olimpija Ljubljana,올림피야 류블랴나,올림피야 L.
-684,FC Differdange 03,디페르당주 03,디페르당주
-691,Milsami Orhei,밀사미 오르헤이,밀사미
+677,Olimpija Ljubljana,올림피야 류블랴나,올림피야 L.,,
+684,FC Differdange 03,디페르당주 03,디페르당주,,
+691,Milsami Orhei,밀사미 오르헤이,밀사미,,
 1165,KuPS,쿠오피온 팔로세우라,KuPS,fde600,211e1e
 2184,Servette FC,세르베트,세르베트,85142b,ffffff
-2273,FC Levadia Tallinn,레바디아 탈린,레바디아
+2273,FC Levadia Tallinn,레바디아 탈린,레바디아,,
 3327,Egnatia Rrogozhinë,에그나티아,에그나티아,2e9a45,ffffff
 3342,Inter Club d'Escaldes,인테르 클루브 데스칼데스,인테르 클루브 D.,404094,ffffff
 3403,Pafos,파포스,파포스,13bbec,ffffff
 3502,Saburtalo,이베리아 1999,이베리아,cb142f,ffffff
-3684,FC Noah,노아,노아
-3854,Shelbourne,셸번,셸번
-4160,Rīgas FS,리가 FS,RFS
-4626,Hamrun Spartans,함룬 스파르탄스,함룬
-5308,Virtus,비르투스,비르투스
-14281,Drita,드리타,드리타
+3684,FC Noah,노아,노아,,
+3854,Shelbourne,셸번,셸번,,
+4160,Rīgas FS,리가 FS,RFS,,
+4626,Hamrun Spartans,함룬 스파르탄스,함룬,,
+5308,Virtus,비르투스,비르투스,,
+14281,Drita,드리타,드리타,,
 212,FC Porto,포르투,포르투,ffffff,00528b
 217,SC Braga,브라가,브라가,c82b20,ffffff
 339,Legia Warszawa,레기아 바르샤바,레기아,ffffff,000000
@@ -580,127 +580,127 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 550,Shakhtar Donetsk,샤흐타르 도네츠크,샤흐타르,ea6a09,000000
 563,Hapoel Beer Sheva,하포엘 베르셰바,H. 베르셰바,db1c30,ffffff
 565,BSC Young Boys,BSC 영 보이즈,영 보이즈,ffd100,000000
-568,Sheriff Tiraspol,셰리프 티라스폴,셰리프
+568,Sheriff Tiraspol,셰리프 티라스폴,셰리프,,
 573,FK Partizan,파르티잔,파르티잔,000000,ffffff
 606,FC Lugano,루가노,루가노,000000,ffffff
 614,AEK Larnaca,AEK 라르나카,AEK L.,fde200,00883f
 619,PAOK,PAOK,PAOK,000000,ad9059
 620,Dinamo Zagreb,디나모 자그레브,디나모 Z.,00499a,ffffff
 646,Levski Sofia,레프스키 소피아,레프스키,28348a,ffffff
-680,Prishtina,프리슈티나,프리슈티나
+680,Prishtina,프리슈티나,프리슈티나,,
 1025,Wolfsberger AC,볼프스베르크 AC,볼프스베르크,ffffff,000000
-1120,Spartak Trnava,스파르타크 트르나바,스파르타크 Tr.
-1163,Ilves,일베스,일베스
+1120,Spartak Trnava,스파르타크 트르나바,스파르타크 Tr.,,
+1163,Ilves,일베스,일베스,,
 2149,Fredrikstad,프레드릭스타,프레드릭스타,ffffff,d62933
 2246,CFR 1907 Cluj,CFR 클루지,CFR,871b3a,ffffff
 2250,Sigma Olomouc,시그마 올로모우츠,시그마 O.,01598e,ffffff
-2390,Paks,퍽시,퍽시
+2390,Paks,퍽시,퍽시,,
 3713,Baník Ostrava,바니크 오스트라바,바니크,00619f,ffffff
 4360,Celje,첼레,첼레,19345f,ffffff
-4563,Aktobe,악퇴베,악퇴베
+4563,Aktobe,악퇴베,악퇴베,,
 13976,Sabah FK,사바흐,사바흐,080808,ec80ad
 227,Santa Clara,산타 클라라,산타 클라라,d63935,ffffff
-272,KA Akureyri,KA 아퀴레이라르,KA
-274,Valur Reykjavik,발루르 레이캬비크,발루르
-278,Vikingur Reykjavik,비킹구르 레이캬비크,비킹구르 R.
-331,Rosenborg,로센보르그,로센보르그
+272,KA Akureyri,KA 아퀴레이라르,KA,,
+274,Valur Reykjavik,발루르 레이캬비크,발루르,,
+278,Vikingur Reykjavik,비킹구르 레이캬비크,비킹구르 R.,,
+331,Rosenborg,로센보르그,로센보르그,,
 336,Jagiellonia,야기엘로니아 비아위스토크,야기엘로니아,d81921,e9dd00
 363,Hammarby FF,함마르뷔,함마르뷔,007a43,ffffff
 377,AIK Stockholm,AIK,AIK,36357c,fff22d
-385,Torpedo Zhodino,토르페도-BelAZ 조디노,토르페도 Zh.
-386,Dinamo Brest,디나모 브레스트,디나모 Br.
-387,Neman,네만 그로드노,네만
+385,Torpedo Zhodino,토르페도-BelAZ 조디노,토르페도 Zh.,,
+386,Dinamo Brest,디나모 브레스트,디나모 Br.,,
+387,Neman,네만 그로드노,네만,,
 407,Brondby,브뢴뷔,브뢴뷔,002f87,ffd100
-552,Maribor,마리보르,마리보르
-562,FC Astana,아스타나,아스타나
-574,Vardar Skopje,바르다르 스코페,바르다르
+552,Maribor,마리보르,마리보르,,
+562,FC Astana,아스타나,아스타나,,
+574,Vardar Skopje,바르다르 스코페,바르다르,,
 575,AEK Athens FC,AEK 아테네,AEK A.,fcd20f,000000
-578,F91 Dudelange,F91 뒤들랑주,뒤들랑주
-591,FC Santa Coloma,산타 콜로마,산타 콜로마
+578,F91 Dudelange,F91 뒤들랑주,뒤들랑주,,
+591,FC Santa Coloma,산타 콜로마,산타 콜로마,,
 601,Austria Vienna,아우스트리아 빈,A. 빈,441678,ffffff
 608,HNK Hajduk Split,하이두크 스플리트,하이두크,ffffff,21409a
 628,Sparta Praha,스파르타 프라하,스파르타 Pr.,c81313,ffffff
-632,Universitatea Craiova,CS U 크라이오바,CS U 크라이오바
-648,Zira,지래,지래
-649,HJK Helsinki,HJK 헬싱키,HJK
-652,Shamrock Rovers,섐록 로버스,섐록
-654,Zeljeznicar Sarajevo,젤레즈니차르 사라예보,젤레즈니차르 S.
-657,Beitar Jerusalem,베이타르 예루살렘,B. 예루살렘
+632,Universitatea Craiova,CS U 크라이오바,CS U 크라이오바,,
+648,Zira,지래,지래,,
+649,HJK Helsinki,HJK 헬싱키,HJK,,
+652,Shamrock Rovers,섐록 로버스,섐록,,
+654,Zeljeznicar Sarajevo,젤레즈니차르 사라예보,젤레즈니차르 S.,,
+657,Beitar Jerusalem,베이타르 예루살렘,B. 예루살렘,,
 660,FC Vaduz,파두츠,파두츠,c0103d,ffffff
-662,Kalju Nomme,놈메 칼류,
-663,FK Rabotnicki,라보트니치키,라보트니치키
-673,Sutjeska,수체스카 닉시치,수체스카
-679,FK Sarajevo,사라예보,사라예보
-682,NSI Runavik,NSI 루나비크,NSI
-685,Torpedo Kutaisi,토르페도 쿠타이시,토르페도 Ku.
-687,Flora Tallinn,플로라 탈린,플로라
-689,SJK,SJK,SJK
-692,Ordabasy,오르다바시 심켄트,오르다바시
-698,St Joseph S Fc,세인트 조셉스,
-701,KI Klaksvik,KI 클락스비크,KI
-708,Partizani,파르티자니 티라나,파르티자니
-709,Pyunik Yerevan,퓨니크 예레반,퓨니크
+662,Kalju Nomme,놈메 칼류,,,
+663,FK Rabotnicki,라보트니치키,라보트니치키,,
+673,Sutjeska,수체스카 닉시치,수체스카,,
+679,FK Sarajevo,사라예보,사라예보,,
+682,NSI Runavik,NSI 루나비크,NSI,,
+685,Torpedo Kutaisi,토르페도 쿠타이시,토르페도 Ku.,,
+687,Flora Tallinn,플로라 탈린,플로라,,
+689,SJK,SJK,SJK,,
+692,Ordabasy,오르다바시 심켄트,오르다바시,,
+698,St Joseph S Fc,세인트 조셉스,,,
+701,KI Klaksvik,KI 클락스비크,KI,,
+708,Partizani,파르티자니 티라나,파르티자니,,
+709,Pyunik Yerevan,퓨니크 예레반,퓨니크,,
 759,Viking,비킹,비킹,132847,ffffff
 781,Rapid Vienna,라피트 빈,R. 빈,00794b,ffffff
-851,Cherno More Varna,체르노 모레 바르나,체르노 모레
+851,Cherno More Varna,체르노 모레 바르나,체르노 모레,,
 1014,Lausanne,로잔 스포르,로잔,282b63,ffffff
 1123,Aris Thessalonikis,아리스 테살로니키,아리스 Th.,fcd011,000000
-1430,Arda Kardzhali,아르다 카르잘리,아르다
+1430,Arda Kardzhali,아르다 카르잘리,아르다,,
 1483,NK Varazdin,바라주딘,바라주딘,2465aa,ffffff
-2030,Racing FC Union Luxembourg,라싱 위니옹 룩셈부르크,라싱 위니옹
-2036,UNA Strassen,UNA 슈트라센,UNA
+2030,Racing FC Union Luxembourg,라싱 위니옹 룩셈부르크,라싱 위니옹,,
+2036,UNA Strassen,UNA 슈트라센,UNA,,
 2073,Silkeborg,실케보르,실케보르,0995d4,ffffff
-2191,Penybont,페니본트,페니본트
-2194,Haverfordwest County AFC,해버퍼드웨스트 카운티,해버퍼드웨스트
-2249,La Fiorita,라 피오리타,라피오리타
-2260,Tre Fiori,트레 피오리,트레피오리
-2266,Cliftonville FC,클리프턴빌,클리프턴빌
-2271,Petrocub,페트로쿠브 흔체슈티,페트로쿠브
-2276,FC Urartu,우라르투,우라르투
-2277,Birkirkara,비르키르카라,비르키르카라
-2391,Puskas Academy,푸슈카시 어커데미어,푸슈카시
-2402,Gyori ETO FC,ETO 죄르,
+2191,Penybont,페니본트,페니본트,,
+2194,Haverfordwest County AFC,해버퍼드웨스트 카운티,해버퍼드웨스트,,
+2249,La Fiorita,라 피오리타,라피오리타,,
+2260,Tre Fiori,트레 피오리,트레피오리,,
+2266,Cliftonville FC,클리프턴빌,클리프턴빌,,
+2271,Petrocub,페트로쿠브 흔체슈티,페트로쿠브,,
+2276,FC Urartu,우라르투,우라르투,,
+2277,Birkirkara,비르키르카라,비르키르카라,,
+2391,Puskas Academy,푸슈카시 어커데미어,푸슈카시,,
+2402,Gyori ETO FC,ETO 죄르,,,
 2599,Universitatea Cluj,우니베르시타테아 클루지,U 클루지,000000,ffffff
 2643,Novi Pazar,노비 파자르,,015496,ffffff
 2644,Radnicki 1923,라드니치키 1923 크라구예바츠,라드니치키 1923,ea222b,ffffff
-3326,Dinamo Tirana,디나모 티라나,디나모 T.
-3339,Vllaznia Shkodër,블라즈니아 슈코더르,블라즈니아
-3345,Atlètic Club d'Escaldes,아틀레티크 클루브 데스칼데스,AC 데스칼데스
+3326,Dinamo Tirana,디나모 티라나,디나모 T.,,
+3339,Vllaznia Shkodër,블라즈니아 슈코더르,블라즈니아,,
+3345,Atlètic Club d'Escaldes,아틀레티크 클루브 데스칼데스,AC 데스칼데스,,
 3364,Borac Banja Luka,보라츠 바냐루카,보라츠 BL.,d52d22,ffffff
 3402,Omonia Nicosia,오모니아 니코시아,오모니아,006b37,ffffff
-3408,Aris,아리스 리마솔,아리스 L.
+3408,Aris,아리스 리마솔,아리스 L.,,
 3491,Raków Częstochowa,라쿠프 쳉스토호바,라쿠프,f0000f,ffffff
-3499,Dila,딜라 고리,딜라
-3528,Paide,파이데 린나메스콘드,파이데
-3554,Žilina,질리나,질리나
-3619,Oleksandria,올렉산드리야,올렉산드리야
+3499,Dila,딜라 고리,딜라,,
+3528,Paide,파이데 린나메스콘드,파이데,,
+3554,Žilina,질리나,질리나,,
+3619,Oleksandria,올렉산드리야,올렉산드리야,,
 3683,Ararat-Armenia,아라라트-아르메니아,아라라트,ffffff,000000
-3745,Dečić,데치치,데치치
-3843,St Patrick's Athl.,세인트 패트릭스 애슬레틱,St. 패트릭스
-3858,Banga,방가,방가
-3861,Hegelmann Litauen,헤겔만 리타우엔,헤겔만
+3745,Dečić,데치치,데치치,,
+3843,St Patrick's Athl.,세인트 패트릭스 애슬레틱,St. 패트릭스,,
+3858,Banga,방가,방가,,
+3861,Hegelmann Litauen,헤겔만 리타우엔,헤겔만,,
 3872,Kauno Žalgiris,카우노 잘기리스,카우노,00813d,ffffff
-3884,Hibernians,히버니언스,히버니언스
-4133,HB Torshavn,HB 토르스하운,HB
-4135,Auda,아우다,아우다
-4149,BFC Daugavpils,BFC 다우가우필스,BFC 다우가우필스
-4195,Maccabi Haifa,마카비 하이파,M. 하이파
-4331,Sileks,실렉스 크라토보,실렉스
-4374,Koper,코페르,코페르
-4625,Floriana,플로리아나,플로리아나
-4633,Zimbru,짐브루 키시너우,짐브루
-5351,Dungannon Swifts,던개넌 스위프츠,던개넌
-5354,Larne,란,란
-6496,Polessya,폴리샤 지토미르,폴리샤 Zh.
+3884,Hibernians,히버니언스,히버니언스,,
+4133,HB Torshavn,HB 토르스하운,HB,,
+4135,Auda,아우다,아우다,,
+4149,BFC Daugavpils,BFC 다우가우필스,BFC 다우가우필스,,
+4195,Maccabi Haifa,마카비 하이파,M. 하이파,,
+4331,Sileks,실렉스 크라토보,실렉스,,
+4374,Koper,코페르,코페르,,
+4625,Floriana,플로리아나,플로리아나,,
+4633,Zimbru,짐브루 키시너우,짐브루,,
+5351,Dungannon Swifts,던개넌 스위프츠,던개넌,,
+5354,Larne,란,란,,
+6496,Polessya,폴리샤 지토미르,폴리샤 Zh.,,
 10124,Riga,리가 FC,리가 FC,ffffff,234b6a
-10534,FK Košice,코시체,코시체
-11238,Araz,아라즈 나흐체반,
-12733,Ballkani,발카니,발카니
-14864,Spaeri,스파에리,스파에리
-15576,Malisheva,말리셰바,말리셰바
-16135,Magpies,브루노스 맥파이스,맥파이스
+10534,FK Košice,코시체,코시체,,
+11238,Araz,아라즈 나흐체반,,,
+12733,Ballkani,발카니,발카니,,
+14864,Spaeri,스파에리,스파에리,,
+15576,Malisheva,말리셰바,말리셰바,,
+16135,Magpies,브루노스 맥파이스,맥파이스,,
 215,Moreirense,모레이렌스,모레이렌스,145f25,af9713
-218,Tondela,톤델라,톤델라
+218,Tondela,톤델라,톤델라,,
 224,Guimaraes,비토리아 기마랑이스,비토리아 SC,ffffff,000000
 225,Nacional,나시오날,나시오날,7f3f98,ebbd04
 226,Rio Ave,히우 아브,히우아브,009036,ffffff
@@ -711,25 +711,25 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 4716,Casa Pia,카사 피아,카사피아,000000,ffffff
 4724,Alverca,알베르카,알베르카,f5ee3b,f41c0c
 15130,Estrela Amadora,이스트렐라 아마도라,E. 아마도라,ca392c,ffffff
-21595,AVS,AVS 푸트볼,AVS
-213,Feirense,페이렌스,페이렌스
+21595,AVS,AVS 푸트볼,AVS,,
+213,Feirense,페이렌스,페이렌스,,
 214,Maritimo,마리티무,마리티무,41ab50,ffffff
-216,Portimonense,포르티모넨스,포르티모넨스
-223,Chaves,샤베스,샤베스
-229,Benfica B,벤피카 B,벤피카B
-231,Farense,파렌스,파렌스
-233,Oliveirense,올리베이렌스,올리베이렌스
-234,Pacos Ferreira,파수스 드 페헤이라,파수스
-235,Penafiel,페나피엘,페나피엘
+216,Portimonense,포르티모넨스,포르티모넨스,,
+223,Chaves,샤베스,샤베스,,
+229,Benfica B,벤피카 B,벤피카B,,
+231,Farense,파렌스,파렌스,,
+233,Oliveirense,올리베이렌스,올리베이렌스,,
+234,Pacos Ferreira,파수스 드 페헤이라,파수스,,
+235,Penafiel,페나피엘,페나피엘,,
 238,Academico Viseu,아카데미쿠 데 비제우,비제우,000000,ffffff
-243,FC Porto B,포르투 B,포르투 B
-244,Leixoes,레이숑이스,레이숑이스
-761,Sporting CP B,스포르팅 CP B,스포르팅 B
-810,Vizela,비젤라,비젤라
-4662,União de Leiria,우니앙 드 레이리아,레이리아
-4744,Felgueiras 1932,펠게이라스 1932,펠게이라스
+243,FC Porto B,포르투 B,포르투 B,,
+244,Leixoes,레이숑이스,레이숑이스,,
+761,Sporting CP B,스포르팅 CP B,스포르팅 B,,
+810,Vizela,비젤라,비젤라,,
+4662,União de Leiria,우니앙 드 레이리아,레이리아,,
+4744,Felgueiras 1932,펠게이라스 1932,펠게이라스,,
 4799,Torreense,토헨스,토헨스,621729,bca374
-6358,Lusitânia Lourosa,루지타니아 로로자,루지타니아
+6358,Lusitânia Lourosa,루지타니아 로로자,루지타니아,,
 118,Bahia,바이아,,006cb5,ffffff
 119,Internacional,인테르나시오나우,,e3020c,ffffff
 120,Botafogo,보타포구,,000000,ffffff
@@ -752,12 +752,12 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 7848,Mirassol,미라소우,,eae101,006437
 699,Mladost Lucani,믈라도스트 루차니,믈라도스트,00aeef,000000
 702,Vojvodina,보이보디나,,ffffff,ed1c25
-2251,FK Spartak Zdrepceva KRV,스파르타크 수보티차,스파르타크 Su.
+2251,FK Spartak Zdrepceva KRV,스파르타크 수보티차,스파르타크 Su.,,
 2254,Radnicki NIS,라드니치키 니시,라드니치키 N.,f1110d,ffffff
 2633,OFK Beograd,OFK 베오그라드,,0c4e97,ffffff
-2646,TSC Backa Topola,TSC 바치카 토폴라,TSC
-2653,Javor,야보르-마티스 이바니차,야보르
-2655,Napredak,나프레다크 크루셰바츠,나프레다크
+2646,TSC Backa Topola,TSC 바치카 토폴라,TSC,,
+2653,Javor,야보르-마티스 이바니차,야보르,,
+2655,Napredak,나프레다크 크루셰바츠,나프레다크,,
 2656,Cukaricki,추카리치키,,000000,ceaf2e
 2657,Radnik Surdulica,라드니크 수르둘리차,라드니크,053f92,ffffff
 12316,IMT Novi Beograd,IMT 베오그라드,IMT,000000,ffffff
@@ -767,18 +767,18 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 782,Slovan Liberec,슬로반 리베레츠,슬로반 L.,ffffff,63a3ff
 1122,FK Jablonec,야블로네츠,,013b26,ffffff
 3714,Bohemians 1905,보헤미안스 1905,보헤미안스,009945,ffffff
-3715,Dukla Praha,두클라 프라하,두클라 Pr.
-3716,Karviná,카르비나,
+3715,Dukla Praha,두클라 프라하,두클라 Pr.,,
+3716,Karviná,카르비나,,,
 3719,Slovácko,슬로바츠코,,40498a,ffffff
-3720,Teplice,테플리차,
+3720,Teplice,테플리차,,,
 3723,Hradec Králové,흐라데츠 크랄로베,흐라데츠 Kr.,ffffff,000000
 3724,Pardubice,파르두비체,,d80f1d,ffffff
 949,Panetolikos,파네톨리코스,파네톨리코스,2f61b0,dbc115
-953,AEL Larisa,AEL 라리사,라리사
+953,AEL Larisa,AEL 라리사,라리사,,
 955,Asteras Tripolis,아스테라스 트리폴리스,아스테라스,283f9a,ffffff
 957,Levadiakos,레바디아코스,레바디아코스,4db15c,ffffff
 1124,OFI Crete,OFI 크레타,OFI,000000,ffffff
-2099,Panserraikos,판세라이코스,판세라이코스
+2099,Panserraikos,판세라이코스,판세라이코스,,
 2110,Volos,볼로스,볼로스,de001e,ffffff
 5050,AE Kifisia,AE 키피시아,키피시아,334997,ffffff
 12260,Atromitos,아트로미토스,아트로미토스,1f54a9,ffffff
@@ -825,7 +825,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2289,Leon,레온,레온,187b56,ffffff
 2290,Queretaro,클럽 케레타로,케레타로,0056b3,211915
 2291,Puebla,푸에블라,푸에블라,2b4b75,ffffff
-2292,Pachuca,파추카,파추카
+2292,Pachuca,파추카,파추카,,
 2295,Cruz Azul,크루스 아술,크루 스아술,2e3192,ffffff
 2298,Juarez,FC 후아레스,후아레스,1f1d1c,21cb35
 2314,Atletico San Luis,아틀레티코 산 루이스,산 루이스,e12229,ffffff
@@ -845,30 +845,30 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1026,Lask Linz,LASK,LASK,ffffff,000000
 1028,Ried,SV 리트,리트,1e5947,ffffff
 1072,TSV Hartberg,TSV 하르트베르크,하르트베르크,0095da,ffffff
-1394,FC BW Linz,블라우바이스 린츠,BW 린츠
+1394,FC BW Linz,블라우바이스 린츠,BW 린츠,,
 1398,WSG Wattens,WSG 티롤,,29a646,000000
 4256,Grazer AK,그라츠 AK,,ce1417,ffffff
 340,Gornik Zabrze,구르니크 자브제,구르니크,094b9b,ffffff
 341,Wisla Plock,비스와 프워츠크,비스와,1478c7,ffffff
-343,Lechia Gdansk,레히아 그단스크,레히아
-344,Arka Gdynia,아르카 그디니아,아르카
+343,Lechia Gdansk,레히아 그단스크,레히아,,
+344,Arka Gdynia,아르카 그디니아,아르카,,
 345,Zaglebie Lubin,자그웽비에 루빈,자그웽비에,fa5800,ffffff
 346,Korona Kielce,코로나 키엘체,코로나,fff200,ff0000
 348,Pogon Szczecin,포곤 슈체친,포곤,00245d,ffd200
 349,Piast Gliwice,피아스트 글리비체,피아스트,324497,ffffff
 350,Cracovia Krakow,크라코비아,,ff0000,ffffff
 3484,GKS Katowice,GKS 카토비체,,ffdf00,007338
-3487,Nieciecza,브루크베트 테르말리차,테르말리차
+3487,Nieciecza,브루크베트 테르말리차,테르말리차,,
 4248,Radomiak Radom,라도미아크 라돔,라도미아크,198747,ffffff
 6962,Widzew Łódź,비제프 우치,비제프,fe0000,ffffff
 14562,Motor Lublin,모토르 루블린,모토르,1d54a6,ffffff
-395,Vejle,바일레,
+395,Vejle,바일레,,,
 396,Sonderjyske,쇠네르위스케,,223763,ffffff
 398,FC Nordsjaelland,노르셸란,,e42223,fee813
 401,Randers FC,라네르스,,112552,ffffff
 405,Odense,오덴세,,005eff,ffffff
 406,Aarhus,오르후스,,ffffff,e32213
-2061,FC Fredericia,프레데리치아,
+2061,FC Fredericia,프레데리치아,,,
 625,Lyngby,륑뷔,,004e8b,ffffff
 404,AC Horsens,호르센스,,ffde00,000000
 2070,Viborg,비보르,,008a57,ffffff
@@ -878,7 +878,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1011,FC ST. Gallen,장크트갈렌,,2c8548,ffffff
 1012,FC Thun,툰,,e2001a,ffffff
 1013,Grasshoppers,그라스호퍼 취리히,그라스호퍼,0064b9,ffffff
-2180,FC Winterthur,빈터투어,
+2180,FC Winterthur,빈터투어,,,
 364,Djurgardens IF,유르고덴스,,000f2a,32baf2
 366,IFK Goteborg,예테보리,,214a99,fabd00
 370,Sirius,시리우스,,0066ad,d1d3d4
@@ -896,86 +896,86 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 303,Machida Zelvia,마치다 젤비아,마치다 Z,182865,c1ad76
 833,Shanghai Shenhua,상하이 선화,,115199,ffffff
 836,SHANGHAI SIPG,상하이 하이강,,b50201,ffffff
-945,Melbourne City,멜버른 시티,
-2523,Johor Darul Takzim FC,조호르 다룰 탁짐,
+945,Melbourne City,멜버른 시티,,,
+2523,Johor Darul Takzim FC,조호르 다룰 탁짐,,,
 2737,Tractor Sazi,트락토르,,c00404,ffffff
 2744,Sepahan FC,세파한,,ffcc00,000000
-2770,Bangkok United,방콕 유나이티드,
-2780,Buriram United,부리람 유나이티드,
+2770,Bangkok United,방콕 유나이티드,,,
+2780,Buriram United,부리람 유나이티드,,,
 2870,Shabab Al Ahli Dubai,샤바브 알 아흘리,,ac2328,ffffff
 2874,Sharjah FC,샤르자,,213b86,ffffff
 2875,Al Wahda FC,알 와흐다,,92204c,c3b295
-4215,Nasaf,나사프 카르시,나사프
-5242,Al Shorta,알 쇼르타,
+4215,Nasaf,나사프 카르시,나사프,,
+5242,Al Shorta,알 쇼르타,,,
 5648,Chengdu Better City,청두 룽청,청두,ba0014,ffffff
 293,Gamba Osaka,감바 오사카,G. 오사카,003287,ffffff
 830,Beijing Guoan,베이징 궈안,,0f7d40,fdce1d
-2445,Persib Bandung,페르시브 반둥,페르시브 Bd.
-2526,Selangor,슬랑오르,
+2445,Persib Bandung,페르시브 반둥,페르시브 Bd.,,
+2526,Selangor,슬랑오르,,,
 2733,Esteghlal FC,에스테글랄,,3069b5,ffffff
-2769,BG Pathum United,BG 빠툼 유나이티드,빠툼
-2776,Ratchaburi,랏차부리,
+2769,BG Pathum United,BG 빠툼 유나이티드,빠툼,,
+2776,Ratchaburi,랏차부리,,,
 2872,Al-Wasl FC,알 와슬,,fff100,000000
-3475,Goa,고아,
-3674,Nam Dinh,남딘,
-4204,Lion City Sailors,라이언 시티 세일러스,라이언 시티
-4206,Tampines Rovers,탬파인스 로버스,탬파인스
-4209,Andijan,안디존,
-4451,Eastern,이스턴 SC,
-4457,Wofoo Tai Po,타이포,
-4532,Al Hussein,알 후세인,
-4537,Al Wehdat,알 웨흐다트,
-5488,Muharraq,알 무하라크,
-7504,Al Seeb,알 시브,
-8010,Al Zawra'a,알 자우라,
-8012,Istiqlol,이스티클롤,
-8020,Ahal,아할,
-8030,Kaya,카야 일로일로,카야
-12268,Regar-TadAZ,레가르-TadAZ 투르순조다,레가르-TadAZ
-15516,ATK Mohun Bagan,모훈 바간,
-15550,Macarthur,매카터,
-16400,Công An Nhân Dân,하노이 공안,
-17666,Khalidiya,알 할리디야,
-21232,Arkadag,아르카다그,
-21576,Manila Digger,마닐라 디거스,
-3532,Al Arabi,알 아라비 쿠웨이트,
-3535,Al Kuwait,알 쿠웨이트,
-4569,Al Ansar,알 안사르,
-4573,Safa,사파,
-5009,Abahani,다카 아바하니,
-5012,Bashundhara Kings,바슌다라 킹스,
-5329,Al-Shabab,알 샤바브 바르카,알 샤바브 B.
-5394,Phnom Penh Crown,프놈펜 크라운,
-5396,Svay Rieng,스바이 리엥,
-8013,Yangon United,양곤 유나이티드,양곤
-8015,Shan United,샨 유나이티드,샨
-8023,Altyn Asyr,알틴 아시르,
-8044,Maziya,마지야 스포츠 앤 레크리에이션,마지야
-9111,Al Karama,알 카라마,
-9115,Hottin,후틴,
-9426,Paro,파로,
-12234,Abdish-Ata,아브디시아타 칸트,아브디시아타
-12542,Taichung Futuro,타이중 푸투로,타이중
-12543,Tainan City,타이난 시티,타이난
-14094,Ezra,에즈라,
-16066,Kasuka,카수카,
-16186,Falcons,SP 팰컨스,
-16187,Khangarid,한가리드,
-17902,Dewa United,데와 유나이티드,데와
-21167,Muras United,무라스 유나이티드,무라스
-26358,Abu Muslim,아부 무슬림,
-380,FC Minsk,FC 민스크,
-382,FC Vitebsk,비텝스크,
-384,FC Dnepr Mogilev,드네프르 모길료프,드네프르
-388,Bate Borisov,바테 보리소프,BATE
-389,FC Gomel,고멜,
-391,FC Isloch Minsk R.,이슬로치 민스크 라이온,이슬로치
-750,Naftan,나프탄 노보폴로츠크,나프탄
-751,Slavia Mozyr,슬라비야 모지리,슬라비야 Mz.
-3383,Baranovichi,바라노비치,
-3384,Belshina,벨시나 보브루이스크,벨시나
-7808,ML Vitebsk,ML 비텝스크,ML
-9419,Arsenal,아르세날 제르진스크,아르세날 Dz.
+3475,Goa,고아,,,
+3674,Nam Dinh,남딘,,,
+4204,Lion City Sailors,라이언 시티 세일러스,라이언 시티,,
+4206,Tampines Rovers,탬파인스 로버스,탬파인스,,
+4209,Andijan,안디존,,,
+4451,Eastern,이스턴 SC,,,
+4457,Wofoo Tai Po,타이포,,,
+4532,Al Hussein,알 후세인,,,
+4537,Al Wehdat,알 웨흐다트,,,
+5488,Muharraq,알 무하라크,,,
+7504,Al Seeb,알 시브,,,
+8010,Al Zawra'a,알 자우라,,,
+8012,Istiqlol,이스티클롤,,,
+8020,Ahal,아할,,,
+8030,Kaya,카야 일로일로,카야,,
+12268,Regar-TadAZ,레가르-TadAZ 투르순조다,레가르-TadAZ,,
+15516,ATK Mohun Bagan,모훈 바간,,,
+15550,Macarthur,매카터,,,
+16400,Công An Nhân Dân,하노이 공안,,,
+17666,Khalidiya,알 할리디야,,,
+21232,Arkadag,아르카다그,,,
+21576,Manila Digger,마닐라 디거스,,,
+3532,Al Arabi,알 아라비 쿠웨이트,,,
+3535,Al Kuwait,알 쿠웨이트,,,
+4569,Al Ansar,알 안사르,,,
+4573,Safa,사파,,,
+5009,Abahani,다카 아바하니,,,
+5012,Bashundhara Kings,바슌다라 킹스,,,
+5329,Al-Shabab,알 샤바브 바르카,알 샤바브 B.,,
+5394,Phnom Penh Crown,프놈펜 크라운,,,
+5396,Svay Rieng,스바이 리엥,,,
+8013,Yangon United,양곤 유나이티드,양곤,,
+8015,Shan United,샨 유나이티드,샨,,
+8023,Altyn Asyr,알틴 아시르,,,
+8044,Maziya,마지야 스포츠 앤 레크리에이션,마지야,,
+9111,Al Karama,알 카라마,,,
+9115,Hottin,후틴,,,
+9426,Paro,파로,,,
+12234,Abdish-Ata,아브디시아타 칸트,아브디시아타,,
+12542,Taichung Futuro,타이중 푸투로,타이중,,
+12543,Tainan City,타이난 시티,타이난,,
+14094,Ezra,에즈라,,,
+16066,Kasuka,카수카,,,
+16186,Falcons,SP 팰컨스,,,
+16187,Khangarid,한가리드,,,
+17902,Dewa United,데와 유나이티드,데와,,
+21167,Muras United,무라스 유나이티드,무라스,,
+26358,Abu Muslim,아부 무슬림,,,
+380,FC Minsk,FC 민스크,,,
+382,FC Vitebsk,비텝스크,,,
+384,FC Dnepr Mogilev,드네프르 모길료프,드네프르,,
+388,Bate Borisov,바테 보리소프,BATE,,
+389,FC Gomel,고멜,,,
+391,FC Isloch Minsk R.,이슬로치 민스크 라이온,이슬로치,,
+750,Naftan,나프탄 노보폴로츠크,나프탄,,
+751,Slavia Mozyr,슬라비야 모지리,슬라비야 Mz.,,
+3383,Baranovichi,바라노비치,,,
+3384,Belshina,벨시나 보브루이스크,벨시나,,
+7808,ML Vitebsk,ML 비텝스크,ML,,
+9419,Arsenal,아르세날 제르진스크,아르세날 Dz.,,
 281,Kashiwa Reysol,가시와 레이솔,가시와,ffed00,000000
 283,Shimizu S-pulse,시미즈 S-펄즈,시미즈,f08300,2a385f
 285,V-varen Nagasaki,V-파렌 나가사키,나가사키,003893,ffffff
@@ -986,30 +986,30 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 292,FC Tokyo,FC 도쿄,,000a6e,ff0000
 294,Kawasaki Frontale,가와사키 프론탈레,가와사키,3ea3dc,ffffff
 296,Yokohama F. Marinos,요코하마 F. 마리노스,요코하마 F,284296,ffffff
-301,JEF United Chiba,JEF 유나이티드 치바,JEF
+301,JEF United Chiba,JEF 유나이티드 치바,JEF,,
 302,Kyoto Sanga,교토 상가,,6f0f6c,ffffff
 305,Mito Hollyhock,미토 홀리호크,,ffffff,312783
 306,Tokyo Verdy,도쿄 베르디,도쿄 V.,316a41,a29271
 310,Fagiano Okayama,파지아노 오카야마,오카야마,1c2469,ffffff
 316,Avispa Fukuoka,아비스파 후쿠오카,후쿠오카,0b2355,ffffff
-582,Alashkert,알라슈케르트,
-688,Gandzasar,간자사르,
-3682,Ararat,아라라트 예레반,아라라트
-3686,Shirak,시라크 귬리,시라크
-6279,BKMA,BKMA 예레반,BKMA
-6286,Van,반,
-2259,FK Tobol Kostanay,토볼 코스타나이,토볼
-4544,Altay,알타이 오스케멘,알타이
-4552,Kaspiy,카스피 악타우,카스피
-4554,Kyzyl-Zhar,키질자르 페트로파블,키질자르
-4558,Okzhetpes,오크젯페스,
-4560,Zhetysu,제티수 탈디코르간,제티수
-4562,Kaisar,카이사르,
-4564,Atyrau,아티라우,
-4565,Irtysh,이르티시 파블로다르,이르티시 P.
-16611,Zhenys,제니스,
-21010,Ulytau,울리타우,
-21011,Yelimay Semey,옐리마이 세메이,옐리마이
+582,Alashkert,알라슈케르트,,,
+688,Gandzasar,간자사르,,,
+3682,Ararat,아라라트 예레반,아라라트,,
+3686,Shirak,시라크 귬리,시라크,,
+6279,BKMA,BKMA 예레반,BKMA,,
+6286,Van,반,,,
+2259,FK Tobol Kostanay,토볼 코스타나이,토볼,,
+4544,Altay,알타이 오스케멘,알타이,,
+4552,Kaspiy,카스피 악타우,카스피,,
+4554,Kyzyl-Zhar,키질자르 페트로파블,키질자르,,
+4558,Okzhetpes,오크젯페스,,,
+4560,Zhetysu,제티수 탈디코르간,제티수,,
+4562,Kaisar,카이사르,,,
+4564,Atyrau,아티라우,,,
+4565,Irtysh,이르티시 파블로다르,이르티시 P.,,
+16611,Zhenys,제니스,,,
+21010,Ulytau,울리타우,,,
+21011,Yelimay Semey,옐리마이 세메이,옐리마이,,
 19,Nigeria,나이지리아,,008751,ffffff
 1489,Tanzania,탄자니아,,00a5de,000000
 1500,Mali,말리,,1b512d,ffffff
@@ -1026,22 +1026,22 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1524,Comoros,코모로,,009736,ffffff
 1529,Angola,앙골라,,cd022b,fac700
 1530,Cameroon,카메룬,,00723a,f8d80a
-14,Serbia,세르비아,
+14,Serbia,세르비아,,,
 21,Denmark,덴마크,,ce1118,ffffff
 24,Poland,폴란드,,ffffff,db143c
-769,Hungary,헝가리,
+769,Hungary,헝가리,,,
 772,Ukraine,우크라이나,,f6de30,3666a3
 773,Slovakia,슬로바키아,,042e86,ffffff
 774,Romania,루마니아,,ffcc01,054aa1
 778,Albania,알바니아,,ff0000,000000
-1091,Slovenia,슬로베니아,
-1104,Georgia,조지아,
+1091,Slovenia,슬로베니아,,,
+1104,Georgia,조지아,,,
 1536,Tajikistan,타지키스탄,,dd0e17,ffffff
 1537,India,인도,,ff0000,ffffff
-1538,Malaysia,말레이시아,
+1538,Malaysia,말레이시아,,,
 1542,Vietnam,베트남,,d8251d,ffff00
 1547,Bahrain,바레인,,d20106,ffffff
-1551,Lebanon,레바논,
+1551,Lebanon,레바논,,,
 1552,Oman,오만,,d5161a,ffffff
 1554,Kyrgyzstan,키르기스스탄,,ff0000,ffff00
 1562,Palestine,팔레스타인,,ee2a35,ffffff
@@ -1051,162 +1051,162 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1566,China,중국,,d7010a,fde400
 1571,Indonesia,인도네시아,,ff0000,ffffff
 4460,Hong Kong,홍콩,,ee1c25,ffffff
-29,Costa Rica,코스타리카,
+29,Costa Rica,코스타리카,,,
 2385,Jamaica,자메이카,,fef400,000000
-4672,Honduras,온두라스,
+4672,Honduras,온두라스,,,
 5159,El Salvador,엘살바도르,,0047ab,ffffff
-5161,Guatemala,과테말라,
+5161,Guatemala,과테말라,,,
 5168,Trinidad and Tobago,트리니다드토바고,트리니다드,db1332,000000
-5532,Dominican Republic,도미니카 공화국,도미니카R
+5532,Dominican Republic,도미니카 공화국,도미니카R,,
 8171,Suriname,수리남,,ed1c24,ffffff
 10983,Guadeloupe,과들루프,,ff0000,18a538
-30,Peru,페루,
+30,Peru,페루,,,
 2379,Venezuela,베네수엘라,,510e26,bd9b52
 2381,Bolivia,볼리비아,,003938,b18d65
-2383,Chile,칠레,
-5160,Fiji,피지,
+2383,Chile,칠레,,,
+5160,Fiji,피지,,,
 5163,New Caledonia,누벨칼레도니,,9ea0a3,c12128
-5165,Solomon Islands,솔로몬 제도,
-5167,Tahiti,타히티,
-5170,Vanuatu,바누아투,
-5542,Tonga,통가,
-8174,Cook Islands,쿡 제도,
-8175,Papua New Guinea,파푸아뉴기니,
-8176,Samoa,사모아,
+5165,Solomon Islands,솔로몬 제도,,,
+5167,Tahiti,타히티,,,
+5170,Vanuatu,바누아투,,,
+5542,Tonga,통가,,,
+8174,Cook Islands,쿡 제도,,,
+8175,Papua New Guinea,파푸아뉴기니,,,
+8176,Samoa,사모아,,,
 1546,Singpore,싱가포르,,ee2436,ffffff
 1561,Korea DPR,북한,,ed1720,ffffff
 1740,Korea DPR (W),북한,,ed1720,ffffff
 1570,Kuwait,쿠웨이트,,1b3aca,ffffff
-13240,Sevastopol,세바스토폴,
-17680,Kyzyltash,키질타시 바흐치사라이,키질타시
-17682,Rubin Yalta,루빈 얄타,루빈 Y.
-21540,Astrakhan,아스트라한,
-21853,Dynamo Makhachkala II,디나모-2 마하치칼라,디나모-2 Mkh.
-22171,Pobeda,포베다 하사뷰르트,포베다 Kh.
-23314,Angust Nazran,안구시트 나즈란,안구시트
-23315,Nart Cherkessk,나르트 체르케스크,나르트 Ch.
-23316,Rostov II,로스토프-2,
-26146,PSK Dinskaya,PSK 딘스카야,PSK
-27644,FK Chayka 2,차이카-2 페스차노콥스코예,차이카-2
-27646,Izberbash,네프탸니크 이즈베르바시,네프탸니크 Iz.
-27647,Lugansk,자랴 루간스크,자랴
-27648,Shahter Taganrog,샤흐툐르 도네츠크,샤흐툐르 Dn.
-27649,Pervorechenskij,PSK 딘스카야,PSK
+13240,Sevastopol,세바스토폴,,,
+17680,Kyzyltash,키질타시 바흐치사라이,키질타시,,
+17682,Rubin Yalta,루빈 얄타,루빈 Y.,,
+21540,Astrakhan,아스트라한,,,
+21853,Dynamo Makhachkala II,디나모-2 마하치칼라,디나모-2 Mkh.,,
+22171,Pobeda,포베다 하사뷰르트,포베다 Kh.,,
+23314,Angust Nazran,안구시트 나즈란,안구시트,,
+23315,Nart Cherkessk,나르트 체르케스크,나르트 Ch.,,
+23316,Rostov II,로스토프-2,,,
+26146,PSK Dinskaya,PSK 딘스카야,PSK,,
+27644,FK Chayka 2,차이카-2 페스차노콥스코예,차이카-2,,
+27646,Izberbash,네프탸니크 이즈베르바시,네프탸니크 Iz.,,
+27647,Lugansk,자랴 루간스크,자랴,,
+27648,Shahter Taganrog,샤흐툐르 도네츠크,샤흐툐르 Dn.,,
+27649,Pervorechenskij,PSK 딘스카야,PSK,,
 2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2 Mc.,c9072a,ffffff
-6812,Luki-Energiya,루키 에네르기야 벨리키예 루키,루키-에네르기야
-6830,Torpedo Vladimir,토르페도 블라디미르,토르페도 Vl.
-6840,Zvezda St. Petersburg,즈베즈다 상트페테르부르크,즈베즈다 SPB
-14120,Tver,트베리,
-17724,Yenisey II,예니세이-2 크라스노야르스크,예니세이-2
-17725,Dinamo St. Petersburg,디나모 상트페테르부르크,디나모 SPB
-19447,Dinamo Vologda,디나모 볼로그다,디나모 Vo.
-19452,Kosmos Dolgoprudny,코스모스 돌고프루드니,코스모스 Do.
-21539,Irkutsk,이르쿠츠크,
-24450,Cherepovets,체레포베츠,
-25868,Baltika II,발티카-2 칼리닌그라드,발티카-2
-27645,Iskra Smolensk,이스크라 스몰렌스크,이스크라
-6818,Nosta,노스타 노보트로이츠크,노스타
-12887,Ural II,우랄-2 예카테린부르크,우랄-2
-14140,Krylya Sovetov II,크릴리야 소베토프-2 사마라,크릴리야 소베토프-2
-14141,Orenburg II,오렌부르크-2,
-16858,Khimik Dzerzhinsk,히미크 제르진스크,히미크 Dz.
-21032,Rubin Kazan 2,루빈-2 카잔,루빈-2 Kz.
-21535,Akron II,아크론-2 톨리야티,아크론-2
-25866,Chelyabinsk II,첼랴빈스크-2,
-25867,KDV,KDV 톰스크,KDV
-27650,Izhevsk,이젭스크,
-27651,Pobeda Nizhniy Novgorod,포베다 니즈니 노브고로드,포베다 NN
-6815,Metallurg Lipetsk,메탈루르크 리페츠크,메탈루르크 Lp.
-6823,Ryazan,랴잔,
-6826,Salyut-Belgorod,살류트 벨고로드,살류트 B.
-6827,Saturn Ramenskoye,사투른 라멘스코예,사투른
-6829,Strogino,스트로기노 모스크바,스트로기노
-12840,Rotor-2,로토르-2 볼고그라드,로토르-2
-14124,Volna Nizhegorodskaya,볼나 니즈니 노브고로드,볼나
-16866,Zenit Penza,제니트 펜자,제니트 Pn.
+6812,Luki-Energiya,루키 에네르기야 벨리키예 루키,루키-에네르기야,,
+6830,Torpedo Vladimir,토르페도 블라디미르,토르페도 Vl.,,
+6840,Zvezda St. Petersburg,즈베즈다 상트페테르부르크,즈베즈다 SPB,,
+14120,Tver,트베리,,,
+17724,Yenisey II,예니세이-2 크라스노야르스크,예니세이-2,,
+17725,Dinamo St. Petersburg,디나모 상트페테르부르크,디나모 SPB,,
+19447,Dinamo Vologda,디나모 볼로그다,디나모 Vo.,,
+19452,Kosmos Dolgoprudny,코스모스 돌고프루드니,코스모스 Do.,,
+21539,Irkutsk,이르쿠츠크,,,
+24450,Cherepovets,체레포베츠,,,
+25868,Baltika II,발티카-2 칼리닌그라드,발티카-2,,
+27645,Iskra Smolensk,이스크라 스몰렌스크,이스크라,,
+6818,Nosta,노스타 노보트로이츠크,노스타,,
+12887,Ural II,우랄-2 예카테린부르크,우랄-2,,
+14140,Krylya Sovetov II,크릴리야 소베토프-2 사마라,크릴리야 소베토프-2,,
+14141,Orenburg II,오렌부르크-2,,,
+16858,Khimik Dzerzhinsk,히미크 제르진스크,히미크 Dz.,,
+21032,Rubin Kazan 2,루빈-2 카잔,루빈-2 Kz.,,
+21535,Akron II,아크론-2 톨리야티,아크론-2,,
+25866,Chelyabinsk II,첼랴빈스크-2,,,
+25867,KDV,KDV 톰스크,KDV,,
+27650,Izhevsk,이젭스크,,,
+27651,Pobeda Nizhniy Novgorod,포베다 니즈니 노브고로드,포베다 NN,,
+6815,Metallurg Lipetsk,메탈루르크 리페츠크,메탈루르크 Lp.,,
+6823,Ryazan,랴잔,,,
+6826,Salyut-Belgorod,살류트 벨고로드,살류트 B.,,
+6827,Saturn Ramenskoye,사투른 라멘스코예,사투른,,
+6829,Strogino,스트로기노 모스크바,스트로기노,,
+12840,Rotor-2,로토르-2 볼고그라드,로토르-2,,
+14124,Volna Nizhegorodskaya,볼나 니즈니 노브고로드,볼나,,
+16866,Zenit Penza,제니트 펜자,제니트 Pn.,,
 17720,Arsenal Tula II,아르세날-2 툴라,아르세날-2 Tl.,ee141f,ffffff
 17721,SKA Khabarovsk II,SKA 하바롭스크-2,SKA-2,00338d,ffffff
 19448,Rodina Moskva III,로디나-3 모스크바,로디나-3,00b3e4,001b2d
-19451,FK Spartak Tambov,스파르타크 탐보프,스파르타크 Tm.
-23318,Orel,오룔,
-26148,Shumbrat,슘브라트 사란스크,슘브라트
-437,Rosario Central,로사리오 센트랄,로사리오
-446,Lanus,라누스,
-450,Estudiantes L.P.,에스투디안테스,
-451,Boca Juniors,보카 주니어스,
-458,Argentinos JRS,아르헨티노스 주니어스,아르헨티노스
-473,Independ. Rivadavia,인데펜디엔테 리바다비아,인데펜디엔테 Rv
-1064,Platense,플라텐세,
-1128,Independiente Medellin,인데펜디테엔테 메데인,DI 메데인
-1135,Junior Barranquilla,후니오르 바란키야,J. 바란키야
-1139,Santa Fe,산타 페,
-1142,Deportes Tolima,데포르테스 톨리마,톨리마
-1152,Barcelona SC,바르셀로나 SC,
-1153,Independiente del Valle,인데펜디엔테 델 바예,인데펜디엔테 DV
-1157,Universidad Catolica,우니베르시다드 카톨리카,U 카톨리카
-1158,LDU de Quito,LDU 키토,
-1174,Club Guarani,과라니,
-1176,Cerro Porteno,세로 포르테뇨,
-1179,Libertad Asuncion,리베르타드 아순시온,리베르타드 As.
-2140,2 de Mayo,2 데 마요,
-2320,O'Higgins,오히긴스,
-2328,Huachipato,우아치파토,
-2330,Coquimbo Unido,코킴보 우니도,
-2348,Penarol,페냐롤,
-2353,Juventud,후벤투드,
-2356,Club Nacional,클루브 나시오날,나시오날
-2358,Liverpool Montevideo,리버풀 몬테비데오,리버풀 M.
-2540,Universitario,우니베르시타리오 데 데포르테스,우니베르시타리오
-2546,Sporting Cristal,스포르팅 크리스탈,
-2553,Alianza Lima,알리안사 리마,
-2807,Deportivo Tachira FC,데포르티보 타치라,D. 타치라
-2810,Carabobo FC,카라보보,
-2813,Deportivo La Guaira,데포르티보 라 과이라,D. 라 과이라
-2840,UCV,우니베르시다드 센트랄 베네수엘라,UCV
-2994,U. Catolica,우니베르시다드 카톨리카,U 카톨리카
-3700,Always Ready,올웨이즈 레디,
-3702,Bolívar,볼리바르,
-3706,Nacional Potosí,나시오날 포토시,
-3711,The Strongest,더 스트롱기스트,
-10013,Cusco,쿠스코,
-435,River Plate,리버 플레이트,
-436,Racing Club,라싱 클루브,
-452,Tigre,티그레,
-460,San Lorenzo,산 로렌소,
-476,Deportivo Riestra,데포르티보 리에스트라,D. 리에스트라
-1125,Millonarios,미요나리오스,
-1131,Bucaramanga,아틀레티코 부카라망가,At. 부카라망가
-1137,Atletico Nacional,아틀레티코 나시오날,At. 나시오날
-1138,America de Cali,아메리카 데 칼리,아메리카 C.
-1154,Deportivo Cuenca,데포르티보 쿠엔카,D. 쿠엔카
-1155,Macara,CSD 마카라,마카라
-1175,Nacional Asuncion,나시오날 아순시온,
-1182,Olimpia,올림피아,
-1187,Sportivo Trinidense,스포르티보 트리니덴세,S. 트리니덴세
-1992,Orense SC,오렌세,
-2318,Palestino,팔레스티노,
-2323,Universidad de Chile,우니베르시다드 데 칠레,우니베르시다드 Ch.
-2329,Audax Italiano,아우닥스 이탈리아노,아우닥스
-2331,Cobresal,코브레살,
-2350,Defensor Sporting,데펜소르 스포르팅,데펜소르
-2359,Racing Montevideo,라싱 몬테비데오,라싱 Mo.
-2361,Boston River,보스턴 리버,
-2365,Atletico Torque,몬테비데오 시티 토르케,몬테비데오
-2432,Barracas Central,바라카스 센트랄,바라카스
-2554,FBC Melgar,멜가르,
-2560,Alianza Atletico,알리안사 아틀레티코,알리안사 At.
-2562,Cienciano,시엔시아노,
-2808,Caracas FC,카라카스,
-2811,Monagas SC,모나가스,
-2825,Metropolitanos FC,메트로폴리타노스,
-2827,Puerto Cabello,푸에르토 카베요,P. 카베요
-3701,Blooming,블루밍,
-3704,Guabirá,과비라,
-10476,Deportivo Recoleta,데포르티보 레콜레타,D. 레콜레타
-15702,Independiente Petrolero,인데펜디엔테 페트롤레로,인데펜디엔테 Pt.
-17760,San Antonio Bulo Bulo,산 안토니오 불로 불로,SABB
-18762,Libertad,리베르타드,리베르타드
-20960,Deportivo Garcilaso,데포르티보 가르실라소,D. 가르실라소
+19451,FK Spartak Tambov,스파르타크 탐보프,스파르타크 Tm.,,
+23318,Orel,오룔,,,
+26148,Shumbrat,슘브라트 사란스크,슘브라트,,
+437,Rosario Central,로사리오 센트랄,로사리오,,
+446,Lanus,라누스,,,
+450,Estudiantes L.P.,에스투디안테스,,,
+451,Boca Juniors,보카 주니어스,,,
+458,Argentinos JRS,아르헨티노스 주니어스,아르헨티노스,,
+473,Independ. Rivadavia,인데펜디엔테 리바다비아,인데펜디엔테 Rv,,
+1064,Platense,플라텐세,,,
+1128,Independiente Medellin,인데펜디테엔테 메데인,DI 메데인,,
+1135,Junior Barranquilla,후니오르 바란키야,J. 바란키야,,
+1139,Santa Fe,산타 페,,,
+1142,Deportes Tolima,데포르테스 톨리마,톨리마,,
+1152,Barcelona SC,바르셀로나 SC,,,
+1153,Independiente del Valle,인데펜디엔테 델 바예,인데펜디엔테 DV,,
+1157,Universidad Catolica,우니베르시다드 카톨리카,U 카톨리카,,
+1158,LDU de Quito,LDU 키토,,,
+1174,Club Guarani,과라니,,,
+1176,Cerro Porteno,세로 포르테뇨,,,
+1179,Libertad Asuncion,리베르타드 아순시온,리베르타드 As.,,
+2140,2 de Mayo,2 데 마요,,,
+2320,O'Higgins,오히긴스,,,
+2328,Huachipato,우아치파토,,,
+2330,Coquimbo Unido,코킴보 우니도,,,
+2348,Penarol,페냐롤,,,
+2353,Juventud,후벤투드,,,
+2356,Club Nacional,클루브 나시오날,나시오날,,
+2358,Liverpool Montevideo,리버풀 몬테비데오,리버풀 M.,,
+2540,Universitario,우니베르시타리오 데 데포르테스,우니베르시타리오,,
+2546,Sporting Cristal,스포르팅 크리스탈,,,
+2553,Alianza Lima,알리안사 리마,,,
+2807,Deportivo Tachira FC,데포르티보 타치라,D. 타치라,,
+2810,Carabobo FC,카라보보,,,
+2813,Deportivo La Guaira,데포르티보 라 과이라,D. 라 과이라,,
+2840,UCV,우니베르시다드 센트랄 베네수엘라,UCV,,
+2994,U. Catolica,우니베르시다드 카톨리카,U 카톨리카,,
+3700,Always Ready,올웨이즈 레디,,,
+3702,Bolívar,볼리바르,,,
+3706,Nacional Potosí,나시오날 포토시,,,
+3711,The Strongest,더 스트롱기스트,,,
+10013,Cusco,쿠스코,,,
+435,River Plate,리버 플레이트,,,
+436,Racing Club,라싱 클루브,,,
+452,Tigre,티그레,,,
+460,San Lorenzo,산 로렌소,,,
+476,Deportivo Riestra,데포르티보 리에스트라,D. 리에스트라,,
+1125,Millonarios,미요나리오스,,,
+1131,Bucaramanga,아틀레티코 부카라망가,At. 부카라망가,,
+1137,Atletico Nacional,아틀레티코 나시오날,At. 나시오날,,
+1138,America de Cali,아메리카 데 칼리,아메리카 C.,,
+1154,Deportivo Cuenca,데포르티보 쿠엔카,D. 쿠엔카,,
+1155,Macara,CSD 마카라,마카라,,
+1175,Nacional Asuncion,나시오날 아순시온,,,
+1182,Olimpia,올림피아,,,
+1187,Sportivo Trinidense,스포르티보 트리니덴세,S. 트리니덴세,,
+1992,Orense SC,오렌세,,,
+2318,Palestino,팔레스티노,,,
+2323,Universidad de Chile,우니베르시다드 데 칠레,우니베르시다드 Ch.,,
+2329,Audax Italiano,아우닥스 이탈리아노,아우닥스,,
+2331,Cobresal,코브레살,,,
+2350,Defensor Sporting,데펜소르 스포르팅,데펜소르,,
+2359,Racing Montevideo,라싱 몬테비데오,라싱 Mo.,,
+2361,Boston River,보스턴 리버,,,
+2365,Atletico Torque,몬테비데오 시티 토르케,몬테비데오,,
+2432,Barracas Central,바라카스 센트랄,바라카스,,
+2554,FBC Melgar,멜가르,,,
+2560,Alianza Atletico,알리안사 아틀레티코,알리안사 At.,,
+2562,Cienciano,시엔시아노,,,
+2808,Caracas FC,카라카스,,,
+2811,Monagas SC,모나가스,,,
+2825,Metropolitanos FC,메트로폴리타노스,,,
+2827,Puerto Cabello,푸에르토 카베요,P. 카베요,,
+3701,Blooming,블루밍,,,
+3704,Guabirá,과비라,,,
+10476,Deportivo Recoleta,데포르티보 레콜레타,D. 레콜레타,,
+15702,Independiente Petrolero,인데펜디엔테 페트롤레로,인데펜디엔테 Pt.,,
+17760,San Antonio Bulo Bulo,산 안토니오 불로 불로,SABB,,
+18762,Libertad,리베르타드,리베르타드,,
+20960,Deportivo Garcilaso,데포르티보 가르실라소,D. 가르실라소,,
 767,Wales,웨일스,,b0212c,ffffff
 771,Northern Ireland,북아일랜드,,4d9777,ffffff
 1111,Kosovo,코소보,,1d3d91,ffffff
@@ -1214,175 +1214,175 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 776,Ireland,아일랜드,,007120,ffffff
 16061,North Macedonia W,북마케도니아,북마케도니아,d30000,ffe700
 1105,North Macedonia,북마케도니아,북마케도니아,d30000,ffe700
-1380,Macclesfield,매클즈필드,
-1820,Chester,체스터,
-1826,Southport,사우스포트,
-1839,AFC Fylde,파일드,
-4677,Alfreton Town,알프레턴 타운,알프레턴
-4679,Chorley,촐리,
-4684,Oxford City,옥스퍼드 시티,옥스퍼드C
-4688,AFC Telford United,텔포드 유나이티드,텔포드
-4692,Hereford,헤러포드,
-4695,Kidderminster Harriers,키더민스터 해리어스,키더민스터
-4703,Curzon Ashton,커즌 애시턴,커즌
-4707,Spennymoor Town,스페니무어 타운,스페니무어
-7266,Worksop Town,워크솝 타운,워크솝
-7616,Bedford Town,베드포드 타운,베드포드
-7656,Marine,마린,
-7706,Buxton,벅스턴,
-7732,Merthyr Town,머서 타운,머서
-7737,Peterborough Sports,피터버러 스포츠,피터버러S
-7740,Radcliffe,래드클리프,
-7745,Scarborough Athletic,스카버러 애슬레틱,스카버러
-7746,South Shields,사우스 실즈,
-8655,King's Lynn Town,킹스 린 타운,킹스 린
-8656,Leamington,레밍턴,
-10157,Darlington 1883,달링턴,
-1821,Dagenham & Redbridge,대거넘 앤 레드브리지,대그 앤 레드
-1825,Maidstone Utd,메이드스톤 유나이티드,메이드스톤
-1827,Torquay,토키 유나이티드,토키
-1829,Dover,도버 애슬레틱,도버
-1838,Maidenhead,메이든헤드 유나이티드,메이든헤드
-1840,Ebbsfleet United,엡스플리트 유나이티드,엡스플리트
-4680,Hampton & Richmond,햄튼 앤 리치먼드 보로,H&R
-4685,Slough Town,슬라우 타운,슬라우
-4687,Weston-super-Mare,웨스턴 수퍼 메어,WSM
-4689,Chelmsford City,쳄스퍼드 시티,쳄스퍼트
-4702,Chesham United,체셤 유나이티드,체셤
-4704,Eastbourne Borough,이스트본 보로,이스트본
-7612,AFC Totton,터턴,
-7690,AFC Hornchurch,혼처치,
-7714,Enfield Town,엔필드 타운,엔필드
-7715,Farnborough,판버러,
-7723,Horsham,호셤,
-7744,Salisbury,솔즈버리,
-7761,Worthing,워딩,
-8147,Chippenham Town,치퍼넘 타운,치퍼넘
-8657,Bath City,배스 시티,배스
-8659,Dorking Wanderers,도킹 원더러스,도킹
-8660,Hemel Hempstead Town,헤멜 헴스테드 타운,헤멜 헴스테드
-8662,Tonbridge Angels,톤브리지 앤젤스,톤브리지
-599,Zorya Luhansk,조랴 루한스크,조랴
-3617,Karpaty,카르파티 리비우,카르파티
-3627,Kolos Kovalivka,콜로스 코발리우카,콜로스
-3628,Metalist 1925 Kharkiv,메탈리스트 1925 하르키우,메탈리스트 1925
-3630,Obolon'-Brovar,오볼론 키이우,오볼론
-3632,Ruh Lviv,루흐 리비우,루흐 Lv.
-6489,Kryvbas KR,크리우바스 크리비리흐,크리우바스
-6501,Veres Rivne,베레스 리우네,베레스
-14434,Epitsentr Dunayivtsi,에피첸트르 카미야네치포딜스키,에피첸트르
-17161,LNZ Cherkasy,LNZ 체르카시,LNZ
-17165,SK Poltava,SC 폴타바,SC 폴타바
-21953,Kudrivka,쿠드리우카,쿠드리우카
-2255,Ujpest,우이페슈트,우이페슈트
-2392,Debreceni VSC,데브레첸,
-2393,Diosgyori VTK,디오슈죄르,
-2394,Kisvarda FC,키스바르더,
-2396,MTK Budapest,MTK 부다페스트,MTK
-2403,Nyiregyhaza,니레지하저,
-2410,Kazincbarcikai,카진츠버르치커,
-2414,Zalaegerszegi TE,절러에게르세기,ZTE
-1110,Andorra,안도라,
-5536,Saint Kitts and Nevis,세인트키츠네비스,세인트키츠
-5169,Turks and Caicos Islands,터크스 케이커스 제도,터크스 케이커스
+1380,Macclesfield,매클즈필드,,,
+1820,Chester,체스터,,,
+1826,Southport,사우스포트,,,
+1839,AFC Fylde,파일드,,,
+4677,Alfreton Town,알프레턴 타운,알프레턴,,
+4679,Chorley,촐리,,,
+4684,Oxford City,옥스퍼드 시티,옥스퍼드C,,
+4688,AFC Telford United,텔포드 유나이티드,텔포드,,
+4692,Hereford,헤러포드,,,
+4695,Kidderminster Harriers,키더민스터 해리어스,키더민스터,,
+4703,Curzon Ashton,커즌 애시턴,커즌,,
+4707,Spennymoor Town,스페니무어 타운,스페니무어,,
+7266,Worksop Town,워크솝 타운,워크솝,,
+7616,Bedford Town,베드포드 타운,베드포드,,
+7656,Marine,마린,,,
+7706,Buxton,벅스턴,,,
+7732,Merthyr Town,머서 타운,머서,,
+7737,Peterborough Sports,피터버러 스포츠,피터버러S,,
+7740,Radcliffe,래드클리프,,,
+7745,Scarborough Athletic,스카버러 애슬레틱,스카버러,,
+7746,South Shields,사우스 실즈,,,
+8655,King's Lynn Town,킹스 린 타운,킹스 린,,
+8656,Leamington,레밍턴,,,
+10157,Darlington 1883,달링턴,,,
+1821,Dagenham & Redbridge,대거넘 앤 레드브리지,대그 앤 레드,,
+1825,Maidstone Utd,메이드스톤 유나이티드,메이드스톤,,
+1827,Torquay,토키 유나이티드,토키,,
+1829,Dover,도버 애슬레틱,도버,,
+1838,Maidenhead,메이든헤드 유나이티드,메이든헤드,,
+1840,Ebbsfleet United,엡스플리트 유나이티드,엡스플리트,,
+4680,Hampton & Richmond,햄튼 앤 리치먼드 보로,H&R,,
+4685,Slough Town,슬라우 타운,슬라우,,
+4687,Weston-super-Mare,웨스턴 수퍼 메어,WSM,,
+4689,Chelmsford City,쳄스퍼드 시티,쳄스퍼트,,
+4702,Chesham United,체셤 유나이티드,체셤,,
+4704,Eastbourne Borough,이스트본 보로,이스트본,,
+7612,AFC Totton,터턴,,,
+7690,AFC Hornchurch,혼처치,,,
+7714,Enfield Town,엔필드 타운,엔필드,,
+7715,Farnborough,판버러,,,
+7723,Horsham,호셤,,,
+7744,Salisbury,솔즈버리,,,
+7761,Worthing,워딩,,,
+8147,Chippenham Town,치퍼넘 타운,치퍼넘,,
+8657,Bath City,배스 시티,배스,,
+8659,Dorking Wanderers,도킹 원더러스,도킹,,
+8660,Hemel Hempstead Town,헤멜 헴스테드 타운,헤멜 헴스테드,,
+8662,Tonbridge Angels,톤브리지 앤젤스,톤브리지,,
+599,Zorya Luhansk,조랴 루한스크,조랴,,
+3617,Karpaty,카르파티 리비우,카르파티,,
+3627,Kolos Kovalivka,콜로스 코발리우카,콜로스,,
+3628,Metalist 1925 Kharkiv,메탈리스트 1925 하르키우,메탈리스트 1925,,
+3630,Obolon'-Brovar,오볼론 키이우,오볼론,,
+3632,Ruh Lviv,루흐 리비우,루흐 Lv.,,
+6489,Kryvbas KR,크리우바스 크리비리흐,크리우바스,,
+6501,Veres Rivne,베레스 리우네,베레스,,
+14434,Epitsentr Dunayivtsi,에피첸트르 카미야네치포딜스키,에피첸트르,,
+17161,LNZ Cherkasy,LNZ 체르카시,LNZ,,
+17165,SK Poltava,SC 폴타바,SC 폴타바,,
+21953,Kudrivka,쿠드리우카,쿠드리우카,,
+2255,Ujpest,우이페슈트,우이페슈트,,
+2392,Debreceni VSC,데브레첸,,,
+2393,Diosgyori VTK,디오슈죄르,,,
+2394,Kisvarda FC,키스바르더,,,
+2396,MTK Budapest,MTK 부다페스트,MTK,,
+2403,Nyiregyhaza,니레지하저,,,
+2410,Kazincbarcikai,카진츠버르치커,,,
+2414,Zalaegerszegi TE,절러에게르세기,ZTE,,
+1110,Andorra,안도라,,,
+5536,Saint Kitts and Nevis,세인트키츠네비스,세인트키츠,,
+5169,Turks and Caicos Islands,터크스 케이커스 제도,터크스 케이커스,,
 5158,Bermuda,버뮤다,,1e284f,f08fb0
-1526,Libya,리비아,
-1094,Armenia,아르메니아,
-1497,Mauritius,모리셔스,
-1549,Maldives,몰디브,
-8173,American Samoa,아메리칸사모아,
-1506,Ethiopia,에티오피아,
-1101,Estonia,에스토니아,
-8119,Guam,괌,
-1553,Afghanistan,아프가니스탄,
-1527,Central African Republic,중앙아프리카 공화국,중아공
-5537,Timor-Leste,동티모르,
-1496,South Sudan,남수단,
-2995,Eswatini,에스와티니,
-5533,Grenada,그레나다,
-1491,Mauritania,모리타니,
-1116,Israel,이스라엘,
-5538,Brunei,브루나이,
-1112,Malta,몰타,
+1526,Libya,리비아,,,
+1094,Armenia,아르메니아,,,
+1497,Mauritius,모리셔스,,,
+1549,Maldives,몰디브,,,
+8173,American Samoa,아메리칸사모아,,,
+1506,Ethiopia,에티오피아,,,
+1101,Estonia,에스토니아,,,
+8119,Guam,괌,,,
+1553,Afghanistan,아프가니스탄,,,
+1527,Central African Republic,중앙아프리카 공화국,중아공,,
+5537,Timor-Leste,동티모르,,,
+1496,South Sudan,남수단,,,
+2995,Eswatini,에스와티니,,,
+5533,Grenada,그레나다,,,
+1491,Mauritania,모리타니,,,
+1116,Israel,이스라엘,,,
+5538,Brunei,브루나이,,,
+1112,Malta,몰타,,,
 1100,Belarus,벨라루스,,600020,d9ff00
-1099,Finland,핀란드,
-1093,Gibraltar,지브롤터,
-1540,Bhutan,부탄,
-1109,Montenegro,몬테네그로,
-8169,Cayman Islands,케이맨 제도,
-1115,San Marino,산마리노,
-1517,Congo,콩고,
-5535,Pakistan,파키스탄,
-1095,Kazakhstan,카자흐스탄,
-18,Iceland,아이슬란드,
-1556,Myanmar,미얀마,
-1560,Bangladesh,방글라데시,
+1099,Finland,핀란드,,,
+1093,Gibraltar,지브롤터,,,
+1540,Bhutan,부탄,,,
+1109,Montenegro,몬테네그로,,,
+8169,Cayman Islands,케이맨 제도,,,
+1115,San Marino,산마리노,,,
+1517,Congo,콩고,,,
+5535,Pakistan,파키스탄,,,
+1095,Kazakhstan,카자흐스탄,,,
+18,Iceland,아이슬란드,,,
+1556,Myanmar,미얀마,,,
+1560,Bangladesh,방글라데시,,,
 1555,Philippines,필리핀,,ffffff,084389
-1545,Nepal,네팔,
+1545,Nepal,네팔,,,
 1550,Yemen,예멘,,cf0921,ffffff
-5541,Saint Vincent and the Grenadines,세인트빈센트 그레나딘,세인트빈센트
-1498,Eritrea,에리트레아,
-1511,Kenya,케냐,
-1117,Greece,그리스,
-1514,Rwanda,르완다,
-1557,Chinese Taipei,중화 타이페이,대만
-5162,Guyana,가이아나,
-1515,Seychelles,세이셸,
-1543,Cambodia,캄보디아,
-5527,Barbados,바베이도스,
-1493,Namibia,나미비아,
-1523,Chad,차드,
-1505,Niger,니제르,
-2388,Cuba,쿠바,
-5528,Belize,벨리즈,
-5157,Bahamas,바하마,
+5541,Saint Vincent and the Grenadines,세인트빈센트 그레나딘,세인트빈센트,,
+1498,Eritrea,에리트레아,,,
+1511,Kenya,케냐,,,
+1117,Greece,그리스,,,
+1514,Rwanda,르완다,,,
+1557,Chinese Taipei,중화 타이페이,대만,,
+5162,Guyana,가이아나,,,
+1515,Seychelles,세이셸,,,
+1543,Cambodia,캄보디아,,,
+5527,Barbados,바베이도스,,,
+1493,Namibia,나미비아,,,
+1523,Chad,차드,,,
+1505,Niger,니제르,,,
+2388,Cuba,쿠바,,,
+5528,Belize,벨리즈,,,
+5157,Bahamas,바하마,,,
 8167,Aruba,아루바,,ffd100,418fde
-1494,Sao Tome and Principe,상투메 프린시페,
-1102,Luxembourg,룩셈부르크,
-1098,Faroe Islands,페로 제도,
-5164,Nicaragua,니카라과,
-1499,Sierra Leone,시에라리온,
-1518,Lesotho,레소토,
-1535,Djibouti,지부티,
-5166,Sri Lanka,스리랑카,
+1494,Sao Tome and Principe,상투메 프린시페,,,
+1102,Luxembourg,룩셈부르크,,,
+1098,Faroe Islands,페로 제도,,,
+5164,Nicaragua,니카라과,,,
+1499,Sierra Leone,시에라리온,,,
+1518,Lesotho,레소토,,,
+1535,Djibouti,지부티,,,
+5166,Sri Lanka,스리랑카,,,
 5540,Saint Lucia,세인트루시아,,005bd0,e9c122
-5539,Puerto Rico,푸에르토리코,
-1539,Turkmenistan,투르크메니스탄,
-1092,Latvia,라트비아,
-1114,Moldova,몰도바,
-1107,Liechtenstein,리히텐슈타인,
-1495,Malawi,말라위,
-5534,Mongolia,몽골,
-8168,British Virgin Islands,영국령 버진제도,
-1558,Laos,라오스,
-1096,Azerbaijan,아제르바이잔,
-1103,Bulgaria,불가리아,
-1528,Burundi,부룬디,
-1525,Liberia,라이베리아,
-1097,Lithuania,리투아니아,
-8172,US Virgin Islands,미국령 버진제도,
-1490,Madagascar,마다가스카르,
-1492,Gambia,감비아,
-1534,Togo,토고,
-8170,Montserrat,몬트세랫,
-5526,Antigua and Barbuda,앤티가 바부다,
-8050,Somalia,소말리아,
-1544,Macau,마카오,
-5531,Dominica,도미니카 연방,도미니카
-8150,Anguilla,앵귈라,
-1509,Guinea,기니,
-1106,Cyprus,키프로스,
-1513,Guinea-Bissau,기니비사우,
-634,Botev Plovdiv,보테프 플로브디프,보테프 Pl.
-683,Dunav Ruse,두나프 루세,두나프
+5539,Puerto Rico,푸에르토리코,,,
+1539,Turkmenistan,투르크메니스탄,,,
+1092,Latvia,라트비아,,,
+1114,Moldova,몰도바,,,
+1107,Liechtenstein,리히텐슈타인,,,
+1495,Malawi,말라위,,,
+5534,Mongolia,몽골,,,
+8168,British Virgin Islands,영국령 버진제도,,,
+1558,Laos,라오스,,,
+1096,Azerbaijan,아제르바이잔,,,
+1103,Bulgaria,불가리아,,,
+1528,Burundi,부룬디,,,
+1525,Liberia,라이베리아,,,
+1097,Lithuania,리투아니아,,,
+8172,US Virgin Islands,미국령 버진제도,,,
+1490,Madagascar,마다가스카르,,,
+1492,Gambia,감비아,,,
+1534,Togo,토고,,,
+8170,Montserrat,몬트세랫,,,
+5526,Antigua and Barbuda,앤티가 바부다,,,
+8050,Somalia,소말리아,,,
+1544,Macau,마카오,,,
+5531,Dominica,도미니카 연방,도미니카,,
+8150,Anguilla,앵귈라,,,
+1509,Guinea,기니,,,
+1106,Cyprus,키프로스,,,
+1513,Guinea-Bissau,기니비사우,,,
+634,Botev Plovdiv,보테프 플로브디프,보테프 Pl.,,
+683,Dunav Ruse,두나프 루세,두나프,,
 853,CSKA Sofia,CSKA 소피아,CSKA Sf.,dd0000,ffffff
-854,Slavia Sofia,슬라비아 소피아,슬라비아 Sf.
-856,Septemvri Sofia,셉템브리 소피아,셉템브리
-858,Lokomotiv Plovdiv,로코모티프 플로브디프,로코모티프 Pl.
+854,Slavia Sofia,슬라비아 소피아,슬라비아 Sf.,,
+856,Septemvri Sofia,셉템브리 소피아,셉템브리,,
+858,Lokomotiv Plovdiv,로코모티프 플로브디프,로코모티프 Pl.,,
 859,Botev Vratsa,보테프 브라차,보테프 Vr.,ffffff,000000
-1416,Lokomotiv Sofia,로코모티프 소피아,로코모티프 Sf.
-1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948
-4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.
+1416,Lokomotiv Sofia,로코모티프 소피아,로코모티프 Sf.,,
+1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948,,
+4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.,,
 3733,Zbrojovka Brno,즈브로요프카 브르노,즈브로요프카,ee161f,ffffff
 1320,Energie Cottbus,에네르기 코트부스,E. 코트부스,e3010b,ffffff
 1324,VfL Osnabrück,오스나브뤼크,오스나브뤼크,572a86,ffffff
@@ -1395,65 +1395,79 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1009,Erzurumspor FK,에르주룸스포르,에르주룸스포르,0087c4,ffffff
 3579,Amed,아메드,아메드,256733,ffffff
 6343,Çorum FK,초룸,초룸,000000,ffffff
-15847,Atert Bissen,아테르트 비센,비센
-670,Derry City,데리 시티,
-4165,Vestri,베스트리,
-4358,Aluminij,알루미니,
-275,Stjarnan,스탸르난,
-356,Caernarfon Town,캐나본 타운,캐나본
-357,GAP Connah S Quay FC,코나스 키 노마즈,코나스 키
+15847,Atert Bissen,아테르트 비센,비센,,
+670,Derry City,데리 시티,,,
+4165,Vestri,베스트리,,,
+4358,Aluminij,알루미니,,,
+275,Stjarnan,스탸르난,,,
+356,Caernarfon Town,캐나본 타운,캐나본,,
+357,GAP Connah S Quay FC,코나스 키 노마즈,코나스 키,,
 602,Apollon Limassol,아폴론 리마솔,아폴린 Lm.,ffffff,000000
-659,Valletta FC,발레타,
-661,FK Liepaja,리에파야,
-669,Coleraine FC,콜러레인,
-1164,Inter Turku,인테르 투르쿠,
-2037,US Mondorf-les-bains,몽도르르뱅,
-2257,Dunajska Streda,두나이스카 스트레다,DAC
-2262,Dinamo Tbilisi,디나모 트빌리시,디나모 Tb.
-2270,Neftchi Baku,네프트치 바쿠,네프트치
-3381,Velež,벨레주 모스타르,벨레주 Ms.
-3740,Mornar,모르나르 바르,모르나르
-3741,Petrovac,페트로바츠,
-3840,Bohemians,보헤미안스,
-3874,Panevėžys,파네베지스,
-4359,Bravo,브라보,
-4501,Hapoel Tel Aviv,하포엘 텔아비브,H. 텔아비브
-5352,Glentoran,글렌토런,
-10125,Europa,유로파,
-14393,Dukagjini,두카지니,
-14507,Marsaxlokk,마르사슐로크,
-20406,AF Elbasani,엘바사니,
-946,Newcastle Jets,뉴캐슬 제츠,
-948,Adelaide United,애들레이드 유나이티드,애들레이드
-2789,Port FC,포트 FC,
-2865,Al Ain,알 아인,
-2871,Al-Jazira,알 자지라,
-4217,Neftchi,네프트치 파르가나,네프트치 F.
-4220,Pakhtakor,파흐타코르,
-8009,Al Quwa Al Jawiya,알 쿠와 알 자위야,
-944,Melbourne Victory,멜버른 빅토리,멜버른V
-2714,Gol Gohar,골 고하르,
-3681,Viettel,비엣텔,
-4453,Kitchee,킷치,
-4531,Al Faisaly,알 파이살리,
-5327,Al-Nahda,알 나흐다,
-10108,Kuching FA,쿠칭,
-21137,East Bengal II,이스트 벵골,
-2442,Pusamania Borneo,보르네오 사마린다,보르네오
-3537,Al Qadsia,알 카드시아 쿠웨이트,알 카드시아
-4570,Al Nejmeh,알 네즈메,
-8019,Al Ittihad,알 이티하드 알레포,알 이티하드 Al.
-8026,Dordoi Bishkek,도르도이 비슈케크,도르도이
-8028,Hang Yuen,항위안,
-9118,Wathba,홈스 알 피다,홈스
-10106,Bangladesh Police,방글라데시 폴리스,
-16854,Ulaanbaatar,FC 울란바타르,
-20780,Fortis,포르티스,
-22067,Central Stallions,센트럴 스탈리온스,
-23384,Taguig,원 타기그,
-27818,Karketu Dili,카르케투 딜리,카르케투
+659,Valletta FC,발레타,,,
+661,FK Liepaja,리에파야,,,
+669,Coleraine FC,콜러레인,,,
+1164,Inter Turku,인테르 투르쿠,,,
+2037,US Mondorf-les-bains,몽도르르뱅,,,
+2257,Dunajska Streda,두나이스카 스트레다,DAC,,
+2262,Dinamo Tbilisi,디나모 트빌리시,디나모 Tb.,,
+2270,Neftchi Baku,네프트치 바쿠,네프트치,,
+3381,Velež,벨레주 모스타르,벨레주 Ms.,,
+3740,Mornar,모르나르 바르,모르나르,,
+3741,Petrovac,페트로바츠,,,
+3840,Bohemians,보헤미안스,,,
+3874,Panevėžys,파네베지스,,,
+4359,Bravo,브라보,,,
+4501,Hapoel Tel Aviv,하포엘 텔아비브,H. 텔아비브,,
+5352,Glentoran,글렌토런,,,
+10125,Europa,유로파,,,
+14393,Dukagjini,두카지니,,,
+14507,Marsaxlokk,마르사슐로크,,,
+20406,AF Elbasani,엘바사니,,,
+946,Newcastle Jets,뉴캐슬 제츠,,,
+948,Adelaide United,애들레이드 유나이티드,애들레이드,,
+2789,Port FC,포트 FC,,,
+2865,Al Ain,알 아인,,,
+2871,Al-Jazira,알 자지라,,,
+4217,Neftchi,네프트치 파르가나,네프트치 F.,,
+4220,Pakhtakor,파흐타코르,,,
+8009,Al Quwa Al Jawiya,알 쿠와 알 자위야,,,
+944,Melbourne Victory,멜버른 빅토리,멜버른V,,
+2714,Gol Gohar,골 고하르,,,
+3681,Viettel,비엣텔,,,
+4453,Kitchee,킷치,,,
+4531,Al Faisaly,알 파이살리,,,
+5327,Al-Nahda,알 나흐다,,,
+10108,Kuching FA,쿠칭,,,
+21137,East Bengal II,이스트 벵골,,,
+2442,Pusamania Borneo,보르네오 사마린다,보르네오,,
+3537,Al Qadsia,알 카드시아 쿠웨이트,알 카드시아,,
+4570,Al Nejmeh,알 네즈메,,,
+8019,Al Ittihad,알 이티하드 알레포,알 이티하드 Al.,,
+8026,Dordoi Bishkek,도르도이 비슈케크,도르도이,,
+8028,Hang Yuen,항위안,,,
+9118,Wathba,홈스 알 피다,홈스,,
+10106,Bangladesh Police,방글라데시 폴리스,,,
+16854,Ulaanbaatar,FC 울란바타르,,,
+20780,Fortis,포르티스,,,
+22067,Central Stallions,센트럴 스탈리온스,,,
+23384,Taguig,원 타기그,,,
+27818,Karketu Dili,카르케투 딜리,카르케투,,
 8117,Martinique,마르티니크,,ef1923,ffffff
 10982,Bonaire,보네르,,003087,ffffff
 10985,Sint Maarten,신트 마르턴,,ed1b24,00529b
 8118,French Guiana,프랑스 기아나,,f1d309,07802d
 10984,Saint Martin,생마르탱,,ee012d,0041b8
+263,Beerschot VA,베이르스홋,,,
+739,AS Eupen,오이펜,,,
+4715,Excelsior Virton,비르통,,,
+5805,Francs Borains,프랑 보랭,,,
+5931,Sporting Hasselt,스포르팅 하설트,하설트,,
+6219,K. Lierse S.K.,리르서,,,
+6220,Liège,RFC 리에주,,,
+6222,Patro Eisden,파트로 에이스던 마스메헬런,파트로 에이스던,,
+10244,Seraing United,세랭,,,
+14128,Lokeren-Temse,로케런,,,
+14130,Club Brugge II,클뤼프 NXT,,,
+19045,KRC Genk II,용 헹크,,,
+19046,RSC Anderlecht II,RSCA 퓨처스,,,
+19685,KAA Gent II,용 헨트,,,
