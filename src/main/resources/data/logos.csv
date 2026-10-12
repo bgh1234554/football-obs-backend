@@ -415,7 +415,6 @@ team_id, team_name_ko, logo_url, fa_url
 276,Breidablik,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Iceland/Breidablik.png,
 319,Brann,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Norway/Brann.png,
 327,Bodo/Glimt,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Norway/BodoGlimt.png,
-347,Lech Poznan,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/LechPoznan.png,
 375,Malmo FF,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Sweden/MalmoFF.png,
 400,FC Copenhagen,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Denmark/Copenhagen.png,
 551,FC Basel 1893,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Switzerland/Basel.png,
@@ -576,3 +575,10 @@ team_id, team_name_ko, logo_url, fa_url
 6222,Patro Eisden,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Belgium/PatroEisden.png
 6802,Kaluga,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Russia/Kaluga.svg
 867,Lecce,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Italy/Lecce.svg
+338,Wisla Krakow,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/WislaKrakow.svg
+340,Gornik Zabrze,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/GornikZabrze.svg
+348,Pogon Szczecin,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/PogonSzczecin.svg
+350,Cracovia Krakow,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/Cracovia.svg
+4248,Radomiak Radom,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/RadomiakRadom.svg
+6962,Widzew Łódź,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/WidzewLodz.svg
+347,Lech Poznan,https://bgh1234554.github.io/football-obs-logo-cdn/clubs/Poland/LechPoznan.svg
