@@ -88,7 +88,7 @@ league_id, league_name, league_name_ko, logo_url
 16, CONCACAF Champions Cup, CONCACAF 챔피언스 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CONCACAFChampionsCup.png
 22, CONCACAF Gold Cup, CONCACAF 골드 컵
 858, CONCACAF Gold Cup - Qualification, CONCACAF 골드 컵 예선
-536, CONCACAF Nations League, CONCACAF 네이션스 리그
+536, CONCACAF Nations League, CONCACAF 네이션스 리그, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CONCACAFNationsLeague.png
 13, CONMEBOL Libertadores, 코파 리베르타도레스
 541, CONMEBOL Recopa, CONMEBOL 레코파
 11, CONMEBOL Sudamericana, 코파 수다메리카나
@@ -167,7 +167,8 @@ league_id, league_name, league_name_ko, logo_url
 1210, Super Cup, 수페르카프 엘라다스
 218, Bundesliga, 오스트리아 분데스리가
 220, OFB Cup, ÖFB-컵
-188, A-League, A-리그
+188, A-League, A-리그 남자부
+874, Australia Cup, 오스트레일리아 컵
 307, Pro League, 사우디 프로 리그
 308, Division 1, 사우디 퍼스트 디비전 리그
 504, King's Cup, 사우디 국왕컵

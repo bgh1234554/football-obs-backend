@@ -896,7 +896,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 303,Machida Zelvia,마치다 젤비아,마치다 Z,182865,c1ad76
 833,Shanghai Shenhua,상하이 선화,,115199,ffffff
 836,SHANGHAI SIPG,상하이 하이강,,b50201,ffffff
-945,Melbourne City,멜버른 시티,,,
+945,Melbourne City,멜버른 시티,,7AB2E1,002A5A
 2523,Johor Darul Takzim FC,조호르 다룰 탁짐,,,
 2737,Tractor Sazi,트락토르,,c00404,ffffff
 2744,Sepahan FC,세파한,,ffcc00,000000
@@ -933,7 +933,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 8030,Kaya,카야 일로일로,카야,,
 12268,Regar-TadAZ,레가르-TadAZ 투르순조다,레가르-TadAZ,,
 15516,ATK Mohun Bagan,모훈 바간,,,
-15550,Macarthur,매카터,,,
+15550,Macarthur,매카서,,D2B12A,000000
 16400,Công An Nhân Dân,하노이 공안,,,
 17666,Khalidiya,알 할리디야,,,
 21232,Arkadag,아르카다그,,,
@@ -1424,14 +1424,14 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 14507,Marsaxlokk,마르사슐로크,,,
 20406,AF Elbasani,엘바사니,,,
 946,Newcastle Jets,뉴캐슬 제츠,,,
-948,Adelaide United,애들레이드 유나이티드,애들레이드,,
+948,Adelaide United,애들레이드 유나이티드,애들레이드,E30043,ffffff
 2789,Port FC,포트 FC,,,
 2865,Al Ain,알 아인,,,
 2871,Al-Jazira,알 자지라,,,
 4217,Neftchi,네프트치 파르가나,네프트치 F.,,
 4220,Pakhtakor,파흐타코르,,,
 8009,Al Quwa Al Jawiya,알 쿠와 알 자위야,,,
-944,Melbourne Victory,멜버른 빅토리,멜버른V,,
+944,Melbourne Victory,멜버른 빅토리,멜버른V,032E5E,ffffff
 2714,Gol Gohar,골 고하르,,,
 3681,Viettel,비엣텔,,,
 4453,Kitchee,킷치,,,
@@ -1518,3 +1518,22 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 7716,Folkestone Invicta,폴크스톤 인빅타,폴크스톤,,
 8783,Farnham Town,파넘 타운,파넘,,
 8986,Walton & Hersham,월턴 앤 허셤,WAH,,
+939,Western Sydney Wanderers,웨스턴 시드니 원더러스,W 시드니,c60c30,000000
+940,Perth Glory,퍼스 글로리,퍼스,5D2881,ffffff
+941,Central Coast Mariners,센트럴 코스트 매리너스,센트럴 코스트,FEC935,002E5C
+942,Wellington Phoenix,웰링턴 피닉스,웰링턴,FFDD00,000000
+943,Sydney,시드니,,62A8DA,03284C
+947,Brisbane Roar,브리즈번 로어,브리즈번,F26522,000000
+24608,Auckland,오클랜드,,0900FF,D3B271
+837,Tianjin Teda,톈진 진먼후,톈진,0152a5,ffffff
+840,Henan Jianye,허난,,cb2530,ffffff
+844,Shandong Luneng,산둥 타이샨,,e95504,ffffff
+848,Hangzhou Greentown,저장,,00462d,c1a567
+1431,Qingdao Jonoon,칭다오 하이뉴,칭다오 H.,021d56,fe6a2c
+5684,Shenyang Urban,랴오닝 톄런,랴오닝,891214,ffffff
+5686,Sichuan Jiuniu,선전 신펑청,선전,76a6d5,002859
+5695,Wuhan Three Towns,우한 싼전,우한,212579,ffffff
+17265,Qingdao Youth Island,칭다오 시하이안,칭다오 X.,e70012,ffffff
+21262,Chongqing Tongliang Long,충칭 퉁량룽,충칭,ea2c2d,e3af46
+21263,Dalian Zhixing,다롄 잉보,다롄,0e4d8f,ffffff
+21265,Yunnan Yukun,윈난 위쿤,윈난,013f94,ee8f01
