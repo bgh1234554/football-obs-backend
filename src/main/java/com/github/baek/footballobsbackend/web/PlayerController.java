@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.github.baek.footballobsbackend.dto.search.PlayerSearchResponseDto;
 
 import java.util.concurrent.TimeUnit;
 
@@ -25,6 +27,16 @@ import java.util.concurrent.TimeUnit;
 public class PlayerController {
 
     private final PlayerService playerService;
+
+    /** 숫자는 ID, 나머지는 영문 이름 검색. 원본 한 페이지(최대 250명)만 반환한다. */
+    @GetMapping("/players/search")
+    public ResponseEntity<PlayerSearchResponseDto> search(
+            @RequestParam(name = "query", defaultValue = "") String query,
+            @RequestParam(name = "page", defaultValue = "1") String page) {
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.maxAge(1, TimeUnit.HOURS))
+                .body(playerService.searchPlayers(query, page));
+    }
 
     /**
      * 경기 포메이션에서 선수 이름 클릭시 나오는 메뉴 중 "선수 스탯" 조회 시,

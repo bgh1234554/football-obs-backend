@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
  * BunnyCDN Edge Script에서 헤더를 주입함. 따라서 이 클래스에서는 API 키를 직접 다루지 않음.
  *
  * [역할 범위]
- * 이 클래스는 API 호출 + 응답의 "response" 배열 추출까지만 담당.
+ * 이 클래스는 API 호출 + 응답의 "response" 배열 추출과 검색용 paging 보존을 담당.
  * JSON 파싱 및 DTO 조립은 FixtureService에서 처리.
  */
 @Slf4j
@@ -75,6 +75,22 @@ public class ApiFootballClient {
     public JsonNode getInjuries(long fixtureId) {
         log.info("Fetching injuries fixtureId={}", fixtureId);
         return fetchArray("/injuries?ids=" + fixtureId);
+    }
+
+    /** 검색 결과의 paging을 보존하고 HTTP 200에 담긴 원본 오류도 검사한다. */
+    public JsonNode searchPlayerProfiles(String query, int page) {
+        JsonNode root = query.matches("[0-9]+")
+                ? fetchRoot("/players/profiles?player={player}&page={page}", query, page)
+                : fetchRoot("/players/profiles?search={search}&page={page}", query, page);
+        if (root == null || (!root.path("errors").isMissingNode() && !root.path("errors").isEmpty())
+                || !root.path("response").isArray()
+                || !root.path("paging").path("current").isIntegralNumber()
+                || !root.path("paging").path("total").isIntegralNumber()
+                || root.path("paging").path("current").asInt() < 1
+                || root.path("paging").path("total").asInt() < 0) {
+            throw new ApiException(ErrorCode.UPSTREAM_API_ERROR);
+        }
+        return root;
     }
 
     /**
@@ -222,11 +238,11 @@ public class ApiFootballClient {
      * RequestLoggingFilter의 요청 완료 로그가 같은 requestId(MDC)를 공유하므로, 전체 요청 시간
      * 중 upstream 대기 시간이 얼마인지 로그만으로 구분할 수 있다. 자세한 설계는 docs/logging.md.
      */
-    private JsonNode fetchRoot(String path) {
+    private JsonNode fetchRoot(String path, Object... uriVariables) {
         long startedAt = System.nanoTime();   // 실제 API 호출 시점
         try {
             JsonNode result = restClient.get()    // 빌더 객체 생성, I/O 없음
-                    .uri(path)                    // 빌더, I/O 없음
+                    .uri(path, uriVariables)                    // 빌더, I/O 없음
                     .retrieve()                   // 실제로 소켓 연결 + 요청 전송 + 응답 수신
                     .body(JsonNode.class);        // 응답 바디를 JsonNode로 파싱 완료까지 블로킹
             log.info("Upstream call completed path={} durationMs={}",

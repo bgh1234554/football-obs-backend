@@ -29,6 +29,8 @@ import com.github.baek.footballobsbackend.dto.stats.Layer1.Layer2.StatTeamDto;
 import com.github.baek.footballobsbackend.dto.stats.Layer1.PlayerInfoDto;
 import com.github.baek.footballobsbackend.dto.stats.Layer1.PlayerSeasonStatDto;
 import com.github.baek.footballobsbackend.dto.stats.PlayerProfileStatResponseDto;
+import com.github.baek.footballobsbackend.dto.search.PlayerSearchItemDto;
+import com.github.baek.footballobsbackend.dto.search.PlayerSearchResponseDto;
 import com.github.baek.footballobsbackend.error.ApiException;
 import com.github.baek.footballobsbackend.error.ErrorCode;
 import com.github.baek.footballobsbackend.util.CsvLoader;
@@ -68,6 +70,42 @@ public class PlayerService {
     // ──────────────────────────────────────────────
     // Public API
     // ──────────────────────────────────────────────
+
+    /** 숫자는 ID, 문자는 공백을 보존한 영문 이름으로 원본 한 페이지를 검색한다. */
+    public PlayerSearchResponseDto searchPlayers(String input, String requestedPage) {
+        String query = input == null ? "" : input;
+        if (query.strip().matches("[0-9]+")) query = query.strip();
+        int page;
+        try {
+            page = Integer.parseInt(requestedPage);
+            if (page < 1 || query.isBlank() || query.length() > 128) throw new NumberFormatException();
+            if (query.matches("[0-9]+")) {
+                if (Long.parseLong(query) <= 0) throw new NumberFormatException();
+            } else if (query.codePointCount(0, query.length()) < 4) throw new NumberFormatException();
+        } catch (NumberFormatException e) {
+            throw new ApiException(ErrorCode.INVALID_PLAYER_SEARCH);
+        }
+        // ID는 단건이므로 원본 1페이지만 조회한다.
+        boolean byId = query.matches("[0-9]+");
+        if (byId) query = String.valueOf(Long.parseLong(query));
+        JsonNode root = apiClient.searchPlayerProfiles(query, byId ? 1 : page);
+        List<PlayerSearchItemDto> players = new ArrayList<>();
+        for (JsonNode item : root.path("response")) {
+            JsonNode node = item.path("player");
+            long id = node.path("id").asLong();
+            if (id <= 0) continue;
+            PlayerInfoDto info = buildPlayerInfo(node, id);
+            String englishName = (node.path("firstname").asText("") + " " + node.path("lastname").asText("")).strip();
+            if (englishName.isEmpty()) englishName = node.path("name").asText("");
+            String fullName = info.getFullName();
+            if (fullName == null || fullName.isBlank()) fullName = info.getName();
+            players.add(new PlayerSearchItemDto(id, info.getName(), fullName, englishName,
+                    info.getPhotoUrl(), info.getNationality(), node.path("age").isNumber() ? node.path("age").asInt() : null,
+                    node.path("number").isNumber() ? node.path("number").asInt() : null, nullableStr(node.path("position"))));
+        }
+        return new PlayerSearchResponseDto(players, byId ? 1 : root.path("paging").path("current").asInt(),
+                byId ? 1 : Math.max(1, root.path("paging").path("total").asInt()));
+    }
 
     /**
      * 선수 ID로 선수 기본 정보 + 시즌별 대회 스탯을 반환.

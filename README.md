@@ -36,6 +36,7 @@
 | --- | --- | --- | --- |
 | GET | `/api/fixtures/{fixtureId}` | 경기 정보, 이벤트, 라인업, 팀·선수 스탯, 부상·결장 선수 | 15초 |
 | GET | `/api/hth?teamA={teamId}&teamB={teamId}` | 두 팀의 상대전적 | 1시간 |
+| GET | `/api/players/search?query={검색어}&page=1` | 숫자는 선수 ID, 문자는 영문 이름 검색. 원본 페이지당 최대 250명과 page/totalPages 반환 | 1시간 |
 | GET | `/api/playerStats/{playerId}` | 선수 프로필과 시즌·대회별 스탯 | 12시간 |
 | GET | `/actuator/health` | 서버 상태 확인 | - |
 
