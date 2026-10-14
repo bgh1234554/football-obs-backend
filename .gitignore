@@ -47,3 +47,6 @@ __pycache__
 .editorconfig
 
 tmp*
+# JVM 실행 중 생성되는 진단 파일
+hs_err_pid*.log
+replay_pid*.log
