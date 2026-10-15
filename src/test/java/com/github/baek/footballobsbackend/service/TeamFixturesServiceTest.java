@@ -77,9 +77,10 @@ class TeamFixturesServiceTest {
         ArrayNode shuffled = mapper.createArrayNode();
         JsonNode entries = sample("Next");
         for (int i = entries.size() - 1; i >= 0; i--) shuffled.add(entries.get(i));
+        shuffled.add(entries.get(entries.size() - 1).deepCopy());
         when(client.getTeamFixtures(85, true)).thenReturn(shuffled);
         var result = service.getTeamFixtures(85, true);
-        assertThat(result.matches()).hasSize(5);
+        assertThat(result.matches()).hasSize(6);
         assertThat(result.matches().getFirst().getFixtureId()).isEqualTo(1635690);
         assertThat(result.matches()).allSatisfy(match -> {
             assertThat(match.getHomeScore()).isNull();

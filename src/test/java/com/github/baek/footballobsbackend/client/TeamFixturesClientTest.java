@@ -20,7 +20,7 @@ class TeamFixturesClientTest {
         ReflectionTestUtils.setField(client, "restClient", builder.build());
         server.expect(requestTo("https://example.test/fixtures?team=85&last=6"))
                 .andRespond(withSuccess("{\"errors\":[],\"response\":[]}", MediaType.APPLICATION_JSON));
-        server.expect(requestTo("https://example.test/fixtures?team=85&next=5"))
+        server.expect(requestTo("https://example.test/fixtures?team=85&next=6"))
                 .andRespond(withSuccess("{\"errors\":{\"requests\":\"quota\"},\"response\":[]}", MediaType.APPLICATION_JSON));
         assertThat(client.getTeamFixtures(85, false)).isEmpty();
         assertThatThrownBy(() -> client.getTeamFixtures(85, true)).isInstanceOf(ApiException.class);

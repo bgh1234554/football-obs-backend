@@ -33,7 +33,7 @@ public class TeamFixturesService {
         Comparator<TeamFixtureDto> byDate = Comparator.comparing(
                 match -> match.getDate() == null ? null : OffsetDateTime.parse(match.getDate()).toInstant(),
                 Comparator.nullsLast(upcoming ? Comparator.<Instant>naturalOrder() : Comparator.<Instant>reverseOrder()));
-        return new TeamFixturesResponseDto(teamId, matches.stream().sorted(byDate).limit(upcoming ? 5 : 6).toList());
+        return new TeamFixturesResponseDto(teamId, matches.stream().sorted(byDate).limit(6).toList());
     }
 
     private TeamFixtureDto buildMatch(JsonNode entry) {
