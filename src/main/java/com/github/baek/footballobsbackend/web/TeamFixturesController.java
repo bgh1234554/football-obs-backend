@@ -5,13 +5,11 @@ import com.github.baek.footballobsbackend.error.ErrorResult;
 import com.github.baek.footballobsbackend.service.TeamFixturesService;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.CacheControl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import java.time.Duration;
 import java.time.Instant;
 
 @RestController
@@ -32,7 +30,7 @@ public class TeamFixturesController {
 
     private ResponseEntity<TeamFixturesResponseDto> getFixtures(long teamId, boolean upcoming) {
         if (teamId <= 0) throw new IllegalArgumentException("teamId는 양의 정수여야 합니다.");
-        return ResponseEntity.ok().cacheControl(CacheControl.maxAge(Duration.ofHours(12)))
+        return ResponseEntity.ok()
                 .body(service.getTeamFixtures(teamId, upcoming));
     }
 

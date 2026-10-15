@@ -19,12 +19,12 @@ class TeamFixturesControllerTest {
             .setControllerAdvice(new GlobalExceptionAdvice()).build();
 
     @Test
-    void routesBothQueriesAndReturnsEmptyListWithCacheHeader() throws Exception {
+    void routesBothQueriesAndReturnsEmptyListWithoutCacheHeader() throws Exception {
         for (boolean upcoming : new boolean[]{false, true}) {
             when(service.getTeamFixtures(85, upcoming)).thenReturn(new TeamFixturesResponseDto(85, List.of()));
             mvc.perform(get("/api/fixtures/" + (upcoming ? "next" : "last")).param("teamId", "85"))
                     .andExpect(status().isOk())
-                    .andExpect(header().string("Cache-Control", "max-age=43200"))
+                    .andExpect(header().doesNotExist("Cache-Control"))
                     .andExpect(jsonPath("$.teamId").value(85))
                     .andExpect(jsonPath("$.matches").isEmpty());
             verify(service).getTeamFixtures(85, upcoming);
