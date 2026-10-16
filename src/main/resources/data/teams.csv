@@ -1471,27 +1471,27 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 19045,KRC Genk II,용 헹크,,,
 19046,RSC Anderlecht II,RSCA 퓨처스,,,
 19685,KAA Gent II,용 헨트,,,
-337,Slask Wroclaw,실롱스크 브로츠와프,실롱스크.,,
-338,Wisla Krakow,비스와 크라쿠프,비스와,,
-17115,Wieczysta Kraków,비에치스타 크라쿠프,비에치스타,,
-5046,Kalamata,칼라마타,,,
-17991,Iraklis 1908,이라클리스,,,
-635,Dinamo Bucuresti,디나모 부쿠레슈티,디나모 B.,,
-2578,FC Voluntari,볼룬타리,,,
-2581,FC Botosani,보토샤니,,,
-2585,Sepsi OSK Sfantu Gheorghe,셉시 OSK 스픈투 게오르게,셉시,,
-2589,Uta Arad,UTA 아라드,UTA,,
-2592,Arges Pitesti,아르제슈 피테슈티,아르제슈,,
-2596,Farul Constanta,파룰 콘스탄차,파룰,,
-2598,Petrolul Ploiesti,페트롤룰 플로이에슈티,페트롤룰,,
-6230,Csikszereda,칙세레더 미에르쿠레아 치우크,칙세레더,,
-6231,Rapid,라피드 부쿠레슈티,라피드 B.,,
-6886,Oţelul,오첼룰 갈라치,오첼룰,,
-20034,Corvinul Hunedoara,코르비눌 후네도아라,코르비눌 H.,,
+337,Slask Wroclaw,실롱스크 브로츠와프,실롱스크,499F68,DDB062
+338,Wisla Krakow,비스와 크라쿠프,비스와,D81E25,CCAD57
+17115,Wieczysta Kraków,비에치스타 크라쿠프,비에치스타,F6EC3E,0
+5046,Kalamata,칼라마타,,000000,ffffff
+17991,Iraklis 1908,이라클리스,,060472,ffffff
+635,Dinamo Bucuresti,디나모 부쿠레슈티,디나모 B.,fe0000,ffffff
+2578,FC Voluntari,볼룬타리,,57c9df,003875
+2581,FC Botosani,보토샤니,,323092,ffffff
+2585,Sepsi OSK Sfantu Gheorghe,셉시 OSK 스픈투 게오르게,셉시,e11e49,ffffff
+2589,Uta Arad,UTA 아라드,UTA,ef3032,ffffff
+2592,Arges Pitesti,아르제슈 피테슈티,아르제슈,550e81,ffffff
+2596,Farul Constanta,파룰 콘스탄차,파룰,18297c,ffffff
+2598,Petrolul Ploiesti,페트롤룰 플로이에슈티,페트롤룰,ffe716,263e99
+6230,Csikszereda,칙세레더 미에르쿠레아 치우크,칙세레더,ef141f,000000
+6231,Rapid,라피드 부쿠레슈티,라피드 B.,843037,ffffff
+6886,Oţelul,오첼룰 갈라치,오첼룰,ffffff,00539c
+20034,Corvinul Hunedoara,코르비눌 후네도아라,코르비눌 H.,2185bf,000000
 2580,Concordia,콘코르디아,,,
 2586,Chindia Targoviste,킨디아 트르고비슈테,,,
 2590,ASA Targu Mures,트르구 무레슈,,,
-2604,Metaloglobus,메탈로글로부스,,,
+2604,Metaloglobus,메탈로글로부스,,87D100,00509F
 2606,FC Politehnica Timisoara,폴리 티미쇼아라,폴리 T.,,
 2608,CS Afumati,아푸마티,,,
 2616,CSM Ramnicu Valcea,람니쿠 발체아,람니쿠,,
@@ -1499,9 +1499,9 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 6875,Metalul Buzău,메탈룰 부저우,메탈룰 B.,,
 6891,Popești-Leordeni,포페슈티-레오르데니,,,
 6898,Slatina,슬라티나,,,
-6916,Unirea Slobozia,우니레아 슬로보지아,우니레아,,
+6916,Unirea Slobozia,우니레아 슬로보지아,우니레아,F7E904,003CA6
 6927,Viitorul Şelimbăr,비토룰 셸림버르,비토룰 Ş.,,
-7466,CSA Steaua Bucureşti,스테아우아 부쿠레슈티,스테아우아,,
+7466,CSA Steaua Bucureşti,스테아우아 부쿠레슈티,스테아우아,EE2E24,005DAB
 7469,Dumbrăviţa,둠브러비차,,,
 16279,CSM Satu Mare,사투 마레,,,
 19170,CS Dinamo București,CS 디나모 부쿠레슈티,CS 디나모,,
