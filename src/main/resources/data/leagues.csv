@@ -181,14 +181,14 @@ league_id, league_name, league_name_ko, logo_url
 208, Challenge League, 스위스 챌린지 리그
 209, Schweizer Cup, 스위스 컵
 709, Armenia Cup, 아르메니아 컵
-342, Premier League, 아르메니아 프리미어 리그
+342, Premier League, 아르메니아 프리미어 리그,https://bgh1234554.github.io/football-obs-logo-cdn/leagues/ArmenianPremierLeague.svg
 389, Premier League, 카자흐스탄 프리미어 리그,https://bgh1234554.github.io/football-obs-logo-cdn/leagues/KazakhPremierLeague.svg
 498, Kazakhstan Cup, 카자흐스탄 컵
 388, 1. Division, 카자흐스탄 퍼스트 리그
 818, Super Cup, 카자흐스탄 슈퍼 컵
-419, Premyer Liqa, 아제르바이잔 프리미어 리그
+419, Premyer Liqa, 아제르바이잔 프리미어 리그,https://bgh1234554.github.io/football-obs-logo-cdn/leagues/AzerbaijanPremierLeague.svg
 420, Azerbaijan Cup, 아제르바이잔 컵
-116, Premier League, 벨라루스 프리미어 리그
+116, Premier League, 벨라루스 프리미어 리그,https://bgh1234554.github.io/football-obs-logo-cdn/leagues/BelarusianPremierLeague.svg
 117, 1.Division, 벨라루스 퍼스트 리그
 486, Coppa, 벨라루스 컵
 812, Super Cup, 벨라루스 슈퍼 컵
