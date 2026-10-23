@@ -2,7 +2,9 @@ package com.github.baek.footballobsbackend.client;
 
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientResponseException;
@@ -35,10 +37,19 @@ public class ApiFootballClient {
      * RestClient를 CDN baseUrl로 초기화.
      * application.yaml의 api.cdn-url을 주입받아 모든 요청의 base가 됨.
      */
-    public ApiFootballClient(@Value("${api.cdn-url}") String cdnUrl) {
-        this.restClient = RestClient.builder()
-                .baseUrl(cdnUrl)
-                .build();
+    public ApiFootballClient(String cdnUrl) {
+        this(cdnUrl, "");
+    }
+
+    @Autowired
+    public ApiFootballClient(@Value("${api.cdn-url}") String cdnUrl,
+                             @Value("${api.cdn-referer:}") String cdnReferer) {
+        RestClient.Builder builder = RestClient.builder().baseUrl(cdnUrl);
+        // 미설정 시 기존 호출을 유지하고, 설정한 경우에만 CDN으로 Referer를 보낸다.
+        if (cdnReferer != null && !cdnReferer.isBlank()) {
+            builder.defaultHeader(HttpHeaders.REFERER, cdnReferer.strip());
+        }
+        this.restClient = builder.build();
     }
 
     /**

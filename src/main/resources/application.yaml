@@ -14,6 +14,7 @@ logging:
 
 api:
   cdn-url: ${CDN_URL}
+  cdn-referer: ${CDN_REFERER:}
   media-cdn-url: ${MEDIA_CDN_URL}
 
 # TODO: Render 배포 시 CORS_ALLOWED_ORIGINS 환경변수에 Vercel 도메인 등록

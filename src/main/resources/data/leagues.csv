@@ -82,8 +82,8 @@ league_id, league_name, league_name_ko, logo_url
 20, CAF Confederation Cup, CAF 컨페더레이션 컵
 533, CAF Super Cup, CAF 슈퍼컵
 1008, CAFA Nations Cup, 중앙아시아 컵
-856, CONCACAF Caribbean Club Championship, 캐리비안 클럽 챔피언십
-534, CONCACAF Caribbean Club Shield, 캐리비안 클럽 실드
+856, CONCACAF Caribbean Club Championship, CONCACAF 캐리비안 컵
+534, CONCACAF Caribbean Club Shield, CFU 클럽 실드
 1028, CONCACAF Central American Cup, 중앙아메리카 컵
 16, CONCACAF Champions Cup, CONCACAF 챔피언스 컵, https://bgh1234554.github.io/football-obs-logo-cdn/leagues/CONCACAFChampionsCup.png
 22, CONCACAF Gold Cup, CONCACAF 골드 컵
