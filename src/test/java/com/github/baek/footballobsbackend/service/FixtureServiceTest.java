@@ -105,6 +105,31 @@ class FixtureServiceTest {
         assertThat(readAccessor(teamColors, "number")).isEqualTo("000000");
     }
 
+    @Test
+    void propagatesRefreshThroughFixtureAndInjuryDependencies() throws Exception {
+        var client = org.mockito.Mockito.mock(com.github.baek.footballobsbackend.client.ApiFootballClient.class);
+        var csv = org.mockito.Mockito.mock(com.github.baek.footballobsbackend.util.CsvLoader.class);
+        var resolver = org.mockito.Mockito.mock(com.github.baek.footballobsbackend.util.KoResolver.class);
+        var service = new FixtureService(client, csv, resolver);
+        org.mockito.Mockito.when(client.getFixture(1, true)).thenReturn(objectMapper.readTree("""
+                {"fixture":{"id":1,"status":{"short":"1H"}},
+                 "teams":{"home":{"id":85,"name":"Home"},"away":{"id":86,"name":"Away"}},
+                 "goals":{"home":1,"away":0},"events":[],"lineups":[],"statistics":[],"players":[]}
+                """));
+        org.mockito.Mockito.when(client.getInjuries(1, true)).thenReturn(objectMapper.readTree("""
+                [{"player":{"id":10,"name":"Player"},"team":{"id":85,"name":"Home"}}]
+                """));
+        org.mockito.Mockito.when(resolver.resolvePlayerName(10, "Player"))
+                .thenReturn(new com.github.baek.footballobsbackend.util.KoResolver.ResolvedName("Player", null));
+        assertThat(service.getFixture(1, true).getHomeInjuries()).hasSize(1);
+        org.mockito.Mockito.verify(client).getFixture(1, true);
+        org.mockito.Mockito.verify(client).getInjuries(1, true);
+        org.mockito.Mockito.verify(client).getPlayerSquad(85, true);
+        org.mockito.Mockito.verify(client).getPlayerSquad(86, true);
+        org.mockito.Mockito.verify(client).getPlayerProfile(10, true);
+        org.mockito.Mockito.verifyNoMoreInteractions(client);
+    }
+
     private String readAccessor(Object target, String accessor) throws Exception {
         Method method = target.getClass().getDeclaredMethod(accessor);
         method.setAccessible(true);

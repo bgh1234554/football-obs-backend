@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,9 +44,10 @@ public class FixtureController {
      * @return 200 OK + FixtureResponseDto | 404 Not Found (경기 없음)
      */
     @GetMapping("/fixtures/{fixtureId}")
-    public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable("fixtureId") long fixtureId) {
+    public ResponseEntity<FixtureResponseDto> getFixture(@PathVariable("fixtureId") long fixtureId,
+            @RequestHeader(name = "X-Force-Refresh", defaultValue = "false") boolean refresh) {
         // 1. FixtureService에 조립 위임 — null이면 해당 ID의 경기가 없는 것
-        FixtureResponseDto dto = fixtureService.getFixture(fixtureId);
+        FixtureResponseDto dto = refresh ? fixtureService.getFixture(fixtureId, true) : fixtureService.getFixture(fixtureId);
         return ResponseEntity.ok()
                 .cacheControl(CacheControl.maxAge(15, TimeUnit.SECONDS))
                 .body(dto);

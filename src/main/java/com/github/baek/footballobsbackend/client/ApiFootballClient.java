@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import org.springframework.web.util.DefaultUriBuilderFactory;
 import org.springframework.web.client.RestClientResponseException;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -32,6 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 public class ApiFootballClient {
 
     private final RestClient restClient;
+    private final DefaultUriBuilderFactory uriFactory;
+    private final CdnResponseCache responseCache = new CdnResponseCache();
 
     /**
      * RestClient를 CDN baseUrl로 초기화.
@@ -50,6 +53,7 @@ public class ApiFootballClient {
             builder.defaultHeader(HttpHeaders.REFERER, cdnReferer.strip());
         }
         this.restClient = builder.build();
+        this.uriFactory = new DefaultUriBuilderFactory(cdnUrl);
     }
 
     /**
@@ -60,10 +64,14 @@ public class ApiFootballClient {
      * @return response[0] JsonNode. 경기 데이터 없으면 null.
      */
     public JsonNode getFixture(long fixtureId) {
+        return getFixture(fixtureId, false);
+    }
+
+    public JsonNode getFixture(long fixtureId, boolean refresh) {
         log.info("Fetching fixture id={}", fixtureId);
 
         // 1. CDN에 GET /fixtures?id={fixtureId} 요청
-        JsonNode root = fetchRoot("/fixtures?id=" + fixtureId);
+        JsonNode root = fetchRoot(refresh, "/fixtures?id=" + fixtureId);
 
         // 2. 응답 자체가 null이면 중단
         if (root == null) return null;
@@ -84,8 +92,12 @@ public class ApiFootballClient {
      * @return injuries response 배열 JsonNode. 응답 없으면 null.
      */
     public JsonNode getInjuries(long fixtureId) {
+        return getInjuries(fixtureId, false);
+    }
+
+    public JsonNode getInjuries(long fixtureId, boolean refresh) {
         log.info("Fetching injuries fixtureId={}", fixtureId);
-        return fetchArray("/injuries?ids=" + fixtureId);
+        return fetchArray(refresh, "/injuries?ids=" + fixtureId);
     }
 
     /** 검색 결과의 paging을 보존하고 HTTP 200에 담긴 원본 오류도 검사한다. */
@@ -111,8 +123,12 @@ public class ApiFootballClient {
      * @return response 배열 JsonNode. 응답 없으면 null.
      */
     public JsonNode getPlayerProfile(long playerId) {
+        return getPlayerProfile(playerId, false);
+    }
+
+    public JsonNode getPlayerProfile(long playerId, boolean refresh) {
         log.info("Fetching player profile playerId={}", playerId);
-        return fetchArray("/players/profiles?player=" + playerId);
+        return fetchArray(refresh, "/players/profiles?player=" + playerId);
     }
 
     /**
@@ -170,8 +186,12 @@ public class ApiFootballClient {
      * @return response 배열 JsonNode. 응답 없으면 null.
      */
     public JsonNode getPlayerSquad(long teamId) {
+        return getPlayerSquad(teamId, false);
+    }
+
+    public JsonNode getPlayerSquad(long teamId, boolean refresh) {
         log.info("Fetching squad teamId={}", teamId);
-        return fetchArray("/players/squads?team=" + teamId);
+        return fetchArray(refresh, "/players/squads?team=" + teamId);
     }
 
     /**
@@ -229,7 +249,11 @@ public class ApiFootballClient {
      * 응답이 null이거나 "response"가 배열이 아니면 null 반환.
      */
     private JsonNode fetchArray(String path) {
-        JsonNode root = fetchRoot(path);
+        return fetchArray(false, path);
+    }
+
+    private JsonNode fetchArray(boolean refresh, String path) {
+        JsonNode root = fetchRoot(refresh, path);
         if (root == null) return null;
         JsonNode response = root.path("response");
         return response.isArray() ? response : null;
@@ -250,18 +274,22 @@ public class ApiFootballClient {
      * 중 upstream 대기 시간이 얼마인지 로그만으로 구분할 수 있다. 자세한 설계는 docs/logging.md.
      */
     private JsonNode fetchRoot(String path, Object... uriVariables) {
-        long startedAt = System.nanoTime();   // 실제 API 호출 시점
+        return fetchRoot(false, path, uriVariables);
+    }
+
+    private JsonNode fetchRoot(boolean refresh, String path, Object... uriVariables) {
         try {
-            JsonNode result = restClient.get()    // 빌더 객체 생성, I/O 없음
-                    .uri(path, uriVariables)                    // 빌더, I/O 없음
-                    .retrieve()                   // 실제로 소켓 연결 + 요청 전송 + 응답 수신
-                    .body(JsonNode.class);        // 응답 바디를 JsonNode로 파싱 완료까지 블로킹
-            log.info("Upstream call completed path={} durationMs={}",
-                    path, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
-            // API 원본에 섞여 오는 인코딩 깨짐("UrbaÅ„ski" → "Urbański")을 모든 호출 결과에서 한 번에 복구.
-            // CSV에 없는 선수/감독/심판/경기장 이름이 영문 그대로 내려갈 때와 CsvUpdater가 CSV에 쓸 때 모두 적용된다.
-            MojibakeRepair.repairTree(result);
-            return result;
+            return responseCache.get(uriFactory.expand(path, uriVariables), () -> {
+                long startedAt = System.nanoTime();
+                var response = restClient.get()
+                        .uri(path, uriVariables)
+                        .retrieve()
+                        .toEntity(JsonNode.class);
+                log.info("Upstream call completed path={} durationMs={}",
+                        path, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
+                MojibakeRepair.repairTree(response.getBody());
+                return response;
+            }, refresh);
         } catch (RestClientResponseException e) {
             log.warn("API Football upstream error: status={}, path={}, body={}",
                     e.getStatusCode().value(), path, e.getResponseBodyAsString());

@@ -9,11 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Spring MVC 전역 설정.
- *
- * [CORS 정책]
- * 실운영에서는 BunnyCDN Pull Zone의 Allowed Referers / IP Whitelist 기능으로 접근을 제어함.
- * 백엔드 자체 CORS 필터는 개발 시에는 편의를 위해 전체 허용("*")으로 두고,
- * 서비스 런칭 후 도메인 제한은 CDN 레이어에서 화이트리스트 추가 및 제한 추가
+ * CORS 허용 Origin은 환경변수로 지정하며, 직접 호출의 인증은 대신하지 않는다.
  */
 @RequiredArgsConstructor
 @Configuration
@@ -26,12 +22,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        // 1. 모든 /api/** 경로에 대해 모든 출처 허용 (CDN 레이어에서 접근 제어)
-        // CORS -> 다른 웹사이트에서 JS로 무단 호출 방어 역할
         registry.addMapping("/api/**")
-                .allowedOrigins("*")
-//                .allowedOrigins(allowedOrigins)
-                .allowedMethods("GET");
+                .allowedOrigins(allowedOrigins)
+                .allowedMethods("GET")
+                // 요청 방향(브라우저 → 백엔드): X-Force-Refresh 등 요청 헤더의 사용을 허용한다.
+                // *는 헤더 이름의 전체 허용이며, 허용 사이트는 allowedOrigins가 별도로 제한한다.
+                .allowedHeaders("*")
+                // 응답 방향(백엔드 → 브라우저): 아래 응답 헤더를 프런트 JS에서 읽을 수 있게 한다.
+                // 헤더 전송 자체를 허용하는 설정은 아니며, 429 재시도 대기시간과 제한 상태를 JS에 노출한다.
+                .exposedHeaders("Retry-After", "X-Retry-After-Millis",
+                        "X-RateLimit-Limit", "X-RateLimit-Remaining");
     }
 
     @Override
@@ -41,9 +41,3 @@ public class WebConfig implements WebMvcConfigurer {
         // /actuator/health 같은 건 적용 안 됨
     }
 }
-/*
-방어책, 막는 것
-CORS 도메인 제한, 다른 웹사이트에서 JS로 무단 호출
-Bucket4j, 어디서든 과도한 반복 호출
-BunnyCDN IP 화이트리스트, BunnyCDN 직접 호출
- */
