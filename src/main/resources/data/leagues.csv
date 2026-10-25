@@ -22,6 +22,9 @@ league_id, league_name, league_name_ko, logo_url
 135, Serie A, 세리에 A
 136, Serie B, 세리에 B
 137, Coppa Italia, 코파 이탈리아
+138, Serie C - Girone A, 세리에 C - 그룹 A
+942, Serie C - Girone B, 세리에 C - 그룹 B
+943, Serie C - Girone C, 세리에 C - 그룹 C
 547, Supercoppa Italiana, 수페르코파 이탈리아나
 78, Bundesliga, 분데스리가
 79, 2. Bundesliga, 2. 분데스리가
