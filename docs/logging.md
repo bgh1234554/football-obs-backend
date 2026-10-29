@@ -8,6 +8,7 @@
 | --- | --- |
 | `config/RequestLoggingFilter.java` | 요청 단위 requestId 발급 + 완료 로그 1줄 |
 | `config/RateLimitInterceptor.java` | rate limit 초과 시에만 IP를 남김. `ClientIpResolver.resolve()` 관련 변경은 [rate-limiting.md](rate-limiting.md)/[client-ip-resolution.md](client-ip-resolution.md) 참고 (이 문서 범위 밖) |
+| `config/ClientIpResolver.java` | 진단 로그를 켰을 때 `/api/__ip_check__` 요청의 전달 헤더와 선택 IP를 DEBUG로 기록. 실행 절차는 [client-ip-resolution.md](client-ip-resolution.md) 참고 |
 | `client/ApiFootballClient.java` | 기존 호출 시작 로그 + 완료 시 소요시간 로그 |
 | `error/GlobalExceptionAdvice.java` | 외부 호출 제한은 `[LIMIT_EXCEEDED] scope=upstream-*` INFO, 그 외 기존 예외는 WARN/ERROR |
 | `service/FixtureService.java`, `util/KoResolver.java` | 기존 `[KO_NAME_NEEDED]` 등 데이터 품질 태그 로그 — **레벨 변경 금지** |

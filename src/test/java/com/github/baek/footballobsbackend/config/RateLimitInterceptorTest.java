@@ -37,6 +37,14 @@ class RateLimitInterceptorTest {
     @Test
     void productionBeansReceiveSettingsFromApplicationYaml() {
         new ApplicationContextRunner().withUserConfiguration(RateLimitInterceptor.class,UpstreamRateLimiter.class)
+                .withPropertyValues(
+                        "SERVER_RATE_LIMIT_CAPACITY=" + server("normal").capacity(),
+                        "SERVER_RATE_LIMIT_REFILL_TOKENS=" + server("normal").refillTokens(),
+                        "SERVER_RATE_LIMIT_REFILL_PERIOD_MS=" + server("normal").refillMs(),
+                        "UPSTREAM_IP_RATE_LIMIT_CAPACITY=" + policy("identity").ipCapacity(),
+                        "UPSTREAM_IP_RATE_LIMIT_REFILL_PERIOD_MS=" + policy("identity").ipRefillMs(),
+                        "UPSTREAM_GLOBAL_RATE_LIMIT_CAPACITY=" + policy("identity").globalCapacity(),
+                        "UPSTREAM_GLOBAL_RATE_LIMIT_REFILL_PERIOD_MS=" + policy("identity").globalRefillMs())
                 .withInitializer(context -> {
                     try {
                         for (var source : new YamlPropertySourceLoader().load("application",new ClassPathResource("application.yaml")))
