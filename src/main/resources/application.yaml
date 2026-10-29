@@ -2,6 +2,13 @@ spring:
   application:
     name: football-obs-backend
 
+# 신뢰 프록시가 없으면 전달 헤더를 사용하지 않는다. 빈 정규식은 전체 신뢰이므로 금지한다.
+server:
+  forward-headers-strategy: native
+  tomcat:
+    remoteip:
+      internal-proxies: ${TRUSTED_PROXY_REGEX}
+
 # 콘솔 로그 포맷. requestId는 RequestLoggingFilter가 MDC에 넣어주는 값 —
 # 필터가 아직 없는 시점/스레드에서는 %X{requestId:-no-id}가 "no-id"로 대체됨.
 # 자세한 설명: docs/logging.md
@@ -20,3 +27,14 @@ api:
 # TODO: Render 배포 시 CORS_ALLOWED_ORIGINS 환경변수에 Vercel 도메인 등록
 cors:
   allowed-origins: ${CORS_ALLOWED_ORIGINS:*}
+# 서버 보호와 실제 외부 호출 보호를 분리한다. 외부 호출은 캐시 미적중 때만 차감한다.
+rate-limit:
+  server:
+    capacity: ${SERVER_RATE_LIMIT_CAPACITY}
+    refill-tokens: ${SERVER_RATE_LIMIT_REFILL_TOKENS}
+    refill-period-ms: ${SERVER_RATE_LIMIT_REFILL_PERIOD_MS}
+  upstream:
+    ip-capacity: ${UPSTREAM_IP_RATE_LIMIT_CAPACITY}
+    ip-refill-period-ms: ${UPSTREAM_IP_RATE_LIMIT_REFILL_PERIOD_MS}
+    global-capacity: ${UPSTREAM_GLOBAL_RATE_LIMIT_CAPACITY}
+    global-refill-period-ms: ${UPSTREAM_GLOBAL_RATE_LIMIT_REFILL_PERIOD_MS}

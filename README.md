@@ -41,7 +41,7 @@
 | GET | `/actuator/health` | 서버 상태 확인 | - |
 
 - 응답 필드 설명: [docs/api-endpoints.md](https://github.com/bgh1234554/football-obs-frontend/blob/develop/docs/api-endpoints.md) (프런트엔드 저장소)
-- `/api/**`에는 IP별 요청 제한이 있습니다. 연속 15회까지 허용하고 이후 4초마다 1회씩 다시 허용하며, 초과하면 `429`와 재시도 대기 시간을 돌려줍니다. 자세한 내용은 [docs/rate-limiting.md](docs/rate-limiting.md)를 참고하세요.
+- `/api/**`에는 서버 보호용 IP별 제한이 있습니다. 캐시 미적중으로 실제 외부 호출을 할 때는 사용자별·전체 외부 한도를 별도로 적용합니다. 초과하면 `429`와 제한 종류·재시도 대기 시간을 돌려줍니다. 자세한 내용은 [docs/rate-limiting.md](docs/rate-limiting.md)를 참고하세요.
 
 이 API는 OBS Football Dashboard 전용입니다. 응답 형식은 대시보드에 맞춰 예고 없이 바뀔 수 있습니다.
 
@@ -112,11 +112,13 @@
 
 ## 배포
 
-[Dockerfile](Dockerfile)로 이미지를 빌드해 Render에서 실행합니다. 환경변수(`CDN_URL`, `MEDIA_CDN_URL`)는 Render 대시보드에 등록합니다.
+[Dockerfile](Dockerfile)로 이미지를 빌드해 Render에서 실행합니다. 운영 설정은 Render 대시보드에서 비공개로 관리합니다.
 
 ## 문서
 
 - [docs/rate-limiting.md](docs/rate-limiting.md): 요청 제한 정책과 `429` 응답 헤더
+- [docs/rate-limiting-architecture.md](docs/rate-limiting-architecture.md): 두 단계 제한의 클래스별 코드 흐름, 캐시·동시성·차감 예시
+- [src/test/local-rate-limit-load-test.md](src/test/local-rate-limit-load-test.md): 로컬 50명 동시 조회의 측정 결과와 적용 범위
 - [docs/client-ip-resolution.md](docs/client-ip-resolution.md): 프록시 뒤에서 요청자 IP를 구하는 방법
 - [docs/logging.md](docs/logging.md): 요청 ID를 포함한 로그 형식
 

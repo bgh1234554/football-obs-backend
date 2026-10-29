@@ -1,6 +1,7 @@
 package com.github.baek.footballobsbackend.client;
 
 import java.util.concurrent.TimeUnit;
+import com.github.baek.footballobsbackend.config.UpstreamRateLimiter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,21 +34,20 @@ import lombok.extern.slf4j.Slf4j;
 public class ApiFootballClient {
 
     private final RestClient restClient;
+    private final UpstreamRateLimiter upstreamRateLimiter;
     private final DefaultUriBuilderFactory uriFactory;
     private final CdnResponseCache responseCache = new CdnResponseCache();
 
-    /**
-     * RestClient를 CDN baseUrl로 초기화.
-     * application.yaml의 api.cdn-url을 주입받아 모든 요청의 base가 됨.
-     */
-    public ApiFootballClient(String cdnUrl) {
-        this(cdnUrl, "");
-    }
-
+    /** 운영에서는 모든 클라이언트 호출이 Spring이 주입한 같은 외부 제한기를 공유한다. */
     @Autowired
     public ApiFootballClient(@Value("${api.cdn-url}") String cdnUrl,
-                             @Value("${api.cdn-referer:}") String cdnReferer) {
-        RestClient.Builder builder = RestClient.builder().baseUrl(cdnUrl);
+                             @Value("${api.cdn-referer:}") String cdnReferer,
+                             UpstreamRateLimiter upstreamRateLimiter) {
+        this.upstreamRateLimiter = upstreamRateLimiter;
+        var requestFactory = new org.springframework.http.client.SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(java.time.Duration.ofSeconds(3));
+        requestFactory.setReadTimeout(java.time.Duration.ofSeconds(10));
+        RestClient.Builder builder = RestClient.builder().baseUrl(cdnUrl).requestFactory(requestFactory);
         // 미설정 시 기존 호출을 유지하고, 설정한 경우에만 CDN으로 Referer를 보낸다.
         if (cdnReferer != null && !cdnReferer.isBlank()) {
             builder.defaultHeader(HttpHeaders.REFERER, cdnReferer.strip());
@@ -280,6 +280,11 @@ public class ApiFootballClient {
     private JsonNode fetchRoot(boolean refresh, String path, Object... uriVariables) {
         try {
             return responseCache.get(uriFactory.expand(path, uriVariables), () -> {
+                // 이 콜백은 캐시 미적중 또는 명시적 강제 새로고침에서만 실행된다.
+                // acquire를 responseCache.get 앞에 두면 캐시 적중·동시 대기자까지 차감하므로 안 된다.
+                // HTTP 시도 직전에 승인하고, 뒤에서 네트워크가 실패해도 이미 쓴 토큰은 유지한다.
+                // BunnyCDN의 내부 캐시 적중 여부까지 판단하는 것은 아니며, 백엔드→CDN 시도를 센다.
+                upstreamRateLimiter.acquire();
                 long startedAt = System.nanoTime();
                 var response = restClient.get()
                         .uri(path, uriVariables)
@@ -290,6 +295,8 @@ public class ApiFootballClient {
                 MojibakeRepair.repairTree(response.getBody());
                 return response;
             }, refresh);
+        // 여기서는 외부 HTTP 오류만 변환한다. 로컬 UpstreamRateLimitException은 그대로 전달해
+        // GlobalExceptionAdvice가 502 대신 429와 정확한 재시도 헤더를 반환하게 한다.
         } catch (RestClientResponseException e) {
             log.warn("API Football upstream error: status={}, path={}, body={}",
                     e.getStatusCode().value(), path, e.getResponseBodyAsString());

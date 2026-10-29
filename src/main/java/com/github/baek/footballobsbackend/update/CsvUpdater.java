@@ -56,12 +56,23 @@ public class CsvUpdater {
     // 진입점
     // ──────────────────────────────────────────────
 
+    // 독립 실행 업데이터는 REQUEST_DELAY_MS로 속도를 제어한다. 웹 서버 설정에는 적용하지 않는다.
+    static void configureRateLimits(ConfigurableApplicationContext context) {
+        context.getEnvironment().getPropertySources().addFirst(
+                new org.springframework.core.env.MapPropertySource("csvUpdaterRateLimits", Map.of(
+                        "rate-limit.upstream.ip-capacity", 1_000_000L,
+                        "rate-limit.upstream.ip-refill-period-ms", 1L,
+                        "rate-limit.upstream.global-capacity", 1_000_000L,
+                        "rate-limit.upstream.global-refill-period-ms", 1L)));
+    }
+
     public static void main(String[] args) throws Exception {
         // 1. Spring 컨텍스트 시작 → ApiFootballClient 빈 획득
         //    application.yaml + spring-dotenv(.env) 자동 로드, lazy-init으로 불필요한 빈 초기화 방지
         ConfigurableApplicationContext ctx = new SpringApplicationBuilder(FootballObsBackendApplication.class)
                 .web(WebApplicationType.NONE)
                 .properties("spring.main.lazy-initialization=true")
+                .initializers(CsvUpdater::configureRateLimits)
                 .run(args);
         ApiFootballClient apiClient = ctx.getBean(ApiFootballClient.class);
 

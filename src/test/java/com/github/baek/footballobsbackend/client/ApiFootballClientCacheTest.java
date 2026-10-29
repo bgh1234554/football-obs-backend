@@ -1,6 +1,9 @@
 package com.github.baek.footballobsbackend.client;
 
 import org.junit.jupiter.api.Test;
+import static com.github.baek.footballobsbackend.config.RateLimitTestSettings.*;
+import com.github.baek.footballobsbackend.error.UpstreamRateLimitException;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import org.springframework.http.MediaType;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.client.MockRestServiceServer;
@@ -15,7 +18,7 @@ class ApiFootballClientCacheTest {
     void reusesCdnResponseAndSeparatesExpandedSearchQueries() {
         var builder = RestClient.builder().baseUrl("https://example.test");
         var server = MockRestServiceServer.bindTo(builder).build();
-        var client = new ApiFootballClient("https://example.test");
+        var client = new ApiFootballClient("https://example.test", "", limiter("client"));
         ReflectionTestUtils.setField(client, "restClient", builder.build());
         String body = "{\"errors\":[],\"response\":[],\"paging\":{\"current\":1,\"total\":1}}";
         server.expect(requestTo("https://example.test/players/profiles?search=Smith&page=1"))
@@ -31,7 +34,7 @@ class ApiFootballClientCacheTest {
     void manualRefreshReplacesCachedResponsesForEveryFixtureDependency() {
         var builder = RestClient.builder().baseUrl("https://example.test");
         var server = MockRestServiceServer.bindTo(builder).build();
-        var client = new ApiFootballClient("https://example.test");
+        var client = new ApiFootballClient("https://example.test", "", limiter("client"));
         ReflectionTestUtils.setField(client, "restClient", builder.build());
         String[] paths = {"/fixtures?id=1", "/injuries?ids=1", "/players/squads?team=85", "/players/profiles?player=10"};
         for (String path : paths) {
@@ -45,6 +48,36 @@ class ApiFootballClientCacheTest {
         assertRefresh(() -> client.getInjuries(1), () -> client.getInjuries(1, true), false);
         assertRefresh(() -> client.getPlayerSquad(85), () -> client.getPlayerSquad(85, true), false);
         assertRefresh(() -> client.getPlayerProfile(10), () -> client.getPlayerProfile(10, true), false);
+        server.verify();
+    }
+
+    @Test
+    void cacheHitsSpendNothingAndBlockedRefreshPreservesExistingEntry() {
+        var builder = RestClient.builder().baseUrl("https://example.test");
+        var server = MockRestServiceServer.bindTo(builder).build();
+        var client = new ApiFootballClient("https://example.test", "", limiter("single-attempt"));
+        ReflectionTestUtils.setField(client,"restClient",builder.build());
+        server.expect(requestTo("https://example.test/fixtures?id=1"))
+                .andRespond(withSuccess("{\"errors\":[],\"response\":[{\"id\":1}]}",MediaType.APPLICATION_JSON)
+                        .header("Cache-Control","max-age=60"));
+        var cached = client.getFixture(1);
+        for (int i=0;i<20;i++) assertThat(client.getFixture(1)).isEqualTo(cached);
+        assertThatThrownBy(() -> client.getFixture(2)).isInstanceOf(UpstreamRateLimitException.class);
+        assertThatThrownBy(() -> client.getFixture(1,true)).isInstanceOf(UpstreamRateLimitException.class);
+        assertThat(client.getFixture(1)).isEqualTo(cached);
+        server.verify();
+    }
+
+    @Test
+    void failedNetworkAttemptStillSpendsItsToken() {
+        var builder = RestClient.builder().baseUrl("https://example.test");
+        var server = MockRestServiceServer.bindTo(builder).build();
+        var client = new ApiFootballClient("https://example.test", "", limiter("single-attempt"));
+        ReflectionTestUtils.setField(client,"restClient",builder.build());
+        server.expect(requestTo("https://example.test/fixtures?id=1"))
+                .andRespond(org.springframework.test.web.client.response.MockRestResponseCreators.withServerError());
+        assertThatThrownBy(() -> client.getFixture(1)).isInstanceOf(com.github.baek.footballobsbackend.error.ApiException.class);
+        assertThatThrownBy(() -> client.getFixture(1)).isInstanceOf(UpstreamRateLimitException.class);
         server.verify();
     }
 

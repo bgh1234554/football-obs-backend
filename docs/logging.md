@@ -7,9 +7,9 @@
 | 파일 | 역할 |
 | --- | --- |
 | `config/RequestLoggingFilter.java` | 요청 단위 requestId 발급 + 완료 로그 1줄 |
-| `config/RateLimitInterceptor.java` | rate limit 초과 시에만 IP를 남김. `resolveClientIp()` 관련 변경은 [rate-limiting.md](rate-limiting.md)/[client-ip-resolution.md](client-ip-resolution.md) 참고 (이 문서 범위 밖) |
+| `config/RateLimitInterceptor.java` | rate limit 초과 시에만 IP를 남김. `ClientIpResolver.resolve()` 관련 변경은 [rate-limiting.md](rate-limiting.md)/[client-ip-resolution.md](client-ip-resolution.md) 참고 (이 문서 범위 밖) |
 | `client/ApiFootballClient.java` | 기존 호출 시작 로그 + 완료 시 소요시간 로그 |
-| `error/GlobalExceptionAdvice.java` | 기존. 예외 발생 시 WARN/ERROR (변경 없음) |
+| `error/GlobalExceptionAdvice.java` | 외부 호출 제한은 `[LIMIT_EXCEEDED] scope=upstream-*` INFO, 그 외 기존 예외는 WARN/ERROR |
 | `service/FixtureService.java`, `util/KoResolver.java` | 기존 `[KO_NAME_NEEDED]` 등 데이터 품질 태그 로그 — **레벨 변경 금지** |
 | `application.yaml` | `logging.pattern.console`, `logging.level` 추가 |
 
@@ -221,3 +221,11 @@ API-Football 키(`x-apisports-key`)는 BunnyCDN Edge Script가 CDN 레이어에�
 - [x] `FixtureService`/`KoResolver`의 기존 `[KO_NAME_NEEDED]` 등 INFO 태그 로그는 손대지 않았는지 확인 (변경 없음 확인됨)
 - [ ] (선택, 저비용) `RequestLoggingFilter`가 들어온 `X-Request-Id` 헤더를 우선 사용하고, 응답에도 같은 값을 돌려주도록 구현 — DevTools 수동 확인용이라 `exposedHeaders` 수정 없이도 유효함
 - [ ] 배포 후 Render 로그에서 requestId 컬럼이 정상 출력되는지 확인
+
+## 전체 외부 호출 예산 관측
+
+`UpstreamRateLimiter`는 전체 외부 버킷의 소진율이 80·85·90·95% 구간에 도달하면 WARN, 남은 토큰이 0인 100%에서는 ERROR를 기록한다. `[UPSTREAM_BUDGET_USAGE]`의 `thresholdPercent`, `usedPercent`, `capacity`, `remaining`으로 구간과 실제 상태를 구분한다.
+
+같은 구간이나 더 낮은 구간에서는 반복 기록하지 않는다. 소진율이 60% 이하로 회복된 것을 다음 외부 호출 시도에서 확인하면 기록 단계를 초기화한다. 작은 버킷에서는 토큰 하나가 여러 구간을 넘을 수 있어, 그때는 가장 높은 도달 구간 한 번만 기록한다. 토큰 한 개가 여러 경고 구간에 해당하는 작은 버킷은 중간 WARN 구간을 건너뛰고 100% ERROR로 넘어갈 수 있다. 토큰이 회복될 때마다 별도 타이머를 실행하거나 캐시 조회를 위해 추가 외부 호출을 하지는 않는다.
+
+이는 서버 요청 수나 API-Football 일일 쿼터의 80%가 아니라, 현재 JVM 안의 전체 외부 토큰 버킷 소진율이다. 100% ERROR는 버킷이 완전히 소진됐다는 신호이며 이미 허용한 HTTP 호출의 실패나 서버 장애를 의미하지 않는다. 기존 429 거절 로그는 별도로 유지한다.

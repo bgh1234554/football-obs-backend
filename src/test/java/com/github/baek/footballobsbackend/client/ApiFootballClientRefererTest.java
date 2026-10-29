@@ -2,6 +2,7 @@ package com.github.baek.footballobsbackend.client;
 
 import com.sun.net.httpserver.HttpServer;
 import org.junit.jupiter.api.Test;
+import static com.github.baek.footballobsbackend.config.RateLimitTestSettings.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -38,7 +39,7 @@ class ApiFootballClientRefererTest {
         server.start();
         try {
             String baseUrl = "http://127.0.0.1:" + server.getAddress().getPort();
-            ApiFootballClient client = new ApiFootballClient(baseUrl, configured);
+            ApiFootballClient client = new ApiFootballClient(baseUrl, configured, limiter("client"));
             assertThat(client.getTeamFixtures(85, false)).isEmpty();
             assertThat(received.get()).isEqualTo(expected);
         } finally {

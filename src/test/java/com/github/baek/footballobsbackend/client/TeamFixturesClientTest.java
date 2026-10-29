@@ -2,6 +2,7 @@ package com.github.baek.footballobsbackend.client;
 
 import com.github.baek.footballobsbackend.error.ApiException;
 import org.junit.jupiter.api.Test;
+import static com.github.baek.footballobsbackend.config.RateLimitTestSettings.*;
 import org.springframework.http.MediaType;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.client.MockRestServiceServer;
@@ -16,7 +17,7 @@ class TeamFixturesClientTest {
     void requestsSixLastAndFiveNextFixturesAndRejectsErrorsInsideHttp200() {
         RestClient.Builder builder = RestClient.builder().baseUrl("https://example.test");
         MockRestServiceServer server = MockRestServiceServer.bindTo(builder).build();
-        ApiFootballClient client = new ApiFootballClient("https://example.test");
+        ApiFootballClient client = new ApiFootballClient("https://example.test", "", limiter("client"));
         ReflectionTestUtils.setField(client, "restClient", builder.build());
         server.expect(requestTo("https://example.test/fixtures?team=85&last=6"))
                 .andRespond(withSuccess("{\"errors\":[],\"response\":[]}", MediaType.APPLICATION_JSON));

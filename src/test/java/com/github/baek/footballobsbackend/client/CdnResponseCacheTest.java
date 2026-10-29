@@ -3,6 +3,7 @@ package com.github.baek.footballobsbackend.client;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import static com.github.baek.footballobsbackend.config.RateLimitTestSettings.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.http.HttpHeaders;
@@ -132,10 +133,12 @@ class CdnResponseCacheTest {
 
     @Test
     void coalescesConcurrentRequestsForSameKey() throws Exception {
+        var limiter = limiter("single-attempt");
         var response = response("max-age=60", "[]");
         var started = new CountDownLatch(1);
         var release = new CountDownLatch(1);
         Supplier<ResponseEntity<JsonNode>> fetch = () -> {
+            limiter.acquire();
             calls.incrementAndGet();
             started.countDown();
             try {

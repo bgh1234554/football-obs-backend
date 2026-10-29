@@ -1,0 +1,18 @@
+# 동작 검증용 합성 데이터. 운영 설정이나 운영 환경변수 값을 복사하지 않는다.
+test-rates:
+  upstream:
+    equal: {ip-capacity: 7, ip-refill-ms: 3300, global-capacity: 7, global-refill-ms: 3300}
+    personal-first: {ip-capacity: 1, ip-refill-ms: 1700, global-capacity: 2, global-refill-ms: 1700}
+    global-first: {ip-capacity: 1, ip-refill-ms: 3400, global-capacity: 1, global-refill-ms: 1700}
+    concurrent: {ip-capacity: 3, ip-refill-ms: 2100, global-capacity: 13, global-refill-ms: 2100}
+    identity: {ip-capacity: 1, ip-refill-ms: 2300, global-capacity: 9, global-refill-ms: 2300}
+    usage-bands: {ip-capacity: 41, ip-refill-ms: 211, global-capacity: 20, global-refill-ms: 173}
+    small-bands: {ip-capacity: 19, ip-refill-ms: 2700, global-capacity: 19, global-refill-ms: 2700}
+    single-attempt: {ip-capacity: 1, ip-refill-ms: 86400000, global-capacity: 1, global-refill-ms: 86400000}
+    client: {ip-capacity: 32, ip-refill-ms: 86400000, global-capacity: 64, global-refill-ms: 86400000}
+  server:
+    normal: {capacity: 29, refill-tokens: 3, refill-ms: 1700}
+    exhausted: {capacity: 3, refill-tokens: 1, refill-ms: 86400000}
+  response:
+    limit: 23
+    retry-ms: 1750

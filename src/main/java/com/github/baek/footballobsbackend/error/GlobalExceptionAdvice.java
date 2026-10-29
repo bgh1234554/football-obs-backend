@@ -1,6 +1,8 @@
 package com.github.baek.footballobsbackend.error;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import com.github.baek.footballobsbackend.config.RateLimitHeaders;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,23 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionAdvice {
+
+    /**
+     * 캐시 미적중 로더에서 거절된 호출을 기존 프런트의 429 자동 재시도 경로로 전달한다.
+     * 일반 ApiException 처리보다 구체적인 예외 처리이므로 이 메서드가 선택된다.
+     * 외부 통신 실패(502)나 예상치 못한 서버 오류(500)로 바꾸지 않는다.
+     */
+    @ExceptionHandler(UpstreamRateLimitException.class)
+    public ResponseEntity<ErrorResult> upstreamLimitHandle(UpstreamRateLimitException e,
+            HttpServletRequest request, HttpServletResponse response) {
+        // 입구에서 기록한 server 헤더를 실제 거절 사유로 덮어쓰고 429 캐시를 방지한다.
+        // 외부 한도에서 거절되어도 이미 처리한 서버 입구 한도 1건은 되돌리지 않는다.
+        RateLimitHeaders.write(response, e.getScope(), e.getLimit(), 0, e.getRetryMillis());
+        log.info("[LIMIT_EXCEEDED] scope={} retryAfterMs={}", e.getScope(), e.getRetryMillis());
+        ErrorCode code = ErrorCode.RATE_LIMIT_EXCEEDED;
+        return ResponseEntity.status(code.getStatus()).body(new ErrorResult(code.name(), code.getMessage(),
+                code.getStatus().value(), HtmlUtils.htmlEscape(request.getRequestURI()), Instant.now()));
+    }
 
     //일반적인 ApiException에 대한 에러 매핑
     @ExceptionHandler(ApiException.class)

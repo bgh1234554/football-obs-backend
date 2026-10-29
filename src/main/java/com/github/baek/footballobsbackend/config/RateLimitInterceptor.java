@@ -2,241 +2,97 @@ package com.github.baek.footballobsbackend.config;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.concurrent.TimeUnit;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.baek.footballobsbackend.error.ErrorCode;
+import com.github.baek.footballobsbackend.error.ErrorResult;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
+import io.github.bucket4j.Bandwidth;
+import io.github.bucket4j.Bucket;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.baek.footballobsbackend.error.ErrorCode;
-import com.github.baek.footballobsbackend.error.ErrorResult;   // 추가
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.Caffeine;
-
-import io.github.bucket4j.Bandwidth;
-import io.github.bucket4j.Bucket;
-import io.github.bucket4j.ConsumptionProbe;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;         // 추가
-
+/**
+ * API 입구에서 서버 자원을 보호하는 IP별 제한.
+ *
+ * WebConfig가 /api/**에 등록하므로 컨트롤러·서비스·캐시 조회보다 먼저 실행된다.
+ * 캐시 적중에도 JSON 복사·가공·직렬화 비용이 있으므로 이 단계는 모든 API 요청을 센다.
+ * 외부 호출 횟수는 여기서 판단하지 않고 UpstreamRateLimiter가 별도로 관리한다.
+ *
+ * 운영 기본값과 환경변수 연결은 application.yaml에만 둔다.
+ * 현재 120건·매초 2건 회복은 정상적인 패널 전환에 여유를 주기 위한 초기값이며,
+ * 서버 부하 측정으로 확정한 처리 용량이나 업계 표준 수치는 아니다.
+ */
 @Component
 @Slf4j
 public class RateLimitInterceptor implements HandlerInterceptor {
-
-    /*
-     * Rate limit 정책 상수.
-     *
-     * capacity 15:
-     *  - 한 IP가 순간적으로 최대 15번까지 burst 요청 가능.
-     *
-     * refill 1 token / 4 seconds:
-     *  - 토큰이 0개인 상태라면 다음 1토큰이 생기기까지 최대 4초가 걸린다.
-     *  - 프런트가 "몇 초 뒤 재시도"를 정확히 계산할 수 있도록
-     *    429 응답 헤더에 남은 대기시간도 함께 내려준다.
-     */
-    private static final long RATE_LIMIT_CAPACITY = 15L;
-    private static final long RATE_LIMIT_REFILL_TOKENS = 1L;
-    private static final Duration RATE_LIMIT_REFILL_PERIOD = Duration.ofSeconds(4);
-
-    /*
-     * 프런트가 읽을 응답 헤더 이름.
-     *
-     * Retry-After:
-     *  - HTTP 표준 헤더.
-     *  - 초(second) 단위라서 브라우저/프록시/클라이언트가 이해하기 쉽다.
-     *
-     * X-Retry-After-Millis:
-     *  - 프런트에서 setTimeout 등에 바로 쓰기 쉽도록 ms 단위도 같이 내려준다.
-     *
-     * X-RateLimit-Limit / Remaining:
-     *  - 디버깅 및 모니터링용.
-     *  - 없어도 동작은 가능하지만 있으면 프런트/로그 확인이 편하다.
-     */
-    private static final String HEADER_RETRY_AFTER = "Retry-After";
-    private static final String HEADER_RETRY_AFTER_MILLIS = "X-Retry-After-Millis";
-    private static final String HEADER_RATE_LIMIT_LIMIT = "X-RateLimit-Limit";
-    private static final String HEADER_RATE_LIMIT_REMAINING = "X-RateLimit-Remaining";
-    private static final String HEADER_CACHE_CONTROL = "Cache-Control";
-
-    /*
-     * IP별 버킷 저장소.
-     *
-     * 왜 ConcurrentHashMap이 아닌 Caffeine인가?
-     *  - ConcurrentHashMap은 한 번 put된 key를 자동으로 지워주지 않는다.
-     *    -> 시간이 지날수록 본 적 있는 IP가 계속 누적되어 메모리 누수.
-     *    (각 Bucket의 capacity 15는 "토큰 개수" 상한일 뿐, "키 개수"와는 무관)
-     *  - Caffeine은 in-memory 캐시 라이브러리. TTL/최대 크기 기반 자동 evict 제공.
-     *
-     * expireAfterAccess(10분):
-     *  - 마지막 read/write 이후 10분간 접근 없으면 해당 엔트리 제거.
-     *  - 폴링 간격이 1분이라 10분 비활동이면 사실상 떠난 클라이언트로 간주 가능.
-     *  - 다시 들어와도 새 버킷(토큰 풀충전)을 받으므로 사용자 입장에선 패널티 없음.
-     *
-     * maximumSize(10_000):
-     *  - TTL이 정상 동작하면 거의 닿지 않는 안전장치 (트래픽 폭주 대비).
-     *  - 한도 초과 시 Caffeine이 W-TinyLFU(LRU 변형) 정책으로 오래된 엔트리부터 evict.
-     *
-     * evict는 별도 스레드가 아니라 read/write 시점에 lazy하게 처리됨 (Bucket4j와 같은 방식).
-     */
+    // capacity는 순간 요청 묶음을 허용할 최대 토큰 수다.
+    // refillTokens / refillPeriod는 장시간 지속할 수 있는 평균 요청 속도를 정한다.
+    // 예: capacity=120, refillTokens=2, refillPeriod=1초이면 처음 120건을 연속 허용하고
+    // 이후 매초 2건 분량을 회복한다. 매초 버킷 전체를 다시 채우는 의미가 아니다.
+    private final long capacity;
+    private final long refillTokens;
+    private final Duration refillPeriod;
+    // 버킷은 IP마다 다르지만, 더 이상 접속하지 않는 IP까지 영구 보관할 필요는 없다.
+    // 10분간 미사용 시 제거하고 최대 10,000개로 메모리 증가를 제한한다.
+    // 제거 후 다시 온 IP는 새 버킷을 받으며, 외부 호출의 전체 예산은 별도 버킷으로 보호한다.
     private final Cache<String, Bucket> buckets = Caffeine.newBuilder()
-            .expireAfterAccess(Duration.ofMinutes(10))
-            .maximumSize(10_000)
-            .build();
-    // ObjectMapper - JSON 문자열 생성기
-    private final ObjectMapper objectMapper = new ObjectMapper()
-            // Instant 타입을 JSON으로 올바르게 직렬화 해주는 모듈.
-            .findAndRegisterModules();
+            .expireAfterAccess(Duration.ofMinutes(10)).maximumSize(10_000).build();
+    private final ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules();
 
-    private Bucket createBucket() {
-        return Bucket.builder()
-                .addLimit(
-                        Bandwidth.builder()
-                                .capacity(RATE_LIMIT_CAPACITY)                      // 버킷 최대 용량
-                                .refillGreedy(RATE_LIMIT_REFILL_TOKENS, RATE_LIMIT_REFILL_PERIOD) // 4초마다 1개 충전
-                                .build()
-                )
-                .build();
+    /**
+     * 설정은 Spring이 주입하며 누락·잘못된 값은 시작 시 드러나게 한다.
+     * Java의 @Value에 기본값을 중복하지 않아 YAML과 서로 다른 값을 갖지 않게 한다.
+     *
+     * @param capacity 순간 허용량
+     * @param refillTokens 한 회복 기간에 충전할 토큰 수
+     * @param refillPeriodMs 회복 기간(밀리초)
+     */
+    public RateLimitInterceptor(@Value("${rate-limit.server.capacity}") long capacity,
+                                @Value("${rate-limit.server.refill-tokens}") long refillTokens,
+                                @Value("${rate-limit.server.refill-period-ms}") long refillPeriodMs) {
+        if (capacity <= 0 || refillTokens <= 0 || refillPeriodMs <= 0) throw new IllegalArgumentException("Rate limit values must be positive");
+        this.capacity = capacity;
+        this.refillTokens = refillTokens;
+        this.refillPeriod = Duration.ofMillis(refillPeriodMs);
     }
 
-    /*
-     * 정확한 설명:
-     *  - 처음에는 토큰 15개로 시작한다.
-     *  - 요청 1회마다 토큰 1개를 소모한다.
-     *  - 이후 4초마다 토큰이 1개씩 다시 찬다.
-     *  - 토큰은 최대 15개를 넘지 않는다.
-     *
-     * 즉 "4초마다 통 전체가 다시 가득 찬다"가 아니라,
-     * "4초마다 1개씩 회복된다"가 맞다.
+    /** Bucket4j가 토큰 회복과 같은 IP의 동시 소비를 안전하게 계산한다. */
+    private Bucket createBucket() {
+        return Bucket.builder().addLimit(Bandwidth.builder().capacity(capacity)
+                .refillGreedy(refillTokens, refillPeriod).build()).build();
+    }
+
+    /**
+     * 요청당 1건을 소비해 통과시키거나, 컨트롤러 진입 전에 429로 종료한다.
+     * true면 이후 캐시 적중 여부와 관계없이 서버 한도 1건은 이미 사용한 것이다.
      */
-
     @Override
-    public boolean preHandle(HttpServletRequest request,
-                             HttpServletResponse response,
-                             Object handler) throws Exception {
-
-        // 요청자의 IP 주소 추출.
-        // request.getRemoteAddr()를 직접 쓰지 않는 이유: Render(+ 앞단 Cloudflare) 뒤에서는
-        // 이 값이 실제 방문자 IP가 아니라 프록시 홉의 연결 IP를 반환한다 — 배경/근거는
-        // docs/client-ip-resolution.md 참고.
-        String ip = resolveClientIp(request);
-
-        // 해당 IP의 버킷이 없으면 새로 생성, 있으면 기존 버킷 사용
-        // Caffeine Cache.get(key, mappingFunction):
-        //   - ConcurrentHashMap.computeIfAbsent와 동일한 의미 (key 없을 때만 mappingFunction 호출)
-        //   - 차이점: 내부적으로 access time을 갱신해서 expireAfterAccess TTL이 리셋됨
-        //   - 즉 "이 IP가 방금 요청했다"는 사실이 캐시 만료 타이머를 연장시킴
-        Bucket bucket = buckets.get(ip, k -> createBucket());
-
-        /*
-         * 단순 boolean이 아니라 ConsumptionProbe를 받는다.
-         *
-         * probe 안에는 다음 정보가 들어 있다:
-         *  - isConsumed()              : 이번 요청이 통과했는지
-         *  - getRemainingTokens()     : 남은 토큰 수
-         *  - getNanosToWaitForRefill(): 다음 토큰이 생길 때까지 남은 시간(ns)
-         *
-         * 프런트에 "정확히 몇 ms 뒤 재시도하라"를 알려주려면
-         * tryConsume(...) 대신 이 메서드를 써야 한다.
-         */
-        ConsumptionProbe probe = bucket.tryConsumeAndReturnRemaining(1);
-
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        String ip = ClientIpResolver.resolve(request);
+        // get()은 처음 보는 IP의 버킷 생성을 합치고 이후 요청에서는 같은 버킷을 돌려준다.
+        // probe에는 승인 여부·잔여량·다음 토큰까지의 대기시간이 함께 들어 있다.
+        var probe = buckets.get(ip, key -> createBucket()).tryConsumeAndReturnRemaining(1);
         if (probe.isConsumed()) {
-            // 성공 응답에도 현재 limit 상태를 헤더로 내려주면 디버깅에 도움이 된다.
-            response.setHeader(HEADER_RATE_LIMIT_LIMIT, String.valueOf(RATE_LIMIT_CAPACITY));
-            response.setHeader(HEADER_RATE_LIMIT_REMAINING, String.valueOf(probe.getRemainingTokens()));
+            // 정상 응답에도 입구 버킷 상태를 남겨 어떤 한도를 보고 있는지 구분한다.
+            RateLimitHeaders.write(response, "server", capacity, probe.getRemainingTokens(), null);
             return true;
         }
-
-        // 토큰 없음 -> 429 Too Many Requests 반환
-        writeRateLimitExceededResponse(request, response, ip, probe);
-        return false;
-    }
-
-    /**
-     * 429 응답 헤더를 세팅한다.
-     *
-     * 왜 Retry-After와 X-Retry-After-Millis를 둘 다 내려주나?
-     *  - Retry-After는 표준 헤더라 범용성이 좋다.
-     *  - 다만 초 단위라서 프런트 setTimeout에는 해상도가 거칠다.
-     *  - 그래서 프런트 전용으로 ms 헤더도 같이 내리면 구현이 쉬워진다.
-     */
-    private void writeRateLimitHeaders(HttpServletResponse response, ConsumptionProbe probe) {
-        long waitNanos = Math.max(0L, probe.getNanosToWaitForRefill());
-        long waitMillis = Math.max(0L, TimeUnit.NANOSECONDS.toMillis(waitNanos));
-
-        /*
-         * Retry-After는 초 단위 정수여야 하므로 올림 처리한다.
-         *
-         * 예:
-         *  - 1ms 남음  -> 1초
-         *  - 3999ms 남음 -> 4초
-         *  - 4000ms 남음 -> 4초
-         */
-        long retryAfterSeconds = Math.max(1L, (waitMillis + 999L) / 1000L);
-
-        response.setHeader(HEADER_RETRY_AFTER, String.valueOf(retryAfterSeconds));
-        response.setHeader(HEADER_RETRY_AFTER_MILLIS, String.valueOf(waitMillis));
-        response.setHeader(HEADER_RATE_LIMIT_LIMIT, String.valueOf(RATE_LIMIT_CAPACITY));
-        response.setHeader(HEADER_RATE_LIMIT_REMAINING, String.valueOf(probe.getRemainingTokens()));
-
-        // 429 응답은 중간 캐시가 붙잡지 않게 no-store를 명시한다.
-        response.setHeader(HEADER_CACHE_CONTROL, "no-store");
-    }
-
-    /**
-     * rate limit 초과 시 429 JSON 응답을 직접 작성한다.
-     *
-     * 인터셉터는 컨트롤러 진입 전에 실행되므로
-     * @ControllerAdvice가 개입할 수 없다.
-     * 따라서 여기서 응답 헤더/바디를 직접 써야 한다.
-     */
-    private void writeRateLimitExceededResponse(HttpServletRequest request,
-                                                HttpServletResponse response,
-                                                String ip,
-                                                ConsumptionProbe probe) throws Exception {
-
-        writeRateLimitHeaders(response, probe);
-
-        ErrorCode errorCode = ErrorCode.RATE_LIMIT_EXCEEDED;
-        ErrorResult errorResult = new ErrorResult(
-                errorCode.name(),
-                errorCode.getMessage(),
-                errorCode.getStatus().value(),
-                request.getRequestURI(),
-                Instant.now()
-        );
-        response.setStatus(errorCode.getStatus().value());
+        // 나노초를 밀리초로 내림하면 토큰이 차기 전에 재시도할 수 있어 올림한다.
+        long waitMillis = Math.max(1L, (probe.getNanosToWaitForRefill() - 1L) / 1_000_000L + 1L);
+        RateLimitHeaders.write(response, "server", capacity, probe.getRemainingTokens(), waitMillis);
+        // 인터셉터는 컨트롤러 실행 전에 거절하므로 응답을 직접 작성한다.
+        // 외부 호출 제한처럼 ControllerAdvice에 예외 처리를 맡기는 경로와 다르다.
+        ErrorCode code = ErrorCode.RATE_LIMIT_EXCEEDED;
+        response.setStatus(code.getStatus().value());
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(objectMapper.writeValueAsString(errorResult));
-
-        long waitMillis = Math.max(0L, TimeUnit.NANOSECONDS.toMillis(probe.getNanosToWaitForRefill()));
-        log.info("[LIMIT_EXCEEDED] Rate limit exceeded for IP: {}, retryAfterMs={}", ip, waitMillis);
-    }
-
-    /**
-     * 실제 방문자 IP를 판별한다.
-     *
-     * Render(+ 앞단 Cloudflare, Render 서비스 자체 설정) 뒤에서 request.getRemoteAddr()는 실제 방문자 IP가 아니라
-     * 프록시가 오리진(Render 컨테이너)에 연결할 때 쓴 IP를 반환한다 — Cloudflare 엣지
-     * 거점이 바뀔 때마다도 이 값이 달라질 수 있어서,
-     * IP별로 버킷을 나누는 이 인터셉터의 전제 자체가 깨진다.
-     * 
-     * (Cloudflare는 이 프로젝트가 추가한 게 아니라, Render가 자기네 인프라로 모든 고객 웹서비스 앞에 기본으로 깔아둔 것)
-     * ("All inbound traffic to Render web services passes through Cloudflare's global network before reaching your application."
-     * "Protection is automatic for every public-facing web service on Render, regardless of plan. There's nothing to configure.")
-     *
-     * Render는 X-Forwarded-For 리스트의 첫 번째 값을 항상 실제 클라이언트 IP로 세팅한다.
-     * (클라이언트가 이 헤더를 위조해서 보내도 Render가 그 자리를 덮어씀 — Render 엔지니어
-     * 공식 답변, 근거/실측 데이터는 docs/client-ip-resolution.md 참고).
-     * 그래서 이 헤더가 있으면 콤마로 나눈 첫 값을 쓰고,
-     * 없으면(로컬 실행 등 프록시를 안 거치는 경우) 기존 getRemoteAddr()로 폴백한다.
-     */
-    private String resolveClientIp(HttpServletRequest request) {
-        String xff = request.getHeader("X-Forwarded-For");
-        if (xff != null && !xff.isBlank()) {
-            return xff.split(",")[0].trim();
-        }
-        return request.getRemoteAddr();
+        response.getWriter().write(objectMapper.writeValueAsString(new ErrorResult(
+                code.name(), code.getMessage(), code.getStatus().value(), request.getRequestURI(), Instant.now())));
+        log.info("[LIMIT_EXCEEDED] scope=server ip={} retryAfterMs={}", ip, waitMillis);
+        return false;
     }
 }

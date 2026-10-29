@@ -31,7 +31,7 @@ public class WebConfig implements WebMvcConfigurer {
                 // 응답 방향(백엔드 → 브라우저): 아래 응답 헤더를 프런트 JS에서 읽을 수 있게 한다.
                 // 헤더 전송 자체를 허용하는 설정은 아니며, 429 재시도 대기시간과 제한 상태를 JS에 노출한다.
                 .exposedHeaders("Retry-After", "X-Retry-After-Millis",
-                        "X-RateLimit-Limit", "X-RateLimit-Remaining");
+                        "X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Scope");
     }
 
     @Override

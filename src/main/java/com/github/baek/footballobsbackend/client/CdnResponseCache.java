@@ -61,7 +61,11 @@ final class CdnResponseCache {
                     && uri.getRawQuery().contains("page=") && (body == null || !body.has("paging"))) ttl = 0;
             return new Entry(body, ttl, weight);
         };
+        // 일반 get은 캐시 적중이면 load를 실행하지 않고, 미적중인 같은 URI의 동시 조회는 합친다.
+        // 외부 제한 승인은 load 안의 fetch에서만 수행되므로 기다리는 요청마다 차감하지 않는다.
         // 수동 새로고침은 읽기를 건너뛰고 같은 키의 캐시를 원자적으로 갱신한다.
+        // 명시적인 refresh 호출들은 순서대로 각자 새로 조회한다. 일반 get의 동시 병합과 다르다.
+        // load가 제한 예외를 던지면 새 캐시 값은 기록되지 않고 기존 refresh 대상 항목도 유지된다.
         Entry entry = refresh ? entries.asMap().compute(uri, (key, old) -> load.apply(key))
                 : entries.get(uri, load);
         return entry.body() == null ? null : entry.body().deepCopy();
