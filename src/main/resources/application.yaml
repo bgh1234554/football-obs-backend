@@ -2,12 +2,9 @@ spring:
   application:
     name: football-obs-backend
 
-# 신뢰 프록시가 없으면 전달 헤더를 사용하지 않는다. 빈 정규식은 전체 신뢰이므로 금지한다.
+# IP 선택은 Render 여부를 확인하는 ClientIpResolver에서 한 번만 처리한다.
 server:
-  forward-headers-strategy: native
-  tomcat:
-    remoteip:
-      internal-proxies: ${TRUSTED_PROXY_REGEX}
+  forward-headers-strategy: none
 
 # 콘솔 로그 포맷. requestId는 RequestLoggingFilter가 MDC에 넣어주는 값 —
 # 필터가 아직 없는 시점/스레드에서는 %X{requestId:-no-id}가 "no-id"로 대체됨.

@@ -18,6 +18,7 @@ class ClientIpDiagnosticsTest {
         events.start();
         logger.addAppender(events);
         try {
+            var resolver = new ClientIpResolver(true);
             var request = new MockHttpServletRequest("GET", "/api/__ip_check__");
             request.setRemoteAddr("10.0.0.1");
             request.setParameter("case", "spoof\r\nmarker");
@@ -27,20 +28,20 @@ class ClientIpDiagnosticsTest {
             request.addHeader("True-Client-IP", "x".repeat(600));
 
             logger.setLevel(Level.INFO);
-            assertThat(ClientIpResolver.resolve(request)).isEqualTo("10.0.0.1");
+            assertThat(resolver.resolve(request)).isEqualTo("203.0.113.7");
             assertThat(events.list).isEmpty();
 
             logger.setLevel(Level.DEBUG);
-            assertThat(ClientIpResolver.resolve(request)).isEqualTo("10.0.0.1");
+            assertThat(resolver.resolve(request)).isEqualTo("203.0.113.7");
             assertThat(events.list).hasSize(1);
             assertThat(events.list.getFirst().getFormattedMessage())
                     .contains("[CLIENT_IP_DIAGNOSTIC]", "case=spoof__marker",
-                            "remoteAddr=10.0.0.1 selectedIp=10.0.0.1",
+                            "remoteAddr=10.0.0.1 selectedIp=203.0.113.7",
                             "xForwardedFor=198.51.100.99,203.0.113.7", "cfConnectingIp=203.0.113.7")
                     .doesNotContain("\r", "\n", "x".repeat(513));
 
             request.setRequestURI("/api/fixtures/1");
-            ClientIpResolver.resolve(request);
+            resolver.resolve(request);
             assertThat(events.list).hasSize(1);
         } finally {
             logger.detachAppender(events);

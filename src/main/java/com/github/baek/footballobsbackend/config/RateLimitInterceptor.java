@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -30,6 +31,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 @Slf4j
 public class RateLimitInterceptor implements HandlerInterceptor {
+    private final ClientIpResolver clientIpResolver;
     // capacity는 순간 요청 묶음을 허용할 최대 토큰 수다.
     // refillTokens / refillPeriod는 장시간 지속할 수 있는 평균 요청 속도를 정한다.
     // 예: capacity=120, refillTokens=2, refillPeriod=1초이면 처음 120건을 연속 허용하고
@@ -52,13 +54,21 @@ public class RateLimitInterceptor implements HandlerInterceptor {
      * @param refillTokens 한 회복 기간에 충전할 토큰 수
      * @param refillPeriodMs 회복 기간(밀리초)
      */
+    @Autowired
     public RateLimitInterceptor(@Value("${rate-limit.server.capacity}") long capacity,
                                 @Value("${rate-limit.server.refill-tokens}") long refillTokens,
-                                @Value("${rate-limit.server.refill-period-ms}") long refillPeriodMs) {
+                                @Value("${rate-limit.server.refill-period-ms}") long refillPeriodMs,
+                                ClientIpResolver clientIpResolver) {
         if (capacity <= 0 || refillTokens <= 0 || refillPeriodMs <= 0) throw new IllegalArgumentException("Rate limit values must be positive");
         this.capacity = capacity;
         this.refillTokens = refillTokens;
         this.refillPeriod = Duration.ofMillis(refillPeriodMs);
+        this.clientIpResolver = clientIpResolver;
+    }
+
+    /** Spring을 사용하지 않는 테스트에서는 전달 헤더를 신뢰하지 않는다. */
+    public RateLimitInterceptor(long capacity, long refillTokens, long refillPeriodMs) {
+        this(capacity, refillTokens, refillPeriodMs, new ClientIpResolver(false));
     }
 
     /** Bucket4j가 토큰 회복과 같은 IP의 동시 소비를 안전하게 계산한다. */
@@ -73,7 +83,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String ip = ClientIpResolver.resolve(request);
+        String ip = clientIpResolver.resolve(request);
         // get()은 처음 보는 IP의 버킷 생성을 합치고 이후 요청에서는 같은 버킷을 돌려준다.
         // probe에는 승인 여부·잔여량·다음 토큰까지의 대기시간이 함께 들어 있다.
         var probe = buckets.get(ip, key -> createBucket()).tryConsumeAndReturnRemaining(1);

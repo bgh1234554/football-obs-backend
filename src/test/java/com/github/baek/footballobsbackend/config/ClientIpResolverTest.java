@@ -1,56 +1,54 @@
 package com.github.baek.footballobsbackend.config;
 
-import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestClient;
-
-import static org.assertj.core.api.Assertions.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.mock.web.MockHttpServletRequest;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ClientIpResolverTest {
-    @Configuration(proxyBeanMethods = false)
-    @EnableAutoConfiguration
-    @Import({TrustedProxyConfig.class, IpController.class})
-    static class TestApplication {}
+    @Test
+    void renderUsesCloudflareAddressInsteadOfSpoofableHeadersOrLoopback() {
+        var request = request();
+        request.addHeader("CF-Connecting-IP", "203.0.113.7");
+        assertThat(new ClientIpResolver(true).resolve(request)).isEqualTo("203.0.113.7");
+        assertThat(new ClientIpResolver(false).resolve(request)).isEqualTo("::1");
+    }
 
-    @RestController
-    static class IpController {
-        @GetMapping("/ip")
-        String ip(HttpServletRequest request) { return ClientIpResolver.resolve(request); }
+    @ParameterizedTest
+    @ValueSource(strings = {"", " ", "example.com", "127.1", "2130706433", "999.1.1.1",
+            "203.0.113.7, 203.0.113.8", "203.0.113.7:443", "[2001:db8::1]", "fe80::1%lo", "1::2::3"})
+    void malformedHeaderFallsBackWithoutUsingOtherForwardedHeaders(String value) {
+        var request = request();
+        request.addHeader("CF-Connecting-IP", value);
+        assertThat(new ClientIpResolver(true).resolve(request)).isEqualTo("::1");
     }
 
     @Test
-    void trustedProxyChainStopsAtRightmostUntrustedAddress() {
-        assertThat(resolve("127\\.0\\.0\\.1|10\\.0\\.0\\.1", "198.51.100.99, 203.0.113.7, 10.0.0.1"))
-                .isEqualTo("203.0.113.7");
+    void missingOrDuplicateCloudflareHeaderFallsBackToPeer() {
+        var request = request();
+        var resolver = new ClientIpResolver(true);
+        assertThat(resolver.resolve(request)).isEqualTo("::1");
+        request.addHeader("CF-Connecting-IP", "203.0.113.7");
+        request.addHeader("CF-Connecting-IP", "203.0.113.8");
+        assertThat(resolver.resolve(request)).isEqualTo("::1");
     }
 
     @Test
-    void untrustedConnectionCannotSpoofAddress() {
-        assertThat(resolve("(?!)", "198.51.100.99, 203.0.113.7"))
-                .isEqualTo("127.0.0.1");
+    void equivalentIpv6AddressesUseSameBucketKey() {
+        var resolver = new ClientIpResolver(true);
+        var shortForm = request();
+        shortForm.addHeader("CF-Connecting-IP", "2001:db8::1");
+        var longForm = request();
+        longForm.addHeader("CF-Connecting-IP", "2001:0DB8:0000:0000:0000:0000:0000:0001");
+        assertThat(resolver.resolve(shortForm)).isEqualTo(resolver.resolve(longForm));
     }
 
-    @Test
-    void blankProxyConfigurationIsRejected() {
-        assertThatIllegalArgumentException().isThrownBy(
-                () -> new TrustedProxyConfig().validateTrustedProxies(" "));
-    }
-
-    private String resolve(String proxies, String forwarded) {
-        try (var context = new SpringApplicationBuilder(TestApplication.class).run(
-                "--server.port=0", "--server.address=127.0.0.1", "--spring.main.banner-mode=off",
-                "--server.forward-headers-strategy=native",
-                "--server.tomcat.remoteip.internal-proxies=" + proxies)) {
-            int port = ((ServletWebServerApplicationContext) context).getWebServer().getPort();
-            return RestClient.create().get().uri("http://127.0.0.1:" + port + "/ip")
-                    .header("X-Forwarded-For", forwarded).retrieve().body(String.class);
-        }
+    private MockHttpServletRequest request() {
+        var request = new MockHttpServletRequest();
+        request.setRemoteAddr("::1");
+        request.addHeader("X-Forwarded-For", "198.51.100.99, 203.0.113.7");
+        request.addHeader("True-Client-IP", "198.51.100.98");
+        return request;
     }
 }

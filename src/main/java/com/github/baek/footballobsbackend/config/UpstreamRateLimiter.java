@@ -28,6 +28,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Component
 @Slf4j
 public class UpstreamRateLimiter {
+    private final ClientIpResolver clientIpResolver;
     private final long ipCapacity;
     private final long globalCapacity;
     private final long ipRefillMs;
@@ -46,18 +47,29 @@ public class UpstreamRateLimiter {
     public UpstreamRateLimiter(@Value("${rate-limit.upstream.ip-capacity}") long ipCapacity,
                                @Value("${rate-limit.upstream.ip-refill-period-ms}") long ipRefillMs,
                                @Value("${rate-limit.upstream.global-capacity}") long globalCapacity,
-                               @Value("${rate-limit.upstream.global-refill-period-ms}") long globalRefillMs) {
+                               @Value("${rate-limit.upstream.global-refill-period-ms}") long globalRefillMs,
+                               ClientIpResolver clientIpResolver) {
+        this(ipCapacity, ipRefillMs, globalCapacity, globalRefillMs, TimeMeter.SYSTEM_NANOTIME, clientIpResolver);
+    }
+
+    public UpstreamRateLimiter(long ipCapacity, long ipRefillMs, long globalCapacity, long globalRefillMs) {
         this(ipCapacity, ipRefillMs, globalCapacity, globalRefillMs, TimeMeter.SYSTEM_NANOTIME);
     }
 
     /** 테스트 생성자: 가짜 시간으로 회복 속도와 두 버킷의 동시 승인을 검증한다. */
     UpstreamRateLimiter(long ipCapacity, long ipRefillMs, long globalCapacity, long globalRefillMs, TimeMeter time) {
+        this(ipCapacity, ipRefillMs, globalCapacity, globalRefillMs, time, new ClientIpResolver(false));
+    }
+
+    UpstreamRateLimiter(long ipCapacity, long ipRefillMs, long globalCapacity, long globalRefillMs,
+                        TimeMeter time, ClientIpResolver clientIpResolver) {
         if (ipCapacity <= 0 || globalCapacity <= 0 || ipRefillMs <= 0 || globalRefillMs <= 0)
             throw new IllegalArgumentException("Rate limit values must be positive");
         this.ipCapacity = ipCapacity;
         this.globalCapacity = globalCapacity;
         this.ipRefillMs = ipRefillMs;
         this.time = time;
+        this.clientIpResolver = clientIpResolver;
         global = bucket(globalCapacity, globalRefillMs);
     }
 
@@ -82,7 +94,7 @@ public class UpstreamRateLimiter {
     public void acquire() {
         var attributes = RequestContextHolder.getRequestAttributes();
         String ip = attributes instanceof ServletRequestAttributes servlet
-                ? ClientIpResolver.resolve(servlet.getRequest()) : "internal";
+                ? clientIpResolver.resolve(servlet.getRequest()) : "internal";
         acquire(ip);
     }
 

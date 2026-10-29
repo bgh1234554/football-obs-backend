@@ -56,7 +56,7 @@ flowchart TD
 `RateLimitInterceptor.preHandle()`은 컨트롤러 실행 전에 호출됩니다.
 
 ```java
-String ip = ClientIpResolver.resolve(request);
+String ip = clientIpResolver.resolve(request);
 var probe = buckets.get(ip, key -> createBucket())
         .tryConsumeAndReturnRemaining(1);
 ```

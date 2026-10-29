@@ -58,7 +58,7 @@ HTTP 표준(RFC 7231)에 정의된 응답 헤더로, "지금은 안 되니 몇 �
 | --- | --- |
 | 서버 적용 범위 | `/api/**` (단, `/actuator/health`는 제외) (`WebConfig.addInterceptors`) |
 | 외부 차감 위치 | `ApiFootballClient.fetchRoot`의 캐시 로더 안, HTTP 시도 직전 |
-| IP 식별 키 | `ClientIpResolver.resolve()` — Tomcat이 신뢰 프록시 설정으로 검증한 `getRemoteAddr()` |
+| IP 식별 키 | `ClientIpResolver.resolve()` — Render에서는 유효한 `CF-Connecting-IP`, 그 외에는 `getRemoteAddr()` |
 
 IP별·전체 외부 버킷의 용량과 회복 속도가 같으면 전체 버킷이 먼저 또는 동시에 소진돼 IP별 버킷의 추가 제한 효과가 없다. 전체 버킷은 여러 사용자가 공유할 예산으로 별도 설정하며, 실제 운영 한도와 회복 속도는 공개 문서에 기재하지 않는다.
 

@@ -36,8 +36,9 @@ class RateLimitInterceptorTest {
     }
     @Test
     void productionBeansReceiveSettingsFromApplicationYaml() {
-        new ApplicationContextRunner().withUserConfiguration(RateLimitInterceptor.class,UpstreamRateLimiter.class)
+        new ApplicationContextRunner().withUserConfiguration(RateLimitInterceptor.class,UpstreamRateLimiter.class,ClientIpResolver.class)
                 .withPropertyValues(
+                        "RENDER=true",
                         "SERVER_RATE_LIMIT_CAPACITY=" + server("normal").capacity(),
                         "SERVER_RATE_LIMIT_REFILL_TOKENS=" + server("normal").refillTokens(),
                         "SERVER_RATE_LIMIT_REFILL_PERIOD_MS=" + server("normal").refillMs(),
@@ -52,12 +53,18 @@ class RateLimitInterceptorTest {
                     } catch (java.io.IOException e) { throw new IllegalStateException(e); }
                 }).run(context -> {
                     assertThat(context).hasNotFailed().hasSingleBean(RateLimitInterceptor.class).hasSingleBean(UpstreamRateLimiter.class);
+                    var request = new MockHttpServletRequest();
+                    request.setRemoteAddr("::1");
+                    request.addHeader("CF-Connecting-IP", "203.0.113.7");
+                    request.addHeader("X-Forwarded-For", "198.51.100.99");
+                    assertThat(context.getBean(ClientIpResolver.class).resolve(request)).isEqualTo("203.0.113.7");
+                    assertThat(context.getEnvironment().getProperty("server.forward-headers-strategy")).isEqualTo("none");
                 });
     }
 
     @Test
     void missingSettingsCannotSilentlyUseJavaDefaults() {
-        new ApplicationContextRunner().withUserConfiguration(RateLimitInterceptor.class,UpstreamRateLimiter.class)
+        new ApplicationContextRunner().withUserConfiguration(RateLimitInterceptor.class,UpstreamRateLimiter.class,ClientIpResolver.class)
                 .run(context -> assertThat(context).hasFailed());
     }
 

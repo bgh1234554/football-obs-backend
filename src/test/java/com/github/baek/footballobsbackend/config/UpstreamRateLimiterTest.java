@@ -78,14 +78,35 @@ class UpstreamRateLimiterTest {
     }
 
     @Test
-    void usesSameVerifiedRemoteIpAsEntryLimiter() {
-        var limiter = policy("identity").create(time);
+    void renderVisitorsUseSeparateBucketsAndSpoofedXffDoesNotResetThem() throws Exception {
+        var resolver = new ClientIpResolver(true);
+        var settings = policy("identity");
+        var limiter = new UpstreamRateLimiter(settings.ipCapacity(), settings.ipRefillMs(),
+                settings.globalCapacity(), settings.globalRefillMs(), time, resolver);
+        var serverSettings = server("exhausted");
+        var entry = new RateLimitInterceptor(serverSettings.capacity(), serverSettings.refillTokens(),
+                serverSettings.refillMs(), resolver);
         var request = new MockHttpServletRequest();
-        request.setRemoteAddr("203.0.113.7");
-        request.addHeader("X-Forwarded-For", "203.0.113.7, 10.0.0.1");
+        request.setRemoteAddr("::1");
+        request.addHeader("CF-Connecting-IP", "203.0.113.7");
+        request.addHeader("X-Forwarded-For", "198.51.100.99, 203.0.113.7");
+        for (int i = 0; i < serverSettings.capacity(); i++) {
+            assertThat(entry.preHandle(request, new org.springframework.mock.web.MockHttpServletResponse(), new Object())).isTrue();
+        }
         RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
-        try { limiter.acquire(); } finally { RequestContextHolder.resetRequestAttributes(); }
-        assertThatThrownBy(() -> limiter.acquire("203.0.113.7")).isInstanceOf(UpstreamRateLimitException.class);
+        try {
+            limiter.acquire();
+            request.removeHeader("X-Forwarded-For");
+            request.addHeader("X-Forwarded-For", "198.51.100.98");
+            assertThatThrownBy(limiter::acquire).isInstanceOf(UpstreamRateLimitException.class);
+            assertThat(entry.preHandle(request, new org.springframework.mock.web.MockHttpServletResponse(), new Object())).isFalse();
+            request.removeHeader("CF-Connecting-IP");
+            request.addHeader("CF-Connecting-IP", "203.0.113.8");
+            assertThat(entry.preHandle(request, new org.springframework.mock.web.MockHttpServletResponse(), new Object())).isTrue();
+            assertThatCode(limiter::acquire).doesNotThrowAnyException();
+        } finally {
+            RequestContextHolder.resetRequestAttributes();
+        }
     }
     @Test
     void logsFivePercentBandsOnceAndRearmsOnlyAfterRecovery() {
