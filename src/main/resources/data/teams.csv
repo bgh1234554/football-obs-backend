@@ -80,7 +80,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 779,Rostov, 로스토프,,0c4da2,fff100
 1079,Krylia Sovetov Samara,크릴리야 소베토프 사마라, 크릴리야 소베토프,064893,ffffff
 1080,Orenburg,오렌부르크,,001d59,ffffff
-1083,Rubin Kazan,루빈 카잔, 루빈 Kz.,801831,ffffff
+1083,Rubin Kazan,루빈 카잔, 루빈,801831,ffffff
 1085,Akhmat Grozny,아흐마트 그로즈니, 아흐마트,00904f,ffffff
 1088,Dynamo Moscow,디나모 모스크바, 디나모 Mc.,1e4faa,ffffff
 2006,Baltika Kaliningrad,발티카 칼리닌그라드, 발티카,04539e,ffffff
@@ -1092,7 +1092,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 27647,Lugansk,자랴 루간스크,자랴,,
 27648,Shahter Taganrog,샤흐툐르 도네츠크,샤흐툐르 Dn.,,
 27649,Pervorechenskij,PSK 딘스카야,PSK,,
-2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2 Mc.,c9072a,ffffff
+2003,Spartak Moscow 2,스파르타크-2 모스크바,스파르타크-2,c9072a,ffffff
 6812,Luki-Energiya,루키 에네르기야 벨리키예 루키,루키-에네르기야,,
 6830,Torpedo Vladimir,토르페도 블라디미르,토르페도 Vl.,,
 6840,Zvezda St. Petersburg,즈베즈다 상트페테르부르크,즈베즈다 SPB,,
@@ -1110,7 +1110,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 14140,Krylya Sovetov II,크릴리야 소베토프-2 사마라,크릴리야 소베토프-2,,
 14141,Orenburg II,오렌부르크-2,,,
 16858,Khimik Dzerzhinsk,히미크 제르진스크,히미크 Dz.,,
-21032,Rubin Kazan 2,루빈-2 카잔,루빈-2 Kz.,,
+21032,Rubin Kazan 2,루빈-2 카잔,루빈-2,,
 21535,Akron II,아크론-2 톨리야티,아크론-2,,
 25866,Chelyabinsk II,첼랴빈스크-2,,,
 25867,KDV,KDV 톰스크,KDV,,
