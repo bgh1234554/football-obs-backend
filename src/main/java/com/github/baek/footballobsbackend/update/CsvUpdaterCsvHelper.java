@@ -1,6 +1,7 @@
 package com.github.baek.footballobsbackend.update;
 
 import com.github.baek.footballobsbackend.util.PersonNameFormatter;
+import static com.github.baek.footballobsbackend.util.CsvParser.parseCsvLine;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -29,7 +30,7 @@ class CsvUpdaterCsvHelper {
             while ((line = br.readLine()) != null) {
                 if (first) { first = false; continue; }
                 if (line.isBlank()) continue;
-                String[] parts = line.split(",");
+                String[] parts = parseCsvLine(line, 0);
                 if (parts.length > 0) {
                     try { ids.add(Long.parseLong(parts[0].trim())); }
                     catch (NumberFormatException ignored) {}
@@ -53,7 +54,7 @@ class CsvUpdaterCsvHelper {
             while ((line = br.readLine()) != null) {
                 if (first) { first = false; continue; }
                 if (line.isBlank()) continue;
-                String[] parts = line.split(",", 5);
+                String[] parts = parseCsvLine(line, 0);
                 if (parts.length > 1) names.add(parts[1].trim().toLowerCase());
             }
         }
@@ -89,7 +90,7 @@ class CsvUpdaterCsvHelper {
 
     /**
      * CSV 전체를 읽어 헤더 + 행 목록으로 반환한다.
-     * players.csv처럼 콤마가 이름 컬럼에 없다는 전제 하에 split(limit)을 사용한다.
+     * 큰따옴표 안의 콤마와 이스케이프된 따옴표를 해석한 뒤 컬럼 수를 맞춘다.
      */
     static CsvTable loadCsvTable(String filePath, int columnCount) throws IOException {
         File file = new File(filePath);
@@ -101,13 +102,13 @@ class CsvUpdaterCsvHelper {
             String headerLine = br.readLine();
             String[] header = headerLine == null
                     ? new String[columnCount]
-                    : padColumns(headerLine.split(",", columnCount), columnCount);
+                    : padColumns(parseCsvLine(headerLine, 0), columnCount);
 
             List<String[]> rows = new ArrayList<>();
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.isBlank()) continue;
-                rows.add(padColumns(line.split(",", columnCount), columnCount));
+                rows.add(padColumns(parseCsvLine(line, 0), columnCount));
             }
             return new CsvTable(header, rows);
         }
@@ -143,7 +144,7 @@ class CsvUpdaterCsvHelper {
             while ((line = br.readLine()) != null) {
                 if (first) { first = false; continue; }
                 if (line.isBlank()) continue;
-                String[] parts = line.split(",", splitLimit);
+                String[] parts = parseCsvLine(line, 0);
                 if (parts.length > valueColumnIdx) {
                     try { map.put(Long.parseLong(parts[0].trim()), parts[valueColumnIdx].trim()); }
                     catch (NumberFormatException ignored) {}
@@ -168,7 +169,7 @@ class CsvUpdaterCsvHelper {
             while ((line = br.readLine()) != null) {
                 if (first) { first = false; continue; }
                 if (line.isBlank()) continue;
-                String[] parts = line.split(",", splitLimit);
+                String[] parts = parseCsvLine(line, 0);
                 if (parts.length > Math.max(keyColumnIdx, valueColumnIdx)) {
                     map.put(parts[keyColumnIdx].trim().toLowerCase(), parts[valueColumnIdx].trim());
                 }
