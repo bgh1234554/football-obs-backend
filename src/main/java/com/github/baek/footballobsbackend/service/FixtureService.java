@@ -68,7 +68,8 @@ public class FixtureService {
      * 내부적으로 API Football /fixtures + /injuries 두 엔드포인트를 호출함.
      *
      * @param fixtureId API Football 경기 ID
-     * @return 조립된 FixtureResponseDto. 경기 데이터 없으면 null.
+     * @return 조립된 FixtureResponseDto.
+     * @throws ApiException 경기 데이터가 없으면 FIXTURE_NOT_FOUND.
      */
     public FixtureResponseDto getFixture(long fixtureId) {
         return getFixture(fixtureId, false);
@@ -86,7 +87,7 @@ public class FixtureService {
         if (data == null) {
             log.debug("getFixture done fixtureId={} found=false durationMs={}",
                     fixtureId, TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt));
-            return null;
+            throw new ApiException(FIXTURE_NOT_FOUND);
         }
 
         // 2. 홈/원정 팀 ID 추출 (이후 여러 메서드에서 side 구분에 사용)
@@ -121,10 +122,6 @@ public class FixtureService {
                 .homeInjuries(homeInjuries)                                      // 홈팀 부상/결장
                 .awayInjuries(awayInjuries)                                      // 원정팀 부상/결장
                 .build();
-
-        if (result == null) {
-            throw new ApiException(FIXTURE_NOT_FOUND);
-        }
 
         log.debug("getFixture done fixtureId={} found=true events={} playerStats={} durationMs={}",
                 fixtureId, result.getEvents().size(), result.getPlayerStats().size(),

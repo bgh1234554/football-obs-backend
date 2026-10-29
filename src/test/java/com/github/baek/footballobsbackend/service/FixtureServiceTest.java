@@ -12,6 +12,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 class FixtureServiceTest {
 
+    @Test
+    void missingFixtureThrowsNotFoundForNormalAndRefreshRequests() {
+        var client = org.mockito.Mockito.mock(com.github.baek.footballobsbackend.client.ApiFootballClient.class);
+        var service = new FixtureService(client, null, null);
+        for (boolean refresh : new boolean[]{false, true}) {
+            org.assertj.core.api.Assertions.assertThatThrownBy(() -> service.getFixture(999L, refresh))
+                    .isInstanceOf(com.github.baek.footballobsbackend.error.ApiException.class)
+                    .extracting("errorCode")
+                    .isEqualTo(com.github.baek.footballobsbackend.error.ErrorCode.FIXTURE_NOT_FOUND);
+        }
+    }
+
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
