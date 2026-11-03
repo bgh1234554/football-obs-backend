@@ -897,11 +897,11 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 833,Shanghai Shenhua,상하이 선화,,115199,ffffff
 836,SHANGHAI SIPG,상하이 하이강,,b50201,ffffff
 945,Melbourne City,멜버른 시티,,7AB2E1,002A5A
-2523,Johor Darul Takzim FC,조호르 다룰 탁짐,,,
+2523,Johor Darul Takzim FC,조호르 다룰 탁짐,조호르,,
 2737,Tractor Sazi,트락토르,,c00404,ffffff
 2744,Sepahan FC,세파한,,ffcc00,000000
-2770,Bangkok United,방콕 유나이티드,,,
-2780,Buriram United,부리람 유나이티드,,,
+2770,Bangkok United,방콕 유나이티드,방콕,,
+2780,Buriram United,부리람 유나이티드,부리람,,
 2870,Shabab Al Ahli Dubai,샤바브 알 아흘리,,ac2328,ffffff
 2874,Sharjah FC,샤르자,,213b86,ffffff
 2875,Al Wahda FC,알 와흐다,,92204c,c3b295
