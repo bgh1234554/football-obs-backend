@@ -46,12 +46,18 @@ public class PlayerController {
      * player는 최상위에 한 번만 내려주고,
      * statistics는 { "2025": [PlayerSeasonStatDto...], "2026": [PlayerSeasonStatDto...] } 형태로 반환.
      *
+     * season을 주면 그 시즌 하나만 조회한다(이전 시즌 버튼용). 기록이 없으면 빈 statistics로 200.
+     *
      * @param playerId API Football 선수 ID (path variable)
-     * @return 200 OK + PlayerProfileStatResponseDto | 404 Not Found (선수 또는 스탯 없음)
+     * @param season   선택. 조회할 시즌 연도
+     * @return 200 OK + PlayerProfileStatResponseDto | 404 Not Found (선수 또는 스탯 없음) | 400 (잘못된 시즌)
      */
     @GetMapping("/playerStats/{playerId}")
-    public ResponseEntity<PlayerProfileStatResponseDto> getStats(@PathVariable("playerId") long playerId) {
-        PlayerProfileStatResponseDto dto = playerService.getPlayerStats(playerId);
+    public ResponseEntity<PlayerProfileStatResponseDto> getStats(@PathVariable("playerId") long playerId,
+                                                                 @RequestParam(name = "season", required = false) Integer season) {
+        PlayerProfileStatResponseDto dto = season == null
+                ? playerService.getPlayerStats(playerId)
+                : playerService.getPlayerSeasonStats(playerId, season);
         return ResponseEntity.ok()
                 .cacheControl(CacheControl.maxAge(12, TimeUnit.HOURS))
                 .body(dto);

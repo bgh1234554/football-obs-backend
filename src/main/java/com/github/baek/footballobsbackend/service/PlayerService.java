@@ -171,6 +171,34 @@ public class PlayerService {
                 .build();
     }
 
+    /** 이전 시즌 조회에서 기록 없는 해(무소속, 장기 부상 등)를 건너뛰며 내려가 볼 최대 연도 수. */
+    private static final int OLDER_SEASON_LOOKBACK = 3;
+
+    /**
+     * 시즌 스탯 모달의 "이전 시즌" 버튼용 조회. 기본 조회와 같은 /players?id&season 호출을 재사용한다.
+     * 요청 시즌에 기록이 없으면 최대 OLDER_SEASON_LOOKBACK개 연도까지 한 해씩 내려가 처음 기록이 있는 시즌 하나를 반환한다.
+     * 끝까지 없으면 프로필 fallback 호출 없이 빈 statistics를 반환한다(프런트가 이미 프로필을 갖고 있음).
+     */
+    public PlayerProfileStatResponseDto getPlayerSeasonStats(long playerId, int season) {
+        if (playerId == 0) throw new ApiException(ErrorCode.PLAYER_NOT_FOUND);
+        if (season < 1990 || season > LocalDate.now().getYear() + 1) throw new ApiException(ErrorCode.INVALID_SEASON);
+
+        Map<String, List<PlayerSeasonStatDto>> result = new LinkedHashMap<>();
+        PlayerInfoDto player = null;
+        for (int s = season; s > season - OLDER_SEASON_LOOKBACK && s >= 1990; s--) {
+            JsonNode response = apiClient.getPlayerStats(playerId, s);
+            if (response == null || !response.isArray() || response.isEmpty()) continue;
+            JsonNode item = response.get(0);
+            player = buildPlayerInfo(item.path("player"), playerId);
+            result.put(String.valueOf(s), buildSeasonStats(item.path("statistics")));
+            break;
+        }
+        return PlayerProfileStatResponseDto.builder()
+                .player(player)
+                .statistics(result)
+                .build();
+    }
+
     // ──────────────────────────────────────────────
     // 선수 기본 정보
     // ──────────────────────────────────────────────
