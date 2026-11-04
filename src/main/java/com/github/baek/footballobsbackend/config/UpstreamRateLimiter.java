@@ -89,13 +89,27 @@ public class UpstreamRateLimiter {
      * 현재 서비스 호출은 같은 요청 스레드에서 동기 실행되므로 요청 문맥을 읽을 수 있다.
      * 향후 비동기 작업으로 옮기면 요청자 식별을 명시적으로 전달해야 한다.
      *
+     * 선수 스탯·선수 검색 요청에서 생긴 호출은 같은 IP라도 별도 버킷(같은 용량·회복 속도)을 쓴다.
+     * 시즌 스탯을 여러 명 연달아 열어도 경기 폴링의 IP 한도를 소진하지 않게 하기 위함이다.
+     * 전체(global) 한도는 유료 API 할당량 보호용이라 계속 함께 차감한다.
+     *
      * @throws UpstreamRateLimitException 허용량이 없으면 실제 HTTP 요청 전에 발생
      */
     public void acquire() {
         var attributes = RequestContextHolder.getRequestAttributes();
-        String ip = attributes instanceof ServletRequestAttributes servlet
-                ? clientIpResolver.resolve(servlet.getRequest()) : "internal";
-        acquire(ip);
+        if (!(attributes instanceof ServletRequestAttributes servlet)) {
+            acquire("internal");
+            return;
+        }
+        String ip = clientIpResolver.resolve(servlet.getRequest());
+        acquire(isPlayerRequest(servlet.getRequest().getRequestURI()) ? ip + PLAYER_BUCKET_SUFFIX : ip);
+    }
+
+    static final String PLAYER_BUCKET_SUFFIX = "#player";
+
+    /** /api/playerStats/{id}, /api/players/search 등 선수 모달에서 사용자가 직접 여는 조회. */
+    static boolean isPlayerRequest(String uri) {
+        return uri != null && (uri.startsWith("/api/playerStats/") || uri.startsWith("/api/players/"));
     }
 
     /**

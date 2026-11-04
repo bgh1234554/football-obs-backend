@@ -109,6 +109,30 @@ class UpstreamRateLimiterTest {
         }
     }
     @Test
+    void playerRequestsUseSeparateIpBucketSoFixturePollingIsNotStarved() {
+        var settings = policy("identity");
+        var limiter = new UpstreamRateLimiter(settings.ipCapacity(), settings.ipRefillMs(),
+                settings.globalCapacity(), settings.globalRefillMs(), time, new ClientIpResolver(false));
+        var request = new MockHttpServletRequest();
+        request.setRemoteAddr("203.0.113.7");
+        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
+        try {
+            // 같은 IP가 선수 스탯으로 개인 한도를 다 써도 경기 조회는 자기 버킷으로 통과한다.
+            request.setRequestURI("/api/playerStats/7");
+            for (int i = 0; i < settings.ipCapacity(); i++) limiter.acquire();
+            assertThatThrownBy(limiter::acquire).isInstanceOfSatisfying(UpstreamRateLimitException.class,
+                    e -> assertThat(e.getScope()).isEqualTo("upstream-ip"));
+            request.setRequestURI("/api/players/search");
+            assertThatThrownBy(limiter::acquire).isInstanceOf(UpstreamRateLimitException.class);
+            request.setRequestURI("/api/fixtures/1");
+            for (int i = 0; i < settings.ipCapacity(); i++) limiter.acquire();
+            assertThatThrownBy(limiter::acquire).isInstanceOf(UpstreamRateLimitException.class);
+        } finally {
+            RequestContextHolder.resetRequestAttributes();
+        }
+    }
+
+    @Test
     void logsFivePercentBandsOnceAndRearmsOnlyAfterRecovery() {
         Logger logger = (Logger) LoggerFactory.getLogger(UpstreamRateLimiter.class);
         var events = new ListAppender<ILoggingEvent>();
