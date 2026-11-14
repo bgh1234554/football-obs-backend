@@ -368,7 +368,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 178,SpVgg Greuther Fürth,그로이터 퓌르트,퓌르트,009c3a,ffffff
 179,1. FC Magdeburg,마그데부르크,마그데부르크,0069b8,ffffff
 181,SV Darmstadt 98,다름슈타트,다름슈타트,004e9e,ffffff
-183,Dynamo Dresden,디나모 드레스덴,드레스덴,93000e,ffffff
+183,Dynamo Dresden,디나모 드레스덴,디나모 D.,93000e,ffffff
 185,SC Paderborn 07,파더보른,파더보른,005ca8,ffffff
 188,Arminia Bielefeld,아르미니아 빌레펠트,빌레펠트,005896,ffffff
 191,Holstein Kiel,홀슈타인 킬,킬,00579c,ffffff
@@ -1055,7 +1055,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 2385,Jamaica,자메이카,,fef400,000000
 4672,Honduras,온두라스,,,
 5159,El Salvador,엘살바도르,,0047ab,ffffff
-5161,Guatemala,과테말라,,,
+5161,Guatemala,과테말라,,,1D1F43,03BBE1
 5168,Trinidad and Tobago,트리니다드토바고,트리니다드,db1332,000000
 5532,Dominican Republic,도미니카 공화국,도미니카R,,
 8171,Suriname,수리남,,ed1c24,ffffff
@@ -1384,7 +1384,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1426,CSKA 1948,CSKA 1948 소피아,CSKA 1948,,
 4660,Spartak Varna,스파르타크 바르나,스파르타크 Vr.,,
 3733,Zbrojovka Brno,즈브로요프카 브르노,즈브로요프카,ee161f,ffffff
-1320,Energie Cottbus,에네르기 코트부스,E. 코트부스,e3010b,ffffff
+1320,Energie Cottbus,에네르기 코트부스,코트부스,e3010b,ffffff
 1324,VfL Osnabrück,오스나브뤼크,오스나브뤼크,572a86,ffffff
 195,Willem II,빌럼 II 틸뷔르흐,빌럼 II,1d2852,ffffff
 198,ADO Den Haag,ADO 덴 하흐,덴 하흐,ffed00,003716
