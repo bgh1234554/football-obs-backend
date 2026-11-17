@@ -1051,13 +1051,13 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1566,China,중국,,d7010a,fde400
 1571,Indonesia,인도네시아,,ff0000,ffffff
 4460,Hong Kong,홍콩,,ee1c25,ffffff
-29,Costa Rica,코스타리카,,,
-2385,Jamaica,자메이카,,fef400,000000
-4672,Honduras,온두라스,,,
+29,Costa Rica,코스타리카,,E52528,242D5A
+2385,Jamaica,자메이카,,ffcb2e,000000
+4672,Honduras,온두라스,,ffffff,00BCE4
 5159,El Salvador,엘살바도르,,0047ab,ffffff
 5161,Guatemala,과테말라,,,1D1F43,03BBE1
 5168,Trinidad and Tobago,트리니다드토바고,트리니다드,db1332,000000
-5532,Dominican Republic,도미니카 공화국,도미니카R,,
+5532,Dominican Republic,도미니카 공화국,도미니카R,213778,ffffff
 8171,Suriname,수리남,,ed1c24,ffffff
 10983,Guadeloupe,과들루프,,ff0000,18a538
 30,Peru,페루,,,
@@ -1326,14 +1326,14 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1117,Greece,그리스,,,
 1514,Rwanda,르완다,,,
 1557,Chinese Taipei,중화 타이페이,대만,,
-5162,Guyana,가이아나,,,
+5162,Guyana,가이아나,,ffc20e,be1e2d
 1515,Seychelles,세이셸,,,
 1543,Cambodia,캄보디아,,,
 5527,Barbados,바베이도스,,,
 1493,Namibia,나미비아,,,
 1523,Chad,차드,,,
 1505,Niger,니제르,,,
-2388,Cuba,쿠바,,,
+2388,Cuba,쿠바,,f91d29,22314c
 5528,Belize,벨리즈,,,
 5157,Bahamas,바하마,,,
 8167,Aruba,아루바,,ffd100,418fde
