@@ -1320,7 +1320,7 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1555,Philippines,필리핀,,ffffff,084389
 1545,Nepal,네팔,,,
 1550,Yemen,예멘,,cf0921,ffffff
-5541,Saint Vincent and the Grenadines,세인트빈센트 그레나딘,세인트빈센트,,
+5541,Saint Vincent and the Grenadines,세인트빈센트 그레나딘,세인트빈센트,fcd022,007c2e
 1498,Eritrea,에리트레아,,,
 1511,Kenya,케냐,,,
 1117,Greece,그리스,,,
@@ -1340,13 +1340,13 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 1494,Sao Tome and Principe,상투메 프린시페,,,
 1102,Luxembourg,룩셈부르크,,,
 1098,Faroe Islands,페로 제도,,,
-5164,Nicaragua,니카라과,,,
+5164,Nicaragua,니카라과,,132155,ffffff
 1499,Sierra Leone,시에라리온,,,
 1518,Lesotho,레소토,,,
 1535,Djibouti,지부티,,,
 5166,Sri Lanka,스리랑카,,,
 5540,Saint Lucia,세인트루시아,,005bd0,e9c122
-5539,Puerto Rico,푸에르토리코,,,
+5539,Puerto Rico,푸에르토리코,,1f376a,ffffff
 1539,Turkmenistan,투르크메니스탄,,,
 1092,Latvia,라트비아,,,
 1114,Moldova,몰도바,,,
@@ -1825,3 +1825,4 @@ team_id,team_name,ko_name,ko_name_short,primary_color_override,number_color_over
 7145,Tochigi City,도치기 시티,도치기,,
 10075,Imabari,이마바리,,,
 10409,Tegevajaro Miyazaki,타게바자로 미야자키,미야자키,,
+23263,Basque County,바스크,,009B48,ffffff
